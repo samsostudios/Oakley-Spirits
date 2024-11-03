@@ -1,5 +1,6 @@
 /* eslint-disable simple-import-sort/imports */
 // import { smoothScroll } from '$utils/smoothScroll';
+import Preloader from '$components/preloader';
 import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 import { gsap } from 'gsap';
@@ -36,16 +37,10 @@ export const verify = () => {
       this.heroVideo = document.querySelector('#heroVideo') as HTMLVideoElement;
       this.heroPlace = document.querySelector('#heroPlace') as HTMLElement;
       this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
-      // this.lenis = smoothScroll();
 
       this.transitionVideo = document.querySelector('#verifyTransition') as HTMLVideoElement;
 
       this.init();
-      // setTimeout(() => {
-      //   this.verifyPlace.style.display = 'none';
-      //   if (this.verifyVideo) this.verifyVideo.play();
-      //   this.setListeners();
-      // }, 500);
     }
 
     private init() {
@@ -147,7 +142,7 @@ export const verify = () => {
       const age = currentYear - parseInt(birthYear);
 
       if (age >= 21) {
-        this.playSuccessAnimation();
+        this.successAnimation();
         VerifyCookie.setVerificationStatus();
         console.log('Access granted');
       } else {
@@ -161,10 +156,11 @@ export const verify = () => {
       statusText.innerHTML = message;
       this.statusContainer.style.display = 'block';
     }
-    private playSuccessAnimation() {
+
+    private successAnimation() {
       const tl = gsap.timeline({
         onComplete: () => {
-          this.handleTransition();
+          Preloader.heroReveal();
         },
       });
 
@@ -185,43 +181,6 @@ export const verify = () => {
         },
         '<0.2'
       );
-    }
-
-    private fastForwardOrRewind(
-      video: HTMLVideoElement,
-      targetTime: number,
-      duration: number,
-      onComplete: () => void
-    ) {
-      const startTime = video.currentTime;
-      const frameRate = 60; // Desired frames per second for smooth animation
-      const frames = duration * frameRate;
-      const increment = (targetTime - startTime) / frames;
-
-      function adjustTime() {
-        // Check if we've reached or passed the target time based on direction
-        if (
-          (increment > 0 && video.currentTime < targetTime) ||
-          (increment < 0 && video.currentTime > targetTime)
-        ) {
-          video.currentTime = Math.min(Math.max(video.currentTime + increment, 0), video.duration);
-          requestAnimationFrame(adjustTime);
-        } else {
-          // Ensure the video ends precisely at the target time and call onComplete
-          video.currentTime = targetTime;
-          onComplete();
-        }
-      }
-
-      adjustTime();
-    }
-
-    private handleTransition() {
-      // this.lenis.start();
-      // lenis.start();
-      // this.heroPlace.style.display = 'none';
-      // gsap.to(this.section, { duration: 1, display: 'none', opacity: 0 });
-      // if (this.heroVideo) this.heroVideo.play();
     }
   }
   new Verify();

@@ -12,6 +12,7 @@ window.Webflow.push(() => {
   if (!VerifyCookie.isVerified()) {
     console.log('no verified cookie found...');
     console.log('load verify module');
+    loadComponent('.verify_component', () => import('$components/verify'));
     // loadVerificationModule();
   } else {
     console.log('verificatoin found...');
