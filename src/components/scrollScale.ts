@@ -31,13 +31,13 @@ export const scrollScale = () => {
           scrollTrigger: {
             trigger: this.scaleParent,
             start: 'top bottom',
-            end: 'bottom bottom',
+            end: '120% bottom',
             scrub: true,
             // markers: true,
           },
         });
 
-        tl.fromTo(this.scaleElement, { scale: this.scaleFactor }, { scale: 1 });
+        tl.fromTo(this.scaleElement, { scale: this.scaleFactor }, { scale: 1, ease: 'linear' });
       }
     }
   }

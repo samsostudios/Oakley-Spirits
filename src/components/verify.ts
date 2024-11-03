@@ -1,20 +1,29 @@
-import { queryElement } from '@finsweet/ts-utils';
+/* eslint-disable simple-import-sort/imports */
+// import { smoothScroll } from '$utils/smoothScroll';
+import lenis from '$utils/smoothScroll';
+import VerifyCookie from '$utils/verifyCookie';
 import { gsap } from 'gsap';
 
 export const verify = () => {
   class Verify {
+    private body: HTMLElement;
     private section: HTMLElement;
     private form: HTMLElement;
     private inputs: HTMLInputElement[];
     private statusContainer: HTMLElement;
+    private verifyVideo: HTMLVideoElement;
+    private verifyPlace: HTMLElement;
     private heroVideo: HTMLVideoElement;
+    private heroPlace: HTMLElement;
+    private verifyLogo: HTMLElement;
     private background: HTMLElement;
     private transition: HTMLElement;
-    private bgVideo: HTMLVideoElement;
+
     private transitionVideo: HTMLVideoElement;
 
     constructor() {
-      this.section = document.querySelector('.secton_verify') as HTMLElement;
+      this.body = document.querySelector('body') as HTMLElement;
+      this.section = document.querySelector('.section_verify') as HTMLElement;
       this.form = document.querySelector('.verify_form') as HTMLFormElement;
       this.inputs = [...document.querySelectorAll('.verify_input')].map(
         (item) => item as HTMLInputElement
@@ -22,13 +31,33 @@ export const verify = () => {
       this.statusContainer = document.querySelector('.verify_status') as HTMLElement;
       this.background = document.querySelector('.vim_embed.is-abs.is-bg') as HTMLElement;
       this.transition = document.querySelector('.vim_embed.is-abs.is-transition') as HTMLElement;
+      this.verifyVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
+      this.verifyPlace = document.querySelector('#verifyPlace') as HTMLElement;
       this.heroVideo = document.querySelector('#heroVideo') as HTMLVideoElement;
-      this.bgVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
+      this.heroPlace = document.querySelector('#heroPlace') as HTMLElement;
+      this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
+      // this.lenis = smoothScroll();
+
       this.transitionVideo = document.querySelector('#verifyTransition') as HTMLVideoElement;
 
-      if (this.bgVideo) this.bgVideo.play();
+      this.init();
+      // setTimeout(() => {
+      //   this.verifyPlace.style.display = 'none';
+      //   if (this.verifyVideo) this.verifyVideo.play();
+      //   this.setListeners();
+      // }, 500);
+    }
 
-      this.setListeners();
+    private init() {
+      lenis.stop();
+
+      this.verifyVideo.addEventListener('loadeddata', () => {
+        console.log('video loaded');
+        this.verifyPlace.style.display = 'none';
+        this.verifyVideo.play();
+        this.setListeners();
+        this.verifyReveal();
+      });
     }
 
     private setListeners() {
@@ -39,6 +68,29 @@ export const verify = () => {
       });
 
       this.form.addEventListener('submit', (e) => this.verifyAge(e));
+    }
+
+    private verifyReveal() {
+      const tl = gsap.timeline();
+      tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' });
+      tl.fromTo(
+        this.inputs,
+        {
+          y: '4rem',
+          opacity: 0,
+        },
+        { duration: 1.2, y: '0rem', opacity: 1, stagger: 0.2, ease: 'power3.out' }
+      ),
+        '< ';
+      tl.fromTo(
+        document.querySelector('.verify_wrap'),
+        {
+          y: '1rem',
+          opacity: 0,
+        },
+        { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
+        '<0.2'
+      );
     }
 
     private handleInput(event: Event, index: number) {
@@ -96,6 +148,7 @@ export const verify = () => {
 
       if (age >= 21) {
         this.playSuccessAnimation();
+        VerifyCookie.setVerificationStatus();
         console.log('Access granted');
       } else {
         this.displayError('Sorry, you must be at least 21 years old to access this site.');
@@ -115,38 +168,18 @@ export const verify = () => {
         },
       });
 
-      // const backgroundVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
-      // if (this.bgVideo) {
-      //   console.log('BG', this.bgVideo);
-      //   this.bgVideo.removeAttribute('loop');
-      //   // this.bgVideo.currentTime = this.bgVideo.duration - 2;
-
-      //   Add an event listener to stop the video at the last frame
-      //   this.fastForwardOrRewind(this.bgVideo, this.bgVideo.duration / 2, 2, () => {
-      //     // Play the video normally after fast-forwarding
-      //     this.bgVideo.play();
-
-      //     // Stop the video at the last frame once it finishes playing
-      //     this.bgVideo.onended = () => {
-      //       console.log('ended');
-      //       this.bgVideo.currentTime = this.bgVideo.duration; // Set to the last frame
-      //       this.bgVideo.pause(); // Stop at the last frame
-      //       this.handleTransition();
-      //     };
-      //   });
-      // }
-
       tl.to(this.inputs, {
         duration: 1.2,
         y: '-4rem',
         opacity: 0,
-        stagger: 0.25,
-        ease: 'expo.inOut',
+        stagger: 0.2,
+        ease: 'power3.out',
       });
       tl.to(
         document.querySelector('.verify_wrap'),
         {
           duration: 1.2,
+          y: '-1rem',
           opacity: 0,
           ease: 'expo.inOut',
         },
@@ -184,14 +217,11 @@ export const verify = () => {
     }
 
     private handleTransition() {
-      console.log('transition');
-      const tl = gsap.timeline({
-        // onComplete: () => {},
-      });
-
-      // tl.to(this.transition, { display: 'block', opacity: 1 });
-      if (this.heroVideo) this.heroVideo.play();
-      tl.to(this.section, { display: 'none', opacity: 0 }, '<');
+      // this.lenis.start();
+      // lenis.start();
+      // this.heroPlace.style.display = 'none';
+      // gsap.to(this.section, { duration: 1, display: 'none', opacity: 0 });
+      // if (this.heroVideo) this.heroVideo.play();
     }
   }
   new Verify();

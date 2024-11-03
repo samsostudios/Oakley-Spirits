@@ -9,7 +9,7 @@ export const hoverVideos = () => {
         (item) => item as HTMLElement
       );
 
-      console.log(this.hoverElements);
+      // console.log(this.hoverElements);
 
       this.initVideos();
       this.setListeners();
@@ -19,7 +19,7 @@ export const hoverVideos = () => {
       this.hoverElements.forEach((element) => {
         const video = element.querySelector('video') as HTMLVideoElement;
         video.pause();
-        console.log('vid', video);
+        // console.log('vid', video);
       });
     }
 
@@ -42,7 +42,7 @@ export const hoverVideos = () => {
           const targetImg = target.children[0] as HTMLElement;
           const targetVideo = target.querySelector('video') as HTMLVideoElement;
 
-          console.log('vid', target, targetVideo);
+          // console.log('vid', target, targetVideo);
           targetVideo.pause();
           this.hoverRevealOut(targetImg);
 
