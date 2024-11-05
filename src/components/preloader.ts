@@ -13,7 +13,7 @@ class Preloader {
     const tl = gsap.timeline({
       onComplete: () => {
         console.log('complete');
-        // lenis.start();
+        lenis.start();
       },
     });
 
