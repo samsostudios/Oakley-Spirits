@@ -47,8 +47,6 @@ export const mosaicScroll = () => {
       for (let i = 0; i < this.tracks.length - 1; i++) {
         const item = this.tracks[i];
 
-        // console.log('TT', this.images[i]);
-
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
@@ -56,7 +54,7 @@ export const mosaicScroll = () => {
             end: '90% bottom',
             scrub: true,
             onUpdate: (self) => this.updateBackgroundTransition(self.progress, i),
-            markers: true,
+            // markers: true,
           },
         });
 
@@ -93,8 +91,8 @@ export const mosaicScroll = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: this.component,
-          start: 'top 80%',
-          end: 'top 80%',
+          start: 'top 85%',
+          end: 'top 85%',
           // markers: true,
           toggleActions: 'play none reverse none',
         },

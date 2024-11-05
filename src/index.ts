@@ -28,4 +28,5 @@ window.Webflow.push(() => {
   loadComponent('.overview_component', () => import('$components/scrollScale'));
   loadComponent('.slider_component', () => import('$components/mediaSlider'));
   loadComponent('.mosaic_component', () => import('$components/mosaicScroll'));
+  loadComponent('.shop-slider_component', () => import('$components/shopSlider'));
 });
