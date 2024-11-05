@@ -24,7 +24,7 @@ export const mosaicScroll = () => {
       );
       const bgBase = getComputedStyle(this.component).backgroundColor;
 
-      console.log(this.svgLayers);
+      // console.log(this.svgLayers);
 
       this.bgColors = [
         'rgba(251, 252, 255, 1)',
@@ -44,8 +44,10 @@ export const mosaicScroll = () => {
     }
 
     private setScroller() {
-      for (let i = 0; i < this.tracks.length; i++) {
+      for (let i = 0; i < this.tracks.length - 1; i++) {
         const item = this.tracks[i];
+
+        // console.log('TT', this.images[i]);
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -54,7 +56,7 @@ export const mosaicScroll = () => {
             end: '90% bottom',
             scrub: true,
             onUpdate: (self) => this.updateBackgroundTransition(self.progress, i),
-            // markers: true,
+            markers: true,
           },
         });
 
@@ -82,6 +84,7 @@ export const mosaicScroll = () => {
           color: gsap.utils.interpolate(currentText, nextText, progress),
           overwrite: true,
           duration: 0,
+          ease: 'linear',
         });
       }
     }
@@ -92,7 +95,7 @@ export const mosaicScroll = () => {
           trigger: this.component,
           start: 'top 80%',
           end: 'top 80%',
-          markers: true,
+          // markers: true,
           toggleActions: 'play none reverse none',
         },
       });

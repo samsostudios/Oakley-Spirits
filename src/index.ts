@@ -1,5 +1,6 @@
 import Preloader from '$components/preloader';
 import { loadComponent } from '$utils/loadComponent';
+import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 
 // import { smoothScroll } from '$utils/smoothScroll';
@@ -9,6 +10,7 @@ window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
   // smoothScroll();
+  // lenis.stop();
   if (!VerifyCookie.isVerified()) {
     console.log('no verified cookie found...');
     console.log('load verify module');
@@ -21,6 +23,7 @@ window.Webflow.push(() => {
   }
 
   // loadComponent('.verify_component', () => import('$components/verify'));
+  loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('[data-hover-video]', () => import('$components/hoverVideos'));
   loadComponent('.overview_component', () => import('$components/scrollScale'));
   loadComponent('.slider_component', () => import('$components/mediaSlider'));

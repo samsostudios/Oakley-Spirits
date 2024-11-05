@@ -10,7 +10,12 @@ class Preloader {
     const nav = document.querySelector('.nav_component') as HTMLElement;
 
     const svgPaths = [...document.querySelectorAll('.oa_path')];
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      onComplete: () => {
+        console.log('complete');
+        // lenis.start();
+      },
+    });
 
     tl.set(heroPlace, { opacity: 0, display: 'none' });
     tl.to(verifySection, { duration: 1, display: 'none', opacity: 0, ease: 'power3.inOut' });
@@ -32,7 +37,6 @@ class Preloader {
       '<0.2'
     );
     if (heroVideo) heroVideo.play();
-    lenis.start();
   }
 }
 
