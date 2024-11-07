@@ -3,8 +3,6 @@ import { loadComponent } from '$utils/loadComponent';
 import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 
-// import { smoothScroll } from '$utils/smoothScroll';
-
 window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
@@ -15,11 +13,14 @@ window.Webflow.push(() => {
     console.log('no verified cookie found...');
     console.log('load verify module');
     loadComponent('.verify_component', () => import('$components/verify'));
-    // loadVerificationModule();
   } else {
     console.log('verificatoin found...');
     console.log('load site');
-    Preloader.heroReveal();
+    if (window.location.pathname === '/') Preloader.heroReveal();
+    if (window.location.pathname.includes('checkout')) {
+      lenis.stop();
+      lenis.start();
+    }
   }
 
   // loadComponent('.verify_component', () => import('$components/verify'));
