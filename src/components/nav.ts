@@ -83,7 +83,7 @@ export const nav = () => {
       this.cartButton.addEventListener('click', () => {
         console.log('cart clicked');
         // gsap.to(this.navSpacer, { position: 'absolute' });
-        gsap.set(this.nav, { position: 'sticky' });
+        // gsap.set(this.nav, { position: 'sticky' });
       });
     }
   }
