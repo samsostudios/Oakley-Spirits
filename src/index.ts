@@ -18,10 +18,10 @@ window.Webflow.push(() => {
     console.log('load site');
     if (window.location.pathname === '/') Preloader.heroReveal();
     if (window.location.pathname.includes('checkout')) {
-      lenis.stop();
-      setTimeout(() => {
-        lenis.start();
-      }, 500);
+      // lenis.stop();
+      // setTimeout(() => {
+      //   lenis.start();
+      // }, 500);
     }
   }
 
