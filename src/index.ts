@@ -19,7 +19,9 @@ window.Webflow.push(() => {
     if (window.location.pathname === '/') Preloader.heroReveal();
     if (window.location.pathname.includes('checkout')) {
       lenis.stop();
-      lenis.start();
+      setTimeout(() => {
+        lenis.start();
+      }, 500);
     }
   }
 
@@ -30,4 +32,5 @@ window.Webflow.push(() => {
   loadComponent('.slider_component', () => import('$components/mediaSlider'));
   loadComponent('.mosaic_component', () => import('$components/mosaicScroll'));
   loadComponent('.shop-slider_component', () => import('$components/shopSlider'));
+  loadComponent('.checkout_component', () => import('$components/checkout'));
 });
