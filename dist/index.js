@@ -8369,13 +8369,18 @@
           scaleParent;
           scaleElement;
           scaleFactor;
+          endValues;
           constructor() {
             this.scaleParent = document.querySelector(".section_overview");
             this.scaleElement = document.querySelector("[data-scroll-scale]");
             this.scaleFactor = parseFloat(this.scaleElement.dataset.scrollScale);
+            this.endValues = "120% bottom";
             const bp = breakpoints();
-            if (bp[0] !== "desktop")
-              this.scaleFactor -= 0.25;
+            console.log("BPPPPPP", this.scaleFactor);
+            if (bp[0] !== "desktop") {
+              this.scaleFactor += 0.25;
+              this.endValues = "100% bottom";
+            }
             this.setupScroller();
           }
           setupScroller() {
@@ -8384,9 +8389,9 @@
                 scrollTrigger: {
                   trigger: this.scaleParent,
                   start: "top bottom",
-                  end: "120% bottom",
-                  scrub: true
-                  // markers: true,
+                  end: this.endValues,
+                  scrub: true,
+                  markers: true
                 }
               });
               tl.fromTo(this.scaleElement, { scale: this.scaleFactor }, { scale: 1, ease: "linear" });
@@ -8843,8 +8848,6 @@
       console.log("load site");
       if (window.location.pathname === "/")
         preloader_default.heroReveal();
-      if (window.location.pathname.includes("checkout")) {
-      }
     }
     loadComponent(".nav_component", () => Promise.resolve().then(() => (init_nav(), nav_exports)));
     loadComponent("[data-hover-video]", () => Promise.resolve().then(() => (init_hoverVideos(), hoverVideos_exports)));
