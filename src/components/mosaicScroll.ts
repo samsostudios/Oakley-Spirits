@@ -4,7 +4,7 @@ export const mosaicScroll = () => {
   class MosaicScroll {
     private component: HTMLElement;
     private images: HTMLImageElement[];
-    private svgBG: HTMLElement;
+    private svgBG: HTMLElement[];
     private svgLayers: SVGPathElement[];
     private tracks: HTMLElement[];
     private bgColors: string[];
@@ -12,7 +12,7 @@ export const mosaicScroll = () => {
 
     constructor() {
       this.component = document.querySelector('.mosaic_component') as HTMLElement;
-      this.svgBG = document.querySelector('.mosaic_svg') as HTMLElement;
+      this.svgBG = [...document.querySelectorAll('.mosaic_svg')].map((item) => item as HTMLElement);
       this.images = [...document.querySelectorAll('.mosaic_img')].map(
         (item) => item as HTMLImageElement
       );
