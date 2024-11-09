@@ -10,17 +10,21 @@ export const scrollScale = () => {
     private scaleParent: HTMLElement;
     private scaleElement: HTMLElement;
     private scaleFactor: number;
+    private endValues: string;
 
     constructor() {
       this.scaleParent = document.querySelector('.section_overview') as HTMLElement;
       this.scaleElement = document.querySelector('[data-scroll-scale]') as HTMLElement;
       this.scaleFactor = parseFloat(this.scaleElement.dataset.scrollScale as string);
+      this.endValues = '120% bottom';
 
       const bp = breakpoints();
 
-      if (bp[0] !== 'desktop') this.scaleFactor -= 0.25;
-
-      //   console.log('hh', bp, this.scaleFactor);
+      console.log('BPPPPPP', this.scaleFactor);
+      if (bp[0] !== 'desktop') {
+        this.scaleFactor += 0.25;
+        this.endValues = '100% bottom';
+      }
 
       this.setupScroller();
     }
@@ -31,9 +35,9 @@ export const scrollScale = () => {
           scrollTrigger: {
             trigger: this.scaleParent,
             start: 'top bottom',
-            end: '120% bottom',
+            end: this.endValues,
             scrub: true,
-            // markers: true,
+            markers: true,
           },
         });
 
