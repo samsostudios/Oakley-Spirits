@@ -7354,10 +7354,6 @@
       init_live_reload();
       _VerifyCookie = class {
         // 24 hours in milliseconds
-        /**
-         * Sets the verification status in local storage with an optional TTL (time-to-live).
-         * @param ttl The duration for which the verification status is valid (default is 24 hours).
-         */
         static setVerificationStatus(ttl = _VerifyCookie.defaultTTL) {
           console.log("verified - setting cookie");
           const now = /* @__PURE__ */ new Date();
@@ -7367,10 +7363,6 @@
           };
           localStorage.setItem(_VerifyCookie.storageKey, JSON.stringify(verificationData));
         }
-        /**
-         * Checks if the user is verified and if the verification is still valid.
-         * @returns True if the user is verified and the status is not expired, otherwise false.
-         */
         static isVerified() {
           const data = localStorage.getItem(_VerifyCookie.storageKey);
           if (!data)
@@ -7384,9 +7376,6 @@
           console.log("verifying....", verificationData);
           return verificationData.verified;
         }
-        /**
-         * Clears the verification status from local storage, useful for testing or manual resets.
-         */
         static clearVerificationStatus() {
           console.log("removing cookie");
           localStorage.removeItem(_VerifyCookie.storageKey);
@@ -7445,17 +7434,16 @@
             this.heroPlace = document.querySelector("#heroPlace");
             this.verifyLogo = document.querySelector(".brand_img.is-verify");
             this.transitionVideo = document.querySelector("#verifyTransition");
+            console.log("VERIFY");
             this.init();
           }
           init() {
             smoothScroll_default.stop();
-            this.verifyVideo.addEventListener("loadeddata", () => {
-              console.log("video loaded");
-              this.verifyPlace.style.display = "none";
-              this.verifyVideo.play();
-              this.setListeners();
-              this.verifyReveal();
-            });
+            console.log("VERIFY INIT", this.verifyVideo);
+            this.verifyPlace.style.display = "none";
+            this.verifyVideo.play();
+            this.setListeners();
+            this.verifyReveal();
           }
           setListeners() {
             this.inputs.forEach((input, index) => {
@@ -7466,6 +7454,7 @@
             this.form.addEventListener("submit", (e) => this.verifyAge(e));
           }
           verifyReveal() {
+            console.log("verify reveal");
             const tl = gsapWithCSS.timeline();
             tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: "power3.out" });
             tl.fromTo(
@@ -8537,7 +8526,7 @@
           textColors;
           constructor() {
             this.component = document.querySelector(".mosaic_component");
-            this.svgBG = document.querySelector(".mosaic_svg");
+            this.svgBG = [...document.querySelectorAll(".mosaic_svg")].map((item) => item);
             this.images = [...document.querySelectorAll(".mosaic_img")].map(
               (item) => item
             );
@@ -8827,6 +8816,7 @@
   // src/utils/loadComponent.ts
   init_live_reload();
   var loadComponent = (selector3, importModule) => {
+    console.log("LOAD", selector3);
     const element = document.querySelector(selector3);
     if (element) {
       importModule().then((module) => {
@@ -8841,6 +8831,9 @@
   window.Webflow ||= [];
   window.Webflow.push(() => {
     console.log("/// Oakley ///");
+    window.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
     if (!verifyCookie_default.isVerified()) {
       console.log("no verified cookie found...");
       console.log("load verify module");

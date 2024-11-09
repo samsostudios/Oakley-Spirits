@@ -40,19 +40,28 @@ export const verify = () => {
 
       this.transitionVideo = document.querySelector('#verifyTransition') as HTMLVideoElement;
 
+      console.log('VERIFY');
+
       this.init();
     }
 
     private init() {
       lenis.stop();
 
-      this.verifyVideo.addEventListener('loadeddata', () => {
-        console.log('video loaded');
-        this.verifyPlace.style.display = 'none';
-        this.verifyVideo.play();
-        this.setListeners();
-        this.verifyReveal();
-      });
+      console.log('VERIFY INIT', this.verifyVideo);
+
+      this.verifyPlace.style.display = 'none';
+      this.verifyVideo.play();
+      this.setListeners();
+      this.verifyReveal();
+
+      // this.verifyVideo.addEventListener('loadeddata', () => {
+      //   console.log('video loaded');
+      //   this.verifyPlace.style.display = 'none';
+      //   this.verifyVideo.play();
+      //   this.setListeners();
+      //   this.verifyReveal();
+      // });
     }
 
     private setListeners() {
@@ -66,6 +75,7 @@ export const verify = () => {
     }
 
     private verifyReveal() {
+      console.log('verify reveal');
       const tl = gsap.timeline();
       tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' });
       tl.fromTo(

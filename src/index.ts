@@ -7,6 +7,10 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
+  window.addEventListener('click', (e) => {
+    console.log(e.target);
+  });
+
   // smoothScroll();
   // lenis.stop();
   if (!VerifyCookie.isVerified()) {
