@@ -20,7 +20,7 @@ export const scrollScale = () => {
 
       const bp = breakpoints();
 
-      console.log('BPPPPPP', this.scaleFactor);
+      // console.log('BPPPPPP', this.scaleFactor);
       if (bp[0] !== 'desktop') {
         this.scaleFactor += 0.25;
         this.endValues = '100% bottom';
@@ -37,7 +37,7 @@ export const scrollScale = () => {
             start: 'top bottom',
             end: this.endValues,
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
 
