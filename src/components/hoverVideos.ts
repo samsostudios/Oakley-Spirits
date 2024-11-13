@@ -27,11 +27,8 @@ export const hoverVideos = () => {
       this.hoverElements.forEach((element) => {
         element.addEventListener('mouseenter', (e) => {
           const target = e.target as HTMLElement;
-          const targetImg = target.children[0] as HTMLElement;
-          const targetVideo = target.querySelector('video') as HTMLVideoElement;
 
-          targetVideo.paused ? targetVideo.play() : targetVideo.pause();
-          this.hoverRevealIn(targetImg);
+          this.hoverRevealIn(target);
 
           // console.log('hover in', e.target);
         });
@@ -39,12 +36,10 @@ export const hoverVideos = () => {
       this.hoverElements.forEach((element) => {
         element.addEventListener('mouseout', (e) => {
           const target = e.target as HTMLElement;
-          const targetImg = target.children[0] as HTMLElement;
-          const targetVideo = target.querySelector('video') as HTMLVideoElement;
 
           // console.log('vid', target, targetVideo);
-          targetVideo.pause();
-          this.hoverRevealOut(targetImg);
+
+          this.hoverRevealOut(target);
 
           // console.log('hover out', e.target, targetImg);
         });
@@ -52,12 +47,45 @@ export const hoverVideos = () => {
     }
 
     private hoverRevealIn(element: HTMLElement) {
+      const image = element.children[0] as HTMLElement;
+      const video = element.querySelector('video') as HTMLVideoElement;
+      const hoverElements = [...element.querySelectorAll('.hover_frame-element')].map(
+        (item) => item as HTMLElement
+      );
+
+      console.log(hoverElements);
+
+      video.paused ? video.play() : video.pause();
+
       const tl = gsap.timeline();
-      tl.to(element, { opacity: 0 });
+      tl.to(image, { opacity: 0 });
+      tl.fromTo(
+        hoverElements,
+        { opacity: 0, y: '2rem' },
+        { duration: 1, opacity: 1, y: '0rem', stagger: 0.2, ease: 'power2.out' },
+        '<'
+      );
     }
     private hoverRevealOut(element: HTMLElement) {
+      const image = element.children[0] as HTMLElement;
+      const video = element.querySelector('video') as HTMLVideoElement;
+      const hoverElements = [...element.querySelectorAll('.hover_frame-element')].map(
+        (item) => item as HTMLElement
+      );
+
+      video.pause();
+
       const tl = gsap.timeline();
-      tl.to(element, { opacity: 1 });
+      tl.to(image, { opacity: 1 });
+      tl.to(
+        hoverElements,
+        {
+          duration: 0.5,
+          opacity: 0,
+          ease: 'power4.inOut',
+        },
+        '<'
+      );
     }
   }
   new HoverVideos();
