@@ -7560,6 +7560,283 @@
     }
   });
 
+  // node_modules/@finsweet/ts-utils/dist/animations/index.js
+  var init_animations = __esm({
+    "node_modules/@finsweet/ts-utils/dist/animations/index.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/type-guards/instances.js
+  var init_instances = __esm({
+    "node_modules/@finsweet/ts-utils/dist/type-guards/instances.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/type-guards/primitives.js
+  var init_primitives = __esm({
+    "node_modules/@finsweet/ts-utils/dist/type-guards/primitives.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/type-guards/index.js
+  var init_type_guards = __esm({
+    "node_modules/@finsweet/ts-utils/dist/type-guards/index.js"() {
+      init_live_reload();
+      init_instances();
+      init_primitives();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/webflow/css.js
+  var init_css = __esm({
+    "node_modules/@finsweet/ts-utils/dist/webflow/css.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/helpers/index.js
+  var init_helpers = __esm({
+    "node_modules/@finsweet/ts-utils/dist/helpers/index.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/components/index.js
+  var init_components = __esm({
+    "node_modules/@finsweet/ts-utils/dist/components/index.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/types/apis/Greenhouse.js
+  var init_Greenhouse = __esm({
+    "node_modules/@finsweet/ts-utils/dist/types/apis/Greenhouse.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/types/index.js
+  var init_types = __esm({
+    "node_modules/@finsweet/ts-utils/dist/types/index.js"() {
+      init_live_reload();
+      init_Greenhouse();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/webflow/breakpoints.js
+  var WEBFLOW_BREAKPOINTS;
+  var init_breakpoints = __esm({
+    "node_modules/@finsweet/ts-utils/dist/webflow/breakpoints.js"() {
+      init_live_reload();
+      WEBFLOW_BREAKPOINTS = /* @__PURE__ */ new Map([
+        ["tiny", "(max-width: 479px)"],
+        ["small", "(max-width: 767px)"],
+        ["medium", "(max-width: 991px)"],
+        ["main", "(min-width: 992px)"]
+      ]);
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/webflow/Webflow.js
+  var init_Webflow = __esm({
+    "node_modules/@finsweet/ts-utils/dist/webflow/Webflow.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/webflow/WebflowElements.js
+  var init_WebflowElements = __esm({
+    "node_modules/@finsweet/ts-utils/dist/webflow/WebflowElements.js"() {
+      init_live_reload();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/webflow/index.js
+  var init_webflow = __esm({
+    "node_modules/@finsweet/ts-utils/dist/webflow/index.js"() {
+      init_live_reload();
+      init_breakpoints();
+      init_css();
+      init_Webflow();
+      init_WebflowElements();
+    }
+  });
+
+  // node_modules/@finsweet/ts-utils/dist/index.js
+  var init_dist = __esm({
+    "node_modules/@finsweet/ts-utils/dist/index.js"() {
+      init_live_reload();
+      init_animations();
+      init_components();
+      init_helpers();
+      init_type_guards();
+      init_types();
+      init_webflow();
+    }
+  });
+
+  // src/utils/deviceInfo.ts
+  var breakpoints, isTouchDevice;
+  var init_deviceInfo = __esm({
+    "src/utils/deviceInfo.ts"() {
+      "use strict";
+      init_live_reload();
+      init_dist();
+      breakpoints = () => {
+        let device = "";
+        const wBreakpoints = [...WEBFLOW_BREAKPOINTS];
+        const breakpoints2 = {
+          tiny: 0,
+          small: 0,
+          medium: 0,
+          main: 0
+        };
+        window.addEventListener("resize", () => {
+          init4();
+        });
+        init4();
+        function init4() {
+          for (const i in wBreakpoints) {
+            const nametTemp = wBreakpoints[i][0];
+            const pointTemp = parseInt(wBreakpoints[i][1].split(":")[1].split("p")[0]);
+            breakpoints2[nametTemp] = pointTemp;
+          }
+          const curWidth = window.innerWidth;
+          if (curWidth > breakpoints2.main) {
+            device = "desktop";
+          } else if (curWidth < breakpoints2.main && curWidth > breakpoints2.small) {
+            device = "tablet";
+          } else if (curWidth < breakpoints2.medium && curWidth > breakpoints2.tiny) {
+            device = "mobile-landscape";
+          } else if (curWidth < breakpoints2.small) {
+            device = "mobile-portrait";
+          }
+        }
+        return [device, window.innerWidth, window.innerHeight];
+      };
+      isTouchDevice = () => {
+        return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      };
+    }
+  });
+
+  // src/components/cursor.ts
+  var cursor_exports = {};
+  __export(cursor_exports, {
+    cursor: () => cursor,
+    default: () => cursor_default
+  });
+  var cursor, cursor_default;
+  var init_cursor = __esm({
+    "src/components/cursor.ts"() {
+      "use strict";
+      init_live_reload();
+      init_deviceInfo();
+      init_gsap();
+      cursor = () => {
+        if (isTouchDevice()) {
+          console.log("Touch device detected. Cursor effect disabled.");
+          return;
+        }
+        class CursorInkTrail {
+          pageWrapper;
+          cursorWrapper;
+          trailElements = [];
+          trailLength;
+          positions = [];
+          shrinkTimeout = null;
+          defaultColor;
+          hoverColor;
+          templateElement;
+          constructor() {
+            this.pageWrapper = document.querySelector(".page-wrapper");
+            this.cursorWrapper = document.querySelector(".cursor_component");
+            this.templateElement = document.querySelector(".trail-segment-template");
+            this.trailLength = 50;
+            this.defaultColor = "#751e03";
+            this.hoverColor = "#f18a00";
+            this.init();
+          }
+          init() {
+            for (let i = 0; i < this.trailLength; i++) {
+              this.positions.push({ x: 0, y: 0 });
+            }
+            for (let i = 0; i < this.trailLength; i++) {
+              const segment = this.templateElement.cloneNode(true);
+              segment.style.display = "block";
+              gsapWithCSS.set(segment, { opacity: 1 - i / this.trailLength });
+              this.trailElements.push(segment);
+              this.cursorWrapper.appendChild(segment);
+            }
+            window.addEventListener("mousemove", this.handleMouseMove.bind(this));
+            window.addEventListener("mouseover", this.handleMouseOver.bind(this));
+            window.addEventListener("mouseout", this.handleMouseOut.bind(this));
+          }
+          handleMouseMove(event) {
+            if (this.shrinkTimeout)
+              clearTimeout(this.shrinkTimeout);
+            const lastPosition = this.positions[0];
+            const dx = event.clientX - lastPosition.x;
+            const dy = event.clientY - lastPosition.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const step = 3;
+            if (distance > step) {
+              const steps = Math.ceil(distance / step);
+              for (let i = 1; i <= steps; i++) {
+                this.positions.unshift({
+                  x: lastPosition.x + dx / steps * i,
+                  y: lastPosition.y + dy / steps * i
+                });
+                this.positions.pop();
+              }
+            } else {
+              this.positions.unshift({ x: event.clientX, y: event.clientY });
+              this.positions.pop();
+            }
+            this.trailElements.forEach((segment, index) => {
+              const { x, y } = this.positions[index];
+              gsapWithCSS.to(segment, {
+                x,
+                y,
+                opacity: 1 - index / this.trailLength,
+                duration: 0.2,
+                overwrite: "auto",
+                ease: "power1.out"
+              });
+            });
+            this.shrinkTimeout = window.setTimeout(() => this.shrinkTrail(), 500);
+          }
+          handleMouseOver(event) {
+            const target = event.target.closest("[data-hover-element]");
+            if (target) {
+              this.trailElements.forEach((segment) => {
+                gsapWithCSS.to(segment, { backgroundColor: this.hoverColor, duration: 0.2 });
+              });
+            }
+          }
+          handleMouseOut(event) {
+            const target = event.target.closest("[data-hover-element]");
+            if (target) {
+              this.trailElements.forEach((segment) => {
+                gsapWithCSS.to(segment, { backgroundColor: this.defaultColor, duration: 0.2 });
+              });
+            }
+          }
+          shrinkTrail() {
+            this.trailElements.forEach((segment) => {
+              gsapWithCSS.to(segment, { opacity: 0, duration: 0.3, stagger: 0.2, ease: "power2.out" });
+            });
+          }
+        }
+        new CursorInkTrail();
+      };
+      cursor_default = cursor;
+    }
+  });
+
   // node_modules/gsap/utils/paths.js
   function transformRawPath(rawPath, a, b, c, d, tx, ty) {
     var j = rawPath.length, segment, l, i, x, y;
@@ -8055,6 +8332,7 @@
     "src/components/nav.ts"() {
       "use strict";
       init_live_reload();
+      init_smoothScroll();
       init_gsap();
       init_CustomEase();
       init_ScrollTrigger();
@@ -8063,16 +8341,24 @@
       nav = () => {
         class Nav {
           nav;
+          navMain;
           hero;
           navSpacer;
           navLinks;
           navBrand;
           navCart;
           menuButton;
+          menuCloseButton;
+          cartWrapper;
           cartButton;
           lastViewportHeight;
+          mobileMenuButton;
+          storeHeight;
+          overlayActive;
+          menuActive;
           constructor() {
             this.nav = document.querySelector(".nav_component");
+            this.navMain = document.querySelector(".w-nav-overlay");
             this.hero = document.querySelector(".section_hero");
             this.navSpacer = document.querySelector(".nav_sticky-spacer");
             this.navLinks = [...document.querySelectorAll(".nav_link")].map(
@@ -8081,10 +8367,44 @@
             this.navBrand = document.querySelector(".brand_link");
             this.navCart = document.querySelector(".cart_button");
             this.menuButton = document.querySelector(".menu_button-text");
+            this.menuCloseButton = document.querySelector(".menu_close-button");
+            this.cartWrapper = document.querySelector(".cart_wrapper");
             this.cartButton = document.querySelector(".cart_button");
+            this.mobileMenuButton = document.querySelector(".menu_button");
             this.lastViewportHeight = window.innerHeight;
-            this.cartFix();
+            this.storeHeight = parseInt(getComputedStyle(this.navSpacer).height);
+            this.overlayActive = false;
+            this.menuActive = false;
+            this.setListeners();
             this.scroller();
+          }
+          setListeners() {
+            this.mobileMenuButton.addEventListener("click", () => {
+              this.menuActive = !this.menuActive;
+              this.overlayActive = true;
+              if (this.menuActive === true) {
+                const getHeight = parseFloat(getComputedStyle(this.navSpacer).height);
+                this.storeHeight = getHeight;
+                this.navCollpase(getHeight);
+                this.menuOpen();
+              } else {
+                console.log("expand");
+                this.overlayActive = false;
+                this.navExpand();
+              }
+            });
+            this.cartButton.addEventListener("click", () => {
+              console.log("cart clicked");
+              this.overlayActive = true;
+              const getHeight = parseFloat(getComputedStyle(this.navSpacer).height);
+              this.storeHeight = getHeight;
+              this.navCollpase(getHeight);
+            });
+            this.cartWrapper.addEventListener("click", () => {
+              console.log("close wrapper");
+              this.overlayActive = false;
+              this.navExpand();
+            });
           }
           scroller() {
             const tl = gsapWithCSS.timeline({
@@ -8114,11 +8434,37 @@
               height: "0",
               ease: "power1.out"
             });
+            if (parseInt(getComputedStyle(this.navSpacer).height) > 0 && this.overlayActive === true) {
+              tl.to(this.nav, {
+                top: "0",
+                bottom: "auto",
+                ease: "power2.out"
+              });
+            }
           }
-          cartFix() {
-            this.cartButton.addEventListener("click", () => {
-              console.log("cart clicked");
-            });
+          navCollpase(height) {
+            smoothScroll_default.stop();
+            if (height > 0)
+              gsapWithCSS.to(this.navSpacer, { height: 0, ease: "power2.out" });
+          }
+          navExpand() {
+            if (this.storeHeight > 0)
+              gsapWithCSS.to(this.navSpacer, {
+                height: this.storeHeight,
+                ease: "power2.out",
+                onComplete: () => {
+                  smoothScroll_default.start();
+                }
+              });
+          }
+          menuOpen() {
+            const mobileMenu = document.querySelector(".section_mobile-menu");
+            const tl = gsapWithCSS.timeline();
+          }
+          menuClose() {
+            const mobileMenu = document.querySelector(".section_mobile-menu");
+            const tl = gsapWithCSS.timeline();
+            tl.to(mobileMenu, { display: "none", height: "0" });
           }
         }
         new Nav();
@@ -8159,194 +8505,56 @@
             this.hoverElements.forEach((element) => {
               element.addEventListener("mouseenter", (e) => {
                 const target = e.target;
-                const targetImg = target.children[0];
-                const targetVideo = target.querySelector("video");
-                targetVideo.paused ? targetVideo.play() : targetVideo.pause();
-                this.hoverRevealIn(targetImg);
+                this.hoverRevealIn(target);
               });
             });
             this.hoverElements.forEach((element) => {
               element.addEventListener("mouseout", (e) => {
                 const target = e.target;
-                const targetImg = target.children[0];
-                const targetVideo = target.querySelector("video");
-                targetVideo.pause();
-                this.hoverRevealOut(targetImg);
+                this.hoverRevealOut(target);
               });
             });
           }
           hoverRevealIn(element) {
+            const image = element.children[0];
+            const video = element.querySelector("video");
+            const hoverElements = [...element.querySelectorAll(".hover_frame-element")].map(
+              (item) => item
+            );
+            console.log(hoverElements);
+            video.paused ? video.play() : video.pause();
             const tl = gsapWithCSS.timeline();
-            tl.to(element, { opacity: 0 });
+            tl.to(image, { opacity: 0 });
+            tl.fromTo(
+              hoverElements,
+              { opacity: 0, y: "2rem" },
+              { duration: 1, opacity: 1, y: "0rem", stagger: 0.2, ease: "power2.out" },
+              "<"
+            );
           }
           hoverRevealOut(element) {
+            const image = element.children[0];
+            const video = element.querySelector("video");
+            const hoverElements = [...element.querySelectorAll(".hover_frame-element")].map(
+              (item) => item
+            );
+            video.pause();
             const tl = gsapWithCSS.timeline();
-            tl.to(element, { opacity: 1 });
+            tl.to(image, { opacity: 1 });
+            tl.to(
+              hoverElements,
+              {
+                duration: 0.5,
+                opacity: 0,
+                ease: "power4.inOut"
+              },
+              "<"
+            );
           }
         }
         new HoverVideos();
       };
       hoverVideos_default = hoverVideos;
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/animations/index.js
-  var init_animations = __esm({
-    "node_modules/@finsweet/ts-utils/dist/animations/index.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/type-guards/instances.js
-  var init_instances = __esm({
-    "node_modules/@finsweet/ts-utils/dist/type-guards/instances.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/type-guards/primitives.js
-  var init_primitives = __esm({
-    "node_modules/@finsweet/ts-utils/dist/type-guards/primitives.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/type-guards/index.js
-  var init_type_guards = __esm({
-    "node_modules/@finsweet/ts-utils/dist/type-guards/index.js"() {
-      init_live_reload();
-      init_instances();
-      init_primitives();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/webflow/css.js
-  var init_css = __esm({
-    "node_modules/@finsweet/ts-utils/dist/webflow/css.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/helpers/index.js
-  var init_helpers = __esm({
-    "node_modules/@finsweet/ts-utils/dist/helpers/index.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/components/index.js
-  var init_components = __esm({
-    "node_modules/@finsweet/ts-utils/dist/components/index.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/types/apis/Greenhouse.js
-  var init_Greenhouse = __esm({
-    "node_modules/@finsweet/ts-utils/dist/types/apis/Greenhouse.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/types/index.js
-  var init_types = __esm({
-    "node_modules/@finsweet/ts-utils/dist/types/index.js"() {
-      init_live_reload();
-      init_Greenhouse();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/webflow/breakpoints.js
-  var WEBFLOW_BREAKPOINTS;
-  var init_breakpoints = __esm({
-    "node_modules/@finsweet/ts-utils/dist/webflow/breakpoints.js"() {
-      init_live_reload();
-      WEBFLOW_BREAKPOINTS = /* @__PURE__ */ new Map([
-        ["tiny", "(max-width: 479px)"],
-        ["small", "(max-width: 767px)"],
-        ["medium", "(max-width: 991px)"],
-        ["main", "(min-width: 992px)"]
-      ]);
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/webflow/Webflow.js
-  var init_Webflow = __esm({
-    "node_modules/@finsweet/ts-utils/dist/webflow/Webflow.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/webflow/WebflowElements.js
-  var init_WebflowElements = __esm({
-    "node_modules/@finsweet/ts-utils/dist/webflow/WebflowElements.js"() {
-      init_live_reload();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/webflow/index.js
-  var init_webflow = __esm({
-    "node_modules/@finsweet/ts-utils/dist/webflow/index.js"() {
-      init_live_reload();
-      init_breakpoints();
-      init_css();
-      init_Webflow();
-      init_WebflowElements();
-    }
-  });
-
-  // node_modules/@finsweet/ts-utils/dist/index.js
-  var init_dist = __esm({
-    "node_modules/@finsweet/ts-utils/dist/index.js"() {
-      init_live_reload();
-      init_animations();
-      init_components();
-      init_helpers();
-      init_type_guards();
-      init_types();
-      init_webflow();
-    }
-  });
-
-  // src/utils/deviceInfo.ts
-  var breakpoints;
-  var init_deviceInfo = __esm({
-    "src/utils/deviceInfo.ts"() {
-      "use strict";
-      init_live_reload();
-      init_dist();
-      breakpoints = () => {
-        let device = "";
-        const wBreakpoints = [...WEBFLOW_BREAKPOINTS];
-        const breakpoints2 = {
-          tiny: 0,
-          small: 0,
-          medium: 0,
-          main: 0
-        };
-        window.addEventListener("resize", () => {
-          init4();
-        });
-        init4();
-        function init4() {
-          for (const i in wBreakpoints) {
-            const nametTemp = wBreakpoints[i][0];
-            const pointTemp = parseInt(wBreakpoints[i][1].split(":")[1].split("p")[0]);
-            breakpoints2[nametTemp] = pointTemp;
-          }
-          const curWidth = window.innerWidth;
-          if (curWidth > breakpoints2.main) {
-            device = "desktop";
-          } else if (curWidth < breakpoints2.main && curWidth > breakpoints2.small) {
-            device = "tablet";
-          } else if (curWidth < breakpoints2.medium && curWidth > breakpoints2.tiny) {
-            device = "mobile-landscape";
-          } else if (curWidth < breakpoints2.small) {
-            device = "mobile-portrait";
-          }
-        }
-        return [device, window.innerWidth, window.innerHeight];
-      };
     }
   });
 
@@ -8814,67 +9022,6 @@
     }
   });
 
-  // src/components/cart.ts
-  var cart_exports = {};
-  __export(cart_exports, {
-    cart: () => cart,
-    default: () => cart_default
-  });
-  var cart, cart_default;
-  var init_cart = __esm({
-    "src/components/cart.ts"() {
-      "use strict";
-      init_live_reload();
-      init_smoothScroll();
-      init_gsap();
-      cart = () => {
-        class Cart {
-          navComponent;
-          navSpacer;
-          wrapper;
-          cartButton;
-          isOpen;
-          storeHeight;
-          constructor() {
-            this.navComponent = document.querySelector(".nav_component");
-            this.navSpacer = document.querySelector(".nav_sticky-spacer");
-            this.wrapper = document.querySelector(".cart_wrapper");
-            this.cartButton = document.querySelector(".cart_button");
-            this.isOpen = false;
-            this.storeHeight = window.innerHeight;
-            const cartPane = this.wrapper.children[0];
-            this.wrapper.style.transition = "none";
-            console.log("HERE", this.wrapper, cartPane);
-            this.setListeners();
-          }
-          setListeners() {
-            this.cartButton.addEventListener("click", () => {
-              const getHeight = parseFloat(getComputedStyle(this.navSpacer).height);
-              this.storeHeight = getHeight;
-              this.cartOpen(getHeight);
-              this.isOpen = !this.isOpen;
-            });
-            this.wrapper.addEventListener("click", () => {
-              console.log("close wrapper");
-              this.cartClose();
-            });
-          }
-          cartOpen(height) {
-            if (height > 0)
-              gsapWithCSS.to(this.navSpacer, { height: 0, ease: "power2.out" });
-            console.log("open nav", this.navSpacer, height);
-          }
-          cartClose() {
-            if (this.storeHeight > 0)
-              gsapWithCSS.to(this.navSpacer, { height: this.storeHeight, ease: "power2.out" });
-          }
-        }
-        new Cart();
-      };
-      cart_default = cart;
-    }
-  });
-
   // src/index.ts
   init_live_reload();
   init_preloader();
@@ -8910,6 +9057,7 @@
       if (window.location.pathname === "/")
         preloader_default.heroReveal();
     }
+    loadComponent(".cursor_component", () => Promise.resolve().then(() => (init_cursor(), cursor_exports)));
     loadComponent(".nav_component", () => Promise.resolve().then(() => (init_nav(), nav_exports)));
     loadComponent("[data-hover-video]", () => Promise.resolve().then(() => (init_hoverVideos(), hoverVideos_exports)));
     loadComponent(".overview_component", () => Promise.resolve().then(() => (init_scrollScale(), scrollScale_exports)));
@@ -8917,7 +9065,6 @@
     loadComponent(".mosaic_component", () => Promise.resolve().then(() => (init_mosaicScroll(), mosaicScroll_exports)));
     loadComponent(".shop-slider_component", () => Promise.resolve().then(() => (init_shopSlider(), shopSlider_exports)));
     loadComponent(".checkout_component", () => Promise.resolve().then(() => (init_checkout(), checkout_exports)));
-    loadComponent(".cart_component", () => Promise.resolve().then(() => (init_cart(), cart_exports)));
   });
 })();
 /*! Bundled license information:

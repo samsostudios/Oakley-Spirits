@@ -24,6 +24,7 @@ window.Webflow.push(() => {
   }
 
   // loadComponent('.verify_component', () => import('$components/verify'));
+  loadComponent('.cursor_component', () => import('$components/cursor'));
   loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('[data-hover-video]', () => import('$components/hoverVideos'));
   loadComponent('.overview_component', () => import('$components/scrollScale'));
@@ -31,5 +32,5 @@ window.Webflow.push(() => {
   loadComponent('.mosaic_component', () => import('$components/mosaicScroll'));
   loadComponent('.shop-slider_component', () => import('$components/shopSlider'));
   loadComponent('.checkout_component', () => import('$components/checkout'));
-  loadComponent('.cart_component', () => import('$components/cart'));
+  // loadComponent('.cart_component', () => import('$components/cart'));
 });
