@@ -19,15 +19,15 @@ export const nav = () => {
     private navLinks: HTMLElement[];
     private navBrand: HTMLElement;
     private navCart: HTMLElement;
+    private menuButtonWrap: HTMLElement;
     private menuButton: HTMLElement;
-    private menuCloseButton: HTMLElement;
     private cartWrapper: HTMLElement;
     private cartButton: HTMLElement;
-    private lastViewportHeight: number;
-    private mobileMenuButton: HTMLElement;
     private storeHeight: number;
     private overlayActive: boolean;
     private menuActive: boolean;
+    private menuLabel: HTMLElement;
+    private closeLabel: HTMLElement;
 
     constructor() {
       this.nav = document.querySelector('.nav_component') as HTMLElement;
@@ -39,25 +39,26 @@ export const nav = () => {
       );
       this.navBrand = document.querySelector('.brand_link') as HTMLElement;
       this.navCart = document.querySelector('.cart_button') as HTMLElement;
-      this.menuButton = document.querySelector('.menu_button-text') as HTMLElement;
-      this.menuCloseButton = document.querySelector('.menu_close-button') as HTMLElement;
+      this.menuButtonWrap = document.querySelector('.menu_button-wrap') as HTMLElement;
+      this.menuButton = document.querySelector('.menu_button') as HTMLElement;
       this.cartWrapper = document.querySelector('.cart_wrapper') as HTMLElement;
       this.cartButton = document.querySelector('.cart_button') as HTMLElement;
-      this.mobileMenuButton = document.querySelector('.menu_button') as HTMLElement;
-      this.lastViewportHeight = window.innerHeight;
       this.storeHeight = parseInt(getComputedStyle(this.navSpacer).height);
       this.overlayActive = false;
       this.menuActive = false;
 
-      //   console.log('here', this.navHeight, this.nav);
+      this.menuLabel = this.menuButtonWrap.querySelector('.menu_button.is-open') as HTMLElement;
+      this.closeLabel = this.menuButtonWrap.querySelector('.menu_button.is-close') as HTMLElement;
+
+      gsap.set(this.closeLabel, { display: 'none' });
 
       this.setListeners();
-      // this.cartFix();
       this.scroller();
     }
 
     private setListeners() {
-      this.mobileMenuButton.addEventListener('click', () => {
+      // MENU
+      this.menuButtonWrap.addEventListener('click', () => {
         this.menuActive = !this.menuActive;
         this.overlayActive = true;
 
@@ -69,25 +70,22 @@ export const nav = () => {
         } else {
           console.log('expand');
           this.overlayActive = false;
-          // lenis.start();
           this.navExpand();
-          // this.menuClose();
+          this.menuClose();
         }
       });
 
+      // CART
       this.cartButton.addEventListener('click', () => {
         console.log('cart clicked');
         this.overlayActive = true;
-        // lenis.stop();
         const getHeight = parseFloat(getComputedStyle(this.navSpacer).height);
         this.storeHeight = getHeight;
         this.navCollpase(getHeight);
       });
 
       this.cartWrapper.addEventListener('click', () => {
-        console.log('close wrapper');
         this.overlayActive = false;
-        // lenis.start();
         this.navExpand();
       });
     }
@@ -99,7 +97,7 @@ export const nav = () => {
           start: 'bottom bottom',
           end: 'bottom top',
           scrub: true,
-          markers: true,
+          // markers: true,
           onLeave: () => {
             gsap.to(this.nav, {
               backgroundColor: 'rgba(251, 252, 255, 1)',
@@ -133,16 +131,19 @@ export const nav = () => {
     }
 
     private navCollpase(height: number) {
-      // console.log('open nav', this.navSpacer, height);
       lenis.stop();
-      if (height > 0) gsap.to(this.navSpacer, { height: 0, ease: 'power2.out' });
+      if (height > 0)
+        gsap.to(this.navSpacer, {
+          height: 0,
+          ease: 'expo.out',
+        });
     }
 
     private navExpand() {
       if (this.storeHeight > 0)
         gsap.to(this.navSpacer, {
           height: this.storeHeight,
-          ease: 'power2.out',
+          ease: 'expo.out',
           onComplete: () => {
             lenis.start();
           },
@@ -151,13 +152,60 @@ export const nav = () => {
 
     private menuOpen() {
       const mobileMenu = document.querySelector('.section_mobile-menu');
+      const menuLinks = [...document.querySelectorAll('.mobile-menu_link')];
+      const menuSocials = document.querySelector('.nav_socials');
+      const menuBrand = document.querySelector('.menu_brand');
+
+      this.toggleMenuLabel('close');
+
       const tl = gsap.timeline();
-      // tl.to(mobileMenu, { display: 'block', height: '100svh' });
+      tl.fromTo(
+        mobileMenu,
+        { display: 'none', y: '100vh', scale: 0.7 },
+        { duration: 1.2, display: 'block', y: 0, scale: 1, ease: 'expo.out' }
+      );
+      tl.fromTo(
+        menuBrand,
+        { opacity: 0 },
+        { duration: 1, opacity: 0.1, ease: 'power2.out' },
+        '<.75'
+      );
+      tl.fromTo(
+        menuLinks,
+        { opacity: 0, y: '2rem' },
+        { opacity: 1, y: '0rem', stagger: 0.2, ease: 'power2.inIOut' },
+        '<'
+      );
+      tl.fromTo(
+        menuSocials,
+        { opacity: 0 },
+        { duration: 1, opacity: 1, ease: 'power2.inOut' },
+        '<.5'
+      );
     }
     private menuClose() {
       const mobileMenu = document.querySelector('.section_mobile-menu');
+      this.toggleMenuLabel('menu');
+
       const tl = gsap.timeline();
-      tl.to(mobileMenu, { display: 'none', height: '0' });
+      tl.to(mobileMenu, { display: 'none', y: '100vh', scale: 0.75, ease: 'expo.out' });
+    }
+
+    private toggleMenuLabel(label: 'menu' | 'close') {
+      if (label === 'close') {
+        const tl = gsap.timeline();
+        tl.fromTo(
+          this.closeLabel,
+          { y: '2rem', opacity: 0, display: 'none' },
+          { delay: 0.4, y: 0, opacity: 1, display: 'block', ease: 'power2.out' }
+        );
+        tl.to(this.menuLabel, { y: '-2rem', opacity: 0 }, '<');
+      } else {
+        const tl = gsap.timeline();
+
+        tl.to(this.closeLabel, { y: '2rem', opacity: 0, display: 'none', ease: 'power2.out' });
+        tl.to(this.menuLabel, { y: '0rem', opacity: 1, display: 'block', ease: 'power2.out' }, '<');
+      }
     }
   }
 
