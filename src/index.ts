@@ -32,5 +32,6 @@ window.Webflow.push(() => {
   loadComponent('.mosaic_component', () => import('$components/mosaicScroll'));
   loadComponent('.shop-slider_component', () => import('$components/shopSlider'));
   loadComponent('.checkout_component', () => import('$components/checkout'));
+  loadComponent('.shop_component', () => import('$components/shop'));
   // loadComponent('.cart_component', () => import('$components/cart'));
 });
