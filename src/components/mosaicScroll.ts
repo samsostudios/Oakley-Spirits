@@ -54,7 +54,7 @@ export const mosaicScroll = () => {
             end: '90% bottom',
             scrub: true,
             onUpdate: (self) => this.updateBackgroundTransition(self.progress, i),
-            // markers: true,
+            markers: true,
           },
         });
 

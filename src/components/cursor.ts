@@ -23,7 +23,7 @@ export const cursor = () => {
       this.pageWrapper = document.querySelector('.page-wrapper') as HTMLElement;
       this.cursorWrapper = document.querySelector('.cursor_component') as HTMLElement;
       this.templateElement = document.querySelector('.trail-segment-template') as HTMLElement;
-      this.trailLength = 50;
+      this.trailLength = 10;
       this.defaultColor = '#751e03';
       this.hoverColor = '#f18a00';
 

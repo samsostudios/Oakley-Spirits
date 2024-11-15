@@ -7755,7 +7755,7 @@
             this.pageWrapper = document.querySelector(".page-wrapper");
             this.cursorWrapper = document.querySelector(".cursor_component");
             this.templateElement = document.querySelector(".trail-segment-template");
-            this.trailLength = 50;
+            this.trailLength = 10;
             this.defaultColor = "#751e03";
             this.hoverColor = "#f18a00";
             this.init();
@@ -8822,8 +8822,8 @@
                   start: "top center",
                   end: "90% bottom",
                   scrub: true,
-                  onUpdate: (self) => this.updateBackgroundTransition(self.progress, i)
-                  // markers: true,
+                  onUpdate: (self) => this.updateBackgroundTransition(self.progress, i),
+                  markers: true
                 }
               });
               tl.fromTo(
