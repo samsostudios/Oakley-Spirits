@@ -43,6 +43,7 @@ export const nav = () => {
       this.menuButton = document.querySelector('.menu_button') as HTMLElement;
       this.cartWrapper = document.querySelector('.cart_wrapper') as HTMLElement;
       this.cartButton = document.querySelector('.cart_button') as HTMLElement;
+      this.storeHeight = 0;
       if (this.navSpacer) this.storeHeight = parseInt(getComputedStyle(this.navSpacer).height);
       this.overlayActive = false;
       this.menuActive = false;
