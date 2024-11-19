@@ -9,8 +9,6 @@ export const hoverVideos = () => {
         (item) => item as HTMLElement
       );
 
-      // console.log(this.hoverElements);
-
       this.initVideos();
       this.setListeners();
     }
@@ -19,7 +17,6 @@ export const hoverVideos = () => {
       this.hoverElements.forEach((element) => {
         const video = element.querySelector('video') as HTMLVideoElement;
         video.pause();
-        // console.log('vid', video);
       });
     }
 
@@ -29,19 +26,13 @@ export const hoverVideos = () => {
           const target = e.target as HTMLElement;
 
           this.hoverRevealIn(target);
-
-          // console.log('hover in', e.target);
         });
       });
       this.hoverElements.forEach((element) => {
         element.addEventListener('mouseout', (e) => {
           const target = e.target as HTMLElement;
 
-          // console.log('vid', target, targetVideo);
-
           this.hoverRevealOut(target);
-
-          // console.log('hover out', e.target, targetImg);
         });
       });
     }
@@ -53,7 +44,7 @@ export const hoverVideos = () => {
         (item) => item as HTMLElement
       );
 
-      console.log(hoverElements);
+      // console.log(hoverElements);
 
       video.paused ? video.play() : video.pause();
 

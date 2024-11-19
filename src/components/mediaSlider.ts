@@ -28,14 +28,12 @@ export const mediaSlider = () => {
       this.currentOffset = 0;
       this.pagePadding = 16;
       this.imageSpacing = 16;
-      //   this.pagePadding = getComputedStyle(padElement).padding;
 
       this.setInitialOffset();
       this.setListeners();
     }
 
     private setInitialOffset() {
-      // Initialize the offset with the page padding
       this.currentOffset = 1;
       this.updateTextElements();
       this.labelTotal.textContent = this.formatNumber(this.sliderImages.length);
@@ -77,7 +75,6 @@ export const mediaSlider = () => {
     }
 
     private updateTextElements() {
-      // Update current slide number
       this.labelCurrent.textContent = this.formatNumber(this.curIndex + 1);
     }
 
@@ -86,7 +83,6 @@ export const mediaSlider = () => {
     }
 
     private resizeHandler() {
-      // Reset the current offset and re-calculate based on the current index
       this.currentOffset = 0;
       for (let i = 0; i < this.curIndex; i++) {
         this.currentOffset += this.sliderImages[i].offsetWidth + this.imageSpacing;

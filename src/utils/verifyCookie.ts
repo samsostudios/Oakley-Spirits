@@ -3,7 +3,6 @@ class VerifyCookie {
   private static defaultTTL = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
   public static setVerificationStatus(ttl: number = VerifyCookie.defaultTTL): void {
-    console.log('verified - setting cookie');
     const now = new Date();
     const verificationData = {
       verified: true,

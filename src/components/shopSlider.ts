@@ -34,8 +34,6 @@ export const shopSlider = () => {
       ) as HTMLElement;
       this.labelTotal = document.querySelector('.slider_i-text.is-shop.is-total') as HTMLElement;
 
-      console.log(this.labelTotal);
-
       this.currentIndex = 0;
       this.rotationInterval = 5000;
 
@@ -44,7 +42,7 @@ export const shopSlider = () => {
     }
 
     private setupImages() {
-      for (let i = 0; i < this.imageFeed.length; i++) {
+      for (let i = 0; i < 3; i++) {
         const item = this.imageFeed[i];
         this.bgImages[i].src = item.src;
         this.previewImages[i].src = item.src;
@@ -96,13 +94,11 @@ export const shopSlider = () => {
         }
       });
 
-      // Add 'is-active' to the current preview and animate it
       this.previewWraps[currentIndex].classList.add('is-active');
       gsap.to(this.previewWraps[currentIndex], { borderColor: 'currentColor', duration: 0.5 });
     }
 
     private updateTextElements() {
-      // Update current slide number
       this.labelCurrent.textContent = this.formatNumber(this.currentIndex + 1);
     }
 

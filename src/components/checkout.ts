@@ -28,12 +28,10 @@ export const checkout = () => {
       gsap.set(this.checkoutWrap, { height: '10vh' });
       gsap.set(this.formSections, { display: 'none' });
 
-      // Listen for 'input' event and validate once the full date is entered
       this.verifyButton.addEventListener('click', () => this.validateAge());
     }
 
     private handleDateInput() {
-      // Ensure that the date field is complete (YYYY-MM-DD)
       if (this.dobInput.value.length === 10) {
         this.validateAge();
       }
@@ -41,12 +39,10 @@ export const checkout = () => {
 
     private validateAge() {
       const dob = new Date(this.dobInput.value);
-      console.log('DOB', dob);
       if (this.isOfLegalAge(dob)) {
         this.revealForm();
       } else {
-        // alert('You must be at least 21 years old to proceed.');
-        this.dobInput.value = ''; // Clear the input if underage
+        this.dobInput.value = '';
         this.handleError();
       }
     }
@@ -61,14 +57,7 @@ export const checkout = () => {
       return age > this.minimumAge || (age === this.minimumAge && hasHadBirthdayThisYear);
     }
     private revealForm() {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          //   lenis.stop();
-          //   setTimeout(() => {
-          //     lenis.start();
-          //   }, 5000);
-        },
-      });
+      const tl = gsap.timeline();
       tl.to(this.checkoutWrap, { height: '100%' });
       tl.to(this.errorWrap, { display: 'none', opacity: 0 });
       tl.fromTo(
