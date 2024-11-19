@@ -44,8 +44,6 @@ export const hoverVideos = () => {
         (item) => item as HTMLElement
       );
 
-      // console.log(hoverElements);
-
       video.paused ? video.play() : video.pause();
 
       const tl = gsap.timeline();
