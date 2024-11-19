@@ -69,7 +69,6 @@ export const nav = () => {
           this.navCollpase(getHeight);
           this.menuOpen();
         } else {
-          console.log('expand');
           this.overlayActive = false;
           this.navExpand();
           this.menuClose();
@@ -78,7 +77,6 @@ export const nav = () => {
 
       // CART
       this.cartButton.addEventListener('click', () => {
-        console.log('cart clicked');
         this.overlayActive = true;
         const getHeight = parseFloat(getComputedStyle(this.navSpacer).height);
         this.storeHeight = getHeight;
@@ -122,7 +120,6 @@ export const nav = () => {
       });
 
       if (parseInt(getComputedStyle(this.navSpacer).height) > 0 && this.overlayActive === true) {
-        // console.log('here');
         tl.to(this.nav, {
           top: '0',
           bottom: 'auto',

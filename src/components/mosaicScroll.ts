@@ -22,9 +22,6 @@ export const mosaicScroll = () => {
       this.tracks = [...document.querySelectorAll('.mosaic_spacer')].map(
         (item) => item as HTMLElement
       );
-      const bgBase = getComputedStyle(this.component).backgroundColor;
-
-      // console.log(this.svgLayers);
 
       this.bgColors = [
         'rgba(251, 252, 255, 1)',
@@ -54,7 +51,7 @@ export const mosaicScroll = () => {
             end: '90% bottom',
             scrub: true,
             onUpdate: (self) => this.updateBackgroundTransition(self.progress, i),
-            markers: true,
+            // markers: true,
           },
         });
 

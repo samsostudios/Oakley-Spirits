@@ -20,7 +20,6 @@ export const scrollScale = () => {
 
       const bp = breakpoints();
 
-      // console.log('BPPPPPP', this.scaleFactor);
       if (bp[0] !== 'desktop') {
         this.scaleFactor += 0.25;
         this.endValues = '100% bottom';

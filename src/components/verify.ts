@@ -37,10 +37,7 @@ export const verify = () => {
       this.heroVideo = document.querySelector('#heroVideo') as HTMLVideoElement;
       this.heroPlace = document.querySelector('#heroPlace') as HTMLElement;
       this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
-
       this.transitionVideo = document.querySelector('#verifyTransition') as HTMLVideoElement;
-
-      console.log('VERIFY');
 
       this.init();
     }
@@ -48,20 +45,10 @@ export const verify = () => {
     private init() {
       lenis.stop();
 
-      console.log('VERIFY INIT', this.verifyVideo);
-
       this.verifyPlace.style.display = 'none';
       this.verifyVideo.play();
       this.setListeners();
       this.verifyReveal();
-
-      // this.verifyVideo.addEventListener('loadeddata', () => {
-      //   console.log('video loaded');
-      //   this.verifyPlace.style.display = 'none';
-      //   this.verifyVideo.play();
-      //   this.setListeners();
-      //   this.verifyReveal();
-      // });
     }
 
     private setListeners() {
@@ -75,7 +62,6 @@ export const verify = () => {
     }
 
     private verifyReveal() {
-      console.log('verify reveal');
       const tl = gsap.timeline();
       tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' });
       tl.fromTo(
