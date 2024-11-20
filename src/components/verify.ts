@@ -26,7 +26,7 @@ export const verify = () => {
       this.body = document.querySelector('body') as HTMLElement;
       this.section = document.querySelector('.section_verify') as HTMLElement;
       this.form = document.querySelector('.verify_form') as HTMLFormElement;
-      this.inputs = [...document.querySelectorAll('.verify_input')].map(
+      this.inputs = [...document.querySelectorAll('.verify_input-mask')].map(
         (item) => item as HTMLInputElement
       );
       this.statusContainer = document.querySelector('.verify_status') as HTMLElement;
@@ -52,8 +52,22 @@ export const verify = () => {
     }
 
     private setListeners() {
-      this.inputs.forEach((input, index) => {
+      this.inputs.forEach((inputWrapper, index) => {
+        const input = inputWrapper.querySelector('input') as HTMLInputElement;
+        if (!input) return;
+
         input.style.caretColor = 'var(--palette--white)';
+        input.addEventListener('focus', () => {
+          // Prevent scrolling when keyboard appears
+          document.documentElement.style.overflow = 'hidden';
+          document.body.style.overflow = 'hidden';
+        });
+        input.addEventListener('blur', () => {
+          // Re-enable scrolling after input
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
+        });
+
         input.addEventListener('input', (event) => this.handleInput(event, index));
         input.addEventListener('keydown', (event) => this.handleBackspace(event, index));
       });
@@ -105,9 +119,10 @@ export const verify = () => {
       }
 
       // Move to the next input if there is one
-      const nextInput = this.inputs[index + 1];
-      if (nextInput) {
-        nextInput.focus();
+      const nextInputWrapper = this.inputs[index + 1]?.closest('.verify_input-mask');
+      if (nextInputWrapper) {
+        const nextInput = nextInputWrapper.querySelector('input') as HTMLInputElement;
+        nextInput?.focus();
       }
     }
 
@@ -115,9 +130,10 @@ export const verify = () => {
       const target = event.target as HTMLInputElement;
 
       if ((event.key === 'Backspace' || event.key === 'Delete') && !target.value) {
-        const previousInput = this.inputs[index - 1];
-        if (previousInput) {
-          previousInput.focus();
+        const previousInputWrapper = this.inputs[index - 1]?.closest('.verify_input-mask');
+        if (previousInputWrapper) {
+          const previousInput = previousInputWrapper.querySelector('input') as HTMLInputElement;
+          previousInput?.focus();
           previousInput.value = '';
         }
       }
@@ -125,14 +141,22 @@ export const verify = () => {
 
     private verifyAge(event: Event) {
       event.preventDefault();
+
+      // Collect values from the child input elements inside the wrappers
       const birthYear = Array.from(this.inputs)
-        .map((input) => input.value)
+        .map((wrapper) => {
+          const input = wrapper.querySelector('input') as HTMLInputElement;
+          return input ? input.value.trim() : '';
+        })
         .join('');
 
+      // Ensure the birth year is a valid 4-digit number
       if (birthYear.length !== 4 || !/^\d{4}$/.test(birthYear)) {
         this.displayError('Please enter a valid 4-digit birth year.');
         return;
       }
+
+      console.log('BIRTH', birthYear);
 
       const currentYear = new Date().getFullYear();
       const age = currentYear - parseInt(birthYear);
