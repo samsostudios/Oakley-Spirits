@@ -5,6 +5,8 @@ import { gsap } from 'gsap';
 export const cursor = () => {
   if (isTouchDevice()) {
     console.log('Touch device detected. Cursor effect disabled.');
+    const seg = document.querySelector('.trail-segment-template') as HTMLElement;
+    seg.style.display = 'none';
     return;
   }
 
@@ -42,6 +44,8 @@ export const cursor = () => {
         this.trailElements.push(segment);
         this.cursorWrapper.appendChild(segment);
       }
+
+      this.templateElement.style.display = 'none';
 
       window.addEventListener('mousemove', this.handleMouseMove.bind(this));
       window.addEventListener('mouseover', this.handleMouseOver.bind(this));

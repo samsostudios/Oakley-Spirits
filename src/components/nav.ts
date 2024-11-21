@@ -138,7 +138,7 @@ export const nav = () => {
     }
 
     private navExpand() {
-      if (this.storeHeight > 0)
+      if (this.storeHeight > 0) {
         gsap.to(this.navSpacer, {
           height: this.storeHeight,
           ease: 'expo.out',
@@ -146,6 +146,10 @@ export const nav = () => {
             lenis.start();
           },
         });
+      } else {
+        lenis.start();
+        console.log('scrolled out of hero');
+      }
     }
 
     private menuOpen() {
@@ -181,6 +185,7 @@ export const nav = () => {
         '<.5'
       );
     }
+
     private menuClose() {
       const mobileMenu = document.querySelector('.section_mobile-menu');
       this.toggleMenuLabel('menu');
