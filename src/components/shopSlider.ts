@@ -39,6 +39,8 @@ export const shopSlider = () => {
 
       this.setupImages();
       this.startRotation();
+
+      // gsap.fromTo(this.pIndicators[0], { x: '0%' }, { duration: 10, x: '90%' });
     }
 
     private setupImages() {

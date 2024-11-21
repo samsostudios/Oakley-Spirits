@@ -45,6 +45,8 @@ export const verify = () => {
     private init() {
       lenis.stop();
 
+      document.body.classList.add('lock-scroll');
+
       this.verifyPlace.style.display = 'none';
       this.verifyVideo.play();
       this.setListeners();
@@ -180,7 +182,10 @@ export const verify = () => {
     private successAnimation() {
       const tl = gsap.timeline({
         onComplete: () => {
+          console.log('verify complete');
           Preloader.heroReveal();
+          document.body.classList.remove('lock-scroll');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         },
       });
 
