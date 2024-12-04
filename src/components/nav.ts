@@ -101,6 +101,7 @@ export const nav = () => {
           scrub: true,
           // markers: true,
           onLeave: () => {
+            console.log('leave');
             gsap.to(this.nav, {
               backgroundColor: 'rgba(251, 252, 255, 1)',
             });
@@ -114,7 +115,7 @@ export const nav = () => {
                 this.closeLabel,
               ],
               {
-                color: 'rgba(1, 4, 14, 1)',
+                color: 'rgb(1, 4, 14)',
               }
             );
           },
