@@ -27,5 +27,6 @@ window.Webflow.push(() => {
   loadComponent('.shop-slider_component', () => import('$components/shopSlider'));
   loadComponent('.shop_component', () => import('$components/shop'));
   loadComponent('.product_component', () => import('$components/product'));
+  loadComponent('.banner_component', () => import('$components/banner'));
   // loadComponent('.checkout_component', () => import('$components/checkout'));
 });

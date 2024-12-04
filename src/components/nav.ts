@@ -53,8 +53,6 @@ export const nav = () => {
       gsap.set(this.closeLabel, { display: 'none' });
 
       this.setListeners();
-      // this.scroller();
-
       if (windowLocation === '/') this.scroller();
     }
 
@@ -101,7 +99,6 @@ export const nav = () => {
           scrub: true,
           // markers: true,
           onLeave: () => {
-            console.log('leave');
             gsap.to(this.nav, {
               backgroundColor: 'rgba(251, 252, 255, 1)',
             });

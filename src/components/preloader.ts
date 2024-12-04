@@ -12,7 +12,7 @@ class Preloader {
     const svgPaths = [...document.querySelectorAll('.oa_path')];
     const tl = gsap.timeline({
       onComplete: () => {
-        console.log('complete');
+        console.log('preload complete');
         lenis.start();
       },
     });
