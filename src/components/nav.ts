@@ -30,6 +30,7 @@ export const nav = () => {
     private closeLabel: HTMLElement;
 
     constructor() {
+      // console.log('nav');
       this.nav = document.querySelector('.nav_component') as HTMLElement;
       this.navMain = document.querySelector('.w-nav-overlay') as HTMLElement;
       this.hero = document.querySelector('.section_hero') as HTMLElement;
@@ -96,7 +97,7 @@ export const nav = () => {
           start: 'bottom bottom',
           end: 'bottom top',
           scrub: true,
-          // markers: true,
+          markers: true,
           onLeave: () => {
             gsap.to(this.nav, {
               backgroundColor: 'rgba(251, 252, 255, 1)',
