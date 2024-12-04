@@ -50,8 +50,8 @@ export const hoverVideos = () => {
       tl.to(image, { opacity: 0 });
       tl.fromTo(
         hoverElements,
-        { opacity: 0, y: '2rem' },
-        { duration: 1, opacity: 1, y: '0rem', stagger: 0.2, ease: 'power2.out' },
+        { opacity: 0 },
+        { duration: 0.5, opacity: 1, stagger: 0.2, ease: 'power2.inOut' },
         '<'
       );
     }
@@ -62,7 +62,7 @@ export const hoverVideos = () => {
         (item) => item as HTMLElement
       );
 
-      video.pause();
+      video.paused ? video.play() : video.pause();
 
       const tl = gsap.timeline();
       tl.to(image, { opacity: 1 });
