@@ -10,20 +10,23 @@ window.Webflow.push(() => {
   //   console.log(e.target);
   // });
 
+  const windowLocation = window.location.pathname;
+
   if (!VerifyCookie.isVerified()) {
     loadComponent('.verify_component', () => import('$components/verify'));
   } else {
     if (window.location.pathname === '/') Preloader.heroReveal();
   }
 
+  if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
+
   loadComponent('.cursor_component', () => import('$components/cursor'));
-  loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('[data-hover-video]', () => import('$components/hoverVideos'));
   loadComponent('.overview_component', () => import('$components/scrollScale'));
   loadComponent('.slider_component', () => import('$components/mediaSlider'));
   loadComponent('.mosaic_component', () => import('$components/mosaicScroll'));
   loadComponent('.shop-slider_component', () => import('$components/shopSlider'));
-  loadComponent('.checkout_component', () => import('$components/checkout'));
   loadComponent('.shop_component', () => import('$components/shop'));
   loadComponent('.product_component', () => import('$components/product'));
+  // loadComponent('.checkout_component', () => import('$components/checkout'));
 });
