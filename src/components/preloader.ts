@@ -8,8 +8,9 @@ class Preloader {
     const heroPlace = document.querySelector('#heroPlace') as HTMLElement;
     const heroVideo = document.querySelector('#heroVideo') as HTMLVideoElement;
     const nav = document.querySelector('.nav_component') as HTMLElement;
-
     const svgPaths = [...document.querySelectorAll('.oa_path')];
+    const banner = document.querySelector('.banner_component') as HTMLElement;
+
     const tl = gsap.timeline({
       onComplete: () => {
         console.log('preload complete');
@@ -19,6 +20,13 @@ class Preloader {
 
     tl.set(heroPlace, { opacity: 0, display: 'none' });
     tl.to(verifySection, { duration: 1, display: 'none', opacity: 0, ease: 'power3.inOut' });
+    if (banner)
+      tl.fromTo(
+        banner,
+        { opacity: 0, y: '-3rem', height: 0 },
+        { duration: 2, opacity: 1, y: '0rem', height: '3rem', ease: 'power3.out' },
+        '<'
+      );
     tl.fromTo(
       svgPaths,
       { y: '4rem', opacity: 0 },
@@ -28,7 +36,8 @@ class Preloader {
         opacity: 1,
         stagger: 0.2,
         ease: 'power1.out',
-      }
+      },
+      '<'
     );
     tl.fromTo(
       nav,
@@ -36,6 +45,7 @@ class Preloader {
       { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
       '<0.2'
     );
+
     if (heroVideo) heroVideo.play();
   }
 }
