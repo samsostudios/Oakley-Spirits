@@ -97,7 +97,7 @@ export const nav = () => {
           start: 'bottom bottom',
           end: 'bottom top',
           scrub: true,
-          markers: true,
+          // markers: true,
           onLeave: () => {
             gsap.to(this.nav, {
               backgroundColor: 'rgba(251, 252, 255, 1)',
