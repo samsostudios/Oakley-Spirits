@@ -5,9 +5,6 @@ import { CustomEase } from 'gsap/CustomEase';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
-
-// Create the GSAP custom ease
-// CustomEase.create('customEasing', `M0,0 C${points.join(',')} 1,1`);
 gsap.registerPlugin(CustomEase);
 
 export const nav = () => {
@@ -30,7 +27,6 @@ export const nav = () => {
     private closeLabel: HTMLElement;
 
     constructor() {
-      // console.log('nav');
       this.nav = document.querySelector('.nav_component') as HTMLElement;
       this.navMain = document.querySelector('.w-nav-overlay') as HTMLElement;
       this.hero = document.querySelector('.section_hero') as HTMLElement;
@@ -52,10 +48,14 @@ export const nav = () => {
       this.menuLabel = this.menuButtonWrap.querySelector('.menu_button.is-open') as HTMLElement;
       this.closeLabel = this.menuButtonWrap.querySelector('.menu_button.is-close') as HTMLElement;
 
+      const windowLocation = window.location.pathname;
+
       gsap.set(this.closeLabel, { display: 'none' });
 
       this.setListeners();
-      this.scroller();
+      // this.scroller();
+
+      if (windowLocation === '/') this.scroller();
     }
 
     private setListeners() {
@@ -65,9 +65,11 @@ export const nav = () => {
         this.overlayActive = true;
 
         if (this.menuActive === true) {
-          const getHeight = parseFloat(getComputedStyle(this.navSpacer).height);
-          this.storeHeight = getHeight;
-          this.navCollpase(getHeight);
+          if (this.navSpacer) {
+            const getHeight = parseFloat(getComputedStyle(this.navSpacer).height);
+            this.storeHeight = getHeight;
+            this.navCollpase(getHeight);
+          }
           this.menuOpen();
         } else {
           this.overlayActive = false;
@@ -102,15 +104,35 @@ export const nav = () => {
             gsap.to(this.nav, {
               backgroundColor: 'rgba(251, 252, 255, 1)',
             });
-            gsap.to([this.navLinks, this.navBrand, this.navCart, this.menuButton], {
-              color: 'rgba(1, 4, 14, 1)',
-            });
+            gsap.to(
+              [
+                this.navLinks,
+                this.navBrand,
+                this.navCart,
+                this.menuButton,
+                this.menuLabel,
+                this.closeLabel,
+              ],
+              {
+                color: 'rgba(1, 4, 14, 1)',
+              }
+            );
           },
           onEnterBack: () => {
             gsap.to(this.nav, { backgroundColor: 'transparent' });
-            gsap.to([this.navLinks, this.navBrand, this.navCart, this.menuButton], {
-              color: 'rgba(233, 236, 243, 1)',
-            });
+            gsap.to(
+              [
+                this.navLinks,
+                this.navBrand,
+                this.navCart,
+                this.menuButton,
+                this.menuLabel,
+                this.closeLabel,
+              ],
+              {
+                color: 'rgba(233, 236, 243, 1)',
+              }
+            );
           },
         },
       });

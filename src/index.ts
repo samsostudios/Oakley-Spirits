@@ -6,11 +6,9 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
-  // window.addEventListener('click', (e) => {
-  //   console.log(e.target);
-  // });
-
-  const windowLocation = window.location.pathname;
+  window.addEventListener('click', (e) => {
+    console.log(e.target);
+  });
 
   if (!VerifyCookie.isVerified()) {
     loadComponent('.verify_component', () => import('$components/verify'));
@@ -18,8 +16,9 @@ window.Webflow.push(() => {
     if (window.location.pathname === '/') Preloader.heroReveal();
   }
 
-  if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
+  // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
 
+  loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('.cursor_component', () => import('$components/cursor'));
   loadComponent('[data-hover-video]', () => import('$components/hoverVideos'));
   loadComponent('.overview_component', () => import('$components/scrollScale'));
