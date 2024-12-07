@@ -19,6 +19,7 @@ window.Webflow.push(() => {
   // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
 
   loadComponent('.nav_component', () => import('$components/nav'));
+  loadComponent('.transition_component', () => import('$components/pageTransition'));
   loadComponent('.cursor_component', () => import('$components/cursor'));
   loadComponent('[data-hover-video]', () => import('$components/hoverVideos'));
   loadComponent('.overview_component', () => import('$components/scrollScale'));
