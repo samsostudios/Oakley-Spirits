@@ -35,7 +35,8 @@ export const pageTransition = () => {
       const windowLocation = window.location.pathname;
 
       if (windowLocation === '/') {
-        gsap.set(this.transitionElement, { display: 'none' });
+        gsap.to(this.transitionElement, { duration: 0.5, display: 'none', opacity: 0 });
+        gsap.to(this.transitionLogos, { duration: 0.5, display: 'none', opacity: 0 });
       } else {
         this.animateOut();
       }
@@ -71,7 +72,7 @@ export const pageTransition = () => {
       tl.to(this.transitionLogos, {
         duration: 0.3,
         opacity: 0,
-        y: '-5rem',
+        y: '-100%',
         ease: 'circ.out',
         stagger: 0.08,
       });
@@ -80,14 +81,9 @@ export const pageTransition = () => {
         { duration: 1, scale: 0.6, opacity: 1, y: '-100%', ease: 'power2.inOut' },
         '<.5'
       );
-
-      //   tl.to(this.transitionElement, {
-      //     delay: 0.5,
-      //     duration: 0.5,
-      //     opacity: 0,
-      //     display: 'none',
-      //     ease: 'power3.out',
-      //   });
+      tl.to(this.transitionElement, {
+        display: 'none',
+      });
     }
 
     private animateIn(link: string) {
@@ -107,8 +103,8 @@ export const pageTransition = () => {
       );
       tl.fromTo(
         this.transitionLogos,
-        { y: '5rem', opacity: 0 },
-        { duration: 0.3, opacity: 1, y: '0rem', ease: 'circ.out', stagger: 0.08 },
+        { y: '50%', opacity: 0 },
+        { duration: 0.3, opacity: 1, y: '0%', ease: 'circ.out', stagger: 0.08 },
         '<.5'
       );
     }
