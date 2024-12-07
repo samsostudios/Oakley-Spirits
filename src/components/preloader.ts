@@ -14,12 +14,19 @@ class Preloader {
     const tl = gsap.timeline({
       onComplete: () => {
         console.log('preload complete');
+        tl.set(heroPlace, { zIndex: 1 });
         lenis.start();
       },
     });
 
-    tl.set(heroPlace, { opacity: 0, display: 'none' });
-    tl.to(verifySection, { duration: 1, display: 'none', opacity: 0, ease: 'power3.inOut' });
+    // tl.set(heroPlace, { opacity: 0, display: 'none' });
+    tl.to(verifySection, {
+      delay: 0.2,
+      duration: 1.5,
+      display: 'none',
+      opacity: 0,
+      ease: 'power3.inOut',
+    });
     if (banner)
       tl.fromTo(
         banner,
