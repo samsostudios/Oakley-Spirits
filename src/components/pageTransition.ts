@@ -24,23 +24,23 @@ export const pageTransition = () => {
         (item) => item as HTMLElement
       );
 
-      //   console.log('"LINKS', this.links, this.filteredLinks);
-
       this.setListeners();
       this.checkPage();
-      //   this.animateOut();
     }
 
     private checkPage() {
       const windowLocation = window.location.pathname;
 
       if (windowLocation === '/') {
-        gsap.to(this.transitionElement, { duration: 0.5, display: 'none', opacity: 0 });
-        gsap.to(this.transitionLogos, { duration: 0.5, display: 'none', opacity: 0 });
+        const tl = gsap.timeline({
+          onComplete: () => {
+            gsap.set(this.transitionElement, { opacity: 1 });
+          },
+        });
+        tl.to(this.transitionElement, { duration: 0.5, opacity: 0, display: 'none' });
       } else {
         this.animateOut();
       }
-      console.log('LOC', windowLocation);
     }
 
     private setListeners() {
@@ -79,7 +79,7 @@ export const pageTransition = () => {
       tl.to(
         this.transitionWrap,
         { duration: 1, scale: 0.6, opacity: 1, y: '-100%', ease: 'power2.inOut' },
-        '<.5'
+        '<'
       );
       tl.to(this.transitionElement, {
         display: 'none',
@@ -103,7 +103,7 @@ export const pageTransition = () => {
       );
       tl.fromTo(
         this.transitionLogos,
-        { y: '50%', opacity: 0 },
+        { y: '100%', opacity: 0 },
         { duration: 0.3, opacity: 1, y: '0%', ease: 'circ.out', stagger: 0.08 },
         '<.5'
       );
