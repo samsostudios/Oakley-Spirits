@@ -45,12 +45,19 @@ export const verify = () => {
     private init() {
       lenis.stop();
 
-      document.body.classList.add('lock-scroll');
+      this.verifyVideo.addEventListener('loadeddata', () => {
+        console.log('video loaded');
+        this.verifyPlace.style.display = 'none';
+        this.verifyVideo.play();
+        this.setListeners();
+        this.verifyReveal();
+        document.body.classList.add('lock-scroll');
+      });
 
-      this.verifyPlace.style.display = 'none';
-      this.verifyVideo.play();
-      this.setListeners();
-      this.verifyReveal();
+      // this.verifyPlace.style.display = 'none';
+      // this.verifyVideo.play();
+      // this.setListeners();
+      // this.verifyReveal();
     }
 
     private setListeners() {
@@ -79,7 +86,6 @@ export const verify = () => {
 
     private verifyReveal() {
       const tl = gsap.timeline();
-      tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' });
       tl.fromTo(
         this.inputs,
         {
@@ -87,8 +93,7 @@ export const verify = () => {
           opacity: 0,
         },
         { duration: 1.2, y: '0rem', opacity: 1, stagger: 0.2, ease: 'power3.out' }
-      ),
-        '< ';
+      );
       tl.fromTo(
         document.querySelector('.verify_wrap'),
         {
@@ -98,6 +103,7 @@ export const verify = () => {
         { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
         '<0.2'
       );
+      tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' });
     }
 
     private handleInput(event: Event, index: number) {

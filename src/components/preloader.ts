@@ -19,7 +19,7 @@ class Preloader {
       },
     });
 
-    // tl.set(heroPlace, { opacity: 0, display: 'none' });
+    tl.set(heroPlace, { opacity: 0, display: 'none' });
     tl.to(verifySection, {
       delay: 0.2,
       duration: 1.5,
