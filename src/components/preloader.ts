@@ -13,7 +13,7 @@ class Preloader {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        console.log('preload complete');
+        // console.log('preload complete');
         tl.set(heroPlace, { zIndex: 1 });
         lenis.start();
       },

@@ -24,6 +24,8 @@ export const pageTransition = () => {
         (item) => item as HTMLElement
       );
 
+      // console.log('links', this.filteredLinks);
+
       this.setListeners();
       this.checkPage();
     }
