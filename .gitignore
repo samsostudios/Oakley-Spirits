@@ -24,5 +24,8 @@ typings/
 # dotenv environment variables file
 .env
 
+#Firebase
+src/utils/firebase/firebaseConfig.ts
+
 # Production files
 #dist
