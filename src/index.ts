@@ -2,7 +2,8 @@
 import Preloader from '$components/preloader';
 import { loadComponent } from '$utils/loadComponent';
 import VerifyCookie from '$utils/verifyCookie';
-import { Raffle } from './raffle/raffle';
+
+// import { Raffle } from './raffle/raffle';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -34,8 +35,8 @@ window.Webflow.push(() => {
   // loadComponent('.checkout_component', () => import('$components/checkout'));
 
   // Raffle
-  const raffleInstance = new Raffle();
-  setTimeout(() => {
-    raffleInstance.startRaffle();
-  }, 2000);
+  // const raffleInstance = new Raffle();
+  // setTimeout(() => {
+  //   raffleInstance.startRaffle();
+  // }, 2000);
 });
