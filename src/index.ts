@@ -3,6 +3,8 @@ import Preloader from '$components/preloader';
 import { loadComponent } from '$utils/loadComponent';
 import VerifyCookie from '$utils/verifyCookie';
 
+// import { startRaffle, drawWinner } from './raffle/raffle';
+
 // import { Raffle } from './raffle/raffle';
 
 window.Webflow ||= [];
@@ -35,6 +37,13 @@ window.Webflow.push(() => {
   // loadComponent('.checkout_component', () => import('$components/checkout'));
 
   // Raffle
+  // const startButton = document.getElementById('start-raffle');
+  // if (startButton) {
+  //   startButton.addEventListener('click', async () => {
+  //     console.log('🟢 Start Raffle button clicked!');
+  //     await startRaffle();
+  //   });
+  // }
   // const raffleInstance = new Raffle();
   // setTimeout(() => {
   //   raffleInstance.startRaffle();

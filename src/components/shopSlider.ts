@@ -70,8 +70,6 @@ export const shopSlider = () => {
         this.updateImages(previousIndex, this.currentIndex);
         this.setActivePreview(this.currentIndex);
         this.updateTextElements();
-
-        gsap.set(this.pIndicators[previousIndex], { x: '0%' });
       }, this.rotationInterval);
     }
 
@@ -81,10 +79,21 @@ export const shopSlider = () => {
     }
 
     private updateIndicator(currentIndex: number) {
-      gsap.fromTo(
+      console.log('update', this.currentIndex);
+      const tl = gsap.timeline({
+        onComplete: () => {
+          gsap.to(this.pIndicators[currentIndex], { duration: 0, x: '0%', ease: 'linear' });
+        },
+      });
+
+      tl.fromTo(
         this.pIndicators[currentIndex],
         { x: '0%' },
-        { duration: this.rotationInterval / 1000, x: '100%', ease: 'linear' }
+        {
+          duration: this.rotationInterval / 1000,
+          x: '100%',
+          ease: 'linear',
+        }
       );
     }
 
