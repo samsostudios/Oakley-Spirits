@@ -1,7 +1,9 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import fetch from 'node-fetch';
+/* eslint-disable @typescript-eslint/no-var-requires */
+// import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+const fetch = require('node-fetch');
+
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
@@ -49,4 +51,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.error('Server Error!', error);
     return res.status(500).json({ message: 'Internal Server Error' });
   }
-}
+};
