@@ -1,6 +1,7 @@
 {
   "extends": "@finsweet/tsconfig",
   "compilerOptions": {
+    "verbatimModuleSyntax": true,
     "ignoreDeprecations": "5.0",
     "rootDir": ".",
     "baseUrl": "./",

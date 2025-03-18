@@ -32,6 +32,7 @@ window.Webflow.push(() => {
   loadComponent('.shop_component', () => import('$components/shop'));
   loadComponent('.product_component', () => import('$components/product'));
   loadComponent('.banner_component', () => import('$components/banner'));
+  loadComponent('[data-mail-form]', () => import('$utils/formHandler'));
   // loadComponent('.checkout_component', () => import('$components/checkout'));
 
   // Raffle
