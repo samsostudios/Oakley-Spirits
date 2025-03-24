@@ -79,7 +79,7 @@ export const shopSlider = () => {
     }
 
     private updateIndicator(currentIndex: number) {
-      console.log('update', this.currentIndex);
+      // console.log('update', this.currentIndex);
       const tl = gsap.timeline({
         onComplete: () => {
           gsap.to(this.pIndicators[currentIndex], { duration: 0, x: '0%', ease: 'linear' });
