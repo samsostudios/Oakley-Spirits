@@ -3,15 +3,17 @@ import { gsap } from 'gsap';
 export const formHandler = () => {
   class FormHandler {
     private form: HTMLFormElement;
+    private formWrap: HTMLElement;
     private successElement: HTMLElement;
     private errorElement: HTMLElement;
 
     constructor() {
       this.form = document.querySelector('[data-mail-form]') as HTMLFormElement;
+      this.formWrap = this.form.querySelector('.newsletter_form') as HTMLElement;
       this.successElement = this.form.querySelector('.newsletter_success') as HTMLElement;
       this.errorElement = this.form.querySelector('.form_message-error') as HTMLElement;
 
-      console.log('FORM', this.form);
+      // console.log('FORM', this.form);
 
       this.setListener();
       this.resetFormStatus();
@@ -19,7 +21,7 @@ export const formHandler = () => {
 
     private setListener() {
       this.form.addEventListener('submit', async (e: Event) => {
-        console.log('submit initiated');
+        // console.log('submit initiated');
         e.preventDefault();
 
         const input = document.querySelector('input[name=Email]') as HTMLInputElement;
@@ -27,8 +29,8 @@ export const formHandler = () => {
         // console.log('INOUT', input, email);
 
         if (!email || !this.isValidEmail(email)) {
-          this.showError();
-          console.log('FORM ERROR');
+          this.showError('Please enter a valid email');
+          // console.log('Code email check error');
           return;
         }
 
@@ -45,15 +47,25 @@ export const formHandler = () => {
           );
 
           const data = await response.json();
-          console.log('DATA', data);
+          // console.log('DATA', data);
 
           if (!response.ok) {
-            const err = data.error.detail;
+            let err = data.error.detail;
+            const errTitle = data.error.title;
+
+            if (errTitle === 'Member Exists') {
+              err = 'You are already a member!';
+              this.errorElement.style.backgroundColor = '#F18A00';
+            } else {
+              this.errorElement.style.backgroundColor = '#751E03';
+            }
             this.showError(err);
-            console.log('API Error', err);
+          } else {
+            this.showSuccess();
           }
         } catch (error) {
-          console.log('API Error!!!', error);
+          console.log('Network Error!!!', error);
+          this.showError('Network error. Please try again later.');
         }
       });
     }
@@ -64,7 +76,10 @@ export const formHandler = () => {
     }
 
     private showSuccess() {
-      gsap.to(this.successElement, { display: 'block' });
+      this.resetFormStatus();
+      const tl = gsap.timeline();
+      tl.to(this.formWrap, { display: 'none' });
+      tl.to(this.successElement, { display: 'block' });
     }
 
     private showError(msg: string) {
