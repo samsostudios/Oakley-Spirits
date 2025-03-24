@@ -21,7 +21,6 @@ export const formHandler = () => {
 
     private setListener() {
       this.form.addEventListener('submit', async (e: Event) => {
-        // console.log('submit initiated');
         e.preventDefault();
 
         const input = document.querySelector('input[name=Email]') as HTMLInputElement;
