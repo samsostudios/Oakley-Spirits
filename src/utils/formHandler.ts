@@ -6,14 +6,18 @@ export const formHandler = () => {
     private formWrap: HTMLElement;
     private successElement: HTMLElement;
     private errorElement: HTMLElement;
+    private formButton: HTMLInputElement;
+    private endpoint: string;
 
     constructor() {
+      this.formWrap = document.querySelector('.newsletter_form-wrap') as HTMLElement;
       this.form = document.querySelector('[data-mail-form]') as HTMLFormElement;
-      this.formWrap = this.form.querySelector('.newsletter_form') as HTMLElement;
-      this.successElement = this.form.querySelector('.newsletter_success') as HTMLElement;
-      this.errorElement = this.form.querySelector('.form_message-error') as HTMLElement;
+      this.successElement = this.formWrap.querySelector('.newsletter_success') as HTMLElement;
+      this.errorElement = this.formWrap.querySelector('.form_message-error') as HTMLElement;
+      this.formButton = this.form.querySelector('input[type=submit]') as HTMLInputElement;
+      this.endpoint = this.form.action;
 
-      // console.log('FORM', this.form);
+      // console.log('FORM', this.form, this.formButton);
 
       this.setListener();
       this.resetFormStatus();
@@ -25,6 +29,8 @@ export const formHandler = () => {
 
         const input = document.querySelector('input[name=Email]') as HTMLInputElement;
         const email = input.value.trim();
+
+        this.formButton.value = 'Submitting...';
         // console.log('INOUT', input, email);
 
         if (!email || !this.isValidEmail(email)) {
@@ -36,14 +42,11 @@ export const formHandler = () => {
         const payload = { email };
 
         try {
-          const response = await fetch(
-            'https://oakley-backend-1c0qwuefg-samsos-projects-132b9b87.vercel.app/api/subscribe',
-            {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-            }
-          );
+          const response = await fetch(this.endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
 
           const data = await response.json();
           // console.log('DATA', data);
@@ -77,14 +80,16 @@ export const formHandler = () => {
     private showSuccess() {
       this.resetFormStatus();
       const tl = gsap.timeline();
-      tl.to(this.formWrap, { display: 'none' });
+      tl.to(this.form, { display: 'none' });
       tl.to(this.successElement, { display: 'block' });
+      this.formButton.value = 'Submit';
     }
 
     private showError(msg: string) {
       const errorText = this.errorElement.children[0] as HTMLElement;
       errorText.innerHTML = msg;
       gsap.to(this.errorElement, { display: 'block' });
+      this.formButton.value = 'Submit';
     }
 
     private resetFormStatus() {
