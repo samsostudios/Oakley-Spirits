@@ -14,17 +14,21 @@ export const pageTransition = () => {
       this.links = [...document.querySelectorAll('a')].map((item) => item as HTMLAnchorElement);
       this.filteredLinks = this.links.filter((link: HTMLAnchorElement) => {
         const temp = new URL(link.href, window.location.origin); // Create a URL object from the anchor's href
-        return (
-          temp.hostname === window.location.host &&
-          !temp.href.includes('#') &&
-          link.target !== '_blank'
-        );
+        const classList = link.className;
+
+        const isInternal = temp.hostname === window.location.host;
+        const isNotAnchor = !temp.href.includes('#');
+        const isNotExternal = link.target !== '_blank';
+
+        const isExcluded = /(w-commerce|cart_)/.test(classList);
+
+        return isInternal && isNotAnchor && isNotExternal && !isExcluded;
       });
       this.transitionLogos = [...document.querySelectorAll('.preload_path')].map(
         (item) => item as HTMLElement
       );
 
-      // console.log('links', this.filteredLinks);
+      console.log('links', this.filteredLinks);
 
       this.setListeners();
       this.checkPage();
