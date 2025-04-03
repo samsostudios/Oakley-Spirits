@@ -11,9 +11,9 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
-  // window.addEventListener('click', (e) => {
-  //   console.log(e.target);
-  // });
+  window.addEventListener('click', (e) => {
+    console.log(e.target);
+  });
 
   if (!VerifyCookie.isVerified()) {
     loadComponent('.verify_component', () => import('$components/verify'));

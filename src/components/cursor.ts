@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 
 export const cursor = () => {
   if (isTouchDevice()) {
-    console.log('Touch device detected. Cursor effect disabled.');
+    // console.log('Touch device detected. Cursor effect disabled.');
     const seg = document.querySelector('.trail-segment-template') as HTMLElement;
     seg.style.display = 'none';
     return;

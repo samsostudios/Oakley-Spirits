@@ -7,35 +7,23 @@ import { gsap } from 'gsap';
 
 export const verify = () => {
   class Verify {
-    private body: HTMLElement;
-    private section: HTMLElement;
     private form: HTMLElement;
     private inputs: HTMLInputElement[];
     private statusContainer: HTMLElement;
     private verifyVideo: HTMLVideoElement;
     private verifyPlace: HTMLElement;
-    private heroVideo: HTMLVideoElement;
-    private heroPlace: HTMLElement;
     private verifyLogo: HTMLElement;
-    private background: HTMLElement;
-    private transition: HTMLElement;
 
     private transitionVideo: HTMLVideoElement;
 
     constructor() {
-      this.body = document.querySelector('body') as HTMLElement;
-      this.section = document.querySelector('.section_verify') as HTMLElement;
       this.form = document.querySelector('.verify_form') as HTMLFormElement;
       this.inputs = [...document.querySelectorAll('.verify_input-mask')].map(
         (item) => item as HTMLInputElement
       );
       this.statusContainer = document.querySelector('.verify_status') as HTMLElement;
-      this.background = document.querySelector('.vim_embed.is-abs.is-bg') as HTMLElement;
-      this.transition = document.querySelector('.vim_embed.is-abs.is-transition') as HTMLElement;
       this.verifyVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
       this.verifyPlace = document.querySelector('#verifyPlace') as HTMLElement;
-      this.heroVideo = document.querySelector('#heroVideo') as HTMLVideoElement;
-      this.heroPlace = document.querySelector('#heroPlace') as HTMLElement;
       this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
       this.transitionVideo = document.querySelector('#verifyTransition') as HTMLVideoElement;
 
@@ -44,20 +32,21 @@ export const verify = () => {
 
     private init() {
       lenis.stop();
+      document.body.classList.add('lock-scroll');
 
-      this.verifyVideo.addEventListener('loadeddata', () => {
-        console.log('video loaded');
-        this.verifyPlace.style.display = 'none';
-        this.verifyVideo.play();
-        this.setListeners();
-        this.verifyReveal();
-        document.body.classList.add('lock-scroll');
+      this.verifyVideo.addEventListener('canplay', () => {
+        console.log('[Debug] Video is ready to play');
+        this.handleVideoReady();
       });
 
-      // this.verifyPlace.style.display = 'none';
-      // this.verifyVideo.play();
-      // this.setListeners();
-      // this.verifyReveal();
+      if (this.verifyVideo.readyState >= 3) {
+        console.log('[Debug] Video was already loaded');
+
+        this.handleVideoReady();
+      }
+
+      this.setListeners();
+      this.verifyReveal();
     }
 
     private setListeners() {
@@ -84,6 +73,18 @@ export const verify = () => {
       this.form.addEventListener('submit', (e) => this.verifyAge(e));
     }
 
+    private handleVideoReady() {
+      this.verifyPlace.style.display = 'none';
+      this.verifyVideo
+        .play()
+        .then(() => {
+          console.log('🎥 video started playing');
+        })
+        .catch((e) => {
+          console.warn('⛔️ Autoplay blocked:', e.name, e.message);
+        });
+    }
+
     private verifyReveal() {
       const tl = gsap.timeline();
       tl.fromTo(
@@ -103,7 +104,7 @@ export const verify = () => {
         { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
         '<0.2'
       );
-      tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' });
+      tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' }, '<0.5');
     }
 
     private handleInput(event: Event, index: number) {
@@ -149,6 +150,7 @@ export const verify = () => {
 
     private verifyAge(event: Event) {
       event.preventDefault();
+      event.stopPropagation();
 
       // Collect values from the child input elements inside the wrappers
       const birthYear = Array.from(this.inputs)
@@ -163,8 +165,6 @@ export const verify = () => {
         this.displayError('Please enter a valid 4-digit birth year.');
         return;
       }
-
-      console.log('BIRTH', birthYear);
 
       const currentYear = new Date().getFullYear();
       const age = currentYear - parseInt(birthYear);
@@ -190,7 +190,7 @@ export const verify = () => {
         onComplete: () => {
           console.log('verify complete');
           Preloader.heroReveal();
-          document.body.classList.remove('lock-scroll');
+          // document.body.classList.remove('lock-scroll');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         },
       });

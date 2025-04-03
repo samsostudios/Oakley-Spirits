@@ -17,8 +17,6 @@ export const formHandler = () => {
       this.formButton = this.form.querySelector('input[type=submit]') as HTMLInputElement;
       this.endpoint = this.form.action;
 
-      // console.log('FORM', this.form, this.formButton);
-
       this.setListener();
       this.resetFormStatus();
     }
@@ -26,6 +24,7 @@ export const formHandler = () => {
     private setListener() {
       this.form.addEventListener('submit', async (e: Event) => {
         e.preventDefault();
+        e.stopPropagation();
 
         const input = document.querySelector('input[name=Email]') as HTMLInputElement;
         const email = input.value.trim();
