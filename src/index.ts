@@ -1,6 +1,6 @@
 // eslint-disable-next-line simple-import-sort/imports
 import Preloader from '$components/preloader';
-import { editorCheck } from '$utils/editorCheck';
+import { getWebflowEnv } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
 import VerifyCookie from '$utils/verifyCookie';
 
@@ -16,8 +16,8 @@ window.Webflow.push(() => {
     console.log(e.target);
   });
 
-  const e = editorCheck();
-  console.log('!!!', e);
+  const env = getWebflowEnv();
+  console.log('ENV', env);
 
   if (!VerifyCookie.isVerified()) {
     loadComponent('.verify_component', () => import('$components/verify'));

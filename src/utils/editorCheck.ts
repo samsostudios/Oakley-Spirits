@@ -1,18 +1,9 @@
-import type { Webflow } from '@finsweet/ts-utils';
+type WebflowEnv = 'design' | 'preview' | 'editor';
 
-export const editorCheck = () => {
-  console.log('>>>>>>>>>>', window.Webflow);
-  let isEditor;
-  const flow = window.Webflow as Webflow;
-  if (Webflow.env('editor') === undefined) {
-    console.log('no editor', flow.env);
-    isEditor = false;
-  } else {
-    // console.log('editor');
-    isEditor = true;
-    const body = document.querySelector('body') as HTMLElement;
-    body.style.cursor = 'default';
+export function getWebflowEnv(): WebflowEnv | 'published' {
+  const env = (window as any).Webflow?.env?.();
+  if (env === 'design' || env === 'preview' || env === 'editor') {
+    return env;
   }
-
-  return isEditor;
-};
+  return 'published';
+}
