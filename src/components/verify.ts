@@ -3,10 +3,12 @@
 import Preloader from '$components/preloader';
 import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
+import { serverTimestamp } from 'firebase/database';
 import { gsap } from 'gsap';
 
 export const verify = () => {
   class Verify {
+    private section: HTMLElement;
     private form: HTMLElement;
     private inputs: HTMLInputElement[];
     private statusContainer: HTMLElement;
@@ -17,6 +19,8 @@ export const verify = () => {
     private transitionVideo: HTMLVideoElement;
 
     constructor() {
+      console.log('VEROFY');
+      this.section = document.querySelector('.section_verify') as HTMLElement;
       this.form = document.querySelector('.verify_form') as HTMLFormElement;
       this.inputs = [...document.querySelectorAll('.verify_input-mask')].map(
         (item) => item as HTMLInputElement
@@ -33,6 +37,7 @@ export const verify = () => {
     private init() {
       lenis.stop();
       document.body.classList.add('lock-scroll');
+      this.section.style.display = 'flex';
 
       this.verifyVideo.addEventListener('canplay', () => {
         console.log('[Debug] Video is ready to play');

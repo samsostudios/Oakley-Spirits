@@ -27,10 +27,12 @@ window.Webflow.push(() => {
     console.log('🌍 Production site');
   }
 
-  if (!VerifyCookie.isVerified()) {
-    loadComponent('.verify_component', () => import('$components/verify'));
-  } else {
-    if (window.location.pathname === '/') Preloader.heroReveal();
+  if (env === 'published') {
+    if (!VerifyCookie.isVerified()) {
+      loadComponent('.verify_component', () => import('$components/verify'));
+    } else {
+      if (window.location.pathname === '/') Preloader.heroReveal();
+    }
   }
 
   // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
