@@ -2,6 +2,7 @@
 import Preloader from '$components/preloader';
 import { getWebflowEnv } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
+import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 
 // import { startRaffle, drawWinner } from './raffle/raffle';
@@ -12,13 +13,11 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
-  window.addEventListener('click', (e) => {
-    console.log(e.target);
-  });
+  // window.addEventListener('click', (e) => {
+  //   console.log(e.target);
+  // });
 
   const env = getWebflowEnv();
-  console.log('env!!', env);
-
   if (env === 'preview') {
     console.log('👀 Designer Preview mode!');
   } else if (env === 'editor') {
@@ -27,7 +26,10 @@ window.Webflow.push(() => {
     console.log('🌍 Production site');
   }
 
-  if (env === 'published') {
+  const hasEnv = env === 'editor' || env === 'preview';
+
+  //Only load Verify on Production
+  if (!hasEnv) {
     if (!VerifyCookie.isVerified()) {
       loadComponent('.verify_component', () => import('$components/verify'));
     } else {
@@ -35,6 +37,11 @@ window.Webflow.push(() => {
     }
   }
 
+  //Check for Editor extras
+  if (env !== 'editor') {
+    console.log('No Editor - Start Smooth Scroll');
+    lenis.start();
+  }
   // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
 
   loadComponent('.nav_component', () => import('$components/nav'));
