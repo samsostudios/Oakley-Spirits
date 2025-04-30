@@ -5,7 +5,8 @@ export function getWebflowEnv(): WebflowEnv {
     document.documentElement.hasAttribute('w-editor') ||
     typeof (window as any).WebflowEditor !== 'undefined';
 
-  const isPreview = window.location.href.includes('workflow=sitePreview');
+  const isPreview =
+    !isEditor && window.top !== window.self && document.referrer.includes('webflow.io');
 
   console.log('>>>', isEditor, isPreview);
   console.log('E>>', document.documentElement);

@@ -19,6 +19,14 @@ window.Webflow.push(() => {
   const env = getWebflowEnv();
   console.log('env!!', env);
 
+  if (env === 'editor') {
+    document.body.style.cursor = 'default';
+  } else if (env === 'preview') {
+    console.log('👀 You are previewing the site from the Designer.');
+  } else {
+    console.log('✅ This is the live/published site.');
+  }
+
   if (!VerifyCookie.isVerified()) {
     loadComponent('.verify_component', () => import('$components/verify'));
   } else {
