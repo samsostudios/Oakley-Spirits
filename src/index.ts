@@ -1,5 +1,6 @@
 // eslint-disable-next-line simple-import-sort/imports
 import Preloader from '$components/preloader';
+import { editorCheck } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
 import VerifyCookie from '$utils/verifyCookie';
 
@@ -14,6 +15,9 @@ window.Webflow.push(() => {
   window.addEventListener('click', (e) => {
     console.log(e.target);
   });
+
+  const e = editorCheck();
+  console.log('!!!', e);
 
   if (!VerifyCookie.isVerified()) {
     loadComponent('.verify_component', () => import('$components/verify'));
