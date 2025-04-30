@@ -17,6 +17,8 @@ window.Webflow.push(() => {
   //   console.log(e.target);
   // });
 
+  lenis.stop();
+
   const env = getWebflowEnv();
   if (env === 'preview') {
     console.log('👀 Designer Preview mode!');
@@ -38,9 +40,9 @@ window.Webflow.push(() => {
   }
 
   //Check for Editor extras
-  if (env !== 'editor') {
-    console.log('No Editor - Start Smooth Scroll');
-    lenis.start();
+  if (env === 'editor') {
+    console.log('Editor Detected - Stopping smooth scroll');
+    lenis.stop();
   }
   // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
 
