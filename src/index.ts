@@ -2,7 +2,6 @@
 import Preloader from '$components/preloader';
 import { getWebflowEnv } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
-import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 
 // import { startRaffle, drawWinner } from './raffle/raffle';
@@ -17,21 +16,10 @@ window.Webflow.push(() => {
   //   console.log(e.target);
   // });
 
-  lenis.stop();
-
   const env = getWebflowEnv();
-  if (env === 'preview') {
-    console.log('👀 Designer Preview mode!');
-  } else if (env === 'editor') {
-    console.log('🛠 Editor Mode');
-  } else {
-    console.log('🌍 Production site');
-  }
-
-  const hasEnv = env === 'editor' || env === 'preview';
 
   //Only load Verify on Production
-  if (!hasEnv) {
+  if (env === 'editor' || env === 'preview') {
     if (!VerifyCookie.isVerified()) {
       loadComponent('.verify_component', () => import('$components/verify'));
     } else {
@@ -39,15 +27,6 @@ window.Webflow.push(() => {
     }
   }
 
-  //Check for Editor extras
-  if (env === 'editor') {
-    console.log('Editor Detected - Stopping smooth scroll');
-    lenis.stop();
-    lenis.destroy();
-
-    document.documentElement.style.scrollBehavior = 'auto';
-    document.body.style.overflow = '';
-  }
   // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
 
   loadComponent('.nav_component', () => import('$components/nav'));

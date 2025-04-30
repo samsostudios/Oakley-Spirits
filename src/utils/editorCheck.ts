@@ -9,9 +9,17 @@ export function getWebflowEnv(): WebflowEnv {
 
   const isPreview = wf?.env?.('preview') === true;
 
-  console.log('>>>', isEditor, isPreview);
-  console.log('E>>', document.documentElement);
-  console.log('P>>', wf?.env?.('preview'));
+  // displayMode(isEditor ? 'editor' : isPreview ? 'preview' : 'published');
 
   return isEditor ? 'editor' : isPreview ? 'preview' : 'published';
+}
+
+function displayMode(env: string) {
+  if (env === 'preview') {
+    console.log('👀 Designer Preview mode!');
+  } else if (env === 'editor') {
+    console.log('🛠 Editor Mode');
+  } else {
+    console.log('🌍 Production site');
+  }
 }

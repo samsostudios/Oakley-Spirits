@@ -1,7 +1,8 @@
 /* eslint-disable simple-import-sort/imports */
 // import { smoothScroll } from '$utils/smoothScroll';
 import Preloader from '$components/preloader';
-import lenis from '$utils/smoothScroll';
+import { stopSmoothScroll } from '$utils/smoothScroll';
+// import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 import { serverTimestamp } from 'firebase/database';
 import { gsap } from 'gsap';
@@ -35,7 +36,8 @@ export const verify = () => {
     }
 
     private init() {
-      lenis.stop();
+      // lenis.stop();
+      stopSmoothScroll();
       document.body.classList.add('lock-scroll');
       this.section.style.display = 'flex';
 

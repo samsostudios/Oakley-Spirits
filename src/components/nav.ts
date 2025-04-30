@@ -1,5 +1,5 @@
 // eslint-disable-next-line simple-import-sort/imports
-import lenis from '$utils/smoothScroll';
+import { startSmoothScroll, stopSmoothScroll } from '$utils/smoothScroll';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -150,7 +150,8 @@ export const nav = () => {
     }
 
     private navCollpase(height: number) {
-      lenis.stop();
+      // lenis.stop();
+      stopSmoothScroll();
       if (height > 0)
         gsap.to(this.navSpacer, {
           height: 0,
@@ -164,11 +165,13 @@ export const nav = () => {
           height: this.storeHeight,
           ease: 'expo.out',
           onComplete: () => {
-            lenis.start();
+            // lenis.start();
+            startSmoothScroll();
           },
         });
       } else {
-        lenis.start();
+        // lenis.start();
+        startSmoothScroll();
         console.log('scrolled out of hero');
       }
     }

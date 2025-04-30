@@ -1,5 +1,5 @@
 // eslint-disable-next-line simple-import-sort/imports
-import lenis from '$utils/smoothScroll';
+import { startSmoothScroll } from '$utils/smoothScroll';
 import { gsap } from 'gsap';
 
 class Preloader {
@@ -15,7 +15,8 @@ class Preloader {
       onComplete: () => {
         // console.log('preload complete');
         tl.set(heroPlace, { zIndex: 1 });
-        lenis.start();
+        // lenis.start();
+        startSmoothScroll();
       },
     });
 
