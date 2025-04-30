@@ -8,6 +8,8 @@ export function getWebflowEnv(): WebflowEnv {
   const isPreview = window.location.href.includes('workflow=sitePreview');
 
   console.log('>>>', isEditor, isPreview);
+  console.log('E>>', document.documentElement);
+  console.log('P>>', window.location.href);
 
   return 'published';
 }
