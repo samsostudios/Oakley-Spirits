@@ -17,7 +17,7 @@ window.Webflow.push(() => {
   });
 
   const env = getWebflowEnv();
-  console.log('ENV', env);
+  console.log('env!!', env);
 
   if (!VerifyCookie.isVerified()) {
     loadComponent('.verify_component', () => import('$components/verify'));

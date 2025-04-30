@@ -78,10 +78,10 @@ export const verify = () => {
       this.verifyVideo
         .play()
         .then(() => {
-          console.log('🎥 video started playing');
+          console.log('[Debug] Video started playing');
         })
         .catch((e) => {
-          console.warn('⛔️ Autoplay blocked:', e.name, e.message);
+          console.warn('[Debug] Autoplay blocked:', e.name, e.message);
         });
     }
 

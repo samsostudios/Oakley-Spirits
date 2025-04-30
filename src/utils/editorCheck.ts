@@ -1,9 +1,13 @@
-type WebflowEnv = 'design' | 'preview' | 'editor';
+type WebflowEnv = 'design' | 'preview' | 'editor' | 'published';
 
-export function getWebflowEnv(): WebflowEnv | 'published' {
-  const env = (window as any).Webflow?.env?.();
-  if (env === 'design' || env === 'preview' || env === 'editor') {
-    return env;
-  }
+export function getWebflowEnv(): WebflowEnv {
+  const isEditor =
+    document.documentElement.hasAttribute('w-editor') ||
+    typeof (window as any).WebflowEditor !== 'undefined';
+
+  const isPreview = window.location.href.includes('workflow=sitePreview');
+
+  console.log('>>>', isEditor, isPreview);
+
   return 'published';
 }
