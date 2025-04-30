@@ -43,6 +43,10 @@ window.Webflow.push(() => {
   if (env === 'editor') {
     console.log('Editor Detected - Stopping smooth scroll');
     lenis.stop();
+    lenis.destroy();
+
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.body.style.overflow = '';
   }
   // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
 
