@@ -189,7 +189,7 @@ export const verify = () => {
       document.body.classList.remove('lock-scroll');
       const tl = gsap.timeline({
         onComplete: () => {
-          console.log('verify complete');
+          // console.log('verify complete');
           Preloader.heroReveal();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         },
