@@ -191,6 +191,7 @@ export const verify = () => {
 
     private successAnimation() {
       document.body.classList.remove('lock-scroll');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       const tl = gsap.timeline();
 
       const baseDuration = 1;
