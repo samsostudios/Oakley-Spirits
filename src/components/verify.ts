@@ -1,7 +1,7 @@
 /* eslint-disable simple-import-sort/imports */
 // import { smoothScroll } from '$utils/smoothScroll';
 import Preloader from '$components/preloader';
-import { stopSmoothScroll } from '$utils/smoothScroll';
+import { startSmoothScroll, stopSmoothScroll } from '$utils/smoothScroll';
 // import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 import { serverTimestamp } from 'firebase/database';
@@ -16,6 +16,7 @@ export const verify = () => {
     private verifyVideo: HTMLVideoElement;
     private verifyPlace: HTMLElement;
     private verifyLogo: HTMLElement;
+    private videoInitialized: boolean;
 
     private transitionVideo: HTMLVideoElement;
 
@@ -31,6 +32,7 @@ export const verify = () => {
       this.verifyPlace = document.querySelector('#verifyPlace') as HTMLElement;
       this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
       this.transitionVideo = document.querySelector('#verifyTransition') as HTMLVideoElement;
+      this.videoInitialized = false;
 
       this.init();
     }
@@ -41,20 +43,27 @@ export const verify = () => {
       document.body.classList.add('lock-scroll');
       this.section.style.display = 'flex';
 
-      this.verifyVideo.addEventListener('canplay', () => {
-        console.log('[Debug] Video is ready to play');
+      this.verifyVideo.addEventListener('loadeddata', () => {
+        // console.log('[Debug] Video is ready to play');
         this.handleVideoReady();
       });
 
       if (this.verifyVideo.readyState >= 3) {
-        console.log('[Debug] Video was already loaded');
-
+        // console.log('[Debug] Video was already loaded');
         this.handleVideoReady();
       }
 
       this.setListeners();
       this.verifyReveal();
     }
+
+    private handleVideoReady = () => {
+      if (this.videoInitialized) return;
+      this.videoInitialized = true;
+
+      if (this.verifyVideo.paused) this.verifyVideo.play().catch(console.warn);
+      gsap.set(this.verifyPlace, { zIndex: 1, display: 'none' });
+    };
 
     private setListeners() {
       this.inputs.forEach((inputWrapper, index) => {
@@ -78,40 +87,6 @@ export const verify = () => {
       });
 
       this.form.addEventListener('submit', (e) => this.verifyAge(e));
-    }
-
-    private handleVideoReady() {
-      this.verifyPlace.style.display = 'none';
-      this.verifyVideo
-        .play()
-        .then(() => {
-          console.log('[Debug] Video started playing');
-        })
-        .catch((e) => {
-          console.warn('[Debug] Autoplay blocked:', e.name, e.message);
-        });
-    }
-
-    private verifyReveal() {
-      const tl = gsap.timeline();
-      tl.fromTo(
-        this.inputs,
-        {
-          y: '4rem',
-          opacity: 0,
-        },
-        { duration: 1.2, y: '0rem', opacity: 1, stagger: 0.2, ease: 'power3.out' }
-      );
-      tl.fromTo(
-        document.querySelector('.verify_wrap'),
-        {
-          y: '1rem',
-          opacity: 0,
-        },
-        { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
-        '<0.2'
-      );
-      tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' }, '<0.5');
     }
 
     private handleInput(event: Event, index: number) {
@@ -192,6 +167,28 @@ export const verify = () => {
       this.statusContainer.style.display = 'block';
     }
 
+    private verifyReveal() {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        this.inputs,
+        {
+          y: '4rem',
+          opacity: 0,
+        },
+        { duration: 1.2, y: '0rem', opacity: 1, stagger: 0.2, ease: 'power3.out' }
+      );
+      tl.fromTo(
+        document.querySelector('.verify_wrap'),
+        {
+          y: '1rem',
+          opacity: 0,
+        },
+        { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
+        '<0.2'
+      );
+      tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' }, '<0.5');
+    }
+
     private successAnimation() {
       document.body.classList.remove('lock-scroll');
       const tl = gsap.timeline({
@@ -199,6 +196,7 @@ export const verify = () => {
           // console.log('verify complete');
           Preloader.heroReveal();
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          startSmoothScroll();
         },
       });
 
@@ -224,3 +222,9 @@ export const verify = () => {
   new Verify();
 };
 export default verify;
+
+export function hideVerifyComponent() {
+  const section = document.querySelector('.section_verify') as HTMLElement;
+  const tl = gsap.timeline();
+  tl.to(section, { display: 'none' });
+}

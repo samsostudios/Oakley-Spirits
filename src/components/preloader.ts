@@ -11,16 +11,28 @@ class Preloader {
     const svgPaths = [...document.querySelectorAll('.oa_path')];
     const banner = document.querySelector('.banner_component') as HTMLElement;
 
-    const tl = gsap.timeline({
-      onComplete: () => {
-        // console.log('preload complete');
-        tl.set(heroPlace, { zIndex: 1 });
-        // lenis.start();
-        startSmoothScroll();
-      },
+    let videoInitialized = false;
+    const handleVideoReady = () => {
+      if (videoInitialized) return;
+      videoInitialized = true;
+
+      if (heroVideo.paused) heroVideo.play().catch(console.warn);
+      gsap.set(heroPlace, { zIndex: 1, display: 'none' });
+    };
+
+    heroVideo.addEventListener('loadeddata', () => {
+      // console.log('[HERO] Video data loaded');
+      handleVideoReady();
     });
 
-    tl.set(heroPlace, { opacity: 0, display: 'none' });
+    if (heroVideo.readyState >= 3) {
+      // console.log('[HERO] Video was already loaded');
+      handleVideoReady();
+    }
+
+    gsap.set(heroPlace, { zIndex: 4 });
+
+    const tl = gsap.timeline();
     tl.to(verifySection, {
       delay: 0.2,
       duration: 1.5,
@@ -53,8 +65,6 @@ class Preloader {
       { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
       '<0.2'
     );
-
-    if (heroVideo) heroVideo.play();
   }
 }
 

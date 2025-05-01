@@ -38,12 +38,13 @@ export const pageTransition = () => {
       const windowLocation = window.location.pathname;
 
       if (windowLocation === '/') {
+        console.log('HOME');
         const tl = gsap.timeline({
           onComplete: () => {
             gsap.set(this.transitionElement, { opacity: 1 });
           },
         });
-        tl.to(this.transitionElement, { duration: 0.5, opacity: 0, display: 'none' });
+        tl.to(this.transitionElement, { duration: 0, opacity: 0, display: 'none' });
       } else {
         this.animateOut();
       }

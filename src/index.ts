@@ -1,5 +1,6 @@
 // eslint-disable-next-line simple-import-sort/imports
 import Preloader from '$components/preloader';
+import verify, { hideVerifyComponent } from '$components/verify';
 import { getWebflowEnv } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
 import { initSmoothScroll } from '$utils/smoothScroll';
@@ -13,10 +14,6 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
-  // window.addEventListener('click', (e) => {
-  //   console.log(e.target);
-  // });
-
   initSmoothScroll();
 
   const env = getWebflowEnv();
@@ -26,8 +23,12 @@ window.Webflow.push(() => {
     if (!VerifyCookie.isVerified()) {
       loadComponent('.verify_component', () => import('$components/verify'));
     } else {
-      if (window.location.pathname === '/') Preloader.heroReveal();
+      if (window.location.pathname === '/') {
+        Preloader.heroReveal();
+      }
     }
+  } else {
+    hideVerifyComponent();
   }
 
   // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
