@@ -2,6 +2,7 @@
 import Preloader from '$components/preloader';
 import { getWebflowEnv } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
+import { initSmoothScroll } from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 
 // import { startRaffle, drawWinner } from './raffle/raffle';
@@ -16,10 +17,12 @@ window.Webflow.push(() => {
   //   console.log(e.target);
   // });
 
+  initSmoothScroll();
+
   const env = getWebflowEnv();
 
-  //Only load Verify on Production
-  if (env === 'editor' || env === 'preview') {
+  const isEnv = env === 'editor' || env === 'preview';
+  if (!isEnv) {
     if (!VerifyCookie.isVerified()) {
       loadComponent('.verify_component', () => import('$components/verify'));
     } else {

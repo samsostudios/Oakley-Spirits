@@ -20,7 +20,7 @@ export const verify = () => {
     private transitionVideo: HTMLVideoElement;
 
     constructor() {
-      console.log('VEROFY');
+      console.log('VERIFY');
       this.section = document.querySelector('.section_verify') as HTMLElement;
       this.form = document.querySelector('.verify_form') as HTMLFormElement;
       this.inputs = [...document.querySelectorAll('.verify_input-mask')].map(
