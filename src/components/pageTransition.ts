@@ -1,3 +1,5 @@
+// eslint-disable-next-line simple-import-sort/imports
+import HeroVideo from './heroVideo';
 import { gsap } from 'gsap';
 
 export const pageTransition = () => {
@@ -39,15 +41,10 @@ export const pageTransition = () => {
 
       if (windowLocation === '/') {
         console.log('HOME');
-        const tl = gsap.timeline({
-          onComplete: () => {
-            gsap.set(this.transitionElement, { opacity: 1 });
-          },
-        });
-        tl.to(this.transitionElement, { duration: 0, opacity: 0, display: 'none' });
-      } else {
-        this.animateOut();
+        HeroVideo.homeReveal();
       }
+
+      this.animateOut();
     }
 
     private setListeners() {

@@ -1,6 +1,5 @@
 // eslint-disable-next-line simple-import-sort/imports
-import Preloader from '$components/preloader';
-import verify, { hideVerifyComponent } from '$components/verify';
+import { hideVerifyComponent } from '$components/verify';
 import { getWebflowEnv } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
 import { initSmoothScroll } from '$utils/smoothScroll';
@@ -22,16 +21,10 @@ window.Webflow.push(() => {
   if (!isEnv) {
     if (!VerifyCookie.isVerified()) {
       loadComponent('.verify_component', () => import('$components/verify'));
-    } else {
-      if (window.location.pathname === '/') {
-        Preloader.heroReveal();
-      }
     }
   } else {
     hideVerifyComponent();
   }
-
-  // if (windowLocation === '/') loadComponent('.nav_component', () => import('$components/nav'));
 
   loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('.transition_component', () => import('$components/pageTransition'));

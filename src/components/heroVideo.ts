@@ -1,10 +1,8 @@
 // eslint-disable-next-line simple-import-sort/imports
-import { startSmoothScroll } from '$utils/smoothScroll';
 import { gsap } from 'gsap';
 
-class Preloader {
-  public static heroReveal() {
-    const verifySection = document.querySelector('.section_verify') as HTMLElement;
+class HeroVideo {
+  public static homeReveal() {
     const heroPlace = document.querySelector('#heroPlace') as HTMLElement;
     const heroVideo = document.querySelector('#heroVideo') as HTMLVideoElement;
     const nav = document.querySelector('.nav_component') as HTMLElement;
@@ -33,13 +31,6 @@ class Preloader {
     gsap.set(heroPlace, { zIndex: 4 });
 
     const tl = gsap.timeline();
-    tl.to(verifySection, {
-      delay: 0.2,
-      duration: 1.5,
-      display: 'none',
-      opacity: 0,
-      ease: 'power3.inOut',
-    });
     if (banner)
       tl.fromTo(
         banner,
@@ -68,4 +59,4 @@ class Preloader {
   }
 }
 
-export default Preloader;
+export default HeroVideo;

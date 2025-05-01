@@ -24,7 +24,9 @@ class VerifyCookie {
       return false;
     }
 
-    console.log('verifying....', verificationData);
+    if (verificationData.verified === true) {
+      console.log('verified ✅', verificationData);
+    }
 
     return verificationData.verified;
   }

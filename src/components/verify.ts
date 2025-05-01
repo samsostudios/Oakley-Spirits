@@ -1,10 +1,7 @@
 /* eslint-disable simple-import-sort/imports */
-// import { smoothScroll } from '$utils/smoothScroll';
-import Preloader from '$components/preloader';
+import HeroVideo from '$components/heroVideo';
 import { startSmoothScroll, stopSmoothScroll } from '$utils/smoothScroll';
-// import lenis from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
-import { serverTimestamp } from 'firebase/database';
 import { gsap } from 'gsap';
 
 export const verify = () => {
@@ -17,11 +14,10 @@ export const verify = () => {
     private verifyPlace: HTMLElement;
     private verifyLogo: HTMLElement;
     private videoInitialized: boolean;
-
-    private transitionVideo: HTMLVideoElement;
+    private windowLocation: string;
+    private verifyProductType: string[];
 
     constructor() {
-      console.log('VERIFY');
       this.section = document.querySelector('.section_verify') as HTMLElement;
       this.form = document.querySelector('.verify_form') as HTMLFormElement;
       this.inputs = [...document.querySelectorAll('.verify_input-mask')].map(
@@ -31,16 +27,20 @@ export const verify = () => {
       this.verifyVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
       this.verifyPlace = document.querySelector('#verifyPlace') as HTMLElement;
       this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
-      this.transitionVideo = document.querySelector('#verifyTransition') as HTMLVideoElement;
       this.videoInitialized = false;
+      this.windowLocation = window.location.pathname;
+      this.verifyProductType = [...document.querySelectorAll('.verify_product-type')].map((item) =>
+        (item as HTMLElement).innerHTML.trim()
+      );
 
-      this.init();
+      const canBypass = this.verifyProductType.includes('Merch');
+
+      if (!canBypass) this.init();
     }
 
     private init() {
-      // lenis.stop();
       stopSmoothScroll();
-      document.body.classList.add('lock-scroll');
+      // document.body.classList.add('lock-scroll');
       this.section.style.display = 'flex';
 
       this.verifyVideo.addEventListener('loadeddata', () => {
@@ -191,32 +191,43 @@ export const verify = () => {
 
     private successAnimation() {
       document.body.classList.remove('lock-scroll');
-      const tl = gsap.timeline({
-        onComplete: () => {
-          // console.log('verify complete');
-          Preloader.heroReveal();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          startSmoothScroll();
-        },
-      });
+      const tl = gsap.timeline();
+
+      const baseDuration = 1;
+      const staggerDuration = 0.2;
+      const computeDuration = baseDuration + staggerDuration * (this.inputs.length - 1);
 
       tl.to(this.inputs, {
-        duration: 1.2,
+        duration: baseDuration,
         y: '-4rem',
         opacity: 0,
-        stagger: 0.2,
+        stagger: staggerDuration,
         ease: 'power3.out',
       });
       tl.to(
         document.querySelector('.verify_wrap'),
         {
-          duration: 1.2,
+          duration: computeDuration,
           y: '-1rem',
           opacity: 0,
-          ease: 'expo.inOut',
+          ease: 'power3.out',
         },
-        '<0.2'
+        '<'
       );
+      tl.to(this.section, {
+        // delay: 0.2,
+        duration: 1,
+        display: 'none',
+        opacity: 0,
+        ease: 'expo.inOut',
+      });
+
+      if (this.windowLocation === '/') {
+        setTimeout(() => {
+          HeroVideo.homeReveal();
+          startSmoothScroll();
+        }, (tl.duration() / 2) * 1000);
+      }
     }
   }
   new Verify();
@@ -225,6 +236,5 @@ export default verify;
 
 export function hideVerifyComponent() {
   const section = document.querySelector('.section_verify') as HTMLElement;
-  const tl = gsap.timeline();
-  tl.to(section, { display: 'none' });
+  gsap.to(section, { display: 'none' });
 }
