@@ -17,6 +17,8 @@ export const formHandler = () => {
       this.formButton = this.form.querySelector('input[type=submit]') as HTMLInputElement;
       this.endpoint = this.form.action;
 
+      console.log('->', this.formWrap);
+
       this.setListener();
       this.resetFormStatus();
     }
