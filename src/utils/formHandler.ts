@@ -10,14 +10,12 @@ export const formHandler = () => {
     private endpoint: string;
 
     constructor() {
-      this.formWrap = document.querySelector('.newsletter_form-wrap') as HTMLElement;
+      this.formWrap = document.querySelector('.form_wrap') as HTMLElement;
       this.form = document.querySelector('[data-mail-form]') as HTMLFormElement;
-      this.successElement = this.formWrap.querySelector('.newsletter_success') as HTMLElement;
-      this.errorElement = this.formWrap.querySelector('.form_message-error') as HTMLElement;
+      this.successElement = this.formWrap.querySelector('.form_success') as HTMLElement;
+      this.errorElement = this.formWrap.querySelector('.form_error') as HTMLElement;
       this.formButton = this.form.querySelector('input[type=submit]') as HTMLInputElement;
       this.endpoint = this.form.action;
-
-      console.log('->', this.formWrap);
 
       this.setListener();
       this.resetFormStatus();
@@ -28,15 +26,13 @@ export const formHandler = () => {
         e.preventDefault();
         e.stopPropagation();
 
-        const input = document.querySelector('input[name=Email]') as HTMLInputElement;
+        const input = document.querySelector('input[data-name="Email"]') as HTMLInputElement;
         const email = input.value.trim();
 
         this.formButton.value = 'Submitting...';
-        // console.log('INOUT', input, email);
 
         if (!email || !this.isValidEmail(email)) {
           this.showError('Please enter a valid email');
-          // console.log('Code email check error');
           return;
         }
 
@@ -50,7 +46,6 @@ export const formHandler = () => {
           });
 
           const data = await response.json();
-          // console.log('DATA', data);
 
           if (!response.ok) {
             let err = data.error.detail;
