@@ -1,0 +1,140 @@
+<!-- Container you can style in Webflow -->
+<div class="oakley-product" data-shopify-product-id="8458591961259"></div>
+
+<script>
+  (function () {
+    const SCRIPT_URL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+    const DOMAIN = '8z7y38-9x.myshopify.com';
+    const STOREFRONT_TOKEN = 'ab800f336b7f7dc65afdafcaf40cb884';
+    const MONEY_FORMAT = '%24%7B%7Bamount%7D%7D'; // ${{amount}}
+
+    // ---- lazy load only when visible
+    const targets = document.querySelectorAll('.oakley-product');
+    const io = new IntersectionObserver(onIntersect, { rootMargin: '300px' });
+    targets.forEach((el) => io.observe(el));
+
+    function onIntersect(entries) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        ensureScript().then(() => mount(entry.target));
+      });
+    }
+
+    function ensureScript() {
+      return new Promise((resolve) => {
+        if (window.ShopifyBuy && window.ShopifyBuy.UI) return resolve();
+        const s = document.createElement('script');
+        s.src = SCRIPT_URL;
+        s.async = true;
+        s.onload = () => resolve();
+        document.head.appendChild(s);
+      });
+    }
+
+    function mount(node) {
+      const id = node.getAttribute('data-shopify-product-id');
+      const client = ShopifyBuy.buildClient({
+        domain: DOMAIN,
+        storefrontAccessToken: STOREFRONT_TOKEN,
+      });
+
+      ShopifyBuy.UI.onReady(client).then((ui) => {
+        ui.createComponent('product', {
+          id,
+          node,
+          moneyFormat: MONEY_FORMAT,
+          options: {
+            product: {
+              // Keep the widget simple: title/price off, quantity + button on
+              contents: {
+                img: false,
+                title: false,
+                price: false,
+                button: false,
+                buttonWithQuantity: true,
+              },
+              text: { button: 'Add to Cart' },
+              styles: {
+                button: {
+                  // Use your brand tokens here (or inline literal values)
+                  'font-family': 'inherit',
+                  'font-size': '16px',
+                  'padding-top': '14px',
+                  'padding-bottom': '14px',
+                  'padding-left': '28px',
+                  'padding-right': '28px',
+                  'background-color': '#172d5a',
+                  ':hover': { 'background-color': '#274d99' },
+                  ':focus': { 'background-color': '#274d99' },
+                  'border-radius': '0',
+                },
+                quantityInput: {
+                  'font-size': '16px',
+                  'padding-top': '14px',
+                  'padding-bottom': '14px',
+                },
+              },
+            },
+
+            cart: {
+              popup: true,
+              startOpen: false,
+              text: {
+                title: 'Your Cart',
+                total: 'Subtotal',
+                button: 'Continue to Checkout',
+                notice:
+                  'We can ship to most states plus D.C. We are unable to ship to: Alabama, Alaska, Arkansas, Hawaii, Michigan, South Dakota, Tennessee, Utah.',
+              },
+              styles: {
+                // Cart drawer chrome
+                cart: { 'background-color': '#051b6b' },
+                footer: { 'background-color': '#051b6b' },
+                title: { color: '#fff', 'font-size': '28px', 'line-height': '1.2' },
+                lineItems: { color: '#fff' },
+                subtotalText: { color: '#fff' },
+                subtotal: { color: '#fff' },
+                notice: { color: '#fff' },
+                close: { color: '#fff' },
+                button: {
+                  'font-family': 'inherit',
+                  'font-size': '18px',
+                  'font-weight': '700',
+                  'background-color': '#e9ecf3',
+                  ':hover': { 'background-color': '#e9ecf3' },
+                  ':focus': { 'background-color': '#e9ecf3' },
+                  'border-radius': '0',
+                  color: '#000',
+                },
+              },
+              contents: { note: true },
+            },
+
+            toggle: {
+              styles: {
+                toggle: {
+                  'background-color': '#172d5a',
+                  ':hover': { 'background-color': '#274d99' },
+                  ':focus': { 'background-color': '#274d99' },
+                },
+                count: { 'font-size': '14px' },
+              },
+            },
+
+            lineItem: {
+              styles: {
+                title: { color: '#fff' },
+                variantTitle: { color: '#fff' },
+                price: { color: '#fff' },
+                fullPrice: { color: '#fff' },
+                quantity: { color: '#fff' },
+                quantityInput: { color: '#fff', 'border-color': '#fff' },
+              },
+            },
+          },
+        });
+      });
+    }
+  })();
+</script>

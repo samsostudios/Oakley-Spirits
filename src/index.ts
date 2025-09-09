@@ -1,4 +1,5 @@
 // eslint-disable-next-line simple-import-sort/imports
+import shopify from '$components/shopify';
 import { hideVerifyComponent } from '$components/verify';
 import { getWebflowEnv } from '$utils/editorCheck';
 import { loadComponent } from '$utils/loadComponent';
@@ -13,6 +14,10 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
+  window.addEventListener('click', (e) => {
+    console.log(e.target);
+  });
+
   initSmoothScroll();
 
   const env = getWebflowEnv();
@@ -25,6 +30,8 @@ window.Webflow.push(() => {
   } else {
     hideVerifyComponent();
   }
+
+  shopify({ domain: '8z7y38-9x.myshopify.com', token: 'ab800f336b7f7dc65afdafcaf40cb884' });
 
   loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('.transition_component', () => import('$components/pageTransition'));
