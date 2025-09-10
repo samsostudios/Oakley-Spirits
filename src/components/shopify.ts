@@ -46,7 +46,6 @@ export class Shopify {
     this.opts = { ...DEFAULTS, ...options };
   }
 
-  /** Public entry – call once on page load */
   public init() {
     console.log('init');
     if (this.initialized) return;
