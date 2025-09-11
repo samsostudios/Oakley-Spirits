@@ -2,17 +2,12 @@
 (() => {
   var __defProp = Object.defineProperty;
   var __getOwnPropNames = Object.getOwnPropertyNames;
-  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
   var __esm = (fn, res) => function __init() {
     return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
   };
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
-  };
-  var __publicField = (obj, key, value) => {
-    __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-    return value;
   };
 
   // bin/live-reload.js
@@ -38,7 +33,7 @@
     subClass.prototype.constructor = subClass;
     subClass.__proto__ = superClass;
   }
-  var _config, _defaults, _suppressOverwrites, _reverting, _context, _bigNum, _tinyNum, _2PI, _HALF_PI, _gsID, _sqrt, _cos, _sin, _isString, _isFunction, _isNumber, _isUndefined, _isObject, _isNotFalse, _windowExists, _isFuncOrString, _isTypedArray, _isArray, _strictNumExp, _numExp, _numWithUnitExp, _complexStringNumExp, _relExp, _delimitedValueExp, _unitExp, _globalTimeline, _win, _coreInitted, _doc, _globals, _installScope, _coreReady, _install, _missingPlugin, _warn, _addGlobal, _emptyFunc, _startAtRevertConfig, _revertConfigNoKill, _revertConfig, _reservedProps, _lazyTweens, _lazyLookup, _lastRenderedFrame, _plugins, _effects, _nextGCFrame, _harnessPlugins, _callbackNames, _harness, _getCache, _getProperty, _forEachName, _round, _roundPrecise, _parseRelative, _arrayContainsAny, _lazyRender, _lazySafeRender, _numericIfPossible, _passThrough, _setDefaults, _setKeyframeDefaults, _merge, _mergeDeep, _copyExcluding, _inheritDefaults, _arraysMatch, _addLinkedListItem, _removeLinkedListItem, _removeFromParent, _uncache, _recacheAncestors, _rewindStartAt, _hasNoPausedAncestors, _elapsedCycleDuration, _animationCycle, _parentToChildTotalTime, _setEnd, _alignPlayhead, _postAddChecks, _addToTimeline, _scrollTrigger, _attemptInitTween, _parentPlayheadIsBeforeStart, _isFromOrFromStart, _renderZeroDurationTween, _findNextPauseTween, _setDuration, _onUpdateTotalDuration, _zeroPosition, _parsePosition, _createTweenType, _conditionalReturn, _clamp, getUnit, clamp, _slice, _isArrayLike, _flatten, toArray, selector, shuffle, distribute, _roundModifier, snap, random, pipe, unitize, normalize, _wrapArray, wrap, wrapYoyo, _replaceRandom, mapRange, interpolate, _getLabelInDirection, _callback, _interrupt, _quickTween, _registerPluginQueue, _createPlugin, _255, _colorLookup, _hue, splitColor, _colorOrderData, _formatColors, _colorExp, _hslExp, _colorStringFilter, _tickerActive, _ticker, _wake, _easeMap, _customEaseExp, _quotesExp, _parseObjectInString, _valueInParentheses, _configEaseFromString, _invertEase, _propagateYoyoEase, _parseEase, _insertEase, _easeInOutFromOut, _configElastic, _configBack, GSCache, Animation, Timeline, _addComplexStringPropTween, _addPropTween, _processVars, _checkPlugin, _overwritingTween, _forceAllPropTweens, _initTween, _updatePropTweens, _addAliasesToVars, _parseKeyframe, _parseFuncOrString, _staggerTweenProps, _staggerPropsToSkip, Tween, _setterPlain, _setterFunc, _setterFuncWithParam, _setterAttribute, _getSetter, _renderPlain, _renderBoolean, _renderComplexString, _renderPropTweens, _addPluginModifier, _killPropTweensOf, _setterWithModifier, _sortPropTweensByPriority, PropTween, _media, _listeners, _emptyArray, _lastMediaTime, _contextID, _dispatch, _onMediaChange, Context, MatchMedia, _gsap, _getPluginPropTween, _addModifiers, _buildModifierPlugin, gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ;
+  var _config, _defaults, _suppressOverwrites, _reverting, _context, _bigNum, _tinyNum, _2PI, _HALF_PI, _gsID, _sqrt, _cos, _sin, _isString, _isFunction, _isNumber, _isUndefined, _isObject, _isNotFalse, _windowExists, _isFuncOrString, _isTypedArray, _isArray, _strictNumExp, _numExp, _numWithUnitExp, _complexStringNumExp, _relExp, _delimitedValueExp, _unitExp, _globalTimeline, _win, _coreInitted, _doc, _globals, _installScope, _coreReady, _install, _missingPlugin, _warn, _addGlobal, _emptyFunc, _startAtRevertConfig, _revertConfigNoKill, _revertConfig, _reservedProps, _lazyTweens, _lazyLookup, _lastRenderedFrame, _plugins, _effects, _nextGCFrame, _harnessPlugins, _callbackNames, _harness, _getCache, _getProperty, _forEachName, _round, _roundPrecise, _parseRelative, _arrayContainsAny, _lazyRender, _lazySafeRender, _numericIfPossible, _passThrough, _setDefaults, _setKeyframeDefaults, _merge, _mergeDeep, _copyExcluding, _inheritDefaults, _arraysMatch, _addLinkedListItem, _removeLinkedListItem, _removeFromParent, _uncache, _recacheAncestors, _rewindStartAt, _hasNoPausedAncestors, _elapsedCycleDuration, _animationCycle, _parentToChildTotalTime, _setEnd, _alignPlayhead, _postAddChecks, _addToTimeline, _scrollTrigger, _attemptInitTween, _parentPlayheadIsBeforeStart, _isFromOrFromStart, _renderZeroDurationTween, _findNextPauseTween, _setDuration, _onUpdateTotalDuration, _zeroPosition, _parsePosition, _createTweenType, _conditionalReturn, _clamp, getUnit, clamp, _slice, _isArrayLike, _flatten, toArray, selector, shuffle, distribute, _roundModifier, snap, random, pipe, unitize, normalize, _wrapArray, wrap, wrapYoyo, _replaceRandom, mapRange, interpolate, _getLabelInDirection, _callback, _interrupt, _quickTween, _createPlugin, _255, _colorLookup, _hue, splitColor, _colorOrderData, _formatColors, _colorExp, _hslExp, _colorStringFilter, _tickerActive, _ticker, _wake, _easeMap, _customEaseExp, _quotesExp, _parseObjectInString, _valueInParentheses, _configEaseFromString, _invertEase, _propagateYoyoEase, _parseEase, _insertEase, _easeInOutFromOut, _configElastic, _configBack, GSCache, Animation, Timeline, _addComplexStringPropTween, _addPropTween, _processVars, _checkPlugin, _overwritingTween, _forceAllPropTweens, _initTween, _updatePropTweens, _addAliasesToVars, _parseKeyframe, _parseFuncOrString, _staggerTweenProps, _staggerPropsToSkip, Tween, _setterPlain, _setterFunc, _setterFuncWithParam, _setterAttribute, _getSetter, _renderPlain, _renderBoolean, _renderComplexString, _renderPropTweens, _addPluginModifier, _killPropTweensOf, _setterWithModifier, _sortPropTweensByPriority, PropTween, _media, _listeners, _emptyArray, _lastMediaTime, _dispatch, _onMediaChange, Context, MatchMedia, _gsap, _getPluginPropTween, _addModifiers, _buildModifierPlugin, gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ;
   var init_gsap_core = __esm({
     "node_modules/gsap/gsap-core.js"() {
       init_live_reload();
@@ -295,7 +290,7 @@
         child._next = child._prev = child.parent = null;
       };
       _removeFromParent = function _removeFromParent2(child, onlyIfParentHasAutoRemove) {
-        child.parent && (!onlyIfParentHasAutoRemove || child.parent.autoRemoveChildren) && child.parent.remove && child.parent.remove(child);
+        child.parent && (!onlyIfParentHasAutoRemove || child.parent.autoRemoveChildren) && child.parent.remove(child);
         child._act = 0;
       };
       _uncache = function _uncache2(animation, child) {
@@ -327,7 +322,7 @@
         return animation._repeat ? _animationCycle(animation._tTime, animation = animation.duration() + animation._rDelay) * animation : 0;
       };
       _animationCycle = function _animationCycle2(tTime, cycleDuration) {
-        var whole = Math.floor(tTime = _roundPrecise(tTime / cycleDuration));
+        var whole = Math.floor(tTime /= cycleDuration);
         return tTime && whole === tTime ? whole - 1 : whole;
       };
       _parentToChildTotalTime = function _parentToChildTotalTime2(parentTime, child) {
@@ -347,7 +342,7 @@
       };
       _postAddChecks = function _postAddChecks2(timeline2, child) {
         var t;
-        if (child._time || !child._dur && child._initted || child._start < timeline2._time && (child._dur || !child.add)) {
+        if (child._time || child._initted && !child._dur) {
           t = _parentToChildTotalTime(timeline2.rawTime(), child);
           if (!child._dur || _clamp(0, child.totalDuration(), t) - child._tTime > _tinyNum) {
             child.render(t, true);
@@ -580,7 +575,7 @@
               max = -_bigNum;
               while (max < (max = a[wrapAt++].getBoundingClientRect().left) && wrapAt < l) {
               }
-              wrapAt < l && wrapAt--;
+              wrapAt--;
             }
             distances = cache[l] = [];
             originX = ratios ? Math.min(wrapAt, l) * ratioX - 0.5 : from % wrapAt;
@@ -778,47 +773,40 @@
         animation.progress() < 1 && _callback(animation, "onInterrupt");
         return animation;
       };
-      _registerPluginQueue = [];
       _createPlugin = function _createPlugin2(config3) {
-        if (!config3)
-          return;
         config3 = !config3.name && config3["default"] || config3;
-        if (_windowExists() || config3.headless) {
-          var name = config3.name, isFunc = _isFunction(config3), Plugin = name && !isFunc && config3.init ? function() {
-            this._props = [];
-          } : config3, instanceDefaults = {
-            init: _emptyFunc,
-            render: _renderPropTweens,
-            add: _addPropTween,
-            kill: _killPropTweensOf,
-            modifier: _addPluginModifier,
-            rawVars: 0
-          }, statics = {
-            targetTest: 0,
-            get: 0,
-            getSetter: _getSetter,
-            aliases: {},
-            register: 0
-          };
-          _wake();
-          if (config3 !== Plugin) {
-            if (_plugins[name]) {
-              return;
-            }
-            _setDefaults(Plugin, _setDefaults(_copyExcluding(config3, instanceDefaults), statics));
-            _merge(Plugin.prototype, _merge(instanceDefaults, _copyExcluding(config3, statics)));
-            _plugins[Plugin.prop = name] = Plugin;
-            if (config3.targetTest) {
-              _harnessPlugins.push(Plugin);
-              _reservedProps[name] = 1;
-            }
-            name = (name === "css" ? "CSS" : name.charAt(0).toUpperCase() + name.substr(1)) + "Plugin";
+        var name = config3.name, isFunc = _isFunction(config3), Plugin = name && !isFunc && config3.init ? function() {
+          this._props = [];
+        } : config3, instanceDefaults = {
+          init: _emptyFunc,
+          render: _renderPropTweens,
+          add: _addPropTween,
+          kill: _killPropTweensOf,
+          modifier: _addPluginModifier,
+          rawVars: 0
+        }, statics = {
+          targetTest: 0,
+          get: 0,
+          getSetter: _getSetter,
+          aliases: {},
+          register: 0
+        };
+        _wake();
+        if (config3 !== Plugin) {
+          if (_plugins[name]) {
+            return;
           }
-          _addGlobal(name, Plugin);
-          config3.register && config3.register(gsap, Plugin, PropTween);
-        } else {
-          _registerPluginQueue.push(config3);
+          _setDefaults(Plugin, _setDefaults(_copyExcluding(config3, instanceDefaults), statics));
+          _merge(Plugin.prototype, _merge(instanceDefaults, _copyExcluding(config3, statics)));
+          _plugins[Plugin.prop = name] = Plugin;
+          if (config3.targetTest) {
+            _harnessPlugins.push(Plugin);
+            _reservedProps[name] = 1;
+          }
+          name = (name === "css" ? "CSS" : name.charAt(0).toUpperCase() + name.substr(1)) + "Plugin";
         }
+        _addGlobal(name, Plugin);
+        config3.register && config3.register(gsap, Plugin, PropTween);
       };
       _255 = 255;
       _colorLookup = {
@@ -970,7 +958,7 @@
       _ticker = function() {
         var _getTime3 = Date.now, _lagThreshold = 500, _adjustedLag = 33, _startTime = _getTime3(), _lastUpdate = _startTime, _gap = 1e3 / 240, _nextTime = _gap, _listeners3 = [], _id, _req, _raf, _self, _delta, _i2, _tick = function _tick2(v) {
           var elapsed = _getTime3() - _lastUpdate, manual = v === true, overlap, dispatch, time, frame;
-          (elapsed > _lagThreshold || elapsed < 0) && (_startTime += elapsed - _adjustedLag);
+          elapsed > _lagThreshold && (_startTime += elapsed - _adjustedLag);
           _lastUpdate += elapsed;
           time = _lastUpdate - _startTime;
           overlap = time - _nextTime;
@@ -1005,9 +993,8 @@
                 _globals.gsap = gsap;
                 (_win.gsapVersions || (_win.gsapVersions = [])).push(gsap.version);
                 _install(_installScope || _win.GreenSockGlobals || !_win.gsap && _win || {});
-                _registerPluginQueue.forEach(_createPlugin);
+                _raf = _win.requestAnimationFrame;
               }
-              _raf = typeof requestAnimationFrame !== "undefined" && requestAnimationFrame;
               _id && _self.sleep();
               _req = _raf || function(f) {
                 return setTimeout(f, _nextTime - _self.time * 1e3 + 1 | 0);
@@ -1017,7 +1004,7 @@
             }
           },
           sleep: function sleep() {
-            (_raf ? cancelAnimationFrame : clearTimeout)(_id);
+            (_raf ? _win.cancelAnimationFrame : clearTimeout)(_id);
             _tickerActive = 0;
             _req = _emptyFunc;
           },
@@ -1176,7 +1163,7 @@
         }, easeOut);
       })(7.5625, 2.75);
       _insertEase("Expo", function(p) {
-        return Math.pow(2, 10 * (p - 1)) * p + p * p * p * p * p * p * (1 - p);
+        return p ? Math.pow(2, 10 * (p - 1)) : 0;
       });
       _insertEase("Circ", function(p) {
         return -(_sqrt(1 - p * p) - 1);
@@ -1273,16 +1260,16 @@
           return arguments.length ? this.totalTime(Math.min(this.totalDuration(), value + _elapsedCycleDuration(this)) % (this._dur + this._rDelay) || (value ? this._dur : 0), suppressEvents) : this._time;
         };
         _proto.totalProgress = function totalProgress(value, suppressEvents) {
-          return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.rawTime() >= 0 && this._initted ? 1 : 0;
+          return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.ratio;
         };
         _proto.progress = function progress(value, suppressEvents) {
-          return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.rawTime() > 0 ? 1 : 0;
+          return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.ratio;
         };
         _proto.iteration = function iteration(value, suppressEvents) {
           var cycleDuration = this.duration() + this._rDelay;
           return arguments.length ? this.totalTime(this._time + (value - 1) * cycleDuration, suppressEvents) : this._repeat ? _animationCycle(this._tTime, cycleDuration) + 1 : 1;
         };
-        _proto.timeScale = function timeScale(value, suppressEvents) {
+        _proto.timeScale = function timeScale(value) {
           if (!arguments.length) {
             return this._rts === -_tinyNum ? 0 : this._rts;
           }
@@ -1292,7 +1279,7 @@
           var tTime = this.parent && this._ts ? _parentToChildTotalTime(this.parent._time, this) : this._tTime;
           this._rts = +value || 0;
           this._ts = this._ps || value === -_tinyNum ? 0 : this._rts;
-          this.totalTime(_clamp(-Math.abs(this._delay), this._tDur, tTime), suppressEvents !== false);
+          this.totalTime(_clamp(-this._delay, this._tDur, tTime), true);
           _setEnd(this);
           return _recacheAncestors(this);
         };
@@ -1346,10 +1333,10 @@
         _proto.globalTime = function globalTime(rawTime) {
           var animation = this, time = arguments.length ? rawTime : animation.rawTime();
           while (animation) {
-            time = animation._start + time / (Math.abs(animation._ts) || 1);
+            time = animation._start + time / (animation._ts || 1);
             animation = animation._dp;
           }
-          return !this.parent && this._sat ? this._sat.globalTime(rawTime) : time;
+          return !this.parent && this._sat ? this._sat.vars.immediateRender ? -1 : this._sat.globalTime(rawTime) : time;
         };
         _proto.repeat = function repeat(value) {
           if (arguments.length) {
@@ -1378,9 +1365,7 @@
           return this.totalTime(_parsePosition(this, position), _isNotFalse(suppressEvents));
         };
         _proto.restart = function restart(includeDelay, suppressEvents) {
-          this.play().totalTime(includeDelay ? -this._delay : 0, _isNotFalse(suppressEvents));
-          this._dur || (this._zTime = -_tinyNum);
-          return this;
+          return this.play().totalTime(includeDelay ? -this._delay : 0, _isNotFalse(suppressEvents));
         };
         _proto.play = function play(from, suppressEvents) {
           from != null && this.seek(from, suppressEvents);
@@ -1557,16 +1542,15 @@
                 iteration = this._repeat;
                 time = dur;
               } else {
-                prevIteration = _roundPrecise(tTime / cycleDuration);
-                iteration = ~~prevIteration;
-                if (iteration && iteration === prevIteration) {
+                iteration = ~~(tTime / cycleDuration);
+                if (iteration && iteration === tTime / cycleDuration) {
                   time = dur;
                   iteration--;
                 }
                 time > dur && (time = dur);
               }
               prevIteration = _animationCycle(this._tTime, cycleDuration);
-              !prevTime && this._tTime && prevIteration !== iteration && this._tTime - prevIteration * cycleDuration - this._dur <= 0 && (prevIteration = iteration);
+              !prevTime && this._tTime && prevIteration !== iteration && (prevIteration = iteration);
               if (yoyo && iteration & 1) {
                 time = dur - time;
                 isYoyo = 1;
@@ -1574,7 +1558,7 @@
               if (iteration !== prevIteration && !this._lock) {
                 var rewinding = yoyo && prevIteration & 1, doesWrap = rewinding === (yoyo && iteration & 1);
                 iteration < prevIteration && (rewinding = !rewinding);
-                prevTime = rewinding ? 0 : tTime % dur ? dur : tTime;
+                prevTime = rewinding ? 0 : dur;
                 this._lock = 1;
                 this.render(prevTime || (isYoyo ? 0 : _roundPrecise(iteration * cycleDuration)), suppressEvents, !dur)._lock = 0;
                 this._tTime = tTime;
@@ -1613,7 +1597,7 @@
               this._zTime = totalTime;
               prevTime = 0;
             }
-            if (!prevTime && time && !suppressEvents && !iteration) {
+            if (!prevTime && time && !suppressEvents) {
               _callback(this, "onStart");
               if (this._tTime !== tTime) {
                 return this;
@@ -1742,7 +1726,7 @@
           if (_isFunction(child)) {
             return this.killTweensOf(child);
           }
-          child.parent === this && _removeLinkedListItem(this, child);
+          _removeLinkedListItem(this, child);
           if (child === this._recent) {
             this._recent = this._last;
           }
@@ -2051,7 +2035,7 @@
         return plugin;
       };
       _initTween = function _initTween2(tween, time, tTime) {
-        var vars = tween.vars, ease = vars.ease, startAt = vars.startAt, immediateRender = vars.immediateRender, lazy = vars.lazy, onUpdate = vars.onUpdate, runBackwards = vars.runBackwards, yoyoEase = vars.yoyoEase, keyframes = vars.keyframes, autoRevert = vars.autoRevert, dur = tween._dur, prevStartAt = tween._startAt, targets = tween._targets, parent = tween.parent, fullTargets = parent && parent.data === "nested" ? parent.vars.targets : targets, autoOverwrite = tween._overwrite === "auto" && !_suppressOverwrites, tl = tween.timeline, cleanVars, i, p, pt, target, hasPriority, gsData, harness, plugin, ptLookup, index, harnessVars, overwritten;
+        var vars = tween.vars, ease = vars.ease, startAt = vars.startAt, immediateRender = vars.immediateRender, lazy = vars.lazy, onUpdate = vars.onUpdate, onUpdateParams = vars.onUpdateParams, callbackScope = vars.callbackScope, runBackwards = vars.runBackwards, yoyoEase = vars.yoyoEase, keyframes = vars.keyframes, autoRevert = vars.autoRevert, dur = tween._dur, prevStartAt = tween._startAt, targets = tween._targets, parent = tween.parent, fullTargets = parent && parent.data === "nested" ? parent.vars.targets : targets, autoOverwrite = tween._overwrite === "auto" && !_suppressOverwrites, tl = tween.timeline, cleanVars, i, p, pt, target, hasPriority, gsData, harness, plugin, ptLookup, index, harnessVars, overwritten;
         tl && (!keyframes || !ease) && (ease = "none");
         tween._ease = _parseEase(ease, _defaults.ease);
         tween._yEase = yoyoEase ? _invertEase(_parseEase(yoyoEase === true ? ease : yoyoEase, _defaults.ease)) : 0;
@@ -2079,9 +2063,9 @@
               lazy: !prevStartAt && _isNotFalse(lazy),
               startAt: null,
               delay: 0,
-              onUpdate: onUpdate && function() {
-                return _callback(tween, "onUpdate");
-              },
+              onUpdate,
+              onUpdateParams,
+              callbackScope,
               stagger: 0
             }, startAt)));
             tween._startAt._dp = 0;
@@ -2105,7 +2089,7 @@
                 //zero-duration tweens render immediately by default, but if we're not specifically instructed to render this tween immediately, we should skip this and merely _init() to record the starting values (rendering them immediately would push them to completion which is wasteful in that case - we'd have to render(-1) immediately after)
                 stagger: 0,
                 parent
-                //ensures that nested tweens that had a stagger are handled properly, like gsap.from(".class", {y: gsap.utils.wrap([-100,100]), stagger: 0.5})
+                //ensures that nested tweens that had a stagger are handled properly, like gsap.from(".class", {y:gsap.utils.wrap([-100,100])})
               }, cleanVars);
               harnessVars && (p[harness.prop] = harnessVars);
               _removeFromParent(tween._startAt = Tween.set(targets, p));
@@ -2160,7 +2144,7 @@
         tween._initted = (!tween._op || tween._pt) && !overwritten;
         keyframes && time <= 0 && tl.render(_bigNum, true, true);
       };
-      _updatePropTweens = function _updatePropTweens2(tween, property, value, start, startIsRelative, ratio, time, skipRecursion) {
+      _updatePropTweens = function _updatePropTweens2(tween, property, value, start, startIsRelative, ratio, time) {
         var ptCache = (tween._pt && tween._ptCache || (tween._ptCache = {}))[property], pt, rootPT, lookup, i;
         if (!ptCache) {
           ptCache = tween._ptCache[property] = [];
@@ -2179,7 +2163,7 @@
               tween.vars[property] = "+=0";
               _initTween(tween, time);
               _forceAllPropTweens = 0;
-              return skipRecursion ? _warn(property + " not eligible for reset") : 1;
+              return 1;
             }
             ptCache.push(pt);
           }
@@ -2252,7 +2236,7 @@
           }
           _this3 = _Animation2.call(this, skipInherit ? vars : _inheritDefaults(vars)) || this;
           var _this3$vars = _this3.vars, duration = _this3$vars.duration, delay = _this3$vars.delay, immediateRender = _this3$vars.immediateRender, stagger = _this3$vars.stagger, overwrite = _this3$vars.overwrite, keyframes = _this3$vars.keyframes, defaults2 = _this3$vars.defaults, scrollTrigger = _this3$vars.scrollTrigger, yoyoEase = _this3$vars.yoyoEase, parent = vars.parent || _globalTimeline, parsedTargets = (_isArray(targets) || _isTypedArray(targets) ? _isNumber(targets[0]) : "length" in vars) ? [targets] : toArray(targets), tl, i, copy, l, p, curTarget, staggerFunc, staggerVarsToMerge;
-          _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://gsap.com", !_config.nullTargetWarn) || [];
+          _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://greensock.com", !_config.nullTargetWarn) || [];
           _this3._ptLookup = [];
           _this3._overwrite = overwrite;
           if (keyframes || stagger || _isFuncOrString(duration) || _isFuncOrString(delay)) {
@@ -2354,7 +2338,7 @@
           var prevTime = this._time, tDur = this._tDur, dur = this._dur, isNegative = totalTime < 0, tTime = totalTime > tDur - _tinyNum && !isNegative ? tDur : totalTime < _tinyNum ? 0 : totalTime, time, pt, iteration, cycleDuration, prevIteration, isYoyo, ratio, timeline2, yoyoEase;
           if (!dur) {
             _renderZeroDurationTween(this, totalTime, suppressEvents, force);
-          } else if (tTime !== this._tTime || !totalTime || force || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== isNegative || this._lazy) {
+          } else if (tTime !== this._tTime || !totalTime || force || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== isNegative) {
             time = tTime;
             timeline2 = this.timeline;
             if (this._repeat) {
@@ -2367,14 +2351,12 @@
                 iteration = this._repeat;
                 time = dur;
               } else {
-                prevIteration = _roundPrecise(tTime / cycleDuration);
-                iteration = ~~prevIteration;
-                if (iteration && iteration === prevIteration) {
+                iteration = ~~(tTime / cycleDuration);
+                if (iteration && iteration === tTime / cycleDuration) {
                   time = dur;
                   iteration--;
-                } else if (time > dur) {
-                  time = dur;
                 }
+                time > dur && (time = dur);
               }
               isYoyo = this._yoyo && iteration & 1;
               if (isYoyo) {
@@ -2382,13 +2364,13 @@
                 time = dur - time;
               }
               prevIteration = _animationCycle(this._tTime, cycleDuration);
-              if (time === prevTime && !force && this._initted && iteration === prevIteration) {
+              if (time === prevTime && !force && this._initted) {
                 this._tTime = tTime;
                 return this;
               }
               if (iteration !== prevIteration) {
                 timeline2 && this._yEase && _propagateYoyoEase(timeline2, isYoyo);
-                if (this.vars.repeatRefresh && !isYoyo && !this._lock && time !== cycleDuration && this._initted) {
+                if (this.vars.repeatRefresh && !isYoyo && !this._lock) {
                   this._lock = force = 1;
                   this.render(_roundPrecise(cycleDuration * iteration), true).invalidate()._lock = 0;
                 }
@@ -2399,7 +2381,7 @@
                 this._tTime = 0;
                 return this;
               }
-              if (prevTime !== this._time && !(force && this.vars.repeatRefresh && iteration !== prevIteration)) {
+              if (prevTime !== this._time) {
                 return this;
               }
               if (dur !== this._dur) {
@@ -2416,7 +2398,7 @@
             if (this._from) {
               this.ratio = ratio = 1 - ratio;
             }
-            if (time && !prevTime && !suppressEvents && !iteration) {
+            if (time && !prevTime && !suppressEvents) {
               _callback(this, "onStart");
               if (this._tTime !== tTime) {
                 return this;
@@ -2427,7 +2409,7 @@
               pt.r(ratio, pt.d);
               pt = pt._next;
             }
-            timeline2 && timeline2.render(totalTime < 0 ? totalTime : timeline2._dur * timeline2._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
+            timeline2 && timeline2.render(totalTime < 0 ? totalTime : !time && isYoyo ? -_tinyNum : timeline2._dur * timeline2._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
             if (this._onUpdate && !suppressEvents) {
               isNegative && _rewindStartAt(this, totalTime, suppressEvents, force);
               _callback(this, "onUpdate");
@@ -2454,14 +2436,14 @@
           this.timeline && this.timeline.invalidate(soft);
           return _Animation2.prototype.invalidate.call(this, soft);
         };
-        _proto3.resetTo = function resetTo(property, value, start, startIsRelative, skipRecursion) {
+        _proto3.resetTo = function resetTo(property, value, start, startIsRelative) {
           _tickerActive || _ticker.wake();
           this._ts || this.play();
           var time = Math.min(this._dur, (this._dp._time - this._start) * this._ts), ratio;
           this._initted || _initTween(this, time);
           ratio = this._ease(time / this._dur);
-          if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time, skipRecursion)) {
-            return this.resetTo(property, value, start, startIsRelative, 1);
+          if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time)) {
+            return this.resetTo(property, value, start, startIsRelative);
           }
           _alignPlayhead(this, 0);
           this.parent || _addLinkedListItem(this._dp, this, "_first", "_last", this._dp._sort ? "_start" : 0);
@@ -2473,8 +2455,7 @@
           }
           if (!targets && (!vars || vars === "all")) {
             this._lazy = this._pt = 0;
-            this.parent ? _interrupt(this) : this.scrollTrigger && this.scrollTrigger.kill(!!_reverting);
-            return this;
+            return this.parent ? _interrupt(this) : this;
           }
           if (this.timeline) {
             var tDur = this.timeline.totalDuration();
@@ -2704,7 +2685,6 @@
       _listeners = {};
       _emptyArray = [];
       _lastMediaTime = 0;
-      _contextID = 0;
       _dispatch = function _dispatch2(type) {
         return (_listeners[type] || _emptyArray).map(function(f) {
           return f();
@@ -2731,9 +2711,7 @@
           });
           _dispatch("matchMediaRevert");
           matches.forEach(function(c) {
-            return c.onMatch(c, function(func) {
-              return c.add(null, func);
-            });
+            return c.onMatch(c);
           });
           _lastMediaTime = time;
           _dispatch("matchMedia");
@@ -2745,7 +2723,6 @@
           this.data = [];
           this._r = [];
           this.isReverted = false;
-          this.id = _contextID++;
           func && this.add(func);
         }
         var _proto5 = Context2.prototype;
@@ -2768,9 +2745,7 @@
             return result;
           };
           self.last = f;
-          return name === _isFunction ? f(self, function(func2) {
-            return self.add(null, func2);
-          }) : name ? self[name] = f : f;
+          return name === _isFunction ? f(self) : name ? self[name] = f : f;
         };
         _proto5.ignore = function ignore(func) {
           var prev = _context;
@@ -2791,44 +2766,32 @@
         _proto5.kill = function kill(revert, matchMedia2) {
           var _this4 = this;
           if (revert) {
-            (function() {
-              var tweens = _this4.getTweens(), i2 = _this4.data.length, t;
-              while (i2--) {
-                t = _this4.data[i2];
-                if (t.data === "isFlip") {
-                  t.revert();
-                  t.getChildren(true, true, false).forEach(function(tween) {
-                    return tweens.splice(tweens.indexOf(tween), 1);
-                  });
-                }
+            var tweens = this.getTweens();
+            this.data.forEach(function(t) {
+              if (t.data === "isFlip") {
+                t.revert();
+                t.getChildren(true, true, false).forEach(function(tween) {
+                  return tweens.splice(tweens.indexOf(tween), 1);
+                });
               }
-              tweens.map(function(t2) {
-                return {
-                  g: t2._dur || t2._delay || t2._sat && !t2._sat.vars.immediateRender ? t2.globalTime(0) : -Infinity,
-                  t: t2
-                };
-              }).sort(function(a, b) {
-                return b.g - a.g || -Infinity;
-              }).forEach(function(o) {
-                return o.t.revert(revert);
-              });
-              i2 = _this4.data.length;
-              while (i2--) {
-                t = _this4.data[i2];
-                if (t instanceof Timeline) {
-                  if (t.data !== "nested") {
-                    t.scrollTrigger && t.scrollTrigger.revert();
-                    t.kill();
-                  }
-                } else {
-                  !(t instanceof Tween) && t.revert && t.revert(revert);
-                }
-              }
-              _this4._r.forEach(function(f) {
-                return f(revert, _this4);
-              });
-              _this4.isReverted = true;
-            })();
+            });
+            tweens.map(function(t) {
+              return {
+                g: t.globalTime(0),
+                t
+              };
+            }).sort(function(a, b) {
+              return b.g - a.g || -1;
+            }).forEach(function(o) {
+              return o.t.revert(revert);
+            });
+            this.data.forEach(function(e) {
+              return !(e instanceof Animation) && e.revert && e.revert(revert);
+            });
+            this._r.forEach(function(f) {
+              return f(revert, _this4);
+            });
+            this.isReverted = true;
           } else {
             this.data.forEach(function(e) {
               return e.kill && e.kill();
@@ -2836,10 +2799,8 @@
           }
           this.clear();
           if (matchMedia2) {
-            var i = _media.length;
-            while (i--) {
-              _media[i].id === this.id && _media.splice(i, 1);
-            }
+            var i = _media.indexOf(this);
+            !!~i && _media.splice(i, 1);
           }
         };
         _proto5.revert = function revert(config3) {
@@ -2851,7 +2812,6 @@
         function MatchMedia2(scope) {
           this.contexts = [];
           this.scope = scope;
-          _context && _context.data.push(this);
         }
         var _proto6 = MatchMedia2.prototype;
         _proto6.add = function add(conditions, func, scope) {
@@ -2859,7 +2819,6 @@
             matches: conditions
           });
           var context3 = new Context(0, scope || this.scope), cond = context3.conditions = {}, mq, p, active;
-          _context && !context3.selector && (context3.selector = _context.selector);
           this.contexts.push(context3);
           func = context3.add("onMatch", func);
           context3.queries = conditions;
@@ -2875,9 +2834,7 @@
               }
             }
           }
-          active && func(context3, function(f) {
-            return context3.add(null, f);
-          });
+          active && func(context3);
           return this;
         };
         _proto6.revert = function revert(config3) {
@@ -2939,8 +2896,8 @@
           };
         },
         quickTo: function quickTo(target, property, vars) {
-          var _setDefaults22;
-          var tween = gsap.to(target, _setDefaults((_setDefaults22 = {}, _setDefaults22[property] = "+=0.1", _setDefaults22.paused = true, _setDefaults22.stagger = 0, _setDefaults22), vars || {})), func = function func2(value, start, startIsRelative) {
+          var _merge22;
+          var tween = gsap.to(target, _merge((_merge22 = {}, _merge22[property] = "+=0.1", _merge22.paused = true, _merge22), vars || {})), func = function func2(value, start, startIsRelative) {
             return tween.resetTo(property, value, start, startIsRelative);
           };
           func.tween = tween;
@@ -3157,7 +3114,7 @@
           }
         }
       }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap;
-      Tween.version = Timeline.version = gsap.version = "3.12.7";
+      Tween.version = Timeline.version = gsap.version = "3.11.4";
       _coreReady = 1;
       _windowExists() && _wake();
       Power0 = _easeMap.Power0;
@@ -3182,7 +3139,7 @@
   });
 
   // node_modules/gsap/CSSPlugin.js
-  var _win2, _doc2, _docElement, _pluginInitted, _tempDiv, _tempDivStyler, _recentSetterPlugin, _reverting2, _windowExists3, _transformProps, _RAD2DEG, _DEG2RAD, _atan2, _bigNum2, _capsExp, _horizontalExp, _complexExp, _propertyAliases, _renderCSSProp, _renderPropWithEnd, _renderCSSPropWithBeginning, _renderRoundedCSSProp, _renderNonTweeningValue, _renderNonTweeningValueOnlyAtEnd, _setterCSSStyle, _setterCSSProp, _setterTransform, _setterScale, _setterScaleWithRender, _setterTransformWithRender, _transformProp, _transformOriginProp, _saveStyle, _removeIndependentTransforms, _revertStyle, _getStyleSaver, _supports3D, _createElement, _getComputedProperty, _prefixes, _checkPropPrefix, _initCore, _getReparentedCloneBBox, _getAttributeFallbacks, _getBBox, _isSVG, _removeProperty, _addNonTweeningPT, _nonConvertibleUnits, _nonStandardLayouts, _convertToUnit, _get, _tweenComplexCSSString, _keywordToPercent, _convertKeywordsToPercentages, _renderClearProps, _specialProps, _identity2DMatrix, _rotationalProperties, _isNullTransform, _getComputedTransformMatrixAsArray, _getMatrix, _applySVGOrigin, _parseTransform, _firstTwoOnly, _addPxTranslate, _renderNon3DTransforms, _zeroDeg, _zeroPx, _endParenthesis, _renderCSSTransforms, _renderSVGTransforms, _addRotationalPropTween, _assign, _addRawTransformPTs, CSSPlugin;
+  var _win2, _doc2, _docElement, _pluginInitted, _tempDiv, _tempDivStyler, _recentSetterPlugin, _reverting2, _windowExists3, _transformProps, _RAD2DEG, _DEG2RAD, _atan2, _bigNum2, _capsExp, _horizontalExp, _complexExp, _propertyAliases, _renderCSSProp, _renderPropWithEnd, _renderCSSPropWithBeginning, _renderRoundedCSSProp, _renderNonTweeningValue, _renderNonTweeningValueOnlyAtEnd, _setterCSSStyle, _setterCSSProp, _setterTransform, _setterScale, _setterScaleWithRender, _setterTransformWithRender, _transformProp, _transformOriginProp, _saveStyle, _removeIndependentTransforms, _revertStyle, _getStyleSaver, _supports3D, _createElement, _getComputedProperty, _prefixes, _checkPropPrefix, _initCore, _getBBoxHack, _getAttributeFallbacks, _getBBox, _isSVG, _removeProperty, _addNonTweeningPT, _nonConvertibleUnits, _nonStandardLayouts, _convertToUnit, _get, _tweenComplexCSSString, _keywordToPercent, _convertKeywordsToPercentages, _renderClearProps, _specialProps, _identity2DMatrix, _rotationalProperties, _isNullTransform, _getComputedTransformMatrixAsArray, _getMatrix, _applySVGOrigin, _parseTransform, _firstTwoOnly, _addPxTranslate, _renderNon3DTransforms, _zeroDeg, _zeroPx, _endParenthesis, _renderCSSTransforms, _renderSVGTransforms, _addRotationalPropTween, _assign, _addRawTransformPTs, CSSPlugin;
   var init_CSSPlugin = __esm({
     "node_modules/gsap/CSSPlugin.js"() {
       init_live_reload();
@@ -3248,24 +3205,19 @@
       _transformOriginProp = _transformProp + "Origin";
       _saveStyle = function _saveStyle2(property, isNotCSS) {
         var _this = this;
-        var target = this.target, style = target.style, cache = target._gsap;
-        if (property in _transformProps && style) {
+        var target = this.target, style = target.style;
+        if (property in _transformProps) {
           this.tfm = this.tfm || {};
           if (property !== "transform") {
             property = _propertyAliases[property] || property;
             ~property.indexOf(",") ? property.split(",").forEach(function(a) {
               return _this.tfm[a] = _get(target, a);
-            }) : this.tfm[property] = cache.x ? cache[property] : _get(target, property);
-            property === _transformOriginProp && (this.tfm.zOrigin = cache.zOrigin);
-          } else {
-            return _propertyAliases.transform.split(",").forEach(function(p) {
-              return _saveStyle2.call(_this, p, isNotCSS);
-            });
+            }) : this.tfm[property] = target._gsap.x ? target._gsap[property] : _get(target, property);
           }
           if (this.props.indexOf(_transformProp) >= 0) {
             return;
           }
-          if (cache.svg) {
+          if (target._gsap.svg) {
             this.svgo = target.getAttribute("data-svg-origin");
             this.props.push(_transformOriginProp, isNotCSS, "");
           }
@@ -3283,13 +3235,7 @@
       _revertStyle = function _revertStyle2() {
         var props = this.props, target = this.target, style = target.style, cache = target._gsap, i, p;
         for (i = 0; i < props.length; i += 3) {
-          if (!props[i + 1]) {
-            props[i + 2] ? style[props[i]] = props[i + 2] : style.removeProperty(props[i].substr(0, 2) === "--" ? props[i] : props[i].replace(_capsExp, "-$1").toLowerCase());
-          } else if (props[i + 1] === 2) {
-            target[props[i]](props[i + 2]);
-          } else {
-            target[props[i]] = props[i + 2];
-          }
+          props[i + 1] ? target[props[i]] = props[i + 2] : props[i + 2] ? style[props[i]] = props[i + 2] : style.removeProperty(props[i].replace(_capsExp, "-$1").toLowerCase());
         }
         if (this.tfm) {
           for (p in this.tfm) {
@@ -3300,13 +3246,8 @@
             target.setAttribute("data-svg-origin", this.svgo || "");
           }
           i = _reverting2();
-          if ((!i || !i.isStart) && !style[_transformProp]) {
+          if (i && !i.isStart && !style[_transformProp]) {
             _removeIndependentTransforms(style);
-            if (cache.zOrigin && style[_transformOriginProp]) {
-              style[_transformOriginProp] += " " + cache.zOrigin + "px";
-              cache.zOrigin = 0;
-              cache.renderTransform();
-            }
             cache.uncache = 1;
           }
         }
@@ -3318,15 +3259,14 @@
           revert: _revertStyle,
           save: _saveStyle
         };
-        target._gsap || gsap.core.getCache(target);
-        properties && target.style && target.nodeType && properties.split(",").forEach(function(p) {
+        properties && properties.split(",").forEach(function(p) {
           return saver.save(p);
         });
         return saver;
       };
       _createElement = function _createElement2(type, ns) {
         var e = _doc2.createElementNS ? _doc2.createElementNS((ns || "http://www.w3.org/1999/xhtml").replace(/^https/, "http"), type) : _doc2.createElement(type);
-        return e && e.style ? e : _doc2.createElement(type);
+        return e.style ? e : _doc2.createElement(type);
       };
       _getComputedProperty = function _getComputedProperty2(target, property, skipPrefixFallback) {
         var cs = getComputedStyle(target);
@@ -3360,17 +3300,30 @@
           _pluginInitted = 1;
         }
       };
-      _getReparentedCloneBBox = function _getReparentedCloneBBox2(target) {
-        var owner = target.ownerSVGElement, svg = _createElement("svg", owner && owner.getAttribute("xmlns") || "http://www.w3.org/2000/svg"), clone = target.cloneNode(true), bbox;
-        clone.style.display = "block";
-        svg.appendChild(clone);
+      _getBBoxHack = function _getBBoxHack2(swapIfPossible) {
+        var svg = _createElement("svg", this.ownerSVGElement && this.ownerSVGElement.getAttribute("xmlns") || "http://www.w3.org/2000/svg"), oldParent = this.parentNode, oldSibling = this.nextSibling, oldCSS = this.style.cssText, bbox;
         _docElement.appendChild(svg);
-        try {
-          bbox = clone.getBBox();
-        } catch (e) {
+        svg.appendChild(this);
+        this.style.display = "block";
+        if (swapIfPossible) {
+          try {
+            bbox = this.getBBox();
+            this._gsapBBox = this.getBBox;
+            this.getBBox = _getBBoxHack2;
+          } catch (e) {
+          }
+        } else if (this._gsapBBox) {
+          bbox = this._gsapBBox();
         }
-        svg.removeChild(clone);
+        if (oldParent) {
+          if (oldSibling) {
+            oldParent.insertBefore(this, oldSibling);
+          } else {
+            oldParent.appendChild(this);
+          }
+        }
         _docElement.removeChild(svg);
+        this.style.cssText = oldCSS;
         return bbox;
       };
       _getAttributeFallbacks = function _getAttributeFallbacks2(target, attributesArray) {
@@ -3382,14 +3335,13 @@
         }
       };
       _getBBox = function _getBBox2(target) {
-        var bounds, cloned;
+        var bounds;
         try {
           bounds = target.getBBox();
         } catch (error) {
-          bounds = _getReparentedCloneBBox(target);
-          cloned = 1;
+          bounds = _getBBoxHack.call(target, true);
         }
-        bounds && (bounds.width || bounds.height) || cloned || (bounds = _getReparentedCloneBBox(target));
+        bounds && (bounds.width || bounds.height) || target.getBBox === _getBBoxHack || (bounds = _getBBoxHack.call(target, true));
         return bounds && !bounds.width && !bounds.x && !bounds.y ? {
           x: +_getAttributeFallbacks(target, ["x", "cx", "x1"]) || 0,
           y: +_getAttributeFallbacks(target, ["y", "cy", "y1"]) || 0,
@@ -3402,16 +3354,15 @@
       };
       _removeProperty = function _removeProperty2(target, property) {
         if (property) {
-          var style = target.style, first2Chars;
+          var style = target.style;
           if (property in _transformProps && property !== _transformOriginProp) {
             property = _transformProp;
           }
           if (style.removeProperty) {
-            first2Chars = property.substr(0, 2);
-            if (first2Chars === "ms" || property.substr(0, 6) === "webkit") {
+            if (property.substr(0, 2) === "ms" || property.substr(0, 6) === "webkit") {
               property = "-" + property;
             }
-            style.removeProperty(first2Chars === "--" ? property : property.replace(_capsExp, "-$1").toLowerCase());
+            style.removeProperty(property.replace(_capsExp, "-$1").toLowerCase());
           } else {
             style.removeAttribute(property);
           }
@@ -3446,7 +3397,7 @@
           return _round(toPercent ? curValue / px * amount : curValue / 100 * px);
         }
         style[horizontal ? "width" : "height"] = amount + (toPixels ? curUnit : unit);
-        parent = unit !== "rem" && ~property.indexOf("adius") || unit === "em" && target.appendChild && !isRootSVG ? target : target.parentNode;
+        parent = ~property.indexOf("adius") || unit === "em" && target.appendChild && !isRootSVG ? target : target.parentNode;
         if (isSVG) {
           parent = (target.ownerSVGElement || {}).parentNode;
         }
@@ -3457,19 +3408,12 @@
         if (cache && toPercent && cache.width && horizontal && cache.time === _ticker.time && !cache.uncache) {
           return _round(curValue / cache.width * amount);
         } else {
-          if (toPercent && (property === "height" || property === "width")) {
-            var v = target.style[property];
-            target.style[property] = amount + unit;
-            px = target[measureProperty];
-            v ? target.style[property] = v : _removeProperty(target, property);
-          } else {
-            (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
-            parent === target && (style.position = "static");
-            parent.appendChild(_tempDiv);
-            px = _tempDiv[measureProperty];
-            parent.removeChild(_tempDiv);
-            style.position = "absolute";
-          }
+          (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
+          parent === target && (style.position = "static");
+          parent.appendChild(_tempDiv);
+          px = _tempDiv[measureProperty];
+          parent.removeChild(_tempDiv);
+          style.position = "absolute";
           if (horizontal && toPercent) {
             cache = _getCache(parent);
             cache.time = _ticker.time;
@@ -3514,10 +3458,9 @@
         start += "";
         end += "";
         if (end === "auto") {
-          startValue = target.style[prop];
           target.style[prop] = end;
           end = _getComputedProperty(target, prop) || end;
-          startValue ? target.style[prop] = startValue : _removeProperty(target, prop);
+          target.style[prop] = start;
         }
         a = [start, end];
         _colorStringFilter(a);
@@ -3609,7 +3552,6 @@
             _removeProperty(target, _transformProp);
             if (cache) {
               cache.svg && target.removeAttribute("transform");
-              style.scale = style.rotate = style.translate = "none";
               _parseTransform(target, 1);
               cache.uncache = 1;
               _removeIndependentTransforms(style);
@@ -3681,7 +3623,7 @@
         		}
         	}
         	cache.classPT = plugin._pt = new PropTween(plugin._pt, target, "className", 0, 0, _renderClassName, data, 0, -11);
-        	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://gsap.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
+        	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://greensock.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
         		style.cssText = cssText; //we recorded cssText before we swapped classes and ran _getAllStyles() because in cases when a className tween is overwritten, we remove all the related tweening properties from that class change (otherwise class-specific stuff can't override properties we've directly set on the target's style object due to specificity).
         	}
         	_parseTransform(target, true); //to clear the caching of transforms
@@ -3711,7 +3653,7 @@
           temp = style.display;
           style.display = "block";
           parent = target.parentNode;
-          if (!parent || !target.offsetParent && !target.getBoundingClientRect().width) {
+          if (!parent || !target.offsetParent) {
             addedToDOM = 1;
             nextSibling = target.nextElementSibling;
             _docElement.appendChild(target);
@@ -3892,7 +3834,7 @@
         cache.skewX = skewX + deg;
         cache.skewY = skewY + deg;
         cache.transformPerspective = perspective + px;
-        if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || !uncache && cache.zOrigin || 0) {
+        if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || 0) {
           style[_transformOriginProp] = _firstTwoOnly(origin);
         }
         cache.xOffset = cache.yOffset = 0;
@@ -4135,7 +4077,7 @@
               if (startAt && p in startAt) {
                 startValue = typeof startAt[p] === "function" ? startAt[p].call(tween, index, target, targets) : startAt[p];
                 _isString(startValue) && ~startValue.indexOf("random(") && (startValue = _replaceRandom(startValue));
-                getUnit(startValue + "") || startValue === "auto" || (startValue += _config.units[p] || getUnit(_get(target, p)) || "");
+                getUnit(startValue + "") || (startValue += _config.units[p] || getUnit(_get(target, p)) || "");
                 (startValue + "").charAt(1) === "=" && (startValue = _get(target, p));
               } else {
                 startValue = _get(target, p);
@@ -4223,7 +4165,7 @@
               } else {
                 _tweenComplexCSSString.call(this, target, p, startValue, relative ? relative + endValue : endValue);
               }
-              isTransformRelated || (p in style ? inlineProps.push(p, 0, style[p]) : typeof target[p] === "function" ? inlineProps.push(p, 2, target[p]()) : inlineProps.push(p, 1, startValue || target[p]));
+              isTransformRelated || (p in style ? inlineProps.push(p, 0, style[p]) : inlineProps.push(p, 1, startValue || target[p]));
               props.push(p);
             }
           }
@@ -4303,11 +4245,9 @@
           const banner2 = document.querySelector(".banner_component");
           let videoInitialized = false;
           const handleVideoReady = () => {
-            if (videoInitialized)
-              return;
+            if (videoInitialized) return;
             videoInitialized = true;
-            if (heroVideo.paused)
-              heroVideo.play().catch(console.warn);
+            if (heroVideo.paused) heroVideo.play().catch(console.warn);
             gsapWithCSS.set(heroPlace, { zIndex: 1, display: "none" });
           };
           heroVideo.addEventListener("loadeddata", () => {
@@ -4369,16 +4309,13 @@
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
-      if ("value" in descriptor)
-        descriptor.writable = true;
+      if ("value" in descriptor) descriptor.writable = true;
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
   function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps)
-      _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps)
-      _defineProperties(Constructor, staticProps);
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
   }
   var gsap2, _coreInitted2, _clamp3, _win3, _doc3, _docEl, _body, _isTouch, _pointerType, ScrollTrigger, _root, _normalizer, _eventTypes, _context2, _getGSAP, _startup, _observers, _scrollers, _proxies, _getTime, _bridge, _integrate, _getProxyProp, _isViewport, _addListener, _removeListener, _scrollLeft, _scrollTop, _onScroll, _scrollCacheFunc, _horizontal, _vertical, _getTarget, _getScrollFunc, _getVelocityProp, _getEvent, _getAbsoluteMax, _setScrollTrigger, _initCore3, Observer;
@@ -4412,9 +4349,9 @@
       _isViewport = function _isViewport2(el) {
         return !!~_root.indexOf(el);
       };
-      _addListener = function _addListener2(element, type, func, passive, capture) {
+      _addListener = function _addListener2(element, type, func, nonPassive, capture) {
         return element.addEventListener(type, func, {
-          passive: passive !== false,
+          passive: !nonPassive,
           capture: !!capture
         });
       };
@@ -4471,15 +4408,15 @@
           return arguments.length ? _win3.scrollTo(_horizontal.sc(), value) : _win3.pageYOffset || _doc3[_scrollTop] || _docEl[_scrollTop] || _body[_scrollTop] || 0;
         })
       };
-      _getTarget = function _getTarget2(t, self) {
-        return (self && self._ctx && self._ctx.selector || gsap2.utils.toArray)(t)[0] || (typeof t === "string" && gsap2.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
+      _getTarget = function _getTarget2(t) {
+        return gsap2.utils.toArray(t)[0] || (typeof t === "string" && gsap2.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
       };
       _getScrollFunc = function _getScrollFunc2(element, _ref) {
         var s = _ref.s, sc = _ref.sc;
         _isViewport(element) && (element = _doc3.scrollingElement || _docEl);
         var i = _scrollers.indexOf(element), offset = sc === _vertical.sc ? 1 : 2;
         !~i && (i = _scrollers.push(element) - 1);
-        _scrollers[i + offset] || _addListener(element, "scroll", _onScroll);
+        _scrollers[i + offset] || element.addEventListener("scroll", _onScroll);
         var prev = _scrollers[i + offset], func = prev || (_scrollers[i + offset] = _scrollCacheFunc(_getProxyProp(element, s), true) || (_isViewport(element) ? sc : _scrollCacheFunc(function(value) {
           return arguments.length ? element[s] = value : element[s];
         })));
@@ -4528,7 +4465,7 @@
       };
       _initCore3 = function _initCore4(core) {
         gsap2 = core || _getGSAP();
-        if (!_coreInitted2 && gsap2 && typeof document !== "undefined" && document.body) {
+        if (gsap2 && typeof document !== "undefined" && document.body) {
           _win3 = window;
           _doc3 = document;
           _docEl = _doc3.documentElement;
@@ -4569,7 +4506,7 @@
           type = type || "wheel,touch,pointer";
           debounce2 = debounce2 !== false;
           lineHeight || (lineHeight = parseFloat(_win3.getComputedStyle(_body).lineHeight) || 22);
-          var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self = this, prevDeltaX = 0, prevDeltaY = 0, passive = vars.passive || !preventDefault && vars.passive !== false, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
+          var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self = this, prevDeltaX = 0, prevDeltaY = 0, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
             return onClickTime = _getTime();
           }, _ignoreCheck = function _ignoreCheck2(e, isPointerOrTouch) {
             return (self.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e, isPointerOrTouch);
@@ -4600,9 +4537,8 @@
             if (moved || dragged) {
               onMove && onMove(self);
               if (dragged) {
-                onDragStart && dragged === 1 && onDragStart(self);
-                onDrag && onDrag(self);
-                dragged = 0;
+                onDrag(self);
+                dragged = false;
               }
               moved = false;
             }
@@ -4640,13 +4576,14 @@
             var x = e.clientX, y = e.clientY, dx = x - self.x, dy = y - self.y, isDragging = self.isDragging;
             self.x = x;
             self.y = y;
-            if (isDragging || (dx || dy) && (Math.abs(self.startX - x) >= dragMinimum || Math.abs(self.startY - y) >= dragMinimum)) {
-              dragged = isDragging ? 2 : 1;
+            if (isDragging || Math.abs(self.startX - x) >= dragMinimum || Math.abs(self.startY - y) >= dragMinimum) {
+              onDrag && (dragged = true);
               isDragging || (self.isDragging = true);
               onTouchOrPointerDelta(dx, dy);
+              isDragging || onDragStart && onDragStart(self);
             }
           }, _onPress = self.onPress = function(e) {
-            if (_ignoreCheck(e, 1) || e && e.button) {
+            if (_ignoreCheck(e, 1)) {
               return;
             }
             self.axis = axis = null;
@@ -4658,16 +4595,16 @@
             self.startY = self.y = e.clientY;
             self._vx.reset();
             self._vy.reset();
-            _addListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, passive, true);
+            _addListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, preventDefault, true);
             self.deltaX = self.deltaY = 0;
             onPress && onPress(self);
-          }, _onRelease = self.onRelease = function(e) {
+          }, _onRelease = function _onRelease2(e) {
             if (_ignoreCheck(e, 1)) {
               return;
             }
             _removeListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, true);
-            var isTrackingDrag = !isNaN(self.y - self.startY), wasDragging = self.isDragging, isDragNotClick = wasDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3), eventData = _getEvent(e);
-            if (!isDragNotClick && isTrackingDrag) {
+            var isTrackingDrag = !isNaN(self.y - self.startY), wasDragging = self.isDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3), eventData = _getEvent(e);
+            if (!wasDragging && isTrackingDrag) {
               self._vx.reset();
               self._vy.reset();
               if (preventDefault && allowClicks) {
@@ -4685,10 +4622,9 @@
               }
             }
             self.isDragging = self.isGesturing = self.isPressed = false;
-            onStop && wasDragging && !isNormalizer && onStopDelayedCall.restart(true);
-            dragged && update();
+            onStop && !isNormalizer && onStopDelayedCall.restart(true);
             onDragEnd && wasDragging && onDragEnd(self);
-            onRelease && onRelease(self, isDragNotClick);
+            onRelease && onRelease(self, wasDragging);
           }, _onGestureStart = function _onGestureStart2(e) {
             return e.touches && e.touches.length > 1 && (self.isGesturing = true) && onGestureStart(e, self.isDragging);
           }, _onGestureEnd = function _onGestureEnd2() {
@@ -4719,7 +4655,6 @@
             self.x = x;
             self.y = y;
             moved = true;
-            onStop && onStopDelayedCall.restart(true);
             (dx || dy) && onTouchOrPointerDelta(dx, dy);
           }, _onHover = function _onHover2(e) {
             self.event = e;
@@ -4741,13 +4676,13 @@
           self.enable = function(e) {
             if (!self.isEnabled) {
               _addListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
-              type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll, passive, capture);
-              type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, passive, capture);
+              type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll, preventDefault, capture);
+              type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, preventDefault, capture);
               if (type.indexOf("touch") >= 0 && _isTouch || type.indexOf("pointer") >= 0) {
-                _addListener(target, _eventTypes[0], _onPress, passive, capture);
+                _addListener(target, _eventTypes[0], _onPress, preventDefault, capture);
                 _addListener(ownerDoc, _eventTypes[2], _onRelease);
                 _addListener(ownerDoc, _eventTypes[3], _onRelease);
-                allowClicks && _addListener(target, "click", clickCapture, true, true);
+                allowClicks && _addListener(target, "click", clickCapture, false, true);
                 onClick && _addListener(target, "click", _onClick);
                 onGestureStart && _addListener(ownerDoc, "gesturestart", _onGestureStart);
                 onGestureEnd && _addListener(ownerDoc, "gestureend", _onGestureEnd);
@@ -4756,11 +4691,6 @@
                 onMove && _addListener(target, _pointerType + "move", _onMove);
               }
               self.isEnabled = true;
-              self.isDragging = self.isGesturing = self.isPressed = moved = dragged = false;
-              self._vx.reset();
-              self._vy.reset();
-              scrollX = scrollFuncX();
-              scrollY = scrollFuncY();
               e && e.type && _onPress(e);
               onEnable && onEnable(self);
             }
@@ -4815,7 +4745,7 @@
         }]);
         return Observer2;
       }();
-      Observer.version = "3.12.7";
+      Observer.version = "3.11.4";
       Observer.create = function(vars) {
         return new Observer(vars);
       };
@@ -4833,7 +4763,7 @@
   });
 
   // node_modules/gsap/ScrollTrigger.js
-  var gsap3, _coreInitted3, _win4, _doc4, _docEl2, _body2, _root2, _resizeDelay, _toArray, _clamp4, _time2, _syncInterval, _refreshing, _pointerIsDown, _transformProp2, _i, _prevWidth, _prevHeight, _autoRefresh, _sort, _suppressOverwrites2, _ignoreResize, _normalizer2, _ignoreMobileResize, _baseScreenHeight, _baseScreenWidth, _fixIOSBug, _context3, _scrollRestoration, _div100vh, _100vh, _isReverted, _clampingMax, _limitCallbacks, _startup2, _getTime2, _time1, _lastScrollTime, _enabled, _parseClamp, _keepClamp, _rafBugFix, _pointerDownHandler, _pointerUpHandler, _passThrough3, _round3, _windowExists5, _getGSAP3, _isViewport3, _getViewportDimension, _getBoundsFunc, _getSizeFunc, _getOffsetsFunc, _maxScroll, _iterateAutoRefresh, _isString3, _isFunction3, _isNumber3, _isObject3, _endAnimation, _callback3, _abs, _left, _top, _right, _bottom, _width, _height, _Right, _Left, _Top, _Bottom, _padding, _margin, _Width, _Height, _px, _getComputedStyle, _makePositionable, _setDefaults3, _getBounds, _getSize, _getLabelRatioArray, _getClosestLabel, _snapDirectional, _getLabelAtDirection, _multiListener, _addListener3, _removeListener3, _wheelListener, _markerDefaults, _defaults2, _keywords, _offsetToPx, _createMarker, _positionMarker, _triggers, _ids, _rafID, _sync, _onScroll3, _setBaseDimensions, _onResize, _listeners2, _emptyArray2, _softRefresh, _dispatch3, _savedStyles, _revertRecorded, _revertAll, _clearScrollMemory, _refreshingAll, _refreshID, _queueRefreshID, _queueRefreshAll, _refresh100vh, _hideAllMarkers, _refreshAll, _lastScroll, _direction, _primary, _updateAll, _propNamesToCopy, _stateProps, _swapPinOut, _swapPinIn, _capsExp2, _setState, _getState, _copyState, _winOffsets, _parsePosition3, _prefixExp, _reparent, _interruptionTracker, _shiftMarker, _getTweenCreator, ScrollTrigger2, _clampScrollAndGetDurationMultiplier, _allowNativePanning, _overflow, _nestedScroll, _inputObserver, _inputExp, _inputIsFocused, _captureInputs, _getScrollNormalizer;
+  var gsap3, _coreInitted3, _win4, _doc4, _docEl2, _body2, _root2, _resizeDelay, _toArray, _clamp4, _time2, _syncInterval, _refreshing, _pointerIsDown, _transformProp2, _i, _prevWidth, _prevHeight, _autoRefresh, _sort, _suppressOverwrites2, _ignoreResize, _normalizer2, _ignoreMobileResize, _baseScreenHeight, _baseScreenWidth, _fixIOSBug, _context3, _scrollRestoration, _limitCallbacks, _startup2, _getTime2, _time1, _lastScrollTime, _enabled, _pointerDownHandler, _pointerUpHandler, _passThrough3, _round3, _windowExists5, _getGSAP3, _isViewport3, _getBoundsFunc, _getSizeFunc, _getOffsetsFunc, _maxScroll, _iterateAutoRefresh, _isString3, _isFunction3, _isNumber3, _isObject3, _endAnimation, _callback3, _abs, _left, _top, _right, _bottom, _width, _height, _Right, _Left, _Top, _Bottom, _padding, _margin, _Width, _Height, _px, _getComputedStyle, _makePositionable, _setDefaults3, _getBounds, _getSize, _getLabelRatioArray, _getClosestLabel, _snapDirectional, _getLabelAtDirection, _multiListener, _addListener3, _removeListener3, _wheelListener, _markerDefaults, _defaults2, _keywords, _offsetToPx, _createMarker, _positionMarker, _triggers, _ids, _rafID, _sync, _onScroll3, _setBaseDimensions, _onResize, _listeners2, _emptyArray2, _softRefresh, _dispatch3, _savedStyles, _revertRecorded, _revertAll, _clearScrollMemory, _refreshingAll, _refreshID, _queueRefreshID, _queueRefreshAll, _refreshAll, _lastScroll, _direction, _primary, _updateAll, _propNamesToCopy, _stateProps, _swapPinOut, _swapPinIn, _capsExp2, _setState, _getState, _copyState, _winOffsets, _parsePosition3, _prefixExp, _reparent, _getTweenCreator, ScrollTrigger2, _clampScrollAndGetDurationMultiplier, _allowNativePanning, _overflow, _nestedScroll, _inputObserver, _inputExp, _inputIsFocused, _captureInputs, _getScrollNormalizer;
   var init_ScrollTrigger = __esm({
     "node_modules/gsap/ScrollTrigger.js"() {
       init_live_reload();
@@ -4843,17 +4773,6 @@
       _time1 = _getTime2();
       _lastScrollTime = 0;
       _enabled = 0;
-      _parseClamp = function _parseClamp2(value, type, self) {
-        var clamp4 = _isString3(value) && (value.substr(0, 6) === "clamp(" || value.indexOf("max") > -1);
-        self["_" + type + "Clamp"] = clamp4;
-        return clamp4 ? value.substr(6, value.length - 7) : value;
-      };
-      _keepClamp = function _keepClamp2(value, clamp4) {
-        return clamp4 && (!_isString3(value) || value.substr(0, 6) !== "clamp(") ? "clamp(" + value + ")" : value;
-      };
-      _rafBugFix = function _rafBugFix2() {
-        return _enabled && requestAnimationFrame(_rafBugFix2);
-      };
       _pointerDownHandler = function _pointerDownHandler2() {
         return _pointerIsDown = 1;
       };
@@ -4875,13 +4794,10 @@
       _isViewport3 = function _isViewport4(e) {
         return !!~_root2.indexOf(e);
       };
-      _getViewportDimension = function _getViewportDimension2(dimensionProperty) {
-        return (dimensionProperty === "Height" ? _100vh : _win4["inner" + dimensionProperty]) || _docEl2["client" + dimensionProperty] || _body2["client" + dimensionProperty];
-      };
       _getBoundsFunc = function _getBoundsFunc2(element) {
         return _getProxyProp(element, "getBoundingClientRect") || (_isViewport3(element) ? function() {
           _winOffsets.width = _win4.innerWidth;
-          _winOffsets.height = _100vh;
+          _winOffsets.height = _win4.innerHeight;
           return _winOffsets;
         } : function() {
           return _getBounds(element);
@@ -4892,7 +4808,7 @@
         return (a = _getProxyProp(scroller, "getBoundingClientRect")) ? function() {
           return a()[d];
         } : function() {
-          return (isViewport ? _getViewportDimension(d2) : scroller["client" + d2]) || 0;
+          return (isViewport ? _win4["inner" + d2] : scroller["client" + d2]) || 0;
         };
       };
       _getOffsetsFunc = function _getOffsetsFunc2(element, isViewport) {
@@ -4902,7 +4818,7 @@
       };
       _maxScroll = function _maxScroll2(element, _ref2) {
         var s = _ref2.s, d2 = _ref2.d2, d = _ref2.d, a = _ref2.a;
-        return Math.max(0, (s = "scroll" + d2) && (a = _getProxyProp(element, s)) ? a() - _getBoundsFunc(element)()[d] : _isViewport3(element) ? (_docEl2[s] || _body2[s]) - _getViewportDimension(d2) : element[s] - element["offset" + d2]);
+        return (s = "scroll" + d2) && (a = _getProxyProp(element, s)) ? a() - _getBoundsFunc(element)()[d] : _isViewport3(element) ? (_docEl2[s] || _body2[s]) - (_win4["inner" + d2] || _docEl2["client" + d2] || _body2["client" + d2]) : element[s] - element["offset" + d2];
       };
       _iterateAutoRefresh = function _iterateAutoRefresh2(func, events) {
         for (var i = 0; i < _autoRefresh.length; i += 3) {
@@ -4926,9 +4842,7 @@
       };
       _callback3 = function _callback4(self, func) {
         if (self.enabled) {
-          var result = self._ctx ? self._ctx.add(function() {
-            return func(self);
-          }) : func(self);
+          var result = func(self);
           result && result.totalTime && (self.callbackAnimation = result);
         }
       };
@@ -5051,11 +4965,7 @@
         return element.removeEventListener(type, func, !!capture);
       };
       _wheelListener = function _wheelListener2(func, el, scrollFunc) {
-        scrollFunc = scrollFunc && scrollFunc.wheelHandler;
-        if (scrollFunc) {
-          func(el, "wheel", scrollFunc);
-          func(el, "touchmove", scrollFunc);
-        }
+        return scrollFunc && scrollFunc.wheelHandler && func(el, "wheel", scrollFunc);
       };
       _markerDefaults = {
         startColor: "green",
@@ -5134,9 +5044,9 @@
         _baseScreenWidth = _win4.innerWidth;
         _baseScreenHeight = _win4.innerHeight;
       };
-      _onResize = function _onResize2(force) {
+      _onResize = function _onResize2() {
         _scrollers.cache++;
-        (force === true || !_refreshing && !_ignoreResize && !_doc4.fullscreenElement && !_doc4.webkitFullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win4.innerWidth || Math.abs(_win4.innerHeight - _baseScreenHeight) > _win4.innerHeight * 0.25)) && _resizeDelay.restart(true);
+        !_refreshing && !_ignoreResize && !_doc4.fullscreenElement && !_doc4.webkitFullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win4.innerWidth || Math.abs(_win4.innerHeight - _baseScreenHeight) > _win4.innerHeight * 0.25) && _resizeDelay.restart(true);
       };
       _listeners2 = {};
       _emptyArray2 = [];
@@ -5170,7 +5080,6 @@
             }
           }
         }
-        _isReverted = true;
         media && _revertRecorded(media);
         media || _dispatch3("revert");
       };
@@ -5190,28 +5099,14 @@
           });
         }
       };
-      _refresh100vh = function _refresh100vh2() {
-        _body2.appendChild(_div100vh);
-        _100vh = !_normalizer2 && _div100vh.offsetHeight || _win4.innerHeight;
-        _body2.removeChild(_div100vh);
-      };
-      _hideAllMarkers = function _hideAllMarkers2(hide) {
-        return _toArray(".gsap-marker-start, .gsap-marker-end, .gsap-marker-scroller-start, .gsap-marker-scroller-end").forEach(function(el) {
-          return el.style.display = hide ? "none" : "block";
-        });
-      };
       _refreshAll = function _refreshAll2(force, skipRevert) {
-        _docEl2 = _doc4.documentElement;
-        _body2 = _doc4.body;
-        _root2 = [_win4, _doc4, _docEl2, _body2];
-        if (_lastScrollTime && !force && !_isReverted) {
+        if (_lastScrollTime && !force) {
           _addListener3(ScrollTrigger2, "scrollEnd", _softRefresh);
           return;
         }
-        _refresh100vh();
         _refreshingAll = ScrollTrigger2.isRefreshing = true;
         _scrollers.forEach(function(obj) {
-          return _isFunction3(obj) && ++obj.cacheID && (obj.rec = obj());
+          return _isFunction3(obj) && obj.cacheID++ && (obj.rec = obj());
         });
         var refreshInits = _dispatch3("refreshInit");
         _sort && ScrollTrigger2.sort();
@@ -5225,23 +5120,17 @@
         _triggers.slice(0).forEach(function(t) {
           return t.refresh();
         });
-        _isReverted = false;
-        _triggers.forEach(function(t) {
+        _triggers.forEach(function(t, i) {
           if (t._subPinOffset && t.pin) {
             var prop = t.vars.horizontal ? "offsetWidth" : "offsetHeight", original = t.pin[prop];
             t.revert(true, 1);
             t.adjustPinSpacing(t.pin[prop] - original);
-            t.refresh();
+            t.revert(false, 1);
           }
         });
-        _clampingMax = 1;
-        _hideAllMarkers(true);
         _triggers.forEach(function(t) {
-          var max = _maxScroll(t.scroller, t._dir), endClamp = t.vars.end === "max" || t._endClamp && t.end > max, startClamp = t._startClamp && t.start >= max;
-          (endClamp || startClamp) && t.setPositions(startClamp ? max - 1 : t.start, endClamp ? Math.max(startClamp ? max : t.start + 1, max) : t.end, true);
+          return t.vars.end === "max" && t.setPositions(t.start, Math.max(t.start + 1, _maxScroll(t.scroller, t._dir)));
         });
-        _hideAllMarkers(false);
-        _clampingMax = 0;
         refreshInits.forEach(function(result) {
           return result && result.render && result.render(-1);
         });
@@ -5256,7 +5145,6 @@
         _clearScrollMemory(_scrollRestoration, 1);
         _resizeDelay.pause();
         _refreshID++;
-        _refreshingAll = 2;
         _updateAll(2);
         _triggers.forEach(function(t) {
           return _isFunction3(t.vars.onRefresh) && t.vars.onRefresh(t);
@@ -5267,12 +5155,12 @@
       _lastScroll = 0;
       _direction = 1;
       _updateAll = function _updateAll2(force) {
-        if (force === 2 || !_refreshingAll && !_isReverted) {
+        if (!_refreshingAll || force === 2) {
           ScrollTrigger2.isUpdating = true;
           _primary && _primary.update(0);
           var l = _triggers.length, time = _getTime2(), recordVelocity = time - _time1 >= 50, scroll = l && _triggers[0].scroll();
           _direction = _lastScroll > scroll ? -1 : 1;
-          _refreshingAll || (_lastScroll = scroll);
+          _lastScroll = scroll;
           if (recordVelocity) {
             if (_lastScrollTime && !_pointerIsDown && time - _lastScrollTime > 200) {
               _lastScrollTime = 0;
@@ -5376,18 +5264,17 @@
         left: 0,
         top: 0
       };
-      _parsePosition3 = function _parsePosition4(value, trigger, scrollerSize, direction, scroll, marker, markerScroller, self, scrollerBounds, borderWidth, useFixedPosition, scrollerMax, containerAnimation, clampZeroProp) {
+      _parsePosition3 = function _parsePosition4(value, trigger, scrollerSize, direction, scroll, marker, markerScroller, self, scrollerBounds, borderWidth, useFixedPosition, scrollerMax, containerAnimation) {
         _isFunction3(value) && (value = value(self));
         if (_isString3(value) && value.substr(0, 3) === "max") {
           value = scrollerMax + (value.charAt(4) === "=" ? _offsetToPx("0" + value.substr(3), scrollerSize) : 0);
         }
         var time = containerAnimation ? containerAnimation.time() : 0, p1, p2, element;
         containerAnimation && containerAnimation.seek(0);
-        isNaN(value) || (value = +value);
         if (!_isNumber3(value)) {
           _isFunction3(trigger) && (trigger = trigger(self));
           var offsets = (value || "0").split(" "), bounds, localOffset, globalOffset, display;
-          element = _getTarget(trigger, self) || _body2;
+          element = _getTarget(trigger) || _body2;
           bounds = _getBounds(element) || {};
           if ((!bounds || !bounds.left && !bounds.top) && _getComputedStyle(element).display === "none") {
             display = element.style.display;
@@ -5400,13 +5287,8 @@
           value = bounds[direction.p] - scrollerBounds[direction.p] - borderWidth + localOffset + scroll - globalOffset;
           markerScroller && _positionMarker(markerScroller, globalOffset, direction, scrollerSize - globalOffset < 20 || markerScroller._isStart && globalOffset > 20);
           scrollerSize -= scrollerSize - globalOffset;
-        } else {
-          containerAnimation && (value = gsap3.utils.mapRange(containerAnimation.scrollTrigger.start, containerAnimation.scrollTrigger.end, 0, scrollerMax, value));
-          markerScroller && _positionMarker(markerScroller, scrollerSize, direction, true);
-        }
-        if (clampZeroProp) {
-          self[clampZeroProp] = value || -1e-3;
-          value < 0 && (value = 0);
+        } else if (markerScroller) {
+          _positionMarker(markerScroller, scrollerSize, direction, true);
         }
         if (marker) {
           var position = value + scrollerSize, isStart = marker._isStart;
@@ -5448,44 +5330,30 @@
           parent.appendChild(element);
         }
       };
-      _interruptionTracker = function _interruptionTracker2(getValueFunc, initialValue, onInterrupt) {
-        var last1 = initialValue, last2 = last1;
-        return function(value) {
-          var current = Math.round(getValueFunc());
-          if (current !== last1 && current !== last2 && Math.abs(current - last1) > 3 && Math.abs(current - last2) > 3) {
-            value = current;
-            onInterrupt && onInterrupt();
-          }
-          last2 = last1;
-          last1 = Math.round(value);
-          return last1;
-        };
-      };
-      _shiftMarker = function _shiftMarker2(marker, direction, value) {
-        var vars = {};
-        vars[direction.p] = "+=" + value;
-        gsap3.set(marker, vars);
-      };
       _getTweenCreator = function _getTweenCreator2(scroller, direction) {
-        var getScroll = _getScrollFunc(scroller, direction), prop = "_scroll" + direction.p2, getTween = function getTween2(scrollTo, vars, initialValue, change1, change2) {
+        var getScroll = _getScrollFunc(scroller, direction), prop = "_scroll" + direction.p2, lastScroll1, lastScroll2, getTween = function getTween2(scrollTo, vars, initialValue, change1, change2) {
           var tween = getTween2.tween, onComplete = vars.onComplete, modifiers = {};
           initialValue = initialValue || getScroll();
-          var checkForInterruption = _interruptionTracker(getScroll, initialValue, function() {
-            tween.kill();
-            getTween2.tween = 0;
-          });
           change2 = change1 && change2 || 0;
           change1 = change1 || scrollTo - initialValue;
           tween && tween.kill();
+          lastScroll1 = Math.round(initialValue);
           vars[prop] = scrollTo;
-          vars.inherit = false;
           vars.modifiers = modifiers;
-          modifiers[prop] = function() {
-            return checkForInterruption(initialValue + change1 * tween.ratio + change2 * tween.ratio * tween.ratio);
+          modifiers[prop] = function(value) {
+            value = Math.round(getScroll());
+            if (value !== lastScroll1 && value !== lastScroll2 && Math.abs(value - lastScroll1) > 3 && Math.abs(value - lastScroll2) > 3) {
+              tween.kill();
+              getTween2.tween = 0;
+            } else {
+              value = initialValue + change1 * tween.ratio + change2 * tween.ratio * tween.ratio;
+            }
+            lastScroll2 = lastScroll1;
+            return lastScroll1 = Math.round(value);
           };
           vars.onUpdate = function() {
             _scrollers.cache++;
-            getTween2.tween && _updateAll();
+            _updateAll();
           };
           vars.onComplete = function() {
             getTween2.tween = 0;
@@ -5499,13 +5367,11 @@
           return getTween.tween && getTween.tween.kill() && (getTween.tween = 0);
         };
         _addListener3(scroller, "wheel", getScroll.wheelHandler);
-        ScrollTrigger2.isTouch && _addListener3(scroller, "touchmove", getScroll.wheelHandler);
         return getTween;
       };
       ScrollTrigger2 = /* @__PURE__ */ function() {
         function ScrollTrigger3(vars, animation) {
           _coreInitted3 || ScrollTrigger3.register(gsap3) || console.warn("Please gsap.registerPlugin(ScrollTrigger)");
-          _context3(this);
           this.init(vars, animation);
         }
         var _proto = ScrollTrigger3.prototype;
@@ -5521,8 +5387,8 @@
           } : vars, _defaults2);
           var _vars = vars, onUpdate = _vars.onUpdate, toggleClass = _vars.toggleClass, id = _vars.id, onToggle = _vars.onToggle, onRefresh = _vars.onRefresh, scrub = _vars.scrub, trigger = _vars.trigger, pin = _vars.pin, pinSpacing = _vars.pinSpacing, invalidateOnRefresh = _vars.invalidateOnRefresh, anticipatePin = _vars.anticipatePin, onScrubComplete = _vars.onScrubComplete, onSnapComplete = _vars.onSnapComplete, once = _vars.once, snap3 = _vars.snap, pinReparent = _vars.pinReparent, pinSpacer = _vars.pinSpacer, containerAnimation = _vars.containerAnimation, fastScrollEnd = _vars.fastScrollEnd, preventOverlaps = _vars.preventOverlaps, direction = vars.horizontal || vars.containerAnimation && vars.horizontal !== false ? _horizontal : _vertical, isToggle = !scrub && scrub !== 0, scroller = _getTarget(vars.scroller || _win4), scrollerCache = gsap3.core.getCache(scroller), isViewport = _isViewport3(scroller), useFixedPosition = ("pinType" in vars ? vars.pinType : _getProxyProp(scroller, "pinType") || isViewport && "fixed") === "fixed", callbacks = [vars.onEnter, vars.onLeave, vars.onEnterBack, vars.onLeaveBack], toggleActions = isToggle && vars.toggleActions.split(" "), markers = "markers" in vars ? vars.markers : _defaults2.markers, borderWidth = isViewport ? 0 : parseFloat(_getComputedStyle(scroller)["border" + direction.p2 + _Width]) || 0, self = this, onRefreshInit = vars.onRefreshInit && function() {
             return vars.onRefreshInit(self);
-          }, getScrollerSize = _getSizeFunc(scroller, isViewport, direction), getScrollerOffsets = _getOffsetsFunc(scroller, isViewport), lastSnap = 0, lastRefresh = 0, prevProgress = 0, scrollFunc = _getScrollFunc(scroller, direction), tweenTo, pinCache, snapFunc, scroll1, scroll2, start, end, markerStart, markerEnd, markerStartTrigger, markerEndTrigger, markerVars, executingOnRefresh, change, pinOriginalState, pinActiveState, pinState, spacer, offset, pinGetter, pinSetter, pinStart, pinChange, spacingStart, spacerState, markerStartSetter, pinMoves, markerEndSetter, cs, snap1, snap22, scrubTween, scrubSmooth, snapDurClamp, snapDelayedCall, prevScroll, prevAnimProgress, caMarkerSetter, customRevertReturn;
-          self._startClamp = self._endClamp = false;
+          }, getScrollerSize = _getSizeFunc(scroller, isViewport, direction), getScrollerOffsets = _getOffsetsFunc(scroller, isViewport), lastSnap = 0, lastRefresh = 0, scrollFunc = _getScrollFunc(scroller, direction), tweenTo, pinCache, snapFunc, scroll1, scroll2, start, end, markerStart, markerEnd, markerStartTrigger, markerEndTrigger, markerVars, change, pinOriginalState, pinActiveState, pinState, spacer, offset, pinGetter, pinSetter, pinStart, pinChange, spacingStart, spacerState, markerStartSetter, pinMoves, markerEndSetter, cs, snap1, snap22, scrubTween, scrubSmooth, snapDurClamp, snapDelayedCall, prevProgress, prevScroll, prevAnimProgress, caMarkerSetter, customRevertReturn;
+          _context3(self);
           self._dir = direction;
           anticipatePin *= 45;
           self.scroller = scroller;
@@ -5547,8 +5413,7 @@
             } else {
               scrubTween ? scrubTween.duration(value) : scrubTween = gsap3.to(animation, {
                 ease: "expo",
-                totalProgress: "+=0",
-                inherit: false,
+                totalProgress: "+=0.001",
                 duration: scrubSmooth,
                 paused: true,
                 onComplete: function onComplete() {
@@ -5559,13 +5424,14 @@
           };
           if (animation) {
             animation.vars.lazy = false;
-            animation._initted && !self.isReverted || animation.vars.immediateRender !== false && vars.immediateRender !== false && animation.duration() && animation.render(0, true, true);
+            animation._initted || animation.vars.immediateRender !== false && vars.immediateRender !== false && animation.duration() && animation.render(0, true, true);
             self.animation = animation.pause();
             animation.scrollTrigger = self;
             self.scrubDuration(scrub);
             snap1 = 0;
             id || (id = animation.vars.id);
           }
+          _triggers.push(self);
           if (snap3) {
             if (!_isObject3(snap3) || snap3.push) {
               snap3 = {
@@ -5589,10 +5455,7 @@
             snapDelayedCall = gsap3.delayedCall(snap3.delay || scrubSmooth / 2 || 0.1, function() {
               var scroll = scrollFunc(), refreshedRecently = _getTime2() - lastRefresh < 500, tween = tweenTo.tween;
               if ((refreshedRecently || Math.abs(self.getVelocity()) < 10) && !tween && !_pointerIsDown && lastSnap !== scroll) {
-                var progress = (scroll - start) / change, totalProgress = animation && !isToggle ? animation.totalProgress() : progress, velocity = refreshedRecently ? 0 : (totalProgress - snap22) / (_getTime2() - _time2) * 1e3 || 0, change1 = gsap3.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = progress + (snap3.inertia === false ? 0 : change1), endValue, endScroll, _snap = snap3, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete;
-                endValue = snapFunc(naturalEnd, self);
-                _isNumber3(endValue) || (endValue = naturalEnd);
-                endScroll = Math.max(0, Math.round(start + endValue * change));
+                var progress = (scroll - start) / change, totalProgress = animation && !isToggle ? animation.totalProgress() : progress, velocity = refreshedRecently ? 0 : (totalProgress - snap22) / (_getTime2() - _time2) * 1e3 || 0, change1 = gsap3.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = progress + (snap3.inertia === false ? 0 : change1), endValue = _clamp4(0, 1, snapFunc(naturalEnd, self)), endScroll = Math.round(start + endValue * change), _snap = snap3, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete;
                 if (scroll <= end && scroll >= start && endScroll !== scroll) {
                   if (tween && !tween._initted && tween.data <= _abs(endScroll - scroll)) {
                     return;
@@ -5611,9 +5474,6 @@
                     onComplete: function onComplete() {
                       self.update();
                       lastSnap = scrollFunc();
-                      if (animation && !isToggle) {
-                        scrubTween ? scrubTween.resetTo("totalProgress", endValue, animation._tTime / animation._tDur) : animation.progress(endValue);
-                      }
                       snap1 = snap22 = animation && !isToggle ? animation.totalProgress() : self.progress;
                       onSnapComplete && onSnapComplete(self);
                       _onComplete && _onComplete(self);
@@ -5627,7 +5487,7 @@
             }).pause();
           }
           id && (_ids[id] = self);
-          trigger = self.trigger = _getTarget(trigger || pin !== true && pin);
+          trigger = self.trigger = _getTarget(trigger || pin);
           customRevertReturn = trigger && trigger._gsap && trigger._gsap.stRevert;
           customRevertReturn && (customRevertReturn = customRevertReturn(self));
           pin = pin === true ? trigger : _getTarget(pin);
@@ -5686,7 +5546,7 @@
             var oldOnUpdate = containerAnimation.vars.onUpdate, oldParams = containerAnimation.vars.onUpdateParams;
             containerAnimation.eventCallback("onUpdate", function() {
               self.update(0, 0, 1);
-              oldOnUpdate && oldOnUpdate.apply(containerAnimation, oldParams || []);
+              oldOnUpdate && oldOnUpdate.apply(oldParams || []);
             });
           }
           self.previous = function() {
@@ -5710,7 +5570,7 @@
                 return m.style.display = r ? "none" : "block";
               });
               if (r) {
-                _refreshing = self;
+                _refreshing = 1;
                 self.update(r);
               }
               if (pin && (!pinReparent || !self.isActive)) {
@@ -5725,7 +5585,7 @@
               self.isReverted = r;
             }
           };
-          self.refresh = function(soft, force, position, pinOffset) {
+          self.refresh = function(soft, force) {
             if ((_refreshing || !self.enabled) && !force) {
               return;
             }
@@ -5734,8 +5594,9 @@
               return;
             }
             !_refreshingAll && onRefreshInit && onRefreshInit(self);
-            _refreshing = self;
-            if (tweenTo.tween && !position) {
+            _refreshing = 1;
+            lastRefresh = _getTime2();
+            if (tweenTo.tween) {
               tweenTo.tween.kill();
               tweenTo.tween = 0;
             }
@@ -5745,16 +5606,12 @@
             }).invalidate();
             self.isReverted || self.revert(true, true);
             self._subPinOffset = false;
-            var size = getScrollerSize(), scrollerBounds = getScrollerOffsets(), max = containerAnimation ? containerAnimation.duration() : _maxScroll(scroller, direction), isFirstRefresh = change <= 0.01, offset2 = 0, otherPinOffset = pinOffset || 0, parsedEnd = _isObject3(position) ? position.end : vars.end, parsedEndTrigger = vars.endTrigger || trigger, parsedStart = _isObject3(position) ? position.start : vars.start || (vars.start === 0 || !trigger ? 0 : pin ? "0 0" : "0 100%"), pinnedContainer = self.pinnedContainer = vars.pinnedContainer && _getTarget(vars.pinnedContainer, self), triggerIndex = trigger && Math.max(0, _triggers.indexOf(self)) || 0, i = triggerIndex, cs2, bounds, scroll, isVertical, override, curTrigger, curPin, oppositeScroll, initted, revertedPins, forcedOverflow, markerStartOffset, markerEndOffset;
-            if (markers && _isObject3(position)) {
-              markerStartOffset = gsap3.getProperty(markerStartTrigger, direction.p);
-              markerEndOffset = gsap3.getProperty(markerEndTrigger, direction.p);
-            }
-            while (i-- > 0) {
+            var size = getScrollerSize(), scrollerBounds = getScrollerOffsets(), max = containerAnimation ? containerAnimation.duration() : _maxScroll(scroller, direction), offset2 = 0, otherPinOffset = 0, parsedEnd = vars.end, parsedEndTrigger = vars.endTrigger || trigger, parsedStart = vars.start || (vars.start === 0 || !trigger ? 0 : pin ? "0 0" : "0 100%"), pinnedContainer = self.pinnedContainer = vars.pinnedContainer && _getTarget(vars.pinnedContainer), triggerIndex = trigger && Math.max(0, _triggers.indexOf(self)) || 0, i = triggerIndex, cs2, bounds, scroll, isVertical, override, curTrigger, curPin, oppositeScroll, initted, revertedPins, forcedOverflow;
+            while (i--) {
               curTrigger = _triggers[i];
-              curTrigger.end || curTrigger.refresh(0, 1) || (_refreshing = self);
+              curTrigger.end || curTrigger.refresh(0, 1) || (_refreshing = 1);
               curPin = curTrigger.pin;
-              if (curPin && (curPin === trigger || curPin === pin || curPin === pinnedContainer) && !curTrigger.isReverted) {
+              if (curPin && (curPin === trigger || curPin === pin) && !curTrigger.isReverted) {
                 revertedPins || (revertedPins = []);
                 revertedPins.unshift(curTrigger);
                 curTrigger.revert(true, true);
@@ -5765,28 +5622,27 @@
               }
             }
             _isFunction3(parsedStart) && (parsedStart = parsedStart(self));
-            parsedStart = _parseClamp(parsedStart, "start", self);
-            start = _parsePosition3(parsedStart, trigger, size, direction, scrollFunc(), markerStart, markerStartTrigger, self, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation, self._startClamp && "_startClamp") || (pin ? -1e-3 : 0);
+            start = _parsePosition3(parsedStart, trigger, size, direction, scrollFunc(), markerStart, markerStartTrigger, self, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation) || (pin ? -1e-3 : 0);
             _isFunction3(parsedEnd) && (parsedEnd = parsedEnd(self));
             if (_isString3(parsedEnd) && !parsedEnd.indexOf("+=")) {
               if (~parsedEnd.indexOf(" ")) {
                 parsedEnd = (_isString3(parsedStart) ? parsedStart.split(" ")[0] : "") + parsedEnd;
               } else {
                 offset2 = _offsetToPx(parsedEnd.substr(2), size);
-                parsedEnd = _isString3(parsedStart) ? parsedStart : (containerAnimation ? gsap3.utils.mapRange(0, containerAnimation.duration(), containerAnimation.scrollTrigger.start, containerAnimation.scrollTrigger.end, start) : start) + offset2;
+                parsedEnd = _isString3(parsedStart) ? parsedStart : start + offset2;
                 parsedEndTrigger = trigger;
               }
             }
-            parsedEnd = _parseClamp(parsedEnd, "end", self);
-            end = Math.max(start, _parsePosition3(parsedEnd || (parsedEndTrigger ? "100% 0" : max), parsedEndTrigger, size, direction, scrollFunc() + offset2, markerEnd, markerEndTrigger, self, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation, self._endClamp && "_endClamp")) || -1e-3;
+            end = Math.max(start, _parsePosition3(parsedEnd || (parsedEndTrigger ? "100% 0" : max), parsedEndTrigger, size, direction, scrollFunc() + offset2, markerEnd, markerEndTrigger, self, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation)) || -1e-3;
+            change = end - start || (start -= 0.01) && 1e-3;
             offset2 = 0;
             i = triggerIndex;
             while (i--) {
               curTrigger = _triggers[i];
               curPin = curTrigger.pin;
               if (curPin && curTrigger.start - curTrigger._pinPush <= start && !containerAnimation && curTrigger.end > 0) {
-                cs2 = curTrigger.end - (self._startClamp ? Math.max(0, curTrigger.start) : curTrigger.start);
-                if ((curPin === trigger && curTrigger.start - curTrigger._pinPush < start || curPin === pinnedContainer) && isNaN(parsedStart)) {
+                cs2 = curTrigger.end - curTrigger.start;
+                if ((curPin === trigger && curTrigger.start - curTrigger._pinPush < start || curPin === pinnedContainer) && !_isNumber3(parsedStart)) {
                   offset2 += cs2 * (1 - curTrigger.progress);
                 }
                 curPin === pin && (otherPinOffset += cs2);
@@ -5794,15 +5650,6 @@
             }
             start += offset2;
             end += offset2;
-            self._startClamp && (self._startClamp += offset2);
-            if (self._endClamp && !_refreshingAll) {
-              self._endClamp = end || -1e-3;
-              end = Math.min(end, _maxScroll(scroller, direction));
-            }
-            change = end - start || (start -= 0.01) && 1e-3;
-            if (isFirstRefresh) {
-              prevProgress = gsap3.utils.clamp(0, 1, gsap3.utils.normalize(start, end, prevScroll));
-            }
             self._pinPush = otherPinOffset;
             if (markerStart && offset2) {
               cs2 = {};
@@ -5810,7 +5657,7 @@
               pinnedContainer && (cs2[direction.p] = "-=" + scrollFunc());
               gsap3.set([markerStart, markerEnd], cs2);
             }
-            if (pin && !(_clampingMax && self.end >= _maxScroll(scroller, direction))) {
+            if (pin) {
               cs2 = _getComputedStyle(pin);
               isVertical = direction === _vertical;
               scroll = scrollFunc();
@@ -5821,9 +5668,7 @@
                   style: forcedOverflow,
                   value: forcedOverflow["overflow" + direction.a.toUpperCase()]
                 };
-                if (isViewport && _getComputedStyle(_body2)["overflow" + direction.a.toUpperCase()] !== "scroll") {
-                  forcedOverflow.style["overflow" + direction.a.toUpperCase()] = "scroll";
-                }
+                forcedOverflow["overflow" + direction.a.toUpperCase()] = "scroll";
               }
               _swapPinIn(pin, spacer, cs2);
               pinState = _getState(pin);
@@ -5833,10 +5678,7 @@
                 spacerState = [pinSpacing + direction.os2, change + otherPinOffset + _px];
                 spacerState.t = spacer;
                 i = pinSpacing === _padding ? _getSize(pin, direction) + change + otherPinOffset : 0;
-                if (i) {
-                  spacerState.push(direction.d, i + _px);
-                  spacer.style.flexBasis !== "auto" && (spacer.style.flexBasis = i + _px);
-                }
+                i && spacerState.push(direction.d, i + _px);
                 _setState(spacerState);
                 if (pinnedContainer) {
                   _triggers.forEach(function(t) {
@@ -5846,9 +5688,6 @@
                   });
                 }
                 useFixedPosition && scrollFunc(prevScroll);
-              } else {
-                i = _getSize(pin, direction);
-                i && spacer.style.flexBasis !== "auto" && (spacer.style.flexBasis = i + _px);
               }
               if (useFixedPosition) {
                 override = {
@@ -5904,33 +5743,19 @@
               self.scroll.rec = 0;
             }
             self.revert(false, true);
-            lastRefresh = _getTime2();
             if (snapDelayedCall) {
               lastSnap = -1;
+              self.isActive && scrollFunc(start + change * prevProgress);
               snapDelayedCall.restart(true);
             }
             _refreshing = 0;
-            animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress || 0, true).render(animation.time(), true, true);
-            if (isFirstRefresh || prevProgress !== self.progress || containerAnimation || invalidateOnRefresh || animation && !animation._initted) {
-              animation && !isToggle && animation.totalProgress(containerAnimation && start < -1e-3 && !prevProgress ? gsap3.utils.normalize(start, end, 0) : prevProgress, true);
-              self.progress = isFirstRefresh || (scroll1 - start) / change === prevProgress ? 0 : prevProgress;
+            animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress, true).render(animation.time(), true, true);
+            if (prevProgress !== self.progress || containerAnimation) {
+              animation && !isToggle && animation.totalProgress(prevProgress, true);
+              self.progress = (scroll1 - start) / change === prevProgress ? 0 : prevProgress;
             }
             pin && pinSpacing && (spacer._pinOffset = Math.round(self.progress * pinChange));
-            scrubTween && scrubTween.invalidate();
-            if (!isNaN(markerStartOffset)) {
-              markerStartOffset -= gsap3.getProperty(markerStartTrigger, direction.p);
-              markerEndOffset -= gsap3.getProperty(markerEndTrigger, direction.p);
-              _shiftMarker(markerStartTrigger, direction, markerStartOffset);
-              _shiftMarker(markerStart, direction, markerStartOffset - (pinOffset || 0));
-              _shiftMarker(markerEndTrigger, direction, markerEndOffset);
-              _shiftMarker(markerEnd, direction, markerEndOffset - (pinOffset || 0));
-            }
-            isFirstRefresh && !_refreshingAll && self.update();
-            if (onRefresh && !_refreshingAll && !executingOnRefresh) {
-              executingOnRefresh = true;
-              onRefresh(self);
-              executingOnRefresh = false;
-            }
+            onRefresh && !_refreshingAll && onRefresh(self);
           };
           self.getVelocity = function() {
             return (scrollFunc() - scroll2) / (_getTime2() - _time2) * 1e3 || 0;
@@ -5956,7 +5781,7 @@
             if (containerAnimation && !forceFake && !reset) {
               return;
             }
-            var scroll = _refreshingAll === true ? prevScroll : self.scroll(), p = reset ? 0 : (scroll - start) / change, clipped = p < 0 ? 0 : p > 1 ? 1 : p || 0, prevProgress2 = self.progress, isActive, wasActive, toggleState, action, stateChanged, toggled, isAtMax, isTakingAction;
+            var scroll = _refreshingAll ? prevScroll : self.scroll(), p = reset ? 0 : (scroll - start) / change, clipped = p < 0 ? 0 : p > 1 ? 1 : p || 0, prevProgress2 = self.progress, isActive, wasActive, toggleState, action, stateChanged, toggled, isAtMax, isTakingAction;
             if (recordVelocity) {
               scroll2 = scroll1;
               scroll1 = containerAnimation ? scrollFunc() : scroll;
@@ -5965,13 +5790,7 @@
                 snap1 = animation && !isToggle ? animation.totalProgress() : clipped;
               }
             }
-            if (anticipatePin && pin && !_refreshing && !_startup2 && _lastScrollTime) {
-              if (!clipped && start < scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin) {
-                clipped = 1e-4;
-              } else if (clipped === 1 && end > scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin) {
-                clipped = 0.9999;
-              }
-            }
+            anticipatePin && !clipped && pin && !_refreshing && !_startup2 && _lastScrollTime && start < scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin && (clipped = 1e-4);
             if (clipped !== prevProgress2 && self.enabled) {
               isActive = self.isActive = !!clipped && clipped < 1;
               wasActive = !!prevProgress2 && prevProgress2 < 1;
@@ -5999,7 +5818,7 @@
                     scrubTween.invalidate().restart();
                   }
                 } else if (animation) {
-                  animation.totalProgress(clipped, !!(_refreshing && (lastRefresh || reset)));
+                  animation.totalProgress(clipped, !!_refreshing);
                 }
               }
               if (pin) {
@@ -6068,7 +5887,7 @@
             if (!self.enabled) {
               self.enabled = true;
               _addListener3(scroller, "resize", _onResize);
-              isViewport || _addListener3(scroller, "scroll", _onScroll3);
+              _addListener3(isViewport ? _doc4 : scroller, "scroll", _onScroll3);
               onRefreshInit && _addListener3(ScrollTrigger3, "refreshInit", onRefreshInit);
               if (reset !== false) {
                 self.progress = prevProgress = 0;
@@ -6080,20 +5899,19 @@
           self.getTween = function(snap4) {
             return snap4 && tweenTo ? tweenTo.tween : scrubTween;
           };
-          self.setPositions = function(newStart, newEnd, keepClamp, pinOffset) {
-            if (containerAnimation) {
-              var st = containerAnimation.scrollTrigger, duration = containerAnimation.duration(), _change = st.end - st.start;
-              newStart = st.start + _change * newStart / duration;
-              newEnd = st.start + _change * newEnd / duration;
+          self.setPositions = function(newStart, newEnd) {
+            if (pin) {
+              pinStart += newStart - start;
+              pinChange += newEnd - newStart - change;
+              pinSpacing === _padding && self.adjustPinSpacing(newEnd - newStart - change);
             }
-            self.refresh(false, false, {
-              start: _keepClamp(newStart, keepClamp && !!self._startClamp),
-              end: _keepClamp(newEnd, keepClamp && !!self._endClamp)
-            }, pinOffset);
+            self.start = start = newStart;
+            self.end = end = newEnd;
+            change = newEnd - newStart;
             self.update();
           };
           self.adjustPinSpacing = function(amount) {
-            if (spacerState && amount) {
+            if (spacerState) {
               var i = spacerState.indexOf(direction.d) + 1;
               spacerState[i] = parseFloat(spacerState[i]) + amount + _px;
               spacerState[1] = parseFloat(spacerState[1]) + amount + _px;
@@ -6120,7 +5938,7 @@
                   }
                 }
                 _removeListener3(scroller, "resize", _onResize);
-                isViewport || _removeListener3(scroller, "scroll", _onScroll3);
+                _removeListener3(scroller, "scroll", _onScroll3);
               }
             }
           };
@@ -6157,22 +5975,11 @@
             }
             vars.onKill && vars.onKill(self);
           };
-          _triggers.push(self);
           self.enable(false, false);
           customRevertReturn && customRevertReturn(self);
-          if (animation && animation.add && !change) {
-            var updateFunc = self.update;
-            self.update = function() {
-              self.update = updateFunc;
-              _scrollers.cache++;
-              start || end || self.refresh();
-            };
-            gsap3.delayedCall(0.01, self.update);
-            change = 0.01;
-            start = end = 0;
-          } else {
-            self.refresh();
-          }
+          !animation || !animation.add || change ? self.refresh() : gsap3.delayedCall(0.01, function() {
+            return start || end || self.refresh();
+          }) && (change = 0.01) && (start = end = 0);
           pin && _queueRefreshAll();
         };
         ScrollTrigger3.register = function register(core) {
@@ -6221,19 +6028,12 @@
             _context3 = gsap3.core.context || _passThrough3;
             _suppressOverwrites2 = gsap3.core.suppressOverwrites || _passThrough3;
             _scrollRestoration = _win4.history.scrollRestoration || "auto";
-            _lastScroll = _win4.pageYOffset || 0;
             gsap3.core.globals("ScrollTrigger", ScrollTrigger3);
             if (_body2) {
               _enabled = 1;
-              _div100vh = document.createElement("div");
-              _div100vh.style.height = "100vh";
-              _div100vh.style.position = "absolute";
-              _refresh100vh();
-              _rafBugFix();
               Observer.register(gsap3);
               ScrollTrigger3.isTouch = Observer.isTouch;
               _fixIOSBug = Observer.isTouch && /(iPad|iPhone|iPod|Mac)/g.test(navigator.userAgent);
-              _ignoreMobileResize = Observer.isTouch === 1;
               _addListener3(_win4, "wheel", _onScroll3);
               _root2 = [_win4, _doc4, _docEl2, _body2];
               if (gsap3.matchMedia) {
@@ -6254,7 +6054,7 @@
                   _refreshAll(0, 1);
                   _dispatch3("matchMedia");
                 });
-                gsap3.matchMedia().add("(orientation: portrait)", function() {
+                gsap3.matchMedia("(orientation: portrait)", function() {
                   _setBaseDimensions();
                   return _setBaseDimensions;
                 });
@@ -6263,7 +6063,7 @@
               }
               _setBaseDimensions();
               _addListener3(_doc4, "scroll", _onScroll3);
-              var bodyHasStyle = _body2.hasAttribute("style"), bodyStyle = _body2.style, border = bodyStyle.borderTopStyle, AnimationProto = gsap3.core.Animation.prototype, bounds, i;
+              var bodyStyle = _body2.style, border = bodyStyle.borderTopStyle, AnimationProto = gsap3.core.Animation.prototype, bounds, i;
               AnimationProto.revert || Object.defineProperty(AnimationProto, "revert", {
                 value: function value() {
                   return this.time(-0.01, true);
@@ -6274,10 +6074,6 @@
               _vertical.m = Math.round(bounds.top + _vertical.sc()) || 0;
               _horizontal.m = Math.round(bounds.left + _horizontal.sc()) || 0;
               border ? bodyStyle.borderTopStyle = border : bodyStyle.removeProperty("border-top-style");
-              if (!bodyHasStyle) {
-                _body2.setAttribute("style", "");
-                _body2.removeAttribute("style");
-              }
               _syncInterval = setInterval(_sync, 250);
               gsap3.delayedCall(0.5, function() {
                 return _startup2 = 0;
@@ -6357,7 +6153,7 @@
         };
         return ScrollTrigger3;
       }();
-      ScrollTrigger2.version = "3.12.7";
+      ScrollTrigger2.version = "3.11.4";
       ScrollTrigger2.saveStyles = function(targets) {
         return targets ? _toArray(targets).forEach(function(target) {
           if (target && target.style) {
@@ -6374,7 +6170,7 @@
         return new ScrollTrigger2(vars, animation);
       };
       ScrollTrigger2.refresh = function(safe) {
-        return safe ? _onResize(true) : (_coreInitted3 || ScrollTrigger2.register()) && _refreshAll(true);
+        return safe ? _onResize() : (_coreInitted3 || ScrollTrigger2.register()) && _refreshAll(true);
       };
       ScrollTrigger2.update = function(force) {
         return ++_scrollers.cache && _updateAll(force === true ? 2 : 0);
@@ -6503,7 +6299,7 @@
         vars.type || (vars.type = "wheel,touch");
         vars.debounce = !!vars.debounce;
         vars.id = vars.id || "normalizer";
-        var _vars2 = vars, normalizeScrollX = _vars2.normalizeScrollX, momentum = _vars2.momentum, allowNestedScroll = _vars2.allowNestedScroll, onRelease = _vars2.onRelease, self, maxY, target = _getTarget(vars.target) || _docEl2, smoother = gsap3.core.globals().ScrollSmoother, smootherInstance = smoother && smoother.get(), content = _fixIOSBug && (vars.content && _getTarget(vars.content) || smootherInstance && vars.content !== false && !smootherInstance.smooth() && smootherInstance.content()), scrollFuncY = _getScrollFunc(target, _vertical), scrollFuncX = _getScrollFunc(target, _horizontal), scale = 1, initialScale = (Observer.isTouch && _win4.visualViewport ? _win4.visualViewport.scale * _win4.visualViewport.width : _win4.outerWidth) / _win4.innerWidth, wheelRefresh = 0, resolveMomentumDuration = _isFunction3(momentum) ? function() {
+        var _vars2 = vars, normalizeScrollX = _vars2.normalizeScrollX, momentum = _vars2.momentum, allowNestedScroll = _vars2.allowNestedScroll, self, maxY, target = _getTarget(vars.target) || _docEl2, smoother = gsap3.core.globals().ScrollSmoother, smootherInstance = smoother && smoother.get(), content = _fixIOSBug && (vars.content && _getTarget(vars.content) || smootherInstance && vars.content !== false && !smootherInstance.smooth() && smootherInstance.content()), scrollFuncY = _getScrollFunc(target, _vertical), scrollFuncX = _getScrollFunc(target, _horizontal), scale = 1, initialScale = (Observer.isTouch && _win4.visualViewport ? _win4.visualViewport.scale * _win4.visualViewport.width : _win4.outerWidth) / _win4.innerWidth, wheelRefresh = 0, resolveMomentumDuration = _isFunction3(momentum) ? function() {
           return momentum(self);
         } : function() {
           return momentum || 2.8;
@@ -6547,7 +6343,6 @@
           return _fixIOSBug && e.type === "touchmove" && ignoreDrag(e) || scale > 1.05 && e.type !== "touchstart" || self.isGesturing || e.touches && e.touches.length > 1;
         };
         vars.onPress = function() {
-          skipTouchMove = false;
           var prevScale = scale;
           scale = _round3((_win4.visualViewport && _win4.visualViewport.scale || 1) / initialScale);
           tween.pause();
@@ -6582,7 +6377,6 @@
               });
             }
           }
-          onRelease && onRelease(self2);
         };
         vars.onWheel = function() {
           tween._ts && tween.pause();
@@ -6627,29 +6421,15 @@
         tween = gsap3.to(self, {
           ease: "power4",
           paused: true,
-          inherit: false,
           scrollX: normalizeScrollX ? "+=0.1" : "+=0",
           scrollY: "+=0.1",
-          modifiers: {
-            scrollY: _interruptionTracker(scrollFuncY, scrollFuncY(), function() {
-              return tween.pause();
-            })
-          },
-          onUpdate: _updateAll,
           onComplete: onStopDelayedCall.vars.onComplete
         });
         return self;
       };
       ScrollTrigger2.sort = function(func) {
-        if (_isFunction3(func)) {
-          return _triggers.sort(func);
-        }
-        var scroll = _win4.pageYOffset || 0;
-        ScrollTrigger2.getAll().forEach(function(t) {
-          return t._sortY = t.trigger ? scroll + t.trigger.getBoundingClientRect().top : t.start + _win4.innerHeight;
-        });
         return _triggers.sort(func || function(a, b) {
-          return (a.vars.refreshPriority || 0) * -1e6 + (a.vars.containerAnimation ? 1e6 : a._sortY) - ((b.vars.containerAnimation ? 1e6 : b._sortY) + (b.vars.refreshPriority || 0) * -1e6);
+          return (a.vars.refreshPriority || 0) * -1e6 + a.start - (b.start + (b.vars.refreshPriority || 0) * -1e6);
         });
       };
       ScrollTrigger2.observe = function(vars) {
@@ -6663,9 +6443,7 @@
           return _normalizer2.enable();
         }
         if (vars === false) {
-          _normalizer2 && _normalizer2.kill();
-          _normalizer2 = vars;
-          return;
+          return _normalizer2 && _normalizer2.kill();
         }
         var normalizer = vars instanceof Observer ? vars : _getScrollNormalizer(vars);
         _normalizer2 && _normalizer2.target === normalizer.target && _normalizer2.kill();
@@ -6722,7 +6500,7 @@
   var init_lenis = __esm({
     "node_modules/lenis/dist/lenis.mjs"() {
       init_live_reload();
-      version = "1.1.20";
+      version = "1.1.14";
       Animate = class {
         isRunning = false;
         value = 0;
@@ -6740,8 +6518,7 @@
          * @param deltaTime - The time in seconds to advance the animation
          */
         advance(deltaTime) {
-          if (!this.isRunning)
-            return;
+          if (!this.isRunning) return;
           let completed = false;
           if (this.duration && this.easing) {
             this.currentTime += deltaTime;
@@ -7023,7 +6800,6 @@
         // same as isStopped but enabled/disabled when scroll reaches target
         _preventNextNativeScrollEvent = false;
         _resetVelocityTimeout = null;
-        __rafID = null;
         /**
          * Whether or not the user is touching the screen
          */
@@ -7097,12 +6873,10 @@
           prevent,
           virtualScroll,
           overscroll = true,
-          autoRaf = false,
-          anchors = false,
           __experimental__naiveDimensions = false
         } = {}) {
           window.lenisVersion = version;
-          if (!wrapper || wrapper === document.documentElement) {
+          if (!wrapper || wrapper === document.documentElement || wrapper === document.body) {
             wrapper = window;
           }
           this.options = {
@@ -7125,24 +6899,12 @@
             prevent,
             virtualScroll,
             overscroll,
-            autoRaf,
-            anchors,
             __experimental__naiveDimensions
           };
           this.dimensions = new Dimensions(wrapper, content, { autoResize });
           this.updateClassName();
           this.targetScroll = this.animatedScroll = this.actualScroll;
           this.options.wrapper.addEventListener("scroll", this.onNativeScroll, false);
-          this.options.wrapper.addEventListener("scrollend", this.onScrollEnd, {
-            capture: true
-          });
-          if (this.options.anchors && this.options.wrapper === window) {
-            this.options.wrapper.addEventListener(
-              "click",
-              this.onClick,
-              false
-            );
-          }
           this.options.wrapper.addEventListener(
             "pointerdown",
             this.onPointerDown,
@@ -7153,9 +6915,6 @@
             wheelMultiplier
           });
           this.virtualScroll.on("scroll", this.onVirtualScroll);
-          if (this.options.autoRaf) {
-            this.__rafID = requestAnimationFrame(this.raf);
-          }
         }
         /**
          * Destroy the lenis instance, remove all event listeners and clean up the class name
@@ -7167,27 +6926,14 @@
             this.onNativeScroll,
             false
           );
-          this.options.wrapper.removeEventListener("scrollend", this.onScrollEnd, {
-            capture: true
-          });
           this.options.wrapper.removeEventListener(
             "pointerdown",
             this.onPointerDown,
             false
           );
-          if (this.options.anchors && this.options.wrapper === window) {
-            this.options.wrapper.removeEventListener(
-              "click",
-              this.onClick,
-              false
-            );
-          }
           this.virtualScroll.destroy();
           this.dimensions.destroy();
           this.cleanUpClassName();
-          if (this.__rafID) {
-            cancelAnimationFrame(this.__rafID);
-          }
         }
         on(event, callback) {
           return this.emitter.on(event, callback);
@@ -7195,44 +6941,13 @@
         off(event, callback) {
           return this.emitter.off(event, callback);
         }
-        onScrollEnd = (e) => {
-          if (!(e instanceof CustomEvent)) {
-            if (this.isScrolling === "smooth" || this.isScrolling === false) {
-              e.stopPropagation();
-            }
-          }
-        };
-        dispatchScrollendEvent = () => {
-          this.options.wrapper.dispatchEvent(
-            new CustomEvent("scrollend", {
-              bubbles: this.options.wrapper === window,
-              // cancelable: false,
-              detail: {
-                lenisScrollEnd: true
-              }
-            })
-          );
-        };
         setScroll(scroll) {
           if (this.isHorizontal) {
-            this.options.wrapper.scrollTo({ left: scroll, behavior: "instant" });
+            this.rootElement.scrollLeft = scroll;
           } else {
-            this.options.wrapper.scrollTo({ top: scroll, behavior: "instant" });
+            this.rootElement.scrollTop = scroll;
           }
         }
-        onClick = (event) => {
-          const path = event.composedPath();
-          const anchor = path.find(
-            (node) => node instanceof HTMLAnchorElement && node.getAttribute("href")?.startsWith("#")
-          );
-          if (anchor) {
-            const id = anchor.getAttribute("href");
-            if (id) {
-              const options = typeof this.options.anchors === "object" && this.options.anchors ? this.options.anchors : void 0;
-              this.scrollTo(id, options);
-            }
-          }
-        };
         onPointerDown = (event) => {
           if (event.button === 1) {
             this.reset();
@@ -7243,21 +6958,19 @@
             return;
           const { deltaX, deltaY, event } = data;
           this.emitter.emit("virtual-scroll", { deltaX, deltaY, event });
-          if (event.ctrlKey)
-            return;
-          if (event.lenisStopPropagation)
-            return;
+          if (event.ctrlKey) return;
+          if (event.lenisStopPropagation) return;
           const isTouch = event.type.includes("touch");
           const isWheel = event.type.includes("wheel");
           this.isTouching = event.type === "touchstart" || event.type === "touchmove";
-          const isClickOrTap = deltaX === 0 && deltaY === 0;
-          const isTapToStop = this.options.syncTouch && isTouch && event.type === "touchstart" && isClickOrTap && !this.isStopped && !this.isLocked;
+          const isTapToStop = this.options.syncTouch && isTouch && event.type === "touchstart" && !this.isStopped && !this.isLocked;
           if (isTapToStop) {
             this.reset();
             return;
           }
+          const isClick = deltaX === 0 && deltaY === 0;
           const isUnknownGesture = this.options.gestureOrientation === "vertical" && deltaY === 0 || this.options.gestureOrientation === "horizontal" && deltaX === 0;
-          if (isClickOrTap || isUnknownGesture) {
+          if (isClick || isUnknownGesture) {
             return;
           }
           let composedPath = event.composedPath();
@@ -7288,7 +7001,7 @@
             event.lenisStopPropagation = true;
           }
           event.preventDefault();
-          const isSyncTouch = isTouch && this.options.syncTouch;
+          const syncTouch = isTouch && this.options.syncTouch;
           const isTouchEnd = isTouch && event.type === "touchend";
           const hasTouchInertia = isTouchEnd && Math.abs(delta) > 5;
           if (hasTouchInertia) {
@@ -7296,9 +7009,8 @@
           }
           this.scrollTo(this.targetScroll + delta, {
             programmatic: false,
-            ...isSyncTouch ? {
+            ...syncTouch ? {
               lerp: hasTouchInertia ? this.options.syncTouchLerp : 1
-              // immediate: !hasTouchInertia,
             } : {
               lerp: this.options.lerp,
               duration: this.options.duration,
@@ -7334,9 +7046,7 @@
             this.direction = Math.sign(
               this.animatedScroll - lastScroll
             );
-            if (!this.isStopped) {
-              this.isScrolling = "native";
-            }
+            this.isScrolling = "native";
             this.emit();
             if (this.velocity !== 0) {
               this._resetVelocityTimeout = setTimeout(() => {
@@ -7359,33 +7069,29 @@
          * Start lenis scroll after it has been stopped
          */
         start() {
-          if (!this.isStopped)
-            return;
-          this.reset();
+          if (!this.isStopped) return;
           this.isStopped = false;
+          this.reset();
         }
         /**
          * Stop lenis scroll
          */
         stop() {
-          if (this.isStopped)
-            return;
-          this.reset();
+          if (this.isStopped) return;
           this.isStopped = true;
+          this.animate.stop();
+          this.reset();
         }
         /**
          * RequestAnimationFrame for lenis
          *
          * @param time The time in ms from an external clock like `requestAnimationFrame` or Tempus
          */
-        raf = (time) => {
+        raf(time) {
           const deltaTime = time - (this.time || time);
           this.time = time;
           this.animate.advance(deltaTime * 1e-3);
-          if (this.options.autoRaf) {
-            this.__rafID = requestAnimationFrame(this.raf);
-          }
-        };
+        }
         /**
          * Scroll to a target value
          *
@@ -7421,8 +7127,7 @@
           // called from outside of the class
           userData
         } = {}) {
-          if ((this.isStopped || this.isLocked) && !force)
-            return;
+          if ((this.isStopped || this.isLocked) && !force) return;
           if (typeof target === "string" && ["top", "left", "start"].includes(target)) {
             target = 0;
           } else if (typeof target === "string" && ["bottom", "right", "end"].includes(target)) {
@@ -7443,8 +7148,7 @@
               target = (this.isHorizontal ? rect.left : rect.top) + this.animatedScroll;
             }
           }
-          if (typeof target !== "number")
-            return;
+          if (typeof target !== "number") return;
           target += offset;
           target = Math.round(target);
           if (this.options.infinite) {
@@ -7468,9 +7172,6 @@
             this.emit();
             onComplete?.(this);
             this.userData = {};
-            requestAnimationFrame(() => {
-              this.dispatchScrollendEvent();
-            });
             return;
           }
           if (!programmatic) {
@@ -7481,8 +7182,7 @@
             easing,
             lerp: lerp2,
             onStart: () => {
-              if (lock)
-                this.isLocked = true;
+              if (lock) this.isLocked = true;
               this.isScrolling = "smooth";
               onStart?.(this);
             },
@@ -7496,16 +7196,12 @@
               if (programmatic) {
                 this.targetScroll = value;
               }
-              if (!completed)
-                this.emit();
+              if (!completed) this.emit();
               if (completed) {
                 this.reset();
                 this.emit();
                 onComplete?.(this);
                 this.userData = {};
-                requestAnimationFrame(() => {
-                  this.dispatchScrollendEvent();
-                });
                 this.preventNextNativeScrollEvent();
               }
             }
@@ -7547,8 +7243,7 @@
          * The actual scroll value
          */
         get actualScroll() {
-          const wrapper = this.options.wrapper;
-          return this.isHorizontal ? wrapper.scrollX ?? wrapper.scrollLeft : wrapper.scrollY ?? wrapper.scrollTop;
+          return this.isHorizontal ? this.rootElement.scrollLeft : this.rootElement.scrollTop;
         }
         /**
          * The current scroll value
@@ -7609,14 +7304,10 @@
          */
         get className() {
           let className = "lenis";
-          if (this.isStopped)
-            className += " lenis-stopped";
-          if (this.isLocked)
-            className += " lenis-locked";
-          if (this.isScrolling)
-            className += " lenis-scrolling";
-          if (this.isScrolling === "smooth")
-            className += " lenis-smooth";
+          if (this.isStopped) className += " lenis-stopped";
+          if (this.isLocked) className += " lenis-locked";
+          if (this.isScrolling) className += " lenis-scrolling";
+          if (this.isScrolling === "smooth") className += " lenis-smooth";
           return className;
         }
         updateClassName() {
@@ -7649,8 +7340,7 @@
       infinite: false
     });
     function raf(time) {
-      if (!lenis)
-        return;
+      if (!lenis) return;
       lenis.raf(time);
       ScrollTrigger2.update();
       requestAnimationFrame(raf);
@@ -7682,12 +7372,18 @@
   });
 
   // src/utils/verifyCookie.ts
-  var _VerifyCookie, VerifyCookie, verifyCookie_default;
+  var VerifyCookie, verifyCookie_default;
   var init_verifyCookie = __esm({
     "src/utils/verifyCookie.ts"() {
       "use strict";
       init_live_reload();
-      _VerifyCookie = class {
+      VerifyCookie = class _VerifyCookie {
+        static {
+          this.storageKey = "userVerification";
+        }
+        static {
+          this.defaultTTL = 24 * 60 * 60 * 1e3;
+        }
         // 24 hours in milliseconds
         static setVerificationStatus(ttl = _VerifyCookie.defaultTTL) {
           const now = /* @__PURE__ */ new Date();
@@ -7699,8 +7395,7 @@
         }
         static isVerified() {
           const data = localStorage.getItem(_VerifyCookie.storageKey);
-          if (!data)
-            return false;
+          if (!data) return false;
           const verificationData = JSON.parse(data);
           const now = /* @__PURE__ */ new Date();
           if (now.getTime() > verificationData.expiry) {
@@ -7717,9 +7412,6 @@
           localStorage.removeItem(_VerifyCookie.storageKey);
         }
       };
-      VerifyCookie = _VerifyCookie;
-      __publicField(VerifyCookie, "storageKey", "userVerification");
-      __publicField(VerifyCookie, "defaultTTL", 24 * 60 * 60 * 1e3);
       verifyCookie_default = VerifyCookie;
     }
   });
@@ -7746,17 +7438,13 @@
       init_gsap();
       verify = () => {
         class Verify {
-          section;
-          form;
-          inputs;
-          statusContainer;
-          verifyVideo;
-          verifyPlace;
-          verifyLogo;
-          videoInitialized;
-          windowLocation;
-          verifyProductType;
           constructor() {
+            this.handleVideoReady = () => {
+              if (this.videoInitialized) return;
+              this.videoInitialized = true;
+              if (this.verifyVideo.paused) this.verifyVideo.play().catch(console.warn);
+              gsapWithCSS.set(this.verifyPlace, { zIndex: 1, display: "none" });
+            };
             this.section = document.querySelector(".section_verify");
             this.form = document.querySelector(".verify_form");
             this.inputs = [...document.querySelectorAll(".verify_input-mask")].map(
@@ -7772,8 +7460,7 @@
               (item) => item.innerHTML.trim()
             );
             const canBypass = this.verifyProductType.includes("Merch");
-            if (!canBypass)
-              this.init();
+            if (!canBypass) this.init();
           }
           init() {
             stopSmoothScroll();
@@ -7787,19 +7474,10 @@
             this.setListeners();
             this.verifyReveal();
           }
-          handleVideoReady = () => {
-            if (this.videoInitialized)
-              return;
-            this.videoInitialized = true;
-            if (this.verifyVideo.paused)
-              this.verifyVideo.play().catch(console.warn);
-            gsapWithCSS.set(this.verifyPlace, { zIndex: 1, display: "none" });
-          };
           setListeners() {
             this.inputs.forEach((inputWrapper, index) => {
               const input = inputWrapper.querySelector("input");
-              if (!input)
-                return;
+              if (!input) return;
               input.style.caretColor = "var(--palette--white)";
               input.addEventListener("focus", () => {
                 document.documentElement.style.overflow = "hidden";
@@ -8205,7 +7883,7 @@
         return ~~(value * 1e3 + (value < 0 ? -0.5 : 0.5)) / 1e3;
       };
       _bonusValidated = 1;
-      _numExp2 = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/gi;
+      _numExp2 = /[-+=\.]*\d+[\.e\-\+]*\d*[e\-\+]*\d*/gi;
       _needsParsingExp = /[cLlsSaAhHvVtTqQ]/g;
       _findMinimum = function _findMinimum2(values) {
         var l = values.length, min = _bigNum3, i;
@@ -8342,9 +8020,7 @@
                 lookup[i - 1].cy = a1 - lookup[i - 1].y;
               }
             }
-            j = points[points.length - 1];
-            lookup[l - 1].cy = j.y - a1;
-            lookup[l - 1].cx = j.x - lookup[lookup.length - 1].x;
+            lookup[l - 1].cy = points[points.length - 1].y - a1;
           } else {
             for (i = 0; i < l; i++) {
               if (point.nx < i * inc) {
@@ -8421,9 +8097,8 @@
         };
         return CustomEase2;
       }();
-      CustomEase.version = "3.12.7";
-      CustomEase.headless = true;
       _getGSAP5() && gsap4.registerPlugin(CustomEase);
+      CustomEase.version = "3.11.4";
     }
   });
 
@@ -8446,22 +8121,6 @@
       gsapWithCSS.registerPlugin(CustomEase);
       nav = () => {
         class Nav {
-          nav;
-          navMain;
-          hero;
-          navSpacer;
-          navLinks;
-          navBrand;
-          navCart;
-          menuButtonWrap;
-          menuButton;
-          cartWrapper;
-          cartButton;
-          storeHeight;
-          overlayActive;
-          menuActive;
-          menuLabel;
-          closeLabel;
           constructor() {
             this.nav = document.querySelector(".nav_component");
             this.navMain = document.querySelector(".w-nav-overlay");
@@ -8477,8 +8136,7 @@
             this.cartWrapper = document.querySelector(".cart_wrapper");
             this.cartButton = document.querySelector(".cart_button");
             this.storeHeight = 0;
-            if (this.navSpacer)
-              this.storeHeight = parseInt(getComputedStyle(this.navSpacer).height);
+            if (this.navSpacer) this.storeHeight = parseInt(getComputedStyle(this.navSpacer).height);
             this.overlayActive = false;
             this.menuActive = false;
             this.menuLabel = this.menuButtonWrap.querySelector(".menu_button.is-open");
@@ -8486,8 +8144,7 @@
             const windowLocation = window.location.pathname;
             gsapWithCSS.set(this.closeLabel, { display: "none" });
             this.setListeners();
-            if (windowLocation === "/")
-              this.scroller();
+            if (windowLocation === "/") this.scroller();
           }
           setListeners() {
             this.menuButtonWrap.addEventListener("click", () => {
@@ -8669,11 +8326,6 @@
       init_gsap();
       pageTransition = () => {
         class PageTransition {
-          links;
-          filteredLinks;
-          transitionElement;
-          transitionWrap;
-          transitionLogos;
           constructor() {
             this.transitionElement = document.querySelector(".transition_component");
             this.transitionWrap = document.querySelector(".transition_fill");
@@ -8949,16 +8601,10 @@
           return;
         }
         class CursorInkTrail {
-          pageWrapper;
-          cursorWrapper;
-          trailElements = [];
-          trailLength;
-          positions = [];
-          shrinkTimeout = null;
-          defaultColor;
-          hoverColor;
-          templateElement;
           constructor() {
+            this.trailElements = [];
+            this.positions = [];
+            this.shrinkTimeout = null;
             this.pageWrapper = document.querySelector(".page-wrapper");
             this.cursorWrapper = document.querySelector(".cursor_component");
             this.templateElement = document.querySelector(".trail-segment-template");
@@ -8984,8 +8630,7 @@
             window.addEventListener("mouseout", this.handleMouseOut.bind(this));
           }
           handleMouseMove(event) {
-            if (this.shrinkTimeout)
-              clearTimeout(this.shrinkTimeout);
+            if (this.shrinkTimeout) clearTimeout(this.shrinkTimeout);
             const lastPosition = this.positions[0];
             const dx = event.clientX - lastPosition.x;
             const dy = event.clientY - lastPosition.y;
@@ -9059,7 +8704,6 @@
       init_gsap();
       hoverVideos = () => {
         class HoverVideos {
-          hoverElements;
           constructor() {
             this.hoverElements = [...document.querySelectorAll("[data-hover-video]")].map(
               (item) => item
@@ -9146,10 +8790,6 @@
       gsapWithCSS.registerPlugin(ScrollTrigger2);
       scrollScale = () => {
         class ScrollScale {
-          scaleParent;
-          scaleElement;
-          scaleFactor;
-          endValues;
           constructor() {
             this.scaleParent = document.querySelector(".section_overview");
             this.scaleElement = document.querySelector("[data-scroll-scale]");
@@ -9197,16 +8837,6 @@
       init_gsap();
       mediaSlider = () => {
         class MediaSlider {
-          sliderTrack;
-          sliderImages;
-          nextButton;
-          prevButton;
-          curIndex;
-          currentOffset;
-          pagePadding;
-          imageSpacing;
-          labelCurrent;
-          labelTotal;
           constructor() {
             this.sliderTrack = document.querySelector(".slider_track");
             this.sliderImages = [...document.querySelectorAll(".slider_image")].map(
@@ -9301,13 +8931,6 @@
       init_gsap();
       mosaicScroll = () => {
         class MosaicScroll {
-          component;
-          images;
-          svgBG;
-          svgLayers;
-          tracks;
-          bgColors;
-          textColors;
           constructor() {
             this.component = document.querySelector(".mosaic_component");
             this.svgBG = [...document.querySelectorAll(".mosaic_svg")].map((item) => item);
@@ -9411,15 +9034,6 @@
       init_gsap();
       shopSlider = () => {
         class ShopSlider {
-          imageFeed;
-          bgImages;
-          previewWraps;
-          previewImages;
-          pIndicators;
-          currentIndex;
-          rotationInterval;
-          labelCurrent;
-          labelTotal;
           constructor() {
             this.imageFeed = [...document.querySelectorAll(".slider_data-img")].map(
               (item) => item
@@ -9526,7 +9140,6 @@
       init_live_reload();
       shop = () => {
         class Shop {
-          shopItems;
           constructor() {
             this.shopItems = [...document.querySelectorAll(".shop_item")].map(
               (item) => item
@@ -9560,9 +9173,6 @@
       init_gsap();
       productSlider = () => {
         class ProductSlider {
-          previews;
-          sliderImages;
-          activeIndex;
           constructor() {
             this.previews = document.querySelectorAll(".p-slider_preview-item");
             this.sliderImages = document.querySelectorAll(".p-slider_img");
@@ -9587,8 +9197,7 @@
             });
           }
           handlePreviewClick(index) {
-            if (index === this.activeIndex)
-              return;
+            if (index === this.activeIndex) return;
             const currentImage = this.sliderImages[this.activeIndex];
             const nextImage = this.sliderImages[index];
             const currentPreview = this.previews[this.activeIndex];
@@ -9621,11 +9230,9 @@
       init_gsap();
       banner = () => {
         class Banner {
-          bannerTrack;
           constructor() {
             this.bannerTrack = document.querySelector(".banner_track");
-            if (this.bannerTrack)
-              this.setLiisteners();
+            if (this.bannerTrack) this.setLiisteners();
           }
           setLiisteners() {
             this.bannerMove();
@@ -9661,12 +9268,6 @@
       init_gsap();
       formHandler = () => {
         class FormHandler {
-          form;
-          formWrap;
-          successElement;
-          errorElement;
-          formButton;
-          endpoint;
           constructor() {
             this.formWrap = document.querySelector(".form_wrap");
             this.form = document.querySelector("[data-mail-form]");
@@ -9756,11 +9357,19 @@
     sdkUrl: "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"
   };
   var Shopify = class {
-    opts;
-    io = null;
-    initialized = false;
-    sdkLoaded = false;
     constructor(options) {
+      this.io = null;
+      this.initialized = false;
+      this.sdkLoaded = false;
+      // ---- internals ----
+      this.onIntersect = (entries) => {
+        console.log("intersect");
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          this.io?.unobserve(entry.target);
+          this.ensureSdk().then(() => this.mount(entry.target));
+        });
+      };
       console.log("!!Shopify!!");
       if (!options?.domain || !options?.token) {
         throw new Error('Shopify: "domain" and "token" are required.');
@@ -9769,13 +9378,11 @@
     }
     init() {
       console.log("init");
-      if (this.initialized)
-        return;
+      if (this.initialized) return;
       this.initialized = true;
       const nodes = Array.from(document.querySelectorAll(this.opts.productSelector));
       console.log("nodes", nodes);
-      if (!nodes.length)
-        return;
+      if (!nodes.length) return;
       this.io = new IntersectionObserver(this.onIntersect, { rootMargin: this.opts.rootMargin });
       nodes.forEach((el) => this.io.observe(el));
     }
@@ -9784,16 +9391,6 @@
       this.io?.disconnect();
       this.io = null;
     }
-    // ---- internals ----
-    onIntersect = (entries) => {
-      console.log("intersect");
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting)
-          return;
-        this.io?.unobserve(entry.target);
-        this.ensureSdk().then(() => this.mount(entry.target));
-      });
-    };
     ensureSdk() {
       if (this.sdkLoaded || window.ShopifyBuy && window.ShopifyBuy.UI) {
         this.sdkLoaded = true;
@@ -9815,8 +9412,7 @@
       console.log("mount");
       const productId = node.getAttribute(this.opts.productIdAttr);
       console.log("!!!!", node);
-      if (!productId)
-        return;
+      if (!productId) return;
       console.log("SHOPIFY", productId);
       const client = window.ShopifyBuy.buildClient({
         domain: this.opts.domain,
@@ -9824,32 +9420,39 @@
       });
       window.ShopifyBuy.UI.onReady(client).then((ui) => {
         const cart = ui.createComponent("cart", {
-          node: document.getElementById("my-cart-mount"),
           options: {
             cart: {
-              startOpen: false
-              // don’t auto-open
-              // you can add other cart styling/options here if you want
+              popup: true,
+              startOpen: false,
+              text: {
+                title: "Your Cart",
+                total: "Subtotal",
+                button: "Continue to Checkout",
+                notice: "We can ship to most states plus D.C. We are unable to ship to: AL, AK, AR, HI, MI, SD, TN, UT."
+              },
+              styles: {
+                cart: { "background-color": "#051b6b" },
+                footer: { "background-color": "#051b6b" },
+                title: { color: "#fff", "font-size": "28px", "line-height": "1.2" },
+                lineItems: { color: "#fff" },
+                subtotalText: { color: "#fff" },
+                subtotal: { color: "#fff" },
+                notice: { color: "#fff" },
+                close: { color: "#fff" },
+                button: {
+                  "font-family": "inherit",
+                  "font-size": "18px",
+                  "font-weight": "700",
+                  "background-color": "#e9ecf3",
+                  color: "#000",
+                  "border-radius": "0",
+                  ":hover": { "background-color": "#e9ecf3" },
+                  ":focus": { "background-color": "#e9ecf3" }
+                }
+              }
             }
           }
         });
-        ui.createComponent("product", {
-          id: productId,
-          node: document.getElementById("my-product")
-          // optional: trim the product UI to just what you want
-          // options: {
-          //   product: { /* contents/styles/templates */ }
-          // }
-        });
-        console.log("CART", cart);
-        const btn = document.getElementById("my-toggle");
-        console.log("!!!", btn);
-        if (btn) {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            cart.open();
-          });
-        }
       });
     }
   };
@@ -9913,67 +9516,67 @@
 
 gsap/gsap-core.js:
   (*!
-   * GSAP 3.12.7
-   * https://gsap.com
+   * GSAP 3.11.4
+   * https://greensock.com
    *
-   * @license Copyright 2008-2025, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * @license Copyright 2008-2022, GreenSock. All rights reserved.
+   * Subject to the terms at https://greensock.com/standard-license or for
+   * Club GreenSock members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/CSSPlugin.js:
   (*!
-   * CSSPlugin 3.12.7
-   * https://gsap.com
+   * CSSPlugin 3.11.4
+   * https://greensock.com
    *
-   * Copyright 2008-2025, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * Copyright 2008-2022, GreenSock. All rights reserved.
+   * Subject to the terms at https://greensock.com/standard-license or for
+   * Club GreenSock members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/Observer.js:
   (*!
-   * Observer 3.12.7
-   * https://gsap.com
+   * Observer 3.11.4
+   * https://greensock.com
    *
-   * @license Copyright 2008-2025, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * @license Copyright 2008-2022, GreenSock. All rights reserved.
+   * Subject to the terms at https://greensock.com/standard-license or for
+   * Club GreenSock members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/ScrollTrigger.js:
   (*!
-   * ScrollTrigger 3.12.7
-   * https://gsap.com
+   * ScrollTrigger 3.11.4
+   * https://greensock.com
    *
-   * @license Copyright 2008-2025, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * @license Copyright 2008-2022, GreenSock. All rights reserved.
+   * Subject to the terms at https://greensock.com/standard-license or for
+   * Club GreenSock members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/utils/paths.js:
   (*!
-   * paths 3.12.7
-   * https://gsap.com
+   * paths 3.11.4
+   * https://greensock.com
    *
-   * Copyright 2008-2025, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * Copyright 2008-2022, GreenSock. All rights reserved.
+   * Subject to the terms at https://greensock.com/standard-license or for
+   * Club GreenSock members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/CustomEase.js:
   (*!
-   * CustomEase 3.12.7
-   * https://gsap.com
+   * CustomEase 3.11.4
+   * https://greensock.com
    *
-   * @license Copyright 2008-2025, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * @license Copyright 2008-2022, GreenSock. All rights reserved.
+   * Subject to the terms at https://greensock.com/standard-license or for
+   * Club GreenSock members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 */
