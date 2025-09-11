@@ -98,7 +98,7 @@ export class Shopify {
     console.log('mount');
 
     const productId = node.getAttribute(this.opts.productIdAttr);
-    console.log('!!!!', productId);
+    console.log('!!!!', node);
     if (!productId) return;
 
     console.log('SHOPIFY', productId);
@@ -109,13 +109,38 @@ export class Shopify {
     });
 
     window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
+      const cart = ui.createComponent('cart', {
+        node: document.getElementById('my-cart-mount'),
+        options: {
+          cart: {
+            startOpen: false, // don’t auto-open
+            // you can add other cart styling/options here if you want
+          },
+        },
+      });
+
       ui.createComponent('product', {
         id: productId,
         node: document.getElementById('my-product'),
+        // optional: trim the product UI to just what you want
+        // options: {
+        //   product: { /* contents/styles/templates */ }
+        // }
       });
-      ui.createComponent('toggle', {
-        node: document.getElementById('my-toggle'),
-      });
+
+      console.log('CART', cart);
+
+      const btn = document.getElementById('my-toggle');
+      console.log('!!!', btn);
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          // either of these works:
+          cart.open(); // open via the cart instance you created
+          // ui.openCart(); // or via the UI instance
+        });
+      }
+
       //   ui.createComponent('product', {
       //     id: productId,
       //     node,
@@ -247,7 +272,7 @@ export class Shopify {
 export const shopify = (options: ShopifyInitOptions) => {
   const instance = new Shopify(options);
   instance.init();
-  console.log('instance', instance);
+  // console.log('instance', instance);
   return instance; // return it so you can destroy() if needed
 };
 
