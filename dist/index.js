@@ -9351,7 +9351,7 @@
   init_live_reload();
   var DEFAULTS = {
     moneyFormat: "%24%7B%7Bamount%7D%7D",
-    productSelector: ".oakley-product",
+    productSelector: ".product_buy",
     productIdAttr: "data-shopify-product-id",
     rootMargin: "300px",
     sdkUrl: "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"

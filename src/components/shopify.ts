@@ -26,7 +26,7 @@ export type ShopifyInitOptions = {
 
 const DEFAULTS: Required<Omit<ShopifyInitOptions, 'domain' | 'token'>> = {
   moneyFormat: '%24%7B%7Bamount%7D%7D',
-  productSelector: '.oakley-product',
+  productSelector: '.product_buy',
   productIdAttr: 'data-shopify-product-id',
   rootMargin: '300px',
   sdkUrl: 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js',
@@ -66,7 +66,6 @@ export class Shopify {
   }
 
   // ---- internals ----
-
   private onIntersect = (entries: IntersectionObserverEntry[]) => {
     console.log('intersect');
     entries.forEach((entry) => {
