@@ -229,58 +229,60 @@ export class Shopify {
             },
           },
           option: {},
-          cart: {
-            styles: {
-              button: {
-                'font-family': 'Quantico, sans-serif',
-                'font-weight': 'bold',
-                'font-size': '16px',
-                'padding-top': '16px',
-                'padding-bottom': '16px',
-                color: '#ff8c00',
-                ':hover': {
-                  color: '#ff8c00',
-                  'background-color': '#0b7aa1',
-                },
-                'background-color': '#0c87b3',
-                ':focus': {
-                  'background-color': '#0b7aa1',
-                },
-                'border-radius': '0px',
-              },
-            },
-            text: {
-              total: 'Subtotal',
-              button: 'Checkout',
-            },
-            googleFonts: ['Quantico'],
-          },
-          toggle: {
-            styles: {
-              toggle: {
-                'font-family': 'Quantico, sans-serif',
-                'font-weight': 'bold',
-                'background-color': '#0c87b3',
-                ':hover': {
-                  'background-color': '#0b7aa1',
-                },
-                ':focus': {
-                  'background-color': '#0b7aa1',
-                },
-              },
-              count: {
-                'font-size': '16px',
-                color: '#ff8c00',
-                ':hover': {
-                  color: '#ff8c00',
-                },
-              },
-              iconPath: {
-                fill: '#ff8c00',
-              },
-            },
-            googleFonts: ['Quantico'],
-          },
+          cart: false,
+          toggle: false,
+          // cart: {
+          //   styles: {
+          //     button: {
+          //       'font-family': 'Quantico, sans-serif',
+          //       'font-weight': 'bold',
+          //       'font-size': '16px',
+          //       'padding-top': '16px',
+          //       'padding-bottom': '16px',
+          //       color: '#ff8c00',
+          //       ':hover': {
+          //         color: '#ff8c00',
+          //         'background-color': '#0b7aa1',
+          //       },
+          //       'background-color': '#0c87b3',
+          //       ':focus': {
+          //         'background-color': '#0b7aa1',
+          //       },
+          //       'border-radius': '0px',
+          //     },
+          //   },
+          //   text: {
+          //     total: 'Subtotal',
+          //     button: 'Checkout',
+          //   },
+          //   googleFonts: ['Quantico'],
+          // },
+          // toggle: {
+          //   styles: {
+          //     toggle: {
+          //       'font-family': 'Quantico, sans-serif',
+          //       'font-weight': 'bold',
+          //       'background-color': '#0c87b3',
+          //       ':hover': {
+          //         'background-color': '#0b7aa1',
+          //       },
+          //       ':focus': {
+          //         'background-color': '#0b7aa1',
+          //       },
+          //     },
+          //     count: {
+          //       'font-size': '16px',
+          //       color: '#ff8c00',
+          //       ':hover': {
+          //         color: '#ff8c00',
+          //       },
+          //     },
+          //     iconPath: {
+          //       fill: '#ff8c00',
+          //     },
+          //   },
+          //   googleFonts: ['Quantico'],
+          // },
         },
       });
     });
