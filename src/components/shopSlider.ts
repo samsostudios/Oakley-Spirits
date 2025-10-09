@@ -40,12 +40,15 @@ export const shopSlider = () => {
       this.setupImages();
       this.startRotation();
 
+      console.log('HERE', this.labelCurrent);
+
       // gsap.fromTo(this.pIndicators[0], { x: '0%' }, { duration: 10, x: '90%' });
     }
 
     private setupImages() {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 4; i++) {
         const item = this.imageFeed[i];
+        console.log('***', item.src);
         this.bgImages[i].src = item.src;
         this.previewImages[i].src = item.src;
         if (i !== 0) {

@@ -30,7 +30,7 @@ class HeroVideo {
 
     gsap.set(heroPlace, { zIndex: 4 });
 
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({ delay: 1 });
     if (banner)
       tl.fromTo(
         banner,

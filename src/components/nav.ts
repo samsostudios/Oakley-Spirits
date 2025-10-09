@@ -100,7 +100,7 @@ export const nav = () => {
           // markers: true,
           onLeave: () => {
             gsap.to(this.nav, {
-              backgroundColor: 'rgba(251, 252, 255, 1)',
+              backgroundColor: 'rgba(12, 135, 179, 1)',
             });
             gsap.to(
               [
@@ -112,7 +112,7 @@ export const nav = () => {
                 this.closeLabel,
               ],
               {
-                color: 'rgb(1, 4, 14)',
+                color: 'rgba(255, 140, 0, 1)',
               }
             );
           },
@@ -128,7 +128,7 @@ export const nav = () => {
                 this.closeLabel,
               ],
               {
-                color: 'rgba(233, 236, 243, 1)',
+                color: 'rgba(255, 140, 0, 1)',
               }
             );
           },

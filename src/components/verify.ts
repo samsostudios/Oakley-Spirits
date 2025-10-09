@@ -43,14 +43,16 @@ export const verify = () => {
       // document.body.classList.add('lock-scroll');
       this.section.style.display = 'flex';
 
-      this.verifyVideo.addEventListener('loadeddata', () => {
-        // console.log('[Debug] Video is ready to play');
-        this.handleVideoReady();
-      });
+      if (this.verifyVideo) {
+        this.verifyVideo.addEventListener('loadeddata', () => {
+          // console.log('[Debug] Video is ready to play');
+          this.handleVideoReady();
+        });
 
-      if (this.verifyVideo.readyState >= 3) {
-        // console.log('[Debug] Video was already loaded');
-        this.handleVideoReady();
+        if (this.verifyVideo.readyState >= 3) {
+          // console.log('[Debug] Video was already loaded');
+          this.handleVideoReady();
+        }
       }
 
       this.setListeners();

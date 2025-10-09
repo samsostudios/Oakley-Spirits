@@ -24,10 +24,15 @@ window.Webflow.push(() => {
 
   const isEnv = env === 'editor' || env === 'preview';
   if (!isEnv) {
+    console.log('!!!ENV', isEnv, !VerifyCookie.isVerified());
     if (!VerifyCookie.isVerified()) {
+      console.log('!!!SHOW');
       loadComponent('.verify_component', () => import('$components/verify'));
+    } else {
+      hideVerifyComponent();
     }
   } else {
+    console.log('!!!HIDE');
     hideVerifyComponent();
   }
 

@@ -22,6 +22,7 @@ export type ShopifyInitOptions = {
   rootMargin?: string;
   /** Optional: override the CDN URL (rare) */
   sdkUrl?: string;
+  alignment?: string;
 };
 
 const DEFAULTS: Required<Omit<ShopifyInitOptions, 'domain' | 'token'>> = {
@@ -30,6 +31,7 @@ const DEFAULTS: Required<Omit<ShopifyInitOptions, 'domain' | 'token'>> = {
   productIdAttr: 'data-shopify-product-id',
   rootMargin: '300px',
   sdkUrl: 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js',
+  alignment: 'left',
 };
 
 export class Shopify {
@@ -51,7 +53,9 @@ export class Shopify {
     if (this.initialized) return;
     this.initialized = true;
 
-    const nodes = Array.from(document.querySelectorAll<HTMLElement>(this.opts.productSelector));
+    const nodes = Array.from(
+      document.querySelectorAll<HTMLElement>(`[${this.opts.productIdAttr}]`)
+    );
     console.log('nodes', nodes);
     if (!nodes.length) return; // nothing to do
 
@@ -108,42 +112,211 @@ export class Shopify {
     });
 
     window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
-      const cart = ui.createComponent('cart', {
+      console.log('^^^');
+      ui.createComponent('product', {
+        id: '8545406189739',
+        node: document.querySelector('.oakley-product'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
-          cart: {
-            popup: true,
-            startOpen: false,
-            text: {
-              title: 'Your Cart',
-              total: 'Subtotal',
-              button: 'Continue to Checkout',
-              notice:
-                'We can ship to most states plus D.C. We are unable to ship to: AL, AK, AR, HI, MI, SD, TN, UT.',
-            },
+          product: {
             styles: {
-              cart: { 'background-color': '#051b6b' },
-              footer: { 'background-color': '#051b6b' },
-              title: { color: '#fff', 'font-size': '28px', 'line-height': '1.2' },
-              lineItems: { color: '#fff' },
-              subtotalText: { color: '#fff' },
-              subtotal: { color: '#fff' },
-              notice: { color: '#fff' },
-              close: { color: '#fff' },
+              product: {
+                '@media (min-width: 601px)': {
+                  'max-width': 'calc(25% - 20px)',
+                  // 'margin-left': '20px',
+                  'margin-bottom': '50px',
+                },
+                'text-align': this.opts.alignment,
+              },
               button: {
-                'font-family': 'inherit',
-                'font-size': '18px',
-                'font-weight': '700',
-                'background-color': '#e9ecf3',
-                color: '#000',
-                'border-radius': '0',
-                ':hover': { 'background-color': '#e9ecf3' },
-                ':focus': { 'background-color': '#e9ecf3' },
+                'font-family': 'Quantico, sans-serif',
+                'font-weight': 'bold',
+                'font-size': '16px',
+                'padding-top': '16px',
+                'padding-bottom': '16px',
+                color: '#E9ECF3',
+                ':hover': {
+                  color: '#01071C',
+                  'background-color': '#ff8c00',
+                },
+                'background-color': '#01071C',
+                ':focus': {
+                  'background-color': '#0b7aa1',
+                },
+                'border-radius': '0px',
+                'padding-left': '32px',
+                'padding-right': '32px',
+                border: '2px solid #01071C',
+              },
+              quantityInput: {
+                'font-size': '16px',
+                'padding-top': '16px',
+                'padding-bottom': '16px',
+                'font-family': 'Quantico, sans-serif',
+                'font-weight': 'medium',
+                color: '#FF8C00',
+                border: '2px solid #01071C',
               },
             },
+            buttonDestination: 'checkout',
+            contents: {
+              img: false,
+              button: false,
+              buttonWithQuantity: true,
+              title: false,
+              price: false,
+            },
+            text: {
+              button: 'Buy Now',
+            },
+            googleFonts: ['Quantico'],
+          },
+          productSet: {
+            styles: {
+              products: {
+                '@media (min-width: 601px)': {
+                  'margin-left': '-20px',
+                },
+              },
+            },
+          },
+          modalProduct: {
+            contents: {
+              img: false,
+              imgWithCarousel: true,
+              button: false,
+              buttonWithQuantity: true,
+            },
+            styles: {
+              product: {
+                '@media (min-width: 601px)': {
+                  'max-width': '100%',
+                  'margin-left': '0px',
+                  'margin-bottom': '0px',
+                },
+              },
+              button: {
+                'font-family': 'Quantico, sans-serif',
+                'font-weight': 'bold',
+                'font-size': '16px',
+                'padding-top': '16px',
+                'padding-bottom': '16px',
+                color: '#ff8c00',
+                ':hover': {
+                  color: '#ff8c00',
+                  'background-color': '#0b7aa1',
+                },
+                'background-color': '#0c87b3',
+                ':focus': {
+                  'background-color': '#0b7aa1',
+                },
+                'border-radius': '0px',
+                'padding-left': '32px',
+                'padding-right': '32px',
+                border: '1px solid #01071C',
+              },
+              quantityInput: {
+                'font-size': '16px',
+                'padding-top': '16px',
+                'padding-bottom': '16px',
+              },
+            },
+            googleFonts: ['Quantico'],
+            text: {
+              button: 'Add to cart',
+            },
+          },
+          option: {},
+          cart: {
+            styles: {
+              button: {
+                'font-family': 'Quantico, sans-serif',
+                'font-weight': 'bold',
+                'font-size': '16px',
+                'padding-top': '16px',
+                'padding-bottom': '16px',
+                color: '#ff8c00',
+                ':hover': {
+                  color: '#ff8c00',
+                  'background-color': '#0b7aa1',
+                },
+                'background-color': '#0c87b3',
+                ':focus': {
+                  'background-color': '#0b7aa1',
+                },
+                'border-radius': '0px',
+              },
+            },
+            text: {
+              total: 'Subtotal',
+              button: 'Checkout',
+            },
+            googleFonts: ['Quantico'],
+          },
+          toggle: {
+            styles: {
+              toggle: {
+                'font-family': 'Quantico, sans-serif',
+                'font-weight': 'bold',
+                'background-color': '#0c87b3',
+                ':hover': {
+                  'background-color': '#0b7aa1',
+                },
+                ':focus': {
+                  'background-color': '#0b7aa1',
+                },
+              },
+              count: {
+                'font-size': '16px',
+                color: '#ff8c00',
+                ':hover': {
+                  color: '#ff8c00',
+                },
+              },
+              iconPath: {
+                fill: '#ff8c00',
+              },
+            },
+            googleFonts: ['Quantico'],
           },
         },
       });
 
+      // const cart = ui.createComponent('cart', {
+      //   options: {
+      //     cart: {
+      //       popup: true,
+      //       startOpen: false,
+      //       text: {
+      //         title: 'Your Cart',
+      //         total: 'Subtotal',
+      //         button: 'Continue to Checkout',
+      //         notice:
+      //           'We can ship to most states plus D.C. We are unable to ship to: AL, AK, AR, HI, MI, SD, TN, UT.',
+      //       },
+      //       styles: {
+      //         cart: { 'background-color': '#051b6b' },
+      //         footer: { 'background-color': '#051b6b' },
+      //         title: { color: '#fff', 'font-size': '28px', 'line-height': '1.2' },
+      //         lineItems: { color: '#fff' },
+      //         subtotalText: { color: '#fff' },
+      //         subtotal: { color: '#fff' },
+      //         notice: { color: '#fff' },
+      //         close: { color: '#fff' },
+      //         button: {
+      //           'font-family': 'inherit',
+      //           'font-size': '18px',
+      //           'font-weight': '700',
+      //           'background-color': '#e9ecf3',
+      //           color: '#000',
+      //           'border-radius': '0',
+      //           ':hover': { 'background-color': '#e9ecf3' },
+      //           ':focus': { 'background-color': '#e9ecf3' },
+      //         },
+      //       },
+      //     },
+      //   },
+      // });
       // ui.createComponent('product', {
       //   id: '8458591961259',
       //   node: document.querySelector('.oakley-product'),

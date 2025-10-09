@@ -23,32 +23,22 @@ export const mosaicScroll = () => {
         (item) => item as HTMLElement
       );
 
-      this.bgColors = [
-        'rgba(251, 252, 255, 1)',
-        'rgba(233, 236, 243, 1)',
-        'rgba(5, 27, 107, 1)',
-        'rgba(117, 30, 3, 1)',
-      ];
-      this.textColors = [
-        'rgba(241, 138, 0, 1)',
-        'rgba(241, 138, 0, 1)',
-        'rgba(117, 30, 3, 1)',
-        'rgba(5, 27, 107, 1)',
-      ];
+      this.bgColors = ['rgba(1, 7, 28, 1)', 'rgba(241, 138, 0, 1)', 'rgba(12, 135, 179, 1)'];
+      this.textColors = ['rgba(12, 135, 179, 1)', 'rgba(12, 135, 179, 1)', 'rgba(241, 138, 0, 1)'];
 
       this.revealSection();
       this.setScroller();
     }
 
     private setScroller() {
-      for (let i = 0; i < this.tracks.length - 1; i++) {
+      for (let i = 0; i < this.tracks.length; i++) {
         const item = this.tracks[i];
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
-            start: 'top center',
-            end: '90% bottom',
+            start: 'top bottom',
+            end: 'top top',
             scrub: true,
             onUpdate: (self) => this.updateBackgroundTransition(self.progress, i),
             // markers: true,
@@ -57,8 +47,8 @@ export const mosaicScroll = () => {
 
         tl.fromTo(
           this.images[i],
-          { opacity: 0, y: '4rem', rotateX: '-8deg' },
-          { opacity: 1, y: '0rem', rotateX: '0deg', ease: 'linear' }
+          { opacity: 0, y: '4rem', rotateY: '20deg' },
+          { opacity: 1, y: '0rem', rotateY: '0deg', ease: 'linear' }
         );
       }
     }
