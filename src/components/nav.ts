@@ -10,6 +10,7 @@ gsap.registerPlugin(CustomEase);
 export const nav = () => {
   class Nav {
     private nav: HTMLElement;
+    private navBG: HTMLElement;
     private navMain: HTMLElement;
     private hero: HTMLElement;
     private navSpacer: HTMLElement;
@@ -28,6 +29,7 @@ export const nav = () => {
 
     constructor() {
       this.nav = document.querySelector('.nav_component') as HTMLElement;
+      this.navBG = document.querySelector('.nav_bg') as HTMLElement;
       this.navMain = document.querySelector('.w-nav-overlay') as HTMLElement;
       this.hero = document.querySelector('.section_hero') as HTMLElement;
       this.navSpacer = document.querySelector('.nav_sticky-spacer') as HTMLElement;
@@ -99,8 +101,8 @@ export const nav = () => {
           scrub: true,
           // markers: true,
           onLeave: () => {
-            gsap.to(this.nav, {
-              backgroundColor: 'rgba(12, 135, 179, 1)',
+            gsap.to(this.navBG, {
+              opacity: '1',
             });
             gsap.to(
               [
@@ -117,7 +119,7 @@ export const nav = () => {
             );
           },
           onEnterBack: () => {
-            gsap.to(this.nav, { backgroundColor: 'transparent' });
+            gsap.to(this.navBG, { opacity: '0' });
             gsap.to(
               [
                 this.navLinks,

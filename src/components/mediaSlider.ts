@@ -18,8 +18,8 @@ export const mediaSlider = () => {
       this.sliderImages = [...document.querySelectorAll('.slider_image')].map(
         (item) => item as HTMLElement
       );
-      this.nextButton = document.querySelector('.button.is-icon.slider-next') as HTMLElement;
-      this.prevButton = document.querySelector('.button.is-icon.slider-prev') as HTMLElement;
+      this.nextButton = document.querySelector('#mediaSliderNext') as HTMLElement;
+      this.prevButton = document.querySelector('#mediaSliderPrev') as HTMLElement;
 
       this.labelCurrent = document.querySelector('.slider_i-text.is-current') as HTMLElement;
       this.labelTotal = document.querySelector('.slider_i-text.is-total') as HTMLElement;

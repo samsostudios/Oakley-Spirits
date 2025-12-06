@@ -1,3 +1,4 @@
+import { get } from 'firebase/database';
 import { gsap } from 'gsap';
 
 export const mosaicScroll = () => {
@@ -7,6 +8,7 @@ export const mosaicScroll = () => {
     private svgBG: HTMLElement[];
     private svgLayers: SVGPathElement[];
     private tracks: HTMLElement[];
+    private getColors: HTMLElement[];
     private bgColors: string[];
     private textColors: string[];
 
@@ -23,8 +25,16 @@ export const mosaicScroll = () => {
         (item) => item as HTMLElement
       );
 
-      this.bgColors = ['rgba(1, 7, 28, 1)', 'rgba(241, 138, 0, 1)', 'rgba(12, 135, 179, 1)'];
-      this.textColors = ['rgba(12, 135, 179, 1)', 'rgba(12, 135, 179, 1)', 'rgba(241, 138, 0, 1)'];
+      this.getColors = [...document.querySelectorAll('.mosaic_color')] as HTMLElement[];
+      const colorRef = this.extractColors();
+
+      this.bgColors = colorRef.filter((_, i) => i % 2 === 0);
+      this.textColors = colorRef.filter((_, i) => i % 2 === 1);
+
+      console.log('COLORS', this.bgColors, this.textColors);
+
+      // this.bgColors = ['rgba(1, 7, 28, 1)', 'rgba(241, 138, 0, 1)', 'rgba(12, 135, 179, 1)'];
+      // this.textColors = ['rgba(12, 135, 179, 1)', 'rgba(12, 135, 179, 1)', 'rgba(241, 138, 0, 1)'];
 
       this.revealSection();
       this.setScroller();
@@ -90,6 +100,19 @@ export const mosaicScroll = () => {
         { opacity: 0, y: '2rem' },
         { duration: 1.2, opacity: 1, y: '0rem', stagger: 0.2, ease: 'power3.out' }
       );
+    }
+
+    private extractColors() {
+      const colorRef: string[] = [];
+      this.getColors.forEach((item) => {
+        const getItem = getComputedStyle(item);
+        const getColor = getItem.backgroundColor;
+        console.log('!!!', getColor);
+
+        colorRef.push(getColor);
+      });
+
+      return colorRef;
     }
   }
   new MosaicScroll();

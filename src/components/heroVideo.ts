@@ -18,17 +18,19 @@ class HeroVideo {
       gsap.set(heroPlace, { zIndex: 1, display: 'none' });
     };
 
-    heroVideo.addEventListener('loadeddata', () => {
-      // console.log('[HERO] Video data loaded');
-      handleVideoReady();
-    });
+    if (heroVideo) {
+      heroVideo.addEventListener('loadeddata', () => {
+        // console.log('[HERO] Video data loaded');
+        handleVideoReady();
+      });
 
-    if (heroVideo.readyState >= 3) {
-      // console.log('[HERO] Video was already loaded');
-      handleVideoReady();
+      if (heroVideo.readyState >= 3) {
+        // console.log('[HERO] Video was already loaded');
+        handleVideoReady();
+      }
+
+      gsap.set(heroPlace, { zIndex: 4 });
     }
-
-    gsap.set(heroPlace, { zIndex: 4 });
 
     const tl = gsap.timeline({ delay: 1 });
     if (banner)
