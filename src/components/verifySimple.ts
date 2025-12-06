@@ -22,7 +22,7 @@ export const verify = () => {
       this.statusContainer = document.querySelector('.verify_status') as HTMLElement;
       this.verifyVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
       this.verifyPlace = document.querySelector('#verifyPlace') as HTMLElement;
-      this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
+      this.verifyLogo = document.querySelector('.verify_logo') as HTMLElement;
 
       this.verifyProductType = [...document.querySelectorAll('.verify_product-type')].map((item) =>
         (item as HTMLElement).innerHTML.trim()
@@ -36,10 +36,10 @@ export const verify = () => {
       stopSmoothScroll();
       this.section.style.display = 'flex';
 
-      if (this.verifyVideo) {
-        this.verifyVideo.addEventListener('loadeddata', this.handleVideoReady);
-        if (this.verifyVideo.readyState >= 3) this.handleVideoReady();
-      }
+      //   if (this.verifyVideo) {
+      //     this.verifyVideo.addEventListener('loadeddata', this.handleVideoReady);
+      //     if (this.verifyVideo.readyState >= 3) this.handleVideoReady();
+      //   }
 
       this.setListeners();
       this.verifyReveal();
