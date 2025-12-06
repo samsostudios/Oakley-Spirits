@@ -26,7 +26,7 @@ export const verify = () => {
       this.statusContainer = document.querySelector('.verify_status') as HTMLElement;
       this.verifyVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
       this.verifyPlace = document.querySelector('#verifyPlace') as HTMLElement;
-      this.verifyLogo = document.querySelector('.brand_img.is-verify') as HTMLElement;
+      this.verifyLogo = document.querySelector('.verify_logo') as HTMLElement;
       this.videoInitialized = false;
       this.windowLocation = window.location.pathname;
       this.verifyProductType = [...document.querySelectorAll('.verify_product-type')].map((item) =>

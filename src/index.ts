@@ -23,18 +23,18 @@ window.Webflow.push(() => {
   const env = getWebflowEnv();
 
   const isEnv = env === 'editor' || env === 'preview';
-  // if (!isEnv) {
-  //   // console.log('!!!ENV', isEnv, !VerifyCookie.isVerified());
-  //   if (!VerifyCookie.isVerified()) {
-  //     // console.log('!!!SHOW');
-  //     loadComponent('.verify_component', () => import('$components/verifySimple'));
-  //   } else {
-  //     hideVerifyComponent();
-  //   }
-  // } else {
-  //   console.log('!!!HIDE');
-  //   hideVerifyComponent();
-  // }
+  if (!isEnv) {
+    // console.log('!!!ENV', isEnv, !VerifyCookie.isVerified());
+    if (!VerifyCookie.isVerified()) {
+      // console.log('!!!SHOW');
+      loadComponent('.verify_component', () => import('$components/verify'));
+    } else {
+      hideVerifyComponent();
+    }
+  } else {
+    // console.log('!!!HIDE');
+    hideVerifyComponent();
+  }
 
   shopify({ domain: '8z7y38-9x.myshopify.com', token: 'ab800f336b7f7dc65afdafcaf40cb884' });
 

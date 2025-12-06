@@ -31,7 +31,7 @@ export const mosaicScroll = () => {
       this.bgColors = colorRef.filter((_, i) => i % 2 === 0);
       this.textColors = colorRef.filter((_, i) => i % 2 === 1);
 
-      console.log('COLORS', this.bgColors, this.textColors);
+      // console.log('COLORS', this.bgColors, this.textColors);
 
       // this.bgColors = ['rgba(1, 7, 28, 1)', 'rgba(241, 138, 0, 1)', 'rgba(12, 135, 179, 1)'];
       // this.textColors = ['rgba(12, 135, 179, 1)', 'rgba(12, 135, 179, 1)', 'rgba(241, 138, 0, 1)'];
@@ -107,7 +107,7 @@ export const mosaicScroll = () => {
       this.getColors.forEach((item) => {
         const getItem = getComputedStyle(item);
         const getColor = getItem.backgroundColor;
-        console.log('!!!', getColor);
+        // console.log('!!!', getColor);
 
         colorRef.push(getColor);
       });

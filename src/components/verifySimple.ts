@@ -42,7 +42,7 @@ export const verify = () => {
       //   }
 
       this.setListeners();
-      this.verifyReveal();
+      //   this.verifyReveal();
     }
 
     private handleVideoReady = () => {
