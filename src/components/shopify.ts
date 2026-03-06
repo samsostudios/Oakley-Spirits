@@ -39,6 +39,7 @@ export class Shopify {
   private io: IntersectionObserver | null = null;
   private initialized = false;
   private sdkLoaded = false;
+  private sdkPromise: Promise<void> | null = null;
 
   constructor(options: ShopifyInitOptions) {
     console.log('!!Shopify!!');
@@ -98,7 +99,7 @@ export class Shopify {
   }
 
   private mount(node: HTMLElement) {
-    console.log('mount');
+    console.log('mount', node);
 
     const productId = node.getAttribute(this.opts.productIdAttr);
     console.log('!!!!', productId);
@@ -115,8 +116,8 @@ export class Shopify {
 
     window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
       ui.createComponent('product', {
-        id: '8545406189739',
-        node: document.querySelector('.oakley-product'),
+        id: productId,
+        node,
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
           product: {
@@ -128,6 +129,10 @@ export class Shopify {
                   'margin-bottom': '50px',
                 },
                 'text-align': shopAlignment,
+                // display: 'flex',
+                // 'flex-direction': 'column',
+                // 'justify-content': 'flex-end',
+                // 'align-items': 'flex-end',
               },
               button: {
                 'font-family': 'Quantico, sans-serif',
@@ -146,7 +151,7 @@ export class Shopify {
                 'border-radius': '0px',
                 'padding-left': '32px',
                 'padding-right': '32px',
-                border: '2px solid #01071C !important',
+                border: '0px solid #01071C !important',
               },
               quantityInput: {
                 'font-size': '16px',
@@ -155,7 +160,7 @@ export class Shopify {
                 'font-family': 'Quantico, sans-serif',
                 'font-weight': '700',
                 color: '#FF8C00',
-                border: '2px solid #01071C',
+                border: '0px solid #01071C',
                 'border-radius': '0px',
                 background: '#E9ECF3 !important',
               },
@@ -228,35 +233,35 @@ export class Shopify {
               button: 'Add to cart',
             },
           },
-          option: {},
-          // cart: false,
-          // toggle: false,
-          cart: {
-            styles: {
-              button: {
-                'font-family': 'Quantico, sans-serif',
-                'font-weight': 'bold',
-                'font-size': '16px',
-                'padding-top': '16px',
-                'padding-bottom': '16px',
-                color: '#ff8c00',
-                ':hover': {
-                  color: '#ff8c00',
-                  'background-color': '#0b7aa1',
-                },
-                'background-color': '#0c87b3',
-                ':focus': {
-                  'background-color': '#0b7aa1',
-                },
-                'border-radius': '0px',
-              },
-            },
-            text: {
-              total: 'Subtotal',
-              button: 'Checkout',
-            },
-            googleFonts: ['Quantico'],
-          },
+          // option: {},
+          // // cart: false,
+          // // toggle: false,
+          // cart: {
+          //   styles: {
+          //     button: {
+          //       'font-family': 'Quantico, sans-serif',
+          //       'font-weight': 'bold',
+          //       'font-size': '16px',
+          //       'padding-top': '16px',
+          //       'padding-bottom': '16px',
+          //       color: '#ff8c00',
+          //       ':hover': {
+          //         color: '#ff8c00',
+          //         'background-color': '#0b7aa1',
+          //       },
+          //       'background-color': '#0c87b3',
+          //       ':focus': {
+          //         'background-color': '#0b7aa1',
+          //       },
+          //       'border-radius': '0px',
+          //     },
+          //   },
+          //   text: {
+          //     total: 'Subtotal',
+          //     button: 'Checkout',
+          //   },
+          //   googleFonts: ['Quantico'],
+          // },
           // toggle: {
           //   styles: {
           //     toggle: {
