@@ -498,13 +498,13 @@
     });
   }
   var ERROR_NAME = "FirebaseError";
-  var FirebaseError = class _FirebaseError extends Error {
+  var FirebaseError = class extends Error {
     constructor(code, message, customData) {
       super(message);
       this.code = code;
       this.customData = customData;
       this.name = ERROR_NAME;
-      Object.setPrototypeOf(this, _FirebaseError.prototype);
+      Object.setPrototypeOf(this, FirebaseError.prototype);
       if (Error.captureStackTrace) {
         Error.captureStackTrace(this, ErrorFactory.prototype.create);
       }
@@ -1476,7 +1476,7 @@
     return (component === null || component === void 0 ? void 0 : component.type) === "VERSION";
   }
   var name$q = "@firebase/app";
-  var version$1 = "0.11.0";
+  var version$1 = "0.11.1";
   var logger = new Logger("@firebase/app");
   var name$p = "@firebase/app-compat";
   var name$o = "@firebase/analytics-compat";
@@ -1504,7 +1504,7 @@
   var name$2 = "@firebase/vertexai";
   var name$1 = "@firebase/firestore-compat";
   var name = "firebase";
-  var version = "11.3.0";
+  var version = "11.3.1";
   var DEFAULT_ENTRY_NAME2 = "[DEFAULT]";
   var PLATFORM_LOG_STRING = {
     [name$q]: "fire-core",
@@ -2043,7 +2043,7 @@
 
   // node_modules/firebase/app/dist/esm/index.esm.js
   var name2 = "firebase";
-  var version2 = "11.3.0";
+  var version2 = "11.3.1";
   registerVersion(name2, version2, "app");
 
   // node_modules/@firebase/database/dist/index.esm2017.js
@@ -2130,7 +2130,7 @@
   var PersistentStorage = createStoragefor("localStorage");
   var SessionStorage = createStoragefor("sessionStorage");
   var logClient = new Logger("@firebase/database");
-  var LUIDGenerator = /* @__PURE__ */ function() {
+  var LUIDGenerator = function() {
     let id = 1;
     return function() {
       return id++;
@@ -2717,7 +2717,7 @@
   var MAX_PAYLOAD_SIZE = MAX_URL_DATA_SIZE - SEG_HEADER_SIZE;
   var KEEPALIVE_REQUEST_INTERVAL = 25e3;
   var LP_CONNECT_TIMEOUT = 3e4;
-  var BrowserPollConnection = class _BrowserPollConnection {
+  var BrowserPollConnection = class {
     /**
      * @param connId An identifier for this connection, used for logging
      * @param repoInfo The info for the endpoint to send data to.
@@ -2839,22 +2839,22 @@
      * Forces long polling to be considered as a potential transport
      */
     static forceAllow() {
-      _BrowserPollConnection.forceAllow_ = true;
+      BrowserPollConnection.forceAllow_ = true;
     }
     /**
      * Forces longpolling to not be considered as a potential transport
      */
     static forceDisallow() {
-      _BrowserPollConnection.forceDisallow_ = true;
+      BrowserPollConnection.forceDisallow_ = true;
     }
     // Static method, use string literal so it can be accessed in a generic way
     static isAvailable() {
       if (isNodeSdk()) {
         return false;
-      } else if (_BrowserPollConnection.forceAllow_) {
+      } else if (BrowserPollConnection.forceAllow_) {
         return true;
       } else {
-        return !_BrowserPollConnection.forceDisallow_ && typeof document !== "undefined" && document.createElement != null && !isChromeExtensionContentScript() && !isWindowsStoreApp();
+        return !BrowserPollConnection.forceDisallow_ && typeof document !== "undefined" && document.createElement != null && !isChromeExtensionContentScript() && !isWindowsStoreApp();
       }
     }
     /**
@@ -2946,7 +2946,7 @@
       this.stats_.incrementCounter("bytes_received", bytesReceived);
     }
   };
-  var FirebaseIFrameScriptHolder = class _FirebaseIFrameScriptHolder {
+  var FirebaseIFrameScriptHolder = class {
     /**
      * @param commandCB - The callback to be called when control commands are received from the server.
      * @param onMessageCB - The callback to be triggered when responses arrive from the server.
@@ -2964,7 +2964,7 @@
         this.uniqueCallbackIdentifier = LUIDGenerator();
         window[FIREBASE_LONGPOLL_COMMAND_CB_NAME + this.uniqueCallbackIdentifier] = commandCB;
         window[FIREBASE_LONGPOLL_DATA_CB_NAME + this.uniqueCallbackIdentifier] = onMessageCB;
-        this.myIFrame = _FirebaseIFrameScriptHolder.createIFrame_();
+        this.myIFrame = FirebaseIFrameScriptHolder.createIFrame_();
         let script = "";
         if (this.myIFrame.src && this.myIFrame.src.substr(0, "javascript:".length) === "javascript:") {
           const currentDomain = document.domain;
@@ -3161,7 +3161,7 @@
   } else if (typeof WebSocket !== "undefined") {
     WebSocketImpl = WebSocket;
   }
-  var WebSocketConnection = class _WebSocketConnection {
+  var WebSocketConnection = class {
     /**
      * @param connId identifier for this transport
      * @param repoInfo The info for the websocket endpoint.
@@ -3185,7 +3185,7 @@
       this.bytesReceived = 0;
       this.log_ = logWrapper(this.connId);
       this.stats_ = statsManagerGetCollection(repoInfo);
-      this.connURL = _WebSocketConnection.connectionURL_(repoInfo, transportSessionId, lastSessionId, appCheckToken, applicationId);
+      this.connURL = WebSocketConnection.connectionURL_(repoInfo, transportSessionId, lastSessionId, appCheckToken, applicationId);
       this.nodeAdmin = repoInfo.nodeAdmin;
     }
     /**
@@ -3284,7 +3284,7 @@
     start() {
     }
     static forceDisallow() {
-      _WebSocketConnection.forceDisallow_ = true;
+      WebSocketConnection.forceDisallow_ = true;
     }
     static isAvailable() {
       let isOldAndroid = false;
@@ -3297,7 +3297,7 @@
           }
         }
       }
-      return !isOldAndroid && WebSocketImpl !== null && !_WebSocketConnection.forceDisallow_;
+      return !isOldAndroid && WebSocketImpl !== null && !WebSocketConnection.forceDisallow_;
     }
     /**
      * Returns true if we previously failed to connect with this transport.
@@ -3438,7 +3438,7 @@
   };
   WebSocketConnection.responsesRequiredToBeHealthy = 2;
   WebSocketConnection.healthyTimeout = 3e4;
-  var TransportManager = class _TransportManager {
+  var TransportManager = class {
     static get ALL_TRANSPORTS() {
       return [BrowserPollConnection, WebSocketConnection];
     }
@@ -3468,12 +3468,12 @@
         this.transports_ = [WebSocketConnection];
       } else {
         const transports = this.transports_ = [];
-        for (const transport of _TransportManager.ALL_TRANSPORTS) {
+        for (const transport of TransportManager.ALL_TRANSPORTS) {
           if (transport && transport["isAvailable"]()) {
             transports.push(transport);
           }
         }
-        _TransportManager.globalTransportInitialized_ = true;
+        TransportManager.globalTransportInitialized_ = true;
       }
     }
     /**
@@ -3934,9 +3934,9 @@
       }), "Unknown event: " + eventType);
     }
   };
-  var OnlineMonitor = class _OnlineMonitor extends EventEmitter {
+  var OnlineMonitor = class extends EventEmitter {
     static getInstance() {
-      return new _OnlineMonitor();
+      return new OnlineMonitor();
     }
     constructor() {
       super(["online"]);
@@ -4147,9 +4147,9 @@
     }
     return "in property '" + validationPath.parts_.join(".") + "'";
   }
-  var VisibilityMonitor = class _VisibilityMonitor extends EventEmitter {
+  var VisibilityMonitor = class extends EventEmitter {
     static getInstance() {
-      return new _VisibilityMonitor();
+      return new VisibilityMonitor();
     }
     constructor() {
       super(["visible"]);
@@ -4193,7 +4193,7 @@
   var RECONNECT_DELAY_RESET_TIMEOUT = 3e4;
   var SERVER_KILL_INTERRUPT_REASON = "server_kill";
   var INVALID_TOKEN_THRESHOLD = 3;
-  var PersistentConnection = class _PersistentConnection extends ServerActions {
+  var PersistentConnection = class extends ServerActions {
     /**
      * @param repoInfo_ - Data about the namespace we are connecting to
      * @param applicationId_ - The Firebase App ID for this project
@@ -4209,7 +4209,7 @@
       this.authTokenProvider_ = authTokenProvider_;
       this.appCheckTokenProvider_ = appCheckTokenProvider_;
       this.authOverride_ = authOverride_;
-      this.id = _PersistentConnection.nextPersistentConnectionId_++;
+      this.id = PersistentConnection.nextPersistentConnectionId_++;
       this.log_ = logWrapper("p:" + this.id + ":");
       this.interruptReasons_ = {};
       this.listens = /* @__PURE__ */ new Map();
@@ -4342,7 +4342,7 @@
           /*status*/
           "s"
         ];
-        _PersistentConnection.warnOnListenWarnings_(payload, query);
+        PersistentConnection.warnOnListenWarnings_(payload, query);
         const currentListenSpec = this.listens.get(pathString) && this.listens.get(pathString).get(queryId);
         if (currentListenSpec === listenSpec) {
           this.log_("listen response", message);
@@ -4789,7 +4789,7 @@
         const onDataMessage = this.onDataMessage_.bind(this);
         const onReady = this.onReady_.bind(this);
         const onDisconnect = this.onRealtimeDisconnect_.bind(this);
-        const connId = this.id + ":" + _PersistentConnection.nextConnectionId_++;
+        const connId = this.id + ":" + PersistentConnection.nextConnectionId_++;
         const lastSessionId = this.lastSessionId;
         let canceled = false;
         let connection = null;
@@ -5006,13 +5006,13 @@
   };
   PersistentConnection.nextPersistentConnectionId_ = 0;
   PersistentConnection.nextConnectionId_ = 0;
-  var NamedNode = class _NamedNode {
+  var NamedNode = class {
     constructor(name4, node) {
       this.name = name4;
       this.node = node;
     }
     static Wrap(name4, node) {
-      return new _NamedNode(name4, node);
+      return new NamedNode(name4, node);
     }
   };
   var Index = class {
@@ -5154,7 +5154,7 @@
       }
     }
   };
-  var LLRBNode = class _LLRBNode {
+  var LLRBNode = class {
     /**
      * @param key - Key associated with this node.
      * @param value - Value associated with this node.
@@ -5165,7 +5165,7 @@
     constructor(key, value, color, left, right) {
       this.key = key;
       this.value = value;
-      this.color = color != null ? color : _LLRBNode.RED;
+      this.color = color != null ? color : LLRBNode.RED;
       this.left = left != null ? left : SortedMap.EMPTY_NODE;
       this.right = right != null ? right : SortedMap.EMPTY_NODE;
     }
@@ -5180,7 +5180,7 @@
      * @returns The node copy.
      */
     copy(key, value, color, left, right) {
-      return new _LLRBNode(key != null ? key : this.key, value != null ? value : this.value, color != null ? color : this.color, left != null ? left : this.left, right != null ? right : this.right);
+      return new LLRBNode(key != null ? key : this.key, value != null ? value : this.value, color != null ? color : this.color, left != null ? left : this.left, right != null ? right : this.right);
     }
     /**
      * @returns The total number of nodes in the tree.
@@ -5356,14 +5356,14 @@
      * @returns New tree, after rotateLeft.
      */
     rotateLeft_() {
-      const nl = this.copy(null, null, _LLRBNode.RED, null, this.right.left);
+      const nl = this.copy(null, null, LLRBNode.RED, null, this.right.left);
       return this.right.copy(null, null, this.color, nl, null);
     }
     /**
      * @returns New tree, after rotateRight.
      */
     rotateRight_() {
-      const nr = this.copy(null, null, _LLRBNode.RED, this.left.right, null);
+      const nr = this.copy(null, null, LLRBNode.RED, this.left.right, null);
       return this.left.copy(null, null, this.color, null, nr);
     }
     /**
@@ -5480,12 +5480,12 @@
       return false;
     }
   };
-  var SortedMap = class _SortedMap {
+  var SortedMap = class {
     /**
      * @param comparator_ - Key comparator.
      * @param root_ - Optional root node for the map.
      */
-    constructor(comparator_, root_ = _SortedMap.EMPTY_NODE) {
+    constructor(comparator_, root_ = SortedMap.EMPTY_NODE) {
       this.comparator_ = comparator_;
       this.root_ = root_;
     }
@@ -5498,7 +5498,7 @@
      * @returns New map, with item added.
      */
     insert(key, value) {
-      return new _SortedMap(this.comparator_, this.root_.insert(key, value, this.comparator_).copy(null, null, LLRBNode.BLACK, null, null));
+      return new SortedMap(this.comparator_, this.root_.insert(key, value, this.comparator_).copy(null, null, LLRBNode.BLACK, null, null));
     }
     /**
      * Returns a copy of the map, with the specified key removed.
@@ -5507,7 +5507,7 @@
      * @returns New map, with item removed.
      */
     remove(key) {
-      return new _SortedMap(this.comparator_, this.root_.remove(key, this.comparator_).copy(null, null, LLRBNode.BLACK, null, null));
+      return new SortedMap(this.comparator_, this.root_.remove(key, this.comparator_).copy(null, null, LLRBNode.BLACK, null, null));
     }
     /**
      * Returns the value of the node with the given key, or null.
@@ -5653,7 +5653,7 @@
     assert(priorityNode === MAX_NODE$2 || priorityNode.getPriority().isEmpty(), "Priority nodes can't have a priority of their own.");
   };
   var __childrenNodeConstructor;
-  var LeafNode = class _LeafNode {
+  var LeafNode = class {
     static set __childrenNodeConstructor(val) {
       __childrenNodeConstructor = val;
     }
@@ -5665,7 +5665,7 @@
      * possible in the event of a deferred value
      * @param priorityNode_ - The priority of this node.
      */
-    constructor(value_, priorityNode_ = _LeafNode.__childrenNodeConstructor.EMPTY_NODE) {
+    constructor(value_, priorityNode_ = LeafNode.__childrenNodeConstructor.EMPTY_NODE) {
       this.value_ = value_;
       this.priorityNode_ = priorityNode_;
       this.lazyHash_ = null;
@@ -5682,14 +5682,14 @@
     }
     /** @inheritDoc */
     updatePriority(newPriorityNode) {
-      return new _LeafNode(this.value_, newPriorityNode);
+      return new LeafNode(this.value_, newPriorityNode);
     }
     /** @inheritDoc */
     getImmediateChild(childName) {
       if (childName === ".priority") {
         return this.priorityNode_;
       } else {
-        return _LeafNode.__childrenNodeConstructor.EMPTY_NODE;
+        return LeafNode.__childrenNodeConstructor.EMPTY_NODE;
       }
     }
     /** @inheritDoc */
@@ -5699,7 +5699,7 @@
       } else if (pathGetFront(path) === ".priority") {
         return this.priorityNode_;
       } else {
-        return _LeafNode.__childrenNodeConstructor.EMPTY_NODE;
+        return LeafNode.__childrenNodeConstructor.EMPTY_NODE;
       }
     }
     hasChild() {
@@ -5716,7 +5716,7 @@
       } else if (newChildNode.isEmpty() && childName !== ".priority") {
         return this;
       } else {
-        return _LeafNode.__childrenNodeConstructor.EMPTY_NODE.updateImmediateChild(childName, newChildNode).updatePriority(this.priorityNode_);
+        return LeafNode.__childrenNodeConstructor.EMPTY_NODE.updateImmediateChild(childName, newChildNode).updatePriority(this.priorityNode_);
       }
     }
     /** @inheritDoc */
@@ -5728,7 +5728,7 @@
         return this;
       } else {
         assert(front !== ".priority" || pathGetLength(path) === 1, ".priority must be the last token in a path");
-        return this.updateImmediateChild(front, _LeafNode.__childrenNodeConstructor.EMPTY_NODE.updateChild(pathPopFront(path), newChildNode));
+        return this.updateImmediateChild(front, LeafNode.__childrenNodeConstructor.EMPTY_NODE.updateChild(pathPopFront(path), newChildNode));
       }
     }
     /** @inheritDoc */
@@ -5779,9 +5779,9 @@
       return this.value_;
     }
     compareTo(other) {
-      if (other === _LeafNode.__childrenNodeConstructor.EMPTY_NODE) {
+      if (other === LeafNode.__childrenNodeConstructor.EMPTY_NODE) {
         return 1;
-      } else if (other instanceof _LeafNode.__childrenNodeConstructor) {
+      } else if (other instanceof LeafNode.__childrenNodeConstructor) {
         return -1;
       } else {
         assert(other.isLeafNode(), "Unknown node type");
@@ -5794,8 +5794,8 @@
     compareToLeafNode_(otherLeaf) {
       const otherLeafType = typeof otherLeaf.value_;
       const thisLeafType = typeof this.value_;
-      const otherIndex = _LeafNode.VALUE_TYPE_ORDER.indexOf(otherLeafType);
-      const thisIndex = _LeafNode.VALUE_TYPE_ORDER.indexOf(thisLeafType);
+      const otherIndex = LeafNode.VALUE_TYPE_ORDER.indexOf(otherLeafType);
+      const thisIndex = LeafNode.VALUE_TYPE_ORDER.indexOf(thisLeafType);
       assert(otherIndex >= 0, "Unknown leaf type: " + otherLeafType);
       assert(thisIndex >= 0, "Unknown leaf type: " + thisLeafType);
       if (otherIndex === thisIndex) {
@@ -5955,13 +5955,13 @@
   };
   var _defaultIndexMap;
   var fallbackObject = {};
-  var IndexMap = class _IndexMap {
+  var IndexMap = class {
     /**
      * The default IndexMap for nodes without a priority
      */
     static get Default() {
       assert(fallbackObject && PRIORITY_INDEX, "ChildrenNode.ts has not been loaded");
-      _defaultIndexMap = _defaultIndexMap || new _IndexMap({ ".priority": fallbackObject }, { ".priority": PRIORITY_INDEX });
+      _defaultIndexMap = _defaultIndexMap || new IndexMap({ ".priority": fallbackObject }, { ".priority": PRIORITY_INDEX });
       return _defaultIndexMap;
     }
     constructor(indexes_, indexSet_) {
@@ -6004,7 +6004,7 @@
       newIndexSet[indexName] = indexDefinition;
       const newIndexes = Object.assign({}, this.indexes_);
       newIndexes[indexName] = newIndex;
-      return new _IndexMap(newIndexes, newIndexSet);
+      return new IndexMap(newIndexes, newIndexSet);
     }
     /**
      * Ensure that this node is properly tracked in any indexes that we're maintaining
@@ -6038,7 +6038,7 @@
           return newChildren.insert(namedNode, namedNode.node);
         }
       });
-      return new _IndexMap(newIndexes, this.indexSet_);
+      return new IndexMap(newIndexes, this.indexSet_);
     }
     /**
      * Create a new IndexMap instance with the given value removed
@@ -6056,13 +6056,13 @@
           }
         }
       });
-      return new _IndexMap(newIndexes, this.indexSet_);
+      return new IndexMap(newIndexes, this.indexSet_);
     }
   };
   var EMPTY_NODE;
-  var ChildrenNode = class _ChildrenNode {
+  var ChildrenNode = class {
     static get EMPTY_NODE() {
-      return EMPTY_NODE || (EMPTY_NODE = new _ChildrenNode(new SortedMap(NAME_COMPARATOR), null, IndexMap.Default));
+      return EMPTY_NODE || (EMPTY_NODE = new ChildrenNode(new SortedMap(NAME_COMPARATOR), null, IndexMap.Default));
     }
     /**
      * @param children_ - List of children of this node..
@@ -6093,7 +6093,7 @@
       if (this.children_.isEmpty()) {
         return this;
       } else {
-        return new _ChildrenNode(this.children_, newPriorityNode, this.indexMap_);
+        return new ChildrenNode(this.children_, newPriorityNode, this.indexMap_);
       }
     }
     /** @inheritDoc */
@@ -6133,7 +6133,7 @@
           newIndexMap = this.indexMap_.addToIndexes(namedNode, this.children_);
         }
         const newPriority = newChildren.isEmpty() ? EMPTY_NODE : this.priorityNode_;
-        return new _ChildrenNode(newChildren, newPriority, newIndexMap);
+        return new ChildrenNode(newChildren, newPriority, newIndexMap);
       }
     }
     /** @inheritDoc */
@@ -6165,7 +6165,7 @@
       this.forEachChild(PRIORITY_INDEX, (key, childNode) => {
         obj[key] = childNode.val(exportFormat);
         numKeys++;
-        if (allIntegerKeys && _ChildrenNode.INTEGER_REGEXP_.test(key)) {
+        if (allIntegerKeys && ChildrenNode.INTEGER_REGEXP_.test(key)) {
           maxKey = Math.max(maxKey, Number(key));
         } else {
           allIntegerKeys = false;
@@ -6314,7 +6314,7 @@
         return this;
       } else {
         const newIndexMap = this.indexMap_.addIndex(indexDefinition, this.children_);
-        return new _ChildrenNode(this.children_, this.priorityNode_, newIndexMap);
+        return new ChildrenNode(this.children_, this.priorityNode_, newIndexMap);
       }
     }
     isIndexed(index) {
@@ -6613,12 +6613,12 @@
       return this.index_;
     }
   };
-  var RangedFilter = class _RangedFilter {
+  var RangedFilter = class {
     constructor(params) {
       this.indexedFilter_ = new IndexedFilter(params.getIndex());
       this.index_ = params.getIndex();
-      this.startPost_ = _RangedFilter.getStartPost_(params);
-      this.endPost_ = _RangedFilter.getEndPost_(params);
+      this.startPost_ = RangedFilter.getStartPost_(params);
+      this.endPost_ = RangedFilter.getEndPost_(params);
       this.startIsInclusive_ = !params.startAfterSet_;
       this.endIsInclusive_ = !params.endBeforeSet_;
     }
@@ -6831,7 +6831,7 @@
       }
     }
   };
-  var QueryParams = class _QueryParams {
+  var QueryParams = class {
     constructor() {
       this.limitSet_ = false;
       this.startSet_ = false;
@@ -6928,7 +6928,7 @@
       return this.loadsAllData() && this.index_ === PRIORITY_INDEX;
     }
     copy() {
-      const copy = new _QueryParams();
+      const copy = new QueryParams();
       copy.limitSet_ = this.limitSet_;
       copy.limit_ = this.limit_;
       copy.startSet_ = this.startSet_;
@@ -7064,7 +7064,7 @@
     }
     return obj;
   }
-  var ReadonlyRestClient = class _ReadonlyRestClient extends ServerActions {
+  var ReadonlyRestClient = class extends ServerActions {
     reportStats(stats) {
       throw new Error("Method not implemented.");
     }
@@ -7093,7 +7093,7 @@
     listen(query, currentHashFn, tag, onComplete) {
       const pathString = query._path.toString();
       this.log_("Listen called for " + pathString + " " + query._queryIdentifier);
-      const listenId = _ReadonlyRestClient.getListenId_(query, tag);
+      const listenId = ReadonlyRestClient.getListenId_(query, tag);
       const thisListen = {};
       this.listens_[listenId] = thisListen;
       const queryStringParameters = queryParamsToRestQueryStringParameters(query._queryParams);
@@ -7127,7 +7127,7 @@
     }
     /** @inheritDoc */
     unlisten(query, tag) {
-      const listenId = _ReadonlyRestClient.getListenId_(query, tag);
+      const listenId = ReadonlyRestClient.getListenId_(query, tag);
       delete this.listens_[listenId];
     }
     get(query) {
@@ -7337,7 +7337,7 @@
       tagged: true
     };
   }
-  var AckUserWrite = class _AckUserWrite {
+  var AckUserWrite = class {
     /**
      * @param affectedTree - A tree containing true for each affected path. Affected paths can't overlap.
      */
@@ -7351,17 +7351,17 @@
     operationForChild(childName) {
       if (!pathIsEmpty(this.path)) {
         assert(pathGetFront(this.path) === childName, "operationForChild called for unrelated child.");
-        return new _AckUserWrite(pathPopFront(this.path), this.affectedTree, this.revert);
+        return new AckUserWrite(pathPopFront(this.path), this.affectedTree, this.revert);
       } else if (this.affectedTree.value != null) {
         assert(this.affectedTree.children.isEmpty(), "affectedTree should not have overlapping affected paths.");
         return this;
       } else {
         const childTree = this.affectedTree.subtree(new Path(childName));
-        return new _AckUserWrite(newEmptyPath(), childTree, this.revert);
+        return new AckUserWrite(newEmptyPath(), childTree, this.revert);
       }
     }
   };
-  var ListenComplete = class _ListenComplete {
+  var ListenComplete = class {
     constructor(source, path) {
       this.source = source;
       this.path = path;
@@ -7369,13 +7369,13 @@
     }
     operationForChild(childName) {
       if (pathIsEmpty(this.path)) {
-        return new _ListenComplete(this.source, newEmptyPath());
+        return new ListenComplete(this.source, newEmptyPath());
       } else {
-        return new _ListenComplete(this.source, pathPopFront(this.path));
+        return new ListenComplete(this.source, pathPopFront(this.path));
       }
     }
   };
-  var Overwrite = class _Overwrite {
+  var Overwrite = class {
     constructor(source, path, snap) {
       this.source = source;
       this.path = path;
@@ -7384,13 +7384,13 @@
     }
     operationForChild(childName) {
       if (pathIsEmpty(this.path)) {
-        return new _Overwrite(this.source, newEmptyPath(), this.snap.getImmediateChild(childName));
+        return new Overwrite(this.source, newEmptyPath(), this.snap.getImmediateChild(childName));
       } else {
-        return new _Overwrite(this.source, pathPopFront(this.path), this.snap);
+        return new Overwrite(this.source, pathPopFront(this.path), this.snap);
       }
     }
   };
-  var Merge = class _Merge {
+  var Merge = class {
     constructor(source, path, children) {
       this.source = source;
       this.path = path;
@@ -7405,11 +7405,11 @@
         } else if (childTree.value) {
           return new Overwrite(this.source, newEmptyPath(), childTree.value);
         } else {
-          return new _Merge(this.source, newEmptyPath(), childTree);
+          return new Merge(this.source, newEmptyPath(), childTree);
         }
       } else {
         assert(pathGetFront(this.path) === childName, "Can't get a merge for a child not on the path of the operation");
-        return new _Merge(this.source, pathPopFront(this.path), this.children);
+        return new Merge(this.source, pathPopFront(this.path), this.children);
       }
     }
     toString() {
@@ -7519,9 +7519,9 @@
     }
     return emptyChildrenSingleton;
   };
-  var ImmutableTree = class _ImmutableTree {
+  var ImmutableTree = class {
     static fromObject(obj) {
-      let tree = new _ImmutableTree(null);
+      let tree = new ImmutableTree(null);
       each(obj, (childPath, childSnap) => {
         tree = tree.set(new Path(childPath), childSnap);
       });
@@ -7589,7 +7589,7 @@
         if (childTree !== null) {
           return childTree.subtree(pathPopFront(relativePath));
         } else {
-          return new _ImmutableTree(null);
+          return new ImmutableTree(null);
         }
       }
     }
@@ -7602,13 +7602,13 @@
      */
     set(relativePath, toSet) {
       if (pathIsEmpty(relativePath)) {
-        return new _ImmutableTree(toSet, this.children);
+        return new ImmutableTree(toSet, this.children);
       } else {
         const front = pathGetFront(relativePath);
-        const child2 = this.children.get(front) || new _ImmutableTree(null);
+        const child2 = this.children.get(front) || new ImmutableTree(null);
         const newChild = child2.set(pathPopFront(relativePath), toSet);
         const newChildren = this.children.insert(front, newChild);
-        return new _ImmutableTree(this.value, newChildren);
+        return new ImmutableTree(this.value, newChildren);
       }
     }
     /**
@@ -7620,9 +7620,9 @@
     remove(relativePath) {
       if (pathIsEmpty(relativePath)) {
         if (this.children.isEmpty()) {
-          return new _ImmutableTree(null);
+          return new ImmutableTree(null);
         } else {
-          return new _ImmutableTree(null, this.children);
+          return new ImmutableTree(null, this.children);
         }
       } else {
         const front = pathGetFront(relativePath);
@@ -7636,9 +7636,9 @@
             newChildren = this.children.insert(front, newChild);
           }
           if (this.value === null && newChildren.isEmpty()) {
-            return new _ImmutableTree(null);
+            return new ImmutableTree(null);
           } else {
-            return new _ImmutableTree(this.value, newChildren);
+            return new ImmutableTree(this.value, newChildren);
           }
         } else {
           return this;
@@ -7676,7 +7676,7 @@
         return newTree;
       } else {
         const front = pathGetFront(relativePath);
-        const child2 = this.children.get(front) || new _ImmutableTree(null);
+        const child2 = this.children.get(front) || new ImmutableTree(null);
         const newChild = child2.setTree(pathPopFront(relativePath), newTree);
         let newChildren;
         if (newChild.isEmpty()) {
@@ -7684,7 +7684,7 @@
         } else {
           newChildren = this.children.insert(front, newChild);
         }
-        return new _ImmutableTree(this.value, newChildren);
+        return new ImmutableTree(this.value, newChildren);
       }
     }
     /**
@@ -7744,7 +7744,7 @@
         if (nextChild) {
           return nextChild.foreachOnPath_(pathPopFront(pathToFollow), pathChild(currentRelativePath, front), f);
         } else {
-          return new _ImmutableTree(null);
+          return new ImmutableTree(null);
         }
       }
     }
@@ -7773,12 +7773,12 @@
       });
     }
   };
-  var CompoundWrite = class _CompoundWrite {
+  var CompoundWrite = class {
     constructor(writeTree_) {
       this.writeTree_ = writeTree_;
     }
     static empty() {
-      return new _CompoundWrite(new ImmutableTree(null));
+      return new CompoundWrite(new ImmutableTree(null));
     }
   };
   function compoundWriteAddWrite(compoundWrite, path, node) {
@@ -7983,7 +7983,8 @@
           } else if (pathContains(writePath, treeRoot)) {
             relativePath = newRelativePath(writePath, treeRoot);
             compoundWrite = compoundWriteAddWrite(compoundWrite, newEmptyPath(), write.snap.getChild(relativePath));
-          } else ;
+          } else
+            ;
         } else if (write.children) {
           if (pathContains(treeRoot, writePath)) {
             relativePath = newRelativePath(treeRoot, writePath);
@@ -7999,7 +8000,8 @@
                 compoundWrite = compoundWriteAddWrite(compoundWrite, newEmptyPath(), deepNode);
               }
             }
-          } else ;
+          } else
+            ;
         } else {
           throw assertionError("WriteRecord should have .snap or .children");
         }
@@ -9153,26 +9155,26 @@
     }
     return events;
   }
-  var ExistingValueProvider = class _ExistingValueProvider {
+  var ExistingValueProvider = class {
     constructor(node_) {
       this.node_ = node_;
     }
     getImmediateChild(childName) {
       const child2 = this.node_.getImmediateChild(childName);
-      return new _ExistingValueProvider(child2);
+      return new ExistingValueProvider(child2);
     }
     node() {
       return this.node_;
     }
   };
-  var DeferredValueProvider = class _DeferredValueProvider {
+  var DeferredValueProvider = class {
     constructor(syncTree, path) {
       this.syncTree_ = syncTree;
       this.path_ = path;
     }
     getImmediateChild(childName) {
       const childPath = pathChild(this.path_, childName);
-      return new _DeferredValueProvider(this.syncTree_, childPath);
+      return new DeferredValueProvider(this.syncTree_, childPath);
     }
     node() {
       return syncTreeCalcCompleteEventCache(this.syncTree_, this.path_);
@@ -9962,7 +9964,8 @@
       let events = [];
       let lastSent = -1;
       for (let i = 0; i < queue.length; i++) {
-        if (queue[i].status === 3) ;
+        if (queue[i].status === 3)
+          ;
         else if (queue[i].status === 1) {
           assert(lastSent === i - 1, "All SENT items should be at beginning of queue.");
           lastSent = i;
@@ -10104,7 +10107,7 @@
     };
   };
   var PUSH_CHARS = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz";
-  var nextPushId = /* @__PURE__ */ function() {
+  var nextPushId = function() {
     let lastPushTime = 0;
     const lastRandChars = [];
     return function(now) {
@@ -10204,7 +10207,7 @@
       return this.snapshotCallback === other.snapshotCallback || this.snapshotCallback.userCallback !== void 0 && this.snapshotCallback.userCallback === other.snapshotCallback.userCallback && this.snapshotCallback.context === other.snapshotCallback.context;
     }
   };
-  var QueryImpl = class _QueryImpl {
+  var QueryImpl = class {
     /**
      * @hideconstructor
      */
@@ -10237,7 +10240,7 @@
     }
     isEqual(other) {
       other = getModularInstance(other);
-      if (!(other instanceof _QueryImpl)) {
+      if (!(other instanceof QueryImpl)) {
         return false;
       }
       const sameRepo = this._repo === other._repo;
@@ -10252,14 +10255,14 @@
       return this._repo.toString() + pathToUrlEncodedString(this._path);
     }
   };
-  var ReferenceImpl = class _ReferenceImpl extends QueryImpl {
+  var ReferenceImpl = class extends QueryImpl {
     /** @hideconstructor */
     constructor(repo, path) {
       super(repo, path, new QueryParams(), false);
     }
     get parent() {
       const parentPath = pathParent(this._path);
-      return parentPath === null ? null : new _ReferenceImpl(this._repo, parentPath);
+      return parentPath === null ? null : new ReferenceImpl(this._repo, parentPath);
     }
     get root() {
       let ref2 = this;
@@ -10269,7 +10272,7 @@
       return ref2;
     }
   };
-  var DataSnapshot = class _DataSnapshot {
+  var DataSnapshot = class {
     /**
      * @param _node - A SnapshotNode to wrap.
      * @param ref - The location this snapshot came from.
@@ -10323,7 +10326,7 @@
     child(path) {
       const childPath = new Path(path);
       const childRef = child(this.ref, path);
-      return new _DataSnapshot(this._node.getChild(childPath), childRef, PRIORITY_INDEX);
+      return new DataSnapshot(this._node.getChild(childPath), childRef, PRIORITY_INDEX);
     }
     /**
      * Returns true if this `DataSnapshot` contains any data. It is slightly more
@@ -10369,7 +10372,7 @@
       }
       const childrenNode = this._node;
       return !!childrenNode.forEachChild(this._index, (key, node) => {
-        return action(new _DataSnapshot(node, child(this.ref, key), PRIORITY_INDEX));
+        return action(new DataSnapshot(node, child(this.ref, key), PRIORITY_INDEX));
       });
     }
     /**
@@ -10481,7 +10484,7 @@
       return new DataSnapshot(node, new ReferenceImpl(query._repo, query._path), query._queryParams.getIndex());
     });
   }
-  var ValueEventRegistration = class _ValueEventRegistration {
+  var ValueEventRegistration = class {
     constructor(callbackContext) {
       this.callbackContext = callbackContext;
     }
@@ -10507,7 +10510,7 @@
       }
     }
     matches(other) {
-      if (!(other instanceof _ValueEventRegistration)) {
+      if (!(other instanceof ValueEventRegistration)) {
         return false;
       } else if (!other.callbackContext || !this.callbackContext) {
         return true;

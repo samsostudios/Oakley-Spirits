@@ -2,12 +2,17 @@
 (() => {
   var __defProp = Object.defineProperty;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
   var __esm = (fn, res) => function __init() {
     return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
   };
   var __export = (target, all) => {
-    for (var name3 in all)
-      __defProp(target, name3, { get: all[name3], enumerable: true });
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __publicField = (obj, key, value) => {
+    __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+    return value;
   };
 
   // bin/live-reload.js
@@ -22,18 +27,18 @@
   });
 
   // node_modules/gsap/gsap-core.js
-  function _assertThisInitialized(self2) {
-    if (self2 === void 0) {
+  function _assertThisInitialized(self) {
+    if (self === void 0) {
       throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
     }
-    return self2;
+    return self;
   }
   function _inheritsLoose(subClass, superClass) {
     subClass.prototype = Object.create(superClass.prototype);
     subClass.prototype.constructor = subClass;
     subClass.__proto__ = superClass;
   }
-  var _config, _defaults, _suppressOverwrites, _reverting, _context, _bigNum, _tinyNum, _2PI, _HALF_PI, _gsID, _sqrt, _cos, _sin, _isString, _isFunction, _isNumber, _isUndefined, _isObject, _isNotFalse, _windowExists, _isFuncOrString, _isTypedArray, _isArray, _strictNumExp, _numExp, _numWithUnitExp, _complexStringNumExp, _relExp, _delimitedValueExp, _unitExp, _globalTimeline, _win, _coreInitted, _doc, _globals, _installScope, _coreReady, _install, _missingPlugin, _warn, _addGlobal, _emptyFunc, _startAtRevertConfig, _revertConfigNoKill, _revertConfig, _reservedProps, _lazyTweens, _lazyLookup, _lastRenderedFrame, _plugins, _effects, _nextGCFrame, _harnessPlugins, _callbackNames, _harness, _getCache, _getProperty, _forEachName, _round, _roundPrecise, _parseRelative, _arrayContainsAny, _lazyRender, _lazySafeRender, _numericIfPossible, _passThrough, _setDefaults, _setKeyframeDefaults, _merge, _mergeDeep, _copyExcluding, _inheritDefaults, _arraysMatch, _addLinkedListItem, _removeLinkedListItem, _removeFromParent, _uncache, _recacheAncestors, _rewindStartAt, _hasNoPausedAncestors, _elapsedCycleDuration, _animationCycle, _parentToChildTotalTime, _setEnd, _alignPlayhead, _postAddChecks, _addToTimeline, _scrollTrigger, _attemptInitTween, _parentPlayheadIsBeforeStart, _isFromOrFromStart, _renderZeroDurationTween, _findNextPauseTween, _setDuration, _onUpdateTotalDuration, _zeroPosition, _parsePosition, _createTweenType, _conditionalReturn, _clamp, getUnit, clamp, _slice, _isArrayLike, _flatten, toArray, selector, shuffle, distribute, _roundModifier, snap, random, pipe, unitize, normalize, _wrapArray, wrap, wrapYoyo, _replaceRandom, mapRange, interpolate, _getLabelInDirection, _callback, _interrupt, _quickTween, _createPlugin, _255, _colorLookup, _hue, splitColor, _colorOrderData, _formatColors, _colorExp, _hslExp, _colorStringFilter, _tickerActive, _ticker, _wake, _easeMap, _customEaseExp, _quotesExp, _parseObjectInString, _valueInParentheses, _configEaseFromString, _invertEase, _propagateYoyoEase, _parseEase, _insertEase, _easeInOutFromOut, _configElastic, _configBack, GSCache, Animation, Timeline, _addComplexStringPropTween, _addPropTween, _processVars, _checkPlugin, _overwritingTween, _forceAllPropTweens, _initTween, _updatePropTweens, _addAliasesToVars, _parseKeyframe, _parseFuncOrString, _staggerTweenProps, _staggerPropsToSkip, Tween, _setterPlain, _setterFunc, _setterFuncWithParam, _setterAttribute, _getSetter, _renderPlain, _renderBoolean, _renderComplexString, _renderPropTweens, _addPluginModifier, _killPropTweensOf, _setterWithModifier, _sortPropTweensByPriority, PropTween, _media, _listeners, _emptyArray, _lastMediaTime, _dispatch, _onMediaChange, Context, MatchMedia, _gsap, _getPluginPropTween, _addModifiers, _buildModifierPlugin, gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ;
+  var _config, _defaults, _suppressOverwrites, _reverting, _context, _bigNum, _tinyNum, _2PI, _HALF_PI, _gsID, _sqrt, _cos, _sin, _isString, _isFunction, _isNumber, _isUndefined, _isObject, _isNotFalse, _windowExists, _isFuncOrString, _isTypedArray, _isArray, _strictNumExp, _numExp, _numWithUnitExp, _complexStringNumExp, _relExp, _delimitedValueExp, _unitExp, _globalTimeline, _win, _coreInitted, _doc, _globals, _installScope, _coreReady, _install, _missingPlugin, _warn, _addGlobal, _emptyFunc, _startAtRevertConfig, _revertConfigNoKill, _revertConfig, _reservedProps, _lazyTweens, _lazyLookup, _lastRenderedFrame, _plugins, _effects, _nextGCFrame, _harnessPlugins, _callbackNames, _harness, _getCache, _getProperty, _forEachName, _round, _roundPrecise, _parseRelative, _arrayContainsAny, _lazyRender, _lazySafeRender, _numericIfPossible, _passThrough, _setDefaults, _setKeyframeDefaults, _merge, _mergeDeep, _copyExcluding, _inheritDefaults, _arraysMatch, _addLinkedListItem, _removeLinkedListItem, _removeFromParent, _uncache, _recacheAncestors, _rewindStartAt, _hasNoPausedAncestors, _elapsedCycleDuration, _animationCycle, _parentToChildTotalTime, _setEnd, _alignPlayhead, _postAddChecks, _addToTimeline, _scrollTrigger, _attemptInitTween, _parentPlayheadIsBeforeStart, _isFromOrFromStart, _renderZeroDurationTween, _findNextPauseTween, _setDuration, _onUpdateTotalDuration, _zeroPosition, _parsePosition, _createTweenType, _conditionalReturn, _clamp, getUnit, clamp, _slice, _isArrayLike, _flatten, toArray, selector, shuffle, distribute, _roundModifier, snap, random, pipe, unitize, normalize, _wrapArray, wrap, wrapYoyo, _replaceRandom, mapRange, interpolate, _getLabelInDirection, _callback, _interrupt, _quickTween, _registerPluginQueue, _createPlugin, _255, _colorLookup, _hue, splitColor, _colorOrderData, _formatColors, _colorExp, _hslExp, _colorStringFilter, _tickerActive, _ticker, _wake, _easeMap, _customEaseExp, _quotesExp, _parseObjectInString, _valueInParentheses, _configEaseFromString, _invertEase, _propagateYoyoEase, _parseEase, _insertEase, _easeInOutFromOut, _configElastic, _configBack, GSCache, Animation, Timeline, _addComplexStringPropTween, _addPropTween, _processVars, _checkPlugin, _overwritingTween, _forceAllPropTweens, _initTween, _updatePropTweens, _addAliasesToVars, _parseKeyframe, _parseFuncOrString, _staggerTweenProps, _staggerPropsToSkip, Tween, _setterPlain, _setterFunc, _setterFuncWithParam, _setterAttribute, _getSetter, _renderPlain, _renderBoolean, _renderComplexString, _renderPropTweens, _addPluginModifier, _killPropTweensOf, _setterWithModifier, _sortPropTweensByPriority, PropTween, _media, _listeners, _emptyArray, _lastMediaTime, _contextID, _dispatch, _onMediaChange, Context, MatchMedia, _gsap, _getPluginPropTween, _addModifiers, _buildModifierPlugin, gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ;
   var init_gsap_core = __esm({
     "node_modules/gsap/gsap-core.js"() {
       init_live_reload();
@@ -103,8 +108,8 @@
       _warn = function _warn2(message, suppress) {
         return !suppress && console.warn(message);
       };
-      _addGlobal = function _addGlobal2(name3, obj) {
-        return name3 && (_globals[name3] = obj) && _installScope && (_installScope[name3] = obj) || _globals;
+      _addGlobal = function _addGlobal2(name, obj) {
+        return name && (_globals[name] = obj) && _installScope && (_installScope[name] = obj) || _globals;
       };
       _emptyFunc = function _emptyFunc2() {
         return 0;
@@ -290,7 +295,7 @@
         child._next = child._prev = child.parent = null;
       };
       _removeFromParent = function _removeFromParent2(child, onlyIfParentHasAutoRemove) {
-        child.parent && (!onlyIfParentHasAutoRemove || child.parent.autoRemoveChildren) && child.parent.remove(child);
+        child.parent && (!onlyIfParentHasAutoRemove || child.parent.autoRemoveChildren) && child.parent.remove && child.parent.remove(child);
         child._act = 0;
       };
       _uncache = function _uncache2(animation, child) {
@@ -322,7 +327,7 @@
         return animation._repeat ? _animationCycle(animation._tTime, animation = animation.duration() + animation._rDelay) * animation : 0;
       };
       _animationCycle = function _animationCycle2(tTime, cycleDuration) {
-        var whole = Math.floor(tTime /= cycleDuration);
+        var whole = Math.floor(tTime = _roundPrecise(tTime / cycleDuration));
         return tTime && whole === tTime ? whole - 1 : whole;
       };
       _parentToChildTotalTime = function _parentToChildTotalTime2(parentTime, child) {
@@ -342,7 +347,7 @@
       };
       _postAddChecks = function _postAddChecks2(timeline2, child) {
         var t;
-        if (child._time || child._initted && !child._dur) {
+        if (child._time || !child._dur && child._initted || child._start < timeline2._time && (child._dur || !child.add)) {
           t = _parentToChildTotalTime(timeline2.rawTime(), child);
           if (!child._dur || _clamp(0, child.totalDuration(), t) - child._tTime > _tinyNum) {
             child.render(t, true);
@@ -575,7 +580,7 @@
               max = -_bigNum;
               while (max < (max = a[wrapAt++].getBoundingClientRect().left) && wrapAt < l) {
               }
-              wrapAt--;
+              wrapAt < l && wrapAt--;
             }
             distances = cache[l] = [];
             originX = ratios ? Math.min(wrapAt, l) * ratioX - 0.5 : from % wrapAt;
@@ -773,40 +778,47 @@
         animation.progress() < 1 && _callback(animation, "onInterrupt");
         return animation;
       };
+      _registerPluginQueue = [];
       _createPlugin = function _createPlugin2(config3) {
+        if (!config3)
+          return;
         config3 = !config3.name && config3["default"] || config3;
-        var name3 = config3.name, isFunc = _isFunction(config3), Plugin = name3 && !isFunc && config3.init ? function() {
-          this._props = [];
-        } : config3, instanceDefaults = {
-          init: _emptyFunc,
-          render: _renderPropTweens,
-          add: _addPropTween,
-          kill: _killPropTweensOf,
-          modifier: _addPluginModifier,
-          rawVars: 0
-        }, statics = {
-          targetTest: 0,
-          get: 0,
-          getSetter: _getSetter,
-          aliases: {},
-          register: 0
-        };
-        _wake();
-        if (config3 !== Plugin) {
-          if (_plugins[name3]) {
-            return;
+        if (_windowExists() || config3.headless) {
+          var name = config3.name, isFunc = _isFunction(config3), Plugin = name && !isFunc && config3.init ? function() {
+            this._props = [];
+          } : config3, instanceDefaults = {
+            init: _emptyFunc,
+            render: _renderPropTweens,
+            add: _addPropTween,
+            kill: _killPropTweensOf,
+            modifier: _addPluginModifier,
+            rawVars: 0
+          }, statics = {
+            targetTest: 0,
+            get: 0,
+            getSetter: _getSetter,
+            aliases: {},
+            register: 0
+          };
+          _wake();
+          if (config3 !== Plugin) {
+            if (_plugins[name]) {
+              return;
+            }
+            _setDefaults(Plugin, _setDefaults(_copyExcluding(config3, instanceDefaults), statics));
+            _merge(Plugin.prototype, _merge(instanceDefaults, _copyExcluding(config3, statics)));
+            _plugins[Plugin.prop = name] = Plugin;
+            if (config3.targetTest) {
+              _harnessPlugins.push(Plugin);
+              _reservedProps[name] = 1;
+            }
+            name = (name === "css" ? "CSS" : name.charAt(0).toUpperCase() + name.substr(1)) + "Plugin";
           }
-          _setDefaults(Plugin, _setDefaults(_copyExcluding(config3, instanceDefaults), statics));
-          _merge(Plugin.prototype, _merge(instanceDefaults, _copyExcluding(config3, statics)));
-          _plugins[Plugin.prop = name3] = Plugin;
-          if (config3.targetTest) {
-            _harnessPlugins.push(Plugin);
-            _reservedProps[name3] = 1;
-          }
-          name3 = (name3 === "css" ? "CSS" : name3.charAt(0).toUpperCase() + name3.substr(1)) + "Plugin";
+          _addGlobal(name, Plugin);
+          config3.register && config3.register(gsap, Plugin, PropTween);
+        } else {
+          _registerPluginQueue.push(config3);
         }
-        _addGlobal(name3, Plugin);
-        config3.register && config3.register(gsap, Plugin, PropTween);
       };
       _255 = 255;
       _colorLookup = {
@@ -958,7 +970,7 @@
       _ticker = function() {
         var _getTime3 = Date.now, _lagThreshold = 500, _adjustedLag = 33, _startTime = _getTime3(), _lastUpdate = _startTime, _gap = 1e3 / 240, _nextTime = _gap, _listeners3 = [], _id, _req, _raf, _self, _delta, _i2, _tick = function _tick2(v) {
           var elapsed = _getTime3() - _lastUpdate, manual = v === true, overlap, dispatch, time, frame;
-          elapsed > _lagThreshold && (_startTime += elapsed - _adjustedLag);
+          (elapsed > _lagThreshold || elapsed < 0) && (_startTime += elapsed - _adjustedLag);
           _lastUpdate += elapsed;
           time = _lastUpdate - _startTime;
           overlap = time - _nextTime;
@@ -993,8 +1005,9 @@
                 _globals.gsap = gsap;
                 (_win.gsapVersions || (_win.gsapVersions = [])).push(gsap.version);
                 _install(_installScope || _win.GreenSockGlobals || !_win.gsap && _win || {});
-                _raf = _win.requestAnimationFrame;
+                _registerPluginQueue.forEach(_createPlugin);
               }
+              _raf = typeof requestAnimationFrame !== "undefined" && requestAnimationFrame;
               _id && _self.sleep();
               _req = _raf || function(f) {
                 return setTimeout(f, _nextTime - _self.time * 1e3 + 1 | 0);
@@ -1004,7 +1017,7 @@
             }
           },
           sleep: function sleep() {
-            (_raf ? _win.cancelAnimationFrame : clearTimeout)(_id);
+            (_raf ? cancelAnimationFrame : clearTimeout)(_id);
             _tickerActive = 0;
             _req = _emptyFunc;
           },
@@ -1054,9 +1067,9 @@
         var open = value.indexOf("(") + 1, close = value.indexOf(")"), nested = value.indexOf("(", open);
         return value.substring(open, ~nested && nested < close ? value.indexOf(")", close + 1) : close);
       };
-      _configEaseFromString = function _configEaseFromString2(name3) {
-        var split = (name3 + "").split("("), ease = _easeMap[split[0]];
-        return ease && split.length > 1 && ease.config ? ease.config.apply(null, ~name3.indexOf("{") ? [_parseObjectInString(split[1])] : _valueInParentheses(name3).split(",").map(_numericIfPossible)) : _easeMap._CE && _customEaseExp.test(name3) ? _easeMap._CE("", name3) : ease;
+      _configEaseFromString = function _configEaseFromString2(name) {
+        var split = (name + "").split("("), ease = _easeMap[split[0]];
+        return ease && split.length > 1 && ease.config ? ease.config.apply(null, ~name.indexOf("{") ? [_parseObjectInString(split[1])] : _valueInParentheses(name).split(",").map(_numericIfPossible)) : _easeMap._CE && _customEaseExp.test(name) ? _easeMap._CE("", name) : ease;
       };
       _invertEase = function _invertEase2(ease) {
         return function(p) {
@@ -1100,11 +1113,11 @@
           easeOut,
           easeInOut
         }, lowercaseName;
-        _forEachName(names, function(name3) {
-          _easeMap[name3] = _globals[name3] = ease;
-          _easeMap[lowercaseName = name3.toLowerCase()] = easeOut;
+        _forEachName(names, function(name) {
+          _easeMap[name] = _globals[name] = ease;
+          _easeMap[lowercaseName = name.toLowerCase()] = easeOut;
           for (var p in ease) {
-            _easeMap[lowercaseName + (p === "easeIn" ? ".in" : p === "easeOut" ? ".out" : ".inOut")] = _easeMap[name3 + "." + p] = ease[p];
+            _easeMap[lowercaseName + (p === "easeIn" ? ".in" : p === "easeOut" ? ".out" : ".inOut")] = _easeMap[name + "." + p] = ease[p];
           }
         });
         return ease;
@@ -1140,9 +1153,9 @@
         };
         return ease;
       };
-      _forEachName("Linear,Quad,Cubic,Quart,Quint,Strong", function(name3, i) {
+      _forEachName("Linear,Quad,Cubic,Quart,Quint,Strong", function(name, i) {
         var power = i < 5 ? i + 1 : i;
-        _insertEase(name3 + ",Power" + (power - 1), i ? function(p) {
+        _insertEase(name + ",Power" + (power - 1), i ? function(p) {
           return Math.pow(p, power);
         } : function(p) {
           return p;
@@ -1163,7 +1176,7 @@
         }, easeOut);
       })(7.5625, 2.75);
       _insertEase("Expo", function(p) {
-        return p ? Math.pow(2, 10 * (p - 1)) : 0;
+        return Math.pow(2, 10 * (p - 1)) * p + p * p * p * p * p * p * (1 - p);
       });
       _insertEase("Circ", function(p) {
         return -(_sqrt(1 - p * p) - 1);
@@ -1184,8 +1197,8 @@
         }
       };
       _defaults.ease = _easeMap["quad.out"];
-      _forEachName("onComplete,onUpdate,onStart,onRepeat,onReverseComplete,onInterrupt", function(name3) {
-        return _callbackNames += name3 + "," + name3 + "Params,";
+      _forEachName("onComplete,onUpdate,onStart,onRepeat,onReverseComplete,onInterrupt", function(name) {
+        return _callbackNames += name + "," + name + "Params,";
       });
       GSCache = function GSCache2(target, harness) {
         this.id = _gsID++;
@@ -1260,16 +1273,16 @@
           return arguments.length ? this.totalTime(Math.min(this.totalDuration(), value + _elapsedCycleDuration(this)) % (this._dur + this._rDelay) || (value ? this._dur : 0), suppressEvents) : this._time;
         };
         _proto.totalProgress = function totalProgress(value, suppressEvents) {
-          return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.ratio;
+          return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.rawTime() >= 0 && this._initted ? 1 : 0;
         };
         _proto.progress = function progress(value, suppressEvents) {
-          return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.ratio;
+          return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.rawTime() > 0 ? 1 : 0;
         };
         _proto.iteration = function iteration(value, suppressEvents) {
           var cycleDuration = this.duration() + this._rDelay;
           return arguments.length ? this.totalTime(this._time + (value - 1) * cycleDuration, suppressEvents) : this._repeat ? _animationCycle(this._tTime, cycleDuration) + 1 : 1;
         };
-        _proto.timeScale = function timeScale(value) {
+        _proto.timeScale = function timeScale(value, suppressEvents) {
           if (!arguments.length) {
             return this._rts === -_tinyNum ? 0 : this._rts;
           }
@@ -1279,7 +1292,7 @@
           var tTime = this.parent && this._ts ? _parentToChildTotalTime(this.parent._time, this) : this._tTime;
           this._rts = +value || 0;
           this._ts = this._ps || value === -_tinyNum ? 0 : this._rts;
-          this.totalTime(_clamp(-this._delay, this._tDur, tTime), true);
+          this.totalTime(_clamp(-Math.abs(this._delay), this._tDur, tTime), suppressEvents !== false);
           _setEnd(this);
           return _recacheAncestors(this);
         };
@@ -1333,10 +1346,10 @@
         _proto.globalTime = function globalTime(rawTime) {
           var animation = this, time = arguments.length ? rawTime : animation.rawTime();
           while (animation) {
-            time = animation._start + time / (animation._ts || 1);
+            time = animation._start + time / (Math.abs(animation._ts) || 1);
             animation = animation._dp;
           }
-          return !this.parent && this._sat ? this._sat.vars.immediateRender ? -1 : this._sat.globalTime(rawTime) : time;
+          return !this.parent && this._sat ? this._sat.globalTime(rawTime) : time;
         };
         _proto.repeat = function repeat(value) {
           if (arguments.length) {
@@ -1365,7 +1378,9 @@
           return this.totalTime(_parsePosition(this, position), _isNotFalse(suppressEvents));
         };
         _proto.restart = function restart(includeDelay, suppressEvents) {
-          return this.play().totalTime(includeDelay ? -this._delay : 0, _isNotFalse(suppressEvents));
+          this.play().totalTime(includeDelay ? -this._delay : 0, _isNotFalse(suppressEvents));
+          this._dur || (this._zTime = -_tinyNum);
+          return this;
         };
         _proto.play = function play(from, suppressEvents) {
           from != null && this.seek(from, suppressEvents);
@@ -1413,19 +1428,19 @@
           return vars[type];
         };
         _proto.then = function then(onFulfilled) {
-          var self2 = this;
+          var self = this;
           return new Promise(function(resolve) {
             var f = _isFunction(onFulfilled) ? onFulfilled : _passThrough, _resolve = function _resolve2() {
-              var _then = self2.then;
-              self2.then = null;
-              _isFunction(f) && (f = f(self2)) && (f.then || f === self2) && (self2.then = _then);
+              var _then = self.then;
+              self.then = null;
+              _isFunction(f) && (f = f(self)) && (f.then || f === self) && (self.then = _then);
               resolve(f);
-              self2.then = _then;
+              self.then = _then;
             };
-            if (self2._initted && self2.totalProgress() === 1 && self2._ts >= 0 || !self2._tTime && self2._ts < 0) {
+            if (self._initted && self.totalProgress() === 1 && self._ts >= 0 || !self._tTime && self._ts < 0) {
               _resolve();
             } else {
-              self2._prom = _resolve;
+              self._prom = _resolve;
             }
           });
         };
@@ -1542,15 +1557,16 @@
                 iteration = this._repeat;
                 time = dur;
               } else {
-                iteration = ~~(tTime / cycleDuration);
-                if (iteration && iteration === tTime / cycleDuration) {
+                prevIteration = _roundPrecise(tTime / cycleDuration);
+                iteration = ~~prevIteration;
+                if (iteration && iteration === prevIteration) {
                   time = dur;
                   iteration--;
                 }
                 time > dur && (time = dur);
               }
               prevIteration = _animationCycle(this._tTime, cycleDuration);
-              !prevTime && this._tTime && prevIteration !== iteration && (prevIteration = iteration);
+              !prevTime && this._tTime && prevIteration !== iteration && this._tTime - prevIteration * cycleDuration - this._dur <= 0 && (prevIteration = iteration);
               if (yoyo && iteration & 1) {
                 time = dur - time;
                 isYoyo = 1;
@@ -1558,7 +1574,7 @@
               if (iteration !== prevIteration && !this._lock) {
                 var rewinding = yoyo && prevIteration & 1, doesWrap = rewinding === (yoyo && iteration & 1);
                 iteration < prevIteration && (rewinding = !rewinding);
-                prevTime = rewinding ? 0 : dur;
+                prevTime = rewinding ? 0 : tTime % dur ? dur : tTime;
                 this._lock = 1;
                 this.render(prevTime || (isYoyo ? 0 : _roundPrecise(iteration * cycleDuration)), suppressEvents, !dur)._lock = 0;
                 this._tTime = tTime;
@@ -1597,7 +1613,7 @@
               this._zTime = totalTime;
               prevTime = 0;
             }
-            if (!prevTime && time && !suppressEvents) {
+            if (!prevTime && time && !suppressEvents && !iteration) {
               _callback(this, "onStart");
               if (this._tTime !== tTime) {
                 return this;
@@ -1726,7 +1742,7 @@
           if (_isFunction(child)) {
             return this.killTweensOf(child);
           }
-          _removeLinkedListItem(this, child);
+          child.parent === this && _removeLinkedListItem(this, child);
           if (child === this._recent) {
             this._recent = this._last;
           }
@@ -1880,39 +1896,39 @@
           return _uncache(this);
         };
         _proto2.totalDuration = function totalDuration(value) {
-          var max = 0, self2 = this, child = self2._last, prevStart = _bigNum, prev, start, parent;
+          var max = 0, self = this, child = self._last, prevStart = _bigNum, prev, start, parent;
           if (arguments.length) {
-            return self2.timeScale((self2._repeat < 0 ? self2.duration() : self2.totalDuration()) / (self2.reversed() ? -value : value));
+            return self.timeScale((self._repeat < 0 ? self.duration() : self.totalDuration()) / (self.reversed() ? -value : value));
           }
-          if (self2._dirty) {
-            parent = self2.parent;
+          if (self._dirty) {
+            parent = self.parent;
             while (child) {
               prev = child._prev;
               child._dirty && child.totalDuration();
               start = child._start;
-              if (start > prevStart && self2._sort && child._ts && !self2._lock) {
-                self2._lock = 1;
-                _addToTimeline(self2, child, start - child._delay, 1)._lock = 0;
+              if (start > prevStart && self._sort && child._ts && !self._lock) {
+                self._lock = 1;
+                _addToTimeline(self, child, start - child._delay, 1)._lock = 0;
               } else {
                 prevStart = start;
               }
               if (start < 0 && child._ts) {
                 max -= start;
-                if (!parent && !self2._dp || parent && parent.smoothChildTiming) {
-                  self2._start += start / self2._ts;
-                  self2._time -= start;
-                  self2._tTime -= start;
+                if (!parent && !self._dp || parent && parent.smoothChildTiming) {
+                  self._start += start / self._ts;
+                  self._time -= start;
+                  self._tTime -= start;
                 }
-                self2.shiftChildren(-start, false, -Infinity);
+                self.shiftChildren(-start, false, -Infinity);
                 prevStart = 0;
               }
               child._end > max && child._ts && (max = child._end);
               child = prev;
             }
-            _setDuration(self2, self2 === _globalTimeline && self2._time > max ? self2._time : max, 1, 1);
-            self2._dirty = 0;
+            _setDuration(self, self === _globalTimeline && self._time > max ? self._time : max, 1, 1);
+            self._dirty = 0;
           }
-          return self2._tDur;
+          return self._tDur;
         };
         Timeline2.updateRoot = function updateRoot(time) {
           if (_globalTimeline._ts) {
@@ -2035,7 +2051,7 @@
         return plugin;
       };
       _initTween = function _initTween2(tween, time, tTime) {
-        var vars = tween.vars, ease = vars.ease, startAt = vars.startAt, immediateRender = vars.immediateRender, lazy = vars.lazy, onUpdate = vars.onUpdate, onUpdateParams = vars.onUpdateParams, callbackScope = vars.callbackScope, runBackwards = vars.runBackwards, yoyoEase = vars.yoyoEase, keyframes = vars.keyframes, autoRevert = vars.autoRevert, dur = tween._dur, prevStartAt = tween._startAt, targets = tween._targets, parent = tween.parent, fullTargets = parent && parent.data === "nested" ? parent.vars.targets : targets, autoOverwrite = tween._overwrite === "auto" && !_suppressOverwrites, tl = tween.timeline, cleanVars, i, p, pt, target, hasPriority, gsData, harness, plugin, ptLookup, index, harnessVars, overwritten;
+        var vars = tween.vars, ease = vars.ease, startAt = vars.startAt, immediateRender = vars.immediateRender, lazy = vars.lazy, onUpdate = vars.onUpdate, runBackwards = vars.runBackwards, yoyoEase = vars.yoyoEase, keyframes = vars.keyframes, autoRevert = vars.autoRevert, dur = tween._dur, prevStartAt = tween._startAt, targets = tween._targets, parent = tween.parent, fullTargets = parent && parent.data === "nested" ? parent.vars.targets : targets, autoOverwrite = tween._overwrite === "auto" && !_suppressOverwrites, tl = tween.timeline, cleanVars, i, p, pt, target, hasPriority, gsData, harness, plugin, ptLookup, index, harnessVars, overwritten;
         tl && (!keyframes || !ease) && (ease = "none");
         tween._ease = _parseEase(ease, _defaults.ease);
         tween._yEase = yoyoEase ? _invertEase(_parseEase(yoyoEase === true ? ease : yoyoEase, _defaults.ease)) : 0;
@@ -2063,9 +2079,9 @@
               lazy: !prevStartAt && _isNotFalse(lazy),
               startAt: null,
               delay: 0,
-              onUpdate,
-              onUpdateParams,
-              callbackScope,
+              onUpdate: onUpdate && function() {
+                return _callback(tween, "onUpdate");
+              },
               stagger: 0
             }, startAt)));
             tween._startAt._dp = 0;
@@ -2089,7 +2105,7 @@
                 //zero-duration tweens render immediately by default, but if we're not specifically instructed to render this tween immediately, we should skip this and merely _init() to record the starting values (rendering them immediately would push them to completion which is wasteful in that case - we'd have to render(-1) immediately after)
                 stagger: 0,
                 parent
-                //ensures that nested tweens that had a stagger are handled properly, like gsap.from(".class", {y:gsap.utils.wrap([-100,100])})
+                //ensures that nested tweens that had a stagger are handled properly, like gsap.from(".class", {y: gsap.utils.wrap([-100,100]), stagger: 0.5})
               }, cleanVars);
               harnessVars && (p[harness.prop] = harnessVars);
               _removeFromParent(tween._startAt = Tween.set(targets, p));
@@ -2114,8 +2130,8 @@
             index = fullTargets === targets ? i : fullTargets.indexOf(target);
             if (harness && (plugin = new harness()).init(target, harnessVars || cleanVars, tween, index, fullTargets) !== false) {
               tween._pt = pt = new PropTween(tween._pt, target, plugin.name, 0, 1, plugin.render, plugin, 0, plugin.priority);
-              plugin._props.forEach(function(name3) {
-                ptLookup[name3] = pt;
+              plugin._props.forEach(function(name) {
+                ptLookup[name] = pt;
               });
               plugin.priority && (hasPriority = 1);
             }
@@ -2144,7 +2160,7 @@
         tween._initted = (!tween._op || tween._pt) && !overwritten;
         keyframes && time <= 0 && tl.render(_bigNum, true, true);
       };
-      _updatePropTweens = function _updatePropTweens2(tween, property, value, start, startIsRelative, ratio, time) {
+      _updatePropTweens = function _updatePropTweens2(tween, property, value, start, startIsRelative, ratio, time, skipRecursion) {
         var ptCache = (tween._pt && tween._ptCache || (tween._ptCache = {}))[property], pt, rootPT, lookup, i;
         if (!ptCache) {
           ptCache = tween._ptCache[property] = [];
@@ -2163,7 +2179,7 @@
               tween.vars[property] = "+=0";
               _initTween(tween, time);
               _forceAllPropTweens = 0;
-              return 1;
+              return skipRecursion ? _warn(property + " not eligible for reset") : 1;
             }
             ptCache.push(pt);
           }
@@ -2222,8 +2238,8 @@
       };
       _staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase,autoRevert";
       _staggerPropsToSkip = {};
-      _forEachName(_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger", function(name3) {
-        return _staggerPropsToSkip[name3] = 1;
+      _forEachName(_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger", function(name) {
+        return _staggerPropsToSkip[name] = 1;
       });
       Tween = /* @__PURE__ */ function(_Animation2) {
         _inheritsLoose(Tween2, _Animation2);
@@ -2236,7 +2252,7 @@
           }
           _this3 = _Animation2.call(this, skipInherit ? vars : _inheritDefaults(vars)) || this;
           var _this3$vars = _this3.vars, duration = _this3$vars.duration, delay = _this3$vars.delay, immediateRender = _this3$vars.immediateRender, stagger = _this3$vars.stagger, overwrite = _this3$vars.overwrite, keyframes = _this3$vars.keyframes, defaults2 = _this3$vars.defaults, scrollTrigger = _this3$vars.scrollTrigger, yoyoEase = _this3$vars.yoyoEase, parent = vars.parent || _globalTimeline, parsedTargets = (_isArray(targets) || _isTypedArray(targets) ? _isNumber(targets[0]) : "length" in vars) ? [targets] : toArray(targets), tl, i, copy, l, p, curTarget, staggerFunc, staggerVarsToMerge;
-          _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://greensock.com", !_config.nullTargetWarn) || [];
+          _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://gsap.com", !_config.nullTargetWarn) || [];
           _this3._ptLookup = [];
           _this3._overwrite = overwrite;
           if (keyframes || stagger || _isFuncOrString(duration) || _isFuncOrString(delay)) {
@@ -2338,7 +2354,7 @@
           var prevTime = this._time, tDur = this._tDur, dur = this._dur, isNegative = totalTime < 0, tTime = totalTime > tDur - _tinyNum && !isNegative ? tDur : totalTime < _tinyNum ? 0 : totalTime, time, pt, iteration, cycleDuration, prevIteration, isYoyo, ratio, timeline2, yoyoEase;
           if (!dur) {
             _renderZeroDurationTween(this, totalTime, suppressEvents, force);
-          } else if (tTime !== this._tTime || !totalTime || force || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== isNegative) {
+          } else if (tTime !== this._tTime || !totalTime || force || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== isNegative || this._lazy) {
             time = tTime;
             timeline2 = this.timeline;
             if (this._repeat) {
@@ -2351,12 +2367,14 @@
                 iteration = this._repeat;
                 time = dur;
               } else {
-                iteration = ~~(tTime / cycleDuration);
-                if (iteration && iteration === tTime / cycleDuration) {
+                prevIteration = _roundPrecise(tTime / cycleDuration);
+                iteration = ~~prevIteration;
+                if (iteration && iteration === prevIteration) {
                   time = dur;
                   iteration--;
+                } else if (time > dur) {
+                  time = dur;
                 }
-                time > dur && (time = dur);
               }
               isYoyo = this._yoyo && iteration & 1;
               if (isYoyo) {
@@ -2364,13 +2382,13 @@
                 time = dur - time;
               }
               prevIteration = _animationCycle(this._tTime, cycleDuration);
-              if (time === prevTime && !force && this._initted) {
+              if (time === prevTime && !force && this._initted && iteration === prevIteration) {
                 this._tTime = tTime;
                 return this;
               }
               if (iteration !== prevIteration) {
                 timeline2 && this._yEase && _propagateYoyoEase(timeline2, isYoyo);
-                if (this.vars.repeatRefresh && !isYoyo && !this._lock) {
+                if (this.vars.repeatRefresh && !isYoyo && !this._lock && time !== cycleDuration && this._initted) {
                   this._lock = force = 1;
                   this.render(_roundPrecise(cycleDuration * iteration), true).invalidate()._lock = 0;
                 }
@@ -2381,7 +2399,7 @@
                 this._tTime = 0;
                 return this;
               }
-              if (prevTime !== this._time) {
+              if (prevTime !== this._time && !(force && this.vars.repeatRefresh && iteration !== prevIteration)) {
                 return this;
               }
               if (dur !== this._dur) {
@@ -2398,7 +2416,7 @@
             if (this._from) {
               this.ratio = ratio = 1 - ratio;
             }
-            if (time && !prevTime && !suppressEvents) {
+            if (time && !prevTime && !suppressEvents && !iteration) {
               _callback(this, "onStart");
               if (this._tTime !== tTime) {
                 return this;
@@ -2409,7 +2427,7 @@
               pt.r(ratio, pt.d);
               pt = pt._next;
             }
-            timeline2 && timeline2.render(totalTime < 0 ? totalTime : !time && isYoyo ? -_tinyNum : timeline2._dur * timeline2._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
+            timeline2 && timeline2.render(totalTime < 0 ? totalTime : timeline2._dur * timeline2._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
             if (this._onUpdate && !suppressEvents) {
               isNegative && _rewindStartAt(this, totalTime, suppressEvents, force);
               _callback(this, "onUpdate");
@@ -2436,14 +2454,14 @@
           this.timeline && this.timeline.invalidate(soft);
           return _Animation2.prototype.invalidate.call(this, soft);
         };
-        _proto3.resetTo = function resetTo(property, value, start, startIsRelative) {
+        _proto3.resetTo = function resetTo(property, value, start, startIsRelative, skipRecursion) {
           _tickerActive || _ticker.wake();
           this._ts || this.play();
           var time = Math.min(this._dur, (this._dp._time - this._start) * this._ts), ratio;
           this._initted || _initTween(this, time);
           ratio = this._ease(time / this._dur);
-          if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time)) {
-            return this.resetTo(property, value, start, startIsRelative);
+          if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time, skipRecursion)) {
+            return this.resetTo(property, value, start, startIsRelative, 1);
           }
           _alignPlayhead(this, 0);
           this.parent || _addLinkedListItem(this._dp, this, "_first", "_last", this._dp._sort ? "_start" : 0);
@@ -2455,7 +2473,8 @@
           }
           if (!targets && (!vars || vars === "all")) {
             this._lazy = this._pt = 0;
-            return this.parent ? _interrupt(this) : this;
+            this.parent ? _interrupt(this) : this.scrollTrigger && this.scrollTrigger.kill(!!_reverting);
+            return this;
           }
           if (this.timeline) {
             var tDur = this.timeline.totalDuration();
@@ -2472,8 +2491,8 @@
           if (vars !== "all") {
             if (_isString(vars)) {
               p = {};
-              _forEachName(vars, function(name3) {
-                return p[name3] = 1;
+              _forEachName(vars, function(name) {
+                return p[name] = 1;
               });
               vars = p;
             }
@@ -2547,11 +2566,11 @@
         _op: 0,
         _onInit: 0
       });
-      _forEachName("staggerTo,staggerFrom,staggerFromTo", function(name3) {
-        Tween[name3] = function() {
+      _forEachName("staggerTo,staggerFrom,staggerFromTo", function(name) {
+        Tween[name] = function() {
           var tl = new Timeline(), params = _slice.call(arguments, 0);
-          params.splice(name3 === "staggerFromTo" ? 5 : 4, 0, 0);
-          return tl[name3].apply(tl, params);
+          params.splice(name === "staggerFromTo" ? 5 : 4, 0, 0);
+          return tl[name].apply(tl, params);
         };
       });
       _setterPlain = function _setterPlain2(target, property, value) {
@@ -2668,8 +2687,8 @@
         };
         return PropTween2;
       }();
-      _forEachName(_callbackNames + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger", function(name3) {
-        return _reservedProps[name3] = 1;
+      _forEachName(_callbackNames + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger", function(name) {
+        return _reservedProps[name] = 1;
       });
       _globals.TweenMax = _globals.TweenLite = Tween;
       _globals.TimelineLite = _globals.TimelineMax = Timeline;
@@ -2685,6 +2704,7 @@
       _listeners = {};
       _emptyArray = [];
       _lastMediaTime = 0;
+      _contextID = 0;
       _dispatch = function _dispatch2(type) {
         return (_listeners[type] || _emptyArray).map(function(f) {
           return f();
@@ -2711,7 +2731,9 @@
           });
           _dispatch("matchMediaRevert");
           matches.forEach(function(c) {
-            return c.onMatch(c);
+            return c.onMatch(c, function(func) {
+              return c.add(null, func);
+            });
           });
           _lastMediaTime = time;
           _dispatch("matchMedia");
@@ -2723,29 +2745,32 @@
           this.data = [];
           this._r = [];
           this.isReverted = false;
+          this.id = _contextID++;
           func && this.add(func);
         }
         var _proto5 = Context2.prototype;
-        _proto5.add = function add(name3, func, scope) {
-          if (_isFunction(name3)) {
+        _proto5.add = function add(name, func, scope) {
+          if (_isFunction(name)) {
             scope = func;
-            func = name3;
-            name3 = _isFunction;
+            func = name;
+            name = _isFunction;
           }
-          var self2 = this, f = function f2() {
-            var prev = _context, prevSelector = self2.selector, result;
-            prev && prev !== self2 && prev.data.push(self2);
-            scope && (self2.selector = selector(scope));
-            _context = self2;
-            result = func.apply(self2, arguments);
-            _isFunction(result) && self2._r.push(result);
+          var self = this, f = function f2() {
+            var prev = _context, prevSelector = self.selector, result;
+            prev && prev !== self && prev.data.push(self);
+            scope && (self.selector = selector(scope));
+            _context = self;
+            result = func.apply(self, arguments);
+            _isFunction(result) && self._r.push(result);
             _context = prev;
-            self2.selector = prevSelector;
-            self2.isReverted = false;
+            self.selector = prevSelector;
+            self.isReverted = false;
             return result;
           };
-          self2.last = f;
-          return name3 === _isFunction ? f(self2) : name3 ? self2[name3] = f : f;
+          self.last = f;
+          return name === _isFunction ? f(self, function(func2) {
+            return self.add(null, func2);
+          }) : name ? self[name] = f : f;
         };
         _proto5.ignore = function ignore(func) {
           var prev = _context;
@@ -2766,32 +2791,44 @@
         _proto5.kill = function kill(revert, matchMedia2) {
           var _this4 = this;
           if (revert) {
-            var tweens = this.getTweens();
-            this.data.forEach(function(t) {
-              if (t.data === "isFlip") {
-                t.revert();
-                t.getChildren(true, true, false).forEach(function(tween) {
-                  return tweens.splice(tweens.indexOf(tween), 1);
-                });
+            (function() {
+              var tweens = _this4.getTweens(), i2 = _this4.data.length, t;
+              while (i2--) {
+                t = _this4.data[i2];
+                if (t.data === "isFlip") {
+                  t.revert();
+                  t.getChildren(true, true, false).forEach(function(tween) {
+                    return tweens.splice(tweens.indexOf(tween), 1);
+                  });
+                }
               }
-            });
-            tweens.map(function(t) {
-              return {
-                g: t.globalTime(0),
-                t
-              };
-            }).sort(function(a, b) {
-              return b.g - a.g || -1;
-            }).forEach(function(o) {
-              return o.t.revert(revert);
-            });
-            this.data.forEach(function(e) {
-              return !(e instanceof Animation) && e.revert && e.revert(revert);
-            });
-            this._r.forEach(function(f) {
-              return f(revert, _this4);
-            });
-            this.isReverted = true;
+              tweens.map(function(t2) {
+                return {
+                  g: t2._dur || t2._delay || t2._sat && !t2._sat.vars.immediateRender ? t2.globalTime(0) : -Infinity,
+                  t: t2
+                };
+              }).sort(function(a, b) {
+                return b.g - a.g || -Infinity;
+              }).forEach(function(o) {
+                return o.t.revert(revert);
+              });
+              i2 = _this4.data.length;
+              while (i2--) {
+                t = _this4.data[i2];
+                if (t instanceof Timeline) {
+                  if (t.data !== "nested") {
+                    t.scrollTrigger && t.scrollTrigger.revert();
+                    t.kill();
+                  }
+                } else {
+                  !(t instanceof Tween) && t.revert && t.revert(revert);
+                }
+              }
+              _this4._r.forEach(function(f) {
+                return f(revert, _this4);
+              });
+              _this4.isReverted = true;
+            })();
           } else {
             this.data.forEach(function(e) {
               return e.kill && e.kill();
@@ -2799,8 +2836,10 @@
           }
           this.clear();
           if (matchMedia2) {
-            var i = _media.indexOf(this);
-            !!~i && _media.splice(i, 1);
+            var i = _media.length;
+            while (i--) {
+              _media[i].id === this.id && _media.splice(i, 1);
+            }
           }
         };
         _proto5.revert = function revert(config3) {
@@ -2812,6 +2851,7 @@
         function MatchMedia2(scope) {
           this.contexts = [];
           this.scope = scope;
+          _context && _context.data.push(this);
         }
         var _proto6 = MatchMedia2.prototype;
         _proto6.add = function add(conditions, func, scope) {
@@ -2819,6 +2859,7 @@
             matches: conditions
           });
           var context3 = new Context(0, scope || this.scope), cond = context3.conditions = {}, mq, p, active;
+          _context && !context3.selector && (context3.selector = _context.selector);
           this.contexts.push(context3);
           func = context3.add("onMatch", func);
           context3.queries = conditions;
@@ -2834,7 +2875,9 @@
               }
             }
           }
-          active && func(context3);
+          active && func(context3, function(f) {
+            return context3.add(null, f);
+          });
           return this;
         };
         _proto6.revert = function revert(config3) {
@@ -2896,8 +2939,8 @@
           };
         },
         quickTo: function quickTo(target, property, vars) {
-          var _merge22;
-          var tween = gsap.to(target, _merge((_merge22 = {}, _merge22[property] = "+=0.1", _merge22.paused = true, _merge22), vars || {})), func = function func2(value, start, startIsRelative) {
+          var _setDefaults22;
+          var tween = gsap.to(target, _setDefaults((_setDefaults22 = {}, _setDefaults22[property] = "+=0.1", _setDefaults22.paused = true, _setDefaults22.stagger = 0, _setDefaults22), vars || {})), func = function func2(value, start, startIsRelative) {
             return tween.resetTo(property, value, start, startIsRelative);
           };
           func.tween = tween;
@@ -2914,21 +2957,21 @@
           return _mergeDeep(_config, value || {});
         },
         registerEffect: function registerEffect(_ref3) {
-          var name3 = _ref3.name, effect = _ref3.effect, plugins = _ref3.plugins, defaults2 = _ref3.defaults, extendTimeline = _ref3.extendTimeline;
+          var name = _ref3.name, effect = _ref3.effect, plugins = _ref3.plugins, defaults2 = _ref3.defaults, extendTimeline = _ref3.extendTimeline;
           (plugins || "").split(",").forEach(function(pluginName) {
-            return pluginName && !_plugins[pluginName] && !_globals[pluginName] && _warn(name3 + " effect requires " + pluginName + " plugin.");
+            return pluginName && !_plugins[pluginName] && !_globals[pluginName] && _warn(name + " effect requires " + pluginName + " plugin.");
           });
-          _effects[name3] = function(targets, vars, tl) {
+          _effects[name] = function(targets, vars, tl) {
             return effect(toArray(targets), _setDefaults(vars || {}, defaults2), tl);
           };
           if (extendTimeline) {
-            Timeline.prototype[name3] = function(targets, vars, position) {
-              return this.add(_effects[name3](targets, _isObject(vars) ? vars : (position = vars) && {}, this), position);
+            Timeline.prototype[name] = function(targets, vars, position) {
+              return this.add(_effects[name](targets, _isObject(vars) ? vars : (position = vars) && {}, this), position);
             };
           }
         },
-        registerEase: function registerEase(name3, ease) {
-          _easeMap[name3] = _parseEase(ease);
+        registerEase: function registerEase(name, ease) {
+          _easeMap[name] = _parseEase(ease);
         },
         parseEase: function parseEase(ease, defaultEase) {
           return arguments.length ? _parseEase(ease, defaultEase) : _easeMap;
@@ -3029,8 +3072,8 @@
           }
         }
       };
-      _forEachName("to,from,fromTo,delayedCall,set,killTweensOf", function(name3) {
-        return _gsap[name3] = Tween[name3];
+      _forEachName("to,from,fromTo,delayedCall,set,killTweensOf", function(name) {
+        return _gsap[name] = Tween[name];
       });
       _ticker.add(Timeline.updateRoot);
       _quickTween = _gsap.to({}, {
@@ -3058,9 +3101,9 @@
           }
         }
       };
-      _buildModifierPlugin = function _buildModifierPlugin2(name3, modifier) {
+      _buildModifierPlugin = function _buildModifierPlugin2(name, modifier) {
         return {
-          name: name3,
+          name,
           rawVars: 1,
           //don't pre-process function-based values or "random()" strings.
           init: function init4(target, vars, tween) {
@@ -3068,8 +3111,8 @@
               var temp, p;
               if (_isString(vars)) {
                 temp = {};
-                _forEachName(vars, function(name4) {
-                  return temp[name4] = 1;
+                _forEachName(vars, function(name2) {
+                  return temp[name2] = 1;
                 });
                 vars = temp;
               }
@@ -3114,7 +3157,7 @@
           }
         }
       }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap;
-      Tween.version = Timeline.version = gsap.version = "3.11.4";
+      Tween.version = Timeline.version = gsap.version = "3.12.7";
       _coreReady = 1;
       _windowExists() && _wake();
       Power0 = _easeMap.Power0;
@@ -3139,7 +3182,7 @@
   });
 
   // node_modules/gsap/CSSPlugin.js
-  var _win2, _doc2, _docElement, _pluginInitted, _tempDiv, _tempDivStyler, _recentSetterPlugin, _reverting2, _windowExists3, _transformProps, _RAD2DEG, _DEG2RAD, _atan2, _bigNum2, _capsExp, _horizontalExp, _complexExp, _propertyAliases, _renderCSSProp, _renderPropWithEnd, _renderCSSPropWithBeginning, _renderRoundedCSSProp, _renderNonTweeningValue, _renderNonTweeningValueOnlyAtEnd, _setterCSSStyle, _setterCSSProp, _setterTransform, _setterScale, _setterScaleWithRender, _setterTransformWithRender, _transformProp, _transformOriginProp, _saveStyle, _removeIndependentTransforms, _revertStyle, _getStyleSaver, _supports3D, _createElement, _getComputedProperty, _prefixes, _checkPropPrefix, _initCore, _getBBoxHack, _getAttributeFallbacks, _getBBox, _isSVG, _removeProperty, _addNonTweeningPT, _nonConvertibleUnits, _nonStandardLayouts, _convertToUnit, _get, _tweenComplexCSSString, _keywordToPercent, _convertKeywordsToPercentages, _renderClearProps, _specialProps, _identity2DMatrix, _rotationalProperties, _isNullTransform, _getComputedTransformMatrixAsArray, _getMatrix, _applySVGOrigin, _parseTransform, _firstTwoOnly, _addPxTranslate, _renderNon3DTransforms, _zeroDeg, _zeroPx, _endParenthesis, _renderCSSTransforms, _renderSVGTransforms, _addRotationalPropTween, _assign, _addRawTransformPTs, CSSPlugin;
+  var _win2, _doc2, _docElement, _pluginInitted, _tempDiv, _tempDivStyler, _recentSetterPlugin, _reverting2, _windowExists3, _transformProps, _RAD2DEG, _DEG2RAD, _atan2, _bigNum2, _capsExp, _horizontalExp, _complexExp, _propertyAliases, _renderCSSProp, _renderPropWithEnd, _renderCSSPropWithBeginning, _renderRoundedCSSProp, _renderNonTweeningValue, _renderNonTweeningValueOnlyAtEnd, _setterCSSStyle, _setterCSSProp, _setterTransform, _setterScale, _setterScaleWithRender, _setterTransformWithRender, _transformProp, _transformOriginProp, _saveStyle, _removeIndependentTransforms, _revertStyle, _getStyleSaver, _supports3D, _createElement, _getComputedProperty, _prefixes, _checkPropPrefix, _initCore, _getReparentedCloneBBox, _getAttributeFallbacks, _getBBox, _isSVG, _removeProperty, _addNonTweeningPT, _nonConvertibleUnits, _nonStandardLayouts, _convertToUnit, _get, _tweenComplexCSSString, _keywordToPercent, _convertKeywordsToPercentages, _renderClearProps, _specialProps, _identity2DMatrix, _rotationalProperties, _isNullTransform, _getComputedTransformMatrixAsArray, _getMatrix, _applySVGOrigin, _parseTransform, _firstTwoOnly, _addPxTranslate, _renderNon3DTransforms, _zeroDeg, _zeroPx, _endParenthesis, _renderCSSTransforms, _renderSVGTransforms, _addRotationalPropTween, _assign, _addRawTransformPTs, CSSPlugin;
   var init_CSSPlugin = __esm({
     "node_modules/gsap/CSSPlugin.js"() {
       init_live_reload();
@@ -3205,19 +3248,24 @@
       _transformOriginProp = _transformProp + "Origin";
       _saveStyle = function _saveStyle2(property, isNotCSS) {
         var _this = this;
-        var target = this.target, style = target.style;
-        if (property in _transformProps) {
+        var target = this.target, style = target.style, cache = target._gsap;
+        if (property in _transformProps && style) {
           this.tfm = this.tfm || {};
           if (property !== "transform") {
             property = _propertyAliases[property] || property;
             ~property.indexOf(",") ? property.split(",").forEach(function(a) {
               return _this.tfm[a] = _get(target, a);
-            }) : this.tfm[property] = target._gsap.x ? target._gsap[property] : _get(target, property);
+            }) : this.tfm[property] = cache.x ? cache[property] : _get(target, property);
+            property === _transformOriginProp && (this.tfm.zOrigin = cache.zOrigin);
+          } else {
+            return _propertyAliases.transform.split(",").forEach(function(p) {
+              return _saveStyle2.call(_this, p, isNotCSS);
+            });
           }
           if (this.props.indexOf(_transformProp) >= 0) {
             return;
           }
-          if (target._gsap.svg) {
+          if (cache.svg) {
             this.svgo = target.getAttribute("data-svg-origin");
             this.props.push(_transformOriginProp, isNotCSS, "");
           }
@@ -3235,7 +3283,13 @@
       _revertStyle = function _revertStyle2() {
         var props = this.props, target = this.target, style = target.style, cache = target._gsap, i, p;
         for (i = 0; i < props.length; i += 3) {
-          props[i + 1] ? target[props[i]] = props[i + 2] : props[i + 2] ? style[props[i]] = props[i + 2] : style.removeProperty(props[i].replace(_capsExp, "-$1").toLowerCase());
+          if (!props[i + 1]) {
+            props[i + 2] ? style[props[i]] = props[i + 2] : style.removeProperty(props[i].substr(0, 2) === "--" ? props[i] : props[i].replace(_capsExp, "-$1").toLowerCase());
+          } else if (props[i + 1] === 2) {
+            target[props[i]](props[i + 2]);
+          } else {
+            target[props[i]] = props[i + 2];
+          }
         }
         if (this.tfm) {
           for (p in this.tfm) {
@@ -3246,8 +3300,13 @@
             target.setAttribute("data-svg-origin", this.svgo || "");
           }
           i = _reverting2();
-          if (i && !i.isStart && !style[_transformProp]) {
+          if ((!i || !i.isStart) && !style[_transformProp]) {
             _removeIndependentTransforms(style);
+            if (cache.zOrigin && style[_transformOriginProp]) {
+              style[_transformOriginProp] += " " + cache.zOrigin + "px";
+              cache.zOrigin = 0;
+              cache.renderTransform();
+            }
             cache.uncache = 1;
           }
         }
@@ -3259,14 +3318,15 @@
           revert: _revertStyle,
           save: _saveStyle
         };
-        properties && properties.split(",").forEach(function(p) {
+        target._gsap || gsap.core.getCache(target);
+        properties && target.style && target.nodeType && properties.split(",").forEach(function(p) {
           return saver.save(p);
         });
         return saver;
       };
       _createElement = function _createElement2(type, ns) {
         var e = _doc2.createElementNS ? _doc2.createElementNS((ns || "http://www.w3.org/1999/xhtml").replace(/^https/, "http"), type) : _doc2.createElement(type);
-        return e.style ? e : _doc2.createElement(type);
+        return e && e.style ? e : _doc2.createElement(type);
       };
       _getComputedProperty = function _getComputedProperty2(target, property, skipPrefixFallback) {
         var cs = getComputedStyle(target);
@@ -3300,30 +3360,17 @@
           _pluginInitted = 1;
         }
       };
-      _getBBoxHack = function _getBBoxHack2(swapIfPossible) {
-        var svg = _createElement("svg", this.ownerSVGElement && this.ownerSVGElement.getAttribute("xmlns") || "http://www.w3.org/2000/svg"), oldParent = this.parentNode, oldSibling = this.nextSibling, oldCSS = this.style.cssText, bbox;
+      _getReparentedCloneBBox = function _getReparentedCloneBBox2(target) {
+        var owner = target.ownerSVGElement, svg = _createElement("svg", owner && owner.getAttribute("xmlns") || "http://www.w3.org/2000/svg"), clone = target.cloneNode(true), bbox;
+        clone.style.display = "block";
+        svg.appendChild(clone);
         _docElement.appendChild(svg);
-        svg.appendChild(this);
-        this.style.display = "block";
-        if (swapIfPossible) {
-          try {
-            bbox = this.getBBox();
-            this._gsapBBox = this.getBBox;
-            this.getBBox = _getBBoxHack2;
-          } catch (e) {
-          }
-        } else if (this._gsapBBox) {
-          bbox = this._gsapBBox();
+        try {
+          bbox = clone.getBBox();
+        } catch (e) {
         }
-        if (oldParent) {
-          if (oldSibling) {
-            oldParent.insertBefore(this, oldSibling);
-          } else {
-            oldParent.appendChild(this);
-          }
-        }
+        svg.removeChild(clone);
         _docElement.removeChild(svg);
-        this.style.cssText = oldCSS;
         return bbox;
       };
       _getAttributeFallbacks = function _getAttributeFallbacks2(target, attributesArray) {
@@ -3335,13 +3382,14 @@
         }
       };
       _getBBox = function _getBBox2(target) {
-        var bounds;
+        var bounds, cloned;
         try {
           bounds = target.getBBox();
-        } catch (error2) {
-          bounds = _getBBoxHack.call(target, true);
+        } catch (error) {
+          bounds = _getReparentedCloneBBox(target);
+          cloned = 1;
         }
-        bounds && (bounds.width || bounds.height) || target.getBBox === _getBBoxHack || (bounds = _getBBoxHack.call(target, true));
+        bounds && (bounds.width || bounds.height) || cloned || (bounds = _getReparentedCloneBBox(target));
         return bounds && !bounds.width && !bounds.x && !bounds.y ? {
           x: +_getAttributeFallbacks(target, ["x", "cx", "x1"]) || 0,
           y: +_getAttributeFallbacks(target, ["y", "cy", "y1"]) || 0,
@@ -3354,15 +3402,16 @@
       };
       _removeProperty = function _removeProperty2(target, property) {
         if (property) {
-          var style = target.style;
+          var style = target.style, first2Chars;
           if (property in _transformProps && property !== _transformOriginProp) {
             property = _transformProp;
           }
           if (style.removeProperty) {
-            if (property.substr(0, 2) === "ms" || property.substr(0, 6) === "webkit") {
+            first2Chars = property.substr(0, 2);
+            if (first2Chars === "ms" || property.substr(0, 6) === "webkit") {
               property = "-" + property;
             }
-            style.removeProperty(property.replace(_capsExp, "-$1").toLowerCase());
+            style.removeProperty(first2Chars === "--" ? property : property.replace(_capsExp, "-$1").toLowerCase());
           } else {
             style.removeAttribute(property);
           }
@@ -3397,7 +3446,7 @@
           return _round(toPercent ? curValue / px * amount : curValue / 100 * px);
         }
         style[horizontal ? "width" : "height"] = amount + (toPixels ? curUnit : unit);
-        parent = ~property.indexOf("adius") || unit === "em" && target.appendChild && !isRootSVG ? target : target.parentNode;
+        parent = unit !== "rem" && ~property.indexOf("adius") || unit === "em" && target.appendChild && !isRootSVG ? target : target.parentNode;
         if (isSVG) {
           parent = (target.ownerSVGElement || {}).parentNode;
         }
@@ -3408,12 +3457,19 @@
         if (cache && toPercent && cache.width && horizontal && cache.time === _ticker.time && !cache.uncache) {
           return _round(curValue / cache.width * amount);
         } else {
-          (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
-          parent === target && (style.position = "static");
-          parent.appendChild(_tempDiv);
-          px = _tempDiv[measureProperty];
-          parent.removeChild(_tempDiv);
-          style.position = "absolute";
+          if (toPercent && (property === "height" || property === "width")) {
+            var v = target.style[property];
+            target.style[property] = amount + unit;
+            px = target[measureProperty];
+            v ? target.style[property] = v : _removeProperty(target, property);
+          } else {
+            (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
+            parent === target && (style.position = "static");
+            parent.appendChild(_tempDiv);
+            px = _tempDiv[measureProperty];
+            parent.removeChild(_tempDiv);
+            style.position = "absolute";
+          }
           if (horizontal && toPercent) {
             cache = _getCache(parent);
             cache.time = _ticker.time;
@@ -3458,9 +3514,10 @@
         start += "";
         end += "";
         if (end === "auto") {
+          startValue = target.style[prop];
           target.style[prop] = end;
           end = _getComputedProperty(target, prop) || end;
-          target.style[prop] = start;
+          startValue ? target.style[prop] = startValue : _removeProperty(target, prop);
         }
         a = [start, end];
         _colorStringFilter(a);
@@ -3552,6 +3609,7 @@
             _removeProperty(target, _transformProp);
             if (cache) {
               cache.svg && target.removeAttribute("transform");
+              style.scale = style.rotate = style.translate = "none";
               _parseTransform(target, 1);
               cache.uncache = 1;
               _removeIndependentTransforms(style);
@@ -3623,7 +3681,7 @@
         		}
         	}
         	cache.classPT = plugin._pt = new PropTween(plugin._pt, target, "className", 0, 0, _renderClassName, data, 0, -11);
-        	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://greensock.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
+        	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://gsap.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
         		style.cssText = cssText; //we recorded cssText before we swapped classes and ran _getAllStyles() because in cases when a className tween is overwritten, we remove all the related tweening properties from that class change (otherwise class-specific stuff can't override properties we've directly set on the target's style object due to specificity).
         	}
         	_parseTransform(target, true); //to clear the caching of transforms
@@ -3653,7 +3711,7 @@
           temp = style.display;
           style.display = "block";
           parent = target.parentNode;
-          if (!parent || !target.offsetParent) {
+          if (!parent || !target.offsetParent && !target.getBoundingClientRect().width) {
             addedToDOM = 1;
             nextSibling = target.nextElementSibling;
             _docElement.appendChild(target);
@@ -3834,7 +3892,7 @@
         cache.skewX = skewX + deg;
         cache.skewY = skewY + deg;
         cache.transformPerspective = perspective + px;
-        if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || 0) {
+        if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || !uncache && cache.zOrigin || 0) {
           style[_transformOriginProp] = _firstTwoOnly(origin);
         }
         cache.xOffset = cache.yOffset = 0;
@@ -4009,11 +4067,11 @@
         }
         _assign(endCache, startCache);
       };
-      _forEachName("padding,margin,Width,Radius", function(name3, index) {
+      _forEachName("padding,margin,Width,Radius", function(name, index) {
         var t = "Top", r = "Right", b = "Bottom", l = "Left", props = (index < 3 ? [t, r, b, l] : [t + l, t + r, b + r, b + l]).map(function(side) {
-          return index < 2 ? name3 + side : "border" + side + name3;
+          return index < 2 ? name + side : "border" + side + name;
         });
-        _specialProps[index > 1 ? "border" + name3 : name3] = function(plugin, target, property, endValue, tween) {
+        _specialProps[index > 1 ? "border" + name : name] = function(plugin, target, property, endValue, tween) {
           var a, vars;
           if (arguments.length < 4) {
             a = props.map(function(prop) {
@@ -4077,7 +4135,7 @@
               if (startAt && p in startAt) {
                 startValue = typeof startAt[p] === "function" ? startAt[p].call(tween, index, target, targets) : startAt[p];
                 _isString(startValue) && ~startValue.indexOf("random(") && (startValue = _replaceRandom(startValue));
-                getUnit(startValue + "") || (startValue += _config.units[p] || getUnit(_get(target, p)) || "");
+                getUnit(startValue + "") || startValue === "auto" || (startValue += _config.units[p] || getUnit(_get(target, p)) || "");
                 (startValue + "").charAt(1) === "=" && (startValue = _get(target, p));
               } else {
                 startValue = _get(target, p);
@@ -4165,7 +4223,7 @@
               } else {
                 _tweenComplexCSSString.call(this, target, p, startValue, relative ? relative + endValue : endValue);
               }
-              isTransformRelated || (p in style ? inlineProps.push(p, 0, style[p]) : inlineProps.push(p, 1, startValue || target[p]));
+              isTransformRelated || (p in style ? inlineProps.push(p, 0, style[p]) : typeof target[p] === "function" ? inlineProps.push(p, 2, target[p]()) : inlineProps.push(p, 1, startValue || target[p]));
               props.push(p);
             }
           }
@@ -4197,21 +4255,21 @@
       gsap.utils.checkPrefix = _checkPropPrefix;
       gsap.core.getStyleSaver = _getStyleSaver;
       (function(positionAndScale, rotation, others, aliases) {
-        var all = _forEachName(positionAndScale + "," + rotation + "," + others, function(name3) {
-          _transformProps[name3] = 1;
+        var all = _forEachName(positionAndScale + "," + rotation + "," + others, function(name) {
+          _transformProps[name] = 1;
         });
-        _forEachName(rotation, function(name3) {
-          _config.units[name3] = "deg";
-          _rotationalProperties[name3] = 1;
+        _forEachName(rotation, function(name) {
+          _config.units[name] = "deg";
+          _rotationalProperties[name] = 1;
         });
         _propertyAliases[all[13]] = positionAndScale + "," + rotation;
-        _forEachName(aliases, function(name3) {
-          var split = name3.split(":");
+        _forEachName(aliases, function(name) {
+          var split = name.split(":");
           _propertyAliases[split[1]] = all[split[0]];
         });
       })("x,y,z,scale,scaleX,scaleY,xPercent,yPercent", "rotation,rotationX,rotationY,skewX,skewY", "transform,transformOrigin,svgOrigin,force3D,smoothOrigin,transformPerspective", "0:translateX,1:translateY,2:translateZ,8:rotate,8:rotationZ,8:rotateZ,9:rotateX,10:rotateY");
-      _forEachName("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,perspective", function(name3) {
-        _config.units[name3] = "px";
+      _forEachName("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,perspective", function(name) {
+        _config.units[name] = "px";
       });
       gsap.registerPlugin(CSSPlugin);
     }
@@ -4245,9 +4303,11 @@
           const banner2 = document.querySelector(".banner_component");
           let videoInitialized = false;
           const handleVideoReady = () => {
-            if (videoInitialized) return;
+            if (videoInitialized)
+              return;
             videoInitialized = true;
-            if (heroVideo.paused) heroVideo.play().catch(console.warn);
+            if (heroVideo.paused)
+              heroVideo.play().catch(console.warn);
             gsapWithCSS.set(heroPlace, { zIndex: 1, display: "none" });
           };
           if (heroVideo) {
@@ -4311,13 +4371,16 @@
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
+      if ("value" in descriptor)
+        descriptor.writable = true;
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
   function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
+    if (protoProps)
+      _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps)
+      _defineProperties(Constructor, staticProps);
     return Constructor;
   }
   var gsap2, _coreInitted2, _clamp3, _win3, _doc3, _docEl, _body, _isTouch, _pointerType, ScrollTrigger, _root, _normalizer, _eventTypes, _context2, _getGSAP, _startup, _observers, _scrollers, _proxies, _getTime, _bridge, _integrate, _getProxyProp, _isViewport, _addListener, _removeListener, _scrollLeft, _scrollTop, _onScroll, _scrollCacheFunc, _horizontal, _vertical, _getTarget, _getScrollFunc, _getVelocityProp, _getEvent, _getAbsoluteMax, _setScrollTrigger, _initCore3, Observer;
@@ -4332,7 +4395,7 @@
       _scrollers = [];
       _proxies = [];
       _getTime = Date.now;
-      _bridge = function _bridge2(name3, value) {
+      _bridge = function _bridge2(name, value) {
         return value;
       };
       _integrate = function _integrate2() {
@@ -4341,8 +4404,8 @@
         proxies.push.apply(proxies, _proxies);
         _scrollers = scrollers;
         _proxies = proxies;
-        _bridge = function _bridge3(name3, value) {
-          return data[name3](value);
+        _bridge = function _bridge3(name, value) {
+          return data[name](value);
         };
       };
       _getProxyProp = function _getProxyProp2(element, property) {
@@ -4351,9 +4414,9 @@
       _isViewport = function _isViewport2(el) {
         return !!~_root.indexOf(el);
       };
-      _addListener = function _addListener2(element, type, func, nonPassive, capture) {
+      _addListener = function _addListener2(element, type, func, passive, capture) {
         return element.addEventListener(type, func, {
-          passive: !nonPassive,
+          passive: passive !== false,
           capture: !!capture
         });
       };
@@ -4410,15 +4473,15 @@
           return arguments.length ? _win3.scrollTo(_horizontal.sc(), value) : _win3.pageYOffset || _doc3[_scrollTop] || _docEl[_scrollTop] || _body[_scrollTop] || 0;
         })
       };
-      _getTarget = function _getTarget2(t) {
-        return gsap2.utils.toArray(t)[0] || (typeof t === "string" && gsap2.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
+      _getTarget = function _getTarget2(t, self) {
+        return (self && self._ctx && self._ctx.selector || gsap2.utils.toArray)(t)[0] || (typeof t === "string" && gsap2.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
       };
       _getScrollFunc = function _getScrollFunc2(element, _ref) {
         var s = _ref.s, sc = _ref.sc;
         _isViewport(element) && (element = _doc3.scrollingElement || _docEl);
         var i = _scrollers.indexOf(element), offset = sc === _vertical.sc ? 1 : 2;
         !~i && (i = _scrollers.push(element) - 1);
-        _scrollers[i + offset] || element.addEventListener("scroll", _onScroll);
+        _scrollers[i + offset] || _addListener(element, "scroll", _onScroll);
         var prev = _scrollers[i + offset], func = prev || (_scrollers[i + offset] = _scrollCacheFunc(_getProxyProp(element, s), true) || (_isViewport(element) ? sc : _scrollCacheFunc(function(value) {
           return arguments.length ? element[s] = value : element[s];
         })));
@@ -4467,7 +4530,7 @@
       };
       _initCore3 = function _initCore4(core) {
         gsap2 = core || _getGSAP();
-        if (gsap2 && typeof document !== "undefined" && document.body) {
+        if (!_coreInitted2 && gsap2 && typeof document !== "undefined" && document.body) {
           _win3 = window;
           _doc3 = document;
           _docEl = _doc3.documentElement;
@@ -4508,66 +4571,67 @@
           type = type || "wheel,touch,pointer";
           debounce2 = debounce2 !== false;
           lineHeight || (lineHeight = parseFloat(_win3.getComputedStyle(_body).lineHeight) || 22);
-          var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self2 = this, prevDeltaX = 0, prevDeltaY = 0, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
+          var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self = this, prevDeltaX = 0, prevDeltaY = 0, passive = vars.passive || !preventDefault && vars.passive !== false, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
             return onClickTime = _getTime();
           }, _ignoreCheck = function _ignoreCheck2(e, isPointerOrTouch) {
-            return (self2.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e, isPointerOrTouch);
+            return (self.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e, isPointerOrTouch);
           }, onStopFunc = function onStopFunc2() {
-            self2._vx.reset();
-            self2._vy.reset();
+            self._vx.reset();
+            self._vy.reset();
             onStopDelayedCall.pause();
-            onStop && onStop(self2);
+            onStop && onStop(self);
           }, update = function update2() {
-            var dx = self2.deltaX = _getAbsoluteMax(deltaX), dy = self2.deltaY = _getAbsoluteMax(deltaY), changedX = Math.abs(dx) >= tolerance, changedY = Math.abs(dy) >= tolerance;
-            onChange && (changedX || changedY) && onChange(self2, dx, dy, deltaX, deltaY);
+            var dx = self.deltaX = _getAbsoluteMax(deltaX), dy = self.deltaY = _getAbsoluteMax(deltaY), changedX = Math.abs(dx) >= tolerance, changedY = Math.abs(dy) >= tolerance;
+            onChange && (changedX || changedY) && onChange(self, dx, dy, deltaX, deltaY);
             if (changedX) {
-              onRight && self2.deltaX > 0 && onRight(self2);
-              onLeft && self2.deltaX < 0 && onLeft(self2);
-              onChangeX && onChangeX(self2);
-              onToggleX && self2.deltaX < 0 !== prevDeltaX < 0 && onToggleX(self2);
-              prevDeltaX = self2.deltaX;
+              onRight && self.deltaX > 0 && onRight(self);
+              onLeft && self.deltaX < 0 && onLeft(self);
+              onChangeX && onChangeX(self);
+              onToggleX && self.deltaX < 0 !== prevDeltaX < 0 && onToggleX(self);
+              prevDeltaX = self.deltaX;
               deltaX[0] = deltaX[1] = deltaX[2] = 0;
             }
             if (changedY) {
-              onDown && self2.deltaY > 0 && onDown(self2);
-              onUp && self2.deltaY < 0 && onUp(self2);
-              onChangeY && onChangeY(self2);
-              onToggleY && self2.deltaY < 0 !== prevDeltaY < 0 && onToggleY(self2);
-              prevDeltaY = self2.deltaY;
+              onDown && self.deltaY > 0 && onDown(self);
+              onUp && self.deltaY < 0 && onUp(self);
+              onChangeY && onChangeY(self);
+              onToggleY && self.deltaY < 0 !== prevDeltaY < 0 && onToggleY(self);
+              prevDeltaY = self.deltaY;
               deltaY[0] = deltaY[1] = deltaY[2] = 0;
             }
             if (moved || dragged) {
-              onMove && onMove(self2);
+              onMove && onMove(self);
               if (dragged) {
-                onDrag(self2);
-                dragged = false;
+                onDragStart && dragged === 1 && onDragStart(self);
+                onDrag && onDrag(self);
+                dragged = 0;
               }
               moved = false;
             }
-            locked && !(locked = false) && onLockAxis && onLockAxis(self2);
+            locked && !(locked = false) && onLockAxis && onLockAxis(self);
             if (wheeled) {
-              onWheel(self2);
+              onWheel(self);
               wheeled = false;
             }
             id = 0;
           }, onDelta = function onDelta2(x, y, index) {
             deltaX[index] += x;
             deltaY[index] += y;
-            self2._vx.update(x);
-            self2._vy.update(y);
+            self._vx.update(x);
+            self._vy.update(y);
             debounce2 ? id || (id = requestAnimationFrame(update)) : update();
           }, onTouchOrPointerDelta = function onTouchOrPointerDelta2(x, y) {
             if (lockAxis && !axis) {
-              self2.axis = axis = Math.abs(x) > Math.abs(y) ? "x" : "y";
+              self.axis = axis = Math.abs(x) > Math.abs(y) ? "x" : "y";
               locked = true;
             }
             if (axis !== "y") {
               deltaX[2] += x;
-              self2._vx.update(x, true);
+              self._vx.update(x, true);
             }
             if (axis !== "x") {
               deltaY[2] += y;
-              self2._vy.update(y, true);
+              self._vy.update(y, true);
             }
             debounce2 ? id || (id = requestAnimationFrame(update)) : update();
           }, _onDrag = function _onDrag2(e) {
@@ -4575,40 +4639,39 @@
               return;
             }
             e = _getEvent(e, preventDefault);
-            var x = e.clientX, y = e.clientY, dx = x - self2.x, dy = y - self2.y, isDragging = self2.isDragging;
-            self2.x = x;
-            self2.y = y;
-            if (isDragging || Math.abs(self2.startX - x) >= dragMinimum || Math.abs(self2.startY - y) >= dragMinimum) {
-              onDrag && (dragged = true);
-              isDragging || (self2.isDragging = true);
+            var x = e.clientX, y = e.clientY, dx = x - self.x, dy = y - self.y, isDragging = self.isDragging;
+            self.x = x;
+            self.y = y;
+            if (isDragging || (dx || dy) && (Math.abs(self.startX - x) >= dragMinimum || Math.abs(self.startY - y) >= dragMinimum)) {
+              dragged = isDragging ? 2 : 1;
+              isDragging || (self.isDragging = true);
               onTouchOrPointerDelta(dx, dy);
-              isDragging || onDragStart && onDragStart(self2);
             }
-          }, _onPress = self2.onPress = function(e) {
-            if (_ignoreCheck(e, 1)) {
+          }, _onPress = self.onPress = function(e) {
+            if (_ignoreCheck(e, 1) || e && e.button) {
               return;
             }
-            self2.axis = axis = null;
+            self.axis = axis = null;
             onStopDelayedCall.pause();
-            self2.isPressed = true;
+            self.isPressed = true;
             e = _getEvent(e);
             prevDeltaX = prevDeltaY = 0;
-            self2.startX = self2.x = e.clientX;
-            self2.startY = self2.y = e.clientY;
-            self2._vx.reset();
-            self2._vy.reset();
-            _addListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, preventDefault, true);
-            self2.deltaX = self2.deltaY = 0;
-            onPress && onPress(self2);
-          }, _onRelease = function _onRelease2(e) {
+            self.startX = self.x = e.clientX;
+            self.startY = self.y = e.clientY;
+            self._vx.reset();
+            self._vy.reset();
+            _addListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, passive, true);
+            self.deltaX = self.deltaY = 0;
+            onPress && onPress(self);
+          }, _onRelease = self.onRelease = function(e) {
             if (_ignoreCheck(e, 1)) {
               return;
             }
             _removeListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, true);
-            var isTrackingDrag = !isNaN(self2.y - self2.startY), wasDragging = self2.isDragging && (Math.abs(self2.x - self2.startX) > 3 || Math.abs(self2.y - self2.startY) > 3), eventData = _getEvent(e);
-            if (!wasDragging && isTrackingDrag) {
-              self2._vx.reset();
-              self2._vy.reset();
+            var isTrackingDrag = !isNaN(self.y - self.startY), wasDragging = self.isDragging, isDragNotClick = wasDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3), eventData = _getEvent(e);
+            if (!isDragNotClick && isTrackingDrag) {
+              self._vx.reset();
+              self._vy.reset();
               if (preventDefault && allowClicks) {
                 gsap2.delayedCall(0.08, function() {
                   if (_getTime() - onClickTime > 300 && !e.defaultPrevented) {
@@ -4623,14 +4686,15 @@
                 });
               }
             }
-            self2.isDragging = self2.isGesturing = self2.isPressed = false;
-            onStop && !isNormalizer && onStopDelayedCall.restart(true);
-            onDragEnd && wasDragging && onDragEnd(self2);
-            onRelease && onRelease(self2, wasDragging);
+            self.isDragging = self.isGesturing = self.isPressed = false;
+            onStop && wasDragging && !isNormalizer && onStopDelayedCall.restart(true);
+            dragged && update();
+            onDragEnd && wasDragging && onDragEnd(self);
+            onRelease && onRelease(self, isDragNotClick);
           }, _onGestureStart = function _onGestureStart2(e) {
-            return e.touches && e.touches.length > 1 && (self2.isGesturing = true) && onGestureStart(e, self2.isDragging);
+            return e.touches && e.touches.length > 1 && (self.isGesturing = true) && onGestureStart(e, self.isDragging);
           }, _onGestureEnd = function _onGestureEnd2() {
-            return (self2.isGesturing = false) || onGestureEnd(self2);
+            return (self.isGesturing = false) || onGestureEnd(self);
           }, onScroll = function onScroll2(e) {
             if (_ignoreCheck(e)) {
               return;
@@ -4653,38 +4717,39 @@
             if (_ignoreCheck(e)) {
               return;
             }
-            var x = e.clientX, y = e.clientY, dx = x - self2.x, dy = y - self2.y;
-            self2.x = x;
-            self2.y = y;
+            var x = e.clientX, y = e.clientY, dx = x - self.x, dy = y - self.y;
+            self.x = x;
+            self.y = y;
             moved = true;
+            onStop && onStopDelayedCall.restart(true);
             (dx || dy) && onTouchOrPointerDelta(dx, dy);
           }, _onHover = function _onHover2(e) {
-            self2.event = e;
-            onHover(self2);
+            self.event = e;
+            onHover(self);
           }, _onHoverEnd = function _onHoverEnd2(e) {
-            self2.event = e;
-            onHoverEnd(self2);
+            self.event = e;
+            onHoverEnd(self);
           }, _onClick = function _onClick2(e) {
-            return _ignoreCheck(e) || _getEvent(e, preventDefault) && onClick(self2);
+            return _ignoreCheck(e) || _getEvent(e, preventDefault) && onClick(self);
           };
-          onStopDelayedCall = self2._dc = gsap2.delayedCall(onStopDelay || 0.25, onStopFunc).pause();
-          self2.deltaX = self2.deltaY = 0;
-          self2._vx = _getVelocityProp(0, 50, true);
-          self2._vy = _getVelocityProp(0, 50, true);
-          self2.scrollX = scrollFuncX;
-          self2.scrollY = scrollFuncY;
-          self2.isDragging = self2.isGesturing = self2.isPressed = false;
+          onStopDelayedCall = self._dc = gsap2.delayedCall(onStopDelay || 0.25, onStopFunc).pause();
+          self.deltaX = self.deltaY = 0;
+          self._vx = _getVelocityProp(0, 50, true);
+          self._vy = _getVelocityProp(0, 50, true);
+          self.scrollX = scrollFuncX;
+          self.scrollY = scrollFuncY;
+          self.isDragging = self.isGesturing = self.isPressed = false;
           _context2(this);
-          self2.enable = function(e) {
-            if (!self2.isEnabled) {
+          self.enable = function(e) {
+            if (!self.isEnabled) {
               _addListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
-              type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll, preventDefault, capture);
-              type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, preventDefault, capture);
+              type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll, passive, capture);
+              type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, passive, capture);
               if (type.indexOf("touch") >= 0 && _isTouch || type.indexOf("pointer") >= 0) {
-                _addListener(target, _eventTypes[0], _onPress, preventDefault, capture);
+                _addListener(target, _eventTypes[0], _onPress, passive, capture);
                 _addListener(ownerDoc, _eventTypes[2], _onRelease);
                 _addListener(ownerDoc, _eventTypes[3], _onRelease);
-                allowClicks && _addListener(target, "click", clickCapture, false, true);
+                allowClicks && _addListener(target, "click", clickCapture, true, true);
                 onClick && _addListener(target, "click", _onClick);
                 onGestureStart && _addListener(ownerDoc, "gesturestart", _onGestureStart);
                 onGestureEnd && _addListener(ownerDoc, "gestureend", _onGestureEnd);
@@ -4692,20 +4757,25 @@
                 onHoverEnd && _addListener(target, _pointerType + "leave", _onHoverEnd);
                 onMove && _addListener(target, _pointerType + "move", _onMove);
               }
-              self2.isEnabled = true;
+              self.isEnabled = true;
+              self.isDragging = self.isGesturing = self.isPressed = moved = dragged = false;
+              self._vx.reset();
+              self._vy.reset();
+              scrollX = scrollFuncX();
+              scrollY = scrollFuncY();
               e && e.type && _onPress(e);
-              onEnable && onEnable(self2);
+              onEnable && onEnable(self);
             }
-            return self2;
+            return self;
           };
-          self2.disable = function() {
-            if (self2.isEnabled) {
+          self.disable = function() {
+            if (self.isEnabled) {
               _observers.filter(function(o) {
-                return o !== self2 && _isViewport(o.target);
+                return o !== self && _isViewport(o.target);
               }).length || _removeListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
-              if (self2.isPressed) {
-                self2._vx.reset();
-                self2._vy.reset();
+              if (self.isPressed) {
+                self._vx.reset();
+                self._vy.reset();
                 _removeListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, true);
               }
               _removeListener(isViewport ? ownerDoc : target, "scroll", onScroll, capture);
@@ -4720,34 +4790,34 @@
               _removeListener(target, _pointerType + "enter", _onHover);
               _removeListener(target, _pointerType + "leave", _onHoverEnd);
               _removeListener(target, _pointerType + "move", _onMove);
-              self2.isEnabled = self2.isPressed = self2.isDragging = false;
-              onDisable && onDisable(self2);
+              self.isEnabled = self.isPressed = self.isDragging = false;
+              onDisable && onDisable(self);
             }
           };
-          self2.kill = self2.revert = function() {
-            self2.disable();
-            var i = _observers.indexOf(self2);
+          self.kill = self.revert = function() {
+            self.disable();
+            var i = _observers.indexOf(self);
             i >= 0 && _observers.splice(i, 1);
-            _normalizer === self2 && (_normalizer = 0);
+            _normalizer === self && (_normalizer = 0);
           };
-          _observers.push(self2);
-          isNormalizer && _isViewport(target) && (_normalizer = self2);
-          self2.enable(event);
+          _observers.push(self);
+          isNormalizer && _isViewport(target) && (_normalizer = self);
+          self.enable(event);
         };
         _createClass(Observer2, [{
           key: "velocityX",
-          get: function get2() {
+          get: function get() {
             return this._vx.getVelocity();
           }
         }, {
           key: "velocityY",
-          get: function get2() {
+          get: function get() {
             return this._vy.getVelocity();
           }
         }]);
         return Observer2;
       }();
-      Observer.version = "3.11.4";
+      Observer.version = "3.12.7";
       Observer.create = function(vars) {
         return new Observer(vars);
       };
@@ -4765,7 +4835,7 @@
   });
 
   // node_modules/gsap/ScrollTrigger.js
-  var gsap3, _coreInitted3, _win4, _doc4, _docEl2, _body2, _root2, _resizeDelay, _toArray, _clamp4, _time2, _syncInterval, _refreshing, _pointerIsDown, _transformProp2, _i, _prevWidth, _prevHeight, _autoRefresh, _sort, _suppressOverwrites2, _ignoreResize, _normalizer2, _ignoreMobileResize, _baseScreenHeight, _baseScreenWidth, _fixIOSBug, _context3, _scrollRestoration, _limitCallbacks, _startup2, _getTime2, _time1, _lastScrollTime, _enabled, _pointerDownHandler, _pointerUpHandler, _passThrough3, _round3, _windowExists5, _getGSAP3, _isViewport3, _getBoundsFunc, _getSizeFunc, _getOffsetsFunc, _maxScroll, _iterateAutoRefresh, _isString3, _isFunction3, _isNumber3, _isObject3, _endAnimation, _callback3, _abs, _left, _top, _right, _bottom, _width, _height, _Right, _Left, _Top, _Bottom, _padding, _margin, _Width, _Height, _px, _getComputedStyle, _makePositionable, _setDefaults3, _getBounds, _getSize, _getLabelRatioArray, _getClosestLabel, _snapDirectional, _getLabelAtDirection, _multiListener, _addListener3, _removeListener3, _wheelListener, _markerDefaults, _defaults2, _keywords, _offsetToPx, _createMarker, _positionMarker, _triggers, _ids, _rafID, _sync, _onScroll3, _setBaseDimensions, _onResize, _listeners2, _emptyArray2, _softRefresh, _dispatch3, _savedStyles, _revertRecorded, _revertAll, _clearScrollMemory, _refreshingAll, _refreshID, _queueRefreshID, _queueRefreshAll, _refreshAll, _lastScroll, _direction, _primary, _updateAll, _propNamesToCopy, _stateProps, _swapPinOut, _swapPinIn, _capsExp2, _setState, _getState, _copyState, _winOffsets, _parsePosition3, _prefixExp, _reparent, _getTweenCreator, ScrollTrigger2, _clampScrollAndGetDurationMultiplier, _allowNativePanning, _overflow, _nestedScroll, _inputObserver, _inputExp, _inputIsFocused, _captureInputs, _getScrollNormalizer;
+  var gsap3, _coreInitted3, _win4, _doc4, _docEl2, _body2, _root2, _resizeDelay, _toArray, _clamp4, _time2, _syncInterval, _refreshing, _pointerIsDown, _transformProp2, _i, _prevWidth, _prevHeight, _autoRefresh, _sort, _suppressOverwrites2, _ignoreResize, _normalizer2, _ignoreMobileResize, _baseScreenHeight, _baseScreenWidth, _fixIOSBug, _context3, _scrollRestoration, _div100vh, _100vh, _isReverted, _clampingMax, _limitCallbacks, _startup2, _getTime2, _time1, _lastScrollTime, _enabled, _parseClamp, _keepClamp, _rafBugFix, _pointerDownHandler, _pointerUpHandler, _passThrough3, _round3, _windowExists5, _getGSAP3, _isViewport3, _getViewportDimension, _getBoundsFunc, _getSizeFunc, _getOffsetsFunc, _maxScroll, _iterateAutoRefresh, _isString3, _isFunction3, _isNumber3, _isObject3, _endAnimation, _callback3, _abs, _left, _top, _right, _bottom, _width, _height, _Right, _Left, _Top, _Bottom, _padding, _margin, _Width, _Height, _px, _getComputedStyle, _makePositionable, _setDefaults3, _getBounds, _getSize, _getLabelRatioArray, _getClosestLabel, _snapDirectional, _getLabelAtDirection, _multiListener, _addListener3, _removeListener3, _wheelListener, _markerDefaults, _defaults2, _keywords, _offsetToPx, _createMarker, _positionMarker, _triggers, _ids, _rafID, _sync, _onScroll3, _setBaseDimensions, _onResize, _listeners2, _emptyArray2, _softRefresh, _dispatch3, _savedStyles, _revertRecorded, _revertAll, _clearScrollMemory, _refreshingAll, _refreshID, _queueRefreshID, _queueRefreshAll, _refresh100vh, _hideAllMarkers, _refreshAll, _lastScroll, _direction, _primary, _updateAll, _propNamesToCopy, _stateProps, _swapPinOut, _swapPinIn, _capsExp2, _setState, _getState, _copyState, _winOffsets, _parsePosition3, _prefixExp, _reparent, _interruptionTracker, _shiftMarker, _getTweenCreator, ScrollTrigger2, _clampScrollAndGetDurationMultiplier, _allowNativePanning, _overflow, _nestedScroll, _inputObserver, _inputExp, _inputIsFocused, _captureInputs, _getScrollNormalizer;
   var init_ScrollTrigger = __esm({
     "node_modules/gsap/ScrollTrigger.js"() {
       init_live_reload();
@@ -4775,6 +4845,17 @@
       _time1 = _getTime2();
       _lastScrollTime = 0;
       _enabled = 0;
+      _parseClamp = function _parseClamp2(value, type, self) {
+        var clamp4 = _isString3(value) && (value.substr(0, 6) === "clamp(" || value.indexOf("max") > -1);
+        self["_" + type + "Clamp"] = clamp4;
+        return clamp4 ? value.substr(6, value.length - 7) : value;
+      };
+      _keepClamp = function _keepClamp2(value, clamp4) {
+        return clamp4 && (!_isString3(value) || value.substr(0, 6) !== "clamp(") ? "clamp(" + value + ")" : value;
+      };
+      _rafBugFix = function _rafBugFix2() {
+        return _enabled && requestAnimationFrame(_rafBugFix2);
+      };
       _pointerDownHandler = function _pointerDownHandler2() {
         return _pointerIsDown = 1;
       };
@@ -4796,10 +4877,13 @@
       _isViewport3 = function _isViewport4(e) {
         return !!~_root2.indexOf(e);
       };
+      _getViewportDimension = function _getViewportDimension2(dimensionProperty) {
+        return (dimensionProperty === "Height" ? _100vh : _win4["inner" + dimensionProperty]) || _docEl2["client" + dimensionProperty] || _body2["client" + dimensionProperty];
+      };
       _getBoundsFunc = function _getBoundsFunc2(element) {
         return _getProxyProp(element, "getBoundingClientRect") || (_isViewport3(element) ? function() {
           _winOffsets.width = _win4.innerWidth;
-          _winOffsets.height = _win4.innerHeight;
+          _winOffsets.height = _100vh;
           return _winOffsets;
         } : function() {
           return _getBounds(element);
@@ -4810,7 +4894,7 @@
         return (a = _getProxyProp(scroller, "getBoundingClientRect")) ? function() {
           return a()[d];
         } : function() {
-          return (isViewport ? _win4["inner" + d2] : scroller["client" + d2]) || 0;
+          return (isViewport ? _getViewportDimension(d2) : scroller["client" + d2]) || 0;
         };
       };
       _getOffsetsFunc = function _getOffsetsFunc2(element, isViewport) {
@@ -4820,7 +4904,7 @@
       };
       _maxScroll = function _maxScroll2(element, _ref2) {
         var s = _ref2.s, d2 = _ref2.d2, d = _ref2.d, a = _ref2.a;
-        return (s = "scroll" + d2) && (a = _getProxyProp(element, s)) ? a() - _getBoundsFunc(element)()[d] : _isViewport3(element) ? (_docEl2[s] || _body2[s]) - (_win4["inner" + d2] || _docEl2["client" + d2] || _body2["client" + d2]) : element[s] - element["offset" + d2];
+        return Math.max(0, (s = "scroll" + d2) && (a = _getProxyProp(element, s)) ? a() - _getBoundsFunc(element)()[d] : _isViewport3(element) ? (_docEl2[s] || _body2[s]) - _getViewportDimension(d2) : element[s] - element["offset" + d2]);
       };
       _iterateAutoRefresh = function _iterateAutoRefresh2(func, events) {
         for (var i = 0; i < _autoRefresh.length; i += 3) {
@@ -4842,10 +4926,12 @@
       _endAnimation = function _endAnimation2(animation, reversed, pause) {
         return animation && animation.progress(reversed ? 0 : 1) && pause && animation.pause();
       };
-      _callback3 = function _callback4(self2, func) {
-        if (self2.enabled) {
-          var result = func(self2);
-          result && result.totalTime && (self2.callbackAnimation = result);
+      _callback3 = function _callback4(self, func) {
+        if (self.enabled) {
+          var result = self._ctx ? self._ctx.add(function() {
+            return func(self);
+          }) : func(self);
+          result && result.totalTime && (self.callbackAnimation = result);
         }
       };
       _abs = Math.abs;
@@ -4967,7 +5053,11 @@
         return element.removeEventListener(type, func, !!capture);
       };
       _wheelListener = function _wheelListener2(func, el, scrollFunc) {
-        return scrollFunc && scrollFunc.wheelHandler && func(el, "wheel", scrollFunc);
+        scrollFunc = scrollFunc && scrollFunc.wheelHandler;
+        if (scrollFunc) {
+          func(el, "wheel", scrollFunc);
+          func(el, "touchmove", scrollFunc);
+        }
       };
       _markerDefaults = {
         startColor: "green",
@@ -4998,16 +5088,16 @@
         }
         return value;
       };
-      _createMarker = function _createMarker2(type, name3, container, direction, _ref4, offset, matchWidthEl, containerAnimation) {
+      _createMarker = function _createMarker2(type, name, container, direction, _ref4, offset, matchWidthEl, containerAnimation) {
         var startColor = _ref4.startColor, endColor = _ref4.endColor, fontSize = _ref4.fontSize, indent = _ref4.indent, fontWeight = _ref4.fontWeight;
         var e = _doc4.createElement("div"), useFixedPosition = _isViewport3(container) || _getProxyProp(container, "pinType") === "fixed", isScroller = type.indexOf("scroller") !== -1, parent = useFixedPosition ? _body2 : container, isStart = type.indexOf("start") !== -1, color = isStart ? startColor : endColor, css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
         css += "position:" + ((isScroller || containerAnimation) && useFixedPosition ? "fixed;" : "absolute;");
         (isScroller || containerAnimation || !useFixedPosition) && (css += (direction === _vertical ? _right : _bottom) + ":" + (offset + parseFloat(indent)) + "px;");
         matchWidthEl && (css += "box-sizing:border-box;text-align:left;width:" + matchWidthEl.offsetWidth + "px;");
         e._isStart = isStart;
-        e.setAttribute("class", "gsap-marker-" + type + (name3 ? " marker-" + name3 : ""));
+        e.setAttribute("class", "gsap-marker-" + type + (name ? " marker-" + name : ""));
         e.style.cssText = css;
-        e.innerText = name3 || name3 === 0 ? type + "-" + name3 : type;
+        e.innerText = name || name === 0 ? type + "-" + name : type;
         parent.children[0] ? parent.insertBefore(e, parent.children[0]) : parent.appendChild(e);
         e._offset = e["offset" + direction.op.d2];
         _positionMarker(e, 0, direction, isStart);
@@ -5046,9 +5136,9 @@
         _baseScreenWidth = _win4.innerWidth;
         _baseScreenHeight = _win4.innerHeight;
       };
-      _onResize = function _onResize2() {
+      _onResize = function _onResize2(force) {
         _scrollers.cache++;
-        !_refreshing && !_ignoreResize && !_doc4.fullscreenElement && !_doc4.webkitFullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win4.innerWidth || Math.abs(_win4.innerHeight - _baseScreenHeight) > _win4.innerHeight * 0.25) && _resizeDelay.restart(true);
+        (force === true || !_refreshing && !_ignoreResize && !_doc4.fullscreenElement && !_doc4.webkitFullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win4.innerWidth || Math.abs(_win4.innerHeight - _baseScreenHeight) > _win4.innerHeight * 0.25)) && _resizeDelay.restart(true);
       };
       _listeners2 = {};
       _emptyArray2 = [];
@@ -5082,6 +5172,7 @@
             }
           }
         }
+        _isReverted = true;
         media && _revertRecorded(media);
         media || _dispatch3("revert");
       };
@@ -5101,14 +5192,28 @@
           });
         }
       };
+      _refresh100vh = function _refresh100vh2() {
+        _body2.appendChild(_div100vh);
+        _100vh = !_normalizer2 && _div100vh.offsetHeight || _win4.innerHeight;
+        _body2.removeChild(_div100vh);
+      };
+      _hideAllMarkers = function _hideAllMarkers2(hide) {
+        return _toArray(".gsap-marker-start, .gsap-marker-end, .gsap-marker-scroller-start, .gsap-marker-scroller-end").forEach(function(el) {
+          return el.style.display = hide ? "none" : "block";
+        });
+      };
       _refreshAll = function _refreshAll2(force, skipRevert) {
-        if (_lastScrollTime && !force) {
+        _docEl2 = _doc4.documentElement;
+        _body2 = _doc4.body;
+        _root2 = [_win4, _doc4, _docEl2, _body2];
+        if (_lastScrollTime && !force && !_isReverted) {
           _addListener3(ScrollTrigger2, "scrollEnd", _softRefresh);
           return;
         }
+        _refresh100vh();
         _refreshingAll = ScrollTrigger2.isRefreshing = true;
         _scrollers.forEach(function(obj) {
-          return _isFunction3(obj) && obj.cacheID++ && (obj.rec = obj());
+          return _isFunction3(obj) && ++obj.cacheID && (obj.rec = obj());
         });
         var refreshInits = _dispatch3("refreshInit");
         _sort && ScrollTrigger2.sort();
@@ -5122,17 +5227,23 @@
         _triggers.slice(0).forEach(function(t) {
           return t.refresh();
         });
-        _triggers.forEach(function(t, i) {
+        _isReverted = false;
+        _triggers.forEach(function(t) {
           if (t._subPinOffset && t.pin) {
             var prop = t.vars.horizontal ? "offsetWidth" : "offsetHeight", original = t.pin[prop];
             t.revert(true, 1);
             t.adjustPinSpacing(t.pin[prop] - original);
-            t.revert(false, 1);
+            t.refresh();
           }
         });
+        _clampingMax = 1;
+        _hideAllMarkers(true);
         _triggers.forEach(function(t) {
-          return t.vars.end === "max" && t.setPositions(t.start, Math.max(t.start + 1, _maxScroll(t.scroller, t._dir)));
+          var max = _maxScroll(t.scroller, t._dir), endClamp = t.vars.end === "max" || t._endClamp && t.end > max, startClamp = t._startClamp && t.start >= max;
+          (endClamp || startClamp) && t.setPositions(startClamp ? max - 1 : t.start, endClamp ? Math.max(startClamp ? max : t.start + 1, max) : t.end, true);
         });
+        _hideAllMarkers(false);
+        _clampingMax = 0;
         refreshInits.forEach(function(result) {
           return result && result.render && result.render(-1);
         });
@@ -5147,6 +5258,7 @@
         _clearScrollMemory(_scrollRestoration, 1);
         _resizeDelay.pause();
         _refreshID++;
+        _refreshingAll = 2;
         _updateAll(2);
         _triggers.forEach(function(t) {
           return _isFunction3(t.vars.onRefresh) && t.vars.onRefresh(t);
@@ -5157,12 +5269,12 @@
       _lastScroll = 0;
       _direction = 1;
       _updateAll = function _updateAll2(force) {
-        if (!_refreshingAll || force === 2) {
+        if (force === 2 || !_refreshingAll && !_isReverted) {
           ScrollTrigger2.isUpdating = true;
           _primary && _primary.update(0);
           var l = _triggers.length, time = _getTime2(), recordVelocity = time - _time1 >= 50, scroll = l && _triggers[0].scroll();
           _direction = _lastScroll > scroll ? -1 : 1;
-          _lastScroll = scroll;
+          _refreshingAll || (_lastScroll = scroll);
           if (recordVelocity) {
             if (_lastScrollTime && !_pointerIsDown && time - _lastScrollTime > 200) {
               _lastScrollTime = 0;
@@ -5266,17 +5378,18 @@
         left: 0,
         top: 0
       };
-      _parsePosition3 = function _parsePosition4(value, trigger, scrollerSize, direction, scroll, marker, markerScroller, self2, scrollerBounds, borderWidth, useFixedPosition, scrollerMax, containerAnimation) {
-        _isFunction3(value) && (value = value(self2));
+      _parsePosition3 = function _parsePosition4(value, trigger, scrollerSize, direction, scroll, marker, markerScroller, self, scrollerBounds, borderWidth, useFixedPosition, scrollerMax, containerAnimation, clampZeroProp) {
+        _isFunction3(value) && (value = value(self));
         if (_isString3(value) && value.substr(0, 3) === "max") {
           value = scrollerMax + (value.charAt(4) === "=" ? _offsetToPx("0" + value.substr(3), scrollerSize) : 0);
         }
         var time = containerAnimation ? containerAnimation.time() : 0, p1, p2, element;
         containerAnimation && containerAnimation.seek(0);
+        isNaN(value) || (value = +value);
         if (!_isNumber3(value)) {
-          _isFunction3(trigger) && (trigger = trigger(self2));
+          _isFunction3(trigger) && (trigger = trigger(self));
           var offsets = (value || "0").split(" "), bounds, localOffset, globalOffset, display;
-          element = _getTarget(trigger) || _body2;
+          element = _getTarget(trigger, self) || _body2;
           bounds = _getBounds(element) || {};
           if ((!bounds || !bounds.left && !bounds.top) && _getComputedStyle(element).display === "none") {
             display = element.style.display;
@@ -5289,8 +5402,13 @@
           value = bounds[direction.p] - scrollerBounds[direction.p] - borderWidth + localOffset + scroll - globalOffset;
           markerScroller && _positionMarker(markerScroller, globalOffset, direction, scrollerSize - globalOffset < 20 || markerScroller._isStart && globalOffset > 20);
           scrollerSize -= scrollerSize - globalOffset;
-        } else if (markerScroller) {
-          _positionMarker(markerScroller, scrollerSize, direction, true);
+        } else {
+          containerAnimation && (value = gsap3.utils.mapRange(containerAnimation.scrollTrigger.start, containerAnimation.scrollTrigger.end, 0, scrollerMax, value));
+          markerScroller && _positionMarker(markerScroller, scrollerSize, direction, true);
+        }
+        if (clampZeroProp) {
+          self[clampZeroProp] = value || -1e-3;
+          value < 0 && (value = 0);
         }
         if (marker) {
           var position = value + scrollerSize, isStart = marker._isStart;
@@ -5332,30 +5450,44 @@
           parent.appendChild(element);
         }
       };
+      _interruptionTracker = function _interruptionTracker2(getValueFunc, initialValue, onInterrupt) {
+        var last1 = initialValue, last2 = last1;
+        return function(value) {
+          var current = Math.round(getValueFunc());
+          if (current !== last1 && current !== last2 && Math.abs(current - last1) > 3 && Math.abs(current - last2) > 3) {
+            value = current;
+            onInterrupt && onInterrupt();
+          }
+          last2 = last1;
+          last1 = Math.round(value);
+          return last1;
+        };
+      };
+      _shiftMarker = function _shiftMarker2(marker, direction, value) {
+        var vars = {};
+        vars[direction.p] = "+=" + value;
+        gsap3.set(marker, vars);
+      };
       _getTweenCreator = function _getTweenCreator2(scroller, direction) {
-        var getScroll = _getScrollFunc(scroller, direction), prop = "_scroll" + direction.p2, lastScroll1, lastScroll2, getTween = function getTween2(scrollTo, vars, initialValue, change1, change2) {
+        var getScroll = _getScrollFunc(scroller, direction), prop = "_scroll" + direction.p2, getTween = function getTween2(scrollTo, vars, initialValue, change1, change2) {
           var tween = getTween2.tween, onComplete = vars.onComplete, modifiers = {};
           initialValue = initialValue || getScroll();
+          var checkForInterruption = _interruptionTracker(getScroll, initialValue, function() {
+            tween.kill();
+            getTween2.tween = 0;
+          });
           change2 = change1 && change2 || 0;
           change1 = change1 || scrollTo - initialValue;
           tween && tween.kill();
-          lastScroll1 = Math.round(initialValue);
           vars[prop] = scrollTo;
+          vars.inherit = false;
           vars.modifiers = modifiers;
-          modifiers[prop] = function(value) {
-            value = Math.round(getScroll());
-            if (value !== lastScroll1 && value !== lastScroll2 && Math.abs(value - lastScroll1) > 3 && Math.abs(value - lastScroll2) > 3) {
-              tween.kill();
-              getTween2.tween = 0;
-            } else {
-              value = initialValue + change1 * tween.ratio + change2 * tween.ratio * tween.ratio;
-            }
-            lastScroll2 = lastScroll1;
-            return lastScroll1 = Math.round(value);
+          modifiers[prop] = function() {
+            return checkForInterruption(initialValue + change1 * tween.ratio + change2 * tween.ratio * tween.ratio);
           };
           vars.onUpdate = function() {
             _scrollers.cache++;
-            _updateAll();
+            getTween2.tween && _updateAll();
           };
           vars.onComplete = function() {
             getTween2.tween = 0;
@@ -5369,11 +5501,13 @@
           return getTween.tween && getTween.tween.kill() && (getTween.tween = 0);
         };
         _addListener3(scroller, "wheel", getScroll.wheelHandler);
+        ScrollTrigger2.isTouch && _addListener3(scroller, "touchmove", getScroll.wheelHandler);
         return getTween;
       };
       ScrollTrigger2 = /* @__PURE__ */ function() {
         function ScrollTrigger3(vars, animation) {
           _coreInitted3 || ScrollTrigger3.register(gsap3) || console.warn("Please gsap.registerPlugin(ScrollTrigger)");
+          _context3(this);
           this.init(vars, animation);
         }
         var _proto = ScrollTrigger3.prototype;
@@ -5387,27 +5521,27 @@
           vars = _setDefaults3(_isString3(vars) || _isNumber3(vars) || vars.nodeType ? {
             trigger: vars
           } : vars, _defaults2);
-          var _vars = vars, onUpdate = _vars.onUpdate, toggleClass = _vars.toggleClass, id = _vars.id, onToggle = _vars.onToggle, onRefresh = _vars.onRefresh, scrub = _vars.scrub, trigger = _vars.trigger, pin = _vars.pin, pinSpacing = _vars.pinSpacing, invalidateOnRefresh = _vars.invalidateOnRefresh, anticipatePin = _vars.anticipatePin, onScrubComplete = _vars.onScrubComplete, onSnapComplete = _vars.onSnapComplete, once = _vars.once, snap3 = _vars.snap, pinReparent = _vars.pinReparent, pinSpacer = _vars.pinSpacer, containerAnimation = _vars.containerAnimation, fastScrollEnd = _vars.fastScrollEnd, preventOverlaps = _vars.preventOverlaps, direction = vars.horizontal || vars.containerAnimation && vars.horizontal !== false ? _horizontal : _vertical, isToggle = !scrub && scrub !== 0, scroller = _getTarget(vars.scroller || _win4), scrollerCache = gsap3.core.getCache(scroller), isViewport = _isViewport3(scroller), useFixedPosition = ("pinType" in vars ? vars.pinType : _getProxyProp(scroller, "pinType") || isViewport && "fixed") === "fixed", callbacks = [vars.onEnter, vars.onLeave, vars.onEnterBack, vars.onLeaveBack], toggleActions = isToggle && vars.toggleActions.split(" "), markers = "markers" in vars ? vars.markers : _defaults2.markers, borderWidth = isViewport ? 0 : parseFloat(_getComputedStyle(scroller)["border" + direction.p2 + _Width]) || 0, self2 = this, onRefreshInit = vars.onRefreshInit && function() {
-            return vars.onRefreshInit(self2);
-          }, getScrollerSize = _getSizeFunc(scroller, isViewport, direction), getScrollerOffsets = _getOffsetsFunc(scroller, isViewport), lastSnap = 0, lastRefresh = 0, scrollFunc = _getScrollFunc(scroller, direction), tweenTo, pinCache, snapFunc, scroll1, scroll2, start, end, markerStart, markerEnd, markerStartTrigger, markerEndTrigger, markerVars, change, pinOriginalState, pinActiveState, pinState, spacer, offset, pinGetter, pinSetter, pinStart, pinChange, spacingStart, spacerState, markerStartSetter, pinMoves, markerEndSetter, cs, snap1, snap22, scrubTween, scrubSmooth, snapDurClamp, snapDelayedCall, prevProgress, prevScroll, prevAnimProgress, caMarkerSetter, customRevertReturn;
-          _context3(self2);
-          self2._dir = direction;
+          var _vars = vars, onUpdate = _vars.onUpdate, toggleClass = _vars.toggleClass, id = _vars.id, onToggle = _vars.onToggle, onRefresh = _vars.onRefresh, scrub = _vars.scrub, trigger = _vars.trigger, pin = _vars.pin, pinSpacing = _vars.pinSpacing, invalidateOnRefresh = _vars.invalidateOnRefresh, anticipatePin = _vars.anticipatePin, onScrubComplete = _vars.onScrubComplete, onSnapComplete = _vars.onSnapComplete, once = _vars.once, snap3 = _vars.snap, pinReparent = _vars.pinReparent, pinSpacer = _vars.pinSpacer, containerAnimation = _vars.containerAnimation, fastScrollEnd = _vars.fastScrollEnd, preventOverlaps = _vars.preventOverlaps, direction = vars.horizontal || vars.containerAnimation && vars.horizontal !== false ? _horizontal : _vertical, isToggle = !scrub && scrub !== 0, scroller = _getTarget(vars.scroller || _win4), scrollerCache = gsap3.core.getCache(scroller), isViewport = _isViewport3(scroller), useFixedPosition = ("pinType" in vars ? vars.pinType : _getProxyProp(scroller, "pinType") || isViewport && "fixed") === "fixed", callbacks = [vars.onEnter, vars.onLeave, vars.onEnterBack, vars.onLeaveBack], toggleActions = isToggle && vars.toggleActions.split(" "), markers = "markers" in vars ? vars.markers : _defaults2.markers, borderWidth = isViewport ? 0 : parseFloat(_getComputedStyle(scroller)["border" + direction.p2 + _Width]) || 0, self = this, onRefreshInit = vars.onRefreshInit && function() {
+            return vars.onRefreshInit(self);
+          }, getScrollerSize = _getSizeFunc(scroller, isViewport, direction), getScrollerOffsets = _getOffsetsFunc(scroller, isViewport), lastSnap = 0, lastRefresh = 0, prevProgress = 0, scrollFunc = _getScrollFunc(scroller, direction), tweenTo, pinCache, snapFunc, scroll1, scroll2, start, end, markerStart, markerEnd, markerStartTrigger, markerEndTrigger, markerVars, executingOnRefresh, change, pinOriginalState, pinActiveState, pinState, spacer, offset, pinGetter, pinSetter, pinStart, pinChange, spacingStart, spacerState, markerStartSetter, pinMoves, markerEndSetter, cs, snap1, snap22, scrubTween, scrubSmooth, snapDurClamp, snapDelayedCall, prevScroll, prevAnimProgress, caMarkerSetter, customRevertReturn;
+          self._startClamp = self._endClamp = false;
+          self._dir = direction;
           anticipatePin *= 45;
-          self2.scroller = scroller;
-          self2.scroll = containerAnimation ? containerAnimation.time.bind(containerAnimation) : scrollFunc;
+          self.scroller = scroller;
+          self.scroll = containerAnimation ? containerAnimation.time.bind(containerAnimation) : scrollFunc;
           scroll1 = scrollFunc();
-          self2.vars = vars;
+          self.vars = vars;
           animation = animation || vars.animation;
           if ("refreshPriority" in vars) {
             _sort = 1;
-            vars.refreshPriority === -9999 && (_primary = self2);
+            vars.refreshPriority === -9999 && (_primary = self);
           }
           scrollerCache.tweenScroll = scrollerCache.tweenScroll || {
             top: _getTweenCreator(scroller, _vertical),
             left: _getTweenCreator(scroller, _horizontal)
           };
-          self2.tweenTo = tweenTo = scrollerCache.tweenScroll[direction.p];
-          self2.scrubDuration = function(value) {
+          self.tweenTo = tweenTo = scrollerCache.tweenScroll[direction.p];
+          self.scrubDuration = function(value) {
             scrubSmooth = _isNumber3(value) && value;
             if (!scrubSmooth) {
               scrubTween && scrubTween.progress(1).kill();
@@ -5415,25 +5549,25 @@
             } else {
               scrubTween ? scrubTween.duration(value) : scrubTween = gsap3.to(animation, {
                 ease: "expo",
-                totalProgress: "+=0.001",
+                totalProgress: "+=0",
+                inherit: false,
                 duration: scrubSmooth,
                 paused: true,
                 onComplete: function onComplete() {
-                  return onScrubComplete && onScrubComplete(self2);
+                  return onScrubComplete && onScrubComplete(self);
                 }
               });
             }
           };
           if (animation) {
             animation.vars.lazy = false;
-            animation._initted || animation.vars.immediateRender !== false && vars.immediateRender !== false && animation.duration() && animation.render(0, true, true);
-            self2.animation = animation.pause();
-            animation.scrollTrigger = self2;
-            self2.scrubDuration(scrub);
+            animation._initted && !self.isReverted || animation.vars.immediateRender !== false && vars.immediateRender !== false && animation.duration() && animation.render(0, true, true);
+            self.animation = animation.pause();
+            animation.scrollTrigger = self;
+            self.scrubDuration(scrub);
             snap1 = 0;
             id || (id = animation.vars.id);
           }
-          _triggers.push(self2);
           if (snap3) {
             if (!_isObject3(snap3) || snap3.push) {
               snap3 = {
@@ -5456,8 +5590,11 @@
             snapDurClamp = _isObject3(snapDurClamp) ? _clamp4(snapDurClamp.min, snapDurClamp.max) : _clamp4(snapDurClamp, snapDurClamp);
             snapDelayedCall = gsap3.delayedCall(snap3.delay || scrubSmooth / 2 || 0.1, function() {
               var scroll = scrollFunc(), refreshedRecently = _getTime2() - lastRefresh < 500, tween = tweenTo.tween;
-              if ((refreshedRecently || Math.abs(self2.getVelocity()) < 10) && !tween && !_pointerIsDown && lastSnap !== scroll) {
-                var progress = (scroll - start) / change, totalProgress = animation && !isToggle ? animation.totalProgress() : progress, velocity = refreshedRecently ? 0 : (totalProgress - snap22) / (_getTime2() - _time2) * 1e3 || 0, change1 = gsap3.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = progress + (snap3.inertia === false ? 0 : change1), endValue = _clamp4(0, 1, snapFunc(naturalEnd, self2)), endScroll = Math.round(start + endValue * change), _snap = snap3, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete;
+              if ((refreshedRecently || Math.abs(self.getVelocity()) < 10) && !tween && !_pointerIsDown && lastSnap !== scroll) {
+                var progress = (scroll - start) / change, totalProgress = animation && !isToggle ? animation.totalProgress() : progress, velocity = refreshedRecently ? 0 : (totalProgress - snap22) / (_getTime2() - _time2) * 1e3 || 0, change1 = gsap3.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = progress + (snap3.inertia === false ? 0 : change1), endValue, endScroll, _snap = snap3, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete;
+                endValue = snapFunc(naturalEnd, self);
+                _isNumber3(endValue) || (endValue = naturalEnd);
+                endScroll = Math.max(0, Math.round(start + endValue * change));
                 if (scroll <= end && scroll >= start && endScroll !== scroll) {
                   if (tween && !tween._initted && tween.data <= _abs(endScroll - scroll)) {
                     return;
@@ -5471,27 +5608,30 @@
                     data: _abs(endScroll - scroll),
                     // record the distance so that if another snap tween occurs (conflict) we can prioritize the closest snap.
                     onInterrupt: function onInterrupt() {
-                      return snapDelayedCall.restart(true) && _onInterrupt && _onInterrupt(self2);
+                      return snapDelayedCall.restart(true) && _onInterrupt && _onInterrupt(self);
                     },
                     onComplete: function onComplete() {
-                      self2.update();
+                      self.update();
                       lastSnap = scrollFunc();
-                      snap1 = snap22 = animation && !isToggle ? animation.totalProgress() : self2.progress;
-                      onSnapComplete && onSnapComplete(self2);
-                      _onComplete && _onComplete(self2);
+                      if (animation && !isToggle) {
+                        scrubTween ? scrubTween.resetTo("totalProgress", endValue, animation._tTime / animation._tDur) : animation.progress(endValue);
+                      }
+                      snap1 = snap22 = animation && !isToggle ? animation.totalProgress() : self.progress;
+                      onSnapComplete && onSnapComplete(self);
+                      _onComplete && _onComplete(self);
                     }
                   }, scroll, change1 * change, endScroll - scroll - change1 * change);
-                  onStart && onStart(self2, tweenTo.tween);
+                  onStart && onStart(self, tweenTo.tween);
                 }
-              } else if (self2.isActive && lastSnap !== scroll) {
+              } else if (self.isActive && lastSnap !== scroll) {
                 snapDelayedCall.restart(true);
               }
             }).pause();
           }
-          id && (_ids[id] = self2);
-          trigger = self2.trigger = _getTarget(trigger || pin);
+          id && (_ids[id] = self);
+          trigger = self.trigger = _getTarget(trigger || pin !== true && pin);
           customRevertReturn = trigger && trigger._gsap && trigger._gsap.stRevert;
-          customRevertReturn && (customRevertReturn = customRevertReturn(self2));
+          customRevertReturn && (customRevertReturn = customRevertReturn(self));
           pin = pin === true ? trigger : _getTarget(pin);
           _isString3(toggleClass) && (toggleClass = {
             targets: trigger,
@@ -5499,7 +5639,7 @@
           });
           if (pin) {
             pinSpacing === false || pinSpacing === _margin || (pinSpacing = !pinSpacing && pin.parentNode && pin.parentNode.style && _getComputedStyle(pin.parentNode).display === "flex" ? false : _padding);
-            self2.pin = pin;
+            self.pin = pin;
             pinCache = gsap3.core.getCache(pin);
             if (!pinCache.spacer) {
               if (pinSpacer) {
@@ -5518,7 +5658,7 @@
             vars.force3D !== false && gsap3.set(pin, {
               force3D: true
             });
-            self2.spacer = spacer = pinCache.spacer;
+            self.spacer = spacer = pinCache.spacer;
             cs = _getComputedStyle(pin);
             spacingStart = cs[pinSpacing + direction.os2];
             pinGetter = gsap3.getProperty(pin);
@@ -5547,58 +5687,57 @@
           if (containerAnimation) {
             var oldOnUpdate = containerAnimation.vars.onUpdate, oldParams = containerAnimation.vars.onUpdateParams;
             containerAnimation.eventCallback("onUpdate", function() {
-              self2.update(0, 0, 1);
-              oldOnUpdate && oldOnUpdate.apply(oldParams || []);
+              self.update(0, 0, 1);
+              oldOnUpdate && oldOnUpdate.apply(containerAnimation, oldParams || []);
             });
           }
-          self2.previous = function() {
-            return _triggers[_triggers.indexOf(self2) - 1];
+          self.previous = function() {
+            return _triggers[_triggers.indexOf(self) - 1];
           };
-          self2.next = function() {
-            return _triggers[_triggers.indexOf(self2) + 1];
+          self.next = function() {
+            return _triggers[_triggers.indexOf(self) + 1];
           };
-          self2.revert = function(revert, temp) {
+          self.revert = function(revert, temp) {
             if (!temp) {
-              return self2.kill(true);
+              return self.kill(true);
             }
-            var r = revert !== false || !self2.enabled, prevRefreshing = _refreshing;
-            if (r !== self2.isReverted) {
+            var r = revert !== false || !self.enabled, prevRefreshing = _refreshing;
+            if (r !== self.isReverted) {
               if (r) {
-                prevScroll = Math.max(scrollFunc(), self2.scroll.rec || 0);
-                prevProgress = self2.progress;
+                prevScroll = Math.max(scrollFunc(), self.scroll.rec || 0);
+                prevProgress = self.progress;
                 prevAnimProgress = animation && animation.progress();
               }
               markerStart && [markerStart, markerEnd, markerStartTrigger, markerEndTrigger].forEach(function(m) {
                 return m.style.display = r ? "none" : "block";
               });
               if (r) {
-                _refreshing = 1;
-                self2.update(r);
+                _refreshing = self;
+                self.update(r);
               }
-              if (pin && (!pinReparent || !self2.isActive)) {
+              if (pin && (!pinReparent || !self.isActive)) {
                 if (r) {
                   _swapPinOut(pin, spacer, pinOriginalState);
                 } else {
                   _swapPinIn(pin, spacer, _getComputedStyle(pin), spacerState);
                 }
               }
-              r || self2.update(r);
+              r || self.update(r);
               _refreshing = prevRefreshing;
-              self2.isReverted = r;
+              self.isReverted = r;
             }
           };
-          self2.refresh = function(soft, force) {
-            if ((_refreshing || !self2.enabled) && !force) {
+          self.refresh = function(soft, force, position, pinOffset) {
+            if ((_refreshing || !self.enabled) && !force) {
               return;
             }
             if (pin && soft && _lastScrollTime) {
               _addListener3(ScrollTrigger3, "scrollEnd", _softRefresh);
               return;
             }
-            !_refreshingAll && onRefreshInit && onRefreshInit(self2);
-            _refreshing = 1;
-            lastRefresh = _getTime2();
-            if (tweenTo.tween) {
+            !_refreshingAll && onRefreshInit && onRefreshInit(self);
+            _refreshing = self;
+            if (tweenTo.tween && !position) {
               tweenTo.tween.kill();
               tweenTo.tween = 0;
             }
@@ -5606,14 +5745,18 @@
             invalidateOnRefresh && animation && animation.revert({
               kill: false
             }).invalidate();
-            self2.isReverted || self2.revert(true, true);
-            self2._subPinOffset = false;
-            var size = getScrollerSize(), scrollerBounds = getScrollerOffsets(), max = containerAnimation ? containerAnimation.duration() : _maxScroll(scroller, direction), offset2 = 0, otherPinOffset = 0, parsedEnd = vars.end, parsedEndTrigger = vars.endTrigger || trigger, parsedStart = vars.start || (vars.start === 0 || !trigger ? 0 : pin ? "0 0" : "0 100%"), pinnedContainer = self2.pinnedContainer = vars.pinnedContainer && _getTarget(vars.pinnedContainer), triggerIndex = trigger && Math.max(0, _triggers.indexOf(self2)) || 0, i = triggerIndex, cs2, bounds, scroll, isVertical, override, curTrigger, curPin, oppositeScroll, initted, revertedPins, forcedOverflow;
-            while (i--) {
+            self.isReverted || self.revert(true, true);
+            self._subPinOffset = false;
+            var size = getScrollerSize(), scrollerBounds = getScrollerOffsets(), max = containerAnimation ? containerAnimation.duration() : _maxScroll(scroller, direction), isFirstRefresh = change <= 0.01, offset2 = 0, otherPinOffset = pinOffset || 0, parsedEnd = _isObject3(position) ? position.end : vars.end, parsedEndTrigger = vars.endTrigger || trigger, parsedStart = _isObject3(position) ? position.start : vars.start || (vars.start === 0 || !trigger ? 0 : pin ? "0 0" : "0 100%"), pinnedContainer = self.pinnedContainer = vars.pinnedContainer && _getTarget(vars.pinnedContainer, self), triggerIndex = trigger && Math.max(0, _triggers.indexOf(self)) || 0, i = triggerIndex, cs2, bounds, scroll, isVertical, override, curTrigger, curPin, oppositeScroll, initted, revertedPins, forcedOverflow, markerStartOffset, markerEndOffset;
+            if (markers && _isObject3(position)) {
+              markerStartOffset = gsap3.getProperty(markerStartTrigger, direction.p);
+              markerEndOffset = gsap3.getProperty(markerEndTrigger, direction.p);
+            }
+            while (i-- > 0) {
               curTrigger = _triggers[i];
-              curTrigger.end || curTrigger.refresh(0, 1) || (_refreshing = 1);
+              curTrigger.end || curTrigger.refresh(0, 1) || (_refreshing = self);
               curPin = curTrigger.pin;
-              if (curPin && (curPin === trigger || curPin === pin) && !curTrigger.isReverted) {
+              if (curPin && (curPin === trigger || curPin === pin || curPin === pinnedContainer) && !curTrigger.isReverted) {
                 revertedPins || (revertedPins = []);
                 revertedPins.unshift(curTrigger);
                 curTrigger.revert(true, true);
@@ -5623,28 +5766,29 @@
                 i--;
               }
             }
-            _isFunction3(parsedStart) && (parsedStart = parsedStart(self2));
-            start = _parsePosition3(parsedStart, trigger, size, direction, scrollFunc(), markerStart, markerStartTrigger, self2, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation) || (pin ? -1e-3 : 0);
-            _isFunction3(parsedEnd) && (parsedEnd = parsedEnd(self2));
+            _isFunction3(parsedStart) && (parsedStart = parsedStart(self));
+            parsedStart = _parseClamp(parsedStart, "start", self);
+            start = _parsePosition3(parsedStart, trigger, size, direction, scrollFunc(), markerStart, markerStartTrigger, self, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation, self._startClamp && "_startClamp") || (pin ? -1e-3 : 0);
+            _isFunction3(parsedEnd) && (parsedEnd = parsedEnd(self));
             if (_isString3(parsedEnd) && !parsedEnd.indexOf("+=")) {
               if (~parsedEnd.indexOf(" ")) {
                 parsedEnd = (_isString3(parsedStart) ? parsedStart.split(" ")[0] : "") + parsedEnd;
               } else {
                 offset2 = _offsetToPx(parsedEnd.substr(2), size);
-                parsedEnd = _isString3(parsedStart) ? parsedStart : start + offset2;
+                parsedEnd = _isString3(parsedStart) ? parsedStart : (containerAnimation ? gsap3.utils.mapRange(0, containerAnimation.duration(), containerAnimation.scrollTrigger.start, containerAnimation.scrollTrigger.end, start) : start) + offset2;
                 parsedEndTrigger = trigger;
               }
             }
-            end = Math.max(start, _parsePosition3(parsedEnd || (parsedEndTrigger ? "100% 0" : max), parsedEndTrigger, size, direction, scrollFunc() + offset2, markerEnd, markerEndTrigger, self2, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation)) || -1e-3;
-            change = end - start || (start -= 0.01) && 1e-3;
+            parsedEnd = _parseClamp(parsedEnd, "end", self);
+            end = Math.max(start, _parsePosition3(parsedEnd || (parsedEndTrigger ? "100% 0" : max), parsedEndTrigger, size, direction, scrollFunc() + offset2, markerEnd, markerEndTrigger, self, scrollerBounds, borderWidth, useFixedPosition, max, containerAnimation, self._endClamp && "_endClamp")) || -1e-3;
             offset2 = 0;
             i = triggerIndex;
             while (i--) {
               curTrigger = _triggers[i];
               curPin = curTrigger.pin;
               if (curPin && curTrigger.start - curTrigger._pinPush <= start && !containerAnimation && curTrigger.end > 0) {
-                cs2 = curTrigger.end - curTrigger.start;
-                if ((curPin === trigger && curTrigger.start - curTrigger._pinPush < start || curPin === pinnedContainer) && !_isNumber3(parsedStart)) {
+                cs2 = curTrigger.end - (self._startClamp ? Math.max(0, curTrigger.start) : curTrigger.start);
+                if ((curPin === trigger && curTrigger.start - curTrigger._pinPush < start || curPin === pinnedContainer) && isNaN(parsedStart)) {
                   offset2 += cs2 * (1 - curTrigger.progress);
                 }
                 curPin === pin && (otherPinOffset += cs2);
@@ -5652,14 +5796,23 @@
             }
             start += offset2;
             end += offset2;
-            self2._pinPush = otherPinOffset;
+            self._startClamp && (self._startClamp += offset2);
+            if (self._endClamp && !_refreshingAll) {
+              self._endClamp = end || -1e-3;
+              end = Math.min(end, _maxScroll(scroller, direction));
+            }
+            change = end - start || (start -= 0.01) && 1e-3;
+            if (isFirstRefresh) {
+              prevProgress = gsap3.utils.clamp(0, 1, gsap3.utils.normalize(start, end, prevScroll));
+            }
+            self._pinPush = otherPinOffset;
             if (markerStart && offset2) {
               cs2 = {};
               cs2[direction.a] = "+=" + offset2;
               pinnedContainer && (cs2[direction.p] = "-=" + scrollFunc());
               gsap3.set([markerStart, markerEnd], cs2);
             }
-            if (pin) {
+            if (pin && !(_clampingMax && self.end >= _maxScroll(scroller, direction))) {
               cs2 = _getComputedStyle(pin);
               isVertical = direction === _vertical;
               scroll = scrollFunc();
@@ -5670,7 +5823,9 @@
                   style: forcedOverflow,
                   value: forcedOverflow["overflow" + direction.a.toUpperCase()]
                 };
-                forcedOverflow["overflow" + direction.a.toUpperCase()] = "scroll";
+                if (isViewport && _getComputedStyle(_body2)["overflow" + direction.a.toUpperCase()] !== "scroll") {
+                  forcedOverflow.style["overflow" + direction.a.toUpperCase()] = "scroll";
+                }
               }
               _swapPinIn(pin, spacer, cs2);
               pinState = _getState(pin);
@@ -5680,7 +5835,10 @@
                 spacerState = [pinSpacing + direction.os2, change + otherPinOffset + _px];
                 spacerState.t = spacer;
                 i = pinSpacing === _padding ? _getSize(pin, direction) + change + otherPinOffset : 0;
-                i && spacerState.push(direction.d, i + _px);
+                if (i) {
+                  spacerState.push(direction.d, i + _px);
+                  spacer.style.flexBasis !== "auto" && (spacer.style.flexBasis = i + _px);
+                }
                 _setState(spacerState);
                 if (pinnedContainer) {
                   _triggers.forEach(function(t) {
@@ -5690,6 +5848,9 @@
                   });
                 }
                 useFixedPosition && scrollFunc(prevScroll);
+              } else {
+                i = _getSize(pin, direction);
+                i && spacer.style.flexBasis !== "auto" && (spacer.style.flexBasis = i + _px);
               }
               if (useFixedPosition) {
                 override = {
@@ -5737,53 +5898,67 @@
             revertedPins && revertedPins.forEach(function(t) {
               return t.revert(false, true);
             });
-            self2.start = start;
-            self2.end = end;
+            self.start = start;
+            self.end = end;
             scroll1 = scroll2 = _refreshingAll ? prevScroll : scrollFunc();
             if (!containerAnimation && !_refreshingAll) {
               scroll1 < prevScroll && scrollFunc(prevScroll);
-              self2.scroll.rec = 0;
+              self.scroll.rec = 0;
             }
-            self2.revert(false, true);
+            self.revert(false, true);
+            lastRefresh = _getTime2();
             if (snapDelayedCall) {
               lastSnap = -1;
-              self2.isActive && scrollFunc(start + change * prevProgress);
               snapDelayedCall.restart(true);
             }
             _refreshing = 0;
-            animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress, true).render(animation.time(), true, true);
-            if (prevProgress !== self2.progress || containerAnimation) {
-              animation && !isToggle && animation.totalProgress(prevProgress, true);
-              self2.progress = (scroll1 - start) / change === prevProgress ? 0 : prevProgress;
+            animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress || 0, true).render(animation.time(), true, true);
+            if (isFirstRefresh || prevProgress !== self.progress || containerAnimation || invalidateOnRefresh || animation && !animation._initted) {
+              animation && !isToggle && animation.totalProgress(containerAnimation && start < -1e-3 && !prevProgress ? gsap3.utils.normalize(start, end, 0) : prevProgress, true);
+              self.progress = isFirstRefresh || (scroll1 - start) / change === prevProgress ? 0 : prevProgress;
             }
-            pin && pinSpacing && (spacer._pinOffset = Math.round(self2.progress * pinChange));
-            onRefresh && !_refreshingAll && onRefresh(self2);
+            pin && pinSpacing && (spacer._pinOffset = Math.round(self.progress * pinChange));
+            scrubTween && scrubTween.invalidate();
+            if (!isNaN(markerStartOffset)) {
+              markerStartOffset -= gsap3.getProperty(markerStartTrigger, direction.p);
+              markerEndOffset -= gsap3.getProperty(markerEndTrigger, direction.p);
+              _shiftMarker(markerStartTrigger, direction, markerStartOffset);
+              _shiftMarker(markerStart, direction, markerStartOffset - (pinOffset || 0));
+              _shiftMarker(markerEndTrigger, direction, markerEndOffset);
+              _shiftMarker(markerEnd, direction, markerEndOffset - (pinOffset || 0));
+            }
+            isFirstRefresh && !_refreshingAll && self.update();
+            if (onRefresh && !_refreshingAll && !executingOnRefresh) {
+              executingOnRefresh = true;
+              onRefresh(self);
+              executingOnRefresh = false;
+            }
           };
-          self2.getVelocity = function() {
+          self.getVelocity = function() {
             return (scrollFunc() - scroll2) / (_getTime2() - _time2) * 1e3 || 0;
           };
-          self2.endAnimation = function() {
-            _endAnimation(self2.callbackAnimation);
+          self.endAnimation = function() {
+            _endAnimation(self.callbackAnimation);
             if (animation) {
-              scrubTween ? scrubTween.progress(1) : !animation.paused() ? _endAnimation(animation, animation.reversed()) : isToggle || _endAnimation(animation, self2.direction < 0, 1);
+              scrubTween ? scrubTween.progress(1) : !animation.paused() ? _endAnimation(animation, animation.reversed()) : isToggle || _endAnimation(animation, self.direction < 0, 1);
             }
           };
-          self2.labelToScroll = function(label) {
-            return animation && animation.labels && (start || self2.refresh() || start) + animation.labels[label] / animation.duration() * change || 0;
+          self.labelToScroll = function(label) {
+            return animation && animation.labels && (start || self.refresh() || start) + animation.labels[label] / animation.duration() * change || 0;
           };
-          self2.getTrailing = function(name3) {
-            var i = _triggers.indexOf(self2), a = self2.direction > 0 ? _triggers.slice(0, i).reverse() : _triggers.slice(i + 1);
-            return (_isString3(name3) ? a.filter(function(t) {
-              return t.vars.preventOverlaps === name3;
+          self.getTrailing = function(name) {
+            var i = _triggers.indexOf(self), a = self.direction > 0 ? _triggers.slice(0, i).reverse() : _triggers.slice(i + 1);
+            return (_isString3(name) ? a.filter(function(t) {
+              return t.vars.preventOverlaps === name;
             }) : a).filter(function(t) {
-              return self2.direction > 0 ? t.end <= start : t.start >= end;
+              return self.direction > 0 ? t.end <= start : t.start >= end;
             });
           };
-          self2.update = function(reset, recordVelocity, forceFake) {
+          self.update = function(reset, recordVelocity, forceFake) {
             if (containerAnimation && !forceFake && !reset) {
               return;
             }
-            var scroll = _refreshingAll ? prevScroll : self2.scroll(), p = reset ? 0 : (scroll - start) / change, clipped = p < 0 ? 0 : p > 1 ? 1 : p || 0, prevProgress2 = self2.progress, isActive, wasActive, toggleState, action, stateChanged, toggled, isAtMax, isTakingAction;
+            var scroll = _refreshingAll === true ? prevScroll : self.scroll(), p = reset ? 0 : (scroll - start) / change, clipped = p < 0 ? 0 : p > 1 ? 1 : p || 0, prevProgress2 = self.progress, isActive, wasActive, toggleState, action, stateChanged, toggled, isAtMax, isTakingAction;
             if (recordVelocity) {
               scroll2 = scroll1;
               scroll1 = containerAnimation ? scrollFunc() : scroll;
@@ -5792,14 +5967,20 @@
                 snap1 = animation && !isToggle ? animation.totalProgress() : clipped;
               }
             }
-            anticipatePin && !clipped && pin && !_refreshing && !_startup2 && _lastScrollTime && start < scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin && (clipped = 1e-4);
-            if (clipped !== prevProgress2 && self2.enabled) {
-              isActive = self2.isActive = !!clipped && clipped < 1;
+            if (anticipatePin && pin && !_refreshing && !_startup2 && _lastScrollTime) {
+              if (!clipped && start < scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin) {
+                clipped = 1e-4;
+              } else if (clipped === 1 && end > scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin) {
+                clipped = 0.9999;
+              }
+            }
+            if (clipped !== prevProgress2 && self.enabled) {
+              isActive = self.isActive = !!clipped && clipped < 1;
               wasActive = !!prevProgress2 && prevProgress2 < 1;
               toggled = isActive !== wasActive;
               stateChanged = toggled || !!clipped !== !!prevProgress2;
-              self2.direction = clipped > prevProgress2 ? 1 : -1;
-              self2.progress = clipped;
+              self.direction = clipped > prevProgress2 ? 1 : -1;
+              self.progress = clipped;
               if (stateChanged && !_refreshing) {
                 toggleState = clipped && !prevProgress2 ? 0 : clipped === 1 ? 1 : prevProgress2 === 1 ? 2 : 3;
                 if (isToggle) {
@@ -5807,7 +5988,7 @@
                   isTakingAction = animation && (action === "complete" || action === "reset" || action in animation);
                 }
               }
-              preventOverlaps && (toggled || isTakingAction) && (isTakingAction || scrub || !animation) && (_isFunction3(preventOverlaps) ? preventOverlaps(self2) : self2.getTrailing(preventOverlaps).forEach(function(t) {
+              preventOverlaps && (toggled || isTakingAction) && (isTakingAction || scrub || !animation) && (_isFunction3(preventOverlaps) ? preventOverlaps(self) : self.getTrailing(preventOverlaps).forEach(function(t) {
                 return t.endAnimation();
               }));
               if (!isToggle) {
@@ -5820,7 +6001,7 @@
                     scrubTween.invalidate().restart();
                   }
                 } else if (animation) {
-                  animation.totalProgress(clipped, !!_refreshing);
+                  animation.totalProgress(clipped, !!(_refreshing && (lastRefresh || reset)));
                 }
               }
               if (pin) {
@@ -5845,7 +6026,7 @@
               toggleClass && (toggled || once && clipped && (clipped < 1 || !_limitCallbacks)) && _toArray(toggleClass.targets).forEach(function(el) {
                 return el.classList[isActive || once ? "add" : "remove"](toggleClass.className);
               });
-              onUpdate && !isToggle && !reset && onUpdate(self2);
+              onUpdate && !isToggle && !reset && onUpdate(self);
               if (stateChanged && !_refreshing) {
                 if (isToggle) {
                   if (isTakingAction) {
@@ -5859,23 +6040,23 @@
                       animation[action]();
                     }
                   }
-                  onUpdate && onUpdate(self2);
+                  onUpdate && onUpdate(self);
                 }
                 if (toggled || !_limitCallbacks) {
-                  onToggle && toggled && _callback3(self2, onToggle);
-                  callbacks[toggleState] && _callback3(self2, callbacks[toggleState]);
-                  once && (clipped === 1 ? self2.kill(false, 1) : callbacks[toggleState] = 0);
+                  onToggle && toggled && _callback3(self, onToggle);
+                  callbacks[toggleState] && _callback3(self, callbacks[toggleState]);
+                  once && (clipped === 1 ? self.kill(false, 1) : callbacks[toggleState] = 0);
                   if (!toggled) {
                     toggleState = clipped === 1 ? 1 : 3;
-                    callbacks[toggleState] && _callback3(self2, callbacks[toggleState]);
+                    callbacks[toggleState] && _callback3(self, callbacks[toggleState]);
                   }
                 }
-                if (fastScrollEnd && !isActive && Math.abs(self2.getVelocity()) > (_isNumber3(fastScrollEnd) ? fastScrollEnd : 2500)) {
-                  _endAnimation(self2.callbackAnimation);
+                if (fastScrollEnd && !isActive && Math.abs(self.getVelocity()) > (_isNumber3(fastScrollEnd) ? fastScrollEnd : 2500)) {
+                  _endAnimation(self.callbackAnimation);
                   scrubTween ? scrubTween.progress(1) : _endAnimation(animation, action === "reverse" ? 1 : !clipped, 1);
                 }
               } else if (isToggle && onUpdate && !_refreshing) {
-                onUpdate(self2);
+                onUpdate(self);
               }
             }
             if (markerEndSetter) {
@@ -5885,45 +6066,46 @@
             }
             caMarkerSetter && caMarkerSetter(-scroll / containerAnimation.duration() * (containerAnimation._caScrollDist || 0));
           };
-          self2.enable = function(reset, refresh) {
-            if (!self2.enabled) {
-              self2.enabled = true;
+          self.enable = function(reset, refresh) {
+            if (!self.enabled) {
+              self.enabled = true;
               _addListener3(scroller, "resize", _onResize);
-              _addListener3(isViewport ? _doc4 : scroller, "scroll", _onScroll3);
+              isViewport || _addListener3(scroller, "scroll", _onScroll3);
               onRefreshInit && _addListener3(ScrollTrigger3, "refreshInit", onRefreshInit);
               if (reset !== false) {
-                self2.progress = prevProgress = 0;
+                self.progress = prevProgress = 0;
                 scroll1 = scroll2 = lastSnap = scrollFunc();
               }
-              refresh !== false && self2.refresh();
+              refresh !== false && self.refresh();
             }
           };
-          self2.getTween = function(snap4) {
+          self.getTween = function(snap4) {
             return snap4 && tweenTo ? tweenTo.tween : scrubTween;
           };
-          self2.setPositions = function(newStart, newEnd) {
-            if (pin) {
-              pinStart += newStart - start;
-              pinChange += newEnd - newStart - change;
-              pinSpacing === _padding && self2.adjustPinSpacing(newEnd - newStart - change);
+          self.setPositions = function(newStart, newEnd, keepClamp, pinOffset) {
+            if (containerAnimation) {
+              var st = containerAnimation.scrollTrigger, duration = containerAnimation.duration(), _change = st.end - st.start;
+              newStart = st.start + _change * newStart / duration;
+              newEnd = st.start + _change * newEnd / duration;
             }
-            self2.start = start = newStart;
-            self2.end = end = newEnd;
-            change = newEnd - newStart;
-            self2.update();
+            self.refresh(false, false, {
+              start: _keepClamp(newStart, keepClamp && !!self._startClamp),
+              end: _keepClamp(newEnd, keepClamp && !!self._endClamp)
+            }, pinOffset);
+            self.update();
           };
-          self2.adjustPinSpacing = function(amount) {
-            if (spacerState) {
+          self.adjustPinSpacing = function(amount) {
+            if (spacerState && amount) {
               var i = spacerState.indexOf(direction.d) + 1;
               spacerState[i] = parseFloat(spacerState[i]) + amount + _px;
               spacerState[1] = parseFloat(spacerState[1]) + amount + _px;
               _setState(spacerState);
             }
           };
-          self2.disable = function(reset, allowAnimation) {
-            if (self2.enabled) {
-              reset !== false && self2.revert(true, true);
-              self2.enabled = self2.isActive = false;
+          self.disable = function(reset, allowAnimation) {
+            if (self.enabled) {
+              reset !== false && self.revert(true, true);
+              self.enabled = self.isActive = false;
               allowAnimation || scrubTween && scrubTween.pause();
               prevScroll = 0;
               pinCache && (pinCache.uncache = 1);
@@ -5935,27 +6117,27 @@
               if (!isViewport) {
                 var i = _triggers.length;
                 while (i--) {
-                  if (_triggers[i].scroller === scroller && _triggers[i] !== self2) {
+                  if (_triggers[i].scroller === scroller && _triggers[i] !== self) {
                     return;
                   }
                 }
                 _removeListener3(scroller, "resize", _onResize);
-                _removeListener3(scroller, "scroll", _onScroll3);
+                isViewport || _removeListener3(scroller, "scroll", _onScroll3);
               }
             }
           };
-          self2.kill = function(revert, allowAnimation) {
-            self2.disable(revert, allowAnimation);
+          self.kill = function(revert, allowAnimation) {
+            self.disable(revert, allowAnimation);
             scrubTween && !allowAnimation && scrubTween.kill();
             id && delete _ids[id];
-            var i = _triggers.indexOf(self2);
+            var i = _triggers.indexOf(self);
             i >= 0 && _triggers.splice(i, 1);
             i === _i && _direction > 0 && _i--;
             i = 0;
             _triggers.forEach(function(t) {
-              return t.scroller === self2.scroller && (i = 1);
+              return t.scroller === self.scroller && (i = 1);
             });
-            i || _refreshingAll || (self2.scroll.rec = 0);
+            i || _refreshingAll || (self.scroll.rec = 0);
             if (animation) {
               animation.scrollTrigger = null;
               revert && animation.revert({
@@ -5966,7 +6148,7 @@
             markerStart && [markerStart, markerEnd, markerStartTrigger, markerEndTrigger].forEach(function(m) {
               return m.parentNode && m.parentNode.removeChild(m);
             });
-            _primary === self2 && (_primary = 0);
+            _primary === self && (_primary = 0);
             if (pin) {
               pinCache && (pinCache.uncache = 1);
               i = 0;
@@ -5975,13 +6157,24 @@
               });
               i || (pinCache.spacer = 0);
             }
-            vars.onKill && vars.onKill(self2);
+            vars.onKill && vars.onKill(self);
           };
-          self2.enable(false, false);
-          customRevertReturn && customRevertReturn(self2);
-          !animation || !animation.add || change ? self2.refresh() : gsap3.delayedCall(0.01, function() {
-            return start || end || self2.refresh();
-          }) && (change = 0.01) && (start = end = 0);
+          _triggers.push(self);
+          self.enable(false, false);
+          customRevertReturn && customRevertReturn(self);
+          if (animation && animation.add && !change) {
+            var updateFunc = self.update;
+            self.update = function() {
+              self.update = updateFunc;
+              _scrollers.cache++;
+              start || end || self.refresh();
+            };
+            gsap3.delayedCall(0.01, self.update);
+            change = 0.01;
+            start = end = 0;
+          } else {
+            self.refresh();
+          }
           pin && _queueRefreshAll();
         };
         ScrollTrigger3.register = function register(core) {
@@ -6030,12 +6223,19 @@
             _context3 = gsap3.core.context || _passThrough3;
             _suppressOverwrites2 = gsap3.core.suppressOverwrites || _passThrough3;
             _scrollRestoration = _win4.history.scrollRestoration || "auto";
+            _lastScroll = _win4.pageYOffset || 0;
             gsap3.core.globals("ScrollTrigger", ScrollTrigger3);
             if (_body2) {
               _enabled = 1;
+              _div100vh = document.createElement("div");
+              _div100vh.style.height = "100vh";
+              _div100vh.style.position = "absolute";
+              _refresh100vh();
+              _rafBugFix();
               Observer.register(gsap3);
               ScrollTrigger3.isTouch = Observer.isTouch;
               _fixIOSBug = Observer.isTouch && /(iPad|iPhone|iPod|Mac)/g.test(navigator.userAgent);
+              _ignoreMobileResize = Observer.isTouch === 1;
               _addListener3(_win4, "wheel", _onScroll3);
               _root2 = [_win4, _doc4, _docEl2, _body2];
               if (gsap3.matchMedia) {
@@ -6056,7 +6256,7 @@
                   _refreshAll(0, 1);
                   _dispatch3("matchMedia");
                 });
-                gsap3.matchMedia("(orientation: portrait)", function() {
+                gsap3.matchMedia().add("(orientation: portrait)", function() {
                   _setBaseDimensions();
                   return _setBaseDimensions;
                 });
@@ -6065,7 +6265,7 @@
               }
               _setBaseDimensions();
               _addListener3(_doc4, "scroll", _onScroll3);
-              var bodyStyle = _body2.style, border = bodyStyle.borderTopStyle, AnimationProto = gsap3.core.Animation.prototype, bounds, i;
+              var bodyHasStyle = _body2.hasAttribute("style"), bodyStyle = _body2.style, border = bodyStyle.borderTopStyle, AnimationProto = gsap3.core.Animation.prototype, bounds, i;
               AnimationProto.revert || Object.defineProperty(AnimationProto, "revert", {
                 value: function value() {
                   return this.time(-0.01, true);
@@ -6076,6 +6276,10 @@
               _vertical.m = Math.round(bounds.top + _vertical.sc()) || 0;
               _horizontal.m = Math.round(bounds.left + _horizontal.sc()) || 0;
               border ? bodyStyle.borderTopStyle = border : bodyStyle.removeProperty("border-top-style");
+              if (!bodyHasStyle) {
+                _body2.setAttribute("style", "");
+                _body2.removeAttribute("style");
+              }
               _syncInterval = setInterval(_sync, 250);
               gsap3.delayedCall(0.5, function() {
                 return _startup2 = 0;
@@ -6155,7 +6359,7 @@
         };
         return ScrollTrigger3;
       }();
-      ScrollTrigger2.version = "3.11.4";
+      ScrollTrigger2.version = "3.12.7";
       ScrollTrigger2.saveStyles = function(targets) {
         return targets ? _toArray(targets).forEach(function(target) {
           if (target && target.style) {
@@ -6172,7 +6376,7 @@
         return new ScrollTrigger2(vars, animation);
       };
       ScrollTrigger2.refresh = function(safe) {
-        return safe ? _onResize() : (_coreInitted3 || ScrollTrigger2.register()) && _refreshAll(true);
+        return safe ? _onResize(true) : (_coreInitted3 || ScrollTrigger2.register()) && _refreshAll(true);
       };
       ScrollTrigger2.update = function(force) {
         return ++_scrollers.cache && _updateAll(force === true ? 2 : 0);
@@ -6211,10 +6415,10 @@
             elements = [];
             triggers = [];
           }).pause();
-          return function(self2) {
+          return function(self) {
             elements.length || delay.restart(true);
-            elements.push(self2.trigger);
-            triggers.push(self2);
+            elements.push(self.trigger);
+            triggers.push(self);
             batchMax <= elements.length && delay.progress(1);
           };
         }, p;
@@ -6301,8 +6505,8 @@
         vars.type || (vars.type = "wheel,touch");
         vars.debounce = !!vars.debounce;
         vars.id = vars.id || "normalizer";
-        var _vars2 = vars, normalizeScrollX = _vars2.normalizeScrollX, momentum = _vars2.momentum, allowNestedScroll = _vars2.allowNestedScroll, self2, maxY, target = _getTarget(vars.target) || _docEl2, smoother = gsap3.core.globals().ScrollSmoother, smootherInstance = smoother && smoother.get(), content = _fixIOSBug && (vars.content && _getTarget(vars.content) || smootherInstance && vars.content !== false && !smootherInstance.smooth() && smootherInstance.content()), scrollFuncY = _getScrollFunc(target, _vertical), scrollFuncX = _getScrollFunc(target, _horizontal), scale = 1, initialScale = (Observer.isTouch && _win4.visualViewport ? _win4.visualViewport.scale * _win4.visualViewport.width : _win4.outerWidth) / _win4.innerWidth, wheelRefresh = 0, resolveMomentumDuration = _isFunction3(momentum) ? function() {
-          return momentum(self2);
+        var _vars2 = vars, normalizeScrollX = _vars2.normalizeScrollX, momentum = _vars2.momentum, allowNestedScroll = _vars2.allowNestedScroll, onRelease = _vars2.onRelease, self, maxY, target = _getTarget(vars.target) || _docEl2, smoother = gsap3.core.globals().ScrollSmoother, smootherInstance = smoother && smoother.get(), content = _fixIOSBug && (vars.content && _getTarget(vars.content) || smootherInstance && vars.content !== false && !smootherInstance.smooth() && smootherInstance.content()), scrollFuncY = _getScrollFunc(target, _vertical), scrollFuncX = _getScrollFunc(target, _horizontal), scale = 1, initialScale = (Observer.isTouch && _win4.visualViewport ? _win4.visualViewport.scale * _win4.visualViewport.width : _win4.outerWidth) / _win4.innerWidth, wheelRefresh = 0, resolveMomentumDuration = _isFunction3(momentum) ? function() {
+          return momentum(self);
         } : function() {
           return momentum || 2.8;
         }, lastRefreshID, skipTouchMove, inputObserver = _inputObserver(target, vars.type, true, allowNestedScroll), resumeTouchMove = function resumeTouchMove2() {
@@ -6319,7 +6523,7 @@
         }, ignoreDrag = function ignoreDrag2() {
           if (skipTouchMove) {
             requestAnimationFrame(resumeTouchMove);
-            var offset = _round3(self2.deltaY / 2), scroll = scrollClampY(scrollFuncY.v - offset);
+            var offset = _round3(self.deltaY / 2), scroll = scrollClampY(scrollFuncY.v - offset);
             if (content && scroll !== scrollFuncY.v + scrollFuncY.offset) {
               scrollFuncY.offset = scroll - scrollFuncY.v;
               var y = _round3((parseFloat(content && content._gsap.y) || 0) - scrollFuncY.offset);
@@ -6342,9 +6546,10 @@
           y: "+=0"
         });
         vars.ignoreCheck = function(e) {
-          return _fixIOSBug && e.type === "touchmove" && ignoreDrag(e) || scale > 1.05 && e.type !== "touchstart" || self2.isGesturing || e.touches && e.touches.length > 1;
+          return _fixIOSBug && e.type === "touchmove" && ignoreDrag(e) || scale > 1.05 && e.type !== "touchstart" || self.isGesturing || e.touches && e.touches.length > 1;
         };
         vars.onPress = function() {
+          skipTouchMove = false;
           var prevScale = scale;
           scale = _round3((_win4.visualViewport && _win4.visualViewport.scale || 1) / initialScale);
           tween.pause();
@@ -6354,7 +6559,7 @@
           updateClamps();
           lastRefreshID = _refreshID;
         };
-        vars.onRelease = vars.onGestureStart = function(self3, wasDragging) {
+        vars.onRelease = vars.onGestureStart = function(self2, wasDragging) {
           scrollFuncY.offset && removeContentOffset();
           if (!wasDragging) {
             onStopDelayedCall.restart(true);
@@ -6363,12 +6568,12 @@
             var dur = resolveMomentumDuration(), currentScroll, endScroll;
             if (normalizeScrollX) {
               currentScroll = scrollFuncX();
-              endScroll = currentScroll + dur * 0.05 * -self3.velocityX / 0.227;
+              endScroll = currentScroll + dur * 0.05 * -self2.velocityX / 0.227;
               dur *= _clampScrollAndGetDurationMultiplier(scrollFuncX, currentScroll, endScroll, _maxScroll(target, _horizontal));
               tween.vars.scrollX = scrollClampX(endScroll);
             }
             currentScroll = scrollFuncY();
-            endScroll = currentScroll + dur * 0.05 * -self3.velocityY / 0.227;
+            endScroll = currentScroll + dur * 0.05 * -self2.velocityY / 0.227;
             dur *= _clampScrollAndGetDurationMultiplier(scrollFuncY, currentScroll, endScroll, _maxScroll(target, _vertical));
             tween.vars.scrollY = scrollClampY(endScroll);
             tween.invalidate().duration(dur).play(0.01);
@@ -6379,6 +6584,7 @@
               });
             }
           }
+          onRelease && onRelease(self2);
         };
         vars.onWheel = function() {
           tween._ts && tween.pause();
@@ -6387,12 +6593,12 @@
             wheelRefresh = _getTime2();
           }
         };
-        vars.onChange = function(self3, dx, dy, xArray, yArray) {
+        vars.onChange = function(self2, dx, dy, xArray, yArray) {
           _refreshID !== lastRefreshID && updateClamps();
-          dx && normalizeScrollX && scrollFuncX(scrollClampX(xArray[2] === dx ? startScrollX + (self3.startX - self3.x) : scrollFuncX() + dx - xArray[1]));
+          dx && normalizeScrollX && scrollFuncX(scrollClampX(xArray[2] === dx ? startScrollX + (self2.startX - self2.x) : scrollFuncX() + dx - xArray[1]));
           if (dy) {
             scrollFuncY.offset && removeContentOffset();
-            var isTouch = yArray[2] === dy, y = isTouch ? startScrollY + self3.startY - self3.y : scrollFuncY() + dy - yArray[1], yClamped = scrollClampY(y);
+            var isTouch = yArray[2] === dy, y = isTouch ? startScrollY + self2.startY - self2.y : scrollFuncY() + dy - yArray[1], yClamped = scrollClampY(y);
             isTouch && y !== yClamped && (startScrollY += yClamped - y);
             scrollFuncY(yClamped);
           }
@@ -6415,23 +6621,37 @@
           inputObserver.kill();
         };
         vars.lockAxis = vars.lockAxis !== false;
-        self2 = new Observer(vars);
-        self2.iOS = _fixIOSBug;
+        self = new Observer(vars);
+        self.iOS = _fixIOSBug;
         _fixIOSBug && !scrollFuncY() && scrollFuncY(1);
         _fixIOSBug && gsap3.ticker.add(_passThrough3);
-        onStopDelayedCall = self2._dc;
-        tween = gsap3.to(self2, {
+        onStopDelayedCall = self._dc;
+        tween = gsap3.to(self, {
           ease: "power4",
           paused: true,
+          inherit: false,
           scrollX: normalizeScrollX ? "+=0.1" : "+=0",
           scrollY: "+=0.1",
+          modifiers: {
+            scrollY: _interruptionTracker(scrollFuncY, scrollFuncY(), function() {
+              return tween.pause();
+            })
+          },
+          onUpdate: _updateAll,
           onComplete: onStopDelayedCall.vars.onComplete
         });
-        return self2;
+        return self;
       };
       ScrollTrigger2.sort = function(func) {
+        if (_isFunction3(func)) {
+          return _triggers.sort(func);
+        }
+        var scroll = _win4.pageYOffset || 0;
+        ScrollTrigger2.getAll().forEach(function(t) {
+          return t._sortY = t.trigger ? scroll + t.trigger.getBoundingClientRect().top : t.start + _win4.innerHeight;
+        });
         return _triggers.sort(func || function(a, b) {
-          return (a.vars.refreshPriority || 0) * -1e6 + a.start - (b.start + (b.vars.refreshPriority || 0) * -1e6);
+          return (a.vars.refreshPriority || 0) * -1e6 + (a.vars.containerAnimation ? 1e6 : a._sortY) - ((b.vars.containerAnimation ? 1e6 : b._sortY) + (b.vars.refreshPriority || 0) * -1e6);
         });
       };
       ScrollTrigger2.observe = function(vars) {
@@ -6445,7 +6665,9 @@
           return _normalizer2.enable();
         }
         if (vars === false) {
-          return _normalizer2 && _normalizer2.kill();
+          _normalizer2 && _normalizer2.kill();
+          _normalizer2 = vars;
+          return;
         }
         var normalizer = vars instanceof Observer ? vars : _getScrollNormalizer(vars);
         _normalizer2 && _normalizer2.target === normalizer.target && _normalizer2.kill();
@@ -6502,7 +6724,7 @@
   var init_lenis = __esm({
     "node_modules/lenis/dist/lenis.mjs"() {
       init_live_reload();
-      version = "1.1.14";
+      version = "1.1.20";
       Animate = class {
         isRunning = false;
         value = 0;
@@ -6520,7 +6742,8 @@
          * @param deltaTime - The time in seconds to advance the animation
          */
         advance(deltaTime) {
-          if (!this.isRunning) return;
+          if (!this.isRunning)
+            return;
           let completed = false;
           if (this.duration && this.easing) {
             this.currentTime += deltaTime;
@@ -6802,6 +7025,7 @@
         // same as isStopped but enabled/disabled when scroll reaches target
         _preventNextNativeScrollEvent = false;
         _resetVelocityTimeout = null;
+        __rafID = null;
         /**
          * Whether or not the user is touching the screen
          */
@@ -6875,10 +7099,12 @@
           prevent,
           virtualScroll,
           overscroll = true,
+          autoRaf = false,
+          anchors = false,
           __experimental__naiveDimensions = false
         } = {}) {
           window.lenisVersion = version;
-          if (!wrapper || wrapper === document.documentElement || wrapper === document.body) {
+          if (!wrapper || wrapper === document.documentElement) {
             wrapper = window;
           }
           this.options = {
@@ -6901,12 +7127,24 @@
             prevent,
             virtualScroll,
             overscroll,
+            autoRaf,
+            anchors,
             __experimental__naiveDimensions
           };
           this.dimensions = new Dimensions(wrapper, content, { autoResize });
           this.updateClassName();
           this.targetScroll = this.animatedScroll = this.actualScroll;
           this.options.wrapper.addEventListener("scroll", this.onNativeScroll, false);
+          this.options.wrapper.addEventListener("scrollend", this.onScrollEnd, {
+            capture: true
+          });
+          if (this.options.anchors && this.options.wrapper === window) {
+            this.options.wrapper.addEventListener(
+              "click",
+              this.onClick,
+              false
+            );
+          }
           this.options.wrapper.addEventListener(
             "pointerdown",
             this.onPointerDown,
@@ -6917,6 +7155,9 @@
             wheelMultiplier
           });
           this.virtualScroll.on("scroll", this.onVirtualScroll);
+          if (this.options.autoRaf) {
+            this.__rafID = requestAnimationFrame(this.raf);
+          }
         }
         /**
          * Destroy the lenis instance, remove all event listeners and clean up the class name
@@ -6928,14 +7169,27 @@
             this.onNativeScroll,
             false
           );
+          this.options.wrapper.removeEventListener("scrollend", this.onScrollEnd, {
+            capture: true
+          });
           this.options.wrapper.removeEventListener(
             "pointerdown",
             this.onPointerDown,
             false
           );
+          if (this.options.anchors && this.options.wrapper === window) {
+            this.options.wrapper.removeEventListener(
+              "click",
+              this.onClick,
+              false
+            );
+          }
           this.virtualScroll.destroy();
           this.dimensions.destroy();
           this.cleanUpClassName();
+          if (this.__rafID) {
+            cancelAnimationFrame(this.__rafID);
+          }
         }
         on(event, callback) {
           return this.emitter.on(event, callback);
@@ -6943,13 +7197,44 @@
         off(event, callback) {
           return this.emitter.off(event, callback);
         }
+        onScrollEnd = (e) => {
+          if (!(e instanceof CustomEvent)) {
+            if (this.isScrolling === "smooth" || this.isScrolling === false) {
+              e.stopPropagation();
+            }
+          }
+        };
+        dispatchScrollendEvent = () => {
+          this.options.wrapper.dispatchEvent(
+            new CustomEvent("scrollend", {
+              bubbles: this.options.wrapper === window,
+              // cancelable: false,
+              detail: {
+                lenisScrollEnd: true
+              }
+            })
+          );
+        };
         setScroll(scroll) {
           if (this.isHorizontal) {
-            this.rootElement.scrollLeft = scroll;
+            this.options.wrapper.scrollTo({ left: scroll, behavior: "instant" });
           } else {
-            this.rootElement.scrollTop = scroll;
+            this.options.wrapper.scrollTo({ top: scroll, behavior: "instant" });
           }
         }
+        onClick = (event) => {
+          const path = event.composedPath();
+          const anchor = path.find(
+            (node) => node instanceof HTMLAnchorElement && node.getAttribute("href")?.startsWith("#")
+          );
+          if (anchor) {
+            const id = anchor.getAttribute("href");
+            if (id) {
+              const options = typeof this.options.anchors === "object" && this.options.anchors ? this.options.anchors : void 0;
+              this.scrollTo(id, options);
+            }
+          }
+        };
         onPointerDown = (event) => {
           if (event.button === 1) {
             this.reset();
@@ -6960,19 +7245,21 @@
             return;
           const { deltaX, deltaY, event } = data;
           this.emitter.emit("virtual-scroll", { deltaX, deltaY, event });
-          if (event.ctrlKey) return;
-          if (event.lenisStopPropagation) return;
+          if (event.ctrlKey)
+            return;
+          if (event.lenisStopPropagation)
+            return;
           const isTouch = event.type.includes("touch");
           const isWheel = event.type.includes("wheel");
           this.isTouching = event.type === "touchstart" || event.type === "touchmove";
-          const isTapToStop = this.options.syncTouch && isTouch && event.type === "touchstart" && !this.isStopped && !this.isLocked;
+          const isClickOrTap = deltaX === 0 && deltaY === 0;
+          const isTapToStop = this.options.syncTouch && isTouch && event.type === "touchstart" && isClickOrTap && !this.isStopped && !this.isLocked;
           if (isTapToStop) {
             this.reset();
             return;
           }
-          const isClick = deltaX === 0 && deltaY === 0;
           const isUnknownGesture = this.options.gestureOrientation === "vertical" && deltaY === 0 || this.options.gestureOrientation === "horizontal" && deltaX === 0;
-          if (isClick || isUnknownGesture) {
+          if (isClickOrTap || isUnknownGesture) {
             return;
           }
           let composedPath = event.composedPath();
@@ -7003,7 +7290,7 @@
             event.lenisStopPropagation = true;
           }
           event.preventDefault();
-          const syncTouch = isTouch && this.options.syncTouch;
+          const isSyncTouch = isTouch && this.options.syncTouch;
           const isTouchEnd = isTouch && event.type === "touchend";
           const hasTouchInertia = isTouchEnd && Math.abs(delta) > 5;
           if (hasTouchInertia) {
@@ -7011,8 +7298,9 @@
           }
           this.scrollTo(this.targetScroll + delta, {
             programmatic: false,
-            ...syncTouch ? {
+            ...isSyncTouch ? {
               lerp: hasTouchInertia ? this.options.syncTouchLerp : 1
+              // immediate: !hasTouchInertia,
             } : {
               lerp: this.options.lerp,
               duration: this.options.duration,
@@ -7048,7 +7336,9 @@
             this.direction = Math.sign(
               this.animatedScroll - lastScroll
             );
-            this.isScrolling = "native";
+            if (!this.isStopped) {
+              this.isScrolling = "native";
+            }
             this.emit();
             if (this.velocity !== 0) {
               this._resetVelocityTimeout = setTimeout(() => {
@@ -7071,29 +7361,33 @@
          * Start lenis scroll after it has been stopped
          */
         start() {
-          if (!this.isStopped) return;
-          this.isStopped = false;
+          if (!this.isStopped)
+            return;
           this.reset();
+          this.isStopped = false;
         }
         /**
          * Stop lenis scroll
          */
         stop() {
-          if (this.isStopped) return;
-          this.isStopped = true;
-          this.animate.stop();
+          if (this.isStopped)
+            return;
           this.reset();
+          this.isStopped = true;
         }
         /**
          * RequestAnimationFrame for lenis
          *
          * @param time The time in ms from an external clock like `requestAnimationFrame` or Tempus
          */
-        raf(time) {
+        raf = (time) => {
           const deltaTime = time - (this.time || time);
           this.time = time;
           this.animate.advance(deltaTime * 1e-3);
-        }
+          if (this.options.autoRaf) {
+            this.__rafID = requestAnimationFrame(this.raf);
+          }
+        };
         /**
          * Scroll to a target value
          *
@@ -7129,7 +7423,8 @@
           // called from outside of the class
           userData
         } = {}) {
-          if ((this.isStopped || this.isLocked) && !force) return;
+          if ((this.isStopped || this.isLocked) && !force)
+            return;
           if (typeof target === "string" && ["top", "left", "start"].includes(target)) {
             target = 0;
           } else if (typeof target === "string" && ["bottom", "right", "end"].includes(target)) {
@@ -7150,7 +7445,8 @@
               target = (this.isHorizontal ? rect.left : rect.top) + this.animatedScroll;
             }
           }
-          if (typeof target !== "number") return;
+          if (typeof target !== "number")
+            return;
           target += offset;
           target = Math.round(target);
           if (this.options.infinite) {
@@ -7174,6 +7470,9 @@
             this.emit();
             onComplete?.(this);
             this.userData = {};
+            requestAnimationFrame(() => {
+              this.dispatchScrollendEvent();
+            });
             return;
           }
           if (!programmatic) {
@@ -7184,7 +7483,8 @@
             easing,
             lerp: lerp2,
             onStart: () => {
-              if (lock) this.isLocked = true;
+              if (lock)
+                this.isLocked = true;
               this.isScrolling = "smooth";
               onStart?.(this);
             },
@@ -7198,12 +7498,16 @@
               if (programmatic) {
                 this.targetScroll = value;
               }
-              if (!completed) this.emit();
+              if (!completed)
+                this.emit();
               if (completed) {
                 this.reset();
                 this.emit();
                 onComplete?.(this);
                 this.userData = {};
+                requestAnimationFrame(() => {
+                  this.dispatchScrollendEvent();
+                });
                 this.preventNextNativeScrollEvent();
               }
             }
@@ -7245,7 +7549,8 @@
          * The actual scroll value
          */
         get actualScroll() {
-          return this.isHorizontal ? this.rootElement.scrollLeft : this.rootElement.scrollTop;
+          const wrapper = this.options.wrapper;
+          return this.isHorizontal ? wrapper.scrollX ?? wrapper.scrollLeft : wrapper.scrollY ?? wrapper.scrollTop;
         }
         /**
          * The current scroll value
@@ -7306,10 +7611,14 @@
          */
         get className() {
           let className = "lenis";
-          if (this.isStopped) className += " lenis-stopped";
-          if (this.isLocked) className += " lenis-locked";
-          if (this.isScrolling) className += " lenis-scrolling";
-          if (this.isScrolling === "smooth") className += " lenis-smooth";
+          if (this.isStopped)
+            className += " lenis-stopped";
+          if (this.isLocked)
+            className += " lenis-locked";
+          if (this.isScrolling)
+            className += " lenis-scrolling";
+          if (this.isScrolling === "smooth")
+            className += " lenis-smooth";
           return className;
         }
         updateClassName() {
@@ -7342,7 +7651,8 @@
       infinite: false
     });
     function raf(time) {
-      if (!lenis) return;
+      if (!lenis)
+        return;
       lenis.raf(time);
       ScrollTrigger2.update();
       requestAnimationFrame(raf);
@@ -7374,18 +7684,12 @@
   });
 
   // src/utils/verifyCookie.ts
-  var VerifyCookie, verifyCookie_default;
+  var _VerifyCookie, VerifyCookie, verifyCookie_default;
   var init_verifyCookie = __esm({
     "src/utils/verifyCookie.ts"() {
       "use strict";
       init_live_reload();
-      VerifyCookie = class _VerifyCookie {
-        static {
-          this.storageKey = "userVerification";
-        }
-        static {
-          this.defaultTTL = 24 * 60 * 60 * 1e3;
-        }
+      _VerifyCookie = class {
         // 24 hours in milliseconds
         static setVerificationStatus(ttl = _VerifyCookie.defaultTTL) {
           const now = /* @__PURE__ */ new Date();
@@ -7397,7 +7701,8 @@
         }
         static isVerified() {
           const data = localStorage.getItem(_VerifyCookie.storageKey);
-          if (!data) return false;
+          if (!data)
+            return false;
           const verificationData = JSON.parse(data);
           const now = /* @__PURE__ */ new Date();
           if (now.getTime() > verificationData.expiry) {
@@ -7414,6 +7719,9 @@
           localStorage.removeItem(_VerifyCookie.storageKey);
         }
       };
+      VerifyCookie = _VerifyCookie;
+      __publicField(VerifyCookie, "storageKey", "userVerification");
+      __publicField(VerifyCookie, "defaultTTL", 24 * 60 * 60 * 1e3);
       verifyCookie_default = VerifyCookie;
     }
   });
@@ -7440,13 +7748,17 @@
       init_gsap();
       verify = () => {
         class Verify {
+          section;
+          form;
+          inputs;
+          statusContainer;
+          verifyVideo;
+          verifyPlace;
+          verifyLogo;
+          videoInitialized;
+          windowLocation;
+          verifyProductType;
           constructor() {
-            this.handleVideoReady = () => {
-              if (this.videoInitialized) return;
-              this.videoInitialized = true;
-              if (this.verifyVideo.paused) this.verifyVideo.play().catch(console.warn);
-              gsapWithCSS.set(this.verifyPlace, { zIndex: 1, display: "none" });
-            };
             this.section = document.querySelector(".section_verify");
             this.form = document.querySelector(".verify_form");
             this.inputs = [...document.querySelectorAll(".verify_input-mask")].map(
@@ -7462,7 +7774,8 @@
               (item) => item.innerHTML.trim()
             );
             const canBypass = this.verifyProductType.includes("Merch");
-            if (!canBypass) this.init();
+            if (!canBypass)
+              this.init();
           }
           init() {
             stopSmoothScroll();
@@ -7478,10 +7791,19 @@
             this.setListeners();
             this.verifyReveal();
           }
+          handleVideoReady = () => {
+            if (this.videoInitialized)
+              return;
+            this.videoInitialized = true;
+            if (this.verifyVideo.paused)
+              this.verifyVideo.play().catch(console.warn);
+            gsapWithCSS.set(this.verifyPlace, { zIndex: 1, display: "none" });
+          };
           setListeners() {
             this.inputs.forEach((inputWrapper, index) => {
               const input = inputWrapper.querySelector("input");
-              if (!input) return;
+              if (!input)
+                return;
               input.style.caretColor = "var(--palette--white)";
               input.addEventListener("focus", () => {
                 document.documentElement.style.overflow = "hidden";
@@ -7887,7 +8209,7 @@
         return ~~(value * 1e3 + (value < 0 ? -0.5 : 0.5)) / 1e3;
       };
       _bonusValidated = 1;
-      _numExp2 = /[-+=\.]*\d+[\.e\-\+]*\d*[e\-\+]*\d*/gi;
+      _numExp2 = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/gi;
       _needsParsingExp = /[cLlsSaAhHvVtTqQ]/g;
       _findMinimum = function _findMinimum2(values) {
         var l = values.length, min = _bigNum3, i;
@@ -8024,7 +8346,9 @@
                 lookup[i - 1].cy = a1 - lookup[i - 1].y;
               }
             }
-            lookup[l - 1].cy = points[points.length - 1].y - a1;
+            j = points[points.length - 1];
+            lookup[l - 1].cy = j.y - a1;
+            lookup[l - 1].cx = j.x - lookup[lookup.length - 1].x;
           } else {
             for (i = 0; i < l; i++) {
               if (point.nx < i * inc) {
@@ -8057,7 +8381,7 @@
           gsap4 = core;
           _initCore5();
         };
-        CustomEase2.get = function get2(id) {
+        CustomEase2.get = function get(id) {
           return gsap4.parseEase(id);
         };
         CustomEase2.getSVGData = function getSVGData(ease, config3) {
@@ -8101,8 +8425,9 @@
         };
         return CustomEase2;
       }();
+      CustomEase.version = "3.12.7";
+      CustomEase.headless = true;
       _getGSAP5() && gsap4.registerPlugin(CustomEase);
-      CustomEase.version = "3.11.4";
     }
   });
 
@@ -8125,6 +8450,23 @@
       gsapWithCSS.registerPlugin(CustomEase);
       nav = () => {
         class Nav {
+          nav;
+          navBG;
+          navMain;
+          hero;
+          navSpacer;
+          navLinks;
+          navBrand;
+          navCart;
+          menuButtonWrap;
+          menuButton;
+          cartWrapper;
+          cartButton;
+          storeHeight;
+          overlayActive;
+          menuActive;
+          menuLabel;
+          closeLabel;
           constructor() {
             this.nav = document.querySelector(".nav_component");
             this.navBG = document.querySelector(".nav_bg");
@@ -8141,7 +8483,8 @@
             this.cartWrapper = document.querySelector(".cart_wrapper");
             this.cartButton = document.querySelector(".cart_button");
             this.storeHeight = 0;
-            if (this.navSpacer) this.storeHeight = parseInt(getComputedStyle(this.navSpacer).height);
+            if (this.navSpacer)
+              this.storeHeight = parseInt(getComputedStyle(this.navSpacer).height);
             this.overlayActive = false;
             this.menuActive = false;
             this.menuLabel = this.menuButtonWrap.querySelector(".menu_button.is-open");
@@ -8149,7 +8492,8 @@
             const windowLocation = window.location.pathname;
             gsapWithCSS.set(this.closeLabel, { display: "none" });
             this.setListeners();
-            if (windowLocation === "/") this.scroller();
+            if (windowLocation === "/")
+              this.scroller();
           }
           setListeners() {
             this.menuButtonWrap.addEventListener("click", () => {
@@ -8331,6 +8675,11 @@
       init_gsap();
       pageTransition = () => {
         class PageTransition {
+          links;
+          filteredLinks;
+          transitionElement;
+          transitionWrap;
+          transitionLogos;
           constructor() {
             this.transitionElement = document.querySelector(".transition_component");
             this.transitionWrap = document.querySelector(".transition_fill");
@@ -8606,10 +8955,16 @@
           return;
         }
         class CursorInkTrail {
+          pageWrapper;
+          cursorWrapper;
+          trailElements = [];
+          trailLength;
+          positions = [];
+          shrinkTimeout = null;
+          defaultColor;
+          hoverColor;
+          templateElement;
           constructor() {
-            this.trailElements = [];
-            this.positions = [];
-            this.shrinkTimeout = null;
             this.pageWrapper = document.querySelector(".page-wrapper");
             this.cursorWrapper = document.querySelector(".cursor_component");
             this.templateElement = document.querySelector(".trail-segment-template");
@@ -8635,7 +8990,8 @@
             window.addEventListener("mouseout", this.handleMouseOut.bind(this));
           }
           handleMouseMove(event) {
-            if (this.shrinkTimeout) clearTimeout(this.shrinkTimeout);
+            if (this.shrinkTimeout)
+              clearTimeout(this.shrinkTimeout);
             const lastPosition = this.positions[0];
             const dx = event.clientX - lastPosition.x;
             const dy = event.clientY - lastPosition.y;
@@ -8709,6 +9065,7 @@
       init_gsap();
       hoverVideos = () => {
         class HoverVideos {
+          hoverElements;
           constructor() {
             this.hoverElements = [...document.querySelectorAll("[data-hover-video]")].map(
               (item) => item
@@ -8795,6 +9152,10 @@
       gsapWithCSS.registerPlugin(ScrollTrigger2);
       scrollScale = () => {
         class ScrollScale {
+          scaleParent;
+          scaleElement;
+          scaleFactor;
+          endValues;
           constructor() {
             this.scaleParent = document.querySelector(".section_overview");
             this.scaleElement = document.querySelector("[data-scroll-scale]");
@@ -8842,6 +9203,16 @@
       init_gsap();
       mediaSlider = () => {
         class MediaSlider {
+          sliderTrack;
+          sliderImages;
+          nextButton;
+          prevButton;
+          curIndex;
+          currentOffset;
+          pagePadding;
+          imageSpacing;
+          labelCurrent;
+          labelTotal;
           constructor() {
             this.sliderTrack = document.querySelector(".slider_track");
             this.sliderImages = [...document.querySelectorAll(".slider_image")].map(
@@ -8922,8992 +9293,6 @@
     }
   });
 
-  // node_modules/@firebase/util/dist/index.esm2017.js
-  function deepCopy(value) {
-    return deepExtend(void 0, value);
-  }
-  function deepExtend(target, source) {
-    if (!(source instanceof Object)) {
-      return source;
-    }
-    switch (source.constructor) {
-      case Date:
-        const dateValue = source;
-        return new Date(dateValue.getTime());
-      case Object:
-        if (target === void 0) {
-          target = {};
-        }
-        break;
-      case Array:
-        target = [];
-        break;
-      default:
-        return source;
-    }
-    for (const prop in source) {
-      if (!source.hasOwnProperty(prop) || !isValidKey(prop)) {
-        continue;
-      }
-      target[prop] = deepExtend(target[prop], source[prop]);
-    }
-    return target;
-  }
-  function isValidKey(key) {
-    return key !== "__proto__";
-  }
-  function getUA() {
-    if (typeof navigator !== "undefined" && typeof navigator["userAgent"] === "string") {
-      return navigator["userAgent"];
-    } else {
-      return "";
-    }
-  }
-  function isMobileCordova() {
-    return typeof window !== "undefined" && // @ts-ignore Setting up an broadly applicable index signature for Window
-    // just to deal with this case would probably be a bad idea.
-    !!(window["cordova"] || window["phonegap"] || window["PhoneGap"]) && /ios|iphone|ipod|ipad|android|blackberry|iemobile/i.test(getUA());
-  }
-  function isReactNative() {
-    return typeof navigator === "object" && navigator["product"] === "ReactNative";
-  }
-  function isNodeSdk() {
-    return CONSTANTS.NODE_CLIENT === true || CONSTANTS.NODE_ADMIN === true;
-  }
-  function isIndexedDBAvailable() {
-    try {
-      return typeof indexedDB === "object";
-    } catch (e) {
-      return false;
-    }
-  }
-  function validateIndexedDBOpenable() {
-    return new Promise((resolve, reject) => {
-      try {
-        let preExist = true;
-        const DB_CHECK_NAME = "validate-browser-context-for-indexeddb-analytics-module";
-        const request = self.indexedDB.open(DB_CHECK_NAME);
-        request.onsuccess = () => {
-          request.result.close();
-          if (!preExist) {
-            self.indexedDB.deleteDatabase(DB_CHECK_NAME);
-          }
-          resolve(true);
-        };
-        request.onupgradeneeded = () => {
-          preExist = false;
-        };
-        request.onerror = () => {
-          var _a;
-          reject(((_a = request.error) === null || _a === void 0 ? void 0 : _a.message) || "");
-        };
-      } catch (error2) {
-        reject(error2);
-      }
-    });
-  }
-  function replaceTemplate(template, data) {
-    return template.replace(PATTERN, (_, key) => {
-      const value = data[key];
-      return value != null ? String(value) : `<${key}?>`;
-    });
-  }
-  function jsonEval(str) {
-    return JSON.parse(str);
-  }
-  function stringify(data) {
-    return JSON.stringify(data);
-  }
-  function contains(obj, key) {
-    return Object.prototype.hasOwnProperty.call(obj, key);
-  }
-  function safeGet(obj, key) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      return obj[key];
-    } else {
-      return void 0;
-    }
-  }
-  function isEmpty(obj) {
-    for (const key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        return false;
-      }
-    }
-    return true;
-  }
-  function map(obj, fn, contextObj) {
-    const res = {};
-    for (const key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        res[key] = fn.call(contextObj, obj[key], key, obj);
-      }
-    }
-    return res;
-  }
-  function querystring(querystringParams) {
-    const params = [];
-    for (const [key, value] of Object.entries(querystringParams)) {
-      if (Array.isArray(value)) {
-        value.forEach((arrayVal) => {
-          params.push(encodeURIComponent(key) + "=" + encodeURIComponent(arrayVal));
-        });
-      } else {
-        params.push(encodeURIComponent(key) + "=" + encodeURIComponent(value));
-      }
-    }
-    return params.length ? "&" + params.join("&") : "";
-  }
-  function errorPrefix(fnName, argName) {
-    return `${fnName} failed: ${argName} argument `;
-  }
-  function getModularInstance(service) {
-    if (service && service._delegate) {
-      return service._delegate;
-    } else {
-      return service;
-    }
-  }
-  var CONSTANTS, assert, assertionError, stringToByteArray$1, byteArrayToString, base64, DecodeBase64StringError, base64Encode, base64urlEncodeWithoutPadding, base64Decode, Deferred, ERROR_NAME, FirebaseError, ErrorFactory, PATTERN, decode, isValidFormat, isAdmin, Sha1, stringToByteArray, stringLength, MAX_VALUE_MILLIS;
-  var init_index_esm2017 = __esm({
-    "node_modules/@firebase/util/dist/index.esm2017.js"() {
-      init_live_reload();
-      CONSTANTS = {
-        /**
-         * @define {boolean} Whether this is the client Node.js SDK.
-         */
-        NODE_CLIENT: false,
-        /**
-         * @define {boolean} Whether this is the Admin Node.js SDK.
-         */
-        NODE_ADMIN: false,
-        /**
-         * Firebase SDK Version
-         */
-        SDK_VERSION: "${JSCORE_VERSION}"
-      };
-      assert = function(assertion, message) {
-        if (!assertion) {
-          throw assertionError(message);
-        }
-      };
-      assertionError = function(message) {
-        return new Error("Firebase Database (" + CONSTANTS.SDK_VERSION + ") INTERNAL ASSERT FAILED: " + message);
-      };
-      stringToByteArray$1 = function(str) {
-        const out = [];
-        let p = 0;
-        for (let i = 0; i < str.length; i++) {
-          let c = str.charCodeAt(i);
-          if (c < 128) {
-            out[p++] = c;
-          } else if (c < 2048) {
-            out[p++] = c >> 6 | 192;
-            out[p++] = c & 63 | 128;
-          } else if ((c & 64512) === 55296 && i + 1 < str.length && (str.charCodeAt(i + 1) & 64512) === 56320) {
-            c = 65536 + ((c & 1023) << 10) + (str.charCodeAt(++i) & 1023);
-            out[p++] = c >> 18 | 240;
-            out[p++] = c >> 12 & 63 | 128;
-            out[p++] = c >> 6 & 63 | 128;
-            out[p++] = c & 63 | 128;
-          } else {
-            out[p++] = c >> 12 | 224;
-            out[p++] = c >> 6 & 63 | 128;
-            out[p++] = c & 63 | 128;
-          }
-        }
-        return out;
-      };
-      byteArrayToString = function(bytes) {
-        const out = [];
-        let pos = 0, c = 0;
-        while (pos < bytes.length) {
-          const c1 = bytes[pos++];
-          if (c1 < 128) {
-            out[c++] = String.fromCharCode(c1);
-          } else if (c1 > 191 && c1 < 224) {
-            const c2 = bytes[pos++];
-            out[c++] = String.fromCharCode((c1 & 31) << 6 | c2 & 63);
-          } else if (c1 > 239 && c1 < 365) {
-            const c2 = bytes[pos++];
-            const c3 = bytes[pos++];
-            const c4 = bytes[pos++];
-            const u = ((c1 & 7) << 18 | (c2 & 63) << 12 | (c3 & 63) << 6 | c4 & 63) - 65536;
-            out[c++] = String.fromCharCode(55296 + (u >> 10));
-            out[c++] = String.fromCharCode(56320 + (u & 1023));
-          } else {
-            const c2 = bytes[pos++];
-            const c3 = bytes[pos++];
-            out[c++] = String.fromCharCode((c1 & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
-          }
-        }
-        return out.join("");
-      };
-      base64 = {
-        /**
-         * Maps bytes to characters.
-         */
-        byteToCharMap_: null,
-        /**
-         * Maps characters to bytes.
-         */
-        charToByteMap_: null,
-        /**
-         * Maps bytes to websafe characters.
-         * @private
-         */
-        byteToCharMapWebSafe_: null,
-        /**
-         * Maps websafe characters to bytes.
-         * @private
-         */
-        charToByteMapWebSafe_: null,
-        /**
-         * Our default alphabet, shared between
-         * ENCODED_VALS and ENCODED_VALS_WEBSAFE
-         */
-        ENCODED_VALS_BASE: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-        /**
-         * Our default alphabet. Value 64 (=) is special; it means "nothing."
-         */
-        get ENCODED_VALS() {
-          return this.ENCODED_VALS_BASE + "+/=";
-        },
-        /**
-         * Our websafe alphabet.
-         */
-        get ENCODED_VALS_WEBSAFE() {
-          return this.ENCODED_VALS_BASE + "-_.";
-        },
-        /**
-         * Whether this browser supports the atob and btoa functions. This extension
-         * started at Mozilla but is now implemented by many browsers. We use the
-         * ASSUME_* variables to avoid pulling in the full useragent detection library
-         * but still allowing the standard per-browser compilations.
-         *
-         */
-        HAS_NATIVE_SUPPORT: typeof atob === "function",
-        /**
-         * Base64-encode an array of bytes.
-         *
-         * @param input An array of bytes (numbers with
-         *     value in [0, 255]) to encode.
-         * @param webSafe Boolean indicating we should use the
-         *     alternative alphabet.
-         * @return The base64 encoded string.
-         */
-        encodeByteArray(input, webSafe) {
-          if (!Array.isArray(input)) {
-            throw Error("encodeByteArray takes an array as a parameter");
-          }
-          this.init_();
-          const byteToCharMap = webSafe ? this.byteToCharMapWebSafe_ : this.byteToCharMap_;
-          const output = [];
-          for (let i = 0; i < input.length; i += 3) {
-            const byte1 = input[i];
-            const haveByte2 = i + 1 < input.length;
-            const byte2 = haveByte2 ? input[i + 1] : 0;
-            const haveByte3 = i + 2 < input.length;
-            const byte3 = haveByte3 ? input[i + 2] : 0;
-            const outByte1 = byte1 >> 2;
-            const outByte2 = (byte1 & 3) << 4 | byte2 >> 4;
-            let outByte3 = (byte2 & 15) << 2 | byte3 >> 6;
-            let outByte4 = byte3 & 63;
-            if (!haveByte3) {
-              outByte4 = 64;
-              if (!haveByte2) {
-                outByte3 = 64;
-              }
-            }
-            output.push(byteToCharMap[outByte1], byteToCharMap[outByte2], byteToCharMap[outByte3], byteToCharMap[outByte4]);
-          }
-          return output.join("");
-        },
-        /**
-         * Base64-encode a string.
-         *
-         * @param input A string to encode.
-         * @param webSafe If true, we should use the
-         *     alternative alphabet.
-         * @return The base64 encoded string.
-         */
-        encodeString(input, webSafe) {
-          if (this.HAS_NATIVE_SUPPORT && !webSafe) {
-            return btoa(input);
-          }
-          return this.encodeByteArray(stringToByteArray$1(input), webSafe);
-        },
-        /**
-         * Base64-decode a string.
-         *
-         * @param input to decode.
-         * @param webSafe True if we should use the
-         *     alternative alphabet.
-         * @return string representing the decoded value.
-         */
-        decodeString(input, webSafe) {
-          if (this.HAS_NATIVE_SUPPORT && !webSafe) {
-            return atob(input);
-          }
-          return byteArrayToString(this.decodeStringToByteArray(input, webSafe));
-        },
-        /**
-         * Base64-decode a string.
-         *
-         * In base-64 decoding, groups of four characters are converted into three
-         * bytes.  If the encoder did not apply padding, the input length may not
-         * be a multiple of 4.
-         *
-         * In this case, the last group will have fewer than 4 characters, and
-         * padding will be inferred.  If the group has one or two characters, it decodes
-         * to one byte.  If the group has three characters, it decodes to two bytes.
-         *
-         * @param input Input to decode.
-         * @param webSafe True if we should use the web-safe alphabet.
-         * @return bytes representing the decoded value.
-         */
-        decodeStringToByteArray(input, webSafe) {
-          this.init_();
-          const charToByteMap = webSafe ? this.charToByteMapWebSafe_ : this.charToByteMap_;
-          const output = [];
-          for (let i = 0; i < input.length; ) {
-            const byte1 = charToByteMap[input.charAt(i++)];
-            const haveByte2 = i < input.length;
-            const byte2 = haveByte2 ? charToByteMap[input.charAt(i)] : 0;
-            ++i;
-            const haveByte3 = i < input.length;
-            const byte3 = haveByte3 ? charToByteMap[input.charAt(i)] : 64;
-            ++i;
-            const haveByte4 = i < input.length;
-            const byte4 = haveByte4 ? charToByteMap[input.charAt(i)] : 64;
-            ++i;
-            if (byte1 == null || byte2 == null || byte3 == null || byte4 == null) {
-              throw new DecodeBase64StringError();
-            }
-            const outByte1 = byte1 << 2 | byte2 >> 4;
-            output.push(outByte1);
-            if (byte3 !== 64) {
-              const outByte2 = byte2 << 4 & 240 | byte3 >> 2;
-              output.push(outByte2);
-              if (byte4 !== 64) {
-                const outByte3 = byte3 << 6 & 192 | byte4;
-                output.push(outByte3);
-              }
-            }
-          }
-          return output;
-        },
-        /**
-         * Lazy static initialization function. Called before
-         * accessing any of the static map variables.
-         * @private
-         */
-        init_() {
-          if (!this.byteToCharMap_) {
-            this.byteToCharMap_ = {};
-            this.charToByteMap_ = {};
-            this.byteToCharMapWebSafe_ = {};
-            this.charToByteMapWebSafe_ = {};
-            for (let i = 0; i < this.ENCODED_VALS.length; i++) {
-              this.byteToCharMap_[i] = this.ENCODED_VALS.charAt(i);
-              this.charToByteMap_[this.byteToCharMap_[i]] = i;
-              this.byteToCharMapWebSafe_[i] = this.ENCODED_VALS_WEBSAFE.charAt(i);
-              this.charToByteMapWebSafe_[this.byteToCharMapWebSafe_[i]] = i;
-              if (i >= this.ENCODED_VALS_BASE.length) {
-                this.charToByteMap_[this.ENCODED_VALS_WEBSAFE.charAt(i)] = i;
-                this.charToByteMapWebSafe_[this.ENCODED_VALS.charAt(i)] = i;
-              }
-            }
-          }
-        }
-      };
-      DecodeBase64StringError = class extends Error {
-        constructor() {
-          super(...arguments);
-          this.name = "DecodeBase64StringError";
-        }
-      };
-      base64Encode = function(str) {
-        const utf8Bytes = stringToByteArray$1(str);
-        return base64.encodeByteArray(utf8Bytes, true);
-      };
-      base64urlEncodeWithoutPadding = function(str) {
-        return base64Encode(str).replace(/\./g, "");
-      };
-      base64Decode = function(str) {
-        try {
-          return base64.decodeString(str, true);
-        } catch (e) {
-          console.error("base64Decode failed: ", e);
-        }
-        return null;
-      };
-      Deferred = class {
-        constructor() {
-          this.reject = () => {
-          };
-          this.resolve = () => {
-          };
-          this.promise = new Promise((resolve, reject) => {
-            this.resolve = resolve;
-            this.reject = reject;
-          });
-        }
-        /**
-         * Our API internals are not promisified and cannot because our callback APIs have subtle expectations around
-         * invoking promises inline, which Promises are forbidden to do. This method accepts an optional node-style callback
-         * and returns a node-style callback which will resolve or reject the Deferred's promise.
-         */
-        wrapCallback(callback) {
-          return (error2, value) => {
-            if (error2) {
-              this.reject(error2);
-            } else {
-              this.resolve(value);
-            }
-            if (typeof callback === "function") {
-              this.promise.catch(() => {
-              });
-              if (callback.length === 1) {
-                callback(error2);
-              } else {
-                callback(error2, value);
-              }
-            }
-          };
-        }
-      };
-      ERROR_NAME = "FirebaseError";
-      FirebaseError = class _FirebaseError extends Error {
-        constructor(code, message, customData) {
-          super(message);
-          this.code = code;
-          this.customData = customData;
-          this.name = ERROR_NAME;
-          Object.setPrototypeOf(this, _FirebaseError.prototype);
-          if (Error.captureStackTrace) {
-            Error.captureStackTrace(this, ErrorFactory.prototype.create);
-          }
-        }
-      };
-      ErrorFactory = class {
-        constructor(service, serviceName, errors) {
-          this.service = service;
-          this.serviceName = serviceName;
-          this.errors = errors;
-        }
-        create(code, ...data) {
-          const customData = data[0] || {};
-          const fullCode = `${this.service}/${code}`;
-          const template = this.errors[code];
-          const message = template ? replaceTemplate(template, customData) : "Error";
-          const fullMessage = `${this.serviceName}: ${message} (${fullCode}).`;
-          const error2 = new FirebaseError(fullCode, fullMessage, customData);
-          return error2;
-        }
-      };
-      PATTERN = /\{\$([^}]+)}/g;
-      decode = function(token) {
-        let header = {}, claims = {}, data = {}, signature = "";
-        try {
-          const parts = token.split(".");
-          header = jsonEval(base64Decode(parts[0]) || "");
-          claims = jsonEval(base64Decode(parts[1]) || "");
-          signature = parts[2];
-          data = claims["d"] || {};
-          delete claims["d"];
-        } catch (e) {
-        }
-        return {
-          header,
-          claims,
-          data,
-          signature
-        };
-      };
-      isValidFormat = function(token) {
-        const decoded = decode(token), claims = decoded.claims;
-        return !!claims && typeof claims === "object" && claims.hasOwnProperty("iat");
-      };
-      isAdmin = function(token) {
-        const claims = decode(token).claims;
-        return typeof claims === "object" && claims["admin"] === true;
-      };
-      Sha1 = class {
-        constructor() {
-          this.chain_ = [];
-          this.buf_ = [];
-          this.W_ = [];
-          this.pad_ = [];
-          this.inbuf_ = 0;
-          this.total_ = 0;
-          this.blockSize = 512 / 8;
-          this.pad_[0] = 128;
-          for (let i = 1; i < this.blockSize; ++i) {
-            this.pad_[i] = 0;
-          }
-          this.reset();
-        }
-        reset() {
-          this.chain_[0] = 1732584193;
-          this.chain_[1] = 4023233417;
-          this.chain_[2] = 2562383102;
-          this.chain_[3] = 271733878;
-          this.chain_[4] = 3285377520;
-          this.inbuf_ = 0;
-          this.total_ = 0;
-        }
-        /**
-         * Internal compress helper function.
-         * @param buf Block to compress.
-         * @param offset Offset of the block in the buffer.
-         * @private
-         */
-        compress_(buf, offset) {
-          if (!offset) {
-            offset = 0;
-          }
-          const W = this.W_;
-          if (typeof buf === "string") {
-            for (let i = 0; i < 16; i++) {
-              W[i] = buf.charCodeAt(offset) << 24 | buf.charCodeAt(offset + 1) << 16 | buf.charCodeAt(offset + 2) << 8 | buf.charCodeAt(offset + 3);
-              offset += 4;
-            }
-          } else {
-            for (let i = 0; i < 16; i++) {
-              W[i] = buf[offset] << 24 | buf[offset + 1] << 16 | buf[offset + 2] << 8 | buf[offset + 3];
-              offset += 4;
-            }
-          }
-          for (let i = 16; i < 80; i++) {
-            const t = W[i - 3] ^ W[i - 8] ^ W[i - 14] ^ W[i - 16];
-            W[i] = (t << 1 | t >>> 31) & 4294967295;
-          }
-          let a = this.chain_[0];
-          let b = this.chain_[1];
-          let c = this.chain_[2];
-          let d = this.chain_[3];
-          let e = this.chain_[4];
-          let f, k;
-          for (let i = 0; i < 80; i++) {
-            if (i < 40) {
-              if (i < 20) {
-                f = d ^ b & (c ^ d);
-                k = 1518500249;
-              } else {
-                f = b ^ c ^ d;
-                k = 1859775393;
-              }
-            } else {
-              if (i < 60) {
-                f = b & c | d & (b | c);
-                k = 2400959708;
-              } else {
-                f = b ^ c ^ d;
-                k = 3395469782;
-              }
-            }
-            const t = (a << 5 | a >>> 27) + f + e + k + W[i] & 4294967295;
-            e = d;
-            d = c;
-            c = (b << 30 | b >>> 2) & 4294967295;
-            b = a;
-            a = t;
-          }
-          this.chain_[0] = this.chain_[0] + a & 4294967295;
-          this.chain_[1] = this.chain_[1] + b & 4294967295;
-          this.chain_[2] = this.chain_[2] + c & 4294967295;
-          this.chain_[3] = this.chain_[3] + d & 4294967295;
-          this.chain_[4] = this.chain_[4] + e & 4294967295;
-        }
-        update(bytes, length) {
-          if (bytes == null) {
-            return;
-          }
-          if (length === void 0) {
-            length = bytes.length;
-          }
-          const lengthMinusBlock = length - this.blockSize;
-          let n = 0;
-          const buf = this.buf_;
-          let inbuf = this.inbuf_;
-          while (n < length) {
-            if (inbuf === 0) {
-              while (n <= lengthMinusBlock) {
-                this.compress_(bytes, n);
-                n += this.blockSize;
-              }
-            }
-            if (typeof bytes === "string") {
-              while (n < length) {
-                buf[inbuf] = bytes.charCodeAt(n);
-                ++inbuf;
-                ++n;
-                if (inbuf === this.blockSize) {
-                  this.compress_(buf);
-                  inbuf = 0;
-                  break;
-                }
-              }
-            } else {
-              while (n < length) {
-                buf[inbuf] = bytes[n];
-                ++inbuf;
-                ++n;
-                if (inbuf === this.blockSize) {
-                  this.compress_(buf);
-                  inbuf = 0;
-                  break;
-                }
-              }
-            }
-          }
-          this.inbuf_ = inbuf;
-          this.total_ += length;
-        }
-        /** @override */
-        digest() {
-          const digest = [];
-          let totalBits = this.total_ * 8;
-          if (this.inbuf_ < 56) {
-            this.update(this.pad_, 56 - this.inbuf_);
-          } else {
-            this.update(this.pad_, this.blockSize - (this.inbuf_ - 56));
-          }
-          for (let i = this.blockSize - 1; i >= 56; i--) {
-            this.buf_[i] = totalBits & 255;
-            totalBits /= 256;
-          }
-          this.compress_(this.buf_);
-          let n = 0;
-          for (let i = 0; i < 5; i++) {
-            for (let j = 24; j >= 0; j -= 8) {
-              digest[n] = this.chain_[i] >> j & 255;
-              ++n;
-            }
-          }
-          return digest;
-        }
-      };
-      stringToByteArray = function(str) {
-        const out = [];
-        let p = 0;
-        for (let i = 0; i < str.length; i++) {
-          let c = str.charCodeAt(i);
-          if (c >= 55296 && c <= 56319) {
-            const high = c - 55296;
-            i++;
-            assert(i < str.length, "Surrogate pair missing trail surrogate.");
-            const low = str.charCodeAt(i) - 56320;
-            c = 65536 + (high << 10) + low;
-          }
-          if (c < 128) {
-            out[p++] = c;
-          } else if (c < 2048) {
-            out[p++] = c >> 6 | 192;
-            out[p++] = c & 63 | 128;
-          } else if (c < 65536) {
-            out[p++] = c >> 12 | 224;
-            out[p++] = c >> 6 & 63 | 128;
-            out[p++] = c & 63 | 128;
-          } else {
-            out[p++] = c >> 18 | 240;
-            out[p++] = c >> 12 & 63 | 128;
-            out[p++] = c >> 6 & 63 | 128;
-            out[p++] = c & 63 | 128;
-          }
-        }
-        return out;
-      };
-      stringLength = function(str) {
-        let p = 0;
-        for (let i = 0; i < str.length; i++) {
-          const c = str.charCodeAt(i);
-          if (c < 128) {
-            p++;
-          } else if (c < 2048) {
-            p += 2;
-          } else if (c >= 55296 && c <= 56319) {
-            p += 4;
-            i++;
-          } else {
-            p += 3;
-          }
-        }
-        return p;
-      };
-      MAX_VALUE_MILLIS = 4 * 60 * 60 * 1e3;
-    }
-  });
-
-  // node_modules/@firebase/component/dist/esm/index.esm2017.js
-  var Component;
-  var init_index_esm20172 = __esm({
-    "node_modules/@firebase/component/dist/esm/index.esm2017.js"() {
-      init_live_reload();
-      init_index_esm2017();
-      Component = class {
-        /**
-         *
-         * @param name The public service name, e.g. app, auth, firestore, database
-         * @param instanceFactory Service factory responsible for creating the public interface
-         * @param type whether the service provided by the component is public or private
-         */
-        constructor(name3, instanceFactory, type) {
-          this.name = name3;
-          this.instanceFactory = instanceFactory;
-          this.type = type;
-          this.multipleInstances = false;
-          this.serviceProps = {};
-          this.instantiationMode = "LAZY";
-          this.onInstanceCreated = null;
-        }
-        setInstantiationMode(mode) {
-          this.instantiationMode = mode;
-          return this;
-        }
-        setMultipleInstances(multipleInstances) {
-          this.multipleInstances = multipleInstances;
-          return this;
-        }
-        setServiceProps(props) {
-          this.serviceProps = props;
-          return this;
-        }
-        setInstanceCreatedCallback(callback) {
-          this.onInstanceCreated = callback;
-          return this;
-        }
-      };
-    }
-  });
-
-  // node_modules/@firebase/logger/dist/esm/index.esm2017.js
-  var instances, LogLevel, levelStringToEnum, defaultLogLevel, ConsoleMethod, defaultLogHandler, Logger;
-  var init_index_esm20173 = __esm({
-    "node_modules/@firebase/logger/dist/esm/index.esm2017.js"() {
-      init_live_reload();
-      instances = [];
-      (function(LogLevel2) {
-        LogLevel2[LogLevel2["DEBUG"] = 0] = "DEBUG";
-        LogLevel2[LogLevel2["VERBOSE"] = 1] = "VERBOSE";
-        LogLevel2[LogLevel2["INFO"] = 2] = "INFO";
-        LogLevel2[LogLevel2["WARN"] = 3] = "WARN";
-        LogLevel2[LogLevel2["ERROR"] = 4] = "ERROR";
-        LogLevel2[LogLevel2["SILENT"] = 5] = "SILENT";
-      })(LogLevel || (LogLevel = {}));
-      levelStringToEnum = {
-        "debug": LogLevel.DEBUG,
-        "verbose": LogLevel.VERBOSE,
-        "info": LogLevel.INFO,
-        "warn": LogLevel.WARN,
-        "error": LogLevel.ERROR,
-        "silent": LogLevel.SILENT
-      };
-      defaultLogLevel = LogLevel.INFO;
-      ConsoleMethod = {
-        [LogLevel.DEBUG]: "log",
-        [LogLevel.VERBOSE]: "log",
-        [LogLevel.INFO]: "info",
-        [LogLevel.WARN]: "warn",
-        [LogLevel.ERROR]: "error"
-      };
-      defaultLogHandler = (instance, logType, ...args) => {
-        if (logType < instance.logLevel) {
-          return;
-        }
-        const now = (/* @__PURE__ */ new Date()).toISOString();
-        const method = ConsoleMethod[logType];
-        if (method) {
-          console[method](`[${now}]  ${instance.name}:`, ...args);
-        } else {
-          throw new Error(`Attempted to log a message with an invalid logType (value: ${logType})`);
-        }
-      };
-      Logger = class {
-        /**
-         * Gives you an instance of a Logger to capture messages according to
-         * Firebase's logging scheme.
-         *
-         * @param name The name that the logs will be associated with
-         */
-        constructor(name3) {
-          this.name = name3;
-          this._logLevel = defaultLogLevel;
-          this._logHandler = defaultLogHandler;
-          this._userLogHandler = null;
-          instances.push(this);
-        }
-        get logLevel() {
-          return this._logLevel;
-        }
-        set logLevel(val) {
-          if (!(val in LogLevel)) {
-            throw new TypeError(`Invalid value "${val}" assigned to \`logLevel\``);
-          }
-          this._logLevel = val;
-        }
-        // Workaround for setter/getter having to be the same type.
-        setLogLevel(val) {
-          this._logLevel = typeof val === "string" ? levelStringToEnum[val] : val;
-        }
-        get logHandler() {
-          return this._logHandler;
-        }
-        set logHandler(val) {
-          if (typeof val !== "function") {
-            throw new TypeError("Value assigned to `logHandler` must be a function");
-          }
-          this._logHandler = val;
-        }
-        get userLogHandler() {
-          return this._userLogHandler;
-        }
-        set userLogHandler(val) {
-          this._userLogHandler = val;
-        }
-        /**
-         * The functions below are all based on the `console` interface
-         */
-        debug(...args) {
-          this._userLogHandler && this._userLogHandler(this, LogLevel.DEBUG, ...args);
-          this._logHandler(this, LogLevel.DEBUG, ...args);
-        }
-        log(...args) {
-          this._userLogHandler && this._userLogHandler(this, LogLevel.VERBOSE, ...args);
-          this._logHandler(this, LogLevel.VERBOSE, ...args);
-        }
-        info(...args) {
-          this._userLogHandler && this._userLogHandler(this, LogLevel.INFO, ...args);
-          this._logHandler(this, LogLevel.INFO, ...args);
-        }
-        warn(...args) {
-          this._userLogHandler && this._userLogHandler(this, LogLevel.WARN, ...args);
-          this._logHandler(this, LogLevel.WARN, ...args);
-        }
-        error(...args) {
-          this._userLogHandler && this._userLogHandler(this, LogLevel.ERROR, ...args);
-          this._logHandler(this, LogLevel.ERROR, ...args);
-        }
-      };
-    }
-  });
-
-  // node_modules/idb/build/wrap-idb-value.js
-  function getIdbProxyableTypes() {
-    return idbProxyableTypes || (idbProxyableTypes = [
-      IDBDatabase,
-      IDBObjectStore,
-      IDBIndex,
-      IDBCursor,
-      IDBTransaction
-    ]);
-  }
-  function getCursorAdvanceMethods() {
-    return cursorAdvanceMethods || (cursorAdvanceMethods = [
-      IDBCursor.prototype.advance,
-      IDBCursor.prototype.continue,
-      IDBCursor.prototype.continuePrimaryKey
-    ]);
-  }
-  function promisifyRequest(request) {
-    const promise = new Promise((resolve, reject) => {
-      const unlisten = () => {
-        request.removeEventListener("success", success);
-        request.removeEventListener("error", error2);
-      };
-      const success = () => {
-        resolve(wrap3(request.result));
-        unlisten();
-      };
-      const error2 = () => {
-        reject(request.error);
-        unlisten();
-      };
-      request.addEventListener("success", success);
-      request.addEventListener("error", error2);
-    });
-    promise.then((value) => {
-      if (value instanceof IDBCursor) {
-        cursorRequestMap.set(value, request);
-      }
-    }).catch(() => {
-    });
-    reverseTransformCache.set(promise, request);
-    return promise;
-  }
-  function cacheDonePromiseForTransaction(tx) {
-    if (transactionDoneMap.has(tx))
-      return;
-    const done = new Promise((resolve, reject) => {
-      const unlisten = () => {
-        tx.removeEventListener("complete", complete);
-        tx.removeEventListener("error", error2);
-        tx.removeEventListener("abort", error2);
-      };
-      const complete = () => {
-        resolve();
-        unlisten();
-      };
-      const error2 = () => {
-        reject(tx.error || new DOMException("AbortError", "AbortError"));
-        unlisten();
-      };
-      tx.addEventListener("complete", complete);
-      tx.addEventListener("error", error2);
-      tx.addEventListener("abort", error2);
-    });
-    transactionDoneMap.set(tx, done);
-  }
-  function replaceTraps(callback) {
-    idbProxyTraps = callback(idbProxyTraps);
-  }
-  function wrapFunction(func) {
-    if (func === IDBDatabase.prototype.transaction && !("objectStoreNames" in IDBTransaction.prototype)) {
-      return function(storeNames, ...args) {
-        const tx = func.call(unwrap(this), storeNames, ...args);
-        transactionStoreNamesMap.set(tx, storeNames.sort ? storeNames.sort() : [storeNames]);
-        return wrap3(tx);
-      };
-    }
-    if (getCursorAdvanceMethods().includes(func)) {
-      return function(...args) {
-        func.apply(unwrap(this), args);
-        return wrap3(cursorRequestMap.get(this));
-      };
-    }
-    return function(...args) {
-      return wrap3(func.apply(unwrap(this), args));
-    };
-  }
-  function transformCachableValue(value) {
-    if (typeof value === "function")
-      return wrapFunction(value);
-    if (value instanceof IDBTransaction)
-      cacheDonePromiseForTransaction(value);
-    if (instanceOfAny(value, getIdbProxyableTypes()))
-      return new Proxy(value, idbProxyTraps);
-    return value;
-  }
-  function wrap3(value) {
-    if (value instanceof IDBRequest)
-      return promisifyRequest(value);
-    if (transformCache.has(value))
-      return transformCache.get(value);
-    const newValue = transformCachableValue(value);
-    if (newValue !== value) {
-      transformCache.set(value, newValue);
-      reverseTransformCache.set(newValue, value);
-    }
-    return newValue;
-  }
-  var instanceOfAny, idbProxyableTypes, cursorAdvanceMethods, cursorRequestMap, transactionDoneMap, transactionStoreNamesMap, transformCache, reverseTransformCache, idbProxyTraps, unwrap;
-  var init_wrap_idb_value = __esm({
-    "node_modules/idb/build/wrap-idb-value.js"() {
-      init_live_reload();
-      instanceOfAny = (object, constructors) => constructors.some((c) => object instanceof c);
-      cursorRequestMap = /* @__PURE__ */ new WeakMap();
-      transactionDoneMap = /* @__PURE__ */ new WeakMap();
-      transactionStoreNamesMap = /* @__PURE__ */ new WeakMap();
-      transformCache = /* @__PURE__ */ new WeakMap();
-      reverseTransformCache = /* @__PURE__ */ new WeakMap();
-      idbProxyTraps = {
-        get(target, prop, receiver) {
-          if (target instanceof IDBTransaction) {
-            if (prop === "done")
-              return transactionDoneMap.get(target);
-            if (prop === "objectStoreNames") {
-              return target.objectStoreNames || transactionStoreNamesMap.get(target);
-            }
-            if (prop === "store") {
-              return receiver.objectStoreNames[1] ? void 0 : receiver.objectStore(receiver.objectStoreNames[0]);
-            }
-          }
-          return wrap3(target[prop]);
-        },
-        set(target, prop, value) {
-          target[prop] = value;
-          return true;
-        },
-        has(target, prop) {
-          if (target instanceof IDBTransaction && (prop === "done" || prop === "store")) {
-            return true;
-          }
-          return prop in target;
-        }
-      };
-      unwrap = (value) => reverseTransformCache.get(value);
-    }
-  });
-
-  // node_modules/idb/build/index.js
-  function openDB(name3, version4, { blocked, upgrade, blocking, terminated } = {}) {
-    const request = indexedDB.open(name3, version4);
-    const openPromise = wrap3(request);
-    if (upgrade) {
-      request.addEventListener("upgradeneeded", (event) => {
-        upgrade(wrap3(request.result), event.oldVersion, event.newVersion, wrap3(request.transaction), event);
-      });
-    }
-    if (blocked) {
-      request.addEventListener("blocked", (event) => blocked(
-        // Casting due to https://github.com/microsoft/TypeScript-DOM-lib-generator/pull/1405
-        event.oldVersion,
-        event.newVersion,
-        event
-      ));
-    }
-    openPromise.then((db) => {
-      if (terminated)
-        db.addEventListener("close", () => terminated());
-      if (blocking) {
-        db.addEventListener("versionchange", (event) => blocking(event.oldVersion, event.newVersion, event));
-      }
-    }).catch(() => {
-    });
-    return openPromise;
-  }
-  function getMethod(target, prop) {
-    if (!(target instanceof IDBDatabase && !(prop in target) && typeof prop === "string")) {
-      return;
-    }
-    if (cachedMethods.get(prop))
-      return cachedMethods.get(prop);
-    const targetFuncName = prop.replace(/FromIndex$/, "");
-    const useIndex = prop !== targetFuncName;
-    const isWrite = writeMethods.includes(targetFuncName);
-    if (
-      // Bail if the target doesn't exist on the target. Eg, getAll isn't in Edge.
-      !(targetFuncName in (useIndex ? IDBIndex : IDBObjectStore).prototype) || !(isWrite || readMethods.includes(targetFuncName))
-    ) {
-      return;
-    }
-    const method = async function(storeName, ...args) {
-      const tx = this.transaction(storeName, isWrite ? "readwrite" : "readonly");
-      let target2 = tx.store;
-      if (useIndex)
-        target2 = target2.index(args.shift());
-      return (await Promise.all([
-        target2[targetFuncName](...args),
-        isWrite && tx.done
-      ]))[0];
-    };
-    cachedMethods.set(prop, method);
-    return method;
-  }
-  var readMethods, writeMethods, cachedMethods;
-  var init_build = __esm({
-    "node_modules/idb/build/index.js"() {
-      init_live_reload();
-      init_wrap_idb_value();
-      init_wrap_idb_value();
-      readMethods = ["get", "getKey", "getAll", "getAllKeys", "count"];
-      writeMethods = ["put", "add", "delete", "clear"];
-      cachedMethods = /* @__PURE__ */ new Map();
-      replaceTraps((oldTraps) => ({
-        ...oldTraps,
-        get: (target, prop, receiver) => getMethod(target, prop) || oldTraps.get(target, prop, receiver),
-        has: (target, prop) => !!getMethod(target, prop) || oldTraps.has(target, prop)
-      }));
-    }
-  });
-
-  // node_modules/@firebase/app/dist/esm/index.esm2017.js
-  function isVersionServiceProvider(provider) {
-    const component = provider.getComponent();
-    return (component === null || component === void 0 ? void 0 : component.type) === "VERSION";
-  }
-  function _addComponent(app, component) {
-    try {
-      app.container.addComponent(component);
-    } catch (e) {
-      logger.debug(`Component ${component.name} failed to register with FirebaseApp ${app.name}`, e);
-    }
-  }
-  function _registerComponent(component) {
-    const componentName = component.name;
-    if (_components.has(componentName)) {
-      logger.debug(`There were multiple attempts to register component ${componentName}.`);
-      return false;
-    }
-    _components.set(componentName, component);
-    for (const app of _apps.values()) {
-      _addComponent(app, component);
-    }
-    for (const serverApp of _serverApps.values()) {
-      _addComponent(serverApp, component);
-    }
-    return true;
-  }
-  function _isFirebaseServerApp(obj) {
-    if (obj === null || obj === void 0) {
-      return false;
-    }
-    return obj.settings !== void 0;
-  }
-  function registerVersion(libraryKeyOrName, version4, variant) {
-    var _a;
-    let library = (_a = PLATFORM_LOG_STRING[libraryKeyOrName]) !== null && _a !== void 0 ? _a : libraryKeyOrName;
-    if (variant) {
-      library += `-${variant}`;
-    }
-    const libraryMismatch = library.match(/\s|\//);
-    const versionMismatch = version4.match(/\s|\//);
-    if (libraryMismatch || versionMismatch) {
-      const warning = [
-        `Unable to register library "${library}" with version "${version4}":`
-      ];
-      if (libraryMismatch) {
-        warning.push(`library name "${library}" contains illegal characters (whitespace or "/")`);
-      }
-      if (libraryMismatch && versionMismatch) {
-        warning.push("and");
-      }
-      if (versionMismatch) {
-        warning.push(`version name "${version4}" contains illegal characters (whitespace or "/")`);
-      }
-      logger.warn(warning.join(" "));
-      return;
-    }
-    _registerComponent(new Component(
-      `${library}-version`,
-      () => ({ library, version: version4 }),
-      "VERSION"
-      /* ComponentType.VERSION */
-    ));
-  }
-  function getDbPromise() {
-    if (!dbPromise) {
-      dbPromise = openDB(DB_NAME, DB_VERSION, {
-        upgrade: (db, oldVersion) => {
-          switch (oldVersion) {
-            case 0:
-              try {
-                db.createObjectStore(STORE_NAME);
-              } catch (e) {
-                console.warn(e);
-              }
-          }
-        }
-      }).catch((e) => {
-        throw ERROR_FACTORY.create("idb-open", {
-          originalErrorMessage: e.message
-        });
-      });
-    }
-    return dbPromise;
-  }
-  async function readHeartbeatsFromIndexedDB(app) {
-    try {
-      const db = await getDbPromise();
-      const tx = db.transaction(STORE_NAME);
-      const result = await tx.objectStore(STORE_NAME).get(computeKey(app));
-      await tx.done;
-      return result;
-    } catch (e) {
-      if (e instanceof FirebaseError) {
-        logger.warn(e.message);
-      } else {
-        const idbGetError = ERROR_FACTORY.create("idb-get", {
-          originalErrorMessage: e === null || e === void 0 ? void 0 : e.message
-        });
-        logger.warn(idbGetError.message);
-      }
-    }
-  }
-  async function writeHeartbeatsToIndexedDB(app, heartbeatObject) {
-    try {
-      const db = await getDbPromise();
-      const tx = db.transaction(STORE_NAME, "readwrite");
-      const objectStore = tx.objectStore(STORE_NAME);
-      await objectStore.put(heartbeatObject, computeKey(app));
-      await tx.done;
-    } catch (e) {
-      if (e instanceof FirebaseError) {
-        logger.warn(e.message);
-      } else {
-        const idbGetError = ERROR_FACTORY.create("idb-set", {
-          originalErrorMessage: e === null || e === void 0 ? void 0 : e.message
-        });
-        logger.warn(idbGetError.message);
-      }
-    }
-  }
-  function computeKey(app) {
-    return `${app.name}!${app.options.appId}`;
-  }
-  function getUTCDateString() {
-    const today = /* @__PURE__ */ new Date();
-    return today.toISOString().substring(0, 10);
-  }
-  function extractHeartbeatsForHeader(heartbeatsCache, maxSize = MAX_HEADER_BYTES) {
-    const heartbeatsToSend = [];
-    let unsentEntries = heartbeatsCache.slice();
-    for (const singleDateHeartbeat of heartbeatsCache) {
-      const heartbeatEntry = heartbeatsToSend.find((hb) => hb.agent === singleDateHeartbeat.agent);
-      if (!heartbeatEntry) {
-        heartbeatsToSend.push({
-          agent: singleDateHeartbeat.agent,
-          dates: [singleDateHeartbeat.date]
-        });
-        if (countBytes(heartbeatsToSend) > maxSize) {
-          heartbeatsToSend.pop();
-          break;
-        }
-      } else {
-        heartbeatEntry.dates.push(singleDateHeartbeat.date);
-        if (countBytes(heartbeatsToSend) > maxSize) {
-          heartbeatEntry.dates.pop();
-          break;
-        }
-      }
-      unsentEntries = unsentEntries.slice(1);
-    }
-    return {
-      heartbeatsToSend,
-      unsentEntries
-    };
-  }
-  function countBytes(heartbeatsCache) {
-    return base64urlEncodeWithoutPadding(
-      // heartbeatsCache wrapper properties
-      JSON.stringify({ version: 2, heartbeats: heartbeatsCache })
-    ).length;
-  }
-  function getEarliestHeartbeatIdx(heartbeats) {
-    if (heartbeats.length === 0) {
-      return -1;
-    }
-    let earliestHeartbeatIdx = 0;
-    let earliestHeartbeatDate = heartbeats[0].date;
-    for (let i = 1; i < heartbeats.length; i++) {
-      if (heartbeats[i].date < earliestHeartbeatDate) {
-        earliestHeartbeatDate = heartbeats[i].date;
-        earliestHeartbeatIdx = i;
-      }
-    }
-    return earliestHeartbeatIdx;
-  }
-  function registerCoreComponents(variant) {
-    _registerComponent(new Component(
-      "platform-logger",
-      (container) => new PlatformLoggerServiceImpl(container),
-      "PRIVATE"
-      /* ComponentType.PRIVATE */
-    ));
-    _registerComponent(new Component(
-      "heartbeat",
-      (container) => new HeartbeatServiceImpl(container),
-      "PRIVATE"
-      /* ComponentType.PRIVATE */
-    ));
-    registerVersion(name$q, version$1, variant);
-    registerVersion(name$q, version$1, "esm2017");
-    registerVersion("fire-js", "");
-  }
-  var PlatformLoggerServiceImpl, name$q, version$1, logger, name$p, name$o, name$n, name$m, name$l, name$k, name$j, name$i, name$h, name$g, name$f, name$e, name$d, name$c, name$b, name$a, name$9, name$8, name$7, name$6, name$5, name$4, name$3, name$2, name$1, name, version2, PLATFORM_LOG_STRING, _apps, _serverApps, _components, ERRORS, ERROR_FACTORY, SDK_VERSION, DB_NAME, DB_VERSION, STORE_NAME, dbPromise, MAX_HEADER_BYTES, MAX_NUM_STORED_HEARTBEATS, HeartbeatServiceImpl, HeartbeatStorageImpl;
-  var init_index_esm20174 = __esm({
-    "node_modules/@firebase/app/dist/esm/index.esm2017.js"() {
-      init_live_reload();
-      init_index_esm20172();
-      init_index_esm20173();
-      init_index_esm2017();
-      init_index_esm2017();
-      init_build();
-      PlatformLoggerServiceImpl = class {
-        constructor(container) {
-          this.container = container;
-        }
-        // In initial implementation, this will be called by installations on
-        // auth token refresh, and installations will send this string.
-        getPlatformInfoString() {
-          const providers = this.container.getProviders();
-          return providers.map((provider) => {
-            if (isVersionServiceProvider(provider)) {
-              const service = provider.getImmediate();
-              return `${service.library}/${service.version}`;
-            } else {
-              return null;
-            }
-          }).filter((logString) => logString).join(" ");
-        }
-      };
-      name$q = "@firebase/app";
-      version$1 = "0.11.0";
-      logger = new Logger("@firebase/app");
-      name$p = "@firebase/app-compat";
-      name$o = "@firebase/analytics-compat";
-      name$n = "@firebase/analytics";
-      name$m = "@firebase/app-check-compat";
-      name$l = "@firebase/app-check";
-      name$k = "@firebase/auth";
-      name$j = "@firebase/auth-compat";
-      name$i = "@firebase/database";
-      name$h = "@firebase/data-connect";
-      name$g = "@firebase/database-compat";
-      name$f = "@firebase/functions";
-      name$e = "@firebase/functions-compat";
-      name$d = "@firebase/installations";
-      name$c = "@firebase/installations-compat";
-      name$b = "@firebase/messaging";
-      name$a = "@firebase/messaging-compat";
-      name$9 = "@firebase/performance";
-      name$8 = "@firebase/performance-compat";
-      name$7 = "@firebase/remote-config";
-      name$6 = "@firebase/remote-config-compat";
-      name$5 = "@firebase/storage";
-      name$4 = "@firebase/storage-compat";
-      name$3 = "@firebase/firestore";
-      name$2 = "@firebase/vertexai";
-      name$1 = "@firebase/firestore-compat";
-      name = "firebase";
-      version2 = "11.3.0";
-      PLATFORM_LOG_STRING = {
-        [name$q]: "fire-core",
-        [name$p]: "fire-core-compat",
-        [name$n]: "fire-analytics",
-        [name$o]: "fire-analytics-compat",
-        [name$l]: "fire-app-check",
-        [name$m]: "fire-app-check-compat",
-        [name$k]: "fire-auth",
-        [name$j]: "fire-auth-compat",
-        [name$i]: "fire-rtdb",
-        [name$h]: "fire-data-connect",
-        [name$g]: "fire-rtdb-compat",
-        [name$f]: "fire-fn",
-        [name$e]: "fire-fn-compat",
-        [name$d]: "fire-iid",
-        [name$c]: "fire-iid-compat",
-        [name$b]: "fire-fcm",
-        [name$a]: "fire-fcm-compat",
-        [name$9]: "fire-perf",
-        [name$8]: "fire-perf-compat",
-        [name$7]: "fire-rc",
-        [name$6]: "fire-rc-compat",
-        [name$5]: "fire-gcs",
-        [name$4]: "fire-gcs-compat",
-        [name$3]: "fire-fst",
-        [name$1]: "fire-fst-compat",
-        [name$2]: "fire-vertex",
-        "fire-js": "fire-js",
-        // Platform identifier for JS SDK.
-        [name]: "fire-js-all"
-      };
-      _apps = /* @__PURE__ */ new Map();
-      _serverApps = /* @__PURE__ */ new Map();
-      _components = /* @__PURE__ */ new Map();
-      ERRORS = {
-        [
-          "no-app"
-          /* AppError.NO_APP */
-        ]: "No Firebase App '{$appName}' has been created - call initializeApp() first",
-        [
-          "bad-app-name"
-          /* AppError.BAD_APP_NAME */
-        ]: "Illegal App name: '{$appName}'",
-        [
-          "duplicate-app"
-          /* AppError.DUPLICATE_APP */
-        ]: "Firebase App named '{$appName}' already exists with different options or config",
-        [
-          "app-deleted"
-          /* AppError.APP_DELETED */
-        ]: "Firebase App named '{$appName}' already deleted",
-        [
-          "server-app-deleted"
-          /* AppError.SERVER_APP_DELETED */
-        ]: "Firebase Server App has been deleted",
-        [
-          "no-options"
-          /* AppError.NO_OPTIONS */
-        ]: "Need to provide options, when not being deployed to hosting via source.",
-        [
-          "invalid-app-argument"
-          /* AppError.INVALID_APP_ARGUMENT */
-        ]: "firebase.{$appName}() takes either no argument or a Firebase App instance.",
-        [
-          "invalid-log-argument"
-          /* AppError.INVALID_LOG_ARGUMENT */
-        ]: "First argument to `onLog` must be null or a function.",
-        [
-          "idb-open"
-          /* AppError.IDB_OPEN */
-        ]: "Error thrown when opening IndexedDB. Original error: {$originalErrorMessage}.",
-        [
-          "idb-get"
-          /* AppError.IDB_GET */
-        ]: "Error thrown when reading from IndexedDB. Original error: {$originalErrorMessage}.",
-        [
-          "idb-set"
-          /* AppError.IDB_WRITE */
-        ]: "Error thrown when writing to IndexedDB. Original error: {$originalErrorMessage}.",
-        [
-          "idb-delete"
-          /* AppError.IDB_DELETE */
-        ]: "Error thrown when deleting from IndexedDB. Original error: {$originalErrorMessage}.",
-        [
-          "finalization-registry-not-supported"
-          /* AppError.FINALIZATION_REGISTRY_NOT_SUPPORTED */
-        ]: "FirebaseServerApp deleteOnDeref field defined but the JS runtime does not support FinalizationRegistry.",
-        [
-          "invalid-server-app-environment"
-          /* AppError.INVALID_SERVER_APP_ENVIRONMENT */
-        ]: "FirebaseServerApp is not for use in browser environments."
-      };
-      ERROR_FACTORY = new ErrorFactory("app", "Firebase", ERRORS);
-      SDK_VERSION = version2;
-      DB_NAME = "firebase-heartbeat-database";
-      DB_VERSION = 1;
-      STORE_NAME = "firebase-heartbeat-store";
-      dbPromise = null;
-      MAX_HEADER_BYTES = 1024;
-      MAX_NUM_STORED_HEARTBEATS = 30;
-      HeartbeatServiceImpl = class {
-        constructor(container) {
-          this.container = container;
-          this._heartbeatsCache = null;
-          const app = this.container.getProvider("app").getImmediate();
-          this._storage = new HeartbeatStorageImpl(app);
-          this._heartbeatsCachePromise = this._storage.read().then((result) => {
-            this._heartbeatsCache = result;
-            return result;
-          });
-        }
-        /**
-         * Called to report a heartbeat. The function will generate
-         * a HeartbeatsByUserAgent object, update heartbeatsCache, and persist it
-         * to IndexedDB.
-         * Note that we only store one heartbeat per day. So if a heartbeat for today is
-         * already logged, subsequent calls to this function in the same day will be ignored.
-         */
-        async triggerHeartbeat() {
-          var _a, _b;
-          try {
-            const platformLogger = this.container.getProvider("platform-logger").getImmediate();
-            const agent = platformLogger.getPlatformInfoString();
-            const date = getUTCDateString();
-            if (((_a = this._heartbeatsCache) === null || _a === void 0 ? void 0 : _a.heartbeats) == null) {
-              this._heartbeatsCache = await this._heartbeatsCachePromise;
-              if (((_b = this._heartbeatsCache) === null || _b === void 0 ? void 0 : _b.heartbeats) == null) {
-                return;
-              }
-            }
-            if (this._heartbeatsCache.lastSentHeartbeatDate === date || this._heartbeatsCache.heartbeats.some((singleDateHeartbeat) => singleDateHeartbeat.date === date)) {
-              return;
-            } else {
-              this._heartbeatsCache.heartbeats.push({ date, agent });
-              if (this._heartbeatsCache.heartbeats.length > MAX_NUM_STORED_HEARTBEATS) {
-                const earliestHeartbeatIdx = getEarliestHeartbeatIdx(this._heartbeatsCache.heartbeats);
-                this._heartbeatsCache.heartbeats.splice(earliestHeartbeatIdx, 1);
-              }
-            }
-            return this._storage.overwrite(this._heartbeatsCache);
-          } catch (e) {
-            logger.warn(e);
-          }
-        }
-        /**
-         * Returns a base64 encoded string which can be attached to the heartbeat-specific header directly.
-         * It also clears all heartbeats from memory as well as in IndexedDB.
-         *
-         * NOTE: Consuming product SDKs should not send the header if this method
-         * returns an empty string.
-         */
-        async getHeartbeatsHeader() {
-          var _a;
-          try {
-            if (this._heartbeatsCache === null) {
-              await this._heartbeatsCachePromise;
-            }
-            if (((_a = this._heartbeatsCache) === null || _a === void 0 ? void 0 : _a.heartbeats) == null || this._heartbeatsCache.heartbeats.length === 0) {
-              return "";
-            }
-            const date = getUTCDateString();
-            const { heartbeatsToSend, unsentEntries } = extractHeartbeatsForHeader(this._heartbeatsCache.heartbeats);
-            const headerString = base64urlEncodeWithoutPadding(JSON.stringify({ version: 2, heartbeats: heartbeatsToSend }));
-            this._heartbeatsCache.lastSentHeartbeatDate = date;
-            if (unsentEntries.length > 0) {
-              this._heartbeatsCache.heartbeats = unsentEntries;
-              await this._storage.overwrite(this._heartbeatsCache);
-            } else {
-              this._heartbeatsCache.heartbeats = [];
-              void this._storage.overwrite(this._heartbeatsCache);
-            }
-            return headerString;
-          } catch (e) {
-            logger.warn(e);
-            return "";
-          }
-        }
-      };
-      HeartbeatStorageImpl = class {
-        constructor(app) {
-          this.app = app;
-          this._canUseIndexedDBPromise = this.runIndexedDBEnvironmentCheck();
-        }
-        async runIndexedDBEnvironmentCheck() {
-          if (!isIndexedDBAvailable()) {
-            return false;
-          } else {
-            return validateIndexedDBOpenable().then(() => true).catch(() => false);
-          }
-        }
-        /**
-         * Read all heartbeats.
-         */
-        async read() {
-          const canUseIndexedDB = await this._canUseIndexedDBPromise;
-          if (!canUseIndexedDB) {
-            return { heartbeats: [] };
-          } else {
-            const idbHeartbeatObject = await readHeartbeatsFromIndexedDB(this.app);
-            if (idbHeartbeatObject === null || idbHeartbeatObject === void 0 ? void 0 : idbHeartbeatObject.heartbeats) {
-              return idbHeartbeatObject;
-            } else {
-              return { heartbeats: [] };
-            }
-          }
-        }
-        // overwrite the storage with the provided heartbeats
-        async overwrite(heartbeatsObject) {
-          var _a;
-          const canUseIndexedDB = await this._canUseIndexedDBPromise;
-          if (!canUseIndexedDB) {
-            return;
-          } else {
-            const existingHeartbeatsObject = await this.read();
-            return writeHeartbeatsToIndexedDB(this.app, {
-              lastSentHeartbeatDate: (_a = heartbeatsObject.lastSentHeartbeatDate) !== null && _a !== void 0 ? _a : existingHeartbeatsObject.lastSentHeartbeatDate,
-              heartbeats: heartbeatsObject.heartbeats
-            });
-          }
-        }
-        // add heartbeats
-        async add(heartbeatsObject) {
-          var _a;
-          const canUseIndexedDB = await this._canUseIndexedDBPromise;
-          if (!canUseIndexedDB) {
-            return;
-          } else {
-            const existingHeartbeatsObject = await this.read();
-            return writeHeartbeatsToIndexedDB(this.app, {
-              lastSentHeartbeatDate: (_a = heartbeatsObject.lastSentHeartbeatDate) !== null && _a !== void 0 ? _a : existingHeartbeatsObject.lastSentHeartbeatDate,
-              heartbeats: [
-                ...existingHeartbeatsObject.heartbeats,
-                ...heartbeatsObject.heartbeats
-              ]
-            });
-          }
-        }
-      };
-      registerCoreComponents("");
-    }
-  });
-
-  // node_modules/@firebase/database/dist/index.esm2017.js
-  function setSDKVersion(version4) {
-    SDK_VERSION2 = version4;
-  }
-  function each(obj, fn) {
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        fn(key, obj[key]);
-      }
-    }
-  }
-  function repoInfoNeedsQueryParam(repoInfo) {
-    return repoInfo.host !== repoInfo.internalHost || repoInfo.isCustomHost() || repoInfo.includeNamespaceInQueryParams;
-  }
-  function repoInfoConnectionURL(repoInfo, type, params) {
-    assert(typeof type === "string", "typeof type must == string");
-    assert(typeof params === "object", "typeof params must == object");
-    let connURL;
-    if (type === WEBSOCKET) {
-      connURL = (repoInfo.secure ? "wss://" : "ws://") + repoInfo.internalHost + "/.ws?";
-    } else if (type === LONG_POLLING) {
-      connURL = (repoInfo.secure ? "https://" : "http://") + repoInfo.internalHost + "/.lp?";
-    } else {
-      throw new Error("Unknown connection type: " + type);
-    }
-    if (repoInfoNeedsQueryParam(repoInfo)) {
-      params["ns"] = repoInfo.namespace;
-    }
-    const pairs = [];
-    each(params, (key, value) => {
-      pairs.push(key + "=" + value);
-    });
-    return connURL + pairs.join("&");
-  }
-  function statsManagerGetCollection(repoInfo) {
-    const hashString = repoInfo.toString();
-    if (!collections[hashString]) {
-      collections[hashString] = new StatsCollection();
-    }
-    return collections[hashString];
-  }
-  function statsManagerGetOrCreateReporter(repoInfo, creatorFunction) {
-    const hashString = repoInfo.toString();
-    if (!reporters[hashString]) {
-      reporters[hashString] = creatorFunction();
-    }
-    return reporters[hashString];
-  }
-  function newEmptyPath() {
-    return new Path("");
-  }
-  function pathGetFront(path) {
-    if (path.pieceNum_ >= path.pieces_.length) {
-      return null;
-    }
-    return path.pieces_[path.pieceNum_];
-  }
-  function pathGetLength(path) {
-    return path.pieces_.length - path.pieceNum_;
-  }
-  function pathPopFront(path) {
-    let pieceNum = path.pieceNum_;
-    if (pieceNum < path.pieces_.length) {
-      pieceNum++;
-    }
-    return new Path(path.pieces_, pieceNum);
-  }
-  function pathGetBack(path) {
-    if (path.pieceNum_ < path.pieces_.length) {
-      return path.pieces_[path.pieces_.length - 1];
-    }
-    return null;
-  }
-  function pathToUrlEncodedString(path) {
-    let pathString = "";
-    for (let i = path.pieceNum_; i < path.pieces_.length; i++) {
-      if (path.pieces_[i] !== "") {
-        pathString += "/" + encodeURIComponent(String(path.pieces_[i]));
-      }
-    }
-    return pathString || "/";
-  }
-  function pathSlice(path, begin = 0) {
-    return path.pieces_.slice(path.pieceNum_ + begin);
-  }
-  function pathParent(path) {
-    if (path.pieceNum_ >= path.pieces_.length) {
-      return null;
-    }
-    const pieces = [];
-    for (let i = path.pieceNum_; i < path.pieces_.length - 1; i++) {
-      pieces.push(path.pieces_[i]);
-    }
-    return new Path(pieces, 0);
-  }
-  function pathChild(path, childPathObj) {
-    const pieces = [];
-    for (let i = path.pieceNum_; i < path.pieces_.length; i++) {
-      pieces.push(path.pieces_[i]);
-    }
-    if (childPathObj instanceof Path) {
-      for (let i = childPathObj.pieceNum_; i < childPathObj.pieces_.length; i++) {
-        pieces.push(childPathObj.pieces_[i]);
-      }
-    } else {
-      const childPieces = childPathObj.split("/");
-      for (let i = 0; i < childPieces.length; i++) {
-        if (childPieces[i].length > 0) {
-          pieces.push(childPieces[i]);
-        }
-      }
-    }
-    return new Path(pieces, 0);
-  }
-  function pathIsEmpty(path) {
-    return path.pieceNum_ >= path.pieces_.length;
-  }
-  function newRelativePath(outerPath, innerPath) {
-    const outer = pathGetFront(outerPath), inner = pathGetFront(innerPath);
-    if (outer === null) {
-      return innerPath;
-    } else if (outer === inner) {
-      return newRelativePath(pathPopFront(outerPath), pathPopFront(innerPath));
-    } else {
-      throw new Error("INTERNAL ERROR: innerPath (" + innerPath + ") is not within outerPath (" + outerPath + ")");
-    }
-  }
-  function pathEquals(path, other) {
-    if (pathGetLength(path) !== pathGetLength(other)) {
-      return false;
-    }
-    for (let i = path.pieceNum_, j = other.pieceNum_; i <= path.pieces_.length; i++, j++) {
-      if (path.pieces_[i] !== other.pieces_[j]) {
-        return false;
-      }
-    }
-    return true;
-  }
-  function pathContains(path, other) {
-    let i = path.pieceNum_;
-    let j = other.pieceNum_;
-    if (pathGetLength(path) > pathGetLength(other)) {
-      return false;
-    }
-    while (i < path.pieces_.length) {
-      if (path.pieces_[i] !== other.pieces_[j]) {
-        return false;
-      }
-      ++i;
-      ++j;
-    }
-    return true;
-  }
-  function validationPathPush(validationPath, child) {
-    if (validationPath.parts_.length > 0) {
-      validationPath.byteLength_ += 1;
-    }
-    validationPath.parts_.push(child);
-    validationPath.byteLength_ += stringLength(child);
-    validationPathCheckValid(validationPath);
-  }
-  function validationPathPop(validationPath) {
-    const last = validationPath.parts_.pop();
-    validationPath.byteLength_ -= stringLength(last);
-    if (validationPath.parts_.length > 0) {
-      validationPath.byteLength_ -= 1;
-    }
-  }
-  function validationPathCheckValid(validationPath) {
-    if (validationPath.byteLength_ > MAX_PATH_LENGTH_BYTES) {
-      throw new Error(validationPath.errorPrefix_ + "has a key path longer than " + MAX_PATH_LENGTH_BYTES + " bytes (" + validationPath.byteLength_ + ").");
-    }
-    if (validationPath.parts_.length > MAX_PATH_DEPTH) {
-      throw new Error(validationPath.errorPrefix_ + "path specified exceeds the maximum depth that can be written (" + MAX_PATH_DEPTH + ") or object contains a cycle " + validationPathToErrorString(validationPath));
-    }
-  }
-  function validationPathToErrorString(validationPath) {
-    if (validationPath.parts_.length === 0) {
-      return "";
-    }
-    return "in property '" + validationPath.parts_.join(".") + "'";
-  }
-  function NAME_ONLY_COMPARATOR(left, right) {
-    return nameCompare(left.name, right.name);
-  }
-  function NAME_COMPARATOR(left, right) {
-    return nameCompare(left, right);
-  }
-  function setMaxNode$1(val) {
-    MAX_NODE$2 = val;
-  }
-  function setNodeFromJSON(val) {
-    nodeFromJSON$1 = val;
-  }
-  function setMaxNode(val) {
-    MAX_NODE$1 = val;
-  }
-  function nodeFromJSON(json, priority = null) {
-    if (json === null) {
-      return ChildrenNode.EMPTY_NODE;
-    }
-    if (typeof json === "object" && ".priority" in json) {
-      priority = json[".priority"];
-    }
-    assert(priority === null || typeof priority === "string" || typeof priority === "number" || typeof priority === "object" && ".sv" in priority, "Invalid priority type found: " + typeof priority);
-    if (typeof json === "object" && ".value" in json && json[".value"] !== null) {
-      json = json[".value"];
-    }
-    if (typeof json !== "object" || ".sv" in json) {
-      const jsonLeaf = json;
-      return new LeafNode(jsonLeaf, nodeFromJSON(priority));
-    }
-    if (!(json instanceof Array) && USE_HINZE) {
-      const children = [];
-      let childrenHavePriority = false;
-      const hinzeJsonObj = json;
-      each(hinzeJsonObj, (key, child) => {
-        if (key.substring(0, 1) !== ".") {
-          const childNode = nodeFromJSON(child);
-          if (!childNode.isEmpty()) {
-            childrenHavePriority = childrenHavePriority || !childNode.getPriority().isEmpty();
-            children.push(new NamedNode(key, childNode));
-          }
-        }
-      });
-      if (children.length === 0) {
-        return ChildrenNode.EMPTY_NODE;
-      }
-      const childSet = buildChildSet(children, NAME_ONLY_COMPARATOR, (namedNode) => namedNode.name, NAME_COMPARATOR);
-      if (childrenHavePriority) {
-        const sortedChildSet = buildChildSet(children, PRIORITY_INDEX.getCompare());
-        return new ChildrenNode(childSet, nodeFromJSON(priority), new IndexMap({ ".priority": sortedChildSet }, { ".priority": PRIORITY_INDEX }));
-      } else {
-        return new ChildrenNode(childSet, nodeFromJSON(priority), IndexMap.Default);
-      }
-    } else {
-      let node = ChildrenNode.EMPTY_NODE;
-      each(json, (key, childData) => {
-        if (contains(json, key)) {
-          if (key.substring(0, 1) !== ".") {
-            const childNode = nodeFromJSON(childData);
-            if (childNode.isLeafNode() || !childNode.isEmpty()) {
-              node = node.updateImmediateChild(key, childNode);
-            }
-          }
-        }
-      });
-      return node.updatePriority(nodeFromJSON(priority));
-    }
-  }
-  function changeValue(snapshotNode) {
-    return { type: "value", snapshotNode };
-  }
-  function changeChildAdded(childName, snapshotNode) {
-    return { type: "child_added", snapshotNode, childName };
-  }
-  function changeChildRemoved(childName, snapshotNode) {
-    return { type: "child_removed", snapshotNode, childName };
-  }
-  function changeChildChanged(childName, snapshotNode, oldSnap) {
-    return {
-      type: "child_changed",
-      snapshotNode,
-      childName,
-      oldSnap
-    };
-  }
-  function changeChildMoved(childName, snapshotNode) {
-    return { type: "child_moved", snapshotNode, childName };
-  }
-  function queryParamsToRestQueryStringParameters(queryParams) {
-    const qs = {};
-    if (queryParams.isDefault()) {
-      return qs;
-    }
-    let orderBy;
-    if (queryParams.index_ === PRIORITY_INDEX) {
-      orderBy = "$priority";
-    } else if (queryParams.index_ === VALUE_INDEX) {
-      orderBy = "$value";
-    } else if (queryParams.index_ === KEY_INDEX) {
-      orderBy = "$key";
-    } else {
-      assert(queryParams.index_ instanceof PathIndex, "Unrecognized index type!");
-      orderBy = queryParams.index_.toString();
-    }
-    qs[
-      "orderBy"
-      /* REST_QUERY_CONSTANTS.ORDER_BY */
-    ] = stringify(orderBy);
-    if (queryParams.startSet_) {
-      const startParam = queryParams.startAfterSet_ ? "startAfter" : "startAt";
-      qs[startParam] = stringify(queryParams.indexStartValue_);
-      if (queryParams.startNameSet_) {
-        qs[startParam] += "," + stringify(queryParams.indexStartName_);
-      }
-    }
-    if (queryParams.endSet_) {
-      const endParam = queryParams.endBeforeSet_ ? "endBefore" : "endAt";
-      qs[endParam] = stringify(queryParams.indexEndValue_);
-      if (queryParams.endNameSet_) {
-        qs[endParam] += "," + stringify(queryParams.indexEndName_);
-      }
-    }
-    if (queryParams.limitSet_) {
-      if (queryParams.isViewFromLeft()) {
-        qs[
-          "limitToFirst"
-          /* REST_QUERY_CONSTANTS.LIMIT_TO_FIRST */
-        ] = queryParams.limit_;
-      } else {
-        qs[
-          "limitToLast"
-          /* REST_QUERY_CONSTANTS.LIMIT_TO_LAST */
-        ] = queryParams.limit_;
-      }
-    }
-    return qs;
-  }
-  function queryParamsGetQueryObject(queryParams) {
-    const obj = {};
-    if (queryParams.startSet_) {
-      obj[
-        "sp"
-        /* WIRE_PROTOCOL_CONSTANTS.INDEX_START_VALUE */
-      ] = queryParams.indexStartValue_;
-      if (queryParams.startNameSet_) {
-        obj[
-          "sn"
-          /* WIRE_PROTOCOL_CONSTANTS.INDEX_START_NAME */
-        ] = queryParams.indexStartName_;
-      }
-      obj[
-        "sin"
-        /* WIRE_PROTOCOL_CONSTANTS.INDEX_START_IS_INCLUSIVE */
-      ] = !queryParams.startAfterSet_;
-    }
-    if (queryParams.endSet_) {
-      obj[
-        "ep"
-        /* WIRE_PROTOCOL_CONSTANTS.INDEX_END_VALUE */
-      ] = queryParams.indexEndValue_;
-      if (queryParams.endNameSet_) {
-        obj[
-          "en"
-          /* WIRE_PROTOCOL_CONSTANTS.INDEX_END_NAME */
-        ] = queryParams.indexEndName_;
-      }
-      obj[
-        "ein"
-        /* WIRE_PROTOCOL_CONSTANTS.INDEX_END_IS_INCLUSIVE */
-      ] = !queryParams.endBeforeSet_;
-    }
-    if (queryParams.limitSet_) {
-      obj[
-        "l"
-        /* WIRE_PROTOCOL_CONSTANTS.LIMIT */
-      ] = queryParams.limit_;
-      let viewFrom = queryParams.viewFrom_;
-      if (viewFrom === "") {
-        if (queryParams.isViewFromLeft()) {
-          viewFrom = "l";
-        } else {
-          viewFrom = "r";
-        }
-      }
-      obj[
-        "vf"
-        /* WIRE_PROTOCOL_CONSTANTS.VIEW_FROM */
-      ] = viewFrom;
-    }
-    if (queryParams.index_ !== PRIORITY_INDEX) {
-      obj[
-        "i"
-        /* WIRE_PROTOCOL_CONSTANTS.INDEX */
-      ] = queryParams.index_.toString();
-    }
-    return obj;
-  }
-  function newSparseSnapshotTree() {
-    return {
-      value: null,
-      children: /* @__PURE__ */ new Map()
-    };
-  }
-  function sparseSnapshotTreeRemember(sparseSnapshotTree, path, data) {
-    if (pathIsEmpty(path)) {
-      sparseSnapshotTree.value = data;
-      sparseSnapshotTree.children.clear();
-    } else if (sparseSnapshotTree.value !== null) {
-      sparseSnapshotTree.value = sparseSnapshotTree.value.updateChild(path, data);
-    } else {
-      const childKey = pathGetFront(path);
-      if (!sparseSnapshotTree.children.has(childKey)) {
-        sparseSnapshotTree.children.set(childKey, newSparseSnapshotTree());
-      }
-      const child = sparseSnapshotTree.children.get(childKey);
-      path = pathPopFront(path);
-      sparseSnapshotTreeRemember(child, path, data);
-    }
-  }
-  function sparseSnapshotTreeForEachTree(sparseSnapshotTree, prefixPath, func) {
-    if (sparseSnapshotTree.value !== null) {
-      func(prefixPath, sparseSnapshotTree.value);
-    } else {
-      sparseSnapshotTreeForEachChild(sparseSnapshotTree, (key, tree) => {
-        const path = new Path(prefixPath.toString() + "/" + key);
-        sparseSnapshotTreeForEachTree(tree, path, func);
-      });
-    }
-  }
-  function sparseSnapshotTreeForEachChild(sparseSnapshotTree, func) {
-    sparseSnapshotTree.children.forEach((tree, key) => {
-      func(key, tree);
-    });
-  }
-  function newOperationSourceUser() {
-    return {
-      fromUser: true,
-      fromServer: false,
-      queryId: null,
-      tagged: false
-    };
-  }
-  function newOperationSourceServer() {
-    return {
-      fromUser: false,
-      fromServer: true,
-      queryId: null,
-      tagged: false
-    };
-  }
-  function newOperationSourceServerTaggedQuery(queryId) {
-    return {
-      fromUser: false,
-      fromServer: true,
-      queryId,
-      tagged: true
-    };
-  }
-  function eventGeneratorGenerateEventsForChanges(eventGenerator, changes, eventCache, eventRegistrations) {
-    const events = [];
-    const moves = [];
-    changes.forEach((change) => {
-      if (change.type === "child_changed" && eventGenerator.index_.indexedValueChanged(change.oldSnap, change.snapshotNode)) {
-        moves.push(changeChildMoved(change.childName, change.snapshotNode));
-      }
-    });
-    eventGeneratorGenerateEventsForType(eventGenerator, events, "child_removed", changes, eventRegistrations, eventCache);
-    eventGeneratorGenerateEventsForType(eventGenerator, events, "child_added", changes, eventRegistrations, eventCache);
-    eventGeneratorGenerateEventsForType(eventGenerator, events, "child_moved", moves, eventRegistrations, eventCache);
-    eventGeneratorGenerateEventsForType(eventGenerator, events, "child_changed", changes, eventRegistrations, eventCache);
-    eventGeneratorGenerateEventsForType(eventGenerator, events, "value", changes, eventRegistrations, eventCache);
-    return events;
-  }
-  function eventGeneratorGenerateEventsForType(eventGenerator, events, eventType, changes, registrations, eventCache) {
-    const filteredChanges = changes.filter((change) => change.type === eventType);
-    filteredChanges.sort((a, b) => eventGeneratorCompareChanges(eventGenerator, a, b));
-    filteredChanges.forEach((change) => {
-      const materializedChange = eventGeneratorMaterializeSingleChange(eventGenerator, change, eventCache);
-      registrations.forEach((registration) => {
-        if (registration.respondsTo(change.type)) {
-          events.push(registration.createEvent(materializedChange, eventGenerator.query_));
-        }
-      });
-    });
-  }
-  function eventGeneratorMaterializeSingleChange(eventGenerator, change, eventCache) {
-    if (change.type === "value" || change.type === "child_removed") {
-      return change;
-    } else {
-      change.prevName = eventCache.getPredecessorChildName(change.childName, change.snapshotNode, eventGenerator.index_);
-      return change;
-    }
-  }
-  function eventGeneratorCompareChanges(eventGenerator, a, b) {
-    if (a.childName == null || b.childName == null) {
-      throw assertionError("Should only compare child_ events.");
-    }
-    const aWrapped = new NamedNode(a.childName, a.snapshotNode);
-    const bWrapped = new NamedNode(b.childName, b.snapshotNode);
-    return eventGenerator.index_.compare(aWrapped, bWrapped);
-  }
-  function newViewCache(eventCache, serverCache) {
-    return { eventCache, serverCache };
-  }
-  function viewCacheUpdateEventSnap(viewCache, eventSnap, complete, filtered) {
-    return newViewCache(new CacheNode(eventSnap, complete, filtered), viewCache.serverCache);
-  }
-  function viewCacheUpdateServerSnap(viewCache, serverSnap, complete, filtered) {
-    return newViewCache(viewCache.eventCache, new CacheNode(serverSnap, complete, filtered));
-  }
-  function viewCacheGetCompleteEventSnap(viewCache) {
-    return viewCache.eventCache.isFullyInitialized() ? viewCache.eventCache.getNode() : null;
-  }
-  function viewCacheGetCompleteServerSnap(viewCache) {
-    return viewCache.serverCache.isFullyInitialized() ? viewCache.serverCache.getNode() : null;
-  }
-  function compoundWriteAddWrite(compoundWrite, path, node) {
-    if (pathIsEmpty(path)) {
-      return new CompoundWrite(new ImmutableTree(node));
-    } else {
-      const rootmost = compoundWrite.writeTree_.findRootMostValueAndPath(path);
-      if (rootmost != null) {
-        const rootMostPath = rootmost.path;
-        let value = rootmost.value;
-        const relativePath = newRelativePath(rootMostPath, path);
-        value = value.updateChild(relativePath, node);
-        return new CompoundWrite(compoundWrite.writeTree_.set(rootMostPath, value));
-      } else {
-        const subtree = new ImmutableTree(node);
-        const newWriteTree2 = compoundWrite.writeTree_.setTree(path, subtree);
-        return new CompoundWrite(newWriteTree2);
-      }
-    }
-  }
-  function compoundWriteAddWrites(compoundWrite, path, updates) {
-    let newWrite = compoundWrite;
-    each(updates, (childKey, node) => {
-      newWrite = compoundWriteAddWrite(newWrite, pathChild(path, childKey), node);
-    });
-    return newWrite;
-  }
-  function compoundWriteRemoveWrite(compoundWrite, path) {
-    if (pathIsEmpty(path)) {
-      return CompoundWrite.empty();
-    } else {
-      const newWriteTree2 = compoundWrite.writeTree_.setTree(path, new ImmutableTree(null));
-      return new CompoundWrite(newWriteTree2);
-    }
-  }
-  function compoundWriteHasCompleteWrite(compoundWrite, path) {
-    return compoundWriteGetCompleteNode(compoundWrite, path) != null;
-  }
-  function compoundWriteGetCompleteNode(compoundWrite, path) {
-    const rootmost = compoundWrite.writeTree_.findRootMostValueAndPath(path);
-    if (rootmost != null) {
-      return compoundWrite.writeTree_.get(rootmost.path).getChild(newRelativePath(rootmost.path, path));
-    } else {
-      return null;
-    }
-  }
-  function compoundWriteGetCompleteChildren(compoundWrite) {
-    const children = [];
-    const node = compoundWrite.writeTree_.value;
-    if (node != null) {
-      if (!node.isLeafNode()) {
-        node.forEachChild(PRIORITY_INDEX, (childName, childNode) => {
-          children.push(new NamedNode(childName, childNode));
-        });
-      }
-    } else {
-      compoundWrite.writeTree_.children.inorderTraversal((childName, childTree) => {
-        if (childTree.value != null) {
-          children.push(new NamedNode(childName, childTree.value));
-        }
-      });
-    }
-    return children;
-  }
-  function compoundWriteChildCompoundWrite(compoundWrite, path) {
-    if (pathIsEmpty(path)) {
-      return compoundWrite;
-    } else {
-      const shadowingNode = compoundWriteGetCompleteNode(compoundWrite, path);
-      if (shadowingNode != null) {
-        return new CompoundWrite(new ImmutableTree(shadowingNode));
-      } else {
-        return new CompoundWrite(compoundWrite.writeTree_.subtree(path));
-      }
-    }
-  }
-  function compoundWriteIsEmpty(compoundWrite) {
-    return compoundWrite.writeTree_.isEmpty();
-  }
-  function compoundWriteApply(compoundWrite, node) {
-    return applySubtreeWrite(newEmptyPath(), compoundWrite.writeTree_, node);
-  }
-  function applySubtreeWrite(relativePath, writeTree, node) {
-    if (writeTree.value != null) {
-      return node.updateChild(relativePath, writeTree.value);
-    } else {
-      let priorityWrite = null;
-      writeTree.children.inorderTraversal((childKey, childTree) => {
-        if (childKey === ".priority") {
-          assert(childTree.value !== null, "Priority writes must always be leaf nodes");
-          priorityWrite = childTree.value;
-        } else {
-          node = applySubtreeWrite(pathChild(relativePath, childKey), childTree, node);
-        }
-      });
-      if (!node.getChild(relativePath).isEmpty() && priorityWrite !== null) {
-        node = node.updateChild(pathChild(relativePath, ".priority"), priorityWrite);
-      }
-      return node;
-    }
-  }
-  function writeTreeChildWrites(writeTree, path) {
-    return newWriteTreeRef(path, writeTree);
-  }
-  function writeTreeAddOverwrite(writeTree, path, snap3, writeId, visible) {
-    assert(writeId > writeTree.lastWriteId, "Stacking an older write on top of newer ones");
-    if (visible === void 0) {
-      visible = true;
-    }
-    writeTree.allWrites.push({
-      path,
-      snap: snap3,
-      writeId,
-      visible
-    });
-    if (visible) {
-      writeTree.visibleWrites = compoundWriteAddWrite(writeTree.visibleWrites, path, snap3);
-    }
-    writeTree.lastWriteId = writeId;
-  }
-  function writeTreeGetWrite(writeTree, writeId) {
-    for (let i = 0; i < writeTree.allWrites.length; i++) {
-      const record = writeTree.allWrites[i];
-      if (record.writeId === writeId) {
-        return record;
-      }
-    }
-    return null;
-  }
-  function writeTreeRemoveWrite(writeTree, writeId) {
-    const idx = writeTree.allWrites.findIndex((s) => {
-      return s.writeId === writeId;
-    });
-    assert(idx >= 0, "removeWrite called with nonexistent writeId.");
-    const writeToRemove = writeTree.allWrites[idx];
-    writeTree.allWrites.splice(idx, 1);
-    let removedWriteWasVisible = writeToRemove.visible;
-    let removedWriteOverlapsWithOtherWrites = false;
-    let i = writeTree.allWrites.length - 1;
-    while (removedWriteWasVisible && i >= 0) {
-      const currentWrite = writeTree.allWrites[i];
-      if (currentWrite.visible) {
-        if (i >= idx && writeTreeRecordContainsPath_(currentWrite, writeToRemove.path)) {
-          removedWriteWasVisible = false;
-        } else if (pathContains(writeToRemove.path, currentWrite.path)) {
-          removedWriteOverlapsWithOtherWrites = true;
-        }
-      }
-      i--;
-    }
-    if (!removedWriteWasVisible) {
-      return false;
-    } else if (removedWriteOverlapsWithOtherWrites) {
-      writeTreeResetTree_(writeTree);
-      return true;
-    } else {
-      if (writeToRemove.snap) {
-        writeTree.visibleWrites = compoundWriteRemoveWrite(writeTree.visibleWrites, writeToRemove.path);
-      } else {
-        const children = writeToRemove.children;
-        each(children, (childName) => {
-          writeTree.visibleWrites = compoundWriteRemoveWrite(writeTree.visibleWrites, pathChild(writeToRemove.path, childName));
-        });
-      }
-      return true;
-    }
-  }
-  function writeTreeRecordContainsPath_(writeRecord, path) {
-    if (writeRecord.snap) {
-      return pathContains(writeRecord.path, path);
-    } else {
-      for (const childName in writeRecord.children) {
-        if (writeRecord.children.hasOwnProperty(childName) && pathContains(pathChild(writeRecord.path, childName), path)) {
-          return true;
-        }
-      }
-      return false;
-    }
-  }
-  function writeTreeResetTree_(writeTree) {
-    writeTree.visibleWrites = writeTreeLayerTree_(writeTree.allWrites, writeTreeDefaultFilter_, newEmptyPath());
-    if (writeTree.allWrites.length > 0) {
-      writeTree.lastWriteId = writeTree.allWrites[writeTree.allWrites.length - 1].writeId;
-    } else {
-      writeTree.lastWriteId = -1;
-    }
-  }
-  function writeTreeDefaultFilter_(write) {
-    return write.visible;
-  }
-  function writeTreeLayerTree_(writes, filter, treeRoot) {
-    let compoundWrite = CompoundWrite.empty();
-    for (let i = 0; i < writes.length; ++i) {
-      const write = writes[i];
-      if (filter(write)) {
-        const writePath = write.path;
-        let relativePath;
-        if (write.snap) {
-          if (pathContains(treeRoot, writePath)) {
-            relativePath = newRelativePath(treeRoot, writePath);
-            compoundWrite = compoundWriteAddWrite(compoundWrite, relativePath, write.snap);
-          } else if (pathContains(writePath, treeRoot)) {
-            relativePath = newRelativePath(writePath, treeRoot);
-            compoundWrite = compoundWriteAddWrite(compoundWrite, newEmptyPath(), write.snap.getChild(relativePath));
-          } else ;
-        } else if (write.children) {
-          if (pathContains(treeRoot, writePath)) {
-            relativePath = newRelativePath(treeRoot, writePath);
-            compoundWrite = compoundWriteAddWrites(compoundWrite, relativePath, write.children);
-          } else if (pathContains(writePath, treeRoot)) {
-            relativePath = newRelativePath(writePath, treeRoot);
-            if (pathIsEmpty(relativePath)) {
-              compoundWrite = compoundWriteAddWrites(compoundWrite, newEmptyPath(), write.children);
-            } else {
-              const child = safeGet(write.children, pathGetFront(relativePath));
-              if (child) {
-                const deepNode = child.getChild(pathPopFront(relativePath));
-                compoundWrite = compoundWriteAddWrite(compoundWrite, newEmptyPath(), deepNode);
-              }
-            }
-          } else ;
-        } else {
-          throw assertionError("WriteRecord should have .snap or .children");
-        }
-      }
-    }
-    return compoundWrite;
-  }
-  function writeTreeCalcCompleteEventCache(writeTree, treePath, completeServerCache, writeIdsToExclude, includeHiddenWrites) {
-    if (!writeIdsToExclude && !includeHiddenWrites) {
-      const shadowingNode = compoundWriteGetCompleteNode(writeTree.visibleWrites, treePath);
-      if (shadowingNode != null) {
-        return shadowingNode;
-      } else {
-        const subMerge = compoundWriteChildCompoundWrite(writeTree.visibleWrites, treePath);
-        if (compoundWriteIsEmpty(subMerge)) {
-          return completeServerCache;
-        } else if (completeServerCache == null && !compoundWriteHasCompleteWrite(subMerge, newEmptyPath())) {
-          return null;
-        } else {
-          const layeredCache = completeServerCache || ChildrenNode.EMPTY_NODE;
-          return compoundWriteApply(subMerge, layeredCache);
-        }
-      }
-    } else {
-      const merge = compoundWriteChildCompoundWrite(writeTree.visibleWrites, treePath);
-      if (!includeHiddenWrites && compoundWriteIsEmpty(merge)) {
-        return completeServerCache;
-      } else {
-        if (!includeHiddenWrites && completeServerCache == null && !compoundWriteHasCompleteWrite(merge, newEmptyPath())) {
-          return null;
-        } else {
-          const filter = function(write) {
-            return (write.visible || includeHiddenWrites) && (!writeIdsToExclude || !~writeIdsToExclude.indexOf(write.writeId)) && (pathContains(write.path, treePath) || pathContains(treePath, write.path));
-          };
-          const mergeAtPath = writeTreeLayerTree_(writeTree.allWrites, filter, treePath);
-          const layeredCache = completeServerCache || ChildrenNode.EMPTY_NODE;
-          return compoundWriteApply(mergeAtPath, layeredCache);
-        }
-      }
-    }
-  }
-  function writeTreeCalcCompleteEventChildren(writeTree, treePath, completeServerChildren) {
-    let completeChildren = ChildrenNode.EMPTY_NODE;
-    const topLevelSet = compoundWriteGetCompleteNode(writeTree.visibleWrites, treePath);
-    if (topLevelSet) {
-      if (!topLevelSet.isLeafNode()) {
-        topLevelSet.forEachChild(PRIORITY_INDEX, (childName, childSnap) => {
-          completeChildren = completeChildren.updateImmediateChild(childName, childSnap);
-        });
-      }
-      return completeChildren;
-    } else if (completeServerChildren) {
-      const merge = compoundWriteChildCompoundWrite(writeTree.visibleWrites, treePath);
-      completeServerChildren.forEachChild(PRIORITY_INDEX, (childName, childNode) => {
-        const node = compoundWriteApply(compoundWriteChildCompoundWrite(merge, new Path(childName)), childNode);
-        completeChildren = completeChildren.updateImmediateChild(childName, node);
-      });
-      compoundWriteGetCompleteChildren(merge).forEach((namedNode) => {
-        completeChildren = completeChildren.updateImmediateChild(namedNode.name, namedNode.node);
-      });
-      return completeChildren;
-    } else {
-      const merge = compoundWriteChildCompoundWrite(writeTree.visibleWrites, treePath);
-      compoundWriteGetCompleteChildren(merge).forEach((namedNode) => {
-        completeChildren = completeChildren.updateImmediateChild(namedNode.name, namedNode.node);
-      });
-      return completeChildren;
-    }
-  }
-  function writeTreeCalcEventCacheAfterServerOverwrite(writeTree, treePath, childPath, existingEventSnap, existingServerSnap) {
-    assert(existingEventSnap || existingServerSnap, "Either existingEventSnap or existingServerSnap must exist");
-    const path = pathChild(treePath, childPath);
-    if (compoundWriteHasCompleteWrite(writeTree.visibleWrites, path)) {
-      return null;
-    } else {
-      const childMerge = compoundWriteChildCompoundWrite(writeTree.visibleWrites, path);
-      if (compoundWriteIsEmpty(childMerge)) {
-        return existingServerSnap.getChild(childPath);
-      } else {
-        return compoundWriteApply(childMerge, existingServerSnap.getChild(childPath));
-      }
-    }
-  }
-  function writeTreeCalcCompleteChild(writeTree, treePath, childKey, existingServerSnap) {
-    const path = pathChild(treePath, childKey);
-    const shadowingNode = compoundWriteGetCompleteNode(writeTree.visibleWrites, path);
-    if (shadowingNode != null) {
-      return shadowingNode;
-    } else {
-      if (existingServerSnap.isCompleteForChild(childKey)) {
-        const childMerge = compoundWriteChildCompoundWrite(writeTree.visibleWrites, path);
-        return compoundWriteApply(childMerge, existingServerSnap.getNode().getImmediateChild(childKey));
-      } else {
-        return null;
-      }
-    }
-  }
-  function writeTreeShadowingWrite(writeTree, path) {
-    return compoundWriteGetCompleteNode(writeTree.visibleWrites, path);
-  }
-  function writeTreeCalcIndexedSlice(writeTree, treePath, completeServerData, startPost, count, reverse, index) {
-    let toIterate;
-    const merge = compoundWriteChildCompoundWrite(writeTree.visibleWrites, treePath);
-    const shadowingNode = compoundWriteGetCompleteNode(merge, newEmptyPath());
-    if (shadowingNode != null) {
-      toIterate = shadowingNode;
-    } else if (completeServerData != null) {
-      toIterate = compoundWriteApply(merge, completeServerData);
-    } else {
-      return [];
-    }
-    toIterate = toIterate.withIndex(index);
-    if (!toIterate.isEmpty() && !toIterate.isLeafNode()) {
-      const nodes = [];
-      const cmp = index.getCompare();
-      const iter = reverse ? toIterate.getReverseIteratorFrom(startPost, index) : toIterate.getIteratorFrom(startPost, index);
-      let next = iter.getNext();
-      while (next && nodes.length < count) {
-        if (cmp(next, startPost) !== 0) {
-          nodes.push(next);
-        }
-        next = iter.getNext();
-      }
-      return nodes;
-    } else {
-      return [];
-    }
-  }
-  function newWriteTree() {
-    return {
-      visibleWrites: CompoundWrite.empty(),
-      allWrites: [],
-      lastWriteId: -1
-    };
-  }
-  function writeTreeRefCalcCompleteEventCache(writeTreeRef, completeServerCache, writeIdsToExclude, includeHiddenWrites) {
-    return writeTreeCalcCompleteEventCache(writeTreeRef.writeTree, writeTreeRef.treePath, completeServerCache, writeIdsToExclude, includeHiddenWrites);
-  }
-  function writeTreeRefCalcCompleteEventChildren(writeTreeRef, completeServerChildren) {
-    return writeTreeCalcCompleteEventChildren(writeTreeRef.writeTree, writeTreeRef.treePath, completeServerChildren);
-  }
-  function writeTreeRefCalcEventCacheAfterServerOverwrite(writeTreeRef, path, existingEventSnap, existingServerSnap) {
-    return writeTreeCalcEventCacheAfterServerOverwrite(writeTreeRef.writeTree, writeTreeRef.treePath, path, existingEventSnap, existingServerSnap);
-  }
-  function writeTreeRefShadowingWrite(writeTreeRef, path) {
-    return writeTreeShadowingWrite(writeTreeRef.writeTree, pathChild(writeTreeRef.treePath, path));
-  }
-  function writeTreeRefCalcIndexedSlice(writeTreeRef, completeServerData, startPost, count, reverse, index) {
-    return writeTreeCalcIndexedSlice(writeTreeRef.writeTree, writeTreeRef.treePath, completeServerData, startPost, count, reverse, index);
-  }
-  function writeTreeRefCalcCompleteChild(writeTreeRef, childKey, existingServerCache) {
-    return writeTreeCalcCompleteChild(writeTreeRef.writeTree, writeTreeRef.treePath, childKey, existingServerCache);
-  }
-  function writeTreeRefChild(writeTreeRef, childName) {
-    return newWriteTreeRef(pathChild(writeTreeRef.treePath, childName), writeTreeRef.writeTree);
-  }
-  function newWriteTreeRef(path, writeTree) {
-    return {
-      treePath: path,
-      writeTree
-    };
-  }
-  function viewProcessorAssertIndexed(viewProcessor, viewCache) {
-    assert(viewCache.eventCache.getNode().isIndexed(viewProcessor.filter.getIndex()), "Event snap not indexed");
-    assert(viewCache.serverCache.getNode().isIndexed(viewProcessor.filter.getIndex()), "Server snap not indexed");
-  }
-  function viewProcessorApplyOperation(viewProcessor, oldViewCache, operation, writesCache, completeCache) {
-    const accumulator = new ChildChangeAccumulator();
-    let newViewCache2, filterServerNode;
-    if (operation.type === OperationType.OVERWRITE) {
-      const overwrite = operation;
-      if (overwrite.source.fromUser) {
-        newViewCache2 = viewProcessorApplyUserOverwrite(viewProcessor, oldViewCache, overwrite.path, overwrite.snap, writesCache, completeCache, accumulator);
-      } else {
-        assert(overwrite.source.fromServer, "Unknown source.");
-        filterServerNode = overwrite.source.tagged || oldViewCache.serverCache.isFiltered() && !pathIsEmpty(overwrite.path);
-        newViewCache2 = viewProcessorApplyServerOverwrite(viewProcessor, oldViewCache, overwrite.path, overwrite.snap, writesCache, completeCache, filterServerNode, accumulator);
-      }
-    } else if (operation.type === OperationType.MERGE) {
-      const merge = operation;
-      if (merge.source.fromUser) {
-        newViewCache2 = viewProcessorApplyUserMerge(viewProcessor, oldViewCache, merge.path, merge.children, writesCache, completeCache, accumulator);
-      } else {
-        assert(merge.source.fromServer, "Unknown source.");
-        filterServerNode = merge.source.tagged || oldViewCache.serverCache.isFiltered();
-        newViewCache2 = viewProcessorApplyServerMerge(viewProcessor, oldViewCache, merge.path, merge.children, writesCache, completeCache, filterServerNode, accumulator);
-      }
-    } else if (operation.type === OperationType.ACK_USER_WRITE) {
-      const ackUserWrite = operation;
-      if (!ackUserWrite.revert) {
-        newViewCache2 = viewProcessorAckUserWrite(viewProcessor, oldViewCache, ackUserWrite.path, ackUserWrite.affectedTree, writesCache, completeCache, accumulator);
-      } else {
-        newViewCache2 = viewProcessorRevertUserWrite(viewProcessor, oldViewCache, ackUserWrite.path, writesCache, completeCache, accumulator);
-      }
-    } else if (operation.type === OperationType.LISTEN_COMPLETE) {
-      newViewCache2 = viewProcessorListenComplete(viewProcessor, oldViewCache, operation.path, writesCache, accumulator);
-    } else {
-      throw assertionError("Unknown operation type: " + operation.type);
-    }
-    const changes = accumulator.getChanges();
-    viewProcessorMaybeAddValueEvent(oldViewCache, newViewCache2, changes);
-    return { viewCache: newViewCache2, changes };
-  }
-  function viewProcessorMaybeAddValueEvent(oldViewCache, newViewCache2, accumulator) {
-    const eventSnap = newViewCache2.eventCache;
-    if (eventSnap.isFullyInitialized()) {
-      const isLeafOrEmpty = eventSnap.getNode().isLeafNode() || eventSnap.getNode().isEmpty();
-      const oldCompleteSnap = viewCacheGetCompleteEventSnap(oldViewCache);
-      if (accumulator.length > 0 || !oldViewCache.eventCache.isFullyInitialized() || isLeafOrEmpty && !eventSnap.getNode().equals(oldCompleteSnap) || !eventSnap.getNode().getPriority().equals(oldCompleteSnap.getPriority())) {
-        accumulator.push(changeValue(viewCacheGetCompleteEventSnap(newViewCache2)));
-      }
-    }
-  }
-  function viewProcessorGenerateEventCacheAfterServerEvent(viewProcessor, viewCache, changePath, writesCache, source, accumulator) {
-    const oldEventSnap = viewCache.eventCache;
-    if (writeTreeRefShadowingWrite(writesCache, changePath) != null) {
-      return viewCache;
-    } else {
-      let newEventCache, serverNode;
-      if (pathIsEmpty(changePath)) {
-        assert(viewCache.serverCache.isFullyInitialized(), "If change path is empty, we must have complete server data");
-        if (viewCache.serverCache.isFiltered()) {
-          const serverCache = viewCacheGetCompleteServerSnap(viewCache);
-          const completeChildren = serverCache instanceof ChildrenNode ? serverCache : ChildrenNode.EMPTY_NODE;
-          const completeEventChildren = writeTreeRefCalcCompleteEventChildren(writesCache, completeChildren);
-          newEventCache = viewProcessor.filter.updateFullNode(viewCache.eventCache.getNode(), completeEventChildren, accumulator);
-        } else {
-          const completeNode = writeTreeRefCalcCompleteEventCache(writesCache, viewCacheGetCompleteServerSnap(viewCache));
-          newEventCache = viewProcessor.filter.updateFullNode(viewCache.eventCache.getNode(), completeNode, accumulator);
-        }
-      } else {
-        const childKey = pathGetFront(changePath);
-        if (childKey === ".priority") {
-          assert(pathGetLength(changePath) === 1, "Can't have a priority with additional path components");
-          const oldEventNode = oldEventSnap.getNode();
-          serverNode = viewCache.serverCache.getNode();
-          const updatedPriority = writeTreeRefCalcEventCacheAfterServerOverwrite(writesCache, changePath, oldEventNode, serverNode);
-          if (updatedPriority != null) {
-            newEventCache = viewProcessor.filter.updatePriority(oldEventNode, updatedPriority);
-          } else {
-            newEventCache = oldEventSnap.getNode();
-          }
-        } else {
-          const childChangePath = pathPopFront(changePath);
-          let newEventChild;
-          if (oldEventSnap.isCompleteForChild(childKey)) {
-            serverNode = viewCache.serverCache.getNode();
-            const eventChildUpdate = writeTreeRefCalcEventCacheAfterServerOverwrite(writesCache, changePath, oldEventSnap.getNode(), serverNode);
-            if (eventChildUpdate != null) {
-              newEventChild = oldEventSnap.getNode().getImmediateChild(childKey).updateChild(childChangePath, eventChildUpdate);
-            } else {
-              newEventChild = oldEventSnap.getNode().getImmediateChild(childKey);
-            }
-          } else {
-            newEventChild = writeTreeRefCalcCompleteChild(writesCache, childKey, viewCache.serverCache);
-          }
-          if (newEventChild != null) {
-            newEventCache = viewProcessor.filter.updateChild(oldEventSnap.getNode(), childKey, newEventChild, childChangePath, source, accumulator);
-          } else {
-            newEventCache = oldEventSnap.getNode();
-          }
-        }
-      }
-      return viewCacheUpdateEventSnap(viewCache, newEventCache, oldEventSnap.isFullyInitialized() || pathIsEmpty(changePath), viewProcessor.filter.filtersNodes());
-    }
-  }
-  function viewProcessorApplyServerOverwrite(viewProcessor, oldViewCache, changePath, changedSnap, writesCache, completeCache, filterServerNode, accumulator) {
-    const oldServerSnap = oldViewCache.serverCache;
-    let newServerCache;
-    const serverFilter = filterServerNode ? viewProcessor.filter : viewProcessor.filter.getIndexedFilter();
-    if (pathIsEmpty(changePath)) {
-      newServerCache = serverFilter.updateFullNode(oldServerSnap.getNode(), changedSnap, null);
-    } else if (serverFilter.filtersNodes() && !oldServerSnap.isFiltered()) {
-      const newServerNode = oldServerSnap.getNode().updateChild(changePath, changedSnap);
-      newServerCache = serverFilter.updateFullNode(oldServerSnap.getNode(), newServerNode, null);
-    } else {
-      const childKey = pathGetFront(changePath);
-      if (!oldServerSnap.isCompleteForPath(changePath) && pathGetLength(changePath) > 1) {
-        return oldViewCache;
-      }
-      const childChangePath = pathPopFront(changePath);
-      const childNode = oldServerSnap.getNode().getImmediateChild(childKey);
-      const newChildNode = childNode.updateChild(childChangePath, changedSnap);
-      if (childKey === ".priority") {
-        newServerCache = serverFilter.updatePriority(oldServerSnap.getNode(), newChildNode);
-      } else {
-        newServerCache = serverFilter.updateChild(oldServerSnap.getNode(), childKey, newChildNode, childChangePath, NO_COMPLETE_CHILD_SOURCE, null);
-      }
-    }
-    const newViewCache2 = viewCacheUpdateServerSnap(oldViewCache, newServerCache, oldServerSnap.isFullyInitialized() || pathIsEmpty(changePath), serverFilter.filtersNodes());
-    const source = new WriteTreeCompleteChildSource(writesCache, newViewCache2, completeCache);
-    return viewProcessorGenerateEventCacheAfterServerEvent(viewProcessor, newViewCache2, changePath, writesCache, source, accumulator);
-  }
-  function viewProcessorApplyUserOverwrite(viewProcessor, oldViewCache, changePath, changedSnap, writesCache, completeCache, accumulator) {
-    const oldEventSnap = oldViewCache.eventCache;
-    let newViewCache2, newEventCache;
-    const source = new WriteTreeCompleteChildSource(writesCache, oldViewCache, completeCache);
-    if (pathIsEmpty(changePath)) {
-      newEventCache = viewProcessor.filter.updateFullNode(oldViewCache.eventCache.getNode(), changedSnap, accumulator);
-      newViewCache2 = viewCacheUpdateEventSnap(oldViewCache, newEventCache, true, viewProcessor.filter.filtersNodes());
-    } else {
-      const childKey = pathGetFront(changePath);
-      if (childKey === ".priority") {
-        newEventCache = viewProcessor.filter.updatePriority(oldViewCache.eventCache.getNode(), changedSnap);
-        newViewCache2 = viewCacheUpdateEventSnap(oldViewCache, newEventCache, oldEventSnap.isFullyInitialized(), oldEventSnap.isFiltered());
-      } else {
-        const childChangePath = pathPopFront(changePath);
-        const oldChild = oldEventSnap.getNode().getImmediateChild(childKey);
-        let newChild;
-        if (pathIsEmpty(childChangePath)) {
-          newChild = changedSnap;
-        } else {
-          const childNode = source.getCompleteChild(childKey);
-          if (childNode != null) {
-            if (pathGetBack(childChangePath) === ".priority" && childNode.getChild(pathParent(childChangePath)).isEmpty()) {
-              newChild = childNode;
-            } else {
-              newChild = childNode.updateChild(childChangePath, changedSnap);
-            }
-          } else {
-            newChild = ChildrenNode.EMPTY_NODE;
-          }
-        }
-        if (!oldChild.equals(newChild)) {
-          const newEventSnap = viewProcessor.filter.updateChild(oldEventSnap.getNode(), childKey, newChild, childChangePath, source, accumulator);
-          newViewCache2 = viewCacheUpdateEventSnap(oldViewCache, newEventSnap, oldEventSnap.isFullyInitialized(), viewProcessor.filter.filtersNodes());
-        } else {
-          newViewCache2 = oldViewCache;
-        }
-      }
-    }
-    return newViewCache2;
-  }
-  function viewProcessorCacheHasChild(viewCache, childKey) {
-    return viewCache.eventCache.isCompleteForChild(childKey);
-  }
-  function viewProcessorApplyUserMerge(viewProcessor, viewCache, path, changedChildren, writesCache, serverCache, accumulator) {
-    let curViewCache = viewCache;
-    changedChildren.foreach((relativePath, childNode) => {
-      const writePath = pathChild(path, relativePath);
-      if (viewProcessorCacheHasChild(viewCache, pathGetFront(writePath))) {
-        curViewCache = viewProcessorApplyUserOverwrite(viewProcessor, curViewCache, writePath, childNode, writesCache, serverCache, accumulator);
-      }
-    });
-    changedChildren.foreach((relativePath, childNode) => {
-      const writePath = pathChild(path, relativePath);
-      if (!viewProcessorCacheHasChild(viewCache, pathGetFront(writePath))) {
-        curViewCache = viewProcessorApplyUserOverwrite(viewProcessor, curViewCache, writePath, childNode, writesCache, serverCache, accumulator);
-      }
-    });
-    return curViewCache;
-  }
-  function viewProcessorApplyMerge(viewProcessor, node, merge) {
-    merge.foreach((relativePath, childNode) => {
-      node = node.updateChild(relativePath, childNode);
-    });
-    return node;
-  }
-  function viewProcessorApplyServerMerge(viewProcessor, viewCache, path, changedChildren, writesCache, serverCache, filterServerNode, accumulator) {
-    if (viewCache.serverCache.getNode().isEmpty() && !viewCache.serverCache.isFullyInitialized()) {
-      return viewCache;
-    }
-    let curViewCache = viewCache;
-    let viewMergeTree;
-    if (pathIsEmpty(path)) {
-      viewMergeTree = changedChildren;
-    } else {
-      viewMergeTree = new ImmutableTree(null).setTree(path, changedChildren);
-    }
-    const serverNode = viewCache.serverCache.getNode();
-    viewMergeTree.children.inorderTraversal((childKey, childTree) => {
-      if (serverNode.hasChild(childKey)) {
-        const serverChild = viewCache.serverCache.getNode().getImmediateChild(childKey);
-        const newChild = viewProcessorApplyMerge(viewProcessor, serverChild, childTree);
-        curViewCache = viewProcessorApplyServerOverwrite(viewProcessor, curViewCache, new Path(childKey), newChild, writesCache, serverCache, filterServerNode, accumulator);
-      }
-    });
-    viewMergeTree.children.inorderTraversal((childKey, childMergeTree) => {
-      const isUnknownDeepMerge = !viewCache.serverCache.isCompleteForChild(childKey) && childMergeTree.value === null;
-      if (!serverNode.hasChild(childKey) && !isUnknownDeepMerge) {
-        const serverChild = viewCache.serverCache.getNode().getImmediateChild(childKey);
-        const newChild = viewProcessorApplyMerge(viewProcessor, serverChild, childMergeTree);
-        curViewCache = viewProcessorApplyServerOverwrite(viewProcessor, curViewCache, new Path(childKey), newChild, writesCache, serverCache, filterServerNode, accumulator);
-      }
-    });
-    return curViewCache;
-  }
-  function viewProcessorAckUserWrite(viewProcessor, viewCache, ackPath, affectedTree, writesCache, completeCache, accumulator) {
-    if (writeTreeRefShadowingWrite(writesCache, ackPath) != null) {
-      return viewCache;
-    }
-    const filterServerNode = viewCache.serverCache.isFiltered();
-    const serverCache = viewCache.serverCache;
-    if (affectedTree.value != null) {
-      if (pathIsEmpty(ackPath) && serverCache.isFullyInitialized() || serverCache.isCompleteForPath(ackPath)) {
-        return viewProcessorApplyServerOverwrite(viewProcessor, viewCache, ackPath, serverCache.getNode().getChild(ackPath), writesCache, completeCache, filterServerNode, accumulator);
-      } else if (pathIsEmpty(ackPath)) {
-        let changedChildren = new ImmutableTree(null);
-        serverCache.getNode().forEachChild(KEY_INDEX, (name3, node) => {
-          changedChildren = changedChildren.set(new Path(name3), node);
-        });
-        return viewProcessorApplyServerMerge(viewProcessor, viewCache, ackPath, changedChildren, writesCache, completeCache, filterServerNode, accumulator);
-      } else {
-        return viewCache;
-      }
-    } else {
-      let changedChildren = new ImmutableTree(null);
-      affectedTree.foreach((mergePath, value) => {
-        const serverCachePath = pathChild(ackPath, mergePath);
-        if (serverCache.isCompleteForPath(serverCachePath)) {
-          changedChildren = changedChildren.set(mergePath, serverCache.getNode().getChild(serverCachePath));
-        }
-      });
-      return viewProcessorApplyServerMerge(viewProcessor, viewCache, ackPath, changedChildren, writesCache, completeCache, filterServerNode, accumulator);
-    }
-  }
-  function viewProcessorListenComplete(viewProcessor, viewCache, path, writesCache, accumulator) {
-    const oldServerNode = viewCache.serverCache;
-    const newViewCache2 = viewCacheUpdateServerSnap(viewCache, oldServerNode.getNode(), oldServerNode.isFullyInitialized() || pathIsEmpty(path), oldServerNode.isFiltered());
-    return viewProcessorGenerateEventCacheAfterServerEvent(viewProcessor, newViewCache2, path, writesCache, NO_COMPLETE_CHILD_SOURCE, accumulator);
-  }
-  function viewProcessorRevertUserWrite(viewProcessor, viewCache, path, writesCache, completeServerCache, accumulator) {
-    let complete;
-    if (writeTreeRefShadowingWrite(writesCache, path) != null) {
-      return viewCache;
-    } else {
-      const source = new WriteTreeCompleteChildSource(writesCache, viewCache, completeServerCache);
-      const oldEventCache = viewCache.eventCache.getNode();
-      let newEventCache;
-      if (pathIsEmpty(path) || pathGetFront(path) === ".priority") {
-        let newNode;
-        if (viewCache.serverCache.isFullyInitialized()) {
-          newNode = writeTreeRefCalcCompleteEventCache(writesCache, viewCacheGetCompleteServerSnap(viewCache));
-        } else {
-          const serverChildren = viewCache.serverCache.getNode();
-          assert(serverChildren instanceof ChildrenNode, "serverChildren would be complete if leaf node");
-          newNode = writeTreeRefCalcCompleteEventChildren(writesCache, serverChildren);
-        }
-        newNode = newNode;
-        newEventCache = viewProcessor.filter.updateFullNode(oldEventCache, newNode, accumulator);
-      } else {
-        const childKey = pathGetFront(path);
-        let newChild = writeTreeRefCalcCompleteChild(writesCache, childKey, viewCache.serverCache);
-        if (newChild == null && viewCache.serverCache.isCompleteForChild(childKey)) {
-          newChild = oldEventCache.getImmediateChild(childKey);
-        }
-        if (newChild != null) {
-          newEventCache = viewProcessor.filter.updateChild(oldEventCache, childKey, newChild, pathPopFront(path), source, accumulator);
-        } else if (viewCache.eventCache.getNode().hasChild(childKey)) {
-          newEventCache = viewProcessor.filter.updateChild(oldEventCache, childKey, ChildrenNode.EMPTY_NODE, pathPopFront(path), source, accumulator);
-        } else {
-          newEventCache = oldEventCache;
-        }
-        if (newEventCache.isEmpty() && viewCache.serverCache.isFullyInitialized()) {
-          complete = writeTreeRefCalcCompleteEventCache(writesCache, viewCacheGetCompleteServerSnap(viewCache));
-          if (complete.isLeafNode()) {
-            newEventCache = viewProcessor.filter.updateFullNode(newEventCache, complete, accumulator);
-          }
-        }
-      }
-      complete = viewCache.serverCache.isFullyInitialized() || writeTreeRefShadowingWrite(writesCache, newEmptyPath()) != null;
-      return viewCacheUpdateEventSnap(viewCache, newEventCache, complete, viewProcessor.filter.filtersNodes());
-    }
-  }
-  function viewGetCompleteServerCache(view, path) {
-    const cache = viewCacheGetCompleteServerSnap(view.viewCache_);
-    if (cache) {
-      if (view.query._queryParams.loadsAllData() || !pathIsEmpty(path) && !cache.getImmediateChild(pathGetFront(path)).isEmpty()) {
-        return cache.getChild(path);
-      }
-    }
-    return null;
-  }
-  function viewApplyOperation(view, operation, writesCache, completeServerCache) {
-    if (operation.type === OperationType.MERGE && operation.source.queryId !== null) {
-      assert(viewCacheGetCompleteServerSnap(view.viewCache_), "We should always have a full cache before handling merges");
-      assert(viewCacheGetCompleteEventSnap(view.viewCache_), "Missing event cache, even though we have a server cache");
-    }
-    const oldViewCache = view.viewCache_;
-    const result = viewProcessorApplyOperation(view.processor_, oldViewCache, operation, writesCache, completeServerCache);
-    viewProcessorAssertIndexed(view.processor_, result.viewCache);
-    assert(result.viewCache.serverCache.isFullyInitialized() || !oldViewCache.serverCache.isFullyInitialized(), "Once a server snap is complete, it should never go back");
-    view.viewCache_ = result.viewCache;
-    return viewGenerateEventsForChanges_(view, result.changes, result.viewCache.eventCache.getNode(), null);
-  }
-  function viewGenerateEventsForChanges_(view, changes, eventCache, eventRegistration) {
-    const registrations = eventRegistration ? [eventRegistration] : view.eventRegistrations_;
-    return eventGeneratorGenerateEventsForChanges(view.eventGenerator_, changes, eventCache, registrations);
-  }
-  function syncPointSetReferenceConstructor(val) {
-    assert(!referenceConstructor$1, "__referenceConstructor has already been defined");
-    referenceConstructor$1 = val;
-  }
-  function syncPointApplyOperation(syncPoint, operation, writesCache, optCompleteServerCache) {
-    const queryId = operation.source.queryId;
-    if (queryId !== null) {
-      const view = syncPoint.views.get(queryId);
-      assert(view != null, "SyncTree gave us an op for an invalid query.");
-      return viewApplyOperation(view, operation, writesCache, optCompleteServerCache);
-    } else {
-      let events = [];
-      for (const view of syncPoint.views.values()) {
-        events = events.concat(viewApplyOperation(view, operation, writesCache, optCompleteServerCache));
-      }
-      return events;
-    }
-  }
-  function syncPointGetCompleteServerCache(syncPoint, path) {
-    let serverCache = null;
-    for (const view of syncPoint.views.values()) {
-      serverCache = serverCache || viewGetCompleteServerCache(view, path);
-    }
-    return serverCache;
-  }
-  function syncTreeSetReferenceConstructor(val) {
-    assert(!referenceConstructor, "__referenceConstructor has already been defined");
-    referenceConstructor = val;
-  }
-  function syncTreeApplyUserOverwrite(syncTree, path, newData, writeId, visible) {
-    writeTreeAddOverwrite(syncTree.pendingWriteTree_, path, newData, writeId, visible);
-    if (!visible) {
-      return [];
-    } else {
-      return syncTreeApplyOperationToSyncPoints_(syncTree, new Overwrite(newOperationSourceUser(), path, newData));
-    }
-  }
-  function syncTreeAckUserWrite(syncTree, writeId, revert = false) {
-    const write = writeTreeGetWrite(syncTree.pendingWriteTree_, writeId);
-    const needToReevaluate = writeTreeRemoveWrite(syncTree.pendingWriteTree_, writeId);
-    if (!needToReevaluate) {
-      return [];
-    } else {
-      let affectedTree = new ImmutableTree(null);
-      if (write.snap != null) {
-        affectedTree = affectedTree.set(newEmptyPath(), true);
-      } else {
-        each(write.children, (pathString) => {
-          affectedTree = affectedTree.set(new Path(pathString), true);
-        });
-      }
-      return syncTreeApplyOperationToSyncPoints_(syncTree, new AckUserWrite(write.path, affectedTree, revert));
-    }
-  }
-  function syncTreeApplyServerOverwrite(syncTree, path, newData) {
-    return syncTreeApplyOperationToSyncPoints_(syncTree, new Overwrite(newOperationSourceServer(), path, newData));
-  }
-  function syncTreeApplyServerMerge(syncTree, path, changedChildren) {
-    const changeTree = ImmutableTree.fromObject(changedChildren);
-    return syncTreeApplyOperationToSyncPoints_(syncTree, new Merge(newOperationSourceServer(), path, changeTree));
-  }
-  function syncTreeApplyTaggedQueryOverwrite(syncTree, path, snap3, tag) {
-    const queryKey = syncTreeQueryKeyForTag_(syncTree, tag);
-    if (queryKey != null) {
-      const r = syncTreeParseQueryKey_(queryKey);
-      const queryPath = r.path, queryId = r.queryId;
-      const relativePath = newRelativePath(queryPath, path);
-      const op = new Overwrite(newOperationSourceServerTaggedQuery(queryId), relativePath, snap3);
-      return syncTreeApplyTaggedOperation_(syncTree, queryPath, op);
-    } else {
-      return [];
-    }
-  }
-  function syncTreeApplyTaggedQueryMerge(syncTree, path, changedChildren, tag) {
-    const queryKey = syncTreeQueryKeyForTag_(syncTree, tag);
-    if (queryKey) {
-      const r = syncTreeParseQueryKey_(queryKey);
-      const queryPath = r.path, queryId = r.queryId;
-      const relativePath = newRelativePath(queryPath, path);
-      const changeTree = ImmutableTree.fromObject(changedChildren);
-      const op = new Merge(newOperationSourceServerTaggedQuery(queryId), relativePath, changeTree);
-      return syncTreeApplyTaggedOperation_(syncTree, queryPath, op);
-    } else {
-      return [];
-    }
-  }
-  function syncTreeCalcCompleteEventCache(syncTree, path, writeIdsToExclude) {
-    const includeHiddenSets = true;
-    const writeTree = syncTree.pendingWriteTree_;
-    const serverCache = syncTree.syncPointTree_.findOnPath(path, (pathSoFar, syncPoint) => {
-      const relativePath = newRelativePath(pathSoFar, path);
-      const serverCache2 = syncPointGetCompleteServerCache(syncPoint, relativePath);
-      if (serverCache2) {
-        return serverCache2;
-      }
-    });
-    return writeTreeCalcCompleteEventCache(writeTree, path, serverCache, writeIdsToExclude, includeHiddenSets);
-  }
-  function syncTreeApplyOperationToSyncPoints_(syncTree, operation) {
-    return syncTreeApplyOperationHelper_(
-      operation,
-      syncTree.syncPointTree_,
-      /*serverCache=*/
-      null,
-      writeTreeChildWrites(syncTree.pendingWriteTree_, newEmptyPath())
-    );
-  }
-  function syncTreeApplyOperationHelper_(operation, syncPointTree, serverCache, writesCache) {
-    if (pathIsEmpty(operation.path)) {
-      return syncTreeApplyOperationDescendantsHelper_(operation, syncPointTree, serverCache, writesCache);
-    } else {
-      const syncPoint = syncPointTree.get(newEmptyPath());
-      if (serverCache == null && syncPoint != null) {
-        serverCache = syncPointGetCompleteServerCache(syncPoint, newEmptyPath());
-      }
-      let events = [];
-      const childName = pathGetFront(operation.path);
-      const childOperation = operation.operationForChild(childName);
-      const childTree = syncPointTree.children.get(childName);
-      if (childTree && childOperation) {
-        const childServerCache = serverCache ? serverCache.getImmediateChild(childName) : null;
-        const childWritesCache = writeTreeRefChild(writesCache, childName);
-        events = events.concat(syncTreeApplyOperationHelper_(childOperation, childTree, childServerCache, childWritesCache));
-      }
-      if (syncPoint) {
-        events = events.concat(syncPointApplyOperation(syncPoint, operation, writesCache, serverCache));
-      }
-      return events;
-    }
-  }
-  function syncTreeApplyOperationDescendantsHelper_(operation, syncPointTree, serverCache, writesCache) {
-    const syncPoint = syncPointTree.get(newEmptyPath());
-    if (serverCache == null && syncPoint != null) {
-      serverCache = syncPointGetCompleteServerCache(syncPoint, newEmptyPath());
-    }
-    let events = [];
-    syncPointTree.children.inorderTraversal((childName, childTree) => {
-      const childServerCache = serverCache ? serverCache.getImmediateChild(childName) : null;
-      const childWritesCache = writeTreeRefChild(writesCache, childName);
-      const childOperation = operation.operationForChild(childName);
-      if (childOperation) {
-        events = events.concat(syncTreeApplyOperationDescendantsHelper_(childOperation, childTree, childServerCache, childWritesCache));
-      }
-    });
-    if (syncPoint) {
-      events = events.concat(syncPointApplyOperation(syncPoint, operation, writesCache, serverCache));
-    }
-    return events;
-  }
-  function syncTreeQueryKeyForTag_(syncTree, tag) {
-    return syncTree.tagToQueryMap.get(tag);
-  }
-  function syncTreeParseQueryKey_(queryKey) {
-    const splitIndex = queryKey.indexOf("$");
-    assert(splitIndex !== -1 && splitIndex < queryKey.length - 1, "Bad queryKey.");
-    return {
-      queryId: queryKey.substr(splitIndex + 1),
-      path: new Path(queryKey.substr(0, splitIndex))
-    };
-  }
-  function syncTreeApplyTaggedOperation_(syncTree, queryPath, operation) {
-    const syncPoint = syncTree.syncPointTree_.get(queryPath);
-    assert(syncPoint, "Missing sync point for query tag that we're tracking");
-    const writesCache = writeTreeChildWrites(syncTree.pendingWriteTree_, queryPath);
-    return syncPointApplyOperation(syncPoint, operation, writesCache, null);
-  }
-  function resolveDeferredValue(node, existingVal, serverValues) {
-    const rawPri = node.getPriority().val();
-    const priority = resolveDeferredLeafValue(rawPri, existingVal.getImmediateChild(".priority"), serverValues);
-    let newNode;
-    if (node.isLeafNode()) {
-      const leafNode = node;
-      const value = resolveDeferredLeafValue(leafNode.getValue(), existingVal, serverValues);
-      if (value !== leafNode.getValue() || priority !== leafNode.getPriority().val()) {
-        return new LeafNode(value, nodeFromJSON(priority));
-      } else {
-        return node;
-      }
-    } else {
-      const childrenNode = node;
-      newNode = childrenNode;
-      if (priority !== childrenNode.getPriority().val()) {
-        newNode = newNode.updatePriority(new LeafNode(priority));
-      }
-      childrenNode.forEachChild(PRIORITY_INDEX, (childName, childNode) => {
-        const newChildNode = resolveDeferredValue(childNode, existingVal.getImmediateChild(childName), serverValues);
-        if (newChildNode !== childNode) {
-          newNode = newNode.updateImmediateChild(childName, newChildNode);
-        }
-      });
-      return newNode;
-    }
-  }
-  function treeSubTree(tree, pathObj) {
-    let path = pathObj instanceof Path ? pathObj : new Path(pathObj);
-    let child = tree, next = pathGetFront(path);
-    while (next !== null) {
-      const childNode = safeGet(child.node.children, next) || {
-        children: {},
-        childCount: 0
-      };
-      child = new Tree(next, child, childNode);
-      path = pathPopFront(path);
-      next = pathGetFront(path);
-    }
-    return child;
-  }
-  function treeGetValue(tree) {
-    return tree.node.value;
-  }
-  function treeSetValue(tree, value) {
-    tree.node.value = value;
-    treeUpdateParents(tree);
-  }
-  function treeHasChildren(tree) {
-    return tree.node.childCount > 0;
-  }
-  function treeIsEmpty(tree) {
-    return treeGetValue(tree) === void 0 && !treeHasChildren(tree);
-  }
-  function treeForEachChild(tree, action) {
-    each(tree.node.children, (child, childTree) => {
-      action(new Tree(child, tree, childTree));
-    });
-  }
-  function treeForEachDescendant(tree, action, includeSelf, childrenFirst) {
-    if (includeSelf && !childrenFirst) {
-      action(tree);
-    }
-    treeForEachChild(tree, (child) => {
-      treeForEachDescendant(child, action, true, childrenFirst);
-    });
-    if (includeSelf && childrenFirst) {
-      action(tree);
-    }
-  }
-  function treeForEachAncestor(tree, action, includeSelf) {
-    let node = includeSelf ? tree : tree.parent;
-    while (node !== null) {
-      if (action(node)) {
-        return true;
-      }
-      node = node.parent;
-    }
-    return false;
-  }
-  function treeGetPath(tree) {
-    return new Path(tree.parent === null ? tree.name : treeGetPath(tree.parent) + "/" + tree.name);
-  }
-  function treeUpdateParents(tree) {
-    if (tree.parent !== null) {
-      treeUpdateChild(tree.parent, tree.name, tree);
-    }
-  }
-  function treeUpdateChild(tree, childName, child) {
-    const childEmpty = treeIsEmpty(child);
-    const childExists = contains(tree.node.children, childName);
-    if (childEmpty && childExists) {
-      delete tree.node.children[childName];
-      tree.node.childCount--;
-      treeUpdateParents(tree);
-    } else if (!childEmpty && !childExists) {
-      tree.node.children[childName] = child.node;
-      tree.node.childCount++;
-      treeUpdateParents(tree);
-    }
-  }
-  function eventQueueQueueEvents(eventQueue, eventDataList) {
-    let currList = null;
-    for (let i = 0; i < eventDataList.length; i++) {
-      const data = eventDataList[i];
-      const path = data.getPath();
-      if (currList !== null && !pathEquals(path, currList.path)) {
-        eventQueue.eventLists_.push(currList);
-        currList = null;
-      }
-      if (currList === null) {
-        currList = { events: [], path };
-      }
-      currList.events.push(data);
-    }
-    if (currList) {
-      eventQueue.eventLists_.push(currList);
-    }
-  }
-  function eventQueueRaiseEventsForChangedPath(eventQueue, changedPath, eventDataList) {
-    eventQueueQueueEvents(eventQueue, eventDataList);
-    eventQueueRaiseQueuedEventsMatchingPredicate(eventQueue, (eventPath) => pathContains(eventPath, changedPath) || pathContains(changedPath, eventPath));
-  }
-  function eventQueueRaiseQueuedEventsMatchingPredicate(eventQueue, predicate) {
-    eventQueue.recursionDepth_++;
-    let sentAll = true;
-    for (let i = 0; i < eventQueue.eventLists_.length; i++) {
-      const eventList = eventQueue.eventLists_[i];
-      if (eventList) {
-        const eventPath = eventList.path;
-        if (predicate(eventPath)) {
-          eventListRaise(eventQueue.eventLists_[i]);
-          eventQueue.eventLists_[i] = null;
-        } else {
-          sentAll = false;
-        }
-      }
-    }
-    if (sentAll) {
-      eventQueue.eventLists_ = [];
-    }
-    eventQueue.recursionDepth_--;
-  }
-  function eventListRaise(eventList) {
-    for (let i = 0; i < eventList.events.length; i++) {
-      const eventData = eventList.events[i];
-      if (eventData !== null) {
-        eventList.events[i] = null;
-        const eventFn = eventData.getEventRunner();
-        if (logger2) {
-          log("event: " + eventData.toString());
-        }
-        exceptionGuard(eventFn);
-      }
-    }
-  }
-  function repoStart(repo, appId, authOverride) {
-    repo.stats_ = statsManagerGetCollection(repo.repoInfo_);
-    if (repo.forceRestClient_ || beingCrawled()) {
-      repo.server_ = new ReadonlyRestClient(repo.repoInfo_, (pathString, data, isMerge, tag) => {
-        repoOnDataUpdate(repo, pathString, data, isMerge, tag);
-      }, repo.authTokenProvider_, repo.appCheckProvider_);
-      setTimeout(() => repoOnConnectStatus(
-        repo,
-        /* connectStatus= */
-        true
-      ), 0);
-    } else {
-      if (typeof authOverride !== "undefined" && authOverride !== null) {
-        if (typeof authOverride !== "object") {
-          throw new Error("Only objects are supported for option databaseAuthVariableOverride");
-        }
-        try {
-          stringify(authOverride);
-        } catch (e) {
-          throw new Error("Invalid authOverride provided: " + e);
-        }
-      }
-      repo.persistentConnection_ = new PersistentConnection(repo.repoInfo_, appId, (pathString, data, isMerge, tag) => {
-        repoOnDataUpdate(repo, pathString, data, isMerge, tag);
-      }, (connectStatus) => {
-        repoOnConnectStatus(repo, connectStatus);
-      }, (updates) => {
-        repoOnServerInfoUpdate(repo, updates);
-      }, repo.authTokenProvider_, repo.appCheckProvider_, authOverride);
-      repo.server_ = repo.persistentConnection_;
-    }
-    repo.authTokenProvider_.addTokenChangeListener((token) => {
-      repo.server_.refreshAuthToken(token);
-    });
-    repo.appCheckProvider_.addTokenChangeListener((result) => {
-      repo.server_.refreshAppCheckToken(result.token);
-    });
-    repo.statsReporter_ = statsManagerGetOrCreateReporter(repo.repoInfo_, () => new StatsReporter(repo.stats_, repo.server_));
-    repo.infoData_ = new SnapshotHolder();
-    repo.infoSyncTree_ = new SyncTree({
-      startListening: (query, tag, currentHashFn, onComplete) => {
-        let infoEvents = [];
-        const node = repo.infoData_.getNode(query._path);
-        if (!node.isEmpty()) {
-          infoEvents = syncTreeApplyServerOverwrite(repo.infoSyncTree_, query._path, node);
-          setTimeout(() => {
-            onComplete("ok");
-          }, 0);
-        }
-        return infoEvents;
-      },
-      stopListening: () => {
-      }
-    });
-    repoUpdateInfo(repo, "connected", false);
-    repo.serverSyncTree_ = new SyncTree({
-      startListening: (query, tag, currentHashFn, onComplete) => {
-        repo.server_.listen(query, currentHashFn, tag, (status, data) => {
-          const events = onComplete(status, data);
-          eventQueueRaiseEventsForChangedPath(repo.eventQueue_, query._path, events);
-        });
-        return [];
-      },
-      stopListening: (query, tag) => {
-        repo.server_.unlisten(query, tag);
-      }
-    });
-  }
-  function repoServerTime(repo) {
-    const offsetNode = repo.infoData_.getNode(new Path(".info/serverTimeOffset"));
-    const offset = offsetNode.val() || 0;
-    return (/* @__PURE__ */ new Date()).getTime() + offset;
-  }
-  function repoGenerateServerValues(repo) {
-    return generateWithValues({
-      timestamp: repoServerTime(repo)
-    });
-  }
-  function repoOnDataUpdate(repo, pathString, data, isMerge, tag) {
-    repo.dataUpdateCount++;
-    const path = new Path(pathString);
-    data = repo.interceptServerDataCallback_ ? repo.interceptServerDataCallback_(pathString, data) : data;
-    let events = [];
-    if (tag) {
-      if (isMerge) {
-        const taggedChildren = map(data, (raw) => nodeFromJSON(raw));
-        events = syncTreeApplyTaggedQueryMerge(repo.serverSyncTree_, path, taggedChildren, tag);
-      } else {
-        const taggedSnap = nodeFromJSON(data);
-        events = syncTreeApplyTaggedQueryOverwrite(repo.serverSyncTree_, path, taggedSnap, tag);
-      }
-    } else if (isMerge) {
-      const changedChildren = map(data, (raw) => nodeFromJSON(raw));
-      events = syncTreeApplyServerMerge(repo.serverSyncTree_, path, changedChildren);
-    } else {
-      const snap3 = nodeFromJSON(data);
-      events = syncTreeApplyServerOverwrite(repo.serverSyncTree_, path, snap3);
-    }
-    let affectedPath = path;
-    if (events.length > 0) {
-      affectedPath = repoRerunTransactions(repo, path);
-    }
-    eventQueueRaiseEventsForChangedPath(repo.eventQueue_, affectedPath, events);
-  }
-  function repoOnConnectStatus(repo, connectStatus) {
-    repoUpdateInfo(repo, "connected", connectStatus);
-    if (connectStatus === false) {
-      repoRunOnDisconnectEvents(repo);
-    }
-  }
-  function repoOnServerInfoUpdate(repo, updates) {
-    each(updates, (key, value) => {
-      repoUpdateInfo(repo, key, value);
-    });
-  }
-  function repoUpdateInfo(repo, pathString, value) {
-    const path = new Path("/.info/" + pathString);
-    const newNode = nodeFromJSON(value);
-    repo.infoData_.updateSnapshot(path, newNode);
-    const events = syncTreeApplyServerOverwrite(repo.infoSyncTree_, path, newNode);
-    eventQueueRaiseEventsForChangedPath(repo.eventQueue_, path, events);
-  }
-  function repoGetNextWriteId(repo) {
-    return repo.nextWriteId_++;
-  }
-  function repoRunOnDisconnectEvents(repo) {
-    repoLog(repo, "onDisconnectEvents");
-    const serverValues = repoGenerateServerValues(repo);
-    const resolvedOnDisconnectTree = newSparseSnapshotTree();
-    sparseSnapshotTreeForEachTree(repo.onDisconnect_, newEmptyPath(), (path, node) => {
-      const resolved = resolveDeferredValueTree(path, node, repo.serverSyncTree_, serverValues);
-      sparseSnapshotTreeRemember(resolvedOnDisconnectTree, path, resolved);
-    });
-    let events = [];
-    sparseSnapshotTreeForEachTree(resolvedOnDisconnectTree, newEmptyPath(), (path, snap3) => {
-      events = events.concat(syncTreeApplyServerOverwrite(repo.serverSyncTree_, path, snap3));
-      const affectedPath = repoAbortTransactions(repo, path);
-      repoRerunTransactions(repo, affectedPath);
-    });
-    repo.onDisconnect_ = newSparseSnapshotTree();
-    eventQueueRaiseEventsForChangedPath(repo.eventQueue_, newEmptyPath(), events);
-  }
-  function repoInterrupt(repo) {
-    if (repo.persistentConnection_) {
-      repo.persistentConnection_.interrupt(INTERRUPT_REASON);
-    }
-  }
-  function repoLog(repo, ...varArgs) {
-    let prefix = "";
-    if (repo.persistentConnection_) {
-      prefix = repo.persistentConnection_.id + ":";
-    }
-    log(prefix, ...varArgs);
-  }
-  function repoGetLatestState(repo, path, excludeSets) {
-    return syncTreeCalcCompleteEventCache(repo.serverSyncTree_, path, excludeSets) || ChildrenNode.EMPTY_NODE;
-  }
-  function repoSendReadyTransactions(repo, node = repo.transactionQueueTree_) {
-    if (!node) {
-      repoPruneCompletedTransactionsBelowNode(repo, node);
-    }
-    if (treeGetValue(node)) {
-      const queue = repoBuildTransactionQueue(repo, node);
-      assert(queue.length > 0, "Sending zero length transaction queue");
-      const allRun = queue.every(
-        (transaction) => transaction.status === 0
-        /* TransactionStatus.RUN */
-      );
-      if (allRun) {
-        repoSendTransactionQueue(repo, treeGetPath(node), queue);
-      }
-    } else if (treeHasChildren(node)) {
-      treeForEachChild(node, (childNode) => {
-        repoSendReadyTransactions(repo, childNode);
-      });
-    }
-  }
-  function repoSendTransactionQueue(repo, path, queue) {
-    const setsToIgnore = queue.map((txn) => {
-      return txn.currentWriteId;
-    });
-    const latestState = repoGetLatestState(repo, path, setsToIgnore);
-    let snapToSend = latestState;
-    const latestHash = latestState.hash();
-    for (let i = 0; i < queue.length; i++) {
-      const txn = queue[i];
-      assert(txn.status === 0, "tryToSendTransactionQueue_: items in queue should all be run.");
-      txn.status = 1;
-      txn.retryCount++;
-      const relativePath = newRelativePath(path, txn.path);
-      snapToSend = snapToSend.updateChild(relativePath, txn.currentOutputSnapshotRaw);
-    }
-    const dataToSend = snapToSend.val(true);
-    const pathToSend = path;
-    repo.server_.put(pathToSend.toString(), dataToSend, (status) => {
-      repoLog(repo, "transaction put response", {
-        path: pathToSend.toString(),
-        status
-      });
-      let events = [];
-      if (status === "ok") {
-        const callbacks = [];
-        for (let i = 0; i < queue.length; i++) {
-          queue[i].status = 2;
-          events = events.concat(syncTreeAckUserWrite(repo.serverSyncTree_, queue[i].currentWriteId));
-          if (queue[i].onComplete) {
-            callbacks.push(() => queue[i].onComplete(null, true, queue[i].currentOutputSnapshotResolved));
-          }
-          queue[i].unwatcher();
-        }
-        repoPruneCompletedTransactionsBelowNode(repo, treeSubTree(repo.transactionQueueTree_, path));
-        repoSendReadyTransactions(repo, repo.transactionQueueTree_);
-        eventQueueRaiseEventsForChangedPath(repo.eventQueue_, path, events);
-        for (let i = 0; i < callbacks.length; i++) {
-          exceptionGuard(callbacks[i]);
-        }
-      } else {
-        if (status === "datastale") {
-          for (let i = 0; i < queue.length; i++) {
-            if (queue[i].status === 3) {
-              queue[i].status = 4;
-            } else {
-              queue[i].status = 0;
-            }
-          }
-        } else {
-          warn("transaction at " + pathToSend.toString() + " failed: " + status);
-          for (let i = 0; i < queue.length; i++) {
-            queue[i].status = 4;
-            queue[i].abortReason = status;
-          }
-        }
-        repoRerunTransactions(repo, path);
-      }
-    }, latestHash);
-  }
-  function repoRerunTransactions(repo, changedPath) {
-    const rootMostTransactionNode = repoGetAncestorTransactionNode(repo, changedPath);
-    const path = treeGetPath(rootMostTransactionNode);
-    const queue = repoBuildTransactionQueue(repo, rootMostTransactionNode);
-    repoRerunTransactionQueue(repo, queue, path);
-    return path;
-  }
-  function repoRerunTransactionQueue(repo, queue, path) {
-    if (queue.length === 0) {
-      return;
-    }
-    const callbacks = [];
-    let events = [];
-    const txnsToRerun = queue.filter((q) => {
-      return q.status === 0;
-    });
-    const setsToIgnore = txnsToRerun.map((q) => {
-      return q.currentWriteId;
-    });
-    for (let i = 0; i < queue.length; i++) {
-      const transaction = queue[i];
-      const relativePath = newRelativePath(path, transaction.path);
-      let abortTransaction = false, abortReason;
-      assert(relativePath !== null, "rerunTransactionsUnderNode_: relativePath should not be null.");
-      if (transaction.status === 4) {
-        abortTransaction = true;
-        abortReason = transaction.abortReason;
-        events = events.concat(syncTreeAckUserWrite(repo.serverSyncTree_, transaction.currentWriteId, true));
-      } else if (transaction.status === 0) {
-        if (transaction.retryCount >= MAX_TRANSACTION_RETRIES) {
-          abortTransaction = true;
-          abortReason = "maxretry";
-          events = events.concat(syncTreeAckUserWrite(repo.serverSyncTree_, transaction.currentWriteId, true));
-        } else {
-          const currentNode = repoGetLatestState(repo, transaction.path, setsToIgnore);
-          transaction.currentInputSnapshot = currentNode;
-          const newData = queue[i].update(currentNode.val());
-          if (newData !== void 0) {
-            validateFirebaseData("transaction failed: Data returned ", newData, transaction.path);
-            let newDataNode = nodeFromJSON(newData);
-            const hasExplicitPriority = typeof newData === "object" && newData != null && contains(newData, ".priority");
-            if (!hasExplicitPriority) {
-              newDataNode = newDataNode.updatePriority(currentNode.getPriority());
-            }
-            const oldWriteId = transaction.currentWriteId;
-            const serverValues = repoGenerateServerValues(repo);
-            const newNodeResolved = resolveDeferredValueSnapshot(newDataNode, currentNode, serverValues);
-            transaction.currentOutputSnapshotRaw = newDataNode;
-            transaction.currentOutputSnapshotResolved = newNodeResolved;
-            transaction.currentWriteId = repoGetNextWriteId(repo);
-            setsToIgnore.splice(setsToIgnore.indexOf(oldWriteId), 1);
-            events = events.concat(syncTreeApplyUserOverwrite(repo.serverSyncTree_, transaction.path, newNodeResolved, transaction.currentWriteId, transaction.applyLocally));
-            events = events.concat(syncTreeAckUserWrite(repo.serverSyncTree_, oldWriteId, true));
-          } else {
-            abortTransaction = true;
-            abortReason = "nodata";
-            events = events.concat(syncTreeAckUserWrite(repo.serverSyncTree_, transaction.currentWriteId, true));
-          }
-        }
-      }
-      eventQueueRaiseEventsForChangedPath(repo.eventQueue_, path, events);
-      events = [];
-      if (abortTransaction) {
-        queue[i].status = 2;
-        (function(unwatcher) {
-          setTimeout(unwatcher, Math.floor(0));
-        })(queue[i].unwatcher);
-        if (queue[i].onComplete) {
-          if (abortReason === "nodata") {
-            callbacks.push(() => queue[i].onComplete(null, false, queue[i].currentInputSnapshot));
-          } else {
-            callbacks.push(() => queue[i].onComplete(new Error(abortReason), false, null));
-          }
-        }
-      }
-    }
-    repoPruneCompletedTransactionsBelowNode(repo, repo.transactionQueueTree_);
-    for (let i = 0; i < callbacks.length; i++) {
-      exceptionGuard(callbacks[i]);
-    }
-    repoSendReadyTransactions(repo, repo.transactionQueueTree_);
-  }
-  function repoGetAncestorTransactionNode(repo, path) {
-    let front;
-    let transactionNode = repo.transactionQueueTree_;
-    front = pathGetFront(path);
-    while (front !== null && treeGetValue(transactionNode) === void 0) {
-      transactionNode = treeSubTree(transactionNode, front);
-      path = pathPopFront(path);
-      front = pathGetFront(path);
-    }
-    return transactionNode;
-  }
-  function repoBuildTransactionQueue(repo, transactionNode) {
-    const transactionQueue = [];
-    repoAggregateTransactionQueuesForNode(repo, transactionNode, transactionQueue);
-    transactionQueue.sort((a, b) => a.order - b.order);
-    return transactionQueue;
-  }
-  function repoAggregateTransactionQueuesForNode(repo, node, queue) {
-    const nodeQueue = treeGetValue(node);
-    if (nodeQueue) {
-      for (let i = 0; i < nodeQueue.length; i++) {
-        queue.push(nodeQueue[i]);
-      }
-    }
-    treeForEachChild(node, (child) => {
-      repoAggregateTransactionQueuesForNode(repo, child, queue);
-    });
-  }
-  function repoPruneCompletedTransactionsBelowNode(repo, node) {
-    const queue = treeGetValue(node);
-    if (queue) {
-      let to = 0;
-      for (let from = 0; from < queue.length; from++) {
-        if (queue[from].status !== 2) {
-          queue[to] = queue[from];
-          to++;
-        }
-      }
-      queue.length = to;
-      treeSetValue(node, queue.length > 0 ? queue : void 0);
-    }
-    treeForEachChild(node, (childNode) => {
-      repoPruneCompletedTransactionsBelowNode(repo, childNode);
-    });
-  }
-  function repoAbortTransactions(repo, path) {
-    const affectedPath = treeGetPath(repoGetAncestorTransactionNode(repo, path));
-    const transactionNode = treeSubTree(repo.transactionQueueTree_, path);
-    treeForEachAncestor(transactionNode, (node) => {
-      repoAbortTransactionsOnNode(repo, node);
-    });
-    repoAbortTransactionsOnNode(repo, transactionNode);
-    treeForEachDescendant(transactionNode, (node) => {
-      repoAbortTransactionsOnNode(repo, node);
-    });
-    return affectedPath;
-  }
-  function repoAbortTransactionsOnNode(repo, node) {
-    const queue = treeGetValue(node);
-    if (queue) {
-      const callbacks = [];
-      let events = [];
-      let lastSent = -1;
-      for (let i = 0; i < queue.length; i++) {
-        if (queue[i].status === 3) ;
-        else if (queue[i].status === 1) {
-          assert(lastSent === i - 1, "All SENT items should be at beginning of queue.");
-          lastSent = i;
-          queue[i].status = 3;
-          queue[i].abortReason = "set";
-        } else {
-          assert(queue[i].status === 0, "Unexpected transaction status in abort");
-          queue[i].unwatcher();
-          events = events.concat(syncTreeAckUserWrite(repo.serverSyncTree_, queue[i].currentWriteId, true));
-          if (queue[i].onComplete) {
-            callbacks.push(queue[i].onComplete.bind(null, new Error("set"), false, null));
-          }
-        }
-      }
-      if (lastSent === -1) {
-        treeSetValue(node, void 0);
-      } else {
-        queue.length = lastSent + 1;
-      }
-      eventQueueRaiseEventsForChangedPath(repo.eventQueue_, treeGetPath(node), events);
-      for (let i = 0; i < callbacks.length; i++) {
-        exceptionGuard(callbacks[i]);
-      }
-    }
-  }
-  function decodePath(pathString) {
-    let pathStringDecoded = "";
-    const pieces = pathString.split("/");
-    for (let i = 0; i < pieces.length; i++) {
-      if (pieces[i].length > 0) {
-        let piece = pieces[i];
-        try {
-          piece = decodeURIComponent(piece.replace(/\+/g, " "));
-        } catch (e) {
-        }
-        pathStringDecoded += "/" + piece;
-      }
-    }
-    return pathStringDecoded;
-  }
-  function decodeQuery(queryString) {
-    const results = {};
-    if (queryString.charAt(0) === "?") {
-      queryString = queryString.substring(1);
-    }
-    for (const segment of queryString.split("&")) {
-      if (segment.length === 0) {
-        continue;
-      }
-      const kv = segment.split("=");
-      if (kv.length === 2) {
-        results[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]);
-      } else {
-        warn(`Invalid query segment '${segment}' in query '${queryString}'`);
-      }
-    }
-    return results;
-  }
-  function repoManagerDatabaseFromApp(app, authProvider, appCheckProvider, url, nodeAdmin) {
-    let dbUrl = url || app.options.databaseURL;
-    if (dbUrl === void 0) {
-      if (!app.options.projectId) {
-        fatal("Can't determine Firebase Database URL. Be sure to include  a Project ID when calling firebase.initializeApp().");
-      }
-      log("Using default host for project ", app.options.projectId);
-      dbUrl = `${app.options.projectId}-default-rtdb.firebaseio.com`;
-    }
-    let parsedUrl = parseRepoInfo(dbUrl, nodeAdmin);
-    let repoInfo = parsedUrl.repoInfo;
-    let isEmulator;
-    let dbEmulatorHost = void 0;
-    if (typeof process !== "undefined" && process.env) {
-      dbEmulatorHost = process.env[FIREBASE_DATABASE_EMULATOR_HOST_VAR];
-    }
-    if (dbEmulatorHost) {
-      isEmulator = true;
-      dbUrl = `http://${dbEmulatorHost}?ns=${repoInfo.namespace}`;
-      parsedUrl = parseRepoInfo(dbUrl, nodeAdmin);
-      repoInfo = parsedUrl.repoInfo;
-    } else {
-      isEmulator = !parsedUrl.repoInfo.secure;
-    }
-    const authTokenProvider = nodeAdmin && isEmulator ? new EmulatorTokenProvider(EmulatorTokenProvider.OWNER) : new FirebaseAuthTokenProvider(app.name, app.options, authProvider);
-    validateUrl("Invalid Firebase Database URL", parsedUrl);
-    if (!pathIsEmpty(parsedUrl.path)) {
-      fatal("Database URL must point to the root of a Firebase Database (not including a child path).");
-    }
-    const repo = repoManagerCreateRepo(repoInfo, app, authTokenProvider, new AppCheckTokenProvider(app, appCheckProvider));
-    return new Database(repo, app);
-  }
-  function repoManagerDeleteRepo(repo, appName) {
-    const appRepos = repos[appName];
-    if (!appRepos || appRepos[repo.key] !== repo) {
-      fatal(`Database ${appName}(${repo.repoInfo_}) has already been deleted.`);
-    }
-    repoInterrupt(repo);
-    delete appRepos[repo.key];
-  }
-  function repoManagerCreateRepo(repoInfo, app, authTokenProvider, appCheckProvider) {
-    let appRepos = repos[app.name];
-    if (!appRepos) {
-      appRepos = {};
-      repos[app.name] = appRepos;
-    }
-    let repo = appRepos[repoInfo.toURLString()];
-    if (repo) {
-      fatal("Database initialized multiple times. Please make sure the format of the database URL matches with each database() call.");
-    }
-    repo = new Repo(repoInfo, useRestClient, authTokenProvider, appCheckProvider);
-    appRepos[repoInfo.toURLString()] = repo;
-    return repo;
-  }
-  function registerDatabase(variant) {
-    setSDKVersion(SDK_VERSION);
-    _registerComponent(new Component(
-      "database",
-      (container, { instanceIdentifier: url }) => {
-        const app = container.getProvider("app").getImmediate();
-        const authProvider = container.getProvider("auth-internal");
-        const appCheckProvider = container.getProvider("app-check-internal");
-        return repoManagerDatabaseFromApp(app, authProvider, appCheckProvider, url);
-      },
-      "PUBLIC"
-      /* ComponentType.PUBLIC */
-    ).setMultipleInstances(true));
-    registerVersion(name2, version3, variant);
-    registerVersion(name2, version3, "esm2017");
-  }
-  var name2, version3, SDK_VERSION2, DOMStorageWrapper, MemoryStorage, createStoragefor, PersistentStorage, SessionStorage, logClient, LUIDGenerator, sha1, buildLogMessage_, logger2, firstLog_, enableLogging$1, log, logWrapper, error, fatal, warn, warnIfPageIsSecure, isInvalidJSONNumber, executeWhenDOMReady, MIN_NAME, MAX_NAME, nameCompare, stringCompare, requireKey, ObjectToUniqueKey, splitStringBySize, doubleToIEEE754String, isChromeExtensionContentScript, isWindowsStoreApp, INTEGER_REGEXP_, INTEGER_32_MIN, INTEGER_32_MAX, tryParseInt, exceptionGuard, beingCrawled, setTimeoutNonBlocking, AppCheckTokenProvider, FirebaseAuthTokenProvider, EmulatorTokenProvider, PROTOCOL_VERSION, VERSION_PARAM, TRANSPORT_SESSION_PARAM, REFERER_PARAM, FORGE_REF, FORGE_DOMAIN_RE, LAST_SESSION_PARAM, APPLICATION_ID_PARAM, APP_CHECK_TOKEN_PARAM, WEBSOCKET, LONG_POLLING, RepoInfo, StatsCollection, collections, reporters, PacketReceiver, FIREBASE_LONGPOLL_START_PARAM, FIREBASE_LONGPOLL_CLOSE_COMMAND, FIREBASE_LONGPOLL_COMMAND_CB_NAME, FIREBASE_LONGPOLL_DATA_CB_NAME, FIREBASE_LONGPOLL_ID_PARAM, FIREBASE_LONGPOLL_PW_PARAM, FIREBASE_LONGPOLL_SERIAL_PARAM, FIREBASE_LONGPOLL_CALLBACK_ID_PARAM, FIREBASE_LONGPOLL_SEGMENT_NUM_PARAM, FIREBASE_LONGPOLL_SEGMENTS_IN_PACKET, FIREBASE_LONGPOLL_DATA_PARAM, FIREBASE_LONGPOLL_DISCONN_FRAME_REQUEST_PARAM, MAX_URL_DATA_SIZE, SEG_HEADER_SIZE, MAX_PAYLOAD_SIZE, KEEPALIVE_REQUEST_INTERVAL, LP_CONNECT_TIMEOUT, BrowserPollConnection, FirebaseIFrameScriptHolder, WEBSOCKET_MAX_FRAME_SIZE, WEBSOCKET_KEEPALIVE_INTERVAL, WebSocketImpl, WebSocketConnection, TransportManager, UPGRADE_TIMEOUT, DELAY_BEFORE_SENDING_EXTRA_REQUESTS, BYTES_SENT_HEALTHY_OVERRIDE, BYTES_RECEIVED_HEALTHY_OVERRIDE, MESSAGE_TYPE, MESSAGE_DATA, CONTROL_SHUTDOWN, CONTROL_RESET, CONTROL_ERROR, CONTROL_PONG, SWITCH_ACK, END_TRANSMISSION, PING, SERVER_HELLO, Connection, ServerActions, EventEmitter, OnlineMonitor, MAX_PATH_DEPTH, MAX_PATH_LENGTH_BYTES, Path, ValidationPath, VisibilityMonitor, RECONNECT_MIN_DELAY, RECONNECT_MAX_DELAY_DEFAULT, RECONNECT_MAX_DELAY_FOR_ADMINS, RECONNECT_DELAY_MULTIPLIER, RECONNECT_DELAY_RESET_TIMEOUT, SERVER_KILL_INTERRUPT_REASON, INVALID_TOKEN_THRESHOLD, PersistentConnection, NamedNode, Index, __EMPTY_NODE, KeyIndex, KEY_INDEX, SortedMapIterator, LLRBNode, LLRBEmptyNode, SortedMap, MAX_NODE$2, priorityHashText, validatePriorityNode, __childrenNodeConstructor, LeafNode, nodeFromJSON$1, MAX_NODE$1, PriorityIndex, PRIORITY_INDEX, LOG_2, Base12Num, buildChildSet, _defaultIndexMap, fallbackObject, IndexMap, EMPTY_NODE, ChildrenNode, MaxNode, MAX_NODE, USE_HINZE, PathIndex, ValueIndex, VALUE_INDEX, QueryParams, ReadonlyRestClient, SnapshotHolder, StatsListener, FIRST_STATS_MIN_TIME, FIRST_STATS_MAX_TIME, REPORT_STATS_INTERVAL, StatsReporter, OperationType, AckUserWrite, Overwrite, Merge, CacheNode, emptyChildrenSingleton, EmptyChildren, ImmutableTree, CompoundWrite, ChildChangeAccumulator, NoCompleteChildSource_, NO_COMPLETE_CHILD_SOURCE, WriteTreeCompleteChildSource, referenceConstructor$1, referenceConstructor, SyncTree, ExistingValueProvider, DeferredValueProvider, generateWithValues, resolveDeferredLeafValue, resolveScalarDeferredValue, resolveComplexDeferredValue, resolveDeferredValueTree, resolveDeferredValueSnapshot, Tree, INVALID_KEY_REGEX_, INVALID_PATH_REGEX_, MAX_LEAF_SIZE_, isValidKey2, isValidPathString, isValidRootPathString, validateFirebaseData, validateUrl, EventQueue, INTERRUPT_REASON, MAX_TRANSACTION_RETRIES, Repo, parseRepoInfo, parseDatabaseURL, QueryImpl, ReferenceImpl, FIREBASE_DATABASE_EMULATOR_HOST_VAR, repos, useRestClient, Database;
-  var init_index_esm20175 = __esm({
-    "node_modules/@firebase/database/dist/index.esm2017.js"() {
-      init_live_reload();
-      init_index_esm20174();
-      init_index_esm20172();
-      init_index_esm2017();
-      init_index_esm20173();
-      name2 = "@firebase/database";
-      version3 = "1.0.12";
-      SDK_VERSION2 = "";
-      DOMStorageWrapper = class {
-        /**
-         * @param domStorage_ - The underlying storage object (e.g. localStorage or sessionStorage)
-         */
-        constructor(domStorage_) {
-          this.domStorage_ = domStorage_;
-          this.prefix_ = "firebase:";
-        }
-        /**
-         * @param key - The key to save the value under
-         * @param value - The value being stored, or null to remove the key.
-         */
-        set(key, value) {
-          if (value == null) {
-            this.domStorage_.removeItem(this.prefixedName_(key));
-          } else {
-            this.domStorage_.setItem(this.prefixedName_(key), stringify(value));
-          }
-        }
-        /**
-         * @returns The value that was stored under this key, or null
-         */
-        get(key) {
-          const storedVal = this.domStorage_.getItem(this.prefixedName_(key));
-          if (storedVal == null) {
-            return null;
-          } else {
-            return jsonEval(storedVal);
-          }
-        }
-        remove(key) {
-          this.domStorage_.removeItem(this.prefixedName_(key));
-        }
-        prefixedName_(name3) {
-          return this.prefix_ + name3;
-        }
-        toString() {
-          return this.domStorage_.toString();
-        }
-      };
-      MemoryStorage = class {
-        constructor() {
-          this.cache_ = {};
-          this.isInMemoryStorage = true;
-        }
-        set(key, value) {
-          if (value == null) {
-            delete this.cache_[key];
-          } else {
-            this.cache_[key] = value;
-          }
-        }
-        get(key) {
-          if (contains(this.cache_, key)) {
-            return this.cache_[key];
-          }
-          return null;
-        }
-        remove(key) {
-          delete this.cache_[key];
-        }
-      };
-      createStoragefor = function(domStorageName) {
-        try {
-          if (typeof window !== "undefined" && typeof window[domStorageName] !== "undefined") {
-            const domStorage = window[domStorageName];
-            domStorage.setItem("firebase:sentinel", "cache");
-            domStorage.removeItem("firebase:sentinel");
-            return new DOMStorageWrapper(domStorage);
-          }
-        } catch (e) {
-        }
-        return new MemoryStorage();
-      };
-      PersistentStorage = createStoragefor("localStorage");
-      SessionStorage = createStoragefor("sessionStorage");
-      logClient = new Logger("@firebase/database");
-      LUIDGenerator = /* @__PURE__ */ function() {
-        let id = 1;
-        return function() {
-          return id++;
-        };
-      }();
-      sha1 = function(str) {
-        const utf8Bytes = stringToByteArray(str);
-        const sha12 = new Sha1();
-        sha12.update(utf8Bytes);
-        const sha1Bytes = sha12.digest();
-        return base64.encodeByteArray(sha1Bytes);
-      };
-      buildLogMessage_ = function(...varArgs) {
-        let message = "";
-        for (let i = 0; i < varArgs.length; i++) {
-          const arg = varArgs[i];
-          if (Array.isArray(arg) || arg && typeof arg === "object" && // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          typeof arg.length === "number") {
-            message += buildLogMessage_.apply(null, arg);
-          } else if (typeof arg === "object") {
-            message += stringify(arg);
-          } else {
-            message += arg;
-          }
-          message += " ";
-        }
-        return message;
-      };
-      logger2 = null;
-      firstLog_ = true;
-      enableLogging$1 = function(logger_, persistent) {
-        assert(!persistent || logger_ === true || logger_ === false, "Can't turn on custom loggers persistently.");
-        if (logger_ === true) {
-          logClient.logLevel = LogLevel.VERBOSE;
-          logger2 = logClient.log.bind(logClient);
-          if (persistent) {
-            SessionStorage.set("logging_enabled", true);
-          }
-        } else if (typeof logger_ === "function") {
-          logger2 = logger_;
-        } else {
-          logger2 = null;
-          SessionStorage.remove("logging_enabled");
-        }
-      };
-      log = function(...varArgs) {
-        if (firstLog_ === true) {
-          firstLog_ = false;
-          if (logger2 === null && SessionStorage.get("logging_enabled") === true) {
-            enableLogging$1(true);
-          }
-        }
-        if (logger2) {
-          const message = buildLogMessage_.apply(null, varArgs);
-          logger2(message);
-        }
-      };
-      logWrapper = function(prefix) {
-        return function(...varArgs) {
-          log(prefix, ...varArgs);
-        };
-      };
-      error = function(...varArgs) {
-        const message = "FIREBASE INTERNAL ERROR: " + buildLogMessage_(...varArgs);
-        logClient.error(message);
-      };
-      fatal = function(...varArgs) {
-        const message = `FIREBASE FATAL ERROR: ${buildLogMessage_(...varArgs)}`;
-        logClient.error(message);
-        throw new Error(message);
-      };
-      warn = function(...varArgs) {
-        const message = "FIREBASE WARNING: " + buildLogMessage_(...varArgs);
-        logClient.warn(message);
-      };
-      warnIfPageIsSecure = function() {
-        if (typeof window !== "undefined" && window.location && window.location.protocol && window.location.protocol.indexOf("https:") !== -1) {
-          warn("Insecure Firebase access from a secure page. Please use https in calls to new Firebase().");
-        }
-      };
-      isInvalidJSONNumber = function(data) {
-        return typeof data === "number" && (data !== data || // NaN
-        data === Number.POSITIVE_INFINITY || data === Number.NEGATIVE_INFINITY);
-      };
-      executeWhenDOMReady = function(fn) {
-        if (isNodeSdk() || document.readyState === "complete") {
-          fn();
-        } else {
-          let called = false;
-          const wrappedFn = function() {
-            if (!document.body) {
-              setTimeout(wrappedFn, Math.floor(10));
-              return;
-            }
-            if (!called) {
-              called = true;
-              fn();
-            }
-          };
-          if (document.addEventListener) {
-            document.addEventListener("DOMContentLoaded", wrappedFn, false);
-            window.addEventListener("load", wrappedFn, false);
-          } else if (document.attachEvent) {
-            document.attachEvent("onreadystatechange", () => {
-              if (document.readyState === "complete") {
-                wrappedFn();
-              }
-            });
-            window.attachEvent("onload", wrappedFn);
-          }
-        }
-      };
-      MIN_NAME = "[MIN_NAME]";
-      MAX_NAME = "[MAX_NAME]";
-      nameCompare = function(a, b) {
-        if (a === b) {
-          return 0;
-        } else if (a === MIN_NAME || b === MAX_NAME) {
-          return -1;
-        } else if (b === MIN_NAME || a === MAX_NAME) {
-          return 1;
-        } else {
-          const aAsInt = tryParseInt(a), bAsInt = tryParseInt(b);
-          if (aAsInt !== null) {
-            if (bAsInt !== null) {
-              return aAsInt - bAsInt === 0 ? a.length - b.length : aAsInt - bAsInt;
-            } else {
-              return -1;
-            }
-          } else if (bAsInt !== null) {
-            return 1;
-          } else {
-            return a < b ? -1 : 1;
-          }
-        }
-      };
-      stringCompare = function(a, b) {
-        if (a === b) {
-          return 0;
-        } else if (a < b) {
-          return -1;
-        } else {
-          return 1;
-        }
-      };
-      requireKey = function(key, obj) {
-        if (obj && key in obj) {
-          return obj[key];
-        } else {
-          throw new Error("Missing required key (" + key + ") in object: " + stringify(obj));
-        }
-      };
-      ObjectToUniqueKey = function(obj) {
-        if (typeof obj !== "object" || obj === null) {
-          return stringify(obj);
-        }
-        const keys = [];
-        for (const k in obj) {
-          keys.push(k);
-        }
-        keys.sort();
-        let key = "{";
-        for (let i = 0; i < keys.length; i++) {
-          if (i !== 0) {
-            key += ",";
-          }
-          key += stringify(keys[i]);
-          key += ":";
-          key += ObjectToUniqueKey(obj[keys[i]]);
-        }
-        key += "}";
-        return key;
-      };
-      splitStringBySize = function(str, segsize) {
-        const len = str.length;
-        if (len <= segsize) {
-          return [str];
-        }
-        const dataSegs = [];
-        for (let c = 0; c < len; c += segsize) {
-          if (c + segsize > len) {
-            dataSegs.push(str.substring(c, len));
-          } else {
-            dataSegs.push(str.substring(c, c + segsize));
-          }
-        }
-        return dataSegs;
-      };
-      doubleToIEEE754String = function(v) {
-        assert(!isInvalidJSONNumber(v), "Invalid JSON number");
-        const ebits = 11, fbits = 52;
-        const bias = (1 << ebits - 1) - 1;
-        let s, e, f, ln, i;
-        if (v === 0) {
-          e = 0;
-          f = 0;
-          s = 1 / v === -Infinity ? 1 : 0;
-        } else {
-          s = v < 0;
-          v = Math.abs(v);
-          if (v >= Math.pow(2, 1 - bias)) {
-            ln = Math.min(Math.floor(Math.log(v) / Math.LN2), bias);
-            e = ln + bias;
-            f = Math.round(v * Math.pow(2, fbits - ln) - Math.pow(2, fbits));
-          } else {
-            e = 0;
-            f = Math.round(v / Math.pow(2, 1 - bias - fbits));
-          }
-        }
-        const bits = [];
-        for (i = fbits; i; i -= 1) {
-          bits.push(f % 2 ? 1 : 0);
-          f = Math.floor(f / 2);
-        }
-        for (i = ebits; i; i -= 1) {
-          bits.push(e % 2 ? 1 : 0);
-          e = Math.floor(e / 2);
-        }
-        bits.push(s ? 1 : 0);
-        bits.reverse();
-        const str = bits.join("");
-        let hexByteString = "";
-        for (i = 0; i < 64; i += 8) {
-          let hexByte = parseInt(str.substr(i, 8), 2).toString(16);
-          if (hexByte.length === 1) {
-            hexByte = "0" + hexByte;
-          }
-          hexByteString = hexByteString + hexByte;
-        }
-        return hexByteString.toLowerCase();
-      };
-      isChromeExtensionContentScript = function() {
-        return !!(typeof window === "object" && window["chrome"] && window["chrome"]["extension"] && !/^chrome/.test(window.location.href));
-      };
-      isWindowsStoreApp = function() {
-        return typeof Windows === "object" && typeof Windows.UI === "object";
-      };
-      INTEGER_REGEXP_ = new RegExp("^-?(0*)\\d{1,10}$");
-      INTEGER_32_MIN = -2147483648;
-      INTEGER_32_MAX = 2147483647;
-      tryParseInt = function(str) {
-        if (INTEGER_REGEXP_.test(str)) {
-          const intVal = Number(str);
-          if (intVal >= INTEGER_32_MIN && intVal <= INTEGER_32_MAX) {
-            return intVal;
-          }
-        }
-        return null;
-      };
-      exceptionGuard = function(fn) {
-        try {
-          fn();
-        } catch (e) {
-          setTimeout(() => {
-            const stack = e.stack || "";
-            warn("Exception was thrown by user callback.", stack);
-            throw e;
-          }, Math.floor(0));
-        }
-      };
-      beingCrawled = function() {
-        const userAgent = typeof window === "object" && window["navigator"] && window["navigator"]["userAgent"] || "";
-        return userAgent.search(/googlebot|google webmaster tools|bingbot|yahoo! slurp|baiduspider|yandexbot|duckduckbot/i) >= 0;
-      };
-      setTimeoutNonBlocking = function(fn, time) {
-        const timeout = setTimeout(fn, time);
-        if (typeof timeout === "number" && // @ts-ignore Is only defined in Deno environments.
-        typeof Deno !== "undefined" && // @ts-ignore Deno and unrefTimer are only defined in Deno environments.
-        Deno["unrefTimer"]) {
-          Deno.unrefTimer(timeout);
-        } else if (typeof timeout === "object" && timeout["unref"]) {
-          timeout["unref"]();
-        }
-        return timeout;
-      };
-      AppCheckTokenProvider = class {
-        constructor(app, appCheckProvider) {
-          this.appCheckProvider = appCheckProvider;
-          this.appName = app.name;
-          if (_isFirebaseServerApp(app) && app.settings.appCheckToken) {
-            this.serverAppAppCheckToken = app.settings.appCheckToken;
-          }
-          this.appCheck = appCheckProvider === null || appCheckProvider === void 0 ? void 0 : appCheckProvider.getImmediate({ optional: true });
-          if (!this.appCheck) {
-            appCheckProvider === null || appCheckProvider === void 0 ? void 0 : appCheckProvider.get().then((appCheck) => this.appCheck = appCheck);
-          }
-        }
-        getToken(forceRefresh) {
-          if (this.serverAppAppCheckToken) {
-            if (forceRefresh) {
-              throw new Error("Attempted reuse of `FirebaseServerApp.appCheckToken` after previous usage failed.");
-            }
-            return Promise.resolve({ token: this.serverAppAppCheckToken });
-          }
-          if (!this.appCheck) {
-            return new Promise((resolve, reject) => {
-              setTimeout(() => {
-                if (this.appCheck) {
-                  this.getToken(forceRefresh).then(resolve, reject);
-                } else {
-                  resolve(null);
-                }
-              }, 0);
-            });
-          }
-          return this.appCheck.getToken(forceRefresh);
-        }
-        addTokenChangeListener(listener) {
-          var _a;
-          (_a = this.appCheckProvider) === null || _a === void 0 ? void 0 : _a.get().then((appCheck) => appCheck.addTokenListener(listener));
-        }
-        notifyForInvalidToken() {
-          warn(`Provided AppCheck credentials for the app named "${this.appName}" are invalid. This usually indicates your app was not initialized correctly.`);
-        }
-      };
-      FirebaseAuthTokenProvider = class {
-        constructor(appName_, firebaseOptions_, authProvider_) {
-          this.appName_ = appName_;
-          this.firebaseOptions_ = firebaseOptions_;
-          this.authProvider_ = authProvider_;
-          this.auth_ = null;
-          this.auth_ = authProvider_.getImmediate({ optional: true });
-          if (!this.auth_) {
-            authProvider_.onInit((auth) => this.auth_ = auth);
-          }
-        }
-        getToken(forceRefresh) {
-          if (!this.auth_) {
-            return new Promise((resolve, reject) => {
-              setTimeout(() => {
-                if (this.auth_) {
-                  this.getToken(forceRefresh).then(resolve, reject);
-                } else {
-                  resolve(null);
-                }
-              }, 0);
-            });
-          }
-          return this.auth_.getToken(forceRefresh).catch((error2) => {
-            if (error2 && error2.code === "auth/token-not-initialized") {
-              log("Got auth/token-not-initialized error.  Treating as null token.");
-              return null;
-            } else {
-              return Promise.reject(error2);
-            }
-          });
-        }
-        addTokenChangeListener(listener) {
-          if (this.auth_) {
-            this.auth_.addAuthTokenListener(listener);
-          } else {
-            this.authProvider_.get().then((auth) => auth.addAuthTokenListener(listener));
-          }
-        }
-        removeTokenChangeListener(listener) {
-          this.authProvider_.get().then((auth) => auth.removeAuthTokenListener(listener));
-        }
-        notifyForInvalidToken() {
-          let errorMessage = 'Provided authentication credentials for the app named "' + this.appName_ + '" are invalid. This usually indicates your app was not initialized correctly. ';
-          if ("credential" in this.firebaseOptions_) {
-            errorMessage += 'Make sure the "credential" property provided to initializeApp() is authorized to access the specified "databaseURL" and is from the correct project.';
-          } else if ("serviceAccount" in this.firebaseOptions_) {
-            errorMessage += 'Make sure the "serviceAccount" property provided to initializeApp() is authorized to access the specified "databaseURL" and is from the correct project.';
-          } else {
-            errorMessage += 'Make sure the "apiKey" and "databaseURL" properties provided to initializeApp() match the values provided for your app at https://console.firebase.google.com/.';
-          }
-          warn(errorMessage);
-        }
-      };
-      EmulatorTokenProvider = class {
-        constructor(accessToken) {
-          this.accessToken = accessToken;
-        }
-        getToken(forceRefresh) {
-          return Promise.resolve({
-            accessToken: this.accessToken
-          });
-        }
-        addTokenChangeListener(listener) {
-          listener(this.accessToken);
-        }
-        removeTokenChangeListener(listener) {
-        }
-        notifyForInvalidToken() {
-        }
-      };
-      EmulatorTokenProvider.OWNER = "owner";
-      PROTOCOL_VERSION = "5";
-      VERSION_PARAM = "v";
-      TRANSPORT_SESSION_PARAM = "s";
-      REFERER_PARAM = "r";
-      FORGE_REF = "f";
-      FORGE_DOMAIN_RE = /(console\.firebase|firebase-console-\w+\.corp|firebase\.corp)\.google\.com/;
-      LAST_SESSION_PARAM = "ls";
-      APPLICATION_ID_PARAM = "p";
-      APP_CHECK_TOKEN_PARAM = "ac";
-      WEBSOCKET = "websocket";
-      LONG_POLLING = "long_polling";
-      RepoInfo = class {
-        /**
-         * @param host - Hostname portion of the url for the repo
-         * @param secure - Whether or not this repo is accessed over ssl
-         * @param namespace - The namespace represented by the repo
-         * @param webSocketOnly - Whether to prefer websockets over all other transports (used by Nest).
-         * @param nodeAdmin - Whether this instance uses Admin SDK credentials
-         * @param persistenceKey - Override the default session persistence storage key
-         */
-        constructor(host, secure, namespace, webSocketOnly, nodeAdmin = false, persistenceKey = "", includeNamespaceInQueryParams = false, isUsingEmulator = false) {
-          this.secure = secure;
-          this.namespace = namespace;
-          this.webSocketOnly = webSocketOnly;
-          this.nodeAdmin = nodeAdmin;
-          this.persistenceKey = persistenceKey;
-          this.includeNamespaceInQueryParams = includeNamespaceInQueryParams;
-          this.isUsingEmulator = isUsingEmulator;
-          this._host = host.toLowerCase();
-          this._domain = this._host.substr(this._host.indexOf(".") + 1);
-          this.internalHost = PersistentStorage.get("host:" + host) || this._host;
-        }
-        isCacheableHost() {
-          return this.internalHost.substr(0, 2) === "s-";
-        }
-        isCustomHost() {
-          return this._domain !== "firebaseio.com" && this._domain !== "firebaseio-demo.com";
-        }
-        get host() {
-          return this._host;
-        }
-        set host(newHost) {
-          if (newHost !== this.internalHost) {
-            this.internalHost = newHost;
-            if (this.isCacheableHost()) {
-              PersistentStorage.set("host:" + this._host, this.internalHost);
-            }
-          }
-        }
-        toString() {
-          let str = this.toURLString();
-          if (this.persistenceKey) {
-            str += "<" + this.persistenceKey + ">";
-          }
-          return str;
-        }
-        toURLString() {
-          const protocol = this.secure ? "https://" : "http://";
-          const query = this.includeNamespaceInQueryParams ? `?ns=${this.namespace}` : "";
-          return `${protocol}${this.host}/${query}`;
-        }
-      };
-      StatsCollection = class {
-        constructor() {
-          this.counters_ = {};
-        }
-        incrementCounter(name3, amount = 1) {
-          if (!contains(this.counters_, name3)) {
-            this.counters_[name3] = 0;
-          }
-          this.counters_[name3] += amount;
-        }
-        get() {
-          return deepCopy(this.counters_);
-        }
-      };
-      collections = {};
-      reporters = {};
-      PacketReceiver = class {
-        /**
-         * @param onMessage_
-         */
-        constructor(onMessage_) {
-          this.onMessage_ = onMessage_;
-          this.pendingResponses = [];
-          this.currentResponseNum = 0;
-          this.closeAfterResponse = -1;
-          this.onClose = null;
-        }
-        closeAfter(responseNum, callback) {
-          this.closeAfterResponse = responseNum;
-          this.onClose = callback;
-          if (this.closeAfterResponse < this.currentResponseNum) {
-            this.onClose();
-            this.onClose = null;
-          }
-        }
-        /**
-         * Each message from the server comes with a response number, and an array of data. The responseNumber
-         * allows us to ensure that we process them in the right order, since we can't be guaranteed that all
-         * browsers will respond in the same order as the requests we sent
-         */
-        handleResponse(requestNum, data) {
-          this.pendingResponses[requestNum] = data;
-          while (this.pendingResponses[this.currentResponseNum]) {
-            const toProcess = this.pendingResponses[this.currentResponseNum];
-            delete this.pendingResponses[this.currentResponseNum];
-            for (let i = 0; i < toProcess.length; ++i) {
-              if (toProcess[i]) {
-                exceptionGuard(() => {
-                  this.onMessage_(toProcess[i]);
-                });
-              }
-            }
-            if (this.currentResponseNum === this.closeAfterResponse) {
-              if (this.onClose) {
-                this.onClose();
-                this.onClose = null;
-              }
-              break;
-            }
-            this.currentResponseNum++;
-          }
-        }
-      };
-      FIREBASE_LONGPOLL_START_PARAM = "start";
-      FIREBASE_LONGPOLL_CLOSE_COMMAND = "close";
-      FIREBASE_LONGPOLL_COMMAND_CB_NAME = "pLPCommand";
-      FIREBASE_LONGPOLL_DATA_CB_NAME = "pRTLPCB";
-      FIREBASE_LONGPOLL_ID_PARAM = "id";
-      FIREBASE_LONGPOLL_PW_PARAM = "pw";
-      FIREBASE_LONGPOLL_SERIAL_PARAM = "ser";
-      FIREBASE_LONGPOLL_CALLBACK_ID_PARAM = "cb";
-      FIREBASE_LONGPOLL_SEGMENT_NUM_PARAM = "seg";
-      FIREBASE_LONGPOLL_SEGMENTS_IN_PACKET = "ts";
-      FIREBASE_LONGPOLL_DATA_PARAM = "d";
-      FIREBASE_LONGPOLL_DISCONN_FRAME_REQUEST_PARAM = "dframe";
-      MAX_URL_DATA_SIZE = 1870;
-      SEG_HEADER_SIZE = 30;
-      MAX_PAYLOAD_SIZE = MAX_URL_DATA_SIZE - SEG_HEADER_SIZE;
-      KEEPALIVE_REQUEST_INTERVAL = 25e3;
-      LP_CONNECT_TIMEOUT = 3e4;
-      BrowserPollConnection = class _BrowserPollConnection {
-        /**
-         * @param connId An identifier for this connection, used for logging
-         * @param repoInfo The info for the endpoint to send data to.
-         * @param applicationId The Firebase App ID for this project.
-         * @param appCheckToken The AppCheck token for this client.
-         * @param authToken The AuthToken to use for this connection.
-         * @param transportSessionId Optional transportSessionid if we are
-         * reconnecting for an existing transport session
-         * @param lastSessionId Optional lastSessionId if the PersistentConnection has
-         * already created a connection previously
-         */
-        constructor(connId, repoInfo, applicationId, appCheckToken, authToken, transportSessionId, lastSessionId) {
-          this.connId = connId;
-          this.repoInfo = repoInfo;
-          this.applicationId = applicationId;
-          this.appCheckToken = appCheckToken;
-          this.authToken = authToken;
-          this.transportSessionId = transportSessionId;
-          this.lastSessionId = lastSessionId;
-          this.bytesSent = 0;
-          this.bytesReceived = 0;
-          this.everConnected_ = false;
-          this.log_ = logWrapper(connId);
-          this.stats_ = statsManagerGetCollection(repoInfo);
-          this.urlFn = (params) => {
-            if (this.appCheckToken) {
-              params[APP_CHECK_TOKEN_PARAM] = this.appCheckToken;
-            }
-            return repoInfoConnectionURL(repoInfo, LONG_POLLING, params);
-          };
-        }
-        /**
-         * @param onMessage - Callback when messages arrive
-         * @param onDisconnect - Callback with connection lost.
-         */
-        open(onMessage, onDisconnect) {
-          this.curSegmentNum = 0;
-          this.onDisconnect_ = onDisconnect;
-          this.myPacketOrderer = new PacketReceiver(onMessage);
-          this.isClosed_ = false;
-          this.connectTimeoutTimer_ = setTimeout(() => {
-            this.log_("Timed out trying to connect.");
-            this.onClosed_();
-            this.connectTimeoutTimer_ = null;
-          }, Math.floor(LP_CONNECT_TIMEOUT));
-          executeWhenDOMReady(() => {
-            if (this.isClosed_) {
-              return;
-            }
-            this.scriptTagHolder = new FirebaseIFrameScriptHolder((...args) => {
-              const [command, arg1, arg2, arg3, arg4] = args;
-              this.incrementIncomingBytes_(args);
-              if (!this.scriptTagHolder) {
-                return;
-              }
-              if (this.connectTimeoutTimer_) {
-                clearTimeout(this.connectTimeoutTimer_);
-                this.connectTimeoutTimer_ = null;
-              }
-              this.everConnected_ = true;
-              if (command === FIREBASE_LONGPOLL_START_PARAM) {
-                this.id = arg1;
-                this.password = arg2;
-              } else if (command === FIREBASE_LONGPOLL_CLOSE_COMMAND) {
-                if (arg1) {
-                  this.scriptTagHolder.sendNewPolls = false;
-                  this.myPacketOrderer.closeAfter(arg1, () => {
-                    this.onClosed_();
-                  });
-                } else {
-                  this.onClosed_();
-                }
-              } else {
-                throw new Error("Unrecognized command received: " + command);
-              }
-            }, (...args) => {
-              const [pN, data] = args;
-              this.incrementIncomingBytes_(args);
-              this.myPacketOrderer.handleResponse(pN, data);
-            }, () => {
-              this.onClosed_();
-            }, this.urlFn);
-            const urlParams = {};
-            urlParams[FIREBASE_LONGPOLL_START_PARAM] = "t";
-            urlParams[FIREBASE_LONGPOLL_SERIAL_PARAM] = Math.floor(Math.random() * 1e8);
-            if (this.scriptTagHolder.uniqueCallbackIdentifier) {
-              urlParams[FIREBASE_LONGPOLL_CALLBACK_ID_PARAM] = this.scriptTagHolder.uniqueCallbackIdentifier;
-            }
-            urlParams[VERSION_PARAM] = PROTOCOL_VERSION;
-            if (this.transportSessionId) {
-              urlParams[TRANSPORT_SESSION_PARAM] = this.transportSessionId;
-            }
-            if (this.lastSessionId) {
-              urlParams[LAST_SESSION_PARAM] = this.lastSessionId;
-            }
-            if (this.applicationId) {
-              urlParams[APPLICATION_ID_PARAM] = this.applicationId;
-            }
-            if (this.appCheckToken) {
-              urlParams[APP_CHECK_TOKEN_PARAM] = this.appCheckToken;
-            }
-            if (typeof location !== "undefined" && location.hostname && FORGE_DOMAIN_RE.test(location.hostname)) {
-              urlParams[REFERER_PARAM] = FORGE_REF;
-            }
-            const connectURL = this.urlFn(urlParams);
-            this.log_("Connecting via long-poll to " + connectURL);
-            this.scriptTagHolder.addTag(connectURL, () => {
-            });
-          });
-        }
-        /**
-         * Call this when a handshake has completed successfully and we want to consider the connection established
-         */
-        start() {
-          this.scriptTagHolder.startLongPoll(this.id, this.password);
-          this.addDisconnectPingFrame(this.id, this.password);
-        }
-        /**
-         * Forces long polling to be considered as a potential transport
-         */
-        static forceAllow() {
-          _BrowserPollConnection.forceAllow_ = true;
-        }
-        /**
-         * Forces longpolling to not be considered as a potential transport
-         */
-        static forceDisallow() {
-          _BrowserPollConnection.forceDisallow_ = true;
-        }
-        // Static method, use string literal so it can be accessed in a generic way
-        static isAvailable() {
-          if (isNodeSdk()) {
-            return false;
-          } else if (_BrowserPollConnection.forceAllow_) {
-            return true;
-          } else {
-            return !_BrowserPollConnection.forceDisallow_ && typeof document !== "undefined" && document.createElement != null && !isChromeExtensionContentScript() && !isWindowsStoreApp();
-          }
-        }
-        /**
-         * No-op for polling
-         */
-        markConnectionHealthy() {
-        }
-        /**
-         * Stops polling and cleans up the iframe
-         */
-        shutdown_() {
-          this.isClosed_ = true;
-          if (this.scriptTagHolder) {
-            this.scriptTagHolder.close();
-            this.scriptTagHolder = null;
-          }
-          if (this.myDisconnFrame) {
-            document.body.removeChild(this.myDisconnFrame);
-            this.myDisconnFrame = null;
-          }
-          if (this.connectTimeoutTimer_) {
-            clearTimeout(this.connectTimeoutTimer_);
-            this.connectTimeoutTimer_ = null;
-          }
-        }
-        /**
-         * Triggered when this transport is closed
-         */
-        onClosed_() {
-          if (!this.isClosed_) {
-            this.log_("Longpoll is closing itself");
-            this.shutdown_();
-            if (this.onDisconnect_) {
-              this.onDisconnect_(this.everConnected_);
-              this.onDisconnect_ = null;
-            }
-          }
-        }
-        /**
-         * External-facing close handler. RealTime has requested we shut down. Kill our connection and tell the server
-         * that we've left.
-         */
-        close() {
-          if (!this.isClosed_) {
-            this.log_("Longpoll is being closed.");
-            this.shutdown_();
-          }
-        }
-        /**
-         * Send the JSON object down to the server. It will need to be stringified, base64 encoded, and then
-         * broken into chunks (since URLs have a small maximum length).
-         * @param data - The JSON data to transmit.
-         */
-        send(data) {
-          const dataStr = stringify(data);
-          this.bytesSent += dataStr.length;
-          this.stats_.incrementCounter("bytes_sent", dataStr.length);
-          const base64data = base64Encode(dataStr);
-          const dataSegs = splitStringBySize(base64data, MAX_PAYLOAD_SIZE);
-          for (let i = 0; i < dataSegs.length; i++) {
-            this.scriptTagHolder.enqueueSegment(this.curSegmentNum, dataSegs.length, dataSegs[i]);
-            this.curSegmentNum++;
-          }
-        }
-        /**
-         * This is how we notify the server that we're leaving.
-         * We aren't able to send requests with DHTML on a window close event, but we can
-         * trigger XHR requests in some browsers (everything but Opera basically).
-         */
-        addDisconnectPingFrame(id, pw) {
-          if (isNodeSdk()) {
-            return;
-          }
-          this.myDisconnFrame = document.createElement("iframe");
-          const urlParams = {};
-          urlParams[FIREBASE_LONGPOLL_DISCONN_FRAME_REQUEST_PARAM] = "t";
-          urlParams[FIREBASE_LONGPOLL_ID_PARAM] = id;
-          urlParams[FIREBASE_LONGPOLL_PW_PARAM] = pw;
-          this.myDisconnFrame.src = this.urlFn(urlParams);
-          this.myDisconnFrame.style.display = "none";
-          document.body.appendChild(this.myDisconnFrame);
-        }
-        /**
-         * Used to track the bytes received by this client
-         */
-        incrementIncomingBytes_(args) {
-          const bytesReceived = stringify(args).length;
-          this.bytesReceived += bytesReceived;
-          this.stats_.incrementCounter("bytes_received", bytesReceived);
-        }
-      };
-      FirebaseIFrameScriptHolder = class _FirebaseIFrameScriptHolder {
-        /**
-         * @param commandCB - The callback to be called when control commands are received from the server.
-         * @param onMessageCB - The callback to be triggered when responses arrive from the server.
-         * @param onDisconnect - The callback to be triggered when this tag holder is closed
-         * @param urlFn - A function that provides the URL of the endpoint to send data to.
-         */
-        constructor(commandCB, onMessageCB, onDisconnect, urlFn) {
-          this.onDisconnect = onDisconnect;
-          this.urlFn = urlFn;
-          this.outstandingRequests = /* @__PURE__ */ new Set();
-          this.pendingSegs = [];
-          this.currentSerial = Math.floor(Math.random() * 1e8);
-          this.sendNewPolls = true;
-          if (!isNodeSdk()) {
-            this.uniqueCallbackIdentifier = LUIDGenerator();
-            window[FIREBASE_LONGPOLL_COMMAND_CB_NAME + this.uniqueCallbackIdentifier] = commandCB;
-            window[FIREBASE_LONGPOLL_DATA_CB_NAME + this.uniqueCallbackIdentifier] = onMessageCB;
-            this.myIFrame = _FirebaseIFrameScriptHolder.createIFrame_();
-            let script = "";
-            if (this.myIFrame.src && this.myIFrame.src.substr(0, "javascript:".length) === "javascript:") {
-              const currentDomain = document.domain;
-              script = '<script>document.domain="' + currentDomain + '";<\/script>';
-            }
-            const iframeContents = "<html><body>" + script + "</body></html>";
-            try {
-              this.myIFrame.doc.open();
-              this.myIFrame.doc.write(iframeContents);
-              this.myIFrame.doc.close();
-            } catch (e) {
-              log("frame writing exception");
-              if (e.stack) {
-                log(e.stack);
-              }
-              log(e);
-            }
-          } else {
-            this.commandCB = commandCB;
-            this.onMessageCB = onMessageCB;
-          }
-        }
-        /**
-         * Each browser has its own funny way to handle iframes. Here we mush them all together into one object that I can
-         * actually use.
-         */
-        static createIFrame_() {
-          const iframe = document.createElement("iframe");
-          iframe.style.display = "none";
-          if (document.body) {
-            document.body.appendChild(iframe);
-            try {
-              const a = iframe.contentWindow.document;
-              if (!a) {
-                log("No IE domain setting required");
-              }
-            } catch (e) {
-              const domain = document.domain;
-              iframe.src = "javascript:void((function(){document.open();document.domain='" + domain + "';document.close();})())";
-            }
-          } else {
-            throw "Document body has not initialized. Wait to initialize Firebase until after the document is ready.";
-          }
-          if (iframe.contentDocument) {
-            iframe.doc = iframe.contentDocument;
-          } else if (iframe.contentWindow) {
-            iframe.doc = iframe.contentWindow.document;
-          } else if (iframe.document) {
-            iframe.doc = iframe.document;
-          }
-          return iframe;
-        }
-        /**
-         * Cancel all outstanding queries and remove the frame.
-         */
-        close() {
-          this.alive = false;
-          if (this.myIFrame) {
-            this.myIFrame.doc.body.textContent = "";
-            setTimeout(() => {
-              if (this.myIFrame !== null) {
-                document.body.removeChild(this.myIFrame);
-                this.myIFrame = null;
-              }
-            }, Math.floor(0));
-          }
-          const onDisconnect = this.onDisconnect;
-          if (onDisconnect) {
-            this.onDisconnect = null;
-            onDisconnect();
-          }
-        }
-        /**
-         * Actually start the long-polling session by adding the first script tag(s) to the iframe.
-         * @param id - The ID of this connection
-         * @param pw - The password for this connection
-         */
-        startLongPoll(id, pw) {
-          this.myID = id;
-          this.myPW = pw;
-          this.alive = true;
-          while (this.newRequest_()) {
-          }
-        }
-        /**
-         * This is called any time someone might want a script tag to be added. It adds a script tag when there aren't
-         * too many outstanding requests and we are still alive.
-         *
-         * If there are outstanding packet segments to send, it sends one. If there aren't, it sends a long-poll anyways if
-         * needed.
-         */
-        newRequest_() {
-          if (this.alive && this.sendNewPolls && this.outstandingRequests.size < (this.pendingSegs.length > 0 ? 2 : 1)) {
-            this.currentSerial++;
-            const urlParams = {};
-            urlParams[FIREBASE_LONGPOLL_ID_PARAM] = this.myID;
-            urlParams[FIREBASE_LONGPOLL_PW_PARAM] = this.myPW;
-            urlParams[FIREBASE_LONGPOLL_SERIAL_PARAM] = this.currentSerial;
-            let theURL = this.urlFn(urlParams);
-            let curDataString = "";
-            let i = 0;
-            while (this.pendingSegs.length > 0) {
-              const nextSeg = this.pendingSegs[0];
-              if (nextSeg.d.length + SEG_HEADER_SIZE + curDataString.length <= MAX_URL_DATA_SIZE) {
-                const theSeg = this.pendingSegs.shift();
-                curDataString = curDataString + "&" + FIREBASE_LONGPOLL_SEGMENT_NUM_PARAM + i + "=" + theSeg.seg + "&" + FIREBASE_LONGPOLL_SEGMENTS_IN_PACKET + i + "=" + theSeg.ts + "&" + FIREBASE_LONGPOLL_DATA_PARAM + i + "=" + theSeg.d;
-                i++;
-              } else {
-                break;
-              }
-            }
-            theURL = theURL + curDataString;
-            this.addLongPollTag_(theURL, this.currentSerial);
-            return true;
-          } else {
-            return false;
-          }
-        }
-        /**
-         * Queue a packet for transmission to the server.
-         * @param segnum - A sequential id for this packet segment used for reassembly
-         * @param totalsegs - The total number of segments in this packet
-         * @param data - The data for this segment.
-         */
-        enqueueSegment(segnum, totalsegs, data) {
-          this.pendingSegs.push({ seg: segnum, ts: totalsegs, d: data });
-          if (this.alive) {
-            this.newRequest_();
-          }
-        }
-        /**
-         * Add a script tag for a regular long-poll request.
-         * @param url - The URL of the script tag.
-         * @param serial - The serial number of the request.
-         */
-        addLongPollTag_(url, serial) {
-          this.outstandingRequests.add(serial);
-          const doNewRequest = () => {
-            this.outstandingRequests.delete(serial);
-            this.newRequest_();
-          };
-          const keepaliveTimeout = setTimeout(doNewRequest, Math.floor(KEEPALIVE_REQUEST_INTERVAL));
-          const readyStateCB = () => {
-            clearTimeout(keepaliveTimeout);
-            doNewRequest();
-          };
-          this.addTag(url, readyStateCB);
-        }
-        /**
-         * Add an arbitrary script tag to the iframe.
-         * @param url - The URL for the script tag source.
-         * @param loadCB - A callback to be triggered once the script has loaded.
-         */
-        addTag(url, loadCB) {
-          if (isNodeSdk()) {
-            this.doNodeLongPoll(url, loadCB);
-          } else {
-            setTimeout(() => {
-              try {
-                if (!this.sendNewPolls) {
-                  return;
-                }
-                const newScript = this.myIFrame.doc.createElement("script");
-                newScript.type = "text/javascript";
-                newScript.async = true;
-                newScript.src = url;
-                newScript.onload = newScript.onreadystatechange = function() {
-                  const rstate = newScript.readyState;
-                  if (!rstate || rstate === "loaded" || rstate === "complete") {
-                    newScript.onload = newScript.onreadystatechange = null;
-                    if (newScript.parentNode) {
-                      newScript.parentNode.removeChild(newScript);
-                    }
-                    loadCB();
-                  }
-                };
-                newScript.onerror = () => {
-                  log("Long-poll script failed to load: " + url);
-                  this.sendNewPolls = false;
-                  this.close();
-                };
-                this.myIFrame.doc.body.appendChild(newScript);
-              } catch (e) {
-              }
-            }, Math.floor(1));
-          }
-        }
-      };
-      WEBSOCKET_MAX_FRAME_SIZE = 16384;
-      WEBSOCKET_KEEPALIVE_INTERVAL = 45e3;
-      WebSocketImpl = null;
-      if (typeof MozWebSocket !== "undefined") {
-        WebSocketImpl = MozWebSocket;
-      } else if (typeof WebSocket !== "undefined") {
-        WebSocketImpl = WebSocket;
-      }
-      WebSocketConnection = class _WebSocketConnection {
-        /**
-         * @param connId identifier for this transport
-         * @param repoInfo The info for the websocket endpoint.
-         * @param applicationId The Firebase App ID for this project.
-         * @param appCheckToken The App Check Token for this client.
-         * @param authToken The Auth Token for this client.
-         * @param transportSessionId Optional transportSessionId if this is connecting
-         * to an existing transport session
-         * @param lastSessionId Optional lastSessionId if there was a previous
-         * connection
-         */
-        constructor(connId, repoInfo, applicationId, appCheckToken, authToken, transportSessionId, lastSessionId) {
-          this.connId = connId;
-          this.applicationId = applicationId;
-          this.appCheckToken = appCheckToken;
-          this.authToken = authToken;
-          this.keepaliveTimer = null;
-          this.frames = null;
-          this.totalFrames = 0;
-          this.bytesSent = 0;
-          this.bytesReceived = 0;
-          this.log_ = logWrapper(this.connId);
-          this.stats_ = statsManagerGetCollection(repoInfo);
-          this.connURL = _WebSocketConnection.connectionURL_(repoInfo, transportSessionId, lastSessionId, appCheckToken, applicationId);
-          this.nodeAdmin = repoInfo.nodeAdmin;
-        }
-        /**
-         * @param repoInfo - The info for the websocket endpoint.
-         * @param transportSessionId - Optional transportSessionId if this is connecting to an existing transport
-         *                                         session
-         * @param lastSessionId - Optional lastSessionId if there was a previous connection
-         * @returns connection url
-         */
-        static connectionURL_(repoInfo, transportSessionId, lastSessionId, appCheckToken, applicationId) {
-          const urlParams = {};
-          urlParams[VERSION_PARAM] = PROTOCOL_VERSION;
-          if (!isNodeSdk() && typeof location !== "undefined" && location.hostname && FORGE_DOMAIN_RE.test(location.hostname)) {
-            urlParams[REFERER_PARAM] = FORGE_REF;
-          }
-          if (transportSessionId) {
-            urlParams[TRANSPORT_SESSION_PARAM] = transportSessionId;
-          }
-          if (lastSessionId) {
-            urlParams[LAST_SESSION_PARAM] = lastSessionId;
-          }
-          if (appCheckToken) {
-            urlParams[APP_CHECK_TOKEN_PARAM] = appCheckToken;
-          }
-          if (applicationId) {
-            urlParams[APPLICATION_ID_PARAM] = applicationId;
-          }
-          return repoInfoConnectionURL(repoInfo, WEBSOCKET, urlParams);
-        }
-        /**
-         * @param onMessage - Callback when messages arrive
-         * @param onDisconnect - Callback with connection lost.
-         */
-        open(onMessage, onDisconnect) {
-          this.onDisconnect = onDisconnect;
-          this.onMessage = onMessage;
-          this.log_("Websocket connecting to " + this.connURL);
-          this.everConnected_ = false;
-          PersistentStorage.set("previous_websocket_failure", true);
-          try {
-            let options;
-            if (isNodeSdk()) {
-              const device = this.nodeAdmin ? "AdminNode" : "Node";
-              options = {
-                headers: {
-                  "User-Agent": `Firebase/${PROTOCOL_VERSION}/${SDK_VERSION2}/${process.platform}/${device}`,
-                  "X-Firebase-GMPID": this.applicationId || ""
-                }
-              };
-              if (this.authToken) {
-                options.headers["Authorization"] = `Bearer ${this.authToken}`;
-              }
-              if (this.appCheckToken) {
-                options.headers["X-Firebase-AppCheck"] = this.appCheckToken;
-              }
-              const env = process["env"];
-              const proxy = this.connURL.indexOf("wss://") === 0 ? env["HTTPS_PROXY"] || env["https_proxy"] : env["HTTP_PROXY"] || env["http_proxy"];
-              if (proxy) {
-                options["proxy"] = { origin: proxy };
-              }
-            }
-            this.mySock = new WebSocketImpl(this.connURL, [], options);
-          } catch (e) {
-            this.log_("Error instantiating WebSocket.");
-            const error2 = e.message || e.data;
-            if (error2) {
-              this.log_(error2);
-            }
-            this.onClosed_();
-            return;
-          }
-          this.mySock.onopen = () => {
-            this.log_("Websocket connected.");
-            this.everConnected_ = true;
-          };
-          this.mySock.onclose = () => {
-            this.log_("Websocket connection was disconnected.");
-            this.mySock = null;
-            this.onClosed_();
-          };
-          this.mySock.onmessage = (m) => {
-            this.handleIncomingFrame(m);
-          };
-          this.mySock.onerror = (e) => {
-            this.log_("WebSocket error.  Closing connection.");
-            const error2 = e.message || e.data;
-            if (error2) {
-              this.log_(error2);
-            }
-            this.onClosed_();
-          };
-        }
-        /**
-         * No-op for websockets, we don't need to do anything once the connection is confirmed as open
-         */
-        start() {
-        }
-        static forceDisallow() {
-          _WebSocketConnection.forceDisallow_ = true;
-        }
-        static isAvailable() {
-          let isOldAndroid = false;
-          if (typeof navigator !== "undefined" && navigator.userAgent) {
-            const oldAndroidRegex = /Android ([0-9]{0,}\.[0-9]{0,})/;
-            const oldAndroidMatch = navigator.userAgent.match(oldAndroidRegex);
-            if (oldAndroidMatch && oldAndroidMatch.length > 1) {
-              if (parseFloat(oldAndroidMatch[1]) < 4.4) {
-                isOldAndroid = true;
-              }
-            }
-          }
-          return !isOldAndroid && WebSocketImpl !== null && !_WebSocketConnection.forceDisallow_;
-        }
-        /**
-         * Returns true if we previously failed to connect with this transport.
-         */
-        static previouslyFailed() {
-          return PersistentStorage.isInMemoryStorage || PersistentStorage.get("previous_websocket_failure") === true;
-        }
-        markConnectionHealthy() {
-          PersistentStorage.remove("previous_websocket_failure");
-        }
-        appendFrame_(data) {
-          this.frames.push(data);
-          if (this.frames.length === this.totalFrames) {
-            const fullMess = this.frames.join("");
-            this.frames = null;
-            const jsonMess = jsonEval(fullMess);
-            this.onMessage(jsonMess);
-          }
-        }
-        /**
-         * @param frameCount - The number of frames we are expecting from the server
-         */
-        handleNewFrameCount_(frameCount) {
-          this.totalFrames = frameCount;
-          this.frames = [];
-        }
-        /**
-         * Attempts to parse a frame count out of some text. If it can't, assumes a value of 1
-         * @returns Any remaining data to be process, or null if there is none
-         */
-        extractFrameCount_(data) {
-          assert(this.frames === null, "We already have a frame buffer");
-          if (data.length <= 6) {
-            const frameCount = Number(data);
-            if (!isNaN(frameCount)) {
-              this.handleNewFrameCount_(frameCount);
-              return null;
-            }
-          }
-          this.handleNewFrameCount_(1);
-          return data;
-        }
-        /**
-         * Process a websocket frame that has arrived from the server.
-         * @param mess - The frame data
-         */
-        handleIncomingFrame(mess) {
-          if (this.mySock === null) {
-            return;
-          }
-          const data = mess["data"];
-          this.bytesReceived += data.length;
-          this.stats_.incrementCounter("bytes_received", data.length);
-          this.resetKeepAlive();
-          if (this.frames !== null) {
-            this.appendFrame_(data);
-          } else {
-            const remainingData = this.extractFrameCount_(data);
-            if (remainingData !== null) {
-              this.appendFrame_(remainingData);
-            }
-          }
-        }
-        /**
-         * Send a message to the server
-         * @param data - The JSON object to transmit
-         */
-        send(data) {
-          this.resetKeepAlive();
-          const dataStr = stringify(data);
-          this.bytesSent += dataStr.length;
-          this.stats_.incrementCounter("bytes_sent", dataStr.length);
-          const dataSegs = splitStringBySize(dataStr, WEBSOCKET_MAX_FRAME_SIZE);
-          if (dataSegs.length > 1) {
-            this.sendString_(String(dataSegs.length));
-          }
-          for (let i = 0; i < dataSegs.length; i++) {
-            this.sendString_(dataSegs[i]);
-          }
-        }
-        shutdown_() {
-          this.isClosed_ = true;
-          if (this.keepaliveTimer) {
-            clearInterval(this.keepaliveTimer);
-            this.keepaliveTimer = null;
-          }
-          if (this.mySock) {
-            this.mySock.close();
-            this.mySock = null;
-          }
-        }
-        onClosed_() {
-          if (!this.isClosed_) {
-            this.log_("WebSocket is closing itself");
-            this.shutdown_();
-            if (this.onDisconnect) {
-              this.onDisconnect(this.everConnected_);
-              this.onDisconnect = null;
-            }
-          }
-        }
-        /**
-         * External-facing close handler.
-         * Close the websocket and kill the connection.
-         */
-        close() {
-          if (!this.isClosed_) {
-            this.log_("WebSocket is being closed");
-            this.shutdown_();
-          }
-        }
-        /**
-         * Kill the current keepalive timer and start a new one, to ensure that it always fires N seconds after
-         * the last activity.
-         */
-        resetKeepAlive() {
-          clearInterval(this.keepaliveTimer);
-          this.keepaliveTimer = setInterval(() => {
-            if (this.mySock) {
-              this.sendString_("0");
-            }
-            this.resetKeepAlive();
-          }, Math.floor(WEBSOCKET_KEEPALIVE_INTERVAL));
-        }
-        /**
-         * Send a string over the websocket.
-         *
-         * @param str - String to send.
-         */
-        sendString_(str) {
-          try {
-            this.mySock.send(str);
-          } catch (e) {
-            this.log_("Exception thrown from WebSocket.send():", e.message || e.data, "Closing connection.");
-            setTimeout(this.onClosed_.bind(this), 0);
-          }
-        }
-      };
-      WebSocketConnection.responsesRequiredToBeHealthy = 2;
-      WebSocketConnection.healthyTimeout = 3e4;
-      TransportManager = class _TransportManager {
-        static get ALL_TRANSPORTS() {
-          return [BrowserPollConnection, WebSocketConnection];
-        }
-        /**
-         * Returns whether transport has been selected to ensure WebSocketConnection or BrowserPollConnection are not called after
-         * TransportManager has already set up transports_
-         */
-        static get IS_TRANSPORT_INITIALIZED() {
-          return this.globalTransportInitialized_;
-        }
-        /**
-         * @param repoInfo - Metadata around the namespace we're connecting to
-         */
-        constructor(repoInfo) {
-          this.initTransports_(repoInfo);
-        }
-        initTransports_(repoInfo) {
-          const isWebSocketsAvailable = WebSocketConnection && WebSocketConnection["isAvailable"]();
-          let isSkipPollConnection = isWebSocketsAvailable && !WebSocketConnection.previouslyFailed();
-          if (repoInfo.webSocketOnly) {
-            if (!isWebSocketsAvailable) {
-              warn("wss:// URL used, but browser isn't known to support websockets.  Trying anyway.");
-            }
-            isSkipPollConnection = true;
-          }
-          if (isSkipPollConnection) {
-            this.transports_ = [WebSocketConnection];
-          } else {
-            const transports = this.transports_ = [];
-            for (const transport of _TransportManager.ALL_TRANSPORTS) {
-              if (transport && transport["isAvailable"]()) {
-                transports.push(transport);
-              }
-            }
-            _TransportManager.globalTransportInitialized_ = true;
-          }
-        }
-        /**
-         * @returns The constructor for the initial transport to use
-         */
-        initialTransport() {
-          if (this.transports_.length > 0) {
-            return this.transports_[0];
-          } else {
-            throw new Error("No transports available");
-          }
-        }
-        /**
-         * @returns The constructor for the next transport, or null
-         */
-        upgradeTransport() {
-          if (this.transports_.length > 1) {
-            return this.transports_[1];
-          } else {
-            return null;
-          }
-        }
-      };
-      TransportManager.globalTransportInitialized_ = false;
-      UPGRADE_TIMEOUT = 6e4;
-      DELAY_BEFORE_SENDING_EXTRA_REQUESTS = 5e3;
-      BYTES_SENT_HEALTHY_OVERRIDE = 10 * 1024;
-      BYTES_RECEIVED_HEALTHY_OVERRIDE = 100 * 1024;
-      MESSAGE_TYPE = "t";
-      MESSAGE_DATA = "d";
-      CONTROL_SHUTDOWN = "s";
-      CONTROL_RESET = "r";
-      CONTROL_ERROR = "e";
-      CONTROL_PONG = "o";
-      SWITCH_ACK = "a";
-      END_TRANSMISSION = "n";
-      PING = "p";
-      SERVER_HELLO = "h";
-      Connection = class {
-        /**
-         * @param id - an id for this connection
-         * @param repoInfo_ - the info for the endpoint to connect to
-         * @param applicationId_ - the Firebase App ID for this project
-         * @param appCheckToken_ - The App Check Token for this device.
-         * @param authToken_ - The auth token for this session.
-         * @param onMessage_ - the callback to be triggered when a server-push message arrives
-         * @param onReady_ - the callback to be triggered when this connection is ready to send messages.
-         * @param onDisconnect_ - the callback to be triggered when a connection was lost
-         * @param onKill_ - the callback to be triggered when this connection has permanently shut down.
-         * @param lastSessionId - last session id in persistent connection. is used to clean up old session in real-time server
-         */
-        constructor(id, repoInfo_, applicationId_, appCheckToken_, authToken_, onMessage_, onReady_, onDisconnect_, onKill_, lastSessionId) {
-          this.id = id;
-          this.repoInfo_ = repoInfo_;
-          this.applicationId_ = applicationId_;
-          this.appCheckToken_ = appCheckToken_;
-          this.authToken_ = authToken_;
-          this.onMessage_ = onMessage_;
-          this.onReady_ = onReady_;
-          this.onDisconnect_ = onDisconnect_;
-          this.onKill_ = onKill_;
-          this.lastSessionId = lastSessionId;
-          this.connectionCount = 0;
-          this.pendingDataMessages = [];
-          this.state_ = 0;
-          this.log_ = logWrapper("c:" + this.id + ":");
-          this.transportManager_ = new TransportManager(repoInfo_);
-          this.log_("Connection created");
-          this.start_();
-        }
-        /**
-         * Starts a connection attempt
-         */
-        start_() {
-          const conn = this.transportManager_.initialTransport();
-          this.conn_ = new conn(this.nextTransportId_(), this.repoInfo_, this.applicationId_, this.appCheckToken_, this.authToken_, null, this.lastSessionId);
-          this.primaryResponsesRequired_ = conn["responsesRequiredToBeHealthy"] || 0;
-          const onMessageReceived = this.connReceiver_(this.conn_);
-          const onConnectionLost = this.disconnReceiver_(this.conn_);
-          this.tx_ = this.conn_;
-          this.rx_ = this.conn_;
-          this.secondaryConn_ = null;
-          this.isHealthy_ = false;
-          setTimeout(() => {
-            this.conn_ && this.conn_.open(onMessageReceived, onConnectionLost);
-          }, Math.floor(0));
-          const healthyTimeoutMS = conn["healthyTimeout"] || 0;
-          if (healthyTimeoutMS > 0) {
-            this.healthyTimeout_ = setTimeoutNonBlocking(() => {
-              this.healthyTimeout_ = null;
-              if (!this.isHealthy_) {
-                if (this.conn_ && this.conn_.bytesReceived > BYTES_RECEIVED_HEALTHY_OVERRIDE) {
-                  this.log_("Connection exceeded healthy timeout but has received " + this.conn_.bytesReceived + " bytes.  Marking connection healthy.");
-                  this.isHealthy_ = true;
-                  this.conn_.markConnectionHealthy();
-                } else if (this.conn_ && this.conn_.bytesSent > BYTES_SENT_HEALTHY_OVERRIDE) {
-                  this.log_("Connection exceeded healthy timeout but has sent " + this.conn_.bytesSent + " bytes.  Leaving connection alive.");
-                } else {
-                  this.log_("Closing unhealthy connection after timeout.");
-                  this.close();
-                }
-              }
-            }, Math.floor(healthyTimeoutMS));
-          }
-        }
-        nextTransportId_() {
-          return "c:" + this.id + ":" + this.connectionCount++;
-        }
-        disconnReceiver_(conn) {
-          return (everConnected) => {
-            if (conn === this.conn_) {
-              this.onConnectionLost_(everConnected);
-            } else if (conn === this.secondaryConn_) {
-              this.log_("Secondary connection lost.");
-              this.onSecondaryConnectionLost_();
-            } else {
-              this.log_("closing an old connection");
-            }
-          };
-        }
-        connReceiver_(conn) {
-          return (message) => {
-            if (this.state_ !== 2) {
-              if (conn === this.rx_) {
-                this.onPrimaryMessageReceived_(message);
-              } else if (conn === this.secondaryConn_) {
-                this.onSecondaryMessageReceived_(message);
-              } else {
-                this.log_("message on old connection");
-              }
-            }
-          };
-        }
-        /**
-         * @param dataMsg - An arbitrary data message to be sent to the server
-         */
-        sendRequest(dataMsg) {
-          const msg = { t: "d", d: dataMsg };
-          this.sendData_(msg);
-        }
-        tryCleanupConnection() {
-          if (this.tx_ === this.secondaryConn_ && this.rx_ === this.secondaryConn_) {
-            this.log_("cleaning up and promoting a connection: " + this.secondaryConn_.connId);
-            this.conn_ = this.secondaryConn_;
-            this.secondaryConn_ = null;
-          }
-        }
-        onSecondaryControl_(controlData) {
-          if (MESSAGE_TYPE in controlData) {
-            const cmd = controlData[MESSAGE_TYPE];
-            if (cmd === SWITCH_ACK) {
-              this.upgradeIfSecondaryHealthy_();
-            } else if (cmd === CONTROL_RESET) {
-              this.log_("Got a reset on secondary, closing it");
-              this.secondaryConn_.close();
-              if (this.tx_ === this.secondaryConn_ || this.rx_ === this.secondaryConn_) {
-                this.close();
-              }
-            } else if (cmd === CONTROL_PONG) {
-              this.log_("got pong on secondary.");
-              this.secondaryResponsesRequired_--;
-              this.upgradeIfSecondaryHealthy_();
-            }
-          }
-        }
-        onSecondaryMessageReceived_(parsedData) {
-          const layer = requireKey("t", parsedData);
-          const data = requireKey("d", parsedData);
-          if (layer === "c") {
-            this.onSecondaryControl_(data);
-          } else if (layer === "d") {
-            this.pendingDataMessages.push(data);
-          } else {
-            throw new Error("Unknown protocol layer: " + layer);
-          }
-        }
-        upgradeIfSecondaryHealthy_() {
-          if (this.secondaryResponsesRequired_ <= 0) {
-            this.log_("Secondary connection is healthy.");
-            this.isHealthy_ = true;
-            this.secondaryConn_.markConnectionHealthy();
-            this.proceedWithUpgrade_();
-          } else {
-            this.log_("sending ping on secondary.");
-            this.secondaryConn_.send({ t: "c", d: { t: PING, d: {} } });
-          }
-        }
-        proceedWithUpgrade_() {
-          this.secondaryConn_.start();
-          this.log_("sending client ack on secondary");
-          this.secondaryConn_.send({ t: "c", d: { t: SWITCH_ACK, d: {} } });
-          this.log_("Ending transmission on primary");
-          this.conn_.send({ t: "c", d: { t: END_TRANSMISSION, d: {} } });
-          this.tx_ = this.secondaryConn_;
-          this.tryCleanupConnection();
-        }
-        onPrimaryMessageReceived_(parsedData) {
-          const layer = requireKey("t", parsedData);
-          const data = requireKey("d", parsedData);
-          if (layer === "c") {
-            this.onControl_(data);
-          } else if (layer === "d") {
-            this.onDataMessage_(data);
-          }
-        }
-        onDataMessage_(message) {
-          this.onPrimaryResponse_();
-          this.onMessage_(message);
-        }
-        onPrimaryResponse_() {
-          if (!this.isHealthy_) {
-            this.primaryResponsesRequired_--;
-            if (this.primaryResponsesRequired_ <= 0) {
-              this.log_("Primary connection is healthy.");
-              this.isHealthy_ = true;
-              this.conn_.markConnectionHealthy();
-            }
-          }
-        }
-        onControl_(controlData) {
-          const cmd = requireKey(MESSAGE_TYPE, controlData);
-          if (MESSAGE_DATA in controlData) {
-            const payload = controlData[MESSAGE_DATA];
-            if (cmd === SERVER_HELLO) {
-              const handshakePayload = Object.assign({}, payload);
-              if (this.repoInfo_.isUsingEmulator) {
-                handshakePayload.h = this.repoInfo_.host;
-              }
-              this.onHandshake_(handshakePayload);
-            } else if (cmd === END_TRANSMISSION) {
-              this.log_("recvd end transmission on primary");
-              this.rx_ = this.secondaryConn_;
-              for (let i = 0; i < this.pendingDataMessages.length; ++i) {
-                this.onDataMessage_(this.pendingDataMessages[i]);
-              }
-              this.pendingDataMessages = [];
-              this.tryCleanupConnection();
-            } else if (cmd === CONTROL_SHUTDOWN) {
-              this.onConnectionShutdown_(payload);
-            } else if (cmd === CONTROL_RESET) {
-              this.onReset_(payload);
-            } else if (cmd === CONTROL_ERROR) {
-              error("Server Error: " + payload);
-            } else if (cmd === CONTROL_PONG) {
-              this.log_("got pong on primary.");
-              this.onPrimaryResponse_();
-              this.sendPingOnPrimaryIfNecessary_();
-            } else {
-              error("Unknown control packet command: " + cmd);
-            }
-          }
-        }
-        /**
-         * @param handshake - The handshake data returned from the server
-         */
-        onHandshake_(handshake) {
-          const timestamp = handshake.ts;
-          const version4 = handshake.v;
-          const host = handshake.h;
-          this.sessionId = handshake.s;
-          this.repoInfo_.host = host;
-          if (this.state_ === 0) {
-            this.conn_.start();
-            this.onConnectionEstablished_(this.conn_, timestamp);
-            if (PROTOCOL_VERSION !== version4) {
-              warn("Protocol version mismatch detected");
-            }
-            this.tryStartUpgrade_();
-          }
-        }
-        tryStartUpgrade_() {
-          const conn = this.transportManager_.upgradeTransport();
-          if (conn) {
-            this.startUpgrade_(conn);
-          }
-        }
-        startUpgrade_(conn) {
-          this.secondaryConn_ = new conn(this.nextTransportId_(), this.repoInfo_, this.applicationId_, this.appCheckToken_, this.authToken_, this.sessionId);
-          this.secondaryResponsesRequired_ = conn["responsesRequiredToBeHealthy"] || 0;
-          const onMessage = this.connReceiver_(this.secondaryConn_);
-          const onDisconnect = this.disconnReceiver_(this.secondaryConn_);
-          this.secondaryConn_.open(onMessage, onDisconnect);
-          setTimeoutNonBlocking(() => {
-            if (this.secondaryConn_) {
-              this.log_("Timed out trying to upgrade.");
-              this.secondaryConn_.close();
-            }
-          }, Math.floor(UPGRADE_TIMEOUT));
-        }
-        onReset_(host) {
-          this.log_("Reset packet received.  New host: " + host);
-          this.repoInfo_.host = host;
-          if (this.state_ === 1) {
-            this.close();
-          } else {
-            this.closeConnections_();
-            this.start_();
-          }
-        }
-        onConnectionEstablished_(conn, timestamp) {
-          this.log_("Realtime connection established.");
-          this.conn_ = conn;
-          this.state_ = 1;
-          if (this.onReady_) {
-            this.onReady_(timestamp, this.sessionId);
-            this.onReady_ = null;
-          }
-          if (this.primaryResponsesRequired_ === 0) {
-            this.log_("Primary connection is healthy.");
-            this.isHealthy_ = true;
-          } else {
-            setTimeoutNonBlocking(() => {
-              this.sendPingOnPrimaryIfNecessary_();
-            }, Math.floor(DELAY_BEFORE_SENDING_EXTRA_REQUESTS));
-          }
-        }
-        sendPingOnPrimaryIfNecessary_() {
-          if (!this.isHealthy_ && this.state_ === 1) {
-            this.log_("sending ping on primary.");
-            this.sendData_({ t: "c", d: { t: PING, d: {} } });
-          }
-        }
-        onSecondaryConnectionLost_() {
-          const conn = this.secondaryConn_;
-          this.secondaryConn_ = null;
-          if (this.tx_ === conn || this.rx_ === conn) {
-            this.close();
-          }
-        }
-        /**
-         * @param everConnected - Whether or not the connection ever reached a server. Used to determine if
-         * we should flush the host cache
-         */
-        onConnectionLost_(everConnected) {
-          this.conn_ = null;
-          if (!everConnected && this.state_ === 0) {
-            this.log_("Realtime connection failed.");
-            if (this.repoInfo_.isCacheableHost()) {
-              PersistentStorage.remove("host:" + this.repoInfo_.host);
-              this.repoInfo_.internalHost = this.repoInfo_.host;
-            }
-          } else if (this.state_ === 1) {
-            this.log_("Realtime connection lost.");
-          }
-          this.close();
-        }
-        onConnectionShutdown_(reason) {
-          this.log_("Connection shutdown command received. Shutting down...");
-          if (this.onKill_) {
-            this.onKill_(reason);
-            this.onKill_ = null;
-          }
-          this.onDisconnect_ = null;
-          this.close();
-        }
-        sendData_(data) {
-          if (this.state_ !== 1) {
-            throw "Connection is not connected";
-          } else {
-            this.tx_.send(data);
-          }
-        }
-        /**
-         * Cleans up this connection, calling the appropriate callbacks
-         */
-        close() {
-          if (this.state_ !== 2) {
-            this.log_("Closing realtime connection.");
-            this.state_ = 2;
-            this.closeConnections_();
-            if (this.onDisconnect_) {
-              this.onDisconnect_();
-              this.onDisconnect_ = null;
-            }
-          }
-        }
-        closeConnections_() {
-          this.log_("Shutting down all connections");
-          if (this.conn_) {
-            this.conn_.close();
-            this.conn_ = null;
-          }
-          if (this.secondaryConn_) {
-            this.secondaryConn_.close();
-            this.secondaryConn_ = null;
-          }
-          if (this.healthyTimeout_) {
-            clearTimeout(this.healthyTimeout_);
-            this.healthyTimeout_ = null;
-          }
-        }
-      };
-      ServerActions = class {
-        put(pathString, data, onComplete, hash) {
-        }
-        merge(pathString, data, onComplete, hash) {
-        }
-        /**
-         * Refreshes the auth token for the current connection.
-         * @param token - The authentication token
-         */
-        refreshAuthToken(token) {
-        }
-        /**
-         * Refreshes the app check token for the current connection.
-         * @param token The app check token
-         */
-        refreshAppCheckToken(token) {
-        }
-        onDisconnectPut(pathString, data, onComplete) {
-        }
-        onDisconnectMerge(pathString, data, onComplete) {
-        }
-        onDisconnectCancel(pathString, onComplete) {
-        }
-        reportStats(stats) {
-        }
-      };
-      EventEmitter = class {
-        constructor(allowedEvents_) {
-          this.allowedEvents_ = allowedEvents_;
-          this.listeners_ = {};
-          assert(Array.isArray(allowedEvents_) && allowedEvents_.length > 0, "Requires a non-empty array");
-        }
-        /**
-         * To be called by derived classes to trigger events.
-         */
-        trigger(eventType, ...varArgs) {
-          if (Array.isArray(this.listeners_[eventType])) {
-            const listeners = [...this.listeners_[eventType]];
-            for (let i = 0; i < listeners.length; i++) {
-              listeners[i].callback.apply(listeners[i].context, varArgs);
-            }
-          }
-        }
-        on(eventType, callback, context3) {
-          this.validateEventType_(eventType);
-          this.listeners_[eventType] = this.listeners_[eventType] || [];
-          this.listeners_[eventType].push({ callback, context: context3 });
-          const eventData = this.getInitialEvent(eventType);
-          if (eventData) {
-            callback.apply(context3, eventData);
-          }
-        }
-        off(eventType, callback, context3) {
-          this.validateEventType_(eventType);
-          const listeners = this.listeners_[eventType] || [];
-          for (let i = 0; i < listeners.length; i++) {
-            if (listeners[i].callback === callback && (!context3 || context3 === listeners[i].context)) {
-              listeners.splice(i, 1);
-              return;
-            }
-          }
-        }
-        validateEventType_(eventType) {
-          assert(this.allowedEvents_.find((et) => {
-            return et === eventType;
-          }), "Unknown event: " + eventType);
-        }
-      };
-      OnlineMonitor = class _OnlineMonitor extends EventEmitter {
-        static getInstance() {
-          return new _OnlineMonitor();
-        }
-        constructor() {
-          super(["online"]);
-          this.online_ = true;
-          if (typeof window !== "undefined" && typeof window.addEventListener !== "undefined" && !isMobileCordova()) {
-            window.addEventListener("online", () => {
-              if (!this.online_) {
-                this.online_ = true;
-                this.trigger("online", true);
-              }
-            }, false);
-            window.addEventListener("offline", () => {
-              if (this.online_) {
-                this.online_ = false;
-                this.trigger("online", false);
-              }
-            }, false);
-          }
-        }
-        getInitialEvent(eventType) {
-          assert(eventType === "online", "Unknown event type: " + eventType);
-          return [this.online_];
-        }
-        currentlyOnline() {
-          return this.online_;
-        }
-      };
-      MAX_PATH_DEPTH = 32;
-      MAX_PATH_LENGTH_BYTES = 768;
-      Path = class {
-        /**
-         * @param pathOrString - Path string to parse, or another path, or the raw
-         * tokens array
-         */
-        constructor(pathOrString, pieceNum) {
-          if (pieceNum === void 0) {
-            this.pieces_ = pathOrString.split("/");
-            let copyTo = 0;
-            for (let i = 0; i < this.pieces_.length; i++) {
-              if (this.pieces_[i].length > 0) {
-                this.pieces_[copyTo] = this.pieces_[i];
-                copyTo++;
-              }
-            }
-            this.pieces_.length = copyTo;
-            this.pieceNum_ = 0;
-          } else {
-            this.pieces_ = pathOrString;
-            this.pieceNum_ = pieceNum;
-          }
-        }
-        toString() {
-          let pathString = "";
-          for (let i = this.pieceNum_; i < this.pieces_.length; i++) {
-            if (this.pieces_[i] !== "") {
-              pathString += "/" + this.pieces_[i];
-            }
-          }
-          return pathString || "/";
-        }
-      };
-      ValidationPath = class {
-        /**
-         * @param path - Initial Path.
-         * @param errorPrefix_ - Prefix for any error messages.
-         */
-        constructor(path, errorPrefix_) {
-          this.errorPrefix_ = errorPrefix_;
-          this.parts_ = pathSlice(path, 0);
-          this.byteLength_ = Math.max(1, this.parts_.length);
-          for (let i = 0; i < this.parts_.length; i++) {
-            this.byteLength_ += stringLength(this.parts_[i]);
-          }
-          validationPathCheckValid(this);
-        }
-      };
-      VisibilityMonitor = class _VisibilityMonitor extends EventEmitter {
-        static getInstance() {
-          return new _VisibilityMonitor();
-        }
-        constructor() {
-          super(["visible"]);
-          let hidden;
-          let visibilityChange;
-          if (typeof document !== "undefined" && typeof document.addEventListener !== "undefined") {
-            if (typeof document["hidden"] !== "undefined") {
-              visibilityChange = "visibilitychange";
-              hidden = "hidden";
-            } else if (typeof document["mozHidden"] !== "undefined") {
-              visibilityChange = "mozvisibilitychange";
-              hidden = "mozHidden";
-            } else if (typeof document["msHidden"] !== "undefined") {
-              visibilityChange = "msvisibilitychange";
-              hidden = "msHidden";
-            } else if (typeof document["webkitHidden"] !== "undefined") {
-              visibilityChange = "webkitvisibilitychange";
-              hidden = "webkitHidden";
-            }
-          }
-          this.visible_ = true;
-          if (visibilityChange) {
-            document.addEventListener(visibilityChange, () => {
-              const visible = !document[hidden];
-              if (visible !== this.visible_) {
-                this.visible_ = visible;
-                this.trigger("visible", visible);
-              }
-            }, false);
-          }
-        }
-        getInitialEvent(eventType) {
-          assert(eventType === "visible", "Unknown event type: " + eventType);
-          return [this.visible_];
-        }
-      };
-      RECONNECT_MIN_DELAY = 1e3;
-      RECONNECT_MAX_DELAY_DEFAULT = 60 * 5 * 1e3;
-      RECONNECT_MAX_DELAY_FOR_ADMINS = 30 * 1e3;
-      RECONNECT_DELAY_MULTIPLIER = 1.3;
-      RECONNECT_DELAY_RESET_TIMEOUT = 3e4;
-      SERVER_KILL_INTERRUPT_REASON = "server_kill";
-      INVALID_TOKEN_THRESHOLD = 3;
-      PersistentConnection = class _PersistentConnection extends ServerActions {
-        /**
-         * @param repoInfo_ - Data about the namespace we are connecting to
-         * @param applicationId_ - The Firebase App ID for this project
-         * @param onDataUpdate_ - A callback for new data from the server
-         */
-        constructor(repoInfo_, applicationId_, onDataUpdate_, onConnectStatus_, onServerInfoUpdate_, authTokenProvider_, appCheckTokenProvider_, authOverride_) {
-          super();
-          this.repoInfo_ = repoInfo_;
-          this.applicationId_ = applicationId_;
-          this.onDataUpdate_ = onDataUpdate_;
-          this.onConnectStatus_ = onConnectStatus_;
-          this.onServerInfoUpdate_ = onServerInfoUpdate_;
-          this.authTokenProvider_ = authTokenProvider_;
-          this.appCheckTokenProvider_ = appCheckTokenProvider_;
-          this.authOverride_ = authOverride_;
-          this.id = _PersistentConnection.nextPersistentConnectionId_++;
-          this.log_ = logWrapper("p:" + this.id + ":");
-          this.interruptReasons_ = {};
-          this.listens = /* @__PURE__ */ new Map();
-          this.outstandingPuts_ = [];
-          this.outstandingGets_ = [];
-          this.outstandingPutCount_ = 0;
-          this.outstandingGetCount_ = 0;
-          this.onDisconnectRequestQueue_ = [];
-          this.connected_ = false;
-          this.reconnectDelay_ = RECONNECT_MIN_DELAY;
-          this.maxReconnectDelay_ = RECONNECT_MAX_DELAY_DEFAULT;
-          this.securityDebugCallback_ = null;
-          this.lastSessionId = null;
-          this.establishConnectionTimer_ = null;
-          this.visible_ = false;
-          this.requestCBHash_ = {};
-          this.requestNumber_ = 0;
-          this.realtime_ = null;
-          this.authToken_ = null;
-          this.appCheckToken_ = null;
-          this.forceTokenRefresh_ = false;
-          this.invalidAuthTokenCount_ = 0;
-          this.invalidAppCheckTokenCount_ = 0;
-          this.firstConnection_ = true;
-          this.lastConnectionAttemptTime_ = null;
-          this.lastConnectionEstablishedTime_ = null;
-          if (authOverride_ && !isNodeSdk()) {
-            throw new Error("Auth override specified in options, but not supported on non Node.js platforms");
-          }
-          VisibilityMonitor.getInstance().on("visible", this.onVisible_, this);
-          if (repoInfo_.host.indexOf("fblocal") === -1) {
-            OnlineMonitor.getInstance().on("online", this.onOnline_, this);
-          }
-        }
-        sendRequest(action, body, onResponse) {
-          const curReqNum = ++this.requestNumber_;
-          const msg = { r: curReqNum, a: action, b: body };
-          this.log_(stringify(msg));
-          assert(this.connected_, "sendRequest call when we're not connected not allowed.");
-          this.realtime_.sendRequest(msg);
-          if (onResponse) {
-            this.requestCBHash_[curReqNum] = onResponse;
-          }
-        }
-        get(query) {
-          this.initConnection_();
-          const deferred = new Deferred();
-          const request = {
-            p: query._path.toString(),
-            q: query._queryObject
-          };
-          const outstandingGet = {
-            action: "g",
-            request,
-            onComplete: (message) => {
-              const payload = message["d"];
-              if (message["s"] === "ok") {
-                deferred.resolve(payload);
-              } else {
-                deferred.reject(payload);
-              }
-            }
-          };
-          this.outstandingGets_.push(outstandingGet);
-          this.outstandingGetCount_++;
-          const index = this.outstandingGets_.length - 1;
-          if (this.connected_) {
-            this.sendGet_(index);
-          }
-          return deferred.promise;
-        }
-        listen(query, currentHashFn, tag, onComplete) {
-          this.initConnection_();
-          const queryId = query._queryIdentifier;
-          const pathString = query._path.toString();
-          this.log_("Listen called for " + pathString + " " + queryId);
-          if (!this.listens.has(pathString)) {
-            this.listens.set(pathString, /* @__PURE__ */ new Map());
-          }
-          assert(query._queryParams.isDefault() || !query._queryParams.loadsAllData(), "listen() called for non-default but complete query");
-          assert(!this.listens.get(pathString).has(queryId), `listen() called twice for same path/queryId.`);
-          const listenSpec = {
-            onComplete,
-            hashFn: currentHashFn,
-            query,
-            tag
-          };
-          this.listens.get(pathString).set(queryId, listenSpec);
-          if (this.connected_) {
-            this.sendListen_(listenSpec);
-          }
-        }
-        sendGet_(index) {
-          const get2 = this.outstandingGets_[index];
-          this.sendRequest("g", get2.request, (message) => {
-            delete this.outstandingGets_[index];
-            this.outstandingGetCount_--;
-            if (this.outstandingGetCount_ === 0) {
-              this.outstandingGets_ = [];
-            }
-            if (get2.onComplete) {
-              get2.onComplete(message);
-            }
-          });
-        }
-        sendListen_(listenSpec) {
-          const query = listenSpec.query;
-          const pathString = query._path.toString();
-          const queryId = query._queryIdentifier;
-          this.log_("Listen on " + pathString + " for " + queryId);
-          const req = {
-            /*path*/
-            p: pathString
-          };
-          const action = "q";
-          if (listenSpec.tag) {
-            req["q"] = query._queryObject;
-            req["t"] = listenSpec.tag;
-          }
-          req[
-            /*hash*/
-            "h"
-          ] = listenSpec.hashFn();
-          this.sendRequest(action, req, (message) => {
-            const payload = message[
-              /*data*/
-              "d"
-            ];
-            const status = message[
-              /*status*/
-              "s"
-            ];
-            _PersistentConnection.warnOnListenWarnings_(payload, query);
-            const currentListenSpec = this.listens.get(pathString) && this.listens.get(pathString).get(queryId);
-            if (currentListenSpec === listenSpec) {
-              this.log_("listen response", message);
-              if (status !== "ok") {
-                this.removeListen_(pathString, queryId);
-              }
-              if (listenSpec.onComplete) {
-                listenSpec.onComplete(status, payload);
-              }
-            }
-          });
-        }
-        static warnOnListenWarnings_(payload, query) {
-          if (payload && typeof payload === "object" && contains(payload, "w")) {
-            const warnings = safeGet(payload, "w");
-            if (Array.isArray(warnings) && ~warnings.indexOf("no_index")) {
-              const indexSpec = '".indexOn": "' + query._queryParams.getIndex().toString() + '"';
-              const indexPath = query._path.toString();
-              warn(`Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ${indexSpec} at ${indexPath} to your security rules for better performance.`);
-            }
-          }
-        }
-        refreshAuthToken(token) {
-          this.authToken_ = token;
-          this.log_("Auth token refreshed");
-          if (this.authToken_) {
-            this.tryAuth();
-          } else {
-            if (this.connected_) {
-              this.sendRequest("unauth", {}, () => {
-              });
-            }
-          }
-          this.reduceReconnectDelayIfAdminCredential_(token);
-        }
-        reduceReconnectDelayIfAdminCredential_(credential) {
-          const isFirebaseSecret = credential && credential.length === 40;
-          if (isFirebaseSecret || isAdmin(credential)) {
-            this.log_("Admin auth credential detected.  Reducing max reconnect time.");
-            this.maxReconnectDelay_ = RECONNECT_MAX_DELAY_FOR_ADMINS;
-          }
-        }
-        refreshAppCheckToken(token) {
-          this.appCheckToken_ = token;
-          this.log_("App check token refreshed");
-          if (this.appCheckToken_) {
-            this.tryAppCheck();
-          } else {
-            if (this.connected_) {
-              this.sendRequest("unappeck", {}, () => {
-              });
-            }
-          }
-        }
-        /**
-         * Attempts to authenticate with the given credentials. If the authentication attempt fails, it's triggered like
-         * a auth revoked (the connection is closed).
-         */
-        tryAuth() {
-          if (this.connected_ && this.authToken_) {
-            const token = this.authToken_;
-            const authMethod = isValidFormat(token) ? "auth" : "gauth";
-            const requestData = { cred: token };
-            if (this.authOverride_ === null) {
-              requestData["noauth"] = true;
-            } else if (typeof this.authOverride_ === "object") {
-              requestData["authvar"] = this.authOverride_;
-            }
-            this.sendRequest(authMethod, requestData, (res) => {
-              const status = res[
-                /*status*/
-                "s"
-              ];
-              const data = res[
-                /*data*/
-                "d"
-              ] || "error";
-              if (this.authToken_ === token) {
-                if (status === "ok") {
-                  this.invalidAuthTokenCount_ = 0;
-                } else {
-                  this.onAuthRevoked_(status, data);
-                }
-              }
-            });
-          }
-        }
-        /**
-         * Attempts to authenticate with the given token. If the authentication
-         * attempt fails, it's triggered like the token was revoked (the connection is
-         * closed).
-         */
-        tryAppCheck() {
-          if (this.connected_ && this.appCheckToken_) {
-            this.sendRequest("appcheck", { "token": this.appCheckToken_ }, (res) => {
-              const status = res[
-                /*status*/
-                "s"
-              ];
-              const data = res[
-                /*data*/
-                "d"
-              ] || "error";
-              if (status === "ok") {
-                this.invalidAppCheckTokenCount_ = 0;
-              } else {
-                this.onAppCheckRevoked_(status, data);
-              }
-            });
-          }
-        }
-        /**
-         * @inheritDoc
-         */
-        unlisten(query, tag) {
-          const pathString = query._path.toString();
-          const queryId = query._queryIdentifier;
-          this.log_("Unlisten called for " + pathString + " " + queryId);
-          assert(query._queryParams.isDefault() || !query._queryParams.loadsAllData(), "unlisten() called for non-default but complete query");
-          const listen = this.removeListen_(pathString, queryId);
-          if (listen && this.connected_) {
-            this.sendUnlisten_(pathString, queryId, query._queryObject, tag);
-          }
-        }
-        sendUnlisten_(pathString, queryId, queryObj, tag) {
-          this.log_("Unlisten on " + pathString + " for " + queryId);
-          const req = {
-            /*path*/
-            p: pathString
-          };
-          const action = "n";
-          if (tag) {
-            req["q"] = queryObj;
-            req["t"] = tag;
-          }
-          this.sendRequest(action, req);
-        }
-        onDisconnectPut(pathString, data, onComplete) {
-          this.initConnection_();
-          if (this.connected_) {
-            this.sendOnDisconnect_("o", pathString, data, onComplete);
-          } else {
-            this.onDisconnectRequestQueue_.push({
-              pathString,
-              action: "o",
-              data,
-              onComplete
-            });
-          }
-        }
-        onDisconnectMerge(pathString, data, onComplete) {
-          this.initConnection_();
-          if (this.connected_) {
-            this.sendOnDisconnect_("om", pathString, data, onComplete);
-          } else {
-            this.onDisconnectRequestQueue_.push({
-              pathString,
-              action: "om",
-              data,
-              onComplete
-            });
-          }
-        }
-        onDisconnectCancel(pathString, onComplete) {
-          this.initConnection_();
-          if (this.connected_) {
-            this.sendOnDisconnect_("oc", pathString, null, onComplete);
-          } else {
-            this.onDisconnectRequestQueue_.push({
-              pathString,
-              action: "oc",
-              data: null,
-              onComplete
-            });
-          }
-        }
-        sendOnDisconnect_(action, pathString, data, onComplete) {
-          const request = {
-            /*path*/
-            p: pathString,
-            /*data*/
-            d: data
-          };
-          this.log_("onDisconnect " + action, request);
-          this.sendRequest(action, request, (response) => {
-            if (onComplete) {
-              setTimeout(() => {
-                onComplete(response[
-                  /*status*/
-                  "s"
-                ], response[
-                  /* data */
-                  "d"
-                ]);
-              }, Math.floor(0));
-            }
-          });
-        }
-        put(pathString, data, onComplete, hash) {
-          this.putInternal("p", pathString, data, onComplete, hash);
-        }
-        merge(pathString, data, onComplete, hash) {
-          this.putInternal("m", pathString, data, onComplete, hash);
-        }
-        putInternal(action, pathString, data, onComplete, hash) {
-          this.initConnection_();
-          const request = {
-            /*path*/
-            p: pathString,
-            /*data*/
-            d: data
-          };
-          if (hash !== void 0) {
-            request[
-              /*hash*/
-              "h"
-            ] = hash;
-          }
-          this.outstandingPuts_.push({
-            action,
-            request,
-            onComplete
-          });
-          this.outstandingPutCount_++;
-          const index = this.outstandingPuts_.length - 1;
-          if (this.connected_) {
-            this.sendPut_(index);
-          } else {
-            this.log_("Buffering put: " + pathString);
-          }
-        }
-        sendPut_(index) {
-          const action = this.outstandingPuts_[index].action;
-          const request = this.outstandingPuts_[index].request;
-          const onComplete = this.outstandingPuts_[index].onComplete;
-          this.outstandingPuts_[index].queued = this.connected_;
-          this.sendRequest(action, request, (message) => {
-            this.log_(action + " response", message);
-            delete this.outstandingPuts_[index];
-            this.outstandingPutCount_--;
-            if (this.outstandingPutCount_ === 0) {
-              this.outstandingPuts_ = [];
-            }
-            if (onComplete) {
-              onComplete(message[
-                /*status*/
-                "s"
-              ], message[
-                /* data */
-                "d"
-              ]);
-            }
-          });
-        }
-        reportStats(stats) {
-          if (this.connected_) {
-            const request = {
-              /*counters*/
-              c: stats
-            };
-            this.log_("reportStats", request);
-            this.sendRequest(
-              /*stats*/
-              "s",
-              request,
-              (result) => {
-                const status = result[
-                  /*status*/
-                  "s"
-                ];
-                if (status !== "ok") {
-                  const errorReason = result[
-                    /* data */
-                    "d"
-                  ];
-                  this.log_("reportStats", "Error sending stats: " + errorReason);
-                }
-              }
-            );
-          }
-        }
-        onDataMessage_(message) {
-          if ("r" in message) {
-            this.log_("from server: " + stringify(message));
-            const reqNum = message["r"];
-            const onResponse = this.requestCBHash_[reqNum];
-            if (onResponse) {
-              delete this.requestCBHash_[reqNum];
-              onResponse(message[
-                /*body*/
-                "b"
-              ]);
-            }
-          } else if ("error" in message) {
-            throw "A server-side error has occurred: " + message["error"];
-          } else if ("a" in message) {
-            this.onDataPush_(message["a"], message["b"]);
-          }
-        }
-        onDataPush_(action, body) {
-          this.log_("handleServerMessage", action, body);
-          if (action === "d") {
-            this.onDataUpdate_(
-              body[
-                /*path*/
-                "p"
-              ],
-              body[
-                /*data*/
-                "d"
-              ],
-              /*isMerge*/
-              false,
-              body["t"]
-            );
-          } else if (action === "m") {
-            this.onDataUpdate_(
-              body[
-                /*path*/
-                "p"
-              ],
-              body[
-                /*data*/
-                "d"
-              ],
-              /*isMerge=*/
-              true,
-              body["t"]
-            );
-          } else if (action === "c") {
-            this.onListenRevoked_(body[
-              /*path*/
-              "p"
-            ], body[
-              /*query*/
-              "q"
-            ]);
-          } else if (action === "ac") {
-            this.onAuthRevoked_(body[
-              /*status code*/
-              "s"
-            ], body[
-              /* explanation */
-              "d"
-            ]);
-          } else if (action === "apc") {
-            this.onAppCheckRevoked_(body[
-              /*status code*/
-              "s"
-            ], body[
-              /* explanation */
-              "d"
-            ]);
-          } else if (action === "sd") {
-            this.onSecurityDebugPacket_(body);
-          } else {
-            error("Unrecognized action received from server: " + stringify(action) + "\nAre you using the latest client?");
-          }
-        }
-        onReady_(timestamp, sessionId) {
-          this.log_("connection ready");
-          this.connected_ = true;
-          this.lastConnectionEstablishedTime_ = (/* @__PURE__ */ new Date()).getTime();
-          this.handleTimestamp_(timestamp);
-          this.lastSessionId = sessionId;
-          if (this.firstConnection_) {
-            this.sendConnectStats_();
-          }
-          this.restoreState_();
-          this.firstConnection_ = false;
-          this.onConnectStatus_(true);
-        }
-        scheduleConnect_(timeout) {
-          assert(!this.realtime_, "Scheduling a connect when we're already connected/ing?");
-          if (this.establishConnectionTimer_) {
-            clearTimeout(this.establishConnectionTimer_);
-          }
-          this.establishConnectionTimer_ = setTimeout(() => {
-            this.establishConnectionTimer_ = null;
-            this.establishConnection_();
-          }, Math.floor(timeout));
-        }
-        initConnection_() {
-          if (!this.realtime_ && this.firstConnection_) {
-            this.scheduleConnect_(0);
-          }
-        }
-        onVisible_(visible) {
-          if (visible && !this.visible_ && this.reconnectDelay_ === this.maxReconnectDelay_) {
-            this.log_("Window became visible.  Reducing delay.");
-            this.reconnectDelay_ = RECONNECT_MIN_DELAY;
-            if (!this.realtime_) {
-              this.scheduleConnect_(0);
-            }
-          }
-          this.visible_ = visible;
-        }
-        onOnline_(online) {
-          if (online) {
-            this.log_("Browser went online.");
-            this.reconnectDelay_ = RECONNECT_MIN_DELAY;
-            if (!this.realtime_) {
-              this.scheduleConnect_(0);
-            }
-          } else {
-            this.log_("Browser went offline.  Killing connection.");
-            if (this.realtime_) {
-              this.realtime_.close();
-            }
-          }
-        }
-        onRealtimeDisconnect_() {
-          this.log_("data client disconnected");
-          this.connected_ = false;
-          this.realtime_ = null;
-          this.cancelSentTransactions_();
-          this.requestCBHash_ = {};
-          if (this.shouldReconnect_()) {
-            if (!this.visible_) {
-              this.log_("Window isn't visible.  Delaying reconnect.");
-              this.reconnectDelay_ = this.maxReconnectDelay_;
-              this.lastConnectionAttemptTime_ = (/* @__PURE__ */ new Date()).getTime();
-            } else if (this.lastConnectionEstablishedTime_) {
-              const timeSinceLastConnectSucceeded = (/* @__PURE__ */ new Date()).getTime() - this.lastConnectionEstablishedTime_;
-              if (timeSinceLastConnectSucceeded > RECONNECT_DELAY_RESET_TIMEOUT) {
-                this.reconnectDelay_ = RECONNECT_MIN_DELAY;
-              }
-              this.lastConnectionEstablishedTime_ = null;
-            }
-            const timeSinceLastConnectAttempt = Math.max(0, (/* @__PURE__ */ new Date()).getTime() - this.lastConnectionAttemptTime_);
-            let reconnectDelay = Math.max(0, this.reconnectDelay_ - timeSinceLastConnectAttempt);
-            reconnectDelay = Math.random() * reconnectDelay;
-            this.log_("Trying to reconnect in " + reconnectDelay + "ms");
-            this.scheduleConnect_(reconnectDelay);
-            this.reconnectDelay_ = Math.min(this.maxReconnectDelay_, this.reconnectDelay_ * RECONNECT_DELAY_MULTIPLIER);
-          }
-          this.onConnectStatus_(false);
-        }
-        async establishConnection_() {
-          if (this.shouldReconnect_()) {
-            this.log_("Making a connection attempt");
-            this.lastConnectionAttemptTime_ = (/* @__PURE__ */ new Date()).getTime();
-            this.lastConnectionEstablishedTime_ = null;
-            const onDataMessage = this.onDataMessage_.bind(this);
-            const onReady = this.onReady_.bind(this);
-            const onDisconnect = this.onRealtimeDisconnect_.bind(this);
-            const connId = this.id + ":" + _PersistentConnection.nextConnectionId_++;
-            const lastSessionId = this.lastSessionId;
-            let canceled = false;
-            let connection = null;
-            const closeFn = function() {
-              if (connection) {
-                connection.close();
-              } else {
-                canceled = true;
-                onDisconnect();
-              }
-            };
-            const sendRequestFn = function(msg) {
-              assert(connection, "sendRequest call when we're not connected not allowed.");
-              connection.sendRequest(msg);
-            };
-            this.realtime_ = {
-              close: closeFn,
-              sendRequest: sendRequestFn
-            };
-            const forceRefresh = this.forceTokenRefresh_;
-            this.forceTokenRefresh_ = false;
-            try {
-              const [authToken, appCheckToken] = await Promise.all([
-                this.authTokenProvider_.getToken(forceRefresh),
-                this.appCheckTokenProvider_.getToken(forceRefresh)
-              ]);
-              if (!canceled) {
-                log("getToken() completed. Creating connection.");
-                this.authToken_ = authToken && authToken.accessToken;
-                this.appCheckToken_ = appCheckToken && appCheckToken.token;
-                connection = new Connection(
-                  connId,
-                  this.repoInfo_,
-                  this.applicationId_,
-                  this.appCheckToken_,
-                  this.authToken_,
-                  onDataMessage,
-                  onReady,
-                  onDisconnect,
-                  /* onKill= */
-                  (reason) => {
-                    warn(reason + " (" + this.repoInfo_.toString() + ")");
-                    this.interrupt(SERVER_KILL_INTERRUPT_REASON);
-                  },
-                  lastSessionId
-                );
-              } else {
-                log("getToken() completed but was canceled");
-              }
-            } catch (error2) {
-              this.log_("Failed to get token: " + error2);
-              if (!canceled) {
-                if (this.repoInfo_.nodeAdmin) {
-                  warn(error2);
-                }
-                closeFn();
-              }
-            }
-          }
-        }
-        interrupt(reason) {
-          log("Interrupting connection for reason: " + reason);
-          this.interruptReasons_[reason] = true;
-          if (this.realtime_) {
-            this.realtime_.close();
-          } else {
-            if (this.establishConnectionTimer_) {
-              clearTimeout(this.establishConnectionTimer_);
-              this.establishConnectionTimer_ = null;
-            }
-            if (this.connected_) {
-              this.onRealtimeDisconnect_();
-            }
-          }
-        }
-        resume(reason) {
-          log("Resuming connection for reason: " + reason);
-          delete this.interruptReasons_[reason];
-          if (isEmpty(this.interruptReasons_)) {
-            this.reconnectDelay_ = RECONNECT_MIN_DELAY;
-            if (!this.realtime_) {
-              this.scheduleConnect_(0);
-            }
-          }
-        }
-        handleTimestamp_(timestamp) {
-          const delta = timestamp - (/* @__PURE__ */ new Date()).getTime();
-          this.onServerInfoUpdate_({ serverTimeOffset: delta });
-        }
-        cancelSentTransactions_() {
-          for (let i = 0; i < this.outstandingPuts_.length; i++) {
-            const put = this.outstandingPuts_[i];
-            if (put && /*hash*/
-            "h" in put.request && put.queued) {
-              if (put.onComplete) {
-                put.onComplete("disconnect");
-              }
-              delete this.outstandingPuts_[i];
-              this.outstandingPutCount_--;
-            }
-          }
-          if (this.outstandingPutCount_ === 0) {
-            this.outstandingPuts_ = [];
-          }
-        }
-        onListenRevoked_(pathString, query) {
-          let queryId;
-          if (!query) {
-            queryId = "default";
-          } else {
-            queryId = query.map((q) => ObjectToUniqueKey(q)).join("$");
-          }
-          const listen = this.removeListen_(pathString, queryId);
-          if (listen && listen.onComplete) {
-            listen.onComplete("permission_denied");
-          }
-        }
-        removeListen_(pathString, queryId) {
-          const normalizedPathString = new Path(pathString).toString();
-          let listen;
-          if (this.listens.has(normalizedPathString)) {
-            const map2 = this.listens.get(normalizedPathString);
-            listen = map2.get(queryId);
-            map2.delete(queryId);
-            if (map2.size === 0) {
-              this.listens.delete(normalizedPathString);
-            }
-          } else {
-            listen = void 0;
-          }
-          return listen;
-        }
-        onAuthRevoked_(statusCode, explanation) {
-          log("Auth token revoked: " + statusCode + "/" + explanation);
-          this.authToken_ = null;
-          this.forceTokenRefresh_ = true;
-          this.realtime_.close();
-          if (statusCode === "invalid_token" || statusCode === "permission_denied") {
-            this.invalidAuthTokenCount_++;
-            if (this.invalidAuthTokenCount_ >= INVALID_TOKEN_THRESHOLD) {
-              this.reconnectDelay_ = RECONNECT_MAX_DELAY_FOR_ADMINS;
-              this.authTokenProvider_.notifyForInvalidToken();
-            }
-          }
-        }
-        onAppCheckRevoked_(statusCode, explanation) {
-          log("App check token revoked: " + statusCode + "/" + explanation);
-          this.appCheckToken_ = null;
-          this.forceTokenRefresh_ = true;
-          if (statusCode === "invalid_token" || statusCode === "permission_denied") {
-            this.invalidAppCheckTokenCount_++;
-            if (this.invalidAppCheckTokenCount_ >= INVALID_TOKEN_THRESHOLD) {
-              this.appCheckTokenProvider_.notifyForInvalidToken();
-            }
-          }
-        }
-        onSecurityDebugPacket_(body) {
-          if (this.securityDebugCallback_) {
-            this.securityDebugCallback_(body);
-          } else {
-            if ("msg" in body) {
-              console.log("FIREBASE: " + body["msg"].replace("\n", "\nFIREBASE: "));
-            }
-          }
-        }
-        restoreState_() {
-          this.tryAuth();
-          this.tryAppCheck();
-          for (const queries of this.listens.values()) {
-            for (const listenSpec of queries.values()) {
-              this.sendListen_(listenSpec);
-            }
-          }
-          for (let i = 0; i < this.outstandingPuts_.length; i++) {
-            if (this.outstandingPuts_[i]) {
-              this.sendPut_(i);
-            }
-          }
-          while (this.onDisconnectRequestQueue_.length) {
-            const request = this.onDisconnectRequestQueue_.shift();
-            this.sendOnDisconnect_(request.action, request.pathString, request.data, request.onComplete);
-          }
-          for (let i = 0; i < this.outstandingGets_.length; i++) {
-            if (this.outstandingGets_[i]) {
-              this.sendGet_(i);
-            }
-          }
-        }
-        /**
-         * Sends client stats for first connection
-         */
-        sendConnectStats_() {
-          const stats = {};
-          let clientName = "js";
-          if (isNodeSdk()) {
-            if (this.repoInfo_.nodeAdmin) {
-              clientName = "admin_node";
-            } else {
-              clientName = "node";
-            }
-          }
-          stats["sdk." + clientName + "." + SDK_VERSION2.replace(/\./g, "-")] = 1;
-          if (isMobileCordova()) {
-            stats["framework.cordova"] = 1;
-          } else if (isReactNative()) {
-            stats["framework.reactnative"] = 1;
-          }
-          this.reportStats(stats);
-        }
-        shouldReconnect_() {
-          const online = OnlineMonitor.getInstance().currentlyOnline();
-          return isEmpty(this.interruptReasons_) && online;
-        }
-      };
-      PersistentConnection.nextPersistentConnectionId_ = 0;
-      PersistentConnection.nextConnectionId_ = 0;
-      NamedNode = class _NamedNode {
-        constructor(name3, node) {
-          this.name = name3;
-          this.node = node;
-        }
-        static Wrap(name3, node) {
-          return new _NamedNode(name3, node);
-        }
-      };
-      Index = class {
-        /**
-         * @returns A standalone comparison function for
-         * this index
-         */
-        getCompare() {
-          return this.compare.bind(this);
-        }
-        /**
-         * Given a before and after value for a node, determine if the indexed value has changed. Even if they are different,
-         * it's possible that the changes are isolated to parts of the snapshot that are not indexed.
-         *
-         *
-         * @returns True if the portion of the snapshot being indexed changed between oldNode and newNode
-         */
-        indexedValueChanged(oldNode, newNode) {
-          const oldWrapped = new NamedNode(MIN_NAME, oldNode);
-          const newWrapped = new NamedNode(MIN_NAME, newNode);
-          return this.compare(oldWrapped, newWrapped) !== 0;
-        }
-        /**
-         * @returns a node wrapper that will sort equal to or less than
-         * any other node wrapper, using this index
-         */
-        minPost() {
-          return NamedNode.MIN;
-        }
-      };
-      KeyIndex = class extends Index {
-        static get __EMPTY_NODE() {
-          return __EMPTY_NODE;
-        }
-        static set __EMPTY_NODE(val) {
-          __EMPTY_NODE = val;
-        }
-        compare(a, b) {
-          return nameCompare(a.name, b.name);
-        }
-        isDefinedOn(node) {
-          throw assertionError("KeyIndex.isDefinedOn not expected to be called.");
-        }
-        indexedValueChanged(oldNode, newNode) {
-          return false;
-        }
-        minPost() {
-          return NamedNode.MIN;
-        }
-        maxPost() {
-          return new NamedNode(MAX_NAME, __EMPTY_NODE);
-        }
-        makePost(indexValue, name3) {
-          assert(typeof indexValue === "string", "KeyIndex indexValue must always be a string.");
-          return new NamedNode(indexValue, __EMPTY_NODE);
-        }
-        /**
-         * @returns String representation for inclusion in a query spec
-         */
-        toString() {
-          return ".key";
-        }
-      };
-      KEY_INDEX = new KeyIndex();
-      SortedMapIterator = class {
-        /**
-         * @param node - Node to iterate.
-         * @param isReverse_ - Whether or not to iterate in reverse
-         */
-        constructor(node, startKey, comparator, isReverse_, resultGenerator_ = null) {
-          this.isReverse_ = isReverse_;
-          this.resultGenerator_ = resultGenerator_;
-          this.nodeStack_ = [];
-          let cmp = 1;
-          while (!node.isEmpty()) {
-            node = node;
-            cmp = startKey ? comparator(node.key, startKey) : 1;
-            if (isReverse_) {
-              cmp *= -1;
-            }
-            if (cmp < 0) {
-              if (this.isReverse_) {
-                node = node.left;
-              } else {
-                node = node.right;
-              }
-            } else if (cmp === 0) {
-              this.nodeStack_.push(node);
-              break;
-            } else {
-              this.nodeStack_.push(node);
-              if (this.isReverse_) {
-                node = node.right;
-              } else {
-                node = node.left;
-              }
-            }
-          }
-        }
-        getNext() {
-          if (this.nodeStack_.length === 0) {
-            return null;
-          }
-          let node = this.nodeStack_.pop();
-          let result;
-          if (this.resultGenerator_) {
-            result = this.resultGenerator_(node.key, node.value);
-          } else {
-            result = { key: node.key, value: node.value };
-          }
-          if (this.isReverse_) {
-            node = node.left;
-            while (!node.isEmpty()) {
-              this.nodeStack_.push(node);
-              node = node.right;
-            }
-          } else {
-            node = node.right;
-            while (!node.isEmpty()) {
-              this.nodeStack_.push(node);
-              node = node.left;
-            }
-          }
-          return result;
-        }
-        hasNext() {
-          return this.nodeStack_.length > 0;
-        }
-        peek() {
-          if (this.nodeStack_.length === 0) {
-            return null;
-          }
-          const node = this.nodeStack_[this.nodeStack_.length - 1];
-          if (this.resultGenerator_) {
-            return this.resultGenerator_(node.key, node.value);
-          } else {
-            return { key: node.key, value: node.value };
-          }
-        }
-      };
-      LLRBNode = class _LLRBNode {
-        /**
-         * @param key - Key associated with this node.
-         * @param value - Value associated with this node.
-         * @param color - Whether this node is red.
-         * @param left - Left child.
-         * @param right - Right child.
-         */
-        constructor(key, value, color, left, right) {
-          this.key = key;
-          this.value = value;
-          this.color = color != null ? color : _LLRBNode.RED;
-          this.left = left != null ? left : SortedMap.EMPTY_NODE;
-          this.right = right != null ? right : SortedMap.EMPTY_NODE;
-        }
-        /**
-         * Returns a copy of the current node, optionally replacing pieces of it.
-         *
-         * @param key - New key for the node, or null.
-         * @param value - New value for the node, or null.
-         * @param color - New color for the node, or null.
-         * @param left - New left child for the node, or null.
-         * @param right - New right child for the node, or null.
-         * @returns The node copy.
-         */
-        copy(key, value, color, left, right) {
-          return new _LLRBNode(key != null ? key : this.key, value != null ? value : this.value, color != null ? color : this.color, left != null ? left : this.left, right != null ? right : this.right);
-        }
-        /**
-         * @returns The total number of nodes in the tree.
-         */
-        count() {
-          return this.left.count() + 1 + this.right.count();
-        }
-        /**
-         * @returns True if the tree is empty.
-         */
-        isEmpty() {
-          return false;
-        }
-        /**
-         * Traverses the tree in key order and calls the specified action function
-         * for each node.
-         *
-         * @param action - Callback function to be called for each
-         *   node.  If it returns true, traversal is aborted.
-         * @returns The first truthy value returned by action, or the last falsey
-         *   value returned by action
-         */
-        inorderTraversal(action) {
-          return this.left.inorderTraversal(action) || !!action(this.key, this.value) || this.right.inorderTraversal(action);
-        }
-        /**
-         * Traverses the tree in reverse key order and calls the specified action function
-         * for each node.
-         *
-         * @param action - Callback function to be called for each
-         * node.  If it returns true, traversal is aborted.
-         * @returns True if traversal was aborted.
-         */
-        reverseTraversal(action) {
-          return this.right.reverseTraversal(action) || action(this.key, this.value) || this.left.reverseTraversal(action);
-        }
-        /**
-         * @returns The minimum node in the tree.
-         */
-        min_() {
-          if (this.left.isEmpty()) {
-            return this;
-          } else {
-            return this.left.min_();
-          }
-        }
-        /**
-         * @returns The maximum key in the tree.
-         */
-        minKey() {
-          return this.min_().key;
-        }
-        /**
-         * @returns The maximum key in the tree.
-         */
-        maxKey() {
-          if (this.right.isEmpty()) {
-            return this.key;
-          } else {
-            return this.right.maxKey();
-          }
-        }
-        /**
-         * @param key - Key to insert.
-         * @param value - Value to insert.
-         * @param comparator - Comparator.
-         * @returns New tree, with the key/value added.
-         */
-        insert(key, value, comparator) {
-          let n = this;
-          const cmp = comparator(key, n.key);
-          if (cmp < 0) {
-            n = n.copy(null, null, null, n.left.insert(key, value, comparator), null);
-          } else if (cmp === 0) {
-            n = n.copy(null, value, null, null, null);
-          } else {
-            n = n.copy(null, null, null, null, n.right.insert(key, value, comparator));
-          }
-          return n.fixUp_();
-        }
-        /**
-         * @returns New tree, with the minimum key removed.
-         */
-        removeMin_() {
-          if (this.left.isEmpty()) {
-            return SortedMap.EMPTY_NODE;
-          }
-          let n = this;
-          if (!n.left.isRed_() && !n.left.left.isRed_()) {
-            n = n.moveRedLeft_();
-          }
-          n = n.copy(null, null, null, n.left.removeMin_(), null);
-          return n.fixUp_();
-        }
-        /**
-         * @param key - The key of the item to remove.
-         * @param comparator - Comparator.
-         * @returns New tree, with the specified item removed.
-         */
-        remove(key, comparator) {
-          let n, smallest;
-          n = this;
-          if (comparator(key, n.key) < 0) {
-            if (!n.left.isEmpty() && !n.left.isRed_() && !n.left.left.isRed_()) {
-              n = n.moveRedLeft_();
-            }
-            n = n.copy(null, null, null, n.left.remove(key, comparator), null);
-          } else {
-            if (n.left.isRed_()) {
-              n = n.rotateRight_();
-            }
-            if (!n.right.isEmpty() && !n.right.isRed_() && !n.right.left.isRed_()) {
-              n = n.moveRedRight_();
-            }
-            if (comparator(key, n.key) === 0) {
-              if (n.right.isEmpty()) {
-                return SortedMap.EMPTY_NODE;
-              } else {
-                smallest = n.right.min_();
-                n = n.copy(smallest.key, smallest.value, null, null, n.right.removeMin_());
-              }
-            }
-            n = n.copy(null, null, null, null, n.right.remove(key, comparator));
-          }
-          return n.fixUp_();
-        }
-        /**
-         * @returns Whether this is a RED node.
-         */
-        isRed_() {
-          return this.color;
-        }
-        /**
-         * @returns New tree after performing any needed rotations.
-         */
-        fixUp_() {
-          let n = this;
-          if (n.right.isRed_() && !n.left.isRed_()) {
-            n = n.rotateLeft_();
-          }
-          if (n.left.isRed_() && n.left.left.isRed_()) {
-            n = n.rotateRight_();
-          }
-          if (n.left.isRed_() && n.right.isRed_()) {
-            n = n.colorFlip_();
-          }
-          return n;
-        }
-        /**
-         * @returns New tree, after moveRedLeft.
-         */
-        moveRedLeft_() {
-          let n = this.colorFlip_();
-          if (n.right.left.isRed_()) {
-            n = n.copy(null, null, null, null, n.right.rotateRight_());
-            n = n.rotateLeft_();
-            n = n.colorFlip_();
-          }
-          return n;
-        }
-        /**
-         * @returns New tree, after moveRedRight.
-         */
-        moveRedRight_() {
-          let n = this.colorFlip_();
-          if (n.left.left.isRed_()) {
-            n = n.rotateRight_();
-            n = n.colorFlip_();
-          }
-          return n;
-        }
-        /**
-         * @returns New tree, after rotateLeft.
-         */
-        rotateLeft_() {
-          const nl = this.copy(null, null, _LLRBNode.RED, null, this.right.left);
-          return this.right.copy(null, null, this.color, nl, null);
-        }
-        /**
-         * @returns New tree, after rotateRight.
-         */
-        rotateRight_() {
-          const nr = this.copy(null, null, _LLRBNode.RED, this.left.right, null);
-          return this.left.copy(null, null, this.color, null, nr);
-        }
-        /**
-         * @returns Newt ree, after colorFlip.
-         */
-        colorFlip_() {
-          const left = this.left.copy(null, null, !this.left.color, null, null);
-          const right = this.right.copy(null, null, !this.right.color, null, null);
-          return this.copy(null, null, !this.color, left, right);
-        }
-        /**
-         * For testing.
-         *
-         * @returns True if all is well.
-         */
-        checkMaxDepth_() {
-          const blackDepth = this.check_();
-          return Math.pow(2, blackDepth) <= this.count() + 1;
-        }
-        check_() {
-          if (this.isRed_() && this.left.isRed_()) {
-            throw new Error("Red node has red child(" + this.key + "," + this.value + ")");
-          }
-          if (this.right.isRed_()) {
-            throw new Error("Right child of (" + this.key + "," + this.value + ") is red");
-          }
-          const blackDepth = this.left.check_();
-          if (blackDepth !== this.right.check_()) {
-            throw new Error("Black depths differ");
-          } else {
-            return blackDepth + (this.isRed_() ? 0 : 1);
-          }
-        }
-      };
-      LLRBNode.RED = true;
-      LLRBNode.BLACK = false;
-      LLRBEmptyNode = class {
-        /**
-         * Returns a copy of the current node.
-         *
-         * @returns The node copy.
-         */
-        copy(key, value, color, left, right) {
-          return this;
-        }
-        /**
-         * Returns a copy of the tree, with the specified key/value added.
-         *
-         * @param key - Key to be added.
-         * @param value - Value to be added.
-         * @param comparator - Comparator.
-         * @returns New tree, with item added.
-         */
-        insert(key, value, comparator) {
-          return new LLRBNode(key, value, null);
-        }
-        /**
-         * Returns a copy of the tree, with the specified key removed.
-         *
-         * @param key - The key to remove.
-         * @param comparator - Comparator.
-         * @returns New tree, with item removed.
-         */
-        remove(key, comparator) {
-          return this;
-        }
-        /**
-         * @returns The total number of nodes in the tree.
-         */
-        count() {
-          return 0;
-        }
-        /**
-         * @returns True if the tree is empty.
-         */
-        isEmpty() {
-          return true;
-        }
-        /**
-         * Traverses the tree in key order and calls the specified action function
-         * for each node.
-         *
-         * @param action - Callback function to be called for each
-         * node.  If it returns true, traversal is aborted.
-         * @returns True if traversal was aborted.
-         */
-        inorderTraversal(action) {
-          return false;
-        }
-        /**
-         * Traverses the tree in reverse key order and calls the specified action function
-         * for each node.
-         *
-         * @param action - Callback function to be called for each
-         * node.  If it returns true, traversal is aborted.
-         * @returns True if traversal was aborted.
-         */
-        reverseTraversal(action) {
-          return false;
-        }
-        minKey() {
-          return null;
-        }
-        maxKey() {
-          return null;
-        }
-        check_() {
-          return 0;
-        }
-        /**
-         * @returns Whether this node is red.
-         */
-        isRed_() {
-          return false;
-        }
-      };
-      SortedMap = class _SortedMap {
-        /**
-         * @param comparator_ - Key comparator.
-         * @param root_ - Optional root node for the map.
-         */
-        constructor(comparator_, root_ = _SortedMap.EMPTY_NODE) {
-          this.comparator_ = comparator_;
-          this.root_ = root_;
-        }
-        /**
-         * Returns a copy of the map, with the specified key/value added or replaced.
-         * (TODO: We should perhaps rename this method to 'put')
-         *
-         * @param key - Key to be added.
-         * @param value - Value to be added.
-         * @returns New map, with item added.
-         */
-        insert(key, value) {
-          return new _SortedMap(this.comparator_, this.root_.insert(key, value, this.comparator_).copy(null, null, LLRBNode.BLACK, null, null));
-        }
-        /**
-         * Returns a copy of the map, with the specified key removed.
-         *
-         * @param key - The key to remove.
-         * @returns New map, with item removed.
-         */
-        remove(key) {
-          return new _SortedMap(this.comparator_, this.root_.remove(key, this.comparator_).copy(null, null, LLRBNode.BLACK, null, null));
-        }
-        /**
-         * Returns the value of the node with the given key, or null.
-         *
-         * @param key - The key to look up.
-         * @returns The value of the node with the given key, or null if the
-         * key doesn't exist.
-         */
-        get(key) {
-          let cmp;
-          let node = this.root_;
-          while (!node.isEmpty()) {
-            cmp = this.comparator_(key, node.key);
-            if (cmp === 0) {
-              return node.value;
-            } else if (cmp < 0) {
-              node = node.left;
-            } else if (cmp > 0) {
-              node = node.right;
-            }
-          }
-          return null;
-        }
-        /**
-         * Returns the key of the item *before* the specified key, or null if key is the first item.
-         * @param key - The key to find the predecessor of
-         * @returns The predecessor key.
-         */
-        getPredecessorKey(key) {
-          let cmp, node = this.root_, rightParent = null;
-          while (!node.isEmpty()) {
-            cmp = this.comparator_(key, node.key);
-            if (cmp === 0) {
-              if (!node.left.isEmpty()) {
-                node = node.left;
-                while (!node.right.isEmpty()) {
-                  node = node.right;
-                }
-                return node.key;
-              } else if (rightParent) {
-                return rightParent.key;
-              } else {
-                return null;
-              }
-            } else if (cmp < 0) {
-              node = node.left;
-            } else if (cmp > 0) {
-              rightParent = node;
-              node = node.right;
-            }
-          }
-          throw new Error("Attempted to find predecessor key for a nonexistent key.  What gives?");
-        }
-        /**
-         * @returns True if the map is empty.
-         */
-        isEmpty() {
-          return this.root_.isEmpty();
-        }
-        /**
-         * @returns The total number of nodes in the map.
-         */
-        count() {
-          return this.root_.count();
-        }
-        /**
-         * @returns The minimum key in the map.
-         */
-        minKey() {
-          return this.root_.minKey();
-        }
-        /**
-         * @returns The maximum key in the map.
-         */
-        maxKey() {
-          return this.root_.maxKey();
-        }
-        /**
-         * Traverses the map in key order and calls the specified action function
-         * for each key/value pair.
-         *
-         * @param action - Callback function to be called
-         * for each key/value pair.  If action returns true, traversal is aborted.
-         * @returns The first truthy value returned by action, or the last falsey
-         *   value returned by action
-         */
-        inorderTraversal(action) {
-          return this.root_.inorderTraversal(action);
-        }
-        /**
-         * Traverses the map in reverse key order and calls the specified action function
-         * for each key/value pair.
-         *
-         * @param action - Callback function to be called
-         * for each key/value pair.  If action returns true, traversal is aborted.
-         * @returns True if the traversal was aborted.
-         */
-        reverseTraversal(action) {
-          return this.root_.reverseTraversal(action);
-        }
-        /**
-         * Returns an iterator over the SortedMap.
-         * @returns The iterator.
-         */
-        getIterator(resultGenerator) {
-          return new SortedMapIterator(this.root_, null, this.comparator_, false, resultGenerator);
-        }
-        getIteratorFrom(key, resultGenerator) {
-          return new SortedMapIterator(this.root_, key, this.comparator_, false, resultGenerator);
-        }
-        getReverseIteratorFrom(key, resultGenerator) {
-          return new SortedMapIterator(this.root_, key, this.comparator_, true, resultGenerator);
-        }
-        getReverseIterator(resultGenerator) {
-          return new SortedMapIterator(this.root_, null, this.comparator_, true, resultGenerator);
-        }
-      };
-      SortedMap.EMPTY_NODE = new LLRBEmptyNode();
-      priorityHashText = function(priority) {
-        if (typeof priority === "number") {
-          return "number:" + doubleToIEEE754String(priority);
-        } else {
-          return "string:" + priority;
-        }
-      };
-      validatePriorityNode = function(priorityNode) {
-        if (priorityNode.isLeafNode()) {
-          const val = priorityNode.val();
-          assert(typeof val === "string" || typeof val === "number" || typeof val === "object" && contains(val, ".sv"), "Priority must be a string or number.");
-        } else {
-          assert(priorityNode === MAX_NODE$2 || priorityNode.isEmpty(), "priority of unexpected type.");
-        }
-        assert(priorityNode === MAX_NODE$2 || priorityNode.getPriority().isEmpty(), "Priority nodes can't have a priority of their own.");
-      };
-      LeafNode = class _LeafNode {
-        static set __childrenNodeConstructor(val) {
-          __childrenNodeConstructor = val;
-        }
-        static get __childrenNodeConstructor() {
-          return __childrenNodeConstructor;
-        }
-        /**
-         * @param value_ - The value to store in this leaf node. The object type is
-         * possible in the event of a deferred value
-         * @param priorityNode_ - The priority of this node.
-         */
-        constructor(value_, priorityNode_ = _LeafNode.__childrenNodeConstructor.EMPTY_NODE) {
-          this.value_ = value_;
-          this.priorityNode_ = priorityNode_;
-          this.lazyHash_ = null;
-          assert(this.value_ !== void 0 && this.value_ !== null, "LeafNode shouldn't be created with null/undefined value.");
-          validatePriorityNode(this.priorityNode_);
-        }
-        /** @inheritDoc */
-        isLeafNode() {
-          return true;
-        }
-        /** @inheritDoc */
-        getPriority() {
-          return this.priorityNode_;
-        }
-        /** @inheritDoc */
-        updatePriority(newPriorityNode) {
-          return new _LeafNode(this.value_, newPriorityNode);
-        }
-        /** @inheritDoc */
-        getImmediateChild(childName) {
-          if (childName === ".priority") {
-            return this.priorityNode_;
-          } else {
-            return _LeafNode.__childrenNodeConstructor.EMPTY_NODE;
-          }
-        }
-        /** @inheritDoc */
-        getChild(path) {
-          if (pathIsEmpty(path)) {
-            return this;
-          } else if (pathGetFront(path) === ".priority") {
-            return this.priorityNode_;
-          } else {
-            return _LeafNode.__childrenNodeConstructor.EMPTY_NODE;
-          }
-        }
-        hasChild() {
-          return false;
-        }
-        /** @inheritDoc */
-        getPredecessorChildName(childName, childNode) {
-          return null;
-        }
-        /** @inheritDoc */
-        updateImmediateChild(childName, newChildNode) {
-          if (childName === ".priority") {
-            return this.updatePriority(newChildNode);
-          } else if (newChildNode.isEmpty() && childName !== ".priority") {
-            return this;
-          } else {
-            return _LeafNode.__childrenNodeConstructor.EMPTY_NODE.updateImmediateChild(childName, newChildNode).updatePriority(this.priorityNode_);
-          }
-        }
-        /** @inheritDoc */
-        updateChild(path, newChildNode) {
-          const front = pathGetFront(path);
-          if (front === null) {
-            return newChildNode;
-          } else if (newChildNode.isEmpty() && front !== ".priority") {
-            return this;
-          } else {
-            assert(front !== ".priority" || pathGetLength(path) === 1, ".priority must be the last token in a path");
-            return this.updateImmediateChild(front, _LeafNode.__childrenNodeConstructor.EMPTY_NODE.updateChild(pathPopFront(path), newChildNode));
-          }
-        }
-        /** @inheritDoc */
-        isEmpty() {
-          return false;
-        }
-        /** @inheritDoc */
-        numChildren() {
-          return 0;
-        }
-        /** @inheritDoc */
-        forEachChild(index, action) {
-          return false;
-        }
-        val(exportFormat) {
-          if (exportFormat && !this.getPriority().isEmpty()) {
-            return {
-              ".value": this.getValue(),
-              ".priority": this.getPriority().val()
-            };
-          } else {
-            return this.getValue();
-          }
-        }
-        /** @inheritDoc */
-        hash() {
-          if (this.lazyHash_ === null) {
-            let toHash = "";
-            if (!this.priorityNode_.isEmpty()) {
-              toHash += "priority:" + priorityHashText(this.priorityNode_.val()) + ":";
-            }
-            const type = typeof this.value_;
-            toHash += type + ":";
-            if (type === "number") {
-              toHash += doubleToIEEE754String(this.value_);
-            } else {
-              toHash += this.value_;
-            }
-            this.lazyHash_ = sha1(toHash);
-          }
-          return this.lazyHash_;
-        }
-        /**
-         * Returns the value of the leaf node.
-         * @returns The value of the node.
-         */
-        getValue() {
-          return this.value_;
-        }
-        compareTo(other) {
-          if (other === _LeafNode.__childrenNodeConstructor.EMPTY_NODE) {
-            return 1;
-          } else if (other instanceof _LeafNode.__childrenNodeConstructor) {
-            return -1;
-          } else {
-            assert(other.isLeafNode(), "Unknown node type");
-            return this.compareToLeafNode_(other);
-          }
-        }
-        /**
-         * Comparison specifically for two leaf nodes
-         */
-        compareToLeafNode_(otherLeaf) {
-          const otherLeafType = typeof otherLeaf.value_;
-          const thisLeafType = typeof this.value_;
-          const otherIndex = _LeafNode.VALUE_TYPE_ORDER.indexOf(otherLeafType);
-          const thisIndex = _LeafNode.VALUE_TYPE_ORDER.indexOf(thisLeafType);
-          assert(otherIndex >= 0, "Unknown leaf type: " + otherLeafType);
-          assert(thisIndex >= 0, "Unknown leaf type: " + thisLeafType);
-          if (otherIndex === thisIndex) {
-            if (thisLeafType === "object") {
-              return 0;
-            } else {
-              if (this.value_ < otherLeaf.value_) {
-                return -1;
-              } else if (this.value_ === otherLeaf.value_) {
-                return 0;
-              } else {
-                return 1;
-              }
-            }
-          } else {
-            return thisIndex - otherIndex;
-          }
-        }
-        withIndex() {
-          return this;
-        }
-        isIndexed() {
-          return true;
-        }
-        equals(other) {
-          if (other === this) {
-            return true;
-          } else if (other.isLeafNode()) {
-            const otherLeaf = other;
-            return this.value_ === otherLeaf.value_ && this.priorityNode_.equals(otherLeaf.priorityNode_);
-          } else {
-            return false;
-          }
-        }
-      };
-      LeafNode.VALUE_TYPE_ORDER = ["object", "boolean", "number", "string"];
-      PriorityIndex = class extends Index {
-        compare(a, b) {
-          const aPriority = a.node.getPriority();
-          const bPriority = b.node.getPriority();
-          const indexCmp = aPriority.compareTo(bPriority);
-          if (indexCmp === 0) {
-            return nameCompare(a.name, b.name);
-          } else {
-            return indexCmp;
-          }
-        }
-        isDefinedOn(node) {
-          return !node.getPriority().isEmpty();
-        }
-        indexedValueChanged(oldNode, newNode) {
-          return !oldNode.getPriority().equals(newNode.getPriority());
-        }
-        minPost() {
-          return NamedNode.MIN;
-        }
-        maxPost() {
-          return new NamedNode(MAX_NAME, new LeafNode("[PRIORITY-POST]", MAX_NODE$1));
-        }
-        makePost(indexValue, name3) {
-          const priorityNode = nodeFromJSON$1(indexValue);
-          return new NamedNode(name3, new LeafNode("[PRIORITY-POST]", priorityNode));
-        }
-        /**
-         * @returns String representation for inclusion in a query spec
-         */
-        toString() {
-          return ".priority";
-        }
-      };
-      PRIORITY_INDEX = new PriorityIndex();
-      LOG_2 = Math.log(2);
-      Base12Num = class {
-        constructor(length) {
-          const logBase2 = (num) => (
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            parseInt(Math.log(num) / LOG_2, 10)
-          );
-          const bitMask = (bits) => parseInt(Array(bits + 1).join("1"), 2);
-          this.count = logBase2(length + 1);
-          this.current_ = this.count - 1;
-          const mask = bitMask(this.count);
-          this.bits_ = length + 1 & mask;
-        }
-        nextBitIsOne() {
-          const result = !(this.bits_ & 1 << this.current_);
-          this.current_--;
-          return result;
-        }
-      };
-      buildChildSet = function(childList, cmp, keyFn, mapSortFn) {
-        childList.sort(cmp);
-        const buildBalancedTree = function(low, high) {
-          const length = high - low;
-          let namedNode;
-          let key;
-          if (length === 0) {
-            return null;
-          } else if (length === 1) {
-            namedNode = childList[low];
-            key = keyFn ? keyFn(namedNode) : namedNode;
-            return new LLRBNode(key, namedNode.node, LLRBNode.BLACK, null, null);
-          } else {
-            const middle = parseInt(length / 2, 10) + low;
-            const left = buildBalancedTree(low, middle);
-            const right = buildBalancedTree(middle + 1, high);
-            namedNode = childList[middle];
-            key = keyFn ? keyFn(namedNode) : namedNode;
-            return new LLRBNode(key, namedNode.node, LLRBNode.BLACK, left, right);
-          }
-        };
-        const buildFrom12Array = function(base122) {
-          let node = null;
-          let root2 = null;
-          let index = childList.length;
-          const buildPennant = function(chunkSize, color) {
-            const low = index - chunkSize;
-            const high = index;
-            index -= chunkSize;
-            const childTree = buildBalancedTree(low + 1, high);
-            const namedNode = childList[low];
-            const key = keyFn ? keyFn(namedNode) : namedNode;
-            attachPennant(new LLRBNode(key, namedNode.node, color, null, childTree));
-          };
-          const attachPennant = function(pennant) {
-            if (node) {
-              node.left = pennant;
-              node = pennant;
-            } else {
-              root2 = pennant;
-              node = pennant;
-            }
-          };
-          for (let i = 0; i < base122.count; ++i) {
-            const isOne = base122.nextBitIsOne();
-            const chunkSize = Math.pow(2, base122.count - (i + 1));
-            if (isOne) {
-              buildPennant(chunkSize, LLRBNode.BLACK);
-            } else {
-              buildPennant(chunkSize, LLRBNode.BLACK);
-              buildPennant(chunkSize, LLRBNode.RED);
-            }
-          }
-          return root2;
-        };
-        const base12 = new Base12Num(childList.length);
-        const root = buildFrom12Array(base12);
-        return new SortedMap(mapSortFn || cmp, root);
-      };
-      fallbackObject = {};
-      IndexMap = class _IndexMap {
-        /**
-         * The default IndexMap for nodes without a priority
-         */
-        static get Default() {
-          assert(fallbackObject && PRIORITY_INDEX, "ChildrenNode.ts has not been loaded");
-          _defaultIndexMap = _defaultIndexMap || new _IndexMap({ ".priority": fallbackObject }, { ".priority": PRIORITY_INDEX });
-          return _defaultIndexMap;
-        }
-        constructor(indexes_, indexSet_) {
-          this.indexes_ = indexes_;
-          this.indexSet_ = indexSet_;
-        }
-        get(indexKey) {
-          const sortedMap = safeGet(this.indexes_, indexKey);
-          if (!sortedMap) {
-            throw new Error("No index defined for " + indexKey);
-          }
-          if (sortedMap instanceof SortedMap) {
-            return sortedMap;
-          } else {
-            return null;
-          }
-        }
-        hasIndex(indexDefinition) {
-          return contains(this.indexSet_, indexDefinition.toString());
-        }
-        addIndex(indexDefinition, existingChildren) {
-          assert(indexDefinition !== KEY_INDEX, "KeyIndex always exists and isn't meant to be added to the IndexMap.");
-          const childList = [];
-          let sawIndexedValue = false;
-          const iter = existingChildren.getIterator(NamedNode.Wrap);
-          let next = iter.getNext();
-          while (next) {
-            sawIndexedValue = sawIndexedValue || indexDefinition.isDefinedOn(next.node);
-            childList.push(next);
-            next = iter.getNext();
-          }
-          let newIndex;
-          if (sawIndexedValue) {
-            newIndex = buildChildSet(childList, indexDefinition.getCompare());
-          } else {
-            newIndex = fallbackObject;
-          }
-          const indexName = indexDefinition.toString();
-          const newIndexSet = Object.assign({}, this.indexSet_);
-          newIndexSet[indexName] = indexDefinition;
-          const newIndexes = Object.assign({}, this.indexes_);
-          newIndexes[indexName] = newIndex;
-          return new _IndexMap(newIndexes, newIndexSet);
-        }
-        /**
-         * Ensure that this node is properly tracked in any indexes that we're maintaining
-         */
-        addToIndexes(namedNode, existingChildren) {
-          const newIndexes = map(this.indexes_, (indexedChildren, indexName) => {
-            const index = safeGet(this.indexSet_, indexName);
-            assert(index, "Missing index implementation for " + indexName);
-            if (indexedChildren === fallbackObject) {
-              if (index.isDefinedOn(namedNode.node)) {
-                const childList = [];
-                const iter = existingChildren.getIterator(NamedNode.Wrap);
-                let next = iter.getNext();
-                while (next) {
-                  if (next.name !== namedNode.name) {
-                    childList.push(next);
-                  }
-                  next = iter.getNext();
-                }
-                childList.push(namedNode);
-                return buildChildSet(childList, index.getCompare());
-              } else {
-                return fallbackObject;
-              }
-            } else {
-              const existingSnap = existingChildren.get(namedNode.name);
-              let newChildren = indexedChildren;
-              if (existingSnap) {
-                newChildren = newChildren.remove(new NamedNode(namedNode.name, existingSnap));
-              }
-              return newChildren.insert(namedNode, namedNode.node);
-            }
-          });
-          return new _IndexMap(newIndexes, this.indexSet_);
-        }
-        /**
-         * Create a new IndexMap instance with the given value removed
-         */
-        removeFromIndexes(namedNode, existingChildren) {
-          const newIndexes = map(this.indexes_, (indexedChildren) => {
-            if (indexedChildren === fallbackObject) {
-              return indexedChildren;
-            } else {
-              const existingSnap = existingChildren.get(namedNode.name);
-              if (existingSnap) {
-                return indexedChildren.remove(new NamedNode(namedNode.name, existingSnap));
-              } else {
-                return indexedChildren;
-              }
-            }
-          });
-          return new _IndexMap(newIndexes, this.indexSet_);
-        }
-      };
-      ChildrenNode = class _ChildrenNode {
-        static get EMPTY_NODE() {
-          return EMPTY_NODE || (EMPTY_NODE = new _ChildrenNode(new SortedMap(NAME_COMPARATOR), null, IndexMap.Default));
-        }
-        /**
-         * @param children_ - List of children of this node..
-         * @param priorityNode_ - The priority of this node (as a snapshot node).
-         */
-        constructor(children_, priorityNode_, indexMap_) {
-          this.children_ = children_;
-          this.priorityNode_ = priorityNode_;
-          this.indexMap_ = indexMap_;
-          this.lazyHash_ = null;
-          if (this.priorityNode_) {
-            validatePriorityNode(this.priorityNode_);
-          }
-          if (this.children_.isEmpty()) {
-            assert(!this.priorityNode_ || this.priorityNode_.isEmpty(), "An empty node cannot have a priority");
-          }
-        }
-        /** @inheritDoc */
-        isLeafNode() {
-          return false;
-        }
-        /** @inheritDoc */
-        getPriority() {
-          return this.priorityNode_ || EMPTY_NODE;
-        }
-        /** @inheritDoc */
-        updatePriority(newPriorityNode) {
-          if (this.children_.isEmpty()) {
-            return this;
-          } else {
-            return new _ChildrenNode(this.children_, newPriorityNode, this.indexMap_);
-          }
-        }
-        /** @inheritDoc */
-        getImmediateChild(childName) {
-          if (childName === ".priority") {
-            return this.getPriority();
-          } else {
-            const child = this.children_.get(childName);
-            return child === null ? EMPTY_NODE : child;
-          }
-        }
-        /** @inheritDoc */
-        getChild(path) {
-          const front = pathGetFront(path);
-          if (front === null) {
-            return this;
-          }
-          return this.getImmediateChild(front).getChild(pathPopFront(path));
-        }
-        /** @inheritDoc */
-        hasChild(childName) {
-          return this.children_.get(childName) !== null;
-        }
-        /** @inheritDoc */
-        updateImmediateChild(childName, newChildNode) {
-          assert(newChildNode, "We should always be passing snapshot nodes");
-          if (childName === ".priority") {
-            return this.updatePriority(newChildNode);
-          } else {
-            const namedNode = new NamedNode(childName, newChildNode);
-            let newChildren, newIndexMap;
-            if (newChildNode.isEmpty()) {
-              newChildren = this.children_.remove(childName);
-              newIndexMap = this.indexMap_.removeFromIndexes(namedNode, this.children_);
-            } else {
-              newChildren = this.children_.insert(childName, newChildNode);
-              newIndexMap = this.indexMap_.addToIndexes(namedNode, this.children_);
-            }
-            const newPriority = newChildren.isEmpty() ? EMPTY_NODE : this.priorityNode_;
-            return new _ChildrenNode(newChildren, newPriority, newIndexMap);
-          }
-        }
-        /** @inheritDoc */
-        updateChild(path, newChildNode) {
-          const front = pathGetFront(path);
-          if (front === null) {
-            return newChildNode;
-          } else {
-            assert(pathGetFront(path) !== ".priority" || pathGetLength(path) === 1, ".priority must be the last token in a path");
-            const newImmediateChild = this.getImmediateChild(front).updateChild(pathPopFront(path), newChildNode);
-            return this.updateImmediateChild(front, newImmediateChild);
-          }
-        }
-        /** @inheritDoc */
-        isEmpty() {
-          return this.children_.isEmpty();
-        }
-        /** @inheritDoc */
-        numChildren() {
-          return this.children_.count();
-        }
-        /** @inheritDoc */
-        val(exportFormat) {
-          if (this.isEmpty()) {
-            return null;
-          }
-          const obj = {};
-          let numKeys = 0, maxKey = 0, allIntegerKeys = true;
-          this.forEachChild(PRIORITY_INDEX, (key, childNode) => {
-            obj[key] = childNode.val(exportFormat);
-            numKeys++;
-            if (allIntegerKeys && _ChildrenNode.INTEGER_REGEXP_.test(key)) {
-              maxKey = Math.max(maxKey, Number(key));
-            } else {
-              allIntegerKeys = false;
-            }
-          });
-          if (!exportFormat && allIntegerKeys && maxKey < 2 * numKeys) {
-            const array = [];
-            for (const key in obj) {
-              array[key] = obj[key];
-            }
-            return array;
-          } else {
-            if (exportFormat && !this.getPriority().isEmpty()) {
-              obj[".priority"] = this.getPriority().val();
-            }
-            return obj;
-          }
-        }
-        /** @inheritDoc */
-        hash() {
-          if (this.lazyHash_ === null) {
-            let toHash = "";
-            if (!this.getPriority().isEmpty()) {
-              toHash += "priority:" + priorityHashText(this.getPriority().val()) + ":";
-            }
-            this.forEachChild(PRIORITY_INDEX, (key, childNode) => {
-              const childHash = childNode.hash();
-              if (childHash !== "") {
-                toHash += ":" + key + ":" + childHash;
-              }
-            });
-            this.lazyHash_ = toHash === "" ? "" : sha1(toHash);
-          }
-          return this.lazyHash_;
-        }
-        /** @inheritDoc */
-        getPredecessorChildName(childName, childNode, index) {
-          const idx = this.resolveIndex_(index);
-          if (idx) {
-            const predecessor = idx.getPredecessorKey(new NamedNode(childName, childNode));
-            return predecessor ? predecessor.name : null;
-          } else {
-            return this.children_.getPredecessorKey(childName);
-          }
-        }
-        getFirstChildName(indexDefinition) {
-          const idx = this.resolveIndex_(indexDefinition);
-          if (idx) {
-            const minKey = idx.minKey();
-            return minKey && minKey.name;
-          } else {
-            return this.children_.minKey();
-          }
-        }
-        getFirstChild(indexDefinition) {
-          const minKey = this.getFirstChildName(indexDefinition);
-          if (minKey) {
-            return new NamedNode(minKey, this.children_.get(minKey));
-          } else {
-            return null;
-          }
-        }
-        /**
-         * Given an index, return the key name of the largest value we have, according to that index
-         */
-        getLastChildName(indexDefinition) {
-          const idx = this.resolveIndex_(indexDefinition);
-          if (idx) {
-            const maxKey = idx.maxKey();
-            return maxKey && maxKey.name;
-          } else {
-            return this.children_.maxKey();
-          }
-        }
-        getLastChild(indexDefinition) {
-          const maxKey = this.getLastChildName(indexDefinition);
-          if (maxKey) {
-            return new NamedNode(maxKey, this.children_.get(maxKey));
-          } else {
-            return null;
-          }
-        }
-        forEachChild(index, action) {
-          const idx = this.resolveIndex_(index);
-          if (idx) {
-            return idx.inorderTraversal((wrappedNode) => {
-              return action(wrappedNode.name, wrappedNode.node);
-            });
-          } else {
-            return this.children_.inorderTraversal(action);
-          }
-        }
-        getIterator(indexDefinition) {
-          return this.getIteratorFrom(indexDefinition.minPost(), indexDefinition);
-        }
-        getIteratorFrom(startPost, indexDefinition) {
-          const idx = this.resolveIndex_(indexDefinition);
-          if (idx) {
-            return idx.getIteratorFrom(startPost, (key) => key);
-          } else {
-            const iterator = this.children_.getIteratorFrom(startPost.name, NamedNode.Wrap);
-            let next = iterator.peek();
-            while (next != null && indexDefinition.compare(next, startPost) < 0) {
-              iterator.getNext();
-              next = iterator.peek();
-            }
-            return iterator;
-          }
-        }
-        getReverseIterator(indexDefinition) {
-          return this.getReverseIteratorFrom(indexDefinition.maxPost(), indexDefinition);
-        }
-        getReverseIteratorFrom(endPost, indexDefinition) {
-          const idx = this.resolveIndex_(indexDefinition);
-          if (idx) {
-            return idx.getReverseIteratorFrom(endPost, (key) => {
-              return key;
-            });
-          } else {
-            const iterator = this.children_.getReverseIteratorFrom(endPost.name, NamedNode.Wrap);
-            let next = iterator.peek();
-            while (next != null && indexDefinition.compare(next, endPost) > 0) {
-              iterator.getNext();
-              next = iterator.peek();
-            }
-            return iterator;
-          }
-        }
-        compareTo(other) {
-          if (this.isEmpty()) {
-            if (other.isEmpty()) {
-              return 0;
-            } else {
-              return -1;
-            }
-          } else if (other.isLeafNode() || other.isEmpty()) {
-            return 1;
-          } else if (other === MAX_NODE) {
-            return -1;
-          } else {
-            return 0;
-          }
-        }
-        withIndex(indexDefinition) {
-          if (indexDefinition === KEY_INDEX || this.indexMap_.hasIndex(indexDefinition)) {
-            return this;
-          } else {
-            const newIndexMap = this.indexMap_.addIndex(indexDefinition, this.children_);
-            return new _ChildrenNode(this.children_, this.priorityNode_, newIndexMap);
-          }
-        }
-        isIndexed(index) {
-          return index === KEY_INDEX || this.indexMap_.hasIndex(index);
-        }
-        equals(other) {
-          if (other === this) {
-            return true;
-          } else if (other.isLeafNode()) {
-            return false;
-          } else {
-            const otherChildrenNode = other;
-            if (!this.getPriority().equals(otherChildrenNode.getPriority())) {
-              return false;
-            } else if (this.children_.count() === otherChildrenNode.children_.count()) {
-              const thisIter = this.getIterator(PRIORITY_INDEX);
-              const otherIter = otherChildrenNode.getIterator(PRIORITY_INDEX);
-              let thisCurrent = thisIter.getNext();
-              let otherCurrent = otherIter.getNext();
-              while (thisCurrent && otherCurrent) {
-                if (thisCurrent.name !== otherCurrent.name || !thisCurrent.node.equals(otherCurrent.node)) {
-                  return false;
-                }
-                thisCurrent = thisIter.getNext();
-                otherCurrent = otherIter.getNext();
-              }
-              return thisCurrent === null && otherCurrent === null;
-            } else {
-              return false;
-            }
-          }
-        }
-        /**
-         * Returns a SortedMap ordered by index, or null if the default (by-key) ordering can be used
-         * instead.
-         *
-         */
-        resolveIndex_(indexDefinition) {
-          if (indexDefinition === KEY_INDEX) {
-            return null;
-          } else {
-            return this.indexMap_.get(indexDefinition.toString());
-          }
-        }
-      };
-      ChildrenNode.INTEGER_REGEXP_ = /^(0|[1-9]\d*)$/;
-      MaxNode = class extends ChildrenNode {
-        constructor() {
-          super(new SortedMap(NAME_COMPARATOR), ChildrenNode.EMPTY_NODE, IndexMap.Default);
-        }
-        compareTo(other) {
-          if (other === this) {
-            return 0;
-          } else {
-            return 1;
-          }
-        }
-        equals(other) {
-          return other === this;
-        }
-        getPriority() {
-          return this;
-        }
-        getImmediateChild(childName) {
-          return ChildrenNode.EMPTY_NODE;
-        }
-        isEmpty() {
-          return false;
-        }
-      };
-      MAX_NODE = new MaxNode();
-      Object.defineProperties(NamedNode, {
-        MIN: {
-          value: new NamedNode(MIN_NAME, ChildrenNode.EMPTY_NODE)
-        },
-        MAX: {
-          value: new NamedNode(MAX_NAME, MAX_NODE)
-        }
-      });
-      KeyIndex.__EMPTY_NODE = ChildrenNode.EMPTY_NODE;
-      LeafNode.__childrenNodeConstructor = ChildrenNode;
-      setMaxNode$1(MAX_NODE);
-      setMaxNode(MAX_NODE);
-      USE_HINZE = true;
-      setNodeFromJSON(nodeFromJSON);
-      PathIndex = class extends Index {
-        constructor(indexPath_) {
-          super();
-          this.indexPath_ = indexPath_;
-          assert(!pathIsEmpty(indexPath_) && pathGetFront(indexPath_) !== ".priority", "Can't create PathIndex with empty path or .priority key");
-        }
-        extractChild(snap3) {
-          return snap3.getChild(this.indexPath_);
-        }
-        isDefinedOn(node) {
-          return !node.getChild(this.indexPath_).isEmpty();
-        }
-        compare(a, b) {
-          const aChild = this.extractChild(a.node);
-          const bChild = this.extractChild(b.node);
-          const indexCmp = aChild.compareTo(bChild);
-          if (indexCmp === 0) {
-            return nameCompare(a.name, b.name);
-          } else {
-            return indexCmp;
-          }
-        }
-        makePost(indexValue, name3) {
-          const valueNode = nodeFromJSON(indexValue);
-          const node = ChildrenNode.EMPTY_NODE.updateChild(this.indexPath_, valueNode);
-          return new NamedNode(name3, node);
-        }
-        maxPost() {
-          const node = ChildrenNode.EMPTY_NODE.updateChild(this.indexPath_, MAX_NODE);
-          return new NamedNode(MAX_NAME, node);
-        }
-        toString() {
-          return pathSlice(this.indexPath_, 0).join("/");
-        }
-      };
-      ValueIndex = class extends Index {
-        compare(a, b) {
-          const indexCmp = a.node.compareTo(b.node);
-          if (indexCmp === 0) {
-            return nameCompare(a.name, b.name);
-          } else {
-            return indexCmp;
-          }
-        }
-        isDefinedOn(node) {
-          return true;
-        }
-        indexedValueChanged(oldNode, newNode) {
-          return !oldNode.equals(newNode);
-        }
-        minPost() {
-          return NamedNode.MIN;
-        }
-        maxPost() {
-          return NamedNode.MAX;
-        }
-        makePost(indexValue, name3) {
-          const valueNode = nodeFromJSON(indexValue);
-          return new NamedNode(name3, valueNode);
-        }
-        /**
-         * @returns String representation for inclusion in a query spec
-         */
-        toString() {
-          return ".value";
-        }
-      };
-      VALUE_INDEX = new ValueIndex();
-      QueryParams = class _QueryParams {
-        constructor() {
-          this.limitSet_ = false;
-          this.startSet_ = false;
-          this.startNameSet_ = false;
-          this.startAfterSet_ = false;
-          this.endSet_ = false;
-          this.endNameSet_ = false;
-          this.endBeforeSet_ = false;
-          this.limit_ = 0;
-          this.viewFrom_ = "";
-          this.indexStartValue_ = null;
-          this.indexStartName_ = "";
-          this.indexEndValue_ = null;
-          this.indexEndName_ = "";
-          this.index_ = PRIORITY_INDEX;
-        }
-        hasStart() {
-          return this.startSet_;
-        }
-        /**
-         * @returns True if it would return from left.
-         */
-        isViewFromLeft() {
-          if (this.viewFrom_ === "") {
-            return this.startSet_;
-          } else {
-            return this.viewFrom_ === "l";
-          }
-        }
-        /**
-         * Only valid to call if hasStart() returns true
-         */
-        getIndexStartValue() {
-          assert(this.startSet_, "Only valid if start has been set");
-          return this.indexStartValue_;
-        }
-        /**
-         * Only valid to call if hasStart() returns true.
-         * Returns the starting key name for the range defined by these query parameters
-         */
-        getIndexStartName() {
-          assert(this.startSet_, "Only valid if start has been set");
-          if (this.startNameSet_) {
-            return this.indexStartName_;
-          } else {
-            return MIN_NAME;
-          }
-        }
-        hasEnd() {
-          return this.endSet_;
-        }
-        /**
-         * Only valid to call if hasEnd() returns true.
-         */
-        getIndexEndValue() {
-          assert(this.endSet_, "Only valid if end has been set");
-          return this.indexEndValue_;
-        }
-        /**
-         * Only valid to call if hasEnd() returns true.
-         * Returns the end key name for the range defined by these query parameters
-         */
-        getIndexEndName() {
-          assert(this.endSet_, "Only valid if end has been set");
-          if (this.endNameSet_) {
-            return this.indexEndName_;
-          } else {
-            return MAX_NAME;
-          }
-        }
-        hasLimit() {
-          return this.limitSet_;
-        }
-        /**
-         * @returns True if a limit has been set and it has been explicitly anchored
-         */
-        hasAnchoredLimit() {
-          return this.limitSet_ && this.viewFrom_ !== "";
-        }
-        /**
-         * Only valid to call if hasLimit() returns true
-         */
-        getLimit() {
-          assert(this.limitSet_, "Only valid if limit has been set");
-          return this.limit_;
-        }
-        getIndex() {
-          return this.index_;
-        }
-        loadsAllData() {
-          return !(this.startSet_ || this.endSet_ || this.limitSet_);
-        }
-        isDefault() {
-          return this.loadsAllData() && this.index_ === PRIORITY_INDEX;
-        }
-        copy() {
-          const copy = new _QueryParams();
-          copy.limitSet_ = this.limitSet_;
-          copy.limit_ = this.limit_;
-          copy.startSet_ = this.startSet_;
-          copy.startAfterSet_ = this.startAfterSet_;
-          copy.indexStartValue_ = this.indexStartValue_;
-          copy.startNameSet_ = this.startNameSet_;
-          copy.indexStartName_ = this.indexStartName_;
-          copy.endSet_ = this.endSet_;
-          copy.endBeforeSet_ = this.endBeforeSet_;
-          copy.indexEndValue_ = this.indexEndValue_;
-          copy.endNameSet_ = this.endNameSet_;
-          copy.indexEndName_ = this.indexEndName_;
-          copy.index_ = this.index_;
-          copy.viewFrom_ = this.viewFrom_;
-          return copy;
-        }
-      };
-      ReadonlyRestClient = class _ReadonlyRestClient extends ServerActions {
-        reportStats(stats) {
-          throw new Error("Method not implemented.");
-        }
-        static getListenId_(query, tag) {
-          if (tag !== void 0) {
-            return "tag$" + tag;
-          } else {
-            assert(query._queryParams.isDefault(), "should have a tag if it's not a default query.");
-            return query._path.toString();
-          }
-        }
-        /**
-         * @param repoInfo_ - Data about the namespace we are connecting to
-         * @param onDataUpdate_ - A callback for new data from the server
-         */
-        constructor(repoInfo_, onDataUpdate_, authTokenProvider_, appCheckTokenProvider_) {
-          super();
-          this.repoInfo_ = repoInfo_;
-          this.onDataUpdate_ = onDataUpdate_;
-          this.authTokenProvider_ = authTokenProvider_;
-          this.appCheckTokenProvider_ = appCheckTokenProvider_;
-          this.log_ = logWrapper("p:rest:");
-          this.listens_ = {};
-        }
-        /** @inheritDoc */
-        listen(query, currentHashFn, tag, onComplete) {
-          const pathString = query._path.toString();
-          this.log_("Listen called for " + pathString + " " + query._queryIdentifier);
-          const listenId = _ReadonlyRestClient.getListenId_(query, tag);
-          const thisListen = {};
-          this.listens_[listenId] = thisListen;
-          const queryStringParameters = queryParamsToRestQueryStringParameters(query._queryParams);
-          this.restRequest_(pathString + ".json", queryStringParameters, (error2, result) => {
-            let data = result;
-            if (error2 === 404) {
-              data = null;
-              error2 = null;
-            }
-            if (error2 === null) {
-              this.onDataUpdate_(
-                pathString,
-                data,
-                /*isMerge=*/
-                false,
-                tag
-              );
-            }
-            if (safeGet(this.listens_, listenId) === thisListen) {
-              let status;
-              if (!error2) {
-                status = "ok";
-              } else if (error2 === 401) {
-                status = "permission_denied";
-              } else {
-                status = "rest_error:" + error2;
-              }
-              onComplete(status, null);
-            }
-          });
-        }
-        /** @inheritDoc */
-        unlisten(query, tag) {
-          const listenId = _ReadonlyRestClient.getListenId_(query, tag);
-          delete this.listens_[listenId];
-        }
-        get(query) {
-          const queryStringParameters = queryParamsToRestQueryStringParameters(query._queryParams);
-          const pathString = query._path.toString();
-          const deferred = new Deferred();
-          this.restRequest_(pathString + ".json", queryStringParameters, (error2, result) => {
-            let data = result;
-            if (error2 === 404) {
-              data = null;
-              error2 = null;
-            }
-            if (error2 === null) {
-              this.onDataUpdate_(
-                pathString,
-                data,
-                /*isMerge=*/
-                false,
-                /*tag=*/
-                null
-              );
-              deferred.resolve(data);
-            } else {
-              deferred.reject(new Error(data));
-            }
-          });
-          return deferred.promise;
-        }
-        /** @inheritDoc */
-        refreshAuthToken(token) {
-        }
-        /**
-         * Performs a REST request to the given path, with the provided query string parameters,
-         * and any auth credentials we have.
-         */
-        restRequest_(pathString, queryStringParameters = {}, callback) {
-          queryStringParameters["format"] = "export";
-          return Promise.all([
-            this.authTokenProvider_.getToken(
-              /*forceRefresh=*/
-              false
-            ),
-            this.appCheckTokenProvider_.getToken(
-              /*forceRefresh=*/
-              false
-            )
-          ]).then(([authToken, appCheckToken]) => {
-            if (authToken && authToken.accessToken) {
-              queryStringParameters["auth"] = authToken.accessToken;
-            }
-            if (appCheckToken && appCheckToken.token) {
-              queryStringParameters["ac"] = appCheckToken.token;
-            }
-            const url = (this.repoInfo_.secure ? "https://" : "http://") + this.repoInfo_.host + pathString + "?ns=" + this.repoInfo_.namespace + querystring(queryStringParameters);
-            this.log_("Sending REST request for " + url);
-            const xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = () => {
-              if (callback && xhr.readyState === 4) {
-                this.log_("REST Response for " + url + " received. status:", xhr.status, "response:", xhr.responseText);
-                let res = null;
-                if (xhr.status >= 200 && xhr.status < 300) {
-                  try {
-                    res = jsonEval(xhr.responseText);
-                  } catch (e) {
-                    warn("Failed to parse JSON response for " + url + ": " + xhr.responseText);
-                  }
-                  callback(null, res);
-                } else {
-                  if (xhr.status !== 401 && xhr.status !== 404) {
-                    warn("Got unsuccessful REST response for " + url + " Status: " + xhr.status);
-                  }
-                  callback(xhr.status);
-                }
-                callback = null;
-              }
-            };
-            xhr.open(
-              "GET",
-              url,
-              /*asynchronous=*/
-              true
-            );
-            xhr.send();
-          });
-        }
-      };
-      SnapshotHolder = class {
-        constructor() {
-          this.rootNode_ = ChildrenNode.EMPTY_NODE;
-        }
-        getNode(path) {
-          return this.rootNode_.getChild(path);
-        }
-        updateSnapshot(path, newSnapshotNode) {
-          this.rootNode_ = this.rootNode_.updateChild(path, newSnapshotNode);
-        }
-      };
-      StatsListener = class {
-        constructor(collection_) {
-          this.collection_ = collection_;
-          this.last_ = null;
-        }
-        get() {
-          const newStats = this.collection_.get();
-          const delta = Object.assign({}, newStats);
-          if (this.last_) {
-            each(this.last_, (stat, value) => {
-              delta[stat] = delta[stat] - value;
-            });
-          }
-          this.last_ = newStats;
-          return delta;
-        }
-      };
-      FIRST_STATS_MIN_TIME = 10 * 1e3;
-      FIRST_STATS_MAX_TIME = 30 * 1e3;
-      REPORT_STATS_INTERVAL = 5 * 60 * 1e3;
-      StatsReporter = class {
-        constructor(collection, server_) {
-          this.server_ = server_;
-          this.statsToReport_ = {};
-          this.statsListener_ = new StatsListener(collection);
-          const timeout = FIRST_STATS_MIN_TIME + (FIRST_STATS_MAX_TIME - FIRST_STATS_MIN_TIME) * Math.random();
-          setTimeoutNonBlocking(this.reportStats_.bind(this), Math.floor(timeout));
-        }
-        reportStats_() {
-          const stats = this.statsListener_.get();
-          const reportedStats = {};
-          let haveStatsToReport = false;
-          each(stats, (stat, value) => {
-            if (value > 0 && contains(this.statsToReport_, stat)) {
-              reportedStats[stat] = value;
-              haveStatsToReport = true;
-            }
-          });
-          if (haveStatsToReport) {
-            this.server_.reportStats(reportedStats);
-          }
-          setTimeoutNonBlocking(this.reportStats_.bind(this), Math.floor(Math.random() * 2 * REPORT_STATS_INTERVAL));
-        }
-      };
-      (function(OperationType2) {
-        OperationType2[OperationType2["OVERWRITE"] = 0] = "OVERWRITE";
-        OperationType2[OperationType2["MERGE"] = 1] = "MERGE";
-        OperationType2[OperationType2["ACK_USER_WRITE"] = 2] = "ACK_USER_WRITE";
-        OperationType2[OperationType2["LISTEN_COMPLETE"] = 3] = "LISTEN_COMPLETE";
-      })(OperationType || (OperationType = {}));
-      AckUserWrite = class _AckUserWrite {
-        /**
-         * @param affectedTree - A tree containing true for each affected path. Affected paths can't overlap.
-         */
-        constructor(path, affectedTree, revert) {
-          this.path = path;
-          this.affectedTree = affectedTree;
-          this.revert = revert;
-          this.type = OperationType.ACK_USER_WRITE;
-          this.source = newOperationSourceUser();
-        }
-        operationForChild(childName) {
-          if (!pathIsEmpty(this.path)) {
-            assert(pathGetFront(this.path) === childName, "operationForChild called for unrelated child.");
-            return new _AckUserWrite(pathPopFront(this.path), this.affectedTree, this.revert);
-          } else if (this.affectedTree.value != null) {
-            assert(this.affectedTree.children.isEmpty(), "affectedTree should not have overlapping affected paths.");
-            return this;
-          } else {
-            const childTree = this.affectedTree.subtree(new Path(childName));
-            return new _AckUserWrite(newEmptyPath(), childTree, this.revert);
-          }
-        }
-      };
-      Overwrite = class _Overwrite {
-        constructor(source, path, snap3) {
-          this.source = source;
-          this.path = path;
-          this.snap = snap3;
-          this.type = OperationType.OVERWRITE;
-        }
-        operationForChild(childName) {
-          if (pathIsEmpty(this.path)) {
-            return new _Overwrite(this.source, newEmptyPath(), this.snap.getImmediateChild(childName));
-          } else {
-            return new _Overwrite(this.source, pathPopFront(this.path), this.snap);
-          }
-        }
-      };
-      Merge = class _Merge {
-        constructor(source, path, children) {
-          this.source = source;
-          this.path = path;
-          this.children = children;
-          this.type = OperationType.MERGE;
-        }
-        operationForChild(childName) {
-          if (pathIsEmpty(this.path)) {
-            const childTree = this.children.subtree(new Path(childName));
-            if (childTree.isEmpty()) {
-              return null;
-            } else if (childTree.value) {
-              return new Overwrite(this.source, newEmptyPath(), childTree.value);
-            } else {
-              return new _Merge(this.source, newEmptyPath(), childTree);
-            }
-          } else {
-            assert(pathGetFront(this.path) === childName, "Can't get a merge for a child not on the path of the operation");
-            return new _Merge(this.source, pathPopFront(this.path), this.children);
-          }
-        }
-        toString() {
-          return "Operation(" + this.path + ": " + this.source.toString() + " merge: " + this.children.toString() + ")";
-        }
-      };
-      CacheNode = class {
-        constructor(node_, fullyInitialized_, filtered_) {
-          this.node_ = node_;
-          this.fullyInitialized_ = fullyInitialized_;
-          this.filtered_ = filtered_;
-        }
-        /**
-         * Returns whether this node was fully initialized with either server data or a complete overwrite by the client
-         */
-        isFullyInitialized() {
-          return this.fullyInitialized_;
-        }
-        /**
-         * Returns whether this node is potentially missing children due to a filter applied to the node
-         */
-        isFiltered() {
-          return this.filtered_;
-        }
-        isCompleteForPath(path) {
-          if (pathIsEmpty(path)) {
-            return this.isFullyInitialized() && !this.filtered_;
-          }
-          const childKey = pathGetFront(path);
-          return this.isCompleteForChild(childKey);
-        }
-        isCompleteForChild(key) {
-          return this.isFullyInitialized() && !this.filtered_ || this.node_.hasChild(key);
-        }
-        getNode() {
-          return this.node_;
-        }
-      };
-      EmptyChildren = () => {
-        if (!emptyChildrenSingleton) {
-          emptyChildrenSingleton = new SortedMap(stringCompare);
-        }
-        return emptyChildrenSingleton;
-      };
-      ImmutableTree = class _ImmutableTree {
-        static fromObject(obj) {
-          let tree = new _ImmutableTree(null);
-          each(obj, (childPath, childSnap) => {
-            tree = tree.set(new Path(childPath), childSnap);
-          });
-          return tree;
-        }
-        constructor(value, children = EmptyChildren()) {
-          this.value = value;
-          this.children = children;
-        }
-        /**
-         * True if the value is empty and there are no children
-         */
-        isEmpty() {
-          return this.value === null && this.children.isEmpty();
-        }
-        /**
-         * Given a path and predicate, return the first node and the path to that node
-         * where the predicate returns true.
-         *
-         * TODO Do a perf test -- If we're creating a bunch of `{path: value:}`
-         * objects on the way back out, it may be better to pass down a pathSoFar obj.
-         *
-         * @param relativePath - The remainder of the path
-         * @param predicate - The predicate to satisfy to return a node
-         */
-        findRootMostMatchingPathAndValue(relativePath, predicate) {
-          if (this.value != null && predicate(this.value)) {
-            return { path: newEmptyPath(), value: this.value };
-          } else {
-            if (pathIsEmpty(relativePath)) {
-              return null;
-            } else {
-              const front = pathGetFront(relativePath);
-              const child = this.children.get(front);
-              if (child !== null) {
-                const childExistingPathAndValue = child.findRootMostMatchingPathAndValue(pathPopFront(relativePath), predicate);
-                if (childExistingPathAndValue != null) {
-                  const fullPath = pathChild(new Path(front), childExistingPathAndValue.path);
-                  return { path: fullPath, value: childExistingPathAndValue.value };
-                } else {
-                  return null;
-                }
-              } else {
-                return null;
-              }
-            }
-          }
-        }
-        /**
-         * Find, if it exists, the shortest subpath of the given path that points a defined
-         * value in the tree
-         */
-        findRootMostValueAndPath(relativePath) {
-          return this.findRootMostMatchingPathAndValue(relativePath, () => true);
-        }
-        /**
-         * @returns The subtree at the given path
-         */
-        subtree(relativePath) {
-          if (pathIsEmpty(relativePath)) {
-            return this;
-          } else {
-            const front = pathGetFront(relativePath);
-            const childTree = this.children.get(front);
-            if (childTree !== null) {
-              return childTree.subtree(pathPopFront(relativePath));
-            } else {
-              return new _ImmutableTree(null);
-            }
-          }
-        }
-        /**
-         * Sets a value at the specified path.
-         *
-         * @param relativePath - Path to set value at.
-         * @param toSet - Value to set.
-         * @returns Resulting tree.
-         */
-        set(relativePath, toSet) {
-          if (pathIsEmpty(relativePath)) {
-            return new _ImmutableTree(toSet, this.children);
-          } else {
-            const front = pathGetFront(relativePath);
-            const child = this.children.get(front) || new _ImmutableTree(null);
-            const newChild = child.set(pathPopFront(relativePath), toSet);
-            const newChildren = this.children.insert(front, newChild);
-            return new _ImmutableTree(this.value, newChildren);
-          }
-        }
-        /**
-         * Removes the value at the specified path.
-         *
-         * @param relativePath - Path to value to remove.
-         * @returns Resulting tree.
-         */
-        remove(relativePath) {
-          if (pathIsEmpty(relativePath)) {
-            if (this.children.isEmpty()) {
-              return new _ImmutableTree(null);
-            } else {
-              return new _ImmutableTree(null, this.children);
-            }
-          } else {
-            const front = pathGetFront(relativePath);
-            const child = this.children.get(front);
-            if (child) {
-              const newChild = child.remove(pathPopFront(relativePath));
-              let newChildren;
-              if (newChild.isEmpty()) {
-                newChildren = this.children.remove(front);
-              } else {
-                newChildren = this.children.insert(front, newChild);
-              }
-              if (this.value === null && newChildren.isEmpty()) {
-                return new _ImmutableTree(null);
-              } else {
-                return new _ImmutableTree(this.value, newChildren);
-              }
-            } else {
-              return this;
-            }
-          }
-        }
-        /**
-         * Gets a value from the tree.
-         *
-         * @param relativePath - Path to get value for.
-         * @returns Value at path, or null.
-         */
-        get(relativePath) {
-          if (pathIsEmpty(relativePath)) {
-            return this.value;
-          } else {
-            const front = pathGetFront(relativePath);
-            const child = this.children.get(front);
-            if (child) {
-              return child.get(pathPopFront(relativePath));
-            } else {
-              return null;
-            }
-          }
-        }
-        /**
-         * Replace the subtree at the specified path with the given new tree.
-         *
-         * @param relativePath - Path to replace subtree for.
-         * @param newTree - New tree.
-         * @returns Resulting tree.
-         */
-        setTree(relativePath, newTree) {
-          if (pathIsEmpty(relativePath)) {
-            return newTree;
-          } else {
-            const front = pathGetFront(relativePath);
-            const child = this.children.get(front) || new _ImmutableTree(null);
-            const newChild = child.setTree(pathPopFront(relativePath), newTree);
-            let newChildren;
-            if (newChild.isEmpty()) {
-              newChildren = this.children.remove(front);
-            } else {
-              newChildren = this.children.insert(front, newChild);
-            }
-            return new _ImmutableTree(this.value, newChildren);
-          }
-        }
-        /**
-         * Performs a depth first fold on this tree. Transforms a tree into a single
-         * value, given a function that operates on the path to a node, an optional
-         * current value, and a map of child names to folded subtrees
-         */
-        fold(fn) {
-          return this.fold_(newEmptyPath(), fn);
-        }
-        /**
-         * Recursive helper for public-facing fold() method
-         */
-        fold_(pathSoFar, fn) {
-          const accum = {};
-          this.children.inorderTraversal((childKey, childTree) => {
-            accum[childKey] = childTree.fold_(pathChild(pathSoFar, childKey), fn);
-          });
-          return fn(pathSoFar, this.value, accum);
-        }
-        /**
-         * Find the first matching value on the given path. Return the result of applying f to it.
-         */
-        findOnPath(path, f) {
-          return this.findOnPath_(path, newEmptyPath(), f);
-        }
-        findOnPath_(pathToFollow, pathSoFar, f) {
-          const result = this.value ? f(pathSoFar, this.value) : false;
-          if (result) {
-            return result;
-          } else {
-            if (pathIsEmpty(pathToFollow)) {
-              return null;
-            } else {
-              const front = pathGetFront(pathToFollow);
-              const nextChild = this.children.get(front);
-              if (nextChild) {
-                return nextChild.findOnPath_(pathPopFront(pathToFollow), pathChild(pathSoFar, front), f);
-              } else {
-                return null;
-              }
-            }
-          }
-        }
-        foreachOnPath(path, f) {
-          return this.foreachOnPath_(path, newEmptyPath(), f);
-        }
-        foreachOnPath_(pathToFollow, currentRelativePath, f) {
-          if (pathIsEmpty(pathToFollow)) {
-            return this;
-          } else {
-            if (this.value) {
-              f(currentRelativePath, this.value);
-            }
-            const front = pathGetFront(pathToFollow);
-            const nextChild = this.children.get(front);
-            if (nextChild) {
-              return nextChild.foreachOnPath_(pathPopFront(pathToFollow), pathChild(currentRelativePath, front), f);
-            } else {
-              return new _ImmutableTree(null);
-            }
-          }
-        }
-        /**
-         * Calls the given function for each node in the tree that has a value.
-         *
-         * @param f - A function to be called with the path from the root of the tree to
-         * a node, and the value at that node. Called in depth-first order.
-         */
-        foreach(f) {
-          this.foreach_(newEmptyPath(), f);
-        }
-        foreach_(currentRelativePath, f) {
-          this.children.inorderTraversal((childName, childTree) => {
-            childTree.foreach_(pathChild(currentRelativePath, childName), f);
-          });
-          if (this.value) {
-            f(currentRelativePath, this.value);
-          }
-        }
-        foreachChild(f) {
-          this.children.inorderTraversal((childName, childTree) => {
-            if (childTree.value) {
-              f(childName, childTree.value);
-            }
-          });
-        }
-      };
-      CompoundWrite = class _CompoundWrite {
-        constructor(writeTree_) {
-          this.writeTree_ = writeTree_;
-        }
-        static empty() {
-          return new _CompoundWrite(new ImmutableTree(null));
-        }
-      };
-      ChildChangeAccumulator = class {
-        constructor() {
-          this.changeMap = /* @__PURE__ */ new Map();
-        }
-        trackChildChange(change) {
-          const type = change.type;
-          const childKey = change.childName;
-          assert(type === "child_added" || type === "child_changed" || type === "child_removed", "Only child changes supported for tracking");
-          assert(childKey !== ".priority", "Only non-priority child changes can be tracked.");
-          const oldChange = this.changeMap.get(childKey);
-          if (oldChange) {
-            const oldType = oldChange.type;
-            if (type === "child_added" && oldType === "child_removed") {
-              this.changeMap.set(childKey, changeChildChanged(childKey, change.snapshotNode, oldChange.snapshotNode));
-            } else if (type === "child_removed" && oldType === "child_added") {
-              this.changeMap.delete(childKey);
-            } else if (type === "child_removed" && oldType === "child_changed") {
-              this.changeMap.set(childKey, changeChildRemoved(childKey, oldChange.oldSnap));
-            } else if (type === "child_changed" && oldType === "child_added") {
-              this.changeMap.set(childKey, changeChildAdded(childKey, change.snapshotNode));
-            } else if (type === "child_changed" && oldType === "child_changed") {
-              this.changeMap.set(childKey, changeChildChanged(childKey, change.snapshotNode, oldChange.oldSnap));
-            } else {
-              throw assertionError("Illegal combination of changes: " + change + " occurred after " + oldChange);
-            }
-          } else {
-            this.changeMap.set(childKey, change);
-          }
-        }
-        getChanges() {
-          return Array.from(this.changeMap.values());
-        }
-      };
-      NoCompleteChildSource_ = class {
-        getCompleteChild(childKey) {
-          return null;
-        }
-        getChildAfterChild(index, child, reverse) {
-          return null;
-        }
-      };
-      NO_COMPLETE_CHILD_SOURCE = new NoCompleteChildSource_();
-      WriteTreeCompleteChildSource = class {
-        constructor(writes_, viewCache_, optCompleteServerCache_ = null) {
-          this.writes_ = writes_;
-          this.viewCache_ = viewCache_;
-          this.optCompleteServerCache_ = optCompleteServerCache_;
-        }
-        getCompleteChild(childKey) {
-          const node = this.viewCache_.eventCache;
-          if (node.isCompleteForChild(childKey)) {
-            return node.getNode().getImmediateChild(childKey);
-          } else {
-            const serverNode = this.optCompleteServerCache_ != null ? new CacheNode(this.optCompleteServerCache_, true, false) : this.viewCache_.serverCache;
-            return writeTreeRefCalcCompleteChild(this.writes_, childKey, serverNode);
-          }
-        }
-        getChildAfterChild(index, child, reverse) {
-          const completeServerData = this.optCompleteServerCache_ != null ? this.optCompleteServerCache_ : viewCacheGetCompleteServerSnap(this.viewCache_);
-          const nodes = writeTreeRefCalcIndexedSlice(this.writes_, completeServerData, child, 1, reverse, index);
-          if (nodes.length === 0) {
-            return null;
-          } else {
-            return nodes[0];
-          }
-        }
-      };
-      SyncTree = class {
-        /**
-         * @param listenProvider_ - Used by SyncTree to start / stop listening
-         *   to server data.
-         */
-        constructor(listenProvider_) {
-          this.listenProvider_ = listenProvider_;
-          this.syncPointTree_ = new ImmutableTree(null);
-          this.pendingWriteTree_ = newWriteTree();
-          this.tagToQueryMap = /* @__PURE__ */ new Map();
-          this.queryToTagMap = /* @__PURE__ */ new Map();
-        }
-      };
-      ExistingValueProvider = class _ExistingValueProvider {
-        constructor(node_) {
-          this.node_ = node_;
-        }
-        getImmediateChild(childName) {
-          const child = this.node_.getImmediateChild(childName);
-          return new _ExistingValueProvider(child);
-        }
-        node() {
-          return this.node_;
-        }
-      };
-      DeferredValueProvider = class _DeferredValueProvider {
-        constructor(syncTree, path) {
-          this.syncTree_ = syncTree;
-          this.path_ = path;
-        }
-        getImmediateChild(childName) {
-          const childPath = pathChild(this.path_, childName);
-          return new _DeferredValueProvider(this.syncTree_, childPath);
-        }
-        node() {
-          return syncTreeCalcCompleteEventCache(this.syncTree_, this.path_);
-        }
-      };
-      generateWithValues = function(values) {
-        values = values || {};
-        values["timestamp"] = values["timestamp"] || (/* @__PURE__ */ new Date()).getTime();
-        return values;
-      };
-      resolveDeferredLeafValue = function(value, existingVal, serverValues) {
-        if (!value || typeof value !== "object") {
-          return value;
-        }
-        assert(".sv" in value, "Unexpected leaf node or priority contents");
-        if (typeof value[".sv"] === "string") {
-          return resolveScalarDeferredValue(value[".sv"], existingVal, serverValues);
-        } else if (typeof value[".sv"] === "object") {
-          return resolveComplexDeferredValue(value[".sv"], existingVal);
-        } else {
-          assert(false, "Unexpected server value: " + JSON.stringify(value, null, 2));
-        }
-      };
-      resolveScalarDeferredValue = function(op, existing, serverValues) {
-        switch (op) {
-          case "timestamp":
-            return serverValues["timestamp"];
-          default:
-            assert(false, "Unexpected server value: " + op);
-        }
-      };
-      resolveComplexDeferredValue = function(op, existing, unused) {
-        if (!op.hasOwnProperty("increment")) {
-          assert(false, "Unexpected server value: " + JSON.stringify(op, null, 2));
-        }
-        const delta = op["increment"];
-        if (typeof delta !== "number") {
-          assert(false, "Unexpected increment value: " + delta);
-        }
-        const existingNode = existing.node();
-        assert(existingNode !== null && typeof existingNode !== "undefined", "Expected ChildrenNode.EMPTY_NODE for nulls");
-        if (!existingNode.isLeafNode()) {
-          return delta;
-        }
-        const leaf = existingNode;
-        const existingVal = leaf.getValue();
-        if (typeof existingVal !== "number") {
-          return delta;
-        }
-        return existingVal + delta;
-      };
-      resolveDeferredValueTree = function(path, node, syncTree, serverValues) {
-        return resolveDeferredValue(node, new DeferredValueProvider(syncTree, path), serverValues);
-      };
-      resolveDeferredValueSnapshot = function(node, existing, serverValues) {
-        return resolveDeferredValue(node, new ExistingValueProvider(existing), serverValues);
-      };
-      Tree = class {
-        /**
-         * @param name - Optional name of the node.
-         * @param parent - Optional parent node.
-         * @param node - Optional node to wrap.
-         */
-        constructor(name3 = "", parent = null, node = { children: {}, childCount: 0 }) {
-          this.name = name3;
-          this.parent = parent;
-          this.node = node;
-        }
-      };
-      INVALID_KEY_REGEX_ = /[\[\].#$\/\u0000-\u001F\u007F]/;
-      INVALID_PATH_REGEX_ = /[\[\].#$\u0000-\u001F\u007F]/;
-      MAX_LEAF_SIZE_ = 10 * 1024 * 1024;
-      isValidKey2 = function(key) {
-        return typeof key === "string" && key.length !== 0 && !INVALID_KEY_REGEX_.test(key);
-      };
-      isValidPathString = function(pathString) {
-        return typeof pathString === "string" && pathString.length !== 0 && !INVALID_PATH_REGEX_.test(pathString);
-      };
-      isValidRootPathString = function(pathString) {
-        if (pathString) {
-          pathString = pathString.replace(/^\/*\.info(\/|$)/, "/");
-        }
-        return isValidPathString(pathString);
-      };
-      validateFirebaseData = function(errorPrefix2, data, path_) {
-        const path = path_ instanceof Path ? new ValidationPath(path_, errorPrefix2) : path_;
-        if (data === void 0) {
-          throw new Error(errorPrefix2 + "contains undefined " + validationPathToErrorString(path));
-        }
-        if (typeof data === "function") {
-          throw new Error(errorPrefix2 + "contains a function " + validationPathToErrorString(path) + " with contents = " + data.toString());
-        }
-        if (isInvalidJSONNumber(data)) {
-          throw new Error(errorPrefix2 + "contains " + data.toString() + " " + validationPathToErrorString(path));
-        }
-        if (typeof data === "string" && data.length > MAX_LEAF_SIZE_ / 3 && stringLength(data) > MAX_LEAF_SIZE_) {
-          throw new Error(errorPrefix2 + "contains a string greater than " + MAX_LEAF_SIZE_ + " utf8 bytes " + validationPathToErrorString(path) + " ('" + data.substring(0, 50) + "...')");
-        }
-        if (data && typeof data === "object") {
-          let hasDotValue = false;
-          let hasActualChild = false;
-          each(data, (key, value) => {
-            if (key === ".value") {
-              hasDotValue = true;
-            } else if (key !== ".priority" && key !== ".sv") {
-              hasActualChild = true;
-              if (!isValidKey2(key)) {
-                throw new Error(errorPrefix2 + " contains an invalid key (" + key + ") " + validationPathToErrorString(path) + `.  Keys must be non-empty strings and can't contain ".", "#", "$", "/", "[", or "]"`);
-              }
-            }
-            validationPathPush(path, key);
-            validateFirebaseData(errorPrefix2, value, path);
-            validationPathPop(path);
-          });
-          if (hasDotValue && hasActualChild) {
-            throw new Error(errorPrefix2 + ' contains ".value" child ' + validationPathToErrorString(path) + " in addition to actual children.");
-          }
-        }
-      };
-      validateUrl = function(fnName, parsedUrl) {
-        const pathString = parsedUrl.path.toString();
-        if (!(typeof parsedUrl.repoInfo.host === "string") || parsedUrl.repoInfo.host.length === 0 || !isValidKey2(parsedUrl.repoInfo.namespace) && parsedUrl.repoInfo.host.split(":")[0] !== "localhost" || pathString.length !== 0 && !isValidRootPathString(pathString)) {
-          throw new Error(errorPrefix(fnName, "url") + `must be a valid firebase URL and the path can't contain ".", "#", "$", "[", or "]".`);
-        }
-      };
-      EventQueue = class {
-        constructor() {
-          this.eventLists_ = [];
-          this.recursionDepth_ = 0;
-        }
-      };
-      INTERRUPT_REASON = "repo_interrupt";
-      MAX_TRANSACTION_RETRIES = 25;
-      Repo = class {
-        constructor(repoInfo_, forceRestClient_, authTokenProvider_, appCheckProvider_) {
-          this.repoInfo_ = repoInfo_;
-          this.forceRestClient_ = forceRestClient_;
-          this.authTokenProvider_ = authTokenProvider_;
-          this.appCheckProvider_ = appCheckProvider_;
-          this.dataUpdateCount = 0;
-          this.statsListener_ = null;
-          this.eventQueue_ = new EventQueue();
-          this.nextWriteId_ = 1;
-          this.interceptServerDataCallback_ = null;
-          this.onDisconnect_ = newSparseSnapshotTree();
-          this.transactionQueueTree_ = new Tree();
-          this.persistentConnection_ = null;
-          this.key = this.repoInfo_.toURLString();
-        }
-        /**
-         * @returns The URL corresponding to the root of this Firebase.
-         */
-        toString() {
-          return (this.repoInfo_.secure ? "https://" : "http://") + this.repoInfo_.host;
-        }
-      };
-      parseRepoInfo = function(dataURL, nodeAdmin) {
-        const parsedUrl = parseDatabaseURL(dataURL), namespace = parsedUrl.namespace;
-        if (parsedUrl.domain === "firebase.com") {
-          fatal(parsedUrl.host + " is no longer supported. Please use <YOUR FIREBASE>.firebaseio.com instead");
-        }
-        if ((!namespace || namespace === "undefined") && parsedUrl.domain !== "localhost") {
-          fatal("Cannot parse Firebase url. Please use https://<YOUR FIREBASE>.firebaseio.com");
-        }
-        if (!parsedUrl.secure) {
-          warnIfPageIsSecure();
-        }
-        const webSocketOnly = parsedUrl.scheme === "ws" || parsedUrl.scheme === "wss";
-        return {
-          repoInfo: new RepoInfo(
-            parsedUrl.host,
-            parsedUrl.secure,
-            namespace,
-            webSocketOnly,
-            nodeAdmin,
-            /*persistenceKey=*/
-            "",
-            /*includeNamespaceInQueryParams=*/
-            namespace !== parsedUrl.subdomain
-          ),
-          path: new Path(parsedUrl.pathString)
-        };
-      };
-      parseDatabaseURL = function(dataURL) {
-        let host = "", domain = "", subdomain = "", pathString = "", namespace = "";
-        let secure = true, scheme = "https", port = 443;
-        if (typeof dataURL === "string") {
-          let colonInd = dataURL.indexOf("//");
-          if (colonInd >= 0) {
-            scheme = dataURL.substring(0, colonInd - 1);
-            dataURL = dataURL.substring(colonInd + 2);
-          }
-          let slashInd = dataURL.indexOf("/");
-          if (slashInd === -1) {
-            slashInd = dataURL.length;
-          }
-          let questionMarkInd = dataURL.indexOf("?");
-          if (questionMarkInd === -1) {
-            questionMarkInd = dataURL.length;
-          }
-          host = dataURL.substring(0, Math.min(slashInd, questionMarkInd));
-          if (slashInd < questionMarkInd) {
-            pathString = decodePath(dataURL.substring(slashInd, questionMarkInd));
-          }
-          const queryParams = decodeQuery(dataURL.substring(Math.min(dataURL.length, questionMarkInd)));
-          colonInd = host.indexOf(":");
-          if (colonInd >= 0) {
-            secure = scheme === "https" || scheme === "wss";
-            port = parseInt(host.substring(colonInd + 1), 10);
-          } else {
-            colonInd = host.length;
-          }
-          const hostWithoutPort = host.slice(0, colonInd);
-          if (hostWithoutPort.toLowerCase() === "localhost") {
-            domain = "localhost";
-          } else if (hostWithoutPort.split(".").length <= 2) {
-            domain = hostWithoutPort;
-          } else {
-            const dotInd = host.indexOf(".");
-            subdomain = host.substring(0, dotInd).toLowerCase();
-            domain = host.substring(dotInd + 1);
-            namespace = subdomain;
-          }
-          if ("ns" in queryParams) {
-            namespace = queryParams["ns"];
-          }
-        }
-        return {
-          host,
-          port,
-          domain,
-          subdomain,
-          secure,
-          scheme,
-          pathString,
-          namespace
-        };
-      };
-      QueryImpl = class _QueryImpl {
-        /**
-         * @hideconstructor
-         */
-        constructor(_repo, _path, _queryParams, _orderByCalled) {
-          this._repo = _repo;
-          this._path = _path;
-          this._queryParams = _queryParams;
-          this._orderByCalled = _orderByCalled;
-        }
-        get key() {
-          if (pathIsEmpty(this._path)) {
-            return null;
-          } else {
-            return pathGetBack(this._path);
-          }
-        }
-        get ref() {
-          return new ReferenceImpl(this._repo, this._path);
-        }
-        get _queryIdentifier() {
-          const obj = queryParamsGetQueryObject(this._queryParams);
-          const id = ObjectToUniqueKey(obj);
-          return id === "{}" ? "default" : id;
-        }
-        /**
-         * An object representation of the query parameters used by this Query.
-         */
-        get _queryObject() {
-          return queryParamsGetQueryObject(this._queryParams);
-        }
-        isEqual(other) {
-          other = getModularInstance(other);
-          if (!(other instanceof _QueryImpl)) {
-            return false;
-          }
-          const sameRepo = this._repo === other._repo;
-          const samePath = pathEquals(this._path, other._path);
-          const sameQueryIdentifier = this._queryIdentifier === other._queryIdentifier;
-          return sameRepo && samePath && sameQueryIdentifier;
-        }
-        toJSON() {
-          return this.toString();
-        }
-        toString() {
-          return this._repo.toString() + pathToUrlEncodedString(this._path);
-        }
-      };
-      ReferenceImpl = class _ReferenceImpl extends QueryImpl {
-        /** @hideconstructor */
-        constructor(repo, path) {
-          super(repo, path, new QueryParams(), false);
-        }
-        get parent() {
-          const parentPath = pathParent(this._path);
-          return parentPath === null ? null : new _ReferenceImpl(this._repo, parentPath);
-        }
-        get root() {
-          let ref2 = this;
-          while (ref2.parent !== null) {
-            ref2 = ref2.parent;
-          }
-          return ref2;
-        }
-      };
-      syncPointSetReferenceConstructor(ReferenceImpl);
-      syncTreeSetReferenceConstructor(ReferenceImpl);
-      FIREBASE_DATABASE_EMULATOR_HOST_VAR = "FIREBASE_DATABASE_EMULATOR_HOST";
-      repos = {};
-      useRestClient = false;
-      Database = class {
-        /** @hideconstructor */
-        constructor(_repoInternal, app) {
-          this._repoInternal = _repoInternal;
-          this.app = app;
-          this["type"] = "database";
-          this._instanceStarted = false;
-        }
-        get _repo() {
-          if (!this._instanceStarted) {
-            repoStart(this._repoInternal, this.app.options.appId, this.app.options["databaseAuthVariableOverride"]);
-            this._instanceStarted = true;
-          }
-          return this._repoInternal;
-        }
-        get _root() {
-          if (!this._rootInternal) {
-            this._rootInternal = new ReferenceImpl(this._repo, newEmptyPath());
-          }
-          return this._rootInternal;
-        }
-        _delete() {
-          if (this._rootInternal !== null) {
-            repoManagerDeleteRepo(this._repo, this.app.name);
-            this._repoInternal = null;
-            this._rootInternal = null;
-          }
-          return Promise.resolve();
-        }
-        _checkNotDeleted(apiName) {
-          if (this._rootInternal === null) {
-            fatal("Cannot call " + apiName + " on a deleted database.");
-          }
-        }
-      };
-      PersistentConnection.prototype.simpleListen = function(pathString, onComplete) {
-        this.sendRequest("q", { p: pathString }, onComplete);
-      };
-      PersistentConnection.prototype.echo = function(data, onEcho) {
-        this.sendRequest("echo", { d: data }, onEcho);
-      };
-      registerDatabase();
-    }
-  });
-
-  // node_modules/firebase/database/dist/esm/index.esm.js
-  var init_index_esm = __esm({
-    "node_modules/firebase/database/dist/esm/index.esm.js"() {
-      init_live_reload();
-      init_index_esm20175();
-    }
-  });
-
   // src/components/mosaicScroll.ts
   var mosaicScroll_exports = {};
   __export(mosaicScroll_exports, {
@@ -17919,10 +9304,17 @@
     "src/components/mosaicScroll.ts"() {
       "use strict";
       init_live_reload();
-      init_index_esm();
       init_gsap();
       mosaicScroll = () => {
         class MosaicScroll {
+          component;
+          images;
+          svgBG;
+          svgLayers;
+          tracks;
+          getColors;
+          bgColors;
+          textColors;
           constructor() {
             this.component = document.querySelector(".mosaic_component");
             this.svgBG = [...document.querySelectorAll(".mosaic_svg")].map((item) => item);
@@ -17951,7 +9343,7 @@
                   start: "top bottom",
                   end: "top top",
                   scrub: true,
-                  onUpdate: (self2) => this.updateBackgroundTransition(self2.progress, i)
+                  onUpdate: (self) => this.updateBackgroundTransition(self.progress, i)
                   // markers: true,
                 }
               });
@@ -18027,6 +9419,15 @@
       init_gsap();
       shopSlider = () => {
         class ShopSlider {
+          imageFeed;
+          bgImages;
+          previewWraps;
+          previewImages;
+          pIndicators;
+          currentIndex;
+          rotationInterval;
+          labelCurrent;
+          labelTotal;
           constructor() {
             this.imageFeed = [...document.querySelectorAll(".slider_data-img")].map(
               (item) => item
@@ -18098,10 +9499,10 @@
             );
           }
           setActivePreview(currentIndex) {
-            this.previewWraps.forEach((wrap4, index) => {
+            this.previewWraps.forEach((wrap3, index) => {
               if (index !== currentIndex) {
-                wrap4.classList.remove("is-active");
-                gsapWithCSS.to(wrap4, { borderColor: "transparent", duration: 0.5 });
+                wrap3.classList.remove("is-active");
+                gsapWithCSS.to(wrap3, { borderColor: "transparent", duration: 0.5 });
               }
             });
             this.previewWraps[currentIndex].classList.add("is-active");
@@ -18133,6 +9534,7 @@
       init_live_reload();
       shop = () => {
         class Shop {
+          shopItems;
           constructor() {
             this.shopItems = [...document.querySelectorAll(".shop_item")].map(
               (item) => item
@@ -18166,6 +9568,9 @@
       init_gsap();
       productSlider = () => {
         class ProductSlider {
+          previews;
+          sliderImages;
+          activeIndex;
           constructor() {
             this.previews = document.querySelectorAll(".p-slider_preview-item");
             this.sliderImages = document.querySelectorAll(".p-slider_img");
@@ -18190,7 +9595,8 @@
             });
           }
           handlePreviewClick(index) {
-            if (index === this.activeIndex) return;
+            if (index === this.activeIndex)
+              return;
             const currentImage = this.sliderImages[this.activeIndex];
             const nextImage = this.sliderImages[index];
             const currentPreview = this.previews[this.activeIndex];
@@ -18223,9 +9629,11 @@
       init_gsap();
       banner = () => {
         class Banner {
+          bannerTrack;
           constructor() {
             this.bannerTrack = document.querySelector(".banner_track");
-            if (this.bannerTrack) this.setLiisteners();
+            if (this.bannerTrack)
+              this.setLiisteners();
           }
           setLiisteners() {
             this.bannerMove();
@@ -18261,6 +9669,12 @@
       init_gsap();
       formHandler = () => {
         class FormHandler {
+          form;
+          formWrap;
+          successElement;
+          errorElement;
+          formButton;
+          endpoint;
           constructor() {
             this.formWrap = document.querySelector(".form_wrap");
             this.form = document.querySelector("[data-mail-form]");
@@ -18303,8 +9717,8 @@
                 } else {
                   this.showSuccess();
                 }
-              } catch (error2) {
-                console.log("Network Error!!!", error2);
+              } catch (error) {
+                console.log("Network Error!!!", error);
                 this.showError("Network error. Please try again later.");
               }
             });
@@ -18351,20 +9765,12 @@
     alignment: "data-shopify-alignment"
   };
   var Shopify = class {
+    opts;
+    io = null;
+    initialized = false;
+    sdkLoaded = false;
+    sdkPromise = null;
     constructor(options) {
-      this.io = null;
-      this.initialized = false;
-      this.sdkLoaded = false;
-      this.sdkPromise = null;
-      // ---- internals ----
-      this.onIntersect = (entries) => {
-        console.log("intersect");
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          this.io?.unobserve(entry.target);
-          this.ensureSdk().then(() => this.mount(entry.target));
-        });
-      };
       console.log("!!Shopify!!");
       if (!options?.domain || !options?.token) {
         throw new Error('Shopify: "domain" and "token" are required.');
@@ -18373,13 +9779,15 @@
     }
     init() {
       console.log("init");
-      if (this.initialized) return;
+      if (this.initialized)
+        return;
       this.initialized = true;
       const nodes = Array.from(
         document.querySelectorAll(`[${this.opts.productIdAttr}]`)
       );
       console.log("nodes", nodes);
-      if (!nodes.length) return;
+      if (!nodes.length)
+        return;
       this.io = new IntersectionObserver(this.onIntersect, { rootMargin: this.opts.rootMargin });
       nodes.forEach((el) => this.io.observe(el));
     }
@@ -18388,6 +9796,16 @@
       this.io?.disconnect();
       this.io = null;
     }
+    // ---- internals ----
+    onIntersect = (entries) => {
+      console.log("intersect");
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting)
+          return;
+        this.io?.unobserve(entry.target);
+        this.ensureSdk().then(() => this.mount(entry.target));
+      });
+    };
     ensureSdk() {
       if (this.sdkLoaded || window.ShopifyBuy && window.ShopifyBuy.UI) {
         this.sdkLoaded = true;
@@ -18409,7 +9827,8 @@
       console.log("mount", node);
       const productId = node.getAttribute(this.opts.productIdAttr);
       console.log("!!!!", productId);
-      if (!productId) return;
+      if (!productId)
+        return;
       console.log("SHOPIFY", productId);
       const client = window.ShopifyBuy.buildClient({
         domain: this.opts.domain,
@@ -18657,318 +10076,68 @@
 
 gsap/gsap-core.js:
   (*!
-   * GSAP 3.11.4
-   * https://greensock.com
+   * GSAP 3.12.7
+   * https://gsap.com
    *
-   * @license Copyright 2008-2022, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/CSSPlugin.js:
   (*!
-   * CSSPlugin 3.11.4
-   * https://greensock.com
+   * CSSPlugin 3.12.7
+   * https://gsap.com
    *
-   * Copyright 2008-2022, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/Observer.js:
   (*!
-   * Observer 3.11.4
-   * https://greensock.com
+   * Observer 3.12.7
+   * https://gsap.com
    *
-   * @license Copyright 2008-2022, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/ScrollTrigger.js:
   (*!
-   * ScrollTrigger 3.11.4
-   * https://greensock.com
+   * ScrollTrigger 3.12.7
+   * https://gsap.com
    *
-   * @license Copyright 2008-2022, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/utils/paths.js:
   (*!
-   * paths 3.11.4
-   * https://greensock.com
+   * paths 3.12.7
+   * https://gsap.com
    *
-   * Copyright 2008-2022, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/CustomEase.js:
   (*!
-   * CustomEase 3.11.4
-   * https://greensock.com
+   * CustomEase 3.12.7
+   * https://gsap.com
    *
-   * @license Copyright 2008-2022, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
-
-@firebase/util/dist/index.esm2017.js:
-  (**
-   * @license
-   * Copyright 2017 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2022 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2021 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2019 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2020 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-
-@firebase/component/dist/esm/index.esm2017.js:
-  (**
-   * @license
-   * Copyright 2019 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-
-@firebase/logger/dist/esm/index.esm2017.js:
-  (**
-   * @license
-   * Copyright 2017 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-
-@firebase/app/dist/esm/index.esm2017.js:
-  (**
-   * @license
-   * Copyright 2019 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2023 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2021 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-
-@firebase/database/dist/index.esm2017.js:
-  (**
-   * @license
-   * Copyright 2019 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2017 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2021 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2020 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
-  (**
-   * @license
-   * Copyright 2023 Google LLC
-   *
-   * Licensed under the Apache License, Version 2.0 (the "License");
-   * you may not use this file except in compliance with the License.
-   * You may obtain a copy of the License at
-   *
-   *   http://www.apache.org/licenses/LICENSE-2.0
-   *
-   * Unless required by applicable law or agreed to in writing, software
-   * distributed under the License is distributed on an "AS IS" BASIS,
-   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   * See the License for the specific language governing permissions and
-   * limitations under the License.
-   *)
 */
 //# sourceMappingURL=index.js.map
