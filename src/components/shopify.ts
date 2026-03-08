@@ -42,7 +42,7 @@ export class Shopify {
   private sdkPromise: Promise<void> | null = null;
 
   constructor(options: ShopifyInitOptions) {
-    console.log('!!Shopify!!');
+    // console.log('!!Shopify!!');
     if (!options?.domain || !options?.token) {
       throw new Error('Shopify: "domain" and "token" are required.');
     }
@@ -50,14 +50,14 @@ export class Shopify {
   }
 
   public init() {
-    console.log('init');
+    // console.log('init');
     if (this.initialized) return;
     this.initialized = true;
 
     const nodes = Array.from(
       document.querySelectorAll<HTMLElement>(`[${this.opts.productIdAttr}]`)
     );
-    console.log('nodes', nodes);
+    // console.log('nodes', nodes);
     if (!nodes.length) return; // nothing to do
 
     this.io = new IntersectionObserver(this.onIntersect, { rootMargin: this.opts.rootMargin });
@@ -72,7 +72,7 @@ export class Shopify {
 
   // ---- internals ----
   private onIntersect = (entries: IntersectionObserverEntry[]) => {
-    console.log('intersect');
+    // console.log('intersect');
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       this.io?.unobserve(entry.target as Element);
@@ -94,18 +94,18 @@ export class Shopify {
         resolve();
       };
       document.head.appendChild(s);
-      console.log('script', s);
+      // console.log('script', s);
     });
   }
 
   private mount(node: HTMLElement) {
-    console.log('mount', node);
+    // console.log('mount', node);
 
     const productId = node.getAttribute(this.opts.productIdAttr);
-    console.log('!!!!', productId);
+    // console.log('!!!!', productId);
     if (!productId) return;
 
-    console.log('SHOPIFY', productId);
+    // console.log('SHOPIFY', productId);
 
     const client = window.ShopifyBuy.buildClient({
       domain: this.opts.domain,
@@ -143,10 +143,10 @@ export class Shopify {
                 color: '#E9ECF3',
                 'background-color': '#ff8c00',
                 ':hover': {
-                  'background-color': '#0b7aa1',
+                  'background-color': '#ff8c00',
                 },
                 ':focus': {
-                  'background-color': '#0b7aa1',
+                  'background-color': '#ff8c00',
                 },
                 'border-radius': '0px',
                 'padding-left': '32px',
@@ -228,7 +228,7 @@ export class Shopify {
                 'padding-bottom': '16px',
               },
             },
-            googleFonts: ['Quantico'],
+            googleFonts: ['Open Sans'],
             text: {
               button: 'Add to cart',
             },
