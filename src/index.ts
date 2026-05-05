@@ -2,6 +2,7 @@
 import shopify from '$components/shopify';
 import { hideVerifyComponent } from '$components/verify';
 import { getWebflowEnv } from '$utils/editorCheck';
+import formHandler from '$utils/formHandler';
 import { loadComponent } from '$utils/loadComponent';
 import { initSmoothScroll } from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
@@ -14,11 +15,8 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   console.log('/// Oakley ///');
 
-  window.addEventListener('click', (e) => {
-    console.log(e.target);
-  });
-
   initSmoothScroll();
+  formHandler();
 
   const env = getWebflowEnv();
 
@@ -49,7 +47,10 @@ window.Webflow.push(() => {
   loadComponent('.shop_component', () => import('$components/shop'));
   loadComponent('.product_component', () => import('$components/product'));
   loadComponent('.banner_component', () => import('$components/banner'));
-  loadComponent('[data-mail-form]', () => import('$utils/formHandler'));
+  // HERE----------
+  // loadComponent('[data-mail-form]', () => import('$utils/newsletterMail'));
+  // --------------
+
   // loadComponent('.checkout_component', () => import('$components/checkout'));
 
   // Raffle
