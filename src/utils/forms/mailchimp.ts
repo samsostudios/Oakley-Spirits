@@ -2,9 +2,9 @@ import { gsap } from 'gsap';
 
 export async function submitMailchimp(form: HTMLFormElement, token: string): Promise<void> {
   const input = form.querySelector<HTMLInputElement>('input[data-name="Email"]');
-  const submitBtn = form.querySelector<HTMLButtonElement>(
-    'button[type="submit"]'
-  ) as HTMLButtonElement;
+  const submitBtn = form.querySelector('[type="submit"]') as HTMLButtonElement;
+
+  console.log('here', submitBtn);
   const email = input?.value.trim();
 
   if (!email || !isValidEmail(email)) {

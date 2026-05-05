@@ -26,6 +26,7 @@ export const pageTransition = () => {
 
         return isInternal && isNotAnchor && isNotExternal && !isExcluded;
       });
+      console.log('!!', this.filteredLinks);
       this.transitionLogos = [...document.querySelectorAll('.preload_path')].map(
         (item) => item as HTMLElement
       );

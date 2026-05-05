@@ -30,18 +30,16 @@ class FormHandler {
     const isMailchimp = form.dataset.formType === 'mailchimp';
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
       const token = getToken();
       if (!token) {
-        // console.warn('Turnstile error');
+        e.preventDefault();
+        console.warn('Turnstile error');
         return;
       }
 
       if (isMailchimp) {
+        e.preventDefault();
         this.handleMailchimp(form, token);
-      } else {
-        this.handleNative(form);
       }
     });
   }
@@ -49,10 +47,6 @@ class FormHandler {
   private handleMailchimp(form: HTMLFormElement, token: string) {
     // console.log('Mailchimp Submit');
     submitMailchimp(form, token);
-  }
-  private handleNative(form: HTMLFormElement) {
-    // console.log('Native Submit');
-    form.submit();
   }
 }
 
