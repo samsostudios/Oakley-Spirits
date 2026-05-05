@@ -2,12 +2,18 @@ import { gsap } from 'gsap';
 
 export async function submitMailchimp(form: HTMLFormElement, token: string): Promise<void> {
   const input = form.querySelector<HTMLInputElement>('input[data-name="Email"]');
+  const submitBtn = form.querySelector<HTMLButtonElement>(
+    'button[type="submit"]'
+  ) as HTMLButtonElement;
   const email = input?.value.trim();
 
   if (!email || !isValidEmail(email)) {
     showError(form, 'Please enter a valid email');
     return;
   }
+
+  submitBtn.setAttribute('disabled', 'true');
+  submitBtn.value = 'Submitting...';
 
   try {
     const response = await fetch(form.action, {
@@ -26,6 +32,9 @@ export async function submitMailchimp(form: HTMLFormElement, token: string): Pro
     }
   } catch {
     showError(form, 'Network error. Please try again later.');
+  } finally {
+    submitBtn.removeAttribute('disabled');
+    submitBtn.value = 'Submit';
   }
 }
 
