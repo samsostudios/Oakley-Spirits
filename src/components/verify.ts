@@ -9,6 +9,7 @@ export const verify = () => {
     private section: HTMLElement;
     private form: HTMLElement;
     private inputs: HTMLInputElement[];
+    private submitButton: HTMLButtonElement;
     private statusContainer: HTMLElement;
     private verifyVideo: HTMLVideoElement;
     private verifyPlace: HTMLElement;
@@ -16,13 +17,13 @@ export const verify = () => {
     private videoInitialized: boolean;
     private windowLocation: string;
     private verifyProductType: string[];
+    private isVerifying: boolean;
 
     constructor() {
       this.section = document.querySelector('.section_verify') as HTMLElement;
       this.form = document.querySelector('.verify_form') as HTMLFormElement;
-      this.inputs = [...document.querySelectorAll('.verify_input-mask')].map(
-        (item) => item as HTMLInputElement
-      );
+      this.inputs = [...document.querySelectorAll('.verify_input')] as HTMLInputElement[];
+      this.submitButton = document.querySelector('.verify_submit') as HTMLButtonElement;
       this.statusContainer = document.querySelector('.verify_status') as HTMLElement;
       this.verifyVideo = document.querySelector('#verifyBG') as HTMLVideoElement;
       this.verifyPlace = document.querySelector('#verifyPlace') as HTMLElement;
@@ -32,6 +33,9 @@ export const verify = () => {
       this.verifyProductType = [...document.querySelectorAll('.verify_product-type')].map((item) =>
         (item as HTMLElement).innerHTML.trim()
       );
+      this.isVerifying = false;
+
+      // console.log('!!', this.inputs);
 
       const canBypass = this.verifyProductType.includes('Merch');
 
@@ -68,11 +72,9 @@ export const verify = () => {
     };
 
     private setListeners() {
-      this.inputs.forEach((inputWrapper, index) => {
-        const input = inputWrapper.querySelector('input') as HTMLInputElement;
+      this.inputs.forEach((input, index) => {
         if (!input) return;
 
-        input.style.caretColor = 'var(--palette--white)';
         input.addEventListener('focus', () => {
           // Prevent scrolling when keyboard appears
           document.documentElement.style.overflow = 'hidden';
@@ -85,10 +87,32 @@ export const verify = () => {
         });
 
         input.addEventListener('input', (event) => this.handleInput(event, index));
-        input.addEventListener('keydown', (event) => this.handleBackspace(event, index));
+        input.addEventListener('keydown', (event) => {
+          this.handleBackspace(event, index);
+
+          if (event.key === 'Enter' && index === this.inputs.length - 1) {
+            event.preventDefault();
+            this.verifyAge();
+          }
+        });
       });
 
-      this.form.addEventListener('submit', (e) => this.verifyAge(e));
+      // Manual button trigger
+      this.submitButton?.addEventListener('click', () => {
+        this.verifyAge();
+      });
+
+      // Safety fallback in case native submit somehow fires
+      this.form?.addEventListener(
+        'submit',
+        (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          this.verifyAge();
+        },
+        true
+      );
     }
 
     private handleInput(event: Event, index: number) {
@@ -101,50 +125,47 @@ export const verify = () => {
         return;
       }
 
-      if (value) {
-        target.style.borderColor = 'var(--palette--white)';
-        target.style.color = 'var(--palette--white)';
-        target.style.opacity = '1';
-      } else {
-        target.style.borderColor = 'var(--palette--white)';
-        target.style.color = 'var(--palette--white)';
-        target.style.opacity = '0.5';
+      this.clearError();
+
+      const nextInput = this.inputs[index + 1] as HTMLInputElement | undefined;
+
+      if (nextInput) {
+        nextInput?.focus();
+        return;
       }
 
-      // Move to the next input if there is one
-      const nextInputWrapper = this.inputs[index + 1]?.closest('.verify_input-mask');
-      if (nextInputWrapper) {
-        const nextInput = nextInputWrapper.querySelector('input') as HTMLInputElement;
-        nextInput?.focus();
-      }
+      window.setTimeout(() => {
+        this.verifyAge();
+      }, 150);
     }
 
     private handleBackspace(event: KeyboardEvent, index: number) {
       const target = event.target as HTMLInputElement;
 
+      if (event.key === 'Backspace' || event.key === 'Delete') {
+        this.clearError();
+      }
+
       if ((event.key === 'Backspace' || event.key === 'Delete') && !target.value) {
-        const previousInputWrapper = this.inputs[index - 1]?.closest('.verify_input-mask');
-        if (previousInputWrapper) {
-          const previousInput = previousInputWrapper.querySelector('input') as HTMLInputElement;
+        const previousInput = this.inputs[index - 1] as HTMLInputElement;
+        if (previousInput) {
           previousInput?.focus();
           previousInput.value = '';
         }
       }
     }
 
-    private verifyAge(event: Event) {
-      event.preventDefault();
-      event.stopPropagation();
+    private verifyAge() {
+      if (this.isVerifying) return;
+      this.isVerifying = true;
 
-      // Collect values from the child input elements inside the wrappers
-      const birthYear = Array.from(this.inputs)
-        .map((wrapper) => {
-          const input = wrapper.querySelector('input') as HTMLInputElement;
-          return input ? input.value.trim() : '';
+      const birthYear = this.inputs
+        .map((element) => {
+          const value = element.value.trim();
+          return value ? value : '';
         })
         .join('');
 
-      // Ensure the birth year is a valid 4-digit number
       if (birthYear.length !== 4 || !/^\d{4}$/.test(birthYear)) {
         this.displayError('Please enter a valid 4-digit birth year.');
         return;
@@ -180,12 +201,12 @@ export const verify = () => {
         { duration: 1.2, y: '0rem', opacity: 1, stagger: 0.2, ease: 'power3.out' }
       );
       tl.fromTo(
-        document.querySelector('.verify_wrap'),
+        document.querySelector('.verify_header'),
         {
           y: '1rem',
           opacity: 0,
         },
-        { duration: 1.2, y: '0rem', opacity: 1, ease: 'expo.inOut' },
+        { duration: 1.2, y: '0rem', opacity: 1, ease: 'power3.out' },
         '<0.2'
       );
       tl.to(this.verifyLogo, { duration: 1, opacity: 1, ease: 'power3.out' }, '<0.5');
@@ -200,29 +221,30 @@ export const verify = () => {
       const staggerDuration = 0.2;
       const computeDuration = baseDuration + staggerDuration * (this.inputs.length - 1);
 
-      tl.to(this.inputs, {
-        duration: baseDuration,
-        y: '-4rem',
+      tl.to(document.querySelector('.verify_header'), {
+        duration: 1,
+        // y: '-1rem',
         opacity: 0,
-        stagger: staggerDuration,
-        ease: 'power3.out',
+        ease: 'power3.inOut',
       });
       tl.to(
-        document.querySelector('.verify_wrap'),
+        this.inputs,
         {
-          duration: computeDuration,
-          y: '-1rem',
+          duration: baseDuration,
+          // y: '-4rem',
           opacity: 0,
-          ease: 'power3.out',
+          stagger: staggerDuration,
+          ease: 'power3.inOut',
         },
-        '<'
+        '<0.2'
       );
+
       tl.to(this.section, {
         // delay: 0.2,
-        duration: 1,
+        duration: 1.2,
         display: 'none',
         opacity: 0,
-        ease: 'expo.inOut',
+        ease: 'power3.out',
       });
 
       if (this.windowLocation === '/') {
@@ -231,6 +253,14 @@ export const verify = () => {
           startSmoothScroll();
         }, (tl.duration() / 2) * 1000);
       }
+    }
+
+    private clearError() {
+      const statusText = this.statusContainer.children[0] as HTMLParagraphElement;
+
+      statusText.innerHTML = '';
+
+      this.statusContainer.style.display = 'none';
     }
   }
   new Verify();
