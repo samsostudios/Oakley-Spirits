@@ -34,7 +34,7 @@ window.Webflow.push(() => {
     hideVerifyComponent();
   }
 
-  shopify({ domain: '8z7y38-9x.myshopify.com', token: 'ab800f336b7f7dc65afdafcaf40cb884' });
+  // shopify({ domain: '8z7y38-9x.myshopify.com', token: 'ab800f336b7f7dc65afdafcaf40cb884' });
 
   loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('.transition_component', () => import('$components/pageTransition'));

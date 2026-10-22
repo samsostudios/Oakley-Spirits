@@ -9678,267 +9678,6 @@
 
   // src/index.ts
   init_live_reload();
-
-  // src/components/shopify.ts
-  init_live_reload();
-  var DEFAULTS = {
-    moneyFormat: "%24%7B%7Bamount%7D%7D",
-    productSelector: ".product_buy",
-    productIdAttr: "data-shopify-product-id",
-    rootMargin: "300px",
-    sdkUrl: "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js",
-    alignment: "data-shopify-alignment"
-  };
-  var Shopify = class {
-    opts;
-    io = null;
-    initialized = false;
-    sdkLoaded = false;
-    sdkPromise = null;
-    constructor(options) {
-      if (!options?.domain || !options?.token) {
-        throw new Error('Shopify: "domain" and "token" are required.');
-      }
-      this.opts = { ...DEFAULTS, ...options };
-    }
-    init() {
-      if (this.initialized)
-        return;
-      this.initialized = true;
-      const nodes = Array.from(
-        document.querySelectorAll(`[${this.opts.productIdAttr}]`)
-      );
-      if (!nodes.length)
-        return;
-      this.io = new IntersectionObserver(this.onIntersect, { rootMargin: this.opts.rootMargin });
-      nodes.forEach((el) => this.io.observe(el));
-    }
-    /** Clean up (optional) */
-    destroy() {
-      this.io?.disconnect();
-      this.io = null;
-    }
-    // ---- internals ----
-    onIntersect = (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting)
-          return;
-        this.io?.unobserve(entry.target);
-        this.ensureSdk().then(() => this.mount(entry.target));
-      });
-    };
-    ensureSdk() {
-      if (this.sdkLoaded || window.ShopifyBuy && window.ShopifyBuy.UI) {
-        this.sdkLoaded = true;
-        return Promise.resolve();
-      }
-      return new Promise((resolve) => {
-        const s = document.createElement("script");
-        s.async = true;
-        s.src = this.opts.sdkUrl;
-        s.onload = () => {
-          this.sdkLoaded = true;
-          resolve();
-        };
-        document.head.appendChild(s);
-      });
-    }
-    mount(node) {
-      const productId = node.getAttribute(this.opts.productIdAttr);
-      if (!productId)
-        return;
-      const client = window.ShopifyBuy.buildClient({
-        domain: this.opts.domain,
-        storefrontAccessToken: this.opts.token
-      });
-      const shopAlignment = node.getAttribute(this.opts.alignment) || "left";
-      window.ShopifyBuy.UI.onReady(client).then((ui) => {
-        ui.createComponent("product", {
-          id: productId,
-          node,
-          moneyFormat: "%24%7B%7Bamount%7D%7D",
-          options: {
-            product: {
-              styles: {
-                product: {
-                  "@media (min-width: 601px)": {
-                    "max-width": "calc(25% - 20px)",
-                    // 'margin-left': '20px',
-                    "margin-bottom": "50px"
-                  },
-                  "text-align": shopAlignment
-                  // display: 'flex',
-                  // 'flex-direction': 'column',
-                  // 'justify-content': 'flex-end',
-                  // 'align-items': 'flex-end',
-                },
-                button: {
-                  "font-family": "Quantico, sans-serif",
-                  "font-weight": "bold",
-                  "font-size": "16px",
-                  "padding-top": "16px",
-                  "padding-bottom": "16px",
-                  color: "#E9ECF3",
-                  "background-color": "#ff8c00",
-                  ":hover": {
-                    "background-color": "#ff8c00"
-                  },
-                  ":focus": {
-                    "background-color": "#ff8c00"
-                  },
-                  "border-radius": "0px",
-                  "padding-left": "32px",
-                  "padding-right": "32px",
-                  border: "0px solid #01071C !important"
-                },
-                quantityInput: {
-                  "font-size": "16px",
-                  "padding-top": "16px",
-                  "padding-bottom": "16px",
-                  "font-family": "Quantico, sans-serif",
-                  "font-weight": "700",
-                  color: "#FF8C00",
-                  border: "0px solid #01071C",
-                  "border-radius": "0px",
-                  background: "#E9ECF3 !important"
-                }
-              },
-              buttonDestination: "checkout",
-              contents: {
-                img: false,
-                button: false,
-                buttonWithQuantity: true,
-                title: false,
-                price: false
-              },
-              text: {
-                button: "Buy Now"
-              },
-              googleFonts: ["Quantico"]
-            },
-            productSet: {
-              styles: {
-                products: {
-                  "@media (min-width: 601px)": {
-                    "margin-left": "-20px"
-                  }
-                }
-              }
-            },
-            modalProduct: {
-              contents: {
-                img: false,
-                imgWithCarousel: true,
-                button: false,
-                buttonWithQuantity: true
-              },
-              styles: {
-                product: {
-                  "@media (min-width: 601px)": {
-                    "max-width": "100%",
-                    "margin-left": "0px",
-                    "margin-bottom": "0px"
-                  }
-                },
-                button: {
-                  "font-family": "Quantico, sans-serif",
-                  "font-weight": "bold",
-                  "font-size": "16px",
-                  "padding-top": "16px",
-                  "padding-bottom": "16px",
-                  color: "#ff8c00",
-                  ":hover": {
-                    color: "#ff8c00",
-                    "background-color": "#0b7aa1"
-                  },
-                  "background-color": "#0c87b3",
-                  ":focus": {
-                    "background-color": "#0b7aa1"
-                  },
-                  "border-radius": "0px",
-                  "padding-left": "32px",
-                  "padding-right": "32px",
-                  border: "1px solid #01071C"
-                },
-                quantityInput: {
-                  "font-size": "16px",
-                  "padding-top": "16px",
-                  "padding-bottom": "16px"
-                }
-              },
-              googleFonts: ["Open Sans"],
-              text: {
-                button: "Add to cart"
-              }
-            }
-            // option: {},
-            // // cart: false,
-            // // toggle: false,
-            // cart: {
-            //   styles: {
-            //     button: {
-            //       'font-family': 'Quantico, sans-serif',
-            //       'font-weight': 'bold',
-            //       'font-size': '16px',
-            //       'padding-top': '16px',
-            //       'padding-bottom': '16px',
-            //       color: '#ff8c00',
-            //       ':hover': {
-            //         color: '#ff8c00',
-            //         'background-color': '#0b7aa1',
-            //       },
-            //       'background-color': '#0c87b3',
-            //       ':focus': {
-            //         'background-color': '#0b7aa1',
-            //       },
-            //       'border-radius': '0px',
-            //     },
-            //   },
-            //   text: {
-            //     total: 'Subtotal',
-            //     button: 'Checkout',
-            //   },
-            //   googleFonts: ['Quantico'],
-            // },
-            // toggle: {
-            //   styles: {
-            //     toggle: {
-            //       'font-family': 'Quantico, sans-serif',
-            //       'font-weight': 'bold',
-            //       'background-color': '#0c87b3',
-            //       ':hover': {
-            //         'background-color': '#0b7aa1',
-            //       },
-            //       ':focus': {
-            //         'background-color': '#0b7aa1',
-            //       },
-            //     },
-            //     count: {
-            //       'font-size': '16px',
-            //       color: '#ff8c00',
-            //       ':hover': {
-            //         color: '#ff8c00',
-            //       },
-            //     },
-            //     iconPath: {
-            //       fill: '#ff8c00',
-            //     },
-            //   },
-            //   googleFonts: ['Quantico'],
-            // },
-          }
-        });
-      });
-    }
-  };
-  var shopify = (options) => {
-    const instance = new Shopify(options);
-    instance.init();
-    return instance;
-  };
-  var shopify_default = shopify;
-
-  // src/index.ts
   init_verify();
   init_editorCheck();
 
@@ -9951,6 +9690,7 @@
   var _token = null;
   function initTurnstile(form) {
     const widget = form.querySelector(".cf-turnstile");
+    console.log("init turnstile", form, widget);
     if (!widget)
       return;
     window.turnstile.render(widget, {
@@ -10018,6 +9758,7 @@
     forms;
     constructor() {
       this.forms = Array.from(document.querySelectorAll("form"));
+      console.log("FORMS", this.forms);
       this.setupTurnstileForms();
     }
     setupTurnstileForms() {
@@ -10033,8 +9774,10 @@
       });
     }
     setupListeners(form) {
+      console.log("HERE", form);
       const isMailchimp = form.dataset.formType === "mailchimp";
       form.addEventListener("submit", (e) => {
+        console.log("Form Submit");
         const token = getToken();
         if (!token) {
           e.preventDefault();
@@ -10084,7 +9827,6 @@
     } else {
       hideVerifyComponent();
     }
-    shopify_default({ domain: "8z7y38-9x.myshopify.com", token: "ab800f336b7f7dc65afdafcaf40cb884" });
     loadComponent(".nav_component", () => Promise.resolve().then(() => (init_nav(), nav_exports)));
     loadComponent(".transition_component", () => Promise.resolve().then(() => (init_pageTransition(), pageTransition_exports)));
     loadComponent(".cursor_component", () => Promise.resolve().then(() => (init_cursor(), cursor_exports)));

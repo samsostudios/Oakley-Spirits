@@ -14,7 +14,7 @@ let _token: string | null = null;
 
 export function initTurnstile(form: HTMLFormElement): void {
   const widget = form.querySelector<HTMLInputElement>('.cf-turnstile');
-  // console.log('init turnstile', form, widget);
+  console.log('init turnstile', form, widget);
   if (!widget) return;
 
   window.turnstile.render(widget, {

@@ -7,7 +7,7 @@ class FormHandler {
 
   constructor() {
     this.forms = Array.from(document.querySelectorAll<HTMLFormElement>('form'));
-    // console.log('FORMS', this.forms);
+    console.log('FORMS', this.forms);
 
     this.setupTurnstileForms();
   }
@@ -27,9 +27,11 @@ class FormHandler {
   }
 
   private setupListeners(form: HTMLFormElement) {
+    console.log('HERE', form);
     const isMailchimp = form.dataset.formType === 'mailchimp';
 
     form.addEventListener('submit', (e) => {
+      console.log('Form Submit');
       const token = getToken();
       if (!token) {
         e.preventDefault();
