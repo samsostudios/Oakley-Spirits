@@ -21,8 +21,11 @@ class FormHandler {
         return;
       }
 
-      initTurnstile(form);
       this.setupListeners(form);
+
+      void initTurnstile(form).catch((error: unknown) => {
+        console.error('Turnstile initialization failed:', error);
+      });
     });
   }
 

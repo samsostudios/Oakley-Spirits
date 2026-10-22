@@ -12,16 +12,35 @@ const SITEKEY = '0x4AAAAAADI7sqWWJ5PSmnBH';
 
 let _token: string | null = null;
 
-export function initTurnstile(form: HTMLFormElement): void {
-  const widget = form.querySelector<HTMLInputElement>('.cf-turnstile');
-  console.log('init turnstile', form, widget);
+async function waitForTurnstile(timeoutMs = 10_000): Promise<void> {
+  const startedAt = Date.now();
+
+  while (typeof window.turnstile?.render !== 'function') {
+    if (Date.now() - startedAt >= timeoutMs) {
+      throw new Error('Turnstile did not load. Please refresh and try again.');
+    }
+
+    await new Promise<void>((resolve) => window.setTimeout(resolve, 100));
+  }
+}
+
+export async function initTurnstile(form: HTMLFormElement): Promise<void> {
+  const widget = form.querySelector<HTMLDivElement>('[data-mailchimp-turnstile]');
+
   if (!widget) return;
+
+  await waitForTurnstile();
 
   window.turnstile.render(widget, {
     sitekey: SITEKEY,
     callback: (token: string) => {
-      // console.log('TURNSTILE READY', token);
       _token = token;
+    },
+    'expired-callback': () => {
+      _token = null;
+    },
+    'error-callback': () => {
+      _token = null;
     },
   });
 }
