@@ -1,57 +1,45 @@
-// eslint-disable-next-line simple-import-sort/imports
+import { showError, submitMailchimp } from '$utils/forms/mailchimp';
 import { getToken, initTurnstile } from '$utils/forms/turnstile';
-import { submitMailchimp } from './forms/mailchimp';
 
 class FormHandler {
   private forms: HTMLFormElement[];
 
   constructor() {
-    this.forms = Array.from(document.querySelectorAll<HTMLFormElement>('form'));
-    console.log('FORMS', this.forms);
+    this.forms = Array.from(
+      document.querySelectorAll<HTMLFormElement>('form[data-form-type="mailchimp"]')
+    );
 
-    this.setupTurnstileForms();
+    this.setupMailchimpForms();
   }
 
-  private setupTurnstileForms() {
+  private setupMailchimpForms() {
     this.forms.forEach((form) => {
-      if (form.classList.contains('verify_form')) {
-        return;
-      }
-      if (form.classList.contains('w-commerce-commercecartform')) {
-        return;
-      }
-
-      this.setupListeners(form);
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        void this.handleMailchimp(form);
+      });
 
       void initTurnstile(form).catch((error: unknown) => {
-        console.error('Turnstile initialization failed:', error);
+        this.showTurnstileError(form, error);
       });
     });
   }
 
-  private setupListeners(form: HTMLFormElement) {
-    console.log('HERE', form);
-    const isMailchimp = form.dataset.formType === 'mailchimp';
+  private async handleMailchimp(form: HTMLFormElement): Promise<void> {
+    try {
+      await initTurnstile(form);
+    } catch (error) {
+      this.showTurnstileError(form, error);
+      return;
+    }
 
-    form.addEventListener('submit', (e) => {
-      console.log('Form Submit');
-      const token = getToken();
-      if (!token) {
-        e.preventDefault();
-        console.warn('Turnstile error');
-        return;
-      }
-
-      if (isMailchimp) {
-        e.preventDefault();
-        this.handleMailchimp(form, token);
-      }
-    });
+    await submitMailchimp(form, getToken(form));
   }
 
-  private handleMailchimp(form: HTMLFormElement, token: string) {
-    // console.log('Mailchimp Submit');
-    submitMailchimp(form, token);
+  private showTurnstileError(form: HTMLFormElement, error: unknown): void {
+    console.error('Turnstile initialization failed:', error);
+    showError(form, 'Security check could not load. Please refresh and try again.');
   }
 }
 

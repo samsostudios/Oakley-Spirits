@@ -1,7 +1,7 @@
 declare global {
   interface Window {
     turnstile: {
-      reset: () => void;
+      reset: (widgetId: string) => void;
       render: (container: string | HTMLElement, params: object) => string;
       remove: (widgetId: string) => void;
     };
@@ -10,7 +10,8 @@ declare global {
 }
 const SITEKEY = '0x4AAAAAADI7sqWWJ5PSmnBH';
 
-let _token: string | null = null;
+const widgets = new WeakMap<HTMLFormElement, { id: string; token: string | null }>();
+const pendingWidgets = new WeakMap<HTMLFormElement, Promise<void>>();
 
 async function waitForTurnstile(timeoutMs = 10_000): Promise<void> {
   const startedAt = Date.now();
@@ -25,31 +26,50 @@ async function waitForTurnstile(timeoutMs = 10_000): Promise<void> {
 }
 
 export async function initTurnstile(form: HTMLFormElement): Promise<void> {
-  const widget = form.querySelector<HTMLDivElement>('[data-mailchimp-turnstile]');
+  if (widgets.has(form)) return;
 
-  if (!widget) return;
+  const pending = pendingWidgets.get(form);
+  if (pending) return pending;
 
-  await waitForTurnstile();
+  const attempt = (async () => {
+    const widget = form.querySelector<HTMLDivElement>('[data-mailchimp-turnstile]');
+    if (!widget) throw new Error('Turnstile container is missing.');
 
-  window.turnstile.render(widget, {
-    sitekey: SITEKEY,
-    callback: (token: string) => {
-      _token = token;
-    },
-    'expired-callback': () => {
-      _token = null;
-    },
-    'error-callback': () => {
-      _token = null;
-    },
-  });
+    await waitForTurnstile();
+
+    const state = { id: '', token: null as string | null };
+
+    state.id = window.turnstile.render(widget, {
+      sitekey: SITEKEY,
+      callback: (token: string) => {
+        state.token = token;
+      },
+      'expired-callback': () => {
+        state.token = null;
+      },
+      'error-callback': () => {
+        state.token = null;
+      },
+    });
+    widgets.set(form, state);
+  })();
+
+  pendingWidgets.set(form, attempt);
+  try {
+    await attempt;
+  } finally {
+    pendingWidgets.delete(form);
+  }
 }
 
-export function getToken(): string | null {
-  return _token;
+export function getToken(form: HTMLFormElement): string | null {
+  return widgets.get(form)?.token ?? null;
 }
 
-export function resetWidget(): void {
-  _token = null;
-  if (window.turnstile) window.turnstile.reset();
+export function resetWidget(form: HTMLFormElement): void {
+  const state = widgets.get(form);
+  if (!state) return;
+
+  state.token = null;
+  window.turnstile?.reset(state.id);
 }
