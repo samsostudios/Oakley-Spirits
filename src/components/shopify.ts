@@ -113,6 +113,9 @@ export class Shopify {
     });
 
     const shopAlignment = node.getAttribute(this.opts.alignment) || 'left';
+    const buttonAlignment = window.matchMedia('(max-width: 767px)').matches
+      ? 'left'
+      : shopAlignment;
 
     window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
       ui.createComponent('product', {
@@ -128,11 +131,14 @@ export class Shopify {
                   // 'margin-left': '20px',
                   'margin-bottom': '50px',
                 },
-                'text-align': shopAlignment,
+                'text-align': buttonAlignment,
                 // display: 'flex',
                 // 'flex-direction': 'column',
                 // 'justify-content': 'flex-end',
                 // 'align-items': 'flex-end',
+              },
+              buttonWrapper: {
+                'text-align': buttonAlignment,
               },
               button: {
                 'font-family': 'Quantico, sans-serif',
