@@ -298,7 +298,7 @@ export class Shopify {
 export const shopify = (options: ShopifyInitOptions) => {
   const instance = new Shopify(options);
   instance.init();
-  // console.log('instance', instance);
+  console.log('instance', instance);
   return instance; // return it so you can destroy() if needed
 };
 
