@@ -8,7 +8,6 @@ import { initSmoothScroll } from '$utils/smoothScroll';
 import VerifyCookie from '$utils/verifyCookie';
 
 // import { startRaffle, drawWinner } from './raffle/raffle';
-
 // import { Raffle } from './raffle/raffle';
 
 window.Webflow ||= [];
@@ -22,7 +21,6 @@ window.Webflow.push(() => {
 
   const isEnv = env === 'editor' || env === 'preview';
   if (!isEnv) {
-    // console.log('!!!ENV', isEnv, !VerifyCookie.isVerified());
     if (!VerifyCookie.isVerified()) {
       // console.log('!!!SHOW');
       loadComponent('.verify_component', () => import('$components/verify'));
@@ -34,7 +32,28 @@ window.Webflow.push(() => {
     hideVerifyComponent();
   }
 
-  shopify({ domain: '8z7y38-9x.myshopify.com', token: 'ab800f336b7f7dc65afdafcaf40cb884' });
+  // shopify({ domain: '8z7y38-9x.myshopify.com', token: 'ab800f336b7f7dc65afdafcaf40cb884' });
+  shopify({
+    defaultStore: 'oakley',
+    stores: {
+      oakley: {
+        domain: '8z7y38-9x.myshopify.com',
+        token: 'ab800f336b7f7dc65afdafcaf40cb884',
+      },
+      oakleyDirect: {
+        domain: 'ndbzrd-1j.myshopify.com',
+        token: '162e00b71fa78529b2c5cec391948e28',
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        maxQuantity: 2,
+      },
+      dewinespot: {
+        domain: 'dewinespot.myshopify.com',
+        token: '4d45f08298c8f73c2427d872ad9e64a0',
+        moneyFormat: '%24%7B%7Bamount_no_decimals%7D%7D',
+        maxQuantity: 2,
+      },
+    },
+  });
 
   loadComponent('.nav_component', () => import('$components/nav'));
   loadComponent('.transition_component', () => import('$components/pageTransition'));
