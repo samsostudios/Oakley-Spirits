@@ -147,7 +147,25 @@ export class Shopify {
     const productId = node.getAttribute(this.opts.productIdAttr);
     if (!productId) return;
 
-    const shopAlignment = node.getAttribute(this.opts.alignmentAttr) || 'left';
+    const requestedAlignment = node.getAttribute(this.opts.alignmentAttr)?.toLowerCase();
+    const shopAlignment: 'left' | 'center' | 'right' =
+      requestedAlignment === 'center' || requestedAlignment === 'right'
+        ? requestedAlignment
+        : 'left';
+    const alignmentMargins = {
+      left: { 'margin-left': '0', 'margin-right': 'auto' },
+      center: { 'margin-left': 'auto', 'margin-right': 'auto' },
+      right: { 'margin-left': 'auto', 'margin-right': '0' },
+    }[shopAlignment];
+    const alignmentJustify = {
+      left: 'flex-start',
+      center: 'center',
+      right: 'flex-end',
+    }[shopAlignment];
+    // Shopify applies centering margins to its outer frame. Set the host node
+    // directly so the frame follows the Webflow alignment attribute.
+    node.style.setProperty('margin-left', alignmentMargins['margin-left'], 'important');
+    node.style.setProperty('margin-right', alignmentMargins['margin-right'], 'important');
     const maxQuantity = this.opts.stores[storeKey].maxQuantity;
     const enforceMaxQuantity = (product: any) => {
       if (!maxQuantity) return;
@@ -172,15 +190,18 @@ export class Shopify {
           styles: {
             product: {
               width: '100%',
+              ...alignmentMargins,
               '@media (min-width: 601px)': {
                 'max-width': '100%',
                 'margin-bottom': '50px',
+                ...alignmentMargins,
               },
-              'text-align': 'inherit',
+              'text-align': shopAlignment,
             },
             buttonWithQuantity: {
               width: '100%',
               display: 'flex',
+              'justify-content': alignmentJustify,
             },
             buttonWrapper: {
               flex: '1 1 0%',
